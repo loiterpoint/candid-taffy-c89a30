@@ -1,0 +1,36 @@
+# Netlify configuration for Drone Authority
+# Drop this file in the root of your site folder before deploying
+
+[build]
+  publish = "."
+
+# Clean URLs - /about instead of /about.html
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/disclosure"
+  to = "/affiliate-disclosure.html"
+  status = 200
+
+[[redirects]]
+  from = "/articles/:slug"
+  to = "/articles/:slug.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets aggressively
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

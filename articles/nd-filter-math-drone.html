@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ND Filter Math for Drone Pilots: What Size You Actually Need — Loiter Point</title>
+  <meta name="description" content="The 180° rule, how to calculate the right ND filter for any frame rate, and why the ND4 that came with your kit is probably the wrong one."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#0c0c0e;--surface:#141418;--surface2:#1c1c22;--accent:#e8ff47;--accent2:#ff6b35;--text:#e2e2e8;--muted:#7a7a8a;--border:#26262e;--mono:'IBM Plex Mono',monospace;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    a{color:var(--accent);}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border);background:rgba(12,12,14,0.97);position:sticky;top:0;z-index:100;}
+    .article{max-width:740px;margin:3rem auto;padding:0 1.5rem;}
+    .eyebrow{font-family:var(--mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    h1{font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:1rem;}
+    .meta{font-family:var(--mono);font-size:0.75rem;color:var(--muted);margin-bottom:2rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .tldr{background:rgba(232,255,71,0.05);border:1px solid rgba(232,255,71,0.25);border-radius:10px;padding:1.5rem;margin-bottom:2rem;}
+    .tldr-label{font-family:var(--mono);font-size:0.65rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    .tldr ul{padding-left:1.25rem;}
+    .tldr li{font-size:0.95rem;margin-bottom:0.5rem;color:var(--text);}
+    .article h2{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;margin:2rem 0 0.75rem;}
+    .article h3{font-size:1rem;font-weight:700;margin:1.25rem 0 0.5rem;}
+    .article p{margin-bottom:1rem;font-size:0.95rem;line-height:1.8;}
+    .article ul,.article ol{padding-left:1.5rem;margin-bottom:1rem;}
+    .article li{margin-bottom:0.5rem;font-size:0.95rem;line-height:1.7;}
+    .article table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.875rem;}
+    .article td,.article th{padding:0.6rem 0.75rem;border:1px solid var(--border);}
+    .article th{background:var(--surface2);font-weight:600;font-family:var(--mono);font-size:0.75rem;text-align:left;}
+    .article td:first-child{font-family:var(--mono);font-size:0.82rem;}
+    .nerd-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .nerd-box-label{font-family:var(--mono);font-size:0.65rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+    .formula{font-family:var(--mono);background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.9rem;color:var(--accent);line-height:1.6;}
+    .formula .comment{color:var(--muted);}
+    .quick-ref{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;}
+    .quick-ref-label{font-family:var(--mono);font-size:0.65rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;}
+    .qr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem;}
+    .qr-item{background:var(--surface2);border-radius:6px;padding:0.75rem 1rem;display:flex;justify-content:space-between;align-items:center;}
+    .qr-condition{font-size:0.82rem;color:var(--muted);}
+    .qr-filter{font-family:var(--mono);font-size:0.9rem;color:var(--accent);font-weight:500;}
+    .warning-box{background:rgba(255,107,53,0.05);border:1px solid rgba(255,107,53,0.3);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .warning-label{font-family:var(--mono);font-size:0.65rem;color:var(--accent2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+    .buy-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;}
+    .buy-box h3{margin:0 0 1rem;}
+    .buy-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.75rem 0;border-bottom:1px solid var(--border);}
+    .buy-row:last-child{border-bottom:none;}
+    .buy-name{font-size:0.9rem;font-weight:600;}
+    .buy-note{font-size:0.78rem;color:var(--muted);margin-top:0.2rem;}
+    .buy-price{font-family:var(--mono);font-size:0.85rem;color:var(--accent);white-space:nowrap;}
+    .btn{background:var(--accent);color:#0c0c0e;font-weight:700;font-size:0.78rem;padding:0.45rem 0.9rem;border-radius:5px;text-decoration:none;white-space:nowrap;font-family:var(--mono);}
+    footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:0.78rem;margin-top:3rem;}
+    @media(max-width:540px){.qr-grid{grid-template-columns:1fr;}.buy-row{flex-wrap:wrap;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" style="font-size:1rem;font-weight:800;text-decoration:none;color:#e2e2e8;">⊕ Loiter<span style="color:#e8ff47;">Point</span></a>
+  <a href="../index.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#7a7a8a;text-decoration:none;">← Home</a>
+</nav>
+
+<div class="article">
+  <div class="eyebrow">// Technical Guide</div>
+  <h1>ND Filter Math for Drone Pilots: What Size You Actually Need</h1>
+  <div class="meta">
+    <span>June 2024</span>
+    <span>8 min read</span>
+    <span>Covers 24fps, 30fps, 60fps, 120fps</span>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-label">// The Short Version</div>
+    <ul>
+      <li><strong>The 180° rule:</strong> Your shutter speed should be 2× your frame rate. 30fps → 1/60s. 60fps → 1/120s.</li>
+      <li><strong>ND number = stops needed.</strong> Bright midday sun at 30fps typically needs ND64 (6 stops). Dawn/dusk might need ND8.</li>
+      <li><strong>The ND4 kit filter is almost useless</strong> for outdoor flying in anything brighter than overcast shade.</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>Why ND Filters Matter (And What Most Guides Get Wrong)</h2>
+    <p>The argument for ND filters usually starts and ends at "cinematic motion blur." That's true, but it misses the real reason you need them: drone cameras have fixed apertures. Your DJI Mini 4 Pro shoots at f/1.7. The Air 3's main lens is f/1.7. You cannot stop down to f/11 to control exposure the way a cinema camera can. Your only levers are ISO (introduces noise), shutter speed (affects motion rendering), and ND filters.</p>
+    <p>If you try to hit the 180° shutter rule at f/1.7 on a sunny day, your sensor will blow out to white. ND filters are how you use the correct shutter speed without overexposing. That's the actual reason. Motion blur is a side effect — a good one, but still a side effect.</p>
+  </section>
+
+  <section>
+    <h2>The 180° Shutter Rule, Explained</h2>
+    <p>The 180° shutter angle is a cinema standard that dates to film cameras, where the shutter was a rotating disc with a 180° opening. In digital terms, it translates to: <strong>shutter speed = 1 / (2 × frame rate)</strong>.</p>
+    <div class="formula">
+      <span class="comment">// 180° rule in digital terms:</span><br/>
+      Shutter speed = 1 ÷ (2 × fps)<br/><br/>
+      <span class="comment">// Examples:</span><br/>
+      24 fps → 1/48s  (round to 1/50s)<br/>
+      30 fps → 1/60s<br/>
+      60 fps → 1/120s<br/>
+      120 fps → 1/240s
+    </div>
+    <p>The perceptual reason: at this ratio, motion blur between frames approximates how the human eye perceives motion. Go faster (1/500s at 30fps) and your footage looks like a video game — unnaturally sharp between frames. Go slower and you get smeared blur that looks like a slow pan on a consumer camcorder.</p>
+    <p>Some pilots argue for a 90° angle (1/4× frame rate) for action and sport, which gives sharper individual frames at the cost of more stutter. Valid for specific shots. The 180° rule is the default for everything else.</p>
+
+    <div class="nerd-box">
+      <div class="nerd-box-label">// The 1/50s vs 1/48s Thing</div>
+      <p>At 24fps, the mathematically correct shutter is 1/48s. Most drone cameras only allow 1/50s as the closest step. The difference is negligible — the 180° rule is a guideline, not a law. Use 1/50s at 24fps.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>How to Calculate Which ND Filter You Need</h2>
+    <p>The math is straightforward. You need to know:</p>
+    <ol>
+      <li>Your target shutter speed (from the 180° rule above)</li>
+      <li>Your drone's base ISO (usually 100)</li>
+      <li>The shutter speed your camera would naturally expose at (without ND)</li>
+    </ol>
+
+    <h3>The Calculation</h3>
+    <div class="formula">
+      <span class="comment">// Find how many stops you need to block:</span><br/>
+      Stops to block = log₂(natural shutter / target shutter)<br/><br/>
+      <span class="comment">// ND number = 2^stops</span><br/>
+      ND filter number = 2 ^ stops<br/><br/>
+      <span class="comment">// Example: bright sun, 30fps:</span><br/>
+      Natural exposure at ISO 100, f/1.7: ~1/2000s<br/>
+      Target shutter: 1/60s<br/>
+      Ratio: 2000 ÷ 60 ≈ 33<br/>
+      Nearest standard ND: ND32 (5 stops) or ND64 (6 stops)
+    </div>
+
+    <h3>The Stops Cheat Sheet</h3>
+    <table>
+      <thead><tr><th>ND Filter</th><th>Stops Blocked</th><th>Multiplier</th><th>Light Transmission</th></tr></thead>
+      <tbody>
+        <tr><td>ND4</td><td>2 stops</td><td>4×</td><td>25%</td></tr>
+        <tr><td>ND8</td><td>3 stops</td><td>8×</td><td>12.5%</td></tr>
+        <tr><td>ND16</td><td>4 stops</td><td>16×</td><td>6.25%</td></tr>
+        <tr><td>ND32</td><td>5 stops</td><td>32×</td><td>3.1%</td></tr>
+        <tr><td>ND64</td><td>6 stops</td><td>64×</td><td>1.56%</td></tr>
+        <tr><td>ND128</td><td>7 stops</td><td>128×</td><td>0.78%</td></tr>
+        <tr><td>ND256</td><td>8 stops</td><td>256×</td><td>0.39%</td></tr>
+        <tr><td>ND1000</td><td>10 stops</td><td>1000×</td><td>0.1%</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Conditions-to-Filter Quick Reference</h2>
+    <div class="quick-ref">
+      <div class="quick-ref-label">// At 30fps, ISO 100 — approximate starting points</div>
+      <div class="qr-grid">
+        <div class="qr-item"><span class="qr-condition">Bright midday sun</span><span class="qr-filter">ND64–ND128</span></div>
+        <div class="qr-item"><span class="qr-condition">Hazy sun / thin cloud</span><span class="qr-filter">ND32–ND64</span></div>
+        <div class="qr-item"><span class="qr-condition">Overcast / heavy cloud</span><span class="qr-filter">ND16–ND32</span></div>
+        <div class="qr-item"><span class="qr-condition">Deep shade / indoors</span><span class="qr-filter">ND4–ND8</span></div>
+        <div class="qr-item"><span class="qr-condition">Golden hour</span><span class="qr-filter">ND8–ND16</span></div>
+        <div class="qr-item"><span class="qr-condition">Blue hour / dusk</span><span class="qr-filter">ND4 or bare</span></div>
+        <div class="qr-item"><span class="qr-condition">Bright sun at 60fps</span><span class="qr-filter">ND32–ND64</span></div>
+        <div class="qr-item"><span class="qr-condition">Bright sun at 120fps</span><span class="qr-filter">ND16–ND32</span></div>
+      </div>
+    </div>
+    <p>These are starting points, not absolute rules. Your specific drone's aperture, the actual light level, and whether you're shooting over water (reflective) or grass (absorptive) will all shift these by a stop or two. Bracket by one stop in either direction if you're unsure — you can't recover blown highlights in post.</p>
+  </section>
+
+  <section>
+    <h2>Polarizing vs. Plain ND</h2>
+    <p>Standard ND filters reduce all light uniformly across the spectrum — think of them as sunglasses for your lens. Circular polarizers (CPL) do something different: they selectively filter polarized light, which cuts glare off water and glass and can deepen sky color by 1–2 stops on the blue channel.</p>
+    <p>ND/CPL combination filters exist and are what DJI's own filter kits include. The CPL effect is highly angle-dependent — you need about 90° between your lens axis and the sun to get maximum polarization effect. Shooting directly toward or away from the sun, the CPL does almost nothing and you're carrying its weight penalty for zero benefit.</p>
+    <p><strong>Use plain ND:</strong> for consistency across a shoot, when you're moving a lot and can't control sun angle, and when maximum sharpness matters (CPL glass adds a reflective surface).</p>
+    <p><strong>Use ND/CPL:</strong> when shooting over water, lakes, or glass-covered buildings where glare removal is worth the trade-offs.</p>
+  </section>
+
+  <section>
+    <h2>The Problem With Variable ND Filters on Drones</h2>
+    <div class="warning-box">
+      <div class="warning-label">// Variable ND Warning</div>
+      <p>Variable ND filters (also called "faders") use two rotating polarizing elements to adjust density. They're convenient on ground cameras — dial in exactly what you need. On drones, they create a significant problem: the X pattern.</p>
+    </div>
+    <p>At extremes of their range, variable ND filters produce a dark X across the frame — a cross-polarization artifact from the two polarizing elements misaligning. Many cheap variable ND kits don't tell you their actual min/max range before the X appears. If you're at ND2-400 and set it to ND300, you may be in the dark band.</p>
+    <p>Additionally, variable NDs typically have 2–3 more glass elements than fixed NDs. On a sensor as small as most drones use, any extra glass introduces visible chromatic aberration and reduces micro-contrast. The DJI Mini 4 Pro's default 24MP sensor is resolving at a level where glass quality is a genuine dealbreaker — cheap variable NDs will soft your footage noticeably.</p>
+    <p>Our position: use a set of fixed ND filters (ND8, ND16, ND64, ND256) and swap between flights. Yes, you have to land. Yes, it's worth it.</p>
+  </section>
+
+  <section>
+    <h2>Filter Sets Worth Using</h2>
+    <p>Buying filters by drone model is the correct approach — generic drop-in filters don't account for the lens curvature and mount tolerances of specific drones, and you'll get vignetting on wide shots.</p>
+
+    <div class="buy-box">
+      <h3>Recommended Filter Sets</h3>
+      <div class="buy-row">
+        <div>
+          <div class="buy-name">PolarPro DJI Mini 4 Pro Filter Set (4-Pack)</div>
+          <div class="buy-note">ND16/64/256/MIST — their Cinema Series glass. No measurable color cast. Our primary recommendation for the Mini 4 Pro.</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div class="buy-price">~$149</div>
+          <a href="https://www.amazon.com/s?k=PolarPro+Mini+4+Pro+ND+filter+set&tag=loiterpoint20-20" rel="nofollow sponsored" class="btn" style="display:inline-block;margin-top:0.4rem;">Amazon →</a>
+        </div>
+      </div>
+      <div class="buy-row">
+        <div>
+          <div class="buy-name">Freewell Magnetic 2.0 Series — DJI Air 3</div>
+          <div class="buy-note">Magnetic quick-swap mount is the dealbreaker advantage here. Swap mid-flight break without unscrewing. Includes ND8/16/32/64/128 in one kit.</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div class="buy-price">~$119</div>
+          <a href="https://www.amazon.com/s?k=Freewell+Magnetic+DJI+Air+3+ND+filters&tag=loiterpoint20-20" rel="nofollow sponsored" class="btn" style="display:inline-block;margin-top:0.4rem;">Amazon →</a>
+        </div>
+      </div>
+      <div class="buy-row">
+        <div>
+          <div class="buy-name">K&F Concept ND Filter Set — Universal (Mini 2)</div>
+          <div class="buy-note">Budget option. Glass quality is noticeably below PolarPro but acceptable for 1080p social content. Not recommended for anything you're color grading.</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div class="buy-price">~$39</div>
+          <a href="https://www.amazon.com/s?k=K%26F+Concept+DJI+Mini+2+ND+filter+set&tag=loiterpoint20-20" rel="nofollow sponsored" class="btn" style="display:inline-block;margin-top:0.4rem;">Amazon →</a>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);">All links are affiliate links. Our scores and recommendations are not affected by affiliate relationships.</p>
+  </section>
+
+  <section>
+    <h2>Practical Workflow: What I Actually Do</h2>
+    <p>Before a shoot, check the weather app for cloud cover and note the time of day. Make a rough call on filter density using the quick reference above, then bring one stop heavier and one stop lighter in your kit bag. Battery swaps are filter-check opportunities — check your histogram, swap if you're clipping or underexposed.</p>
+    <p>For golden hour work: start with ND16, expect to swap to ND8 as the sun drops, and be ready to pull the filter entirely in the last 10 minutes before sunset. The light drops faster than most people expect and ND4 can suddenly be wrong way to the underexposed side.</p>
+    <p>For variable-light days (partly cloudy, sun going in and out): stick with ND64 and let the camera's auto-ISO float between 100–400. You'll take a slight noise hit on the ISO bumps, but you won't be landing every 90 seconds to swap filters while clouds cycle. Know your trade-offs.</p>
+
+    <div class="nerd-box">
+      <div class="nerd-box-label">// The Mist Filter Question</div>
+      <p>1/4 and 1/8 mist (diffusion) filters soften highlights and add a slight glow to lights — the "cinematic" look you see in a lot of aerial real estate content. They're a legitimate creative tool, not a gimmick. They do reduce maximum sharpness by design. Use them if the look fits the project, don't use them if you need maximum detail. They're not a replacement for ND — most mist filters have no ND rating at all.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The Bottom Line</h2>
+    <p>The 180° rule is non-negotiable if you care about how your footage looks. Everything else is choosing the right ND to hit your target shutter in the conditions you're shooting. Buy a real 4-filter fixed set for your specific drone model. Check your histogram on every flight. Swap at battery changes.</p>
+    <p>The ND4 that came with your kit is for filming at dusk in heavy cloud cover. Everything else needs more glass.</p>
+  </section>
+</div>
+
+<footer>
+  <p>© 2024 Loiter Point — Independent drone coverage for serious pilots.</p>
+  <p style="max-width:560px;margin:0.5rem auto 0;opacity:0.6;line-height:1.6;font-size:0.72rem;">
+    Affiliate disclosure: links marked with → are Amazon affiliate links. We earn a small commission if you buy through them. Our recommendations are not influenced by affiliate relationships.
+  </p>
+</footer>
+</body>
+</html>

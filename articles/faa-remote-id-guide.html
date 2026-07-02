@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAA Remote ID: What Drone Pilots Actually Need to Do — Loiter Point</title>
+  <meta name="description" content="FAA Remote ID explained without the legalese. What's required, who it applies to, which modules work, and the real enforcement picture as of 2024."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#0c0c0e;--surface:#141418;--surface2:#1c1c22;--accent:#e8ff47;--accent2:#ff6b35;--text:#e2e2e8;--muted:#7a7a8a;--border:#26262e;--mono:'IBM Plex Mono',monospace;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    a{color:var(--accent);}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border);background:rgba(12,12,14,0.97);position:sticky;top:0;z-index:100;}
+    .article{max-width:740px;margin:3rem auto;padding:0 1.5rem;}
+    .eyebrow{font-family:var(--mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    h1{font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:1rem;}
+    .meta{font-family:var(--mono);font-size:0.75rem;color:var(--muted);margin-bottom:2rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .tldr{background:rgba(232,255,71,0.05);border:1px solid rgba(232,255,71,0.25);border-radius:10px;padding:1.5rem;margin-bottom:2rem;}
+    .tldr-label{font-family:var(--mono);font-size:0.65rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    .tldr ul{padding-left:1.25rem;}
+    .tldr li{font-size:0.95rem;margin-bottom:0.5rem;color:var(--text);}
+    .article h2{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;margin:2rem 0 0.75rem;}
+    .article h3{font-size:1rem;font-weight:700;margin:1.25rem 0 0.5rem;}
+    .article p{margin-bottom:1rem;font-size:0.95rem;line-height:1.8;}
+    .article ul,.article ol{padding-left:1.5rem;margin-bottom:1rem;}
+    .article li{margin-bottom:0.5rem;font-size:0.95rem;line-height:1.7;}
+    .article table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.875rem;}
+    .article td,.article th{padding:0.6rem 0.75rem;border:1px solid var(--border);}
+    .article th{background:var(--surface2);font-weight:600;font-family:var(--mono);font-size:0.75rem;text-align:left;}
+    .warning-box{background:rgba(255,107,53,0.05);border:1px solid rgba(255,107,53,0.3);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .warning-label{font-family:var(--mono);font-size:0.65rem;color:var(--accent2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+    .nerd-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .nerd-box-label{font-family:var(--mono);font-size:0.65rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+    details{border:1px solid var(--border);border-radius:6px;padding:0.75rem 1rem;margin:0.75rem 0;}
+    summary{cursor:pointer;font-weight:600;font-size:0.95rem;}
+    details p{margin-top:0.75rem;font-size:0.9rem;color:var(--muted);}
+    footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:0.78rem;margin-top:3rem;}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" style="font-size:1rem;font-weight:800;text-decoration:none;color:#e2e2e8;">⊕ Loiter<span style="color:#e8ff47;">Point</span></a>
+  <a href="../index.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#7a7a8a;text-decoration:none;">← Home</a>
+</nav>
+
+<div class="article">
+  <div class="eyebrow">// FAA & Regulations</div>
+  <h1>FAA Remote ID: What Drone Pilots Actually Need to Do</h1>
+  <div class="meta">
+    <span>Updated June 2024</span>
+    <span>Reflects current FAA enforcement posture</span>
+    <span>Not legal advice — verify at faa.gov</span>
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-label">// TL;DR — Three Things</div>
+    <ul>
+      <li><strong>Standard Remote ID is now required</strong> for all drones over 0.55 lbs flown in the US, with limited exceptions.</li>
+      <li><strong>Most drones made after September 2023</strong> have Remote ID built in. If yours doesn't, you need a broadcast module or can only fly at FAA-Recognized Identification Areas (FRIAs).</li>
+      <li><strong>FAA enforcement is active but selective.</strong> Violations carry civil penalties up to $27,500 per violation. Don't assume you won't be caught.</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>What Remote ID Actually Is</h2>
+    <p>Remote ID is essentially a digital license plate for drones. Your aircraft broadcasts identification and location information that can be received by smartphones, law enforcement, and FAA systems within roughly 1 km. Think of it as ADS-B for unmanned aircraft — the same concept that commercial airplanes use to broadcast their position.</p>
+    <p>The FAA finalized the Remote ID rule in January 2021 and began enforcement on September 16, 2023. If you've been flying since before that date without thinking about this, it's time to think about it.</p>
+  </section>
+
+  <section>
+    <h2>Who It Applies To</h2>
+    <p>Remote ID is required if all of the following are true:</p>
+    <ul>
+      <li>Your drone weighs more than 0.55 lbs (250g)</li>
+      <li>You're flying outdoors in the US national airspace</li>
+      <li>You're not flying at an FAA-Recognized Identification Area (FRIA)</li>
+    </ul>
+    <p><strong>Under 0.55 lbs (250g)?</strong> The DJI Mini series and Autel Nano series fall below this threshold. Remote ID technically doesn't apply to sub-250g drones, but most modern sub-250g drones broadcast Remote ID anyway — DJI has built it into everything since the Mini 3.</p>
+
+    <div class="nerd-box">
+      <div class="nerd-box-label">// The FRIA Exception</div>
+      <p>FAA-Recognized Identification Areas are designated flying sites — typically AMA (Academy of Model Aeronautics) club fields — where Remote ID is not required. Flying at an AMA club field without Remote ID is still legal. Find FRIAs at faa.gov/uas/getting_started/remote_id/fria.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Standard Remote ID vs. Broadcast Module</h2>
+    <p>There are two ways to comply:</p>
+
+    <h3>1. Standard Remote ID (Built-In)</h3>
+    <p>Drones manufactured with Remote ID built into the aircraft. All DJI drones released after March 2024 have this. Most drones released since late 2023 have it. If you bought a new drone recently, check DJI's or your manufacturer's compliance documentation — it's almost certainly Standard Remote ID compliant.</p>
+
+    <h3>2. Broadcast Module (Add-On)</h3>
+    <p>If your drone was manufactured before the compliance deadline and doesn't have built-in Remote ID, you can attach an FAA-approved broadcast module. These are small devices that attach to the drone and broadcast the required information independently of the aircraft's systems.</p>
+
+    <table>
+      <thead><tr><th>Module</th><th>Price</th><th>Weight</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Robin Systems RID Module</td><td>~$99</td><td>~26g</td><td>FAA-approved, works with most platforms</td></tr>
+        <tr><td>Dronetag Mini</td><td>~$89</td><td>~10g</td><td>Lightweight, good for smaller aircraft</td></tr>
+        <tr><td>Spektrum SPMRD9100</td><td>~$79</td><td>~14g</td><td>Popular with RC community</td></tr>
+      </tbody>
+    </table>
+    <p class="muted" style="font-size:0.8rem;">Module pricing as of June 2024. Verify FAA approval status at faa.gov before purchase — the approved list is updated periodically.</p>
+  </section>
+
+  <section>
+    <h2>How to Check If Your Drone Is Compliant</h2>
+    <ol>
+      <li>Go to faa.gov/uas/getting_started/remote_id</li>
+      <li>Check the FAA's list of Standard Remote ID drones — it's searchable by manufacturer and model</li>
+      <li>If your drone isn't listed, check your manufacturer's documentation for Remote ID compliance updates</li>
+      <li>If your drone genuinely lacks Remote ID, buy a broadcast module or fly only at FRIAs</li>
+    </ol>
+    <p>For DJI pilots: the DJI Mini 3, Mini 4 Pro, Air 3, and Mavic 3 series are all Standard Remote ID compliant. The Mini 2 is not — it requires a broadcast module or FRIA flying.</p>
+  </section>
+
+  <section>
+    <h2>What Remote ID Broadcasts</h2>
+    <p>A compliant drone broadcasts the following information continuously during flight:</p>
+    <ul>
+      <li>Drone's unique identifier (serial number or session ID)</li>
+      <li>Drone's GPS location, altitude, and speed</li>
+      <li>Takeoff location (latitude/longitude)</li>
+      <li>Emergency status</li>
+      <li>UTC timestamp</li>
+    </ul>
+    <p>This information is not transmitted to a central database in real time — it's broadcast locally via Wi-Fi and Bluetooth, receivable by anyone with a smartphone and the right app (like the FAA's DroneZone or third-party apps). Law enforcement and the FAA can receive and log this data.</p>
+  </section>
+
+  <section>
+    <h2>Enforcement: The Real Picture</h2>
+    <div class="warning-box">
+      <div class="warning-label">// Enforcement Reality</div>
+      <p>The FAA has civil penalty authority of up to $27,500 per violation. Criminal penalties are possible for willful violations. Enforcement in the first year has been complaint-driven and education-focused — but the FAA has stated publicly that enforcement will increase. "Nobody got caught" is not a compliance strategy.</p>
+    </div>
+    <p>Most pilots who've received enforcement action flew in restricted airspace, flew near airports, or flew after a specific complaint was filed about their operations. Routine recreational flying with a non-compliant older drone in a park is lower risk — but it's still illegal and that risk calculus changes as enforcement matures.</p>
+    <p>Bottom line: if you're flying commercially (Part 107), full compliance is non-negotiable. If you're a recreational pilot with an older drone, a $89 broadcast module is cheap insurance.</p>
+  </section>
+
+  <section>
+    <h2>What's Still Unclear</h2>
+    <p>The Remote ID rule has genuine ambiguities the FAA hasn't fully resolved:</p>
+    <ul>
+      <li><strong>Tethered drones:</strong> A drone on a physical tether is arguably not in free flight — the FAA's position on tethered operations and Remote ID is not definitive.</li>
+      <li><strong>Indoor flying:</strong> Remote ID doesn't apply to indoor-only flight, but the line between "indoors" and "partially outdoors" (open hangars, etc.) isn't clearly defined.</li>
+      <li><strong>Session IDs vs. serial numbers:</strong> Standard Remote ID drones can broadcast either a serial number or a session ID. Session IDs are privacy-preserving but some law enforcement agencies have pushed back on their use. The FAA has not restricted session IDs.</li>
+      <li><strong>Hobbyist vs. commercial at FRIAs:</strong> The FRIA exemption technically applies only to community-based organizations' sanctioned flying. The nuances of what constitutes "sanctioned" flying are not fully litigated.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Action Steps by Drone</h2>
+    <table>
+      <thead><tr><th>Your Drone</th><th>What to Do</th></tr></thead>
+      <tbody>
+        <tr><td>DJI Mini 3, Mini 4 Pro, Air 3, Mavic 3 series</td><td>Already compliant. Ensure firmware is current.</td></tr>
+        <tr><td>DJI Mini 2</td><td>Buy a broadcast module OR fly only at FRIAs.</td></tr>
+        <tr><td>DJI Phantom 4 series</td><td>Buy a broadcast module OR fly only at FRIAs.</td></tr>
+        <tr><td>Autel EVO Nano+, Lite+</td><td>Check Autel's compliance documentation — most have built-in RID.</td></tr>
+        <tr><td>Any drone under 250g</td><td>Technically exempt, but verify your specific model.</td></tr>
+        <tr><td>FPV builds / DIY aircraft</td><td>Require a broadcast module. Can also fly at FRIAs.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>The Bottom Line</h2>
+    <p>Remote ID is real, it's enforced, and compliance is straightforward for most pilots. If you bought a drone in the last 18 months, you're almost certainly compliant already. If you're flying an older aircraft, spend $89 on a broadcast module and stop thinking about it.</p>
+    <p>This article reflects FAA guidance as of June 2024. Regulations change. Verify current requirements at <a href="https://www.faa.gov/uas/getting_started/remote_id" target="_blank" rel="noopener">faa.gov/uas/getting_started/remote_id</a> before making compliance decisions. This is not legal advice.</p>
+  </section>
+</div>
+
+<footer>
+  <p>© 2024 Loiter Point — Independent drone coverage for serious pilots.</p>
+  <p style="max-width:560px;margin:0.5rem auto 0;opacity:0.6;line-height:1.6;font-size:0.72rem;">
+    Content is for informational purposes only and does not constitute legal advice. Verify all regulatory information with the FAA directly.
+  </p>
+</footer>
+</body>
+</html>

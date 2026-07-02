@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Loiter Point</title>
+  <meta name="description" content="Loiter Point is an independent drone publication run by pilots. No brand deals. No sponsored reviews. Real flight data only."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#0c0c0e;--surface:#141418;--surface2:#1c1c22;--accent:#e8ff47;--text:#e2e2e8;--muted:#7a7a8a;--border:#26262e;--mono:'IBM Plex Mono',monospace;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    a{color:var(--accent);}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border);background:rgba(12,12,14,0.97);position:sticky;top:0;z-index:100;}
+    .wrap{max-width:740px;margin:4rem auto;padding:0 1.5rem;}
+    .eyebrow{font-family:var(--mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    h1{font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:1.5rem;}
+    h2{font-size:1.2rem;font-weight:700;margin:2.5rem 0 0.75rem;letter-spacing:-0.02em;}
+    p{font-size:0.95rem;color:var(--muted);margin-bottom:1rem;line-height:1.8;}
+    p strong{color:var(--text);}
+    .principle{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:1rem;}
+    .principle-title{font-weight:700;font-size:0.95rem;margin-bottom:0.4rem;color:var(--text);}
+    .principle-desc{font-size:0.875rem;color:var(--muted);line-height:1.7;}
+    .stat-row{display:flex;gap:2rem;margin:2rem 0;flex-wrap:wrap;}
+    .stat{display:flex;flex-direction:column;gap:0.2rem;}
+    .stat-n{font-family:var(--mono);font-size:1.5rem;color:var(--text);}
+    .stat-l{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;}
+    footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:0.78rem;margin-top:3rem;}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" style="font-size:1rem;font-weight:800;text-decoration:none;color:#e2e2e8;">⊕ Loiter<span style="color:#e8ff47;">Point</span></a>
+  <a href="index.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#7a7a8a;text-decoration:none;">← Home</a>
+</nav>
+<div class="wrap">
+  <div class="eyebrow">// About</div>
+  <h1>Built by pilots.<br/>Written for pilots.</h1>
+
+  <p>Loiter Point exists because most drone coverage is written by people who don't fly. You can tell — the reviews regurgitate spec sheets, the buyer guides are obviously affiliate-optimized, and nobody covers firmware changelogs or FAA regulation changes in any useful depth.</p>
+
+  <p><strong>We fly the drones we review.</strong> Every score on this site reflects real flight hours under real conditions — wind, rain, limited light, maximum range. We log RSSI data, measure actual battery cutoff times, and track how firmware updates change flight characteristics over time.</p>
+
+  <div class="stat-row">
+    <div class="stat"><span class="stat-n">200+</span><span class="stat-l">Flight hours logged</span></div>
+    <div class="stat"><span class="stat-n">47</span><span class="stat-l">Drones tested</span></div>
+    <div class="stat"><span class="stat-n">0</span><span class="stat-l">Sponsored reviews</span></div>
+    <div class="stat"><span class="stat-n">5+</span><span class="stat-l">Flights per review minimum</span></div>
+  </div>
+
+  <h2>How we score</h2>
+  <p>Every review uses the same methodology: minimum five flight sessions, tested at 15+ mph sustained wind, at rated max range with RSSI logged, in sub-optimal lighting conditions, and measured to actual battery cutoff — not the manufacturer's optimistic quoted runtime. Scores are out of 10 to one decimal place and represent our genuine assessment. An 8.5 is not "pretty good" — it means something specific keeps it from a 9.</p>
+
+  <h2>Our editorial principles</h2>
+
+  <div class="principle">
+    <div class="principle-title">No sponsored reviews. Ever.</div>
+    <div class="principle-desc">We have never accepted payment, free product, or early access in exchange for a favorable review. Brands can send us review units — if they do, we say so. Our score is unaffected.</div>
+  </div>
+
+  <div class="principle">
+    <div class="principle-title">Affiliate links are disclosed, not hidden.</div>
+    <div class="principle-desc">This site participates in the Amazon Associates program. When you buy through our links we earn a small commission at no cost to you. Every affiliate link is labeled. It does not influence what we recommend or how we score anything.</div>
+  </div>
+
+  <div class="principle">
+    <div class="principle-title">Firmware changes matter. We track them.</div>
+    <div class="principle-desc">DJI and Autel quietly change flight characteristics, obstacle avoidance behavior, and video processing in firmware updates. We test before and after significant updates and document what actually changed — not just what the changelog says.</div>
+  </div>
+
+  <div class="principle">
+    <div class="principle-title">We cover FPV and building, not just consumer drones.</div>
+    <div class="principle-desc">Anyone who flies knows that the consumer and FPV worlds overlap. We cover Betaflight tuning, FPV build guides, and component reviews for pilots who build their own aircraft.</div>
+  </div>
+
+  <h2>What we cover</h2>
+  <p><strong>Full reviews</strong> with real field test data. <strong>Firmware analysis</strong> — every meaningful update decoded. <strong>FAA & airspace regulation</strong> translated into plain language for pilots. <strong>FPV builds</strong> from parts list to first flight. <strong>Technical guides</strong> covering battery chemistry, ND filter math, color grading, and flight planning. <strong>Buyer guides</strong> written for specific real-world use cases.</p>
+
+  <h2>Contact</h2>
+  <p>For review unit submissions, corrections, or press inquiries: <a href="mailto:editorial@loiterpoint.com">editorial@loiterpoint.com</a></p>
+  <p>We respond to every correction request. If we got something wrong, we fix it and note the update.</p>
+</div>
+<footer>
+  <p>© 2024 Loiter Point — Independent coverage for serious pilots.</p>
+</footer>
+</body>
+</html>

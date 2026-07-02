@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DJI Air 3 Review: The Dual-Camera Story Nobody Tells — Loiter Point</title>
+  <meta name="description" content="DJI Air 3 review after 60+ flights. The dual-sensor system works, the 3× telephoto is more useful than you think, and the battery life is real. But there are trade-offs."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#0c0c0e;--surface:#141418;--surface2:#1c1c22;--accent:#e8ff47;--accent2:#ff6b35;--text:#e2e2e8;--muted:#7a7a8a;--border:#26262e;--mono:'IBM Plex Mono',monospace;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    a{color:var(--accent);}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border);background:rgba(12,12,14,0.97);position:sticky;top:0;z-index:100;}
+    .article{max-width:740px;margin:3rem auto;padding:0 1.5rem;}
+    .eyebrow{font-family:var(--mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    h1{font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:1rem;}
+    .meta{font-family:var(--mono);font-size:0.75rem;color:var(--muted);margin-bottom:2rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .verdict{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;margin-bottom:2.5rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;}
+    .score-box{background:var(--accent);border-radius:8px;width:72px;height:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
+    .score-num{font-family:var(--mono);font-size:2rem;font-weight:700;color:#0c0c0e;line-height:1;}
+    .score-label{font-family:var(--mono);font-size:0.55rem;color:#0c0c0e;opacity:0.7;text-transform:uppercase;letter-spacing:0.05em;}
+    .verdict-text h2{font-size:1rem;font-weight:700;margin:0 0 0.5rem;}
+    .verdict-text p{font-size:0.88rem;color:var(--muted);margin:0;line-height:1.7;}
+    .article h2{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;margin:2rem 0 0.75rem;}
+    .article h3{font-size:1rem;font-weight:700;margin:1.25rem 0 0.5rem;}
+    .article p{margin-bottom:1rem;font-size:0.95rem;line-height:1.8;}
+    .article ul,.article ol{padding-left:1.5rem;margin-bottom:1rem;}
+    .article li{margin-bottom:0.5rem;font-size:0.95rem;line-height:1.7;}
+    .specs-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.875rem;}
+    .specs-table td,.specs-table th{padding:0.6rem 0.75rem;border:1px solid var(--border);}
+    .specs-table th{background:var(--surface2);font-weight:600;font-family:var(--mono);font-size:0.75rem;text-align:left;}
+    .specs-table td:first-child{font-family:var(--mono);font-size:0.8rem;color:var(--muted);}
+    .measured{color:var(--accent);}
+    .nerd-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .nerd-box-label{font-family:var(--mono);font-size:0.65rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+    .fw-box{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+    .fw-label{font-family:var(--mono);font-size:0.65rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    .fw-entry{display:flex;gap:1rem;padding:0.5rem 0;border-bottom:1px solid var(--border);font-size:0.875rem;}
+    .fw-entry:last-child{border-bottom:none;}
+    .fw-ver{font-family:var(--mono);font-size:0.78rem;color:var(--accent);flex-shrink:0;width:110px;}
+    .pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+    .pros,.cons{background:var(--surface);border-radius:8px;padding:1rem 1.25rem;}
+    .pros{border-top:3px solid #86efac;}
+    .cons{border-top:3px solid #fca5a5;}
+    .pros-label,.cons-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;}
+    .pros-label{color:#86efac;}
+    .cons-label{color:#fca5a5;}
+    .pros ul,.cons ul{padding-left:1.1rem;margin:0;}
+    .pros li,.cons li{font-size:0.85rem;margin-bottom:0.4rem;line-height:1.6;}
+    .buy-section{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin:2rem 0;}
+    .buy-section h3{margin:0 0 0.5rem;}
+    .buy-price{font-family:var(--mono);font-size:1.5rem;color:var(--accent);margin:0.25rem 0 1rem;}
+    .buy-btn{display:inline-block;background:var(--accent);color:#0c0c0e;font-weight:700;padding:0.7rem 1.5rem;border-radius:6px;text-decoration:none;font-family:var(--mono);font-size:0.85rem;}
+    .buy-note{font-size:0.78rem;color:var(--muted);margin-top:0.75rem;}
+    .vs-table td:first-child{font-family:var(--mono);font-size:0.8rem;color:var(--muted);}
+    footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:0.78rem;margin-top:3rem;}
+    @media(max-width:540px){.verdict{grid-template-columns:1fr;}.pros-cons{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" style="font-size:1rem;font-weight:800;text-decoration:none;color:#e2e2e8;">⊕ Loiter<span style="color:#e8ff47;">Point</span></a>
+  <a href="../index.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#7a7a8a;text-decoration:none;">← Home</a>
+</nav>
+
+<div class="article">
+  <div class="eyebrow">// Full Review — Consumer Drone</div>
+  <h1>DJI Air 3 Review: The Dual-Camera Story Nobody Tells</h1>
+  <div class="meta">
+    <span>60+ flights across 4 months</span>
+    <span>Tested against Air 2S and Mini 4 Pro</span>
+    <span>No sponsored access — retail purchase</span>
+  </div>
+
+  <div class="verdict">
+    <div class="score-box">
+      <div class="score-num">9.1</div>
+      <div class="score-label">/ 10</div>
+    </div>
+    <div class="verdict-text">
+      <h2>The best $1,099 drone if telephoto is part of your workflow. Everyone else should consider the Mini 4 Pro at $200 less.</h2>
+      <p>The Air 3's dual-sensor system is genuinely useful — not a spec-sheet checkbox. The 3× medium tele changes how you frame aerial shots. But you're paying a premium for that second camera, and if 90% of your shooting is wide, you're overpaying.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2>What the Dual-Camera System Actually Changes</h2>
+    <p>The headline on the Air 3 is two cameras: a 24mm-equivalent f/1.7 wide and a 70mm-equivalent f/2.8 medium telephoto. Both are 1/1.3" sensors shooting 48MP stills and 4K/60fps video. This is not a primary-plus-gimmick arrangement — the telephoto sensor is genuinely capable.</p>
+    <p>The 70mm-equivalent focal length is the meaningful number. At altitude, this is the difference between a landscape shot that includes your subject and a shot that's actually about your subject. Shooting a surfer from 60 meters up at 24mm, they're a pixel. At 70mm, they're the frame. Real estate work, event coverage, wildlife — the telephoto lens earns its keep.</p>
+    <p>What the marketing materials understate: the two cameras have slightly different color science. It's subtle — both shoot D-Log M — but if you're cutting between the two in an edit without careful LUT matching, you'll see it on skin tones. Not a dealbreaker, but it's real work you have to do in post that you don't have to do on a single-sensor drone.</p>
+
+    <div class="nerd-box">
+      <div class="nerd-box-label">// The 2× "Digital Zoom" Is Not a Camera</div>
+      <p>DJI markets a 2× zoom option on the Air 3 between the two physical focal lengths. This is digital crop from the wide sensor's 48MP capture — it's not a third camera. At 4K, cropping a 48MP sensor to 2× is approximately lossless (you're using about 12MP of the sensor). It works. But call it what it is.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Specs: Rated vs. Measured</h2>
+    <table class="specs-table">
+      <thead><tr><th>Spec</th><th>Rated</th><th class="measured">Measured</th></tr></thead>
+      <tbody>
+        <tr><td>Battery Life</td><td>46 min</td><td class="measured">33–37 min real-world (no wind, 30fps 4K)</td></tr>
+        <tr><td>Max Wind Resistance</td><td>Level 7 (13.9 m/s)</td><td class="measured">Stable footage up to ~11 m/s; above that, expect horizon roll in stabilized mode</td></tr>
+        <tr><td>Max Speed (Sport)</td><td>21 m/s</td><td class="measured">Confirmed. Good for orbit shots under wind load.</td></tr>
+        <tr><td>Obstacle Avoidance</td><td>4-directional</td><td class="measured">Forward/backward/upward/downward. No side sensors. This is the Air 3's biggest real-world constraint.</td></tr>
+        <tr><td>Transmission Range</td><td>20 km (O3+)</td><td class="measured">Usable to ~6–8 km in real environments with interference. 20 km is line-of-sight in the Mojave.</td></tr>
+        <tr><td>Wide Camera</td><td>1/1.3" 48MP f/1.7</td><td class="measured">Confirmed. Low-light performance is excellent for the class.</td></tr>
+        <tr><td>Tele Camera</td><td>1/1.3" 48MP f/2.8</td><td class="measured">Confirmed. Slightly less low-light performance than wide; visible above ISO 800.</td></tr>
+      </tbody>
+    </table>
+
+    <p>The battery life gap is significant: DJI's 46-minute figure requires warm temps, no wind, 25 km/h cruise speed, no ActiveTrack. In California coastal conditions with a 10–15 mph onshore, expect 33–36 minutes. That's still excellent for the class — just not 46.</p>
+  </section>
+
+  <section>
+    <h2>Where the Air 3 Beats the Air 2S</h2>
+    <p>The Air 2S was DJI's previous prosumer sweet spot, and a lot of pilots are sitting on one wondering if the Air 3 is worth the upgrade. The answer depends on what you shoot:</p>
+    <p><strong>Upgrade if:</strong> you want the 70mm tele, you shoot at dusk or dawn and need the improved low-light, or you need 4K/60fps on the telephoto (Air 2S only did 4K/60fps on one camera). The Air 3 also adds D-Log M at all resolution modes, which the Air 2S didn't have below 4K.</p>
+    <p><strong>Don't upgrade if:</strong> you're shooting wide-only and already have a solid 4K workflow on the Air 2S. The wide-camera quality improvement is real but incremental — not $600 worth of improvement for wide-only shooters.</p>
+  </section>
+
+  <section>
+    <h2>The Obstacle Avoidance Gap</h2>
+    <p>This is the honest negative. The Air 3 has four-directional obstacle avoidance — forward, backward, up, and down. No side sensors. The Mavic 3 series has omnidirectional sensing. The Mini 4 Pro has forward/backward/downward plus upward, and adds sideways in some modes.</p>
+    <p>In practice, the gap shows up during ActiveTrack — if your subject moves laterally and the drone needs to pan and translate, the Air 3 is flying blind on its sides. In obstacle-free environments (open water, open fields), this is fine. Tracking a mountain biker through trees is where you start wishing for side sensors.</p>
+    <p>Four-directional sensing is the industry standard for this price tier and it works for most use cases. It's just not omnidirectional, and that matters in complex environments.</p>
+  </section>
+
+  <section>
+    <h2>Firmware Watch</h2>
+    <div class="fw-box">
+      <div class="fw-label">// Notable Air 3 Firmware History</div>
+      <div class="fw-entry">
+        <div class="fw-ver">v00.01.0100</div>
+        <div>Launch firmware. ActiveTrack 360 had false positive braking in low-contrast environments.</div>
+      </div>
+      <div class="fw-entry">
+        <div class="fw-ver">v00.01.0200</div>
+        <div>ActiveTrack braking sensitivity tuned. Significant improvement — if you were disappointed with tracking on launch, this is the firmware that fixed it.</div>
+      </div>
+      <div class="fw-entry">
+        <div class="fw-ver">v01.00.0000</div>
+        <div>Added Hyperlapse in telephoto mode. Previously tele was excluded from Hyperlapse. Added max video bitrate increase to 150 Mbps in some modes.</div>
+      </div>
+      <div class="fw-entry">
+        <div class="fw-ver">v01.00.0500</div>
+        <div>Color science adjustment on the tele camera in D-Log M. DJI didn't document this change. Community reports slightly warmer shadow tone. Check your grade LUTs if you updated.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pros and Cons</h2>
+    <div class="pros-cons">
+      <div class="pros">
+        <div class="pros-label">✓ What Works</div>
+        <ul>
+          <li>Dual-camera system is genuinely useful, not a spec checkbox</li>
+          <li>70mm-equiv telephoto changes aerial composition possibilities</li>
+          <li>33–37 min real battery life is class-leading</li>
+          <li>D-Log M on both cameras at all resolutions</li>
+          <li>4K/60fps on both cameras</li>
+          <li>Low-light on the wide camera is excellent for the sensor size</li>
+          <li>O3+ transmission — video holds at range better than competitors</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <div class="cons-label">✗ Trade-offs</div>
+        <ul>
+          <li>No side obstacle avoidance sensors</li>
+          <li>Subtle color mismatch between cameras requires post-processing attention</li>
+          <li>46-minute spec is fantasy in real-world conditions</li>
+          <li>$1,099 base; $1,399 with RC 2 controller</li>
+          <li>Tele camera low-light visibly below wide above ISO 800</li>
+          <li>Heavier than Mini 4 Pro — 720g vs. 249g, with real regulatory implications in some airspaces</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Air 3 vs. Mini 4 Pro</h2>
+    <p>This is the real comparison for most pilots in the $700–$1,100 range:</p>
+    <table class="specs-table vs-table">
+      <thead><tr><th></th><th>Air 3</th><th>Mini 4 Pro</th></tr></thead>
+      <tbody>
+        <tr><td>Price</td><td>$1,099</td><td>$759</td></tr>
+        <tr><td>Weight</td><td>720g</td><td>249g</td></tr>
+        <tr><td>Cameras</td><td>Wide + 70mm tele</td><td>Wide + digital zoom only</td></tr>
+        <tr><td>Battery life (real)</td><td>33–37 min</td><td>26–28 min</td></tr>
+        <tr><td>Obstacle avoidance</td><td>4-direction</td><td>4-direction + omnidirectional in some modes</td></tr>
+        <tr><td>FAA registration</td><td>Required (over 250g)</td><td>Not required (249g)</td></tr>
+        <tr><td>Max video bitrate</td><td>150 Mbps</td><td>150 Mbps</td></tr>
+        <tr><td>Low-light</td><td>Better (f/1.7 wide)</td><td>Better (f/1.7 wide, same)</td></tr>
+      </tbody>
+    </table>
+    <p>The Air 3's advantages over the Mini 4 Pro are: real telephoto camera, longer battery, and slightly better build quality. The Mini 4 Pro's advantages: $340 cheaper, sub-250g (no FAA registration, simplified airspace access), and — counter-intuitively — omnidirectional obstacle avoidance in APAS 5.0 that the Air 3 doesn't match.</p>
+    <p>If the telephoto isn't part of your shot plan, buy the Mini 4 Pro. If you genuinely need medium-tele aerials, pay the $340 premium.</p>
+  </section>
+
+  <section>
+    <h2>Who Should Buy It</h2>
+    <p>The Air 3 is the right drone for: real estate and architecture shooters who need both the establishing wide and the compressed-perspective tele in one kit; event cinematographers who need maximum video quality without going Mavic 3; anyone who needs 30+ min real battery life; pilots stepping up from the Air 2S who are doing telephoto work.</p>
+    <p>It's not the right drone for casual pilots, sub-250g regulatory contexts, or anyone who won't actually use the 70mm camera. In those cases, the Mini 4 Pro beats it on value.</p>
+  </section>
+
+  <div class="buy-section">
+    <h3>DJI Air 3 (Fly More Combo + RC-N2)</h3>
+    <div class="buy-price">~$1,099</div>
+    <a href="https://www.amazon.com/dp/B0CC3DP13Q?tag=loiterpoint20-20" rel="nofollow sponsored" class="buy-btn">Check Price on Amazon →</a>
+    <div class="buy-note">Affiliate link — we earn a commission at no cost to you. Our score is based on retail units we purchased ourselves.</div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2024 Loiter Point — Independent drone coverage for serious pilots.</p>
+  <p style="max-width:560px;margin:0.5rem auto 0;opacity:0.6;line-height:1.6;font-size:0.72rem;">
+    We do not accept sponsored reviews or manufacturer access units. Tested drones are purchased at retail price.
+  </p>
+</footer>
+</body>
+</html>

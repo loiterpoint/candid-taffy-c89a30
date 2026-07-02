@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loiter Point — Drone Reviews for People Who Actually Fly</title>
+  <meta name="description" content="In-depth drone reviews, firmware analysis, FAA regulation breakdowns, and FPV build guides. Written by pilots, for pilots. No fluff." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0c0c0e;
+      --surface: #141418;
+      --surface2: #1c1c22;
+      --accent: #e8ff47;
+      --accent2: #ff6b35;
+      --text: #e2e2e8;
+      --muted: #7a7a8a;
+      --border: #26262e;
+      --radius: 10px;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; background: rgba(12,12,14,0.97);
+      backdrop-filter: blur(12px); z-index: 100;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 1rem; font-weight: 800; letter-spacing: -0.02em;
+    }
+    .nav-logo .icon {
+      width: 28px; height: 28px; background: var(--accent);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; color: #000;
+    }
+    .nav-logo span { color: var(--text); }
+    .nav-logo .dot { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: var(--muted); font-size: 0.875rem; font-weight: 500; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-tag { font-family: var(--mono); font-size: 0.7rem; background: var(--surface2); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 4px; color: var(--accent); }
+
+    /* HERO */
+    .hero { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 3rem; }
+    .hero-eyebrow { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.25rem; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 1.25rem; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: 2rem; }
+    .hero-sub strong { color: var(--text); font-weight: 600; }
+    .hero-cta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.7rem 1.4rem; border-radius: 7px; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.15s; cursor: pointer; }
+    .btn-accent { background: var(--accent); color: #000; }
+    .btn-accent:hover { background: #d4eb30; }
+    .btn-ghost { border: 1px solid var(--border); color: var(--muted); background: transparent; }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--text); }
+    .hero-stat { display: flex; gap: 2rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .stat-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .stat-num { font-family: var(--mono); font-size: 1.4rem; font-weight: 500; color: var(--text); }
+    .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* SECTIONS */
+    .section { max-width: 1100px; margin: 0 auto; padding: 3.5rem 2rem; }
+    .section-label { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .section-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .section-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    /* FEATURED ARTICLE */
+    .featured { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .article-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.15s; display: flex; flex-direction: column; }
+    .article-card:hover { border-color: var(--accent); }
+    .card-thumb { height: 200px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; }
+    .card-thumb.large { height: 280px; }
+    .card-badge { position: absolute; top: 0.75rem; left: 0.75rem; font-family: var(--mono); font-size: 0.65rem; font-weight: 500; padding: 0.2rem 0.5rem; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .badge-review { background: rgba(232,255,71,0.15); color: var(--accent); border: 1px solid rgba(232,255,71,0.3); }
+    .badge-analysis { background: rgba(255,107,53,0.15); color: var(--accent2); border: 1px solid rgba(255,107,53,0.3); }
+    .badge-guide { background: rgba(100,150,255,0.15); color: #8ab4ff; border: 1px solid rgba(100,150,255,0.3); }
+    .badge-faa { background: rgba(255,50,50,0.15); color: #ff7070; border: 1px solid rgba(255,50,50,0.3); }
+    .badge-fpv { background: rgba(180,100,255,0.15); color: #c084fc; border: 1px solid rgba(180,100,255,0.3); }
+    .card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .card-meta { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); margin-bottom: 0.6rem; }
+    .card-title { font-size: 1rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .card-title a:hover { color: var(--accent); }
+    .card-excerpt { font-size: 0.85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+    .card-footer { margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .read-more { font-size: 0.8rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 0.3rem; }
+    .read-more:hover { text-decoration: underline; }
+    .rating-pill { font-family: var(--mono); font-size: 0.75rem; background: var(--surface2); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 20px; color: var(--text); }
+
+    /* FEATURED LARGE */
+    .featured-large { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+    .featured-large .card-thumb { height: 100%; min-height: 240px; }
+    .featured-large .card-body { justify-content: center; }
+    .featured-large .card-title { font-size: 1.3rem; }
+
+    /* TOP PICKS TABLE */
+    .picks-table { width: 100%; border-collapse: collapse; }
+    .picks-table th { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 500; padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); text-align: left; }
+    .picks-table td { padding: 1rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; vertical-align: middle; }
+    .picks-table tr:last-child td { border-bottom: none; }
+    .picks-table tr:hover td { background: var(--surface2); }
+    .rank { font-family: var(--mono); font-weight: 500; color: var(--muted); font-size: 0.85rem; }
+    .drone-name { font-weight: 700; }
+    .drone-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+    .score { font-family: var(--mono); font-size: 1rem; font-weight: 500; }
+    .score.s-excellent { color: var(--accent); }
+    .score.s-great { color: #86efac; }
+    .score.s-good { color: #93c5fd; }
+    .verdict-tag { font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 20px; white-space: nowrap; }
+    .v-best-overall { background: rgba(232,255,71,0.1); color: var(--accent); border: 1px solid rgba(232,255,71,0.25); }
+    .v-creators { background: rgba(134,239,172,0.1); color: #86efac; border: 1px solid rgba(134,239,172,0.25); }
+    .v-budget { background: rgba(147,197,253,0.1); color: #93c5fd; border: 1px solid rgba(147,197,253,0.25); }
+    .v-alternative { background: rgba(255,107,53,0.1); color: var(--accent2); border: 1px solid rgba(255,107,53,0.25); }
+    .v-fpv { background: rgba(192,132,252,0.1); color: #c084fc; border: 1px solid rgba(192,132,252,0.25); }
+    .buy-link { font-family: var(--mono); font-size: 0.75rem; background: var(--accent); color: #000; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 5px; display: inline-block; white-space: nowrap; transition: background 0.15s; }
+    .buy-link:hover { background: #d4eb30; }
+
+    /* NERD ALERT BOX */
+    .nerd-box { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 2rem 0; }
+    .nerd-box-label { font-family: var(--mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .nerd-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+    .nerd-box strong { color: var(--text); }
+
+    /* FAA TICKER */
+    .faa-banner { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    .faa-dot { width: 8px; height: 8px; border-radius: 50%; background: #ff7070; flex-shrink: 0; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .faa-text { font-size: 0.85rem; color: var(--muted); }
+    .faa-text strong { color: var(--text); }
+    .faa-tag { font-family: var(--mono); font-size: 0.68rem; background: rgba(255,70,70,0.1); border: 1px solid rgba(255,70,70,0.3); color: #ff7070; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: auto; flex-shrink: 0; }
+
+    /* CATEGORIES */
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
+    .cat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1rem; transition: all 0.15s; }
+    .cat-card:hover { border-color: var(--accent); background: var(--surface2); }
+    .cat-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+    .cat-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .cat-count { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
+
+    /* NEWSLETTER */
+    .newsletter-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .nl-left h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .nl-left p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+    .nl-left ul { margin: 0.75rem 0 0 1.25rem; }
+    .nl-left li { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.3rem; }
+    .nl-left li strong { color: var(--text); }
+    .nl-right { display: flex; flex-direction: column; gap: 0.75rem; }
+    .nl-right input { padding: 0.75rem 1rem; border-radius: 7px; border: 1px solid var(--border); background: var(--surface2); color: var(--text); font-size: 0.9rem; outline: none; font-family: 'Inter', sans-serif; }
+    .nl-right input:focus { border-color: var(--accent); }
+    .nl-right button { padding: 0.75rem; background: var(--accent); color: #000; font-weight: 700; border: none; border-radius: 7px; cursor: pointer; font-size: 0.9rem; font-family: 'Inter', sans-serif; }
+    .nl-right button:hover { background: #d4eb30; }
+    .nl-disclaimer { font-size: 0.72rem; color: var(--muted); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 2rem; margin-top: 2rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer-brand p { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; max-width: 300px; line-height: 1.6; }
+    .footer-links h4 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 0.75rem; }
+    .footer-links a { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-bottom { max-width: 1100px; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: 0.75rem; color: var(--muted); }
+    .disclosure { font-size: 0.72rem; color: var(--muted); opacity: 0.6; max-width: 500px; line-height: 1.5; }
+
+    @media (max-width: 768px) {
+      .featured { grid-template-columns: 1fr; }
+      .featured-large { grid-template-columns: 1fr; }
+      .newsletter-wrap { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero-stat { gap: 1.25rem; }
+      .picks-table .hide-mobile { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="icon">⊕</div>
+    <span>Loiter<span class="dot">Point</span></span>
+  </div>
+  <div class="nav-links">
+    <a href="#top-picks">Reviews</a>
+    <a href="articles/dji-mini-4-pro-review.html">Firmware Watch</a>
+    <a href="articles/faa-remote-id-guide.html">FAA & Regs</a>
+    <a href="#guides">Buyer Guides</a>
+    <a href="articles/mini-4-pro-vs-air-3.html">Compare</a>
+  </div>
+  <span class="nav-tag">Field-tested</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">// Hands-on reviews for people who actually use the gear</div>
+  <h1>Reviews written by users.<br /><em>Not marketers.</em></h1>
+  <p class="hero-sub">
+    We test gear the way you actually use it — in the field, at limits, in real conditions.
+    <strong>Firmware changelogs, FAA regulation updates, technical guides, and honest verdicts</strong> with no brand deals influencing our scores.
+  </p>
+  <div class="hero-cta">
+    <a href="#top-picks" class="btn btn-accent">See 2024 Rankings →</a>
+    <a href="#guides" class="btn btn-ghost">Browse Buyer Guides</a>
+  </div>
+  <div class="hero-stat">
+    <div class="stat-item">
+      <span class="stat-num">200+</span>
+      <span class="stat-label">Hours of field testing</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">47</span>
+      <span class="stat-label">Products tested</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">0</span>
+      <span class="stat-label">Sponsored reviews</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">Real</span>
+      <span class="stat-label">Field data only</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider" />
+
+<!-- FAA ALERT -->
+<div class="section" style="padding-bottom:0;">
+  <div class="faa-banner">
+    <div class="faa-dot"></div>
+    <div class="faa-text">
+      <strong>FAA Remote ID enforcement is live.</strong> All drones over 0.55 lbs manufactured after March 2024 must broadcast Remote ID. Are you compliant?
+      <a href="articles/faa-remote-id-guide.html" style="color: var(--accent); margin-left: 0.5rem;">Full breakdown →</a>
+    </div>
+    <div class="faa-tag">Reg Update</div>
+  </div>
+</div>
+
+<!-- TOP PICKS TABLE -->
+<div class="section" id="top-picks">
+  <div class="section-label">// Rankings</div>
+  <div class="section-title">Best Drones — June 2024</div>
+  <p class="section-sub">Scored on real flight data: camera performance, wind resistance, battery accuracy, obstacle avoidance reliability, and firmware stability.</p>
+
+  <div class="nerd-box">
+    <div class="nerd-box-label">// Methodology</div>
+    <p>Every product is tested in real-world conditions over minimum 5 separate sessions before scoring. Drones fly at <strong>15+ mph sustained wind</strong>, at rated max range with signal strength logged, and in sub-optimal lighting. Battery life is measured to actual cutoff — not manufacturer specs.</p>
+  </div>
+
+  <table class="picks-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Drone</th>
+        <th class="hide-mobile">Score</th>
+        <th class="hide-mobile">Verdict</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="rank">01</span></td>
+        <td>
+          <div class="drone-name"><a href="articles/dji-mini-4-pro-review.html" style="color:inherit;">DJI Mini 4 Pro</a></div>
+          <div class="drone-sub">Sub-250g · 4K/60fps · Omnidirectional sensing</div>
+        </td>
+        <td class="hide-mobile"><span class="score s-excellent">9.4</span></td>
+        <td class="hide-mobile"><span class="verdict-tag v-best-overall">Best Overall</span></td>
+        <td>$759</td>
+        <td><a href="https://www.amazon.com/dp/B0CHD3WHSM?tag=loiterpoint20-20" class="buy-link" rel="nofollow sponsored">Amazon ↗</a></td>
+      </tr>
+      <tr>
+        <td><span class="rank">02</span></td>
+        <td>
+          <div class="drone-name"><a href="articles/dji-air-3-review.html" style="color:inherit;">DJI Air 3</a></div>
+          <div class="drone-sub">Dual-camera · Medium tele · 46-min flight</div>
+        </td>
+        <td class="hide-mobile"><span class="score s-excellent">9.1</span></td>
+        <td class="hide-mobile"><span class="verdict-tag v-creators">Best for Creators</span></td>
+        <td>$1,099</td>
+        <td><a href="https://www.amazon.com/dp/B0CC3DP13Q?tag=loiterpoint20-20" class="buy-link" rel="nofollow sponsored">Amazon ↗</a></td>
+      </tr>
+      <tr>
+        <td><span class="rank">03</span></td>
+        <td>
+          <div class="drone-name">Autel EVO Nano+</div>
+          <div class="drone-sub">RYYB sensor · No geo-fence · 28-min flight</div>
+        </td>
+        <td class="hide-mobile"><span class="score s-great">8.6</span></td>
+        <td class="hide-mobile"><span class="verdict-tag v-alternative">Best Non-DJI</span></td>
+        <td>$649</td>
+        <td><a href="https://www.amazon.com/s?k=Autel+EVO+Nano+Plus&tag=loiterpoint20-20" class="buy-link" rel="nofollow sponsored">Amazon ↗</a></td>
+      </tr>
+      <tr>
+        <td><span class="rank">04</span></td>
+        <td>
+          <div class="drone-name"><a href="articles/best-drones-under-500.html" style="color:inherit;">DJI Mini 3</a></div>
+          <div class="drone-sub">Sub-250g · 4K · Vertical shooting · No sensing</div>
+        </td>
+        <td class="hide-mobile"><span class="score s-great">8.2</span></td>
+        <td class="hide-mobile"><span class="verdict-tag v-budget">Best Under $500</span></td>
+        <td>$469</td>
+        <td><a href="https://www.amazon.com/s?k=DJI+Mini+3&tag=loiterpoint20-20" class="buy-link" rel="nofollow sponsored">Amazon ↗</a></td>
+      </tr>
+      <tr>
+        <td><span class="rank">05</span></td>
+        <td>
+          <div class="drone-name">BetaFPV Cetus X</div>
+          <div class="drone-sub">Brushless · HD digital FPV · Indoor/outdoor</div>
+        </td>
+        <td class="hide-mobile"><span class="score s-good">8.0</span></td>
+        <td class="hide-mobile"><span class="verdict-tag v-fpv">Best FPV Starter</span></td>
+        <td>$199</td>
+        <td><a href="https://www.amazon.com/s?k=BetaFPV+Cetus+X&tag=loiterpoint20-20" class="buy-link" rel="nofollow sponsored">Amazon ↗</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="divider" />
+
+<!-- LATEST ARTICLES -->
+<div class="section">
+  <div class="section-label">// Latest</div>
+  <div class="section-title">Recent Coverage</div>
+  <p class="section-sub">Field notes, firmware digs, and regulation breakdowns — in plain language.</p>
+
+  <div class="featured">
+
+    <!-- Large featured -->
+    <div class="article-card featured-large">
+      <div class="card-thumb large" style="font-size:5rem;">🚁
+        <span class="card-badge badge-analysis">Firmware Analysis</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">June 12, 2024 · 8 min read</div>
+        <div class="card-title"><a href="articles/dji-mini-4-pro-review.html">DJI Mini 4 Pro Review: Firmware 01.01.0500 Wind Resistance Data and Full Analysis</a></div>
+        <div class="card-excerpt">We flew the Mini 4 Pro across 40+ sessions and tracked every firmware update. The obstacle avoidance fix in 01.00.0300 was real. The battery hit from 01.01.0400 was also real. Here's the full picture with measured vs. rated specs.</div>
+        <div class="card-footer">
+          <a href="articles/dji-mini-4-pro-review.html" class="read-more">Read analysis →</a>
+          <span class="rating-pill">9.4 / 10</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-thumb">✈️
+        <span class="card-badge badge-review">Full Review</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">June 8, 2024 · 12 min read</div>
+        <div class="card-title"><a href="articles/dji-air-3-review.html">DJI Air 3 Review: The Dual-Camera Story Nobody Tells</a></div>
+        <div class="card-excerpt">The dual-camera system is genuinely useful — not a spec-sheet checkbox. The 3× medium tele changes how you frame aerial shots. But you're paying a premium for it, and the no-side-sensors caveat is real.</div>
+        <div class="card-footer">
+          <a href="articles/dji-air-3-review.html" class="read-more">Read review →</a>
+          <span class="rating-pill">9.1 / 10</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-thumb">⚖️
+        <span class="card-badge badge-faa">FAA & Regs</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">June 5, 2024 · 6 min read</div>
+        <div class="card-title"><a href="articles/faa-remote-id-guide.html">FAA Remote ID: What Drone Pilots Actually Need to Do</a></div>
+        <div class="card-excerpt">Remote ID is enforced, the penalties are up to $27,500 per violation, and most pilots with drones bought in the last 18 months are already compliant without knowing it. We cut through the legalese.</div>
+        <div class="card-footer">
+          <a href="articles/faa-remote-id-guide.html" class="read-more">Read breakdown →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-thumb">🎓
+        <span class="card-badge badge-guide">Buyer Guide</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">June 3, 2024 · 10 min read</div>
+        <div class="card-title"><a href="articles/best-drones-for-beginners.html">Best Drones for Beginners 2024: What to Buy (And What to Skip)</a></div>
+        <div class="card-excerpt">Most beginner drone advice is wrong. The DJI Mini 3 at $469 is the right first drone for 90% of people — not a $79 toy. Plus: the FAA rules you need to know before your first flight.</div>
+        <div class="card-footer">
+          <a href="articles/best-drones-for-beginners.html" class="read-more">Read guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-thumb">📐
+        <span class="card-badge badge-guide">Buyer Guide</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">May 22, 2024 · 10 min read</div>
+        <div class="card-title"><a href="articles/nd-filter-math-drone.html">ND Filter Math for Drone Pilots: What Size You Actually Need</a></div>
+        <div class="card-excerpt">The 180° rule, the actual stops calculation, and why the ND4 that came with your kit is almost useless for outdoor flying. Includes conditions-to-filter quick reference for 24/30/60/120fps.</div>
+        <div class="card-footer">
+          <a href="articles/nd-filter-math-drone.html" class="read-more">Read guide →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Second row of articles -->
+  <div class="featured" style="margin-top:0;">
+
+    <div class="article-card">
+      <div class="card-thumb">⚔️
+        <span class="card-badge badge-analysis">Comparison</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">June 10, 2024 · 12 min read</div>
+        <div class="card-title"><a href="articles/mini-4-pro-vs-air-3.html">DJI Mini 4 Pro vs Air 3: Which Should You Actually Buy?</a></div>
+        <div class="card-excerpt">Same sensor. Different everything else. The Mini 4 Pro's 249g weight ceiling vs. the Air 3's telephoto — a detailed breakdown of who should buy which and why the choice is less obvious than DJI wants it to be.</div>
+        <div class="card-footer">
+          <a href="articles/mini-4-pro-vs-air-3.html" class="read-more">Read comparison →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-thumb">🏠
+        <span class="card-badge badge-guide">Buyer Guide</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">May 28, 2024 · 12 min read</div>
+        <div class="card-title"><a href="articles/best-drones-real-estate.html">Best Drones for Real Estate Photography 2024</a></div>
+        <div class="card-excerpt">You need Part 107. That's not optional for real estate work — and the FAA has fined agents who didn't know. Here's what certification takes, which drone to buy, and how dynamic range matters more than resolution.</div>
+        <div class="card-footer">
+          <a href="articles/best-drones-real-estate.html" class="read-more">Read guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-thumb">🤏
+        <span class="card-badge badge-review">Full Review</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">May 18, 2024 · 8 min read</div>
+        <div class="card-title"><a href="articles/dji-neo-review.html">DJI Neo Review: The Honest Case for a $199 Drone</a></div>
+        <div class="card-excerpt">135g, no controller in the box, 14–16 min real battery. The Neo is good at exactly one thing: the lowest-risk way to find out if drone flying is for you. Here's the full picture.</div>
+        <div class="card-footer">
+          <a href="articles/dji-neo-review.html" class="read-more">Read review →</a>
+          <span class="rating-pill">7.4 / 10</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="card-thumb">🎨
+        <span class="card-badge badge-review">Full Review</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">May 12, 2024 · 14 min read</div>
+        <div class="card-title"><a href="articles/dji-mavic-3-classic-review.html">DJI Mavic 3 Classic Review: What the Hasselblad Badge Actually Buys You</a></div>
+        <div class="card-excerpt">The 4/3" sensor is genuinely better. The mechanical shutter eliminates rolling shutter entirely. But at $1,469 vs. the Air 3's $1,099, you're paying $370 more for one camera instead of two. The math requires justification.</div>
+        <div class="card-footer">
+          <a href="articles/dji-mavic-3-classic-review.html" class="read-more">Read review →</a>
+          <span class="rating-pill">8.7 / 10</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider" />
+
+<!-- CATEGORIES -->
+<div class="section" id="guides">
+  <div class="section-label">// Topics</div>
+  <div class="section-title">Browse by Topic</div>
+  <div class="cat-grid" style="margin-top:1.5rem;">
+    <a href="#" class="cat-card">
+      <div class="cat-icon">📋</div>
+      <div class="cat-name">Full Reviews</div>
+      <div class="cat-count">24 articles</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🔧</div>
+      <div class="cat-name">Firmware Watch</div>
+      <div class="cat-count">18 articles</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">⚖️</div>
+      <div class="cat-name">FAA & Airspace</div>
+      <div class="cat-count">12 articles</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🏁</div>
+      <div class="cat-name">FPV Builds</div>
+      <div class="cat-count">9 articles</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">📸</div>
+      <div class="cat-name">Camera & Color</div>
+      <div class="cat-count">15 articles</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">📚</div>
+      <div class="cat-name">Buyer Guides</div>
+      <div class="cat-count">11 articles</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">⚡</div>
+      <div class="cat-name">Batteries & Power</div>
+      <div class="cat-count">7 articles</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🌍</div>
+      <div class="cat-name">Flying Abroad</div>
+      <div class="cat-count">6 articles</div>
+    </a>
+  </div>
+</div>
+
+<hr class="divider" />
+
+<!-- NEWSLETTER -->
+<div class="section">
+  <div class="newsletter-wrap">
+    <div class="nl-left">
+      <div class="section-label">// The Brief</div>
+      <h2>Weekly firmware updates,<br />reg changes, and real field notes.</h2>
+      <p>No product announcements. No sponsored content. Just what changed, what it means for your flying, and what we're testing this week.</p>
+      <ul>
+        <li><strong>Firmware Watch</strong> — every meaningful update decoded</li>
+        <li><strong>FAA Radar</strong> — reg changes before they affect you</li>
+        <li><strong>What We're Flying</strong> — our actual test queue</li>
+        <li><strong>Deals that matter</strong> — only when they're genuinely good</li>
+      </ul>
+    </div>
+    <div class="nl-right">
+      <input type="email" placeholder="your@email.com" />
+      <button>Subscribe to The Brief</button>
+      <p class="nl-disclaimer">~2,000 pilots already subscribed. Unsubscribe anytime. No spam, ever.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo" style="margin-bottom:0.5rem;">
+        <div class="icon">⊕</div>
+        <span>Loiter<span class="dot">Point</span></span>
+      </div>
+      <p>Independent tech coverage written by people who actually use the gear. No sponsored reviews, no brand deals on our scores.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Reviews</h4>
+      <a href="articles/dji-mini-4-pro-review.html">DJI Mini 4 Pro</a>
+      <a href="articles/dji-air-3-review.html">DJI Air 3</a>
+      <a href="articles/dji-mavic-3-classic-review.html">Mavic 3 Classic</a>
+      <a href="articles/dji-neo-review.html">DJI Neo</a>
+    </div>
+    <div class="footer-links">
+      <h4>Guides</h4>
+      <a href="articles/best-drones-for-beginners.html">Best for Beginners</a>
+      <a href="articles/best-drones-under-500.html">Best Under $500</a>
+      <a href="articles/best-drones-real-estate.html">Best for Real Estate</a>
+      <a href="articles/mini-4-pro-vs-air-3.html">Mini 4 Pro vs Air 3</a>
+      <a href="articles/nd-filter-math-drone.html">ND Filter Math</a>
+      <a href="articles/faa-remote-id-guide.html">FAA Remote ID</a>
+    </div>
+    <div class="footer-links">
+      <h4>Site</h4>
+      <a href="about.html">About</a>
+      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Loiter Point. All rights reserved.</p>
+    <p class="disclosure">Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase — at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions.</p>
+  </div>
+</footer>
+
+</body>
+</html>
