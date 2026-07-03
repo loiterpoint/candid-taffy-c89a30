@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <title>Deal Radar: 16 Verified Tech Price Drops — July 4th Weekend | Loiter Point</title>
 <meta name="description" content="Every deal on this page is verified against its price history — real discounts only, several at lowest-ever tracked prices. Drones, action cams, and cameras for the July 4th 2026 sale weekend.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +33,28 @@ h1{font-size:clamp(30px,5vw,44px);font-weight:800;line-height:1.15;letter-spacin
 .dek{font-size:19px;color:var(--muted);max-width:720px;}
 .stamp{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-top:20px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 0;}
 .stamp b{color:var(--accent);font-weight:600;}
+
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:28px 0 4px;}
+@media(max-width:600px){.stat-strip{grid-template-columns:1fr;}}
+.stat-cell{background:var(--surface);padding:18px 20px;text-align:center;}
+.stat-num{font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600;color:var(--accent);display:block;}
+.stat-lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-family:'IBM Plex Mono',monospace;}
+
+.quick-picks{background:var(--surface);border:1px solid rgba(232,255,71,0.35);border-radius:10px;padding:24px 26px;margin:32px 0;}
+.quick-picks h2{margin:0 0 4px;font-size:20px;}
+.qp-sub{font-size:14px;color:var(--muted);margin-bottom:18px;}
+.qp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:680px){.qp-grid{grid-template-columns:1fr;}}
+.qp-card{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;}
+.qp-tier{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.qp-name{font-weight:700;font-size:15px;margin-bottom:2px;}
+.qp-price{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--accent);margin-bottom:8px;}
+.qp-price small{font-size:12px;color:var(--muted);text-decoration:line-through;font-weight:400;margin-left:6px;}
+.qp-why{font-size:13px;color:var(--muted);line-height:1.55;flex:1;margin-bottom:12px;}
+.qp-btn{display:block;background:var(--accent);color:#0c0c0e;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;padding:9px 0;border-radius:6px;text-align:center;}
+.qp-btn:hover{opacity:.85;text-decoration:none;}
+
+.loss-line{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);margin:-6px 0 12px;}
 
 h2{font-size:24px;font-weight:700;margin:44px 0 6px;letter-spacing:-.3px;}
 .h2-sub{color:var(--muted);font-size:14px;margin-bottom:20px;}
@@ -101,7 +124,41 @@ footer p{font-size:13px;color:var(--muted);margin-bottom:10px;}
   <h1>16 Tech Price Drops We Actually Verified</h1>
   <p class="dek">Most "deals" aren't. These are — every price below was cross-checked against price-history tracking before it made this page, and several are the lowest prices these products have ever sold for.</p>
   <div class="stamp">Prices verified <b>July 3, 2026</b> · July 4th sale pricing typically ends July 5–6 · If Amazon's page shows a different price, the sale has moved — trust their page, not ours</div>
+
+  <div class="stat-strip">
+    <div class="stat-cell"><span class="stat-num">$3,604</span><span class="stat-lbl">combined verified savings</span></div>
+    <div class="stat-cell"><span class="stat-num">4</span><span class="stat-lbl">all-time-low prices</span></div>
+    <div class="stat-cell"><span class="stat-num">16/16</span><span class="stat-lbl">prices checked against history</span></div>
+  </div>
 </header>
+
+<div class="quick-picks">
+  <h2>No time? Pick by budget.</h2>
+  <p class="qp-sub">Sixteen deals is fifteen too many decisions. If you just want the best verified value at your price point, it's one of these three:</p>
+  <div class="qp-grid">
+    <div class="qp-card">
+      <div class="qp-tier">Under $250</div>
+      <div class="qp-name">DJI Osmo Action 4 Essential</div>
+      <div class="qp-price">$169<small>$229</small></div>
+      <div class="qp-why">Lowest price this camera has ever sold for. Best price-per-spec action cam on the market right now.</div>
+      <a class="qp-btn" href="https://www.amazon.com/dp/B0DS2B3P2B?tag=loiterpoint20-20" rel="sponsored nofollow">Grab it →</a>
+    </div>
+    <div class="qp-card">
+      <div class="qp-tier">Under $500</div>
+      <div class="qp-name">GoPro Max 2 (360°)</div>
+      <div class="qp-price">$299<small>$499.99</small></div>
+      <div class="qp-why">The deal of the weekend: a current-gen GoPro flagship at 40% off, all-time low. This is the one people will wish they'd caught.</div>
+      <a class="qp-btn" href="https://www.amazon.com/dp/B0FNGK6JZP?tag=loiterpoint20-20" rel="sponsored nofollow">Grab it →</a>
+    </div>
+    <div class="qp-card">
+      <div class="qp-tier">Going Big</div>
+      <div class="qp-name">Canon EOS R5</div>
+      <div class="qp-price">$2,599<small>$3,298</small></div>
+      <div class="qp-why">$699 off a genuine professional body — the deepest verified dollar cut on this page.</div>
+      <a class="qp-btn" href="https://www.amazon.com/dp/B08C68F2DX?tag=loiterpoint20-20" rel="sponsored nofollow">Grab it →</a>
+    </div>
+  </div>
+</div>
 
 <div class="promise">
   <h2>The Deal Radar Promise</h2>
@@ -118,6 +175,7 @@ footer p{font-size:13px;color:var(--muted);margin-bottom:10px;}
     <div class="deal-name">DJI Mini 3 + RC-N1 Remote</div>
     <div class="deal-sub">Sub-250 g · 4K video · 48 MP · true vertical shooting</div>
     <div class="price-row"><span class="now">$269</span><span class="was">$419</span><span class="pct">−$150</span></div>
+    <div class="loss-line">↳ Holiday pricing historically reverts within days — at list, this is $150 more.</div>
     <div class="deal-why"><strong>The best deal on this page for a first drone.</strong> At $269 with a controller included, it undercuts most toy drones while shooting real 4K on a stabilized gimbal. This is the price segment where the Mini 3 has no serious competition.</div>
     <a class="buy-btn" href="https://www.amazon.com/dp/B0BL3T49JF?tag=loiterpoint20-20" rel="sponsored nofollow">See it on Amazon →</a>
   </div>
@@ -150,6 +208,7 @@ footer p{font-size:13px;color:var(--muted);margin-bottom:10px;}
     <div class="deal-name">GoPro Max 2 (360°)</div>
     <div class="deal-sub">8K 360° video · rugged · replaceable lenses</div>
     <div class="price-row"><span class="now">$299</span><span class="was">$499.99</span><span class="pct">−40%</span></div>
+    <div class="loss-line">↳ At its $499.99 list price, waiting costs $201.</div>
     <div class="deal-why"><strong>The headline deal of the weekend.</strong> A current-generation GoPro 360 camera at 40% off, months after launch, at its lowest price ever tracked. Discounts this deep on current GoPro flagships usually mean holiday weekend only.</div>
     <a class="buy-btn" href="https://www.amazon.com/dp/B0FNGK6JZP?tag=loiterpoint20-20" rel="sponsored nofollow">See it on Amazon →</a>
   </div>
@@ -241,6 +300,11 @@ footer p{font-size:13px;color:var(--muted);margin-bottom:10px;}
   <h3>⚡ Nerd Box: How We Verify a "Deal"</h3>
   <p>Retail "was" prices are the most gamed number in commerce — anchor a fake $499, "discount" to the everyday $299, and the brain's loss-aversion circuitry does the rest. So we don't take was-prices at face value. Before a deal makes this page, we cross-check the claimed discount against independent price-history tracking and published deal coverage: <strong>what has this product actually sold for over the past 90 days?</strong></p>
   <p>A <strong>"Lowest Tracked Price"</strong> badge means price-history tracking shows the product has never sold for less. No badge means it's a genuine discount, but the product has hit this price (or close) before — still a fine time to buy, just not a historic one. And when a deal is mediocre, we say so in the card (see the Osmo Action 5 Pro above). That's the whole system.</p>
+</div>
+
+<div class="promise">
+  <h2>The Tricks We Refuse To Use</h2>
+  <p>Deal pages are persuasion machines, so here's ours with the hood open. What you'll find here: real deadlines, real price history, real savings math. What you will never find here: <strong>countdown timers</strong> (they're theater — the clock resets), <strong>"only 3 left!" stock claims</strong> (we don't have Amazon's inventory data, and neither do most sites that show them), <strong>inflated "was" prices</strong> (the oldest trick in retail), or <strong>fake editor's awards</strong>. If a page needs to lie to sell you something, the deal was never good. Ours don't need to.</p>
 </div>
 
 <h2>Every deal, one table</h2>
