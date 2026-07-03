@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJI Mini 5 Pro Review (2026): Rated Specs vs. Real-World Numbers | Loiter Point</title>
+<meta name="description" content="DJI Mini 5 Pro review for 2026: the rated 36-minute flight time, 249.9 g weight, and 20 km range vs. what independent testing actually measured — plus the messy US availability situation and which bundle is worth buying.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0e; --surface:#141418; --surface2:#1c1c22; --accent:#e8ff47;
+  --text:#e2e2e8; --muted:#7a7a8a; --border:#26262e;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7;font-size:17px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+.topnav{border-bottom:1px solid var(--border);padding:18px 0;background:var(--surface);}
+.topnav .wrap{display:flex;justify-content:space-between;align-items:center;}
+.backlink{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);}
+.backlink:hover{color:var(--accent);}
+.sitemark{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;color:var(--text);letter-spacing:.5px;}
+.sitemark span{color:var(--accent);}
+
+header.article-head{padding:56px 0 32px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+h1{font-size:clamp(30px,5vw,44px);font-weight:800;line-height:1.15;letter-spacing:-.5px;margin-bottom:18px;}
+.dek{font-size:19px;color:var(--muted);max-width:680px;}
+.byline{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-top:22px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 0;}
+.byline b{color:var(--text);font-weight:500;}
+
+h2{font-size:26px;font-weight:700;margin:48px 0 16px;letter-spacing:-.3px;}
+h3{font-size:19px;font-weight:600;margin:28px 0 10px;}
+p{margin-bottom:18px;}
+p.small{font-size:14px;color:var(--muted);}
+
+.tldr{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:24px 28px;margin:36px 0;}
+.tldr h2{margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);}
+.tldr ul{list-style:none;}
+.tldr li{padding:7px 0 7px 26px;position:relative;}
+.tldr li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:'IBM Plex Mono',monospace;}
+
+.pick-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:28px;margin:28px 0;position:relative;}
+.rank-badge{position:absolute;top:-13px;left:24px;background:var(--accent);color:#0c0c0e;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:4px;}
+.pick-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin:8px 0 6px;}
+.pick-head h3{margin:0;font-size:21px;}
+.price{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--accent);}
+.price small{font-size:12px;color:var(--muted);display:block;text-align:right;font-weight:400;}
+.pick-sub{color:var(--muted);font-size:15px;margin-bottom:18px;}
+.specgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:18px 0;}
+.specgrid .cell{background:var(--surface2);padding:12px 16px;}
+.specgrid .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px;}
+.specgrid .val{font-size:14px;font-weight:500;}
+.specgrid .val em{font-style:normal;color:var(--accent);}
+.buy-btn{display:inline-block;background:var(--accent);color:#0c0c0e;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;padding:12px 26px;border-radius:6px;margin-top:6px;}
+.buy-btn:hover{opacity:.85;text-decoration:none;}
+
+.nerd-box{background:var(--surface2);border:1px dashed var(--accent);border-radius:8px;padding:24px 28px;margin:36px 0;font-size:15px;}
+.nerd-box h3{margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);}
+.nerd-box p{margin-bottom:12px;}
+.nerd-box p:last-child{margin-bottom:0;}
+
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;}
+th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:2px solid var(--border);}
+td{padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+td:first-child{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12px;}
+.hl{color:var(--accent);font-weight:600;}
+
+.bottom-line{background:var(--surface);border:1px solid var(--accent);border-radius:10px;padding:28px;margin:44px 0;}
+.bottom-line h2{margin:0 0 14px;}
+
+footer{border-top:1px solid var(--border);margin-top:64px;padding:32px 0 48px;background:var(--surface);}
+footer p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+.sources{font-size:13px;color:var(--muted);margin:28px 0;}
+.sources a{color:var(--muted);text-decoration:underline;}
+.sources a:hover{color:var(--accent);}
+@media(max-width:600px){.specgrid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <a class="backlink" href="../index.html">&larr; loiterpoint.com</a>
+    <div class="sitemark">LOITER<span>POINT</span></div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="article-head">
+  <div class="kicker">Drones / Review</div>
+  <h1>DJI Mini 5 Pro Review: The Rated Specs vs. What Pilots Actually Get</h1>
+  <p class="dek">A 1-inch sensor in a "sub-250 g" airframe is the headline. The fine print — real flight times, a scale-measured weight problem, and a messy US launch — is where the buying decision actually lives.</p>
+  <div class="byline"><b>Loiter Point</b> · Updated July 3, 2026 · Based on manufacturer specs and published independent testing — sources cited at the bottom</div>
+</header>
+
+<div class="tldr">
+  <h2>TL;DR</h2>
+  <ul>
+    <li>The Mini 5 Pro is the first Mini-series drone with a 1-inch CMOS sensor: 50 MP stills, 4K/120, f/1.8, 10-bit D-Log M. It's the most capable small drone DJI has shipped.</li>
+    <li>Rated 36-minute flight time is a hover-test number. Independent reviews consistently report 25–30 minutes in normal use, and 20–25 with 4K/60 recording, tracking, and wind.</li>
+    <li>The "249.9 g" spec is marketing-thin: T3's review unit weighed 252.2 g on a scale. If regulatory weight class matters to you, treat this as a 250 g+ drone.</li>
+    <li>DJI never officially launched it in the US. It's sold via Amazon and resellers (base unit around $759), so prices and stock move around — check before you buy.</li>
+  </ul>
+</div>
+
+<p>DJI released the Mini 5 Pro in late 2025, and on paper it reads like a category violation: a 1-inch sensor, forward-facing LiDAR, omnidirectional obstacle sensing, and waypoint flight — features that used to require an Air- or Mavic-class airframe — folded into a drone the size of a soda can. Reviewers have been broadly enthusiastic. Tom's Guide called it a new gold standard for mini drones, and T3 gave it a Recommends award while flagging two honest problems.</p>
+
+<p>Those two problems are exactly the kind of thing Loiter Point exists to surface: the battery numbers on the box are best-case hover figures, and the weight printed in the spec sheet may not be the weight on a regulator's scale. Neither is disqualifying. Both should change how you buy and fly it.</p>
+
+<h2>The US availability asterisk</h2>
+<p>First, the elephant in the room: DJI never added the Mini 5 Pro to its US webstore. The company attributed the delayed US launch to a customs issue, and the broader regulatory backdrop got worse in December 2025 when the FCC moved to block approvals for new foreign-made drones. The practical upshot for US buyers in 2026: the Mini 5 Pro is sold through Amazon and authorized resellers rather than DJI directly. It became widely available on Amazon in January 2026 with the base unit at $759, but because this is reseller inventory, prices fluctuate more than a normal DJI launch. If a listing is wildly above the prices below, wait or check another configuration.</p>
+
+<h2>Which configuration to buy</h2>
+
+<div class="pick-card">
+  <div class="rank-badge">#1 · Best Value</div>
+  <div class="pick-head">
+    <h3>DJI Mini 5 Pro (Base Unit)</h3>
+    <div class="price">$759<small>street price, fluctuates</small></div>
+  </div>
+  <p class="pick-sub">The drone alone with one standard battery. Best if you already own an RC controller or fly short sessions.</p>
+  <div class="specgrid">
+    <div class="cell"><span class="lbl">Rated flight time</span><span class="val">36 min (hover, no wind)</span></div>
+    <div class="cell"><span class="lbl">Real-world flight time</span><span class="val"><em>25–30 min</em> typical; 20–25 min filming in wind (T3)</span></div>
+    <div class="cell"><span class="lbl">Rated weight</span><span class="val">249.9 g</span></div>
+    <div class="cell"><span class="lbl">Measured weight</span><span class="val"><em>252.2 g</em> (T3 review unit, standard battery)</span></div>
+    <div class="cell"><span class="lbl">Sensor</span><span class="val">1" CMOS · 50 MP · f/1.8</span></div>
+    <div class="cell"><span class="lbl">Video</span><span class="val">4K/120 · FHD/240 · 10-bit D-Log M</span></div>
+  </div>
+  <a class="buy-btn" href="https://www.amazon.com/dp/B0F6XJ7W9M?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon →</a>
+</div>
+
+<div class="pick-card">
+  <div class="rank-badge">#2 · Most Pilots</div>
+  <div class="pick-head">
+    <h3>DJI Mini 5 Pro Fly More Combo</h3>
+    <div class="price">$959<small>street price, fluctuates</small></div>
+  </div>
+  <p class="pick-sub">Adds two extra standard batteries, a charging hub, spare props, and a bag. This is the configuration most buyers should get — one battery is never enough on any drone.</p>
+  <div class="specgrid">
+    <div class="cell"><span class="lbl">Rated total flight time</span><span class="val">~108 min across 3 batteries</span></div>
+    <div class="cell"><span class="lbl">Real-world total</span><span class="val"><em>~75–90 min</em> across 3 batteries, based on published per-battery results</span></div>
+    <div class="cell"><span class="lbl">Battery capacity</span><span class="val">2,788 mAh each (standard)</span></div>
+    <div class="cell"><span class="lbl">Recharge time</span><span class="val">~80 min per battery on DJI's 18 W charger</span></div>
+    <div class="cell"><span class="lbl">Transmission (rated)</span><span class="val">20 km, unobstructed line-of-sight</span></div>
+    <div class="cell"><span class="lbl">Obstacle sensing</span><span class="val">Omnidirectional + forward LiDAR</span></div>
+  </div>
+  <a class="buy-btn" href="https://www.amazon.com/dp/B0F6W94FL4?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon →</a>
+</div>
+
+<div class="pick-card">
+  <div class="rank-badge">#3 · Max Endurance</div>
+  <div class="pick-head">
+    <h3>DJI Mini 5 Pro Fly More Combo Plus (DJI RC 2)</h3>
+    <div class="price">$1,159<small>list; seen as low as $1,099</small></div>
+  </div>
+  <p class="pick-sub">The RC 2 controller with built-in screen plus extended Battery Plus packs rated at 52 minutes each. Longest airtime you can get in a Mini — with a regulatory catch (see the nerd box below).</p>
+  <div class="specgrid">
+    <div class="cell"><span class="lbl">Rated flight time</span><span class="val">52 min (Battery Plus)</span></div>
+    <div class="cell"><span class="lbl">Real-world flight time</span><span class="val"><em>35–45 min</em> depending on wind and profile (T3)</span></div>
+    <div class="cell"><span class="lbl">Battery Plus capacity</span><span class="val">4,680 mAh</span></div>
+    <div class="cell"><span class="lbl">Takeoff weight w/ Battery Plus</span><span class="val"><em>~296 g</em> — no longer any version of "sub-250"</span></div>
+    <div class="cell"><span class="lbl">Controller</span><span class="val">DJI RC 2 (built-in display)</span></div>
+    <div class="cell"><span class="lbl">Built-in storage</span><span class="val">42 GB onboard</span></div>
+  </div>
+  <a class="buy-btn" href="https://www.amazon.com/dp/B0F6XK911R?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon →</a>
+</div>
+
+<h2>Battery life: the box says 36, the sky says less</h2>
+<p>DJI's 36-minute rating is real in the sense that the drone can hit it — hovering motionless, sensors off, not recording, in still air. That is not flying; that's levitating.</p>
+<p>DroneXL ran exactly that test in October 2025: takeoff, hover, no video, no movement, obstacle sensing off. Their result was 29 minutes before the drone force-landed itself — 7 minutes under the rating, though their test site sits at 9,350 ft altitude in Quito, where thin air costs meaningful flight time. At sea level a hover test would land closer to the rating. Their conclusion matches ours: the number is achievable, but not in any flight you'd actually want to fly.</p>
+<p>T3's two-week review is the more useful benchmark for real missions: 25–30 minutes of usable flight per standard battery in average conditions, dropping to roughly 20–25 minutes when recording 4K/60 with ActiveTrack running in wind. For the Battery Plus, T3 estimates a realistic 35–45 minutes against the rated 52. Plan your missions on the real numbers and treat anything above them as a bonus.</p>
+<p>One more constraint worth knowing: DJI's Fly app no longer lets you customize the low-battery and critical-battery RTH thresholds, so the drone will start fighting you for control earlier than veteran pilots may expect. DroneXL's tester couldn't override the forced landing at the end of his run.</p>
+
+<div class="nerd-box">
+  <h3>⚡ Nerd Box: The 250-Gram Problem</h3>
+  <p>DJI's spec sheet says 249.9 g — one-tenth of a gram under the most important regulatory line in consumer droning. But T3 put their review unit on a scale: <strong>252.2 g</strong>. The EU tolerates this via a ±3% manufacturing-deviation allowance, so European pilots keep the small-drone classification. The FAA and UK CAA extend no such courtesy — what matters is what your specific aircraft weighs at takeoff, not what the box claims.</p>
+  <p>The practical math: if your unit is over 250 g in the US, recreational registration requirements apply and the "sub-250 exemption" you bought a Mini for evaporates. And the Battery Plus makes the question moot — the extended pack weighs ~117 g versus ~71 g standard, putting takeoff weight near 296 g. Our advice: weigh your own unit, and if you're buying specifically for the sub-250 class, budget for the standard battery only and know you may still be a couple of grams over.</p>
+</div>
+
+<h2>What you're actually getting for the money</h2>
+<p>Independent reviews converge on the same picture of the camera: the jump from the Mini 4 Pro's 1/1.3-inch sensor to a true 1-inch chip is the biggest single-generation camera upgrade in Mini history. Dynamic range in D-Log M draws consistent praise, low-light performance is meaningfully improved, and the 225° gimbal roll enables true vertical 9:16 capture rather than a crop. A 48 mm "Med-Tele" mode adds a usable mid-zoom. Stills are 50 MP with RAW support.</p>
+<p>Flight performance also steps up: 18 m/s in Sport mode (up 2 m/s over the Mini 4 Pro), 12 m/s rated wind resistance, and reviewers report it holds position confidently in coastal gusts. The obstacle-sensing stack — omnidirectional vision plus forward LiDAR — and Waypoint Flight both arrive from bigger DJI airframes. 42 GB of internal storage means a forgotten microSD card no longer scrubs a shoot.</p>
+
+<h2>Mini 5 Pro vs. Mini 4 Pro</h2>
+<table>
+  <tr><th>Spec</th><th>Mini 5 Pro</th><th>Mini 4 Pro</th></tr>
+  <tr><td>Sensor</td><td class="hl">1" CMOS, 50 MP, f/1.8</td><td>1/1.3", 48 MP</td></tr>
+  <tr><td>Video</td><td class="hl">4K/120, FHD/240, 10-bit D-Log M</td><td>4K/100, 10-bit D-Log M</td></tr>
+  <tr><td>Rated flight time</td><td>36 min (52 w/ Battery Plus)</td><td>34 min (45 w/ Battery Plus)</td></tr>
+  <tr><td>Real-world flight time</td><td class="hl">25–30 min (published tests)</td><td>~25 min (published tests)</td></tr>
+  <tr><td>Top speed (Sport)</td><td class="hl">18 m/s</td><td>16 m/s</td></tr>
+  <tr><td>Obstacle sensing</td><td class="hl">Omnidirectional + forward LiDAR</td><td>Omnidirectional (vision only)</td></tr>
+  <tr><td>Gimbal roll / vertical</td><td class="hl">225°, true vertical</td><td>True vertical (rotating sensor)</td></tr>
+  <tr><td>Weight (spec)</td><td>249.9 g (252.2 g measured by T3)</td><td>&lt;249 g</td></tr>
+  <tr><td>Internal storage</td><td class="hl">42 GB</td><td>2 GB</td></tr>
+</table>
+<p class="small">Mini 4 Pro remains on sale and is the smarter buy if a verified sub-250 g weight or budget matters more to you than the 1-inch sensor. <a href="https://www.amazon.com/s?k=DJI+Mini+4+Pro&tag=loiterpoint20-20" rel="sponsored nofollow">Current Mini 4 Pro listings on Amazon →</a></p>
+
+<div class="bottom-line">
+  <h2>Bottom Line</h2>
+  <p>The Mini 5 Pro is the best small camera drone you can buy in 2026 — that part isn't controversial, and the published testing backs it. What the marketing doesn't tell you: budget 25–30 real minutes per standard battery, not 36; weigh your unit before assuming sub-250 g privileges, because at least one professionally reviewed sample came in at 252.2 g; and buy from a sanely priced listing, because the unofficial US distribution makes pricing volatile.</p>
+  <p>Buy the <strong>Fly More Combo ($959)</strong> if you're like most pilots. Buy the <strong>base unit ($759)</strong> if you're testing the waters. Buy the <strong>Combo Plus ($1,159)</strong> only if you need maximum endurance and have made peace with flying a ~296 g registered aircraft.</p>
+</div>
+
+<div class="sources">
+  <strong>Sources &amp; further reading:</strong>
+  <a href="https://www.t3.com/tech/drones/dji-mini-5-pro-review" rel="nofollow">T3's DJI Mini 5 Pro review</a> (weight measurement, real-world battery figures) ·
+  <a href="https://dronexl.co/2025/10/22/dji-mini-5-pro-battery-life-test-long-last/" rel="nofollow">DroneXL's battery hover test</a> ·
+  <a href="https://www.tomsguide.com/cameras-photography/drones/dji-mini-5-pro-review" rel="nofollow">Tom's Guide review</a> ·
+  <a href="https://dronedj.com/2026/04/22/dji-fcc-us-launch-loss/" rel="nofollow">DroneDJ on DJI's FCC situation</a> ·
+  DJI official specifications.
+</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  <div class="wrap">
+    <p><strong>Affiliate disclosure:</strong> Loiter Point is a participant in the Amazon Services LLC Associates Program. When you buy through links on this page, we may earn a commission at no extra cost to you. This doesn't influence our analysis — every measured figure above comes from cited independent testing, not from anyone's marketing department.</p>
+    <p><strong>Testing disclosure:</strong> We have not flight-tested this unit ourselves. Real-world figures in this review are drawn from the published independent tests cited above.</p>
+    <p>&copy; 2026 Loiter Point · <a href="../index.html">Home</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
