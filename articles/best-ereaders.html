@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>Best E-Readers 2026: Kindle vs. Kobo, Honestly Compared | Loiter Point</title>
+<meta name="description" content="The best e-readers of 2026 from $110 to $220 — Kindle Paperwhite, base Kindle, Paperwhite Signature, Kobo Clara Colour and Libra Colour, with the ecosystem lock-in trade-offs spelled out honestly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0c0e;--surface:#141418;--surface2:#1c1c22;--accent:#e8ff47;--text:#e2e2e8;--muted:#7a7a8a;--border:#26262e;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7;font-size:17px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.topnav{border-bottom:1px solid var(--border);padding:18px 0;background:var(--surface);}
+.topnav .wrap{display:flex;justify-content:space-between;align-items:center;}
+.backlink{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);}
+.backlink:hover{color:var(--accent);}
+.sitemark{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;letter-spacing:.5px;}
+.sitemark span{color:var(--accent);}
+header.article-head{padding:52px 0 28px;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+h1{font-size:clamp(30px,5vw,42px);font-weight:800;line-height:1.15;letter-spacing:-.5px;margin-bottom:16px;}
+.dek{font-size:19px;color:var(--muted);max-width:700px;}
+.byline{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-top:20px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 0;}
+.byline b{color:var(--text);font-weight:500;}
+h2{font-size:25px;font-weight:700;margin:44px 0 14px;letter-spacing:-.3px;}
+h3{font-size:19px;font-weight:600;margin:26px 0 10px;}
+p{margin-bottom:17px;}
+.tldr{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:24px 28px;margin:34px 0;}
+.tldr h2{margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);}
+.tldr ul{list-style:none;}
+.tldr li{padding:7px 0 7px 26px;position:relative;}
+.tldr li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:'IBM Plex Mono',monospace;}
+.grab{margin-top:14px;padding-top:14px;border-top:1px dashed var(--border);font-size:15px;}
+.grab b{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);}
+.pick-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:28px;margin:28px 0;position:relative;}
+.rank-badge{position:absolute;top:-13px;left:24px;background:var(--accent);color:#0c0c0e;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:4px;}
+.pick-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin:8px 0 6px;}
+.pick-head h3{margin:0;font-size:21px;}
+.price{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:600;color:var(--accent);}
+.price small{font-size:12px;color:var(--muted);display:block;text-align:right;font-weight:400;}
+.pick-sub{color:var(--muted);font-size:15px;margin-bottom:18px;}
+.specgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden;margin:18px 0;}
+.specgrid .cell{background:var(--surface2);padding:12px 16px;}
+.specgrid .lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:3px;}
+.specgrid .val{font-size:14px;font-weight:500;}
+.specgrid .val em{font-style:normal;color:var(--accent);}
+.buy-btn{display:inline-block;background:var(--accent);color:#0c0c0e;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;padding:12px 26px;border-radius:6px;margin-top:6px;}
+.buy-btn:hover{opacity:.85;text-decoration:none;}
+.nerd-box{background:var(--surface2);border:1px dashed var(--accent);border-radius:8px;padding:24px 28px;margin:36px 0;font-size:15px;}
+.nerd-box h3{margin:0 0 10px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);}
+.nerd-box p{margin-bottom:12px;color:var(--muted);}
+.nerd-box p:last-child{margin-bottom:0;}
+.nerd-box strong{color:var(--text);}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;}
+th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:2px solid var(--border);}
+td{padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+td:first-child{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);}
+.hl{color:var(--accent);font-weight:600;}
+.bottom-line{background:var(--surface);border:1px solid var(--accent);border-radius:10px;padding:28px;margin:44px 0;}
+.bottom-line h2{margin:0 0 14px;}
+footer{border-top:1px solid var(--border);margin-top:60px;padding:30px 0 46px;background:var(--surface);}
+footer p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+.sources{font-size:13px;color:var(--muted);margin:26px 0;}
+.sources a{color:var(--muted);text-decoration:underline;}
+.sources a:hover{color:var(--accent);}
+@media(max-width:600px){.specgrid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <a class="backlink" href="../index.html">&larr; loiterpoint.com</a>
+    <div class="sitemark">LOITER<span>POINT</span></div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="article-head">
+  <div class="kicker">Reading Tech / Buyer Guide</div>
+  <h1>Best E-Readers 2026: Kindle vs. Kobo, With the Lock-In Math Done Honestly</h1>
+  <p class="dek">E-readers are the last gadget category where a $110 device is genuinely enough. The real buying decision isn't specs — it's which bookstore you're marrying. Here's the honest breakdown.</p>
+  <div class="byline"><b>Loiter Point</b> · Updated July 2026 · Based on published independent testing (Engadget's long-term reviews) and manufacturer specs — sources at the bottom</div>
+</header>
+
+<div class="tldr">
+  <h2>The Short Version</h2>
+  <ul>
+    <li><strong>Most people:</strong> the <a href="https://www.amazon.com/dp/B0DFYWDGW6?tag=loiterpoint20-20" rel="sponsored nofollow">Kindle Paperwhite (2024)</a> at $160 — 7" screen, waterproof, warm light, rated 12-week battery, and the biggest bookstore in the world behind it.</li>
+    <li><strong>Best outside Amazon's walls:</strong> the <a href="https://www.amazon.com/s?k=Kobo+Clara+Colour&tag=loiterpoint20-20" rel="sponsored nofollow">Kobo Clara Colour</a> at $150 — Engadget's overall pick: waterproof, color E Ink, no lock-screen ads, user-repairable via iFixit, and native library borrowing.</li>
+    <li><strong>Cheapest real e-reader:</strong> the <a href="https://www.amazon.com/dp/B0CNV9F72P?tag=loiterpoint20-20" rel="sponsored nofollow">base Kindle (2024)</a> at $110 — pocketable and fast, but you'll see lock-screen ads unless you pay $20 more.</li>
+    <li><strong>Upgrade pick:</strong> the <a href="https://www.amazon.com/dp/B0CFPP8C33?tag=loiterpoint20-20" rel="sponsored nofollow">Paperwhite Signature Edition</a> at $200 — 32 GB, auto-adjusting warm light, wireless charging, no ads.</li>
+  </ul>
+  <div class="grab"><b>Grab your pick:</b> <a href="https://www.amazon.com/dp/B0DFYWDGW6?tag=loiterpoint20-20" rel="sponsored nofollow">Paperwhite ($160) →</a> · <a href="https://www.amazon.com/s?k=Kobo+Clara+Colour&tag=loiterpoint20-20" rel="sponsored nofollow">Kobo Clara Colour ($150) →</a> · <a href="https://www.amazon.com/dp/B0CNV9F72P?tag=loiterpoint20-20" rel="sponsored nofollow">Base Kindle ($110) →</a> · <a href="https://www.amazon.com/dp/B0CFPP8C33?tag=loiterpoint20-20" rel="sponsored nofollow">Signature ($200) →</a> · <a href="https://www.amazon.com/s?k=Kobo+Libra+Colour&tag=loiterpoint20-20" rel="sponsored nofollow">Libra Colour ($220) →</a></div>
+</div>
+
+<h2>How We Evaluate E-Readers</h2>
+<p>These picks synthesize published long-term testing — primarily Engadget's e-reader reviews, which are among the most thorough in the category — plus manufacturer specifications and owner reports. We don't run a device lab. What we add is the part most guides soft-pedal: ecosystem lock-in economics, ad-removal surcharges, and repairability, because an e-reader is a ten-year purchase decision disguised as a $150 gadget.</p>
+
+<div class="pick-card">
+  <div class="rank-badge">#1 · Best for Most People</div>
+  <div class="pick-head">
+    <h3>Kindle Paperwhite (2024)</h3>
+    <div class="price">$160<small>list · ad-supported version</small></div>
+  </div>
+  <p class="pick-sub">The default answer. The 2024 revision got a new processor and updated E Ink that reviewers describe as exceptionally fast, a 7-inch flush screen (up from 6.8"), and a body that's thinner than the previous generation.</p>
+  <div class="specgrid">
+    <div class="cell"><span class="lbl">Screen</span><span class="val">7" · 300 ppi · warm front light</span></div>
+    <div class="cell"><span class="lbl">Battery — rated</span><span class="val">Up to 12 weeks <em>(light daily reading; heavy use is less)</em></span></div>
+    <div class="cell"><span class="lbl">Waterproof</span><span class="val">IPX8</span></div>
+    <div class="cell"><span class="lbl">Fine print</span><span class="val">Lock-screen ads unless you pay ~$20 more</span></div>
+  </div>
+  <a class="buy-btn" href="https://www.amazon.com/dp/B0DFYWDGW6?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon →</a>
+</div>
+
+<div class="pick-card">
+  <div class="rank-badge">#2 · Best Non-Amazon</div>
+  <div class="pick-head">
+    <h3>Kobo Clara Colour</h3>
+    <div class="price">$150<small>list</small></div>
+  </div>
+  <p class="pick-sub">Engadget's best-overall e-reader. Color E Ink, waterproof, warm light, zero ads at any price — and it's designed to be user-repaired through an iFixit partnership once the warranty lapses. Library borrowing via OverDrive is built in, no workarounds.</p>
+  <div class="specgrid">
+    <div class="cell"><span class="lbl">Screen</span><span class="val">6" color E Ink (Kaleido)</span></div>
+    <div class="cell"><span class="lbl">Ads</span><span class="val"><em>None, ever</em> — Kobo doesn't do lock-screen ads</span></div>
+    <div class="cell"><span class="lbl">Repairability</span><span class="val">User-repairable (iFixit partnership)</span></div>
+    <div class="cell"><span class="lbl">Trade-off</span><span class="val">Kobo's store is smaller than Kindle's</span></div>
+  </div>
+  <a class="buy-btn" href="https://www.amazon.com/s?k=Kobo+Clara+Colour&tag=loiterpoint20-20" rel="sponsored nofollow">Find it on Amazon →</a>
+</div>
+
+<div class="pick-card">
+  <div class="rank-badge">#3 · Cheapest Real One</div>
+  <div class="pick-head">
+    <h3>Amazon Kindle (2024)</h3>
+    <div class="price">$110<small>list · ad-supported</small></div>
+  </div>
+  <p class="pick-sub">The no-frills gateway: 6-inch 300 ppi screen, six-week rated battery, fits in a coat pocket. No waterproofing, no warm light, non-flush screen — but the reading experience itself gives up very little.</p>
+  <div class="specgrid">
+    <div class="cell"><span class="lbl">Screen</span><span class="val">6" · 300 ppi</span></div>
+    <div class="cell"><span class="lbl">Battery — rated</span><span class="val">Up to 6 weeks</span></div>
+    <div class="cell"><span class="lbl">What's missing</span><span class="val">No waterproofing, no warm light</span></div>
+    <div class="cell"><span class="lbl">Deal behavior</span><span class="val"><em>Discounts hard at Prime Day / Black Friday</em> — historically the most-discounted Kindle</span></div>
+  </div>
+  <a class="buy-btn" href="https://www.amazon.com/dp/B0CNV9F72P?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon →</a>
+</div>
+
+<div class="pick-card">
+  <div class="rank-badge">#4 · Upgrade Pick</div>
+  <div class="pick-head">
+    <h3>Kindle Paperwhite Signature Edition</h3>
+    <div class="price">$200<small>list · no ads</small></div>
+  </div>
+  <p class="pick-sub">The Paperwhite with everything: 32 GB, auto-adjusting warm light, wireless charging, and no ad surcharge. Engadget's reviewer called the reading experience "luxurious," which is not a word this category earns often.</p>
+  <div class="specgrid">
+    <div class="cell"><span class="lbl">Screen</span><span class="val">7" · 300 ppi · auto warm light</span></div>
+    <div class="cell"><span class="lbl">Battery — rated</span><span class="val">Up to 12 weeks</span></div>
+    <div class="cell"><span class="lbl">Storage</span><span class="val">32 GB (vs. 16 GB standard)</span></div>
+    <div class="cell"><span class="lbl">Ads</span><span class="val"><em>None</em> — included in the price</span></div>
+  </div>
+  <a class="buy-btn" href="https://www.amazon.com/dp/B0CFPP8C33?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon →</a>
+</div>
+
+<div class="pick-card">
+  <div class="rank-badge">#5 · Notes &amp; Margins</div>
+  <div class="pick-head">
+    <h3>Kobo Libra Colour</h3>
+    <div class="price">$220<small>list · stylus ~$70 extra</small></div>
+  </div>
+  <p class="pick-sub">The only mainstream e-reader this size with stylus support: highlight in four colors, scribble margin notes, keep free-form notebooks. With the stylus it's $290 — still $110 less than a Kindle Scribe, in a far more pocketable body. Physical page-turn buttons, too.</p>
+  <div class="specgrid">
+    <div class="cell"><span class="lbl">Screen</span><span class="val">7" color E Ink</span></div>
+    <div class="cell"><span class="lbl">Stylus math</span><span class="val">$290 all-in vs. <em>$400 for a Kindle Scribe</em></span></div>
+    <div class="cell"><span class="lbl">Extras</span><span class="val">Dropbox/Drive sync, page-turn buttons</span></div>
+    <div class="cell"><span class="lbl">Trade-off</span><span class="val">Notes features need the extra-cost stylus</span></div>
+  </div>
+  <a class="buy-btn" href="https://www.amazon.com/s?k=Kobo+Libra+Colour&tag=loiterpoint20-20" rel="sponsored nofollow">Find it on Amazon →</a>
+</div>
+
+<div class="nerd-box">
+  <h3>⚡ Nerd Box: The Lock-In Ledger</h3>
+  <p>The device is the cheapest part of this purchase. Buy ten e-books a year for five years at ~$12 each and you'll spend <strong>$600 on books locked to one ecosystem</strong> — four times the price of the reader. Kindle books live in Kindle's DRM; Kobo uses standard-ish EPUB with its own DRM but plays far nicer with public libraries (OverDrive is native) and side-loading.</p>
+  <p>Two more line items most guides skip: Amazon charges <strong>~$20 to remove lock-screen ads</strong> from Kindles (Kobo has no ads at any price), and audiobook lovers should weigh Kindle's Whispersync, which syncs your place between an e-book and its Audible audiobook — genuinely useful, genuinely proprietary. None of this makes either choice wrong. It makes the choice bigger than $150, and you should make it once, on purpose.</p>
+</div>
+
+<h2>All five, one table</h2>
+<table>
+  <tr><th>Reader</th><th>List</th><th>Screen</th><th>Waterproof</th><th>Ads</th><th>Best for</th></tr>
+  <tr><td>Kindle Paperwhite (2024)</td><td>$160</td><td>7" B/W</td><td>IPX8</td><td>Yes (+$20 to remove)</td><td class="hl">Most people</td></tr>
+  <tr><td>Kobo Clara Colour</td><td class="hl">$150</td><td>6" color</td><td>Yes</td><td class="hl">Never</td><td>Library users, no-Amazon buyers</td></tr>
+  <tr><td>Kindle (2024)</td><td>$110</td><td>6" B/W</td><td>No</td><td>Yes (+$20)</td><td>Budget / travel</td></tr>
+  <tr><td>Paperwhite Signature</td><td>$200</td><td>7" B/W</td><td>IPX8</td><td>No</td><td>The full-comfort upgrade</td></tr>
+  <tr><td>Kobo Libra Colour</td><td>$220</td><td>7" color</td><td>Yes</td><td>Never</td><td>Note-takers</td></tr>
+</table>
+<p style="font-size:14px;color:var(--muted);">Also in the market: the Kindle Colorsoft ($280, or $230 for the reduced-storage version Amazon added in July) if you want color inside the Kindle ecosystem, and the <a href="https://www.amazon.com/dp/B0CZ9TDDN6?tag=loiterpoint20-20" rel="sponsored nofollow">Kindle Scribe</a> (~$400) if you want a 10-inch writing tablet first and an e-reader second.</p>
+
+<div class="bottom-line">
+  <h2>Bottom Line</h2>
+  <p>If you're already deep in Kindle books, buy the <strong>Paperwhite ($160)</strong> and don't overthink it — it's the best version of the ecosystem you've already chosen. If you're starting fresh, the honest recommendation is to at least consider the <strong>Kobo Clara Colour ($150)</strong>: it's cheaper, ad-free, repairable, better for library borrowing, and the only cost is a smaller store. The $110 base Kindle is the right impulse buy for travel or a first e-reader — just know the ads are part of the price.</p>
+</div>
+
+<div class="sources">
+  <strong>Sources:</strong>
+  <a href="https://www.engadget.com/mobile/tablets/best-ereader-130013808.html" rel="nofollow">Engadget's best e-readers guide</a> (long-term testing; pricing and battery ratings cited above) · manufacturer specifications. List prices as of July 2026; live prices vary.
+</div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Affiliate disclosure:</strong> Loiter Point participates in the Amazon Associates Program. When you buy through links on this page, we may earn a commission at no extra cost to you. Yes, including the Kobo links — we recommend what the evidence supports, and the lock-in ledger above cuts against our own commissions.</p>
+    <p><strong>Testing disclosure:</strong> We have not lab-tested these devices ourselves; performance claims are attributed to the cited independent reviews.</p>
+    <p>© 2026 Loiter Point — Consumer tech reviews built on real evidence. · <a href="../index.html">Home</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
