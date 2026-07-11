@@ -5,12 +5,12 @@
    Uses the site's existing CSS variables, so it inherits the dark/lime theme. */
 (function () {
   var LINKS = [
-    { ic: "🚁", label: "Drones & Aerial",      href: "/#drones",      ct: "12" },
-    { ic: "🎧", label: "Headphones & Audio",   href: "/#audio",       ct: "3"  },
-    { ic: "🏠", label: "Home & Cleaning",      href: "/#home-tech",   ct: "3"  },
-    { ic: "🚗", label: "Automotive",           href: "/#automotive",  ct: "1"  },
-    { ic: "⌨️", label: "Computing & Desk",     href: "/#computing",   ct: "3"  },
-    { ic: "📱", label: "Tablets & Wearables",  href: "/#mobile-tech", ct: "4"  },
+    { ic: "🚁", label: "Drones & Aerial",      href: "/drones/",      ct: "11" },
+    { ic: "🎧", label: "Headphones & Audio",   href: "/audio/",       ct: "3"  },
+    { ic: "🏠", label: "Home & Cleaning",      href: "/home-tech/",   ct: "3"  },
+    { ic: "🚗", label: "Automotive",           href: "/automotive/",  ct: "2"  },
+    { ic: "⌨️", label: "Computing & Desk",     href: "/computing/",   ct: "3"  },
+    { ic: "📱", label: "Tablets & Wearables",  href: "/mobile-tech/", ct: "4"  },
     { ic: "🔥", label: "Today's Deals",        href: "/deals.html",             ct: "↗" }
   ];
 

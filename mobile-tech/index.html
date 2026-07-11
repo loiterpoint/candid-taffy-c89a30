@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tablets, Smartwatches & E-Readers — Loiter Point</title>
+<meta name="description" content="Battery claims fact-checked, ecosystem lock-in priced out, and volatile pricing explained honestly." />
+<link rel="canonical" href="https://loiterpoint.com/mobile-tech/" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--bg: #0c0c0e;
+--surface: #141418;
+--surface2: #1c1c22;
+--accent: #e8ff47;
+--accent2: #ff6b35;
+--text: #e2e2e8;
+--muted: #7a7a8a;
+--border: #26262e;
+--radius: 10px;
+--mono: 'IBM Plex Mono', monospace;
+}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+nav {
+display: flex; align-items: center; justify-content: space-between;
+padding: 1rem 2rem; border-bottom: 1px solid var(--border);
+position: sticky; top: 0; background: rgba(12,12,14,0.97);
+backdrop-filter: blur(12px); z-index: 100;
+}
+.nav-logo {
+display: flex; align-items: center; gap: 0.6rem;
+font-size: 1rem; font-weight: 800; letter-spacing: -0.02em;
+}
+.nav-logo .icon {
+width: 28px; height: 28px; background: var(--accent);
+border-radius: 6px; display: flex; align-items: center; justify-content: center;
+font-size: 0.9rem; color: #000;
+}
+.nav-logo span { color: var(--text); }
+.nav-logo .dot { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { color: var(--muted); font-size: 0.875rem; font-weight: 500; transition: color 0.15s; }
+.nav-links a:hover { color: var(--text); }
+.nav-tag { font-family: var(--mono); font-size: 0.7rem; background: var(--surface2); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 4px; color: var(--accent); }
+
+/* HERO */
+.hero { max-width: 900px; margin: 0 auto; padding: 5rem 2rem 3rem; }
+.hero-eyebrow { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.25rem; }
+.hero h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.03em; margin-bottom: 1.25rem; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: 2rem; }
+.hero-sub strong { color: var(--text); font-weight: 600; }
+.hero-cta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.btn { padding: 0.7rem 1.4rem; border-radius: 7px; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.15s; cursor: pointer; }
+.btn-accent { background: var(--accent); color: #000; }
+.btn-accent:hover { background: #d4eb30; }
+.btn-ghost { border: 1px solid var(--border); color: var(--muted); background: transparent; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--text); }
+.hero-stat { display: flex; gap: 2rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+.stat-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.stat-num { font-family: var(--mono); font-size: 1.4rem; font-weight: 500; color: var(--text); }
+.stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* SECTIONS */
+.section { max-width: 1100px; margin: 0 auto; padding: 3.5rem 2rem; }
+.section-label { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.section-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.section-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* FEATURED ARTICLE */
+.featured { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+.article-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.15s; display: flex; flex-direction: column; }
+.article-card:hover { border-color: var(--accent); }
+.card-thumb { height: 200px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; }
+.card-thumb.large { height: 280px; }
+.card-badge { position: absolute; top: 0.75rem; left: 0.75rem; font-family: var(--mono); font-size: 0.65rem; font-weight: 500; padding: 0.2rem 0.5rem; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.05em; }
+.badge-review { background: rgba(232,255,71,0.15); color: var(--accent); border: 1px solid rgba(232,255,71,0.3); }
+.badge-analysis { background: rgba(255,107,53,0.15); color: var(--accent2); border: 1px solid rgba(255,107,53,0.3); }
+.badge-guide { background: rgba(100,150,255,0.15); color: #8ab4ff; border: 1px solid rgba(100,150,255,0.3); }
+.badge-faa { background: rgba(255,50,50,0.15); color: #ff7070; border: 1px solid rgba(255,50,50,0.3); }
+.badge-fpv { background: rgba(180,100,255,0.15); color: #c084fc; border: 1px solid rgba(180,100,255,0.3); }
+.card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+.card-meta { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); margin-bottom: 0.6rem; }
+.card-title { font-size: 1rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+.card-title a:hover { color: var(--accent); }
+.card-excerpt { font-size: 0.85rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-footer { margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; }
+.read-more { font-size: 0.8rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 0.3rem; }
+.read-more:hover { text-decoration: underline; }
+.rating-pill { font-family: var(--mono); font-size: 0.75rem; background: var(--surface2); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 20px; color: var(--text); }
+
+/* FEATURED LARGE */
+.featured-large { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+.featured-large .card-thumb { height: 100%; min-height: 240px; }
+.featured-large .card-body { justify-content: center; }
+.featured-large .card-title { font-size: 1.3rem; }
+
+/* TOP PICKS TABLE */
+.picks-table { width: 100%; border-collapse: collapse; }
+.picks-table th { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 500; padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); text-align: left; }
+.picks-table td { padding: 1rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; vertical-align: middle; }
+.picks-table tr:last-child td { border-bottom: none; }
+.picks-table tr:hover td { background: var(--surface2); }
+.rank { font-family: var(--mono); font-weight: 500; color: var(--muted); font-size: 0.85rem; }
+.drone-name { font-weight: 700; }
+.drone-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+.score { font-family: var(--mono); font-size: 1rem; font-weight: 500; }
+.score.s-excellent { color: var(--accent); }
+.score.s-great { color: #86efac; }
+.score.s-good { color: #93c5fd; }
+.verdict-tag { font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 20px; white-space: nowrap; }
+.v-best-overall { background: rgba(232,255,71,0.1); color: var(--accent); border: 1px solid rgba(232,255,71,0.25); }
+.v-creators { background: rgba(134,239,172,0.1); color: #86efac; border: 1px solid rgba(134,239,172,0.25); }
+.v-budget { background: rgba(147,197,253,0.1); color: #93c5fd; border: 1px solid rgba(147,197,253,0.25); }
+.v-alternative { background: rgba(255,107,53,0.1); color: var(--accent2); border: 1px solid rgba(255,107,53,0.25); }
+.v-fpv { background: rgba(192,132,252,0.1); color: #c084fc; border: 1px solid rgba(192,132,252,0.25); }
+.buy-link { font-family: var(--mono); font-size: 0.75rem; background: var(--accent); color: #000; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 5px; display: inline-block; white-space: nowrap; transition: background 0.15s; }
+.buy-link:hover { background: #d4eb30; }
+
+/* NERD ALERT BOX */
+.nerd-box { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 2rem 0; }
+.nerd-box-label { font-family: var(--mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.nerd-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+.nerd-box strong { color: var(--text); }
+
+/* FAA TICKER */
+.faa-banner { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.faa-dot { width: 8px; height: 8px; border-radius: 50%; background: #ff7070; flex-shrink: 0; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.faa-text { font-size: 0.85rem; color: var(--muted); }
+.faa-text strong { color: var(--text); }
+.faa-tag { font-family: var(--mono); font-size: 0.68rem; background: rgba(255,70,70,0.1); border: 1px solid rgba(255,70,70,0.3); color: #ff7070; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: auto; flex-shrink: 0; }
+
+/* CATEGORIES */
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
+.cat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1rem; transition: all 0.15s; }
+.cat-card:hover { border-color: var(--accent); background: var(--surface2); }
+.cat-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+.cat-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
+.cat-count { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
+
+/* NEWSLETTER */
+.newsletter-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.nl-left h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+.nl-left p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+.nl-left ul { margin: 0.75rem 0 0 1.25rem; }
+.nl-left li { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.3rem; }
+.nl-left li strong { color: var(--text); }
+.nl-right { display: flex; flex-direction: column; gap: 0.75rem; }
+.nl-right input { padding: 0.75rem 1rem; border-radius: 7px; border: 1px solid var(--border); background: var(--surface2); color: var(--text); font-size: 0.9rem; outline: none; font-family: 'Inter', sans-serif; }
+.nl-right input:focus { border-color: var(--accent); }
+.nl-right button { padding: 0.75rem; background: var(--accent); color: #000; font-weight: 700; border: none; border-radius: 7px; cursor: pointer; font-size: 0.9rem; font-family: 'Inter', sans-serif; }
+.nl-right button:hover { background: #d4eb30; }
+.nl-disclaimer { font-size: 0.72rem; color: var(--muted); }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 2rem; margin-top: 2rem; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.footer-brand p { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; max-width: 300px; line-height: 1.6; }
+.footer-links h4 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 0.75rem; }
+.footer-links a { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem; }
+.footer-links a:hover { color: var(--text); }
+.footer-bottom { max-width: 1100px; margin: 1.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p { font-size: 0.75rem; color: var(--muted); }
+.disclosure { font-size: 0.72rem; color: var(--muted); opacity: 0.6; max-width: 500px; line-height: 1.5; }
+
+@media (max-width: 768px) {
+.featured { grid-template-columns: 1fr; }
+.featured-large { grid-template-columns: 1fr; }
+.newsletter-wrap { grid-template-columns: 1fr; }
+.nav-links { display: none; }
+.hero-stat { gap: 1.25rem; }
+.picks-table .hide-mobile { display: none; }
+}
+</style>
+</head>
+<body>
+<nav>
+<a class="nav-logo" href="/" style="text-decoration:none;">
+<div class="icon">⊕</div>
+<span>Loiter<span class="dot">Point</span></span>
+</a>
+<div class="nav-links">
+<a href="/">Home</a>
+<a href="/drones/">Drones</a>
+<a href="/audio/">Headphones</a>
+<a href="/home-tech/">Home Tech</a>
+<a href="/automotive/">Automotive Tech</a>
+<a href="/computing/">Computing</a>
+<a href="/mobile-tech/" style="color:var(--text);">Tablets</a>
+<a href="/deals.html">Deals</a>
+</div>
+<span class="nav-tag">Evidence-first</span>
+</nav>
+
+<div style="max-width:1100px;margin:0 auto;padding:0.75rem 2rem 0;">
+<div style="font-family:var(--mono);font-size:0.75rem;color:var(--muted);"><a href="/" style="color:var(--muted);">Home</a> / Tablets & Wearables</div>
+</div>
+
+<div class="section" id="mobile-tech"><div class="section-label">// Tablets, Wearables &amp; Reading</div><div class="section-title">Tablets, Smartwatches &amp; E-Readers</div><p class="section-sub">Three new evidence-first buyer guides: battery claims fact-checked, ecosystem lock-in priced out, and 2026's volatile tablet pricing explained honestly.</p><div class="featured"><div class="article-card"><div class="card-thumb">📱<span class="card-badge badge-guide">Buyer Guide</span></div><div class="card-body"><div class="card-meta">July 2026 · 5 picks compared</div><div class="card-title"><a href="/articles/best-tablets.html">Best Tablets 2026: Buy for What You'll Actually Do, Not the Spec Sheet</a></div><div class="card-excerpt">The base iPad 11-inch is the answer for most people — and we explain why we won't print most tablet prices this year. Includes the post-refresh discount playbook for iPad Pro M4 and Galaxy Tab S10+.</div><div class="card-footer"><a href="/articles/best-tablets.html" class="read-more">Read guide →</a></div></div></div><div class="article-card"><div class="card-thumb">⌚<span class="card-badge badge-guide">Buyer Guide</span></div><div class="card-body"><div class="card-meta">July 2026 · 6 picks compared</div><div class="card-title"><a href="/articles/best-smartwatches.html">Best Smartwatches 2026: Six Picks, With the Battery Claims Fact-Checked</a></div><div class="card-excerpt">Rated battery numbers are best-case scripts. We rank the Ultra 3, Galaxy Watch 8, Pixel Watch 4 and more — including the one watch whose 120-hour claim independent testing actually confirms.</div><div class="card-footer"><a href="/articles/best-smartwatches.html" class="read-more">Read guide →</a></div></div></div><div class="article-card"><div class="card-thumb">📖<span class="card-badge badge-guide">Buyer Guide</span></div><div class="card-body"><div class="card-meta">July 2026 · 5 picks compared</div><div class="card-title"><a href="/articles/best-ereaders.html">Best E-Readers 2026: Kindle vs. Kobo, With the Lock-In Math Done Honestly</a></div><div class="card-excerpt">The device is the cheapest part — the bookstore you marry costs 4× more over five years. Paperwhite for Kindle loyalists, Kobo Clara Colour if you're starting fresh, $110 base Kindle for travel.</div><div class="card-footer"><a href="/articles/best-ereaders.html" class="read-more">Read guide →</a></div></div></div><div class="article-card"><div class="card-thumb">📺<span class="card-badge badge-guide">Buyer Guide</span></div><div class="card-body"><div class="card-meta">July 2026 · Buyer Guide</div><div class="card-title"><a href="/articles/best-streaming-devices-2024.html">Best Streaming Devices in 2026: 5 Boxes and Sticks Actually Worth Buying</a></div><div class="card-footer"><a href="/articles/best-streaming-devices-2024.html" class="read-more">Read →</a></div></div></div></div></div>
+
+<hr class="divider" />
+<footer>
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="nav-logo" style="margin-bottom:0.5rem;">
+<div class="icon">⊕</div>
+<span>Loiter<span class="dot">Point</span></span>
+</div>
+<p>Independent tech coverage written by people who actually use the gear. No sponsored reviews, no brand deals on our scores.</p>
+</div>
+<div class="footer-links">
+<h4>Top Picks</h4>
+<a href="/articles/best-headphones-under-200.html">Best Headphones Under $200</a>
+<a href="/articles/best-robot-vacuums-2024.html">Best Robot Vacuums</a>
+<a href="/articles/best-dash-cams-2024.html">Best Dash Cams</a>
+<a href="/articles/best-wireless-keyboards.html">Best Wireless Keyboards</a>
+<a href="/articles/best-gaming-headsets-under-100.html">Best Gaming Headsets Under $100</a>
+<a href="/articles/dji-mini-4-pro-review.html">DJI Mini 4 Pro Review</a>
+<a href="/articles/dji-air-3-review.html">DJI Air 3 Review</a>
+</div>
+<div class="footer-links">
+<h4>Buyer Guides</h4>
+<a href="/articles/best-drones-for-beginners.html">Best Drones for Beginners</a>
+<a href="/articles/best-drones-under-500.html">Best Drones Under $500</a>
+<a href="/articles/best-drones-real-estate.html">Drones for Real Estate</a>
+<a href="/articles/mini-4-pro-vs-air-3.html">Mini 4 Pro vs Air 3</a>
+<a href="/articles/faa-remote-id-guide.html">FAA Remote ID Guide</a>
+</div>
+<div class="footer-links">
+<h4>Site</h4>
+<a href="/about.html">About</a>
+<a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
+<a href="/privacy-policy.html">Privacy Policy</a>
+<a href="/terms.html">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Loiter Point. All rights reserved.</p>
+<p class="disclosure">Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase — at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions.</p>
+</div>
+</footer>
+<script src="/nav.js" defer></script>
+</body>
+</html>
