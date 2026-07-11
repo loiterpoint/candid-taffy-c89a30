@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  // Normalize legacy /index.html URLs to / so all hash navigation
+  // happens on one canonical path (GitHub Pages can't 301 this).
+  if (location.pathname.endsWith('/index.html')) {
+    history.replaceState(null, '',
+      location.pathname.slice(0, -10) + location.hash);
+  }
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Loiter Point — Consumer Tech Reviews You Can Actually Trust</title>

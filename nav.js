@@ -5,12 +5,12 @@
    Uses the site's existing CSS variables, so it inherits the dark/lime theme. */
 (function () {
   var LINKS = [
-    { ic: "🚁", label: "Drones & Aerial",      href: "/index.html#drones",      ct: "12" },
-    { ic: "🎧", label: "Headphones & Audio",   href: "/index.html#audio",       ct: "3"  },
-    { ic: "🏠", label: "Home & Cleaning",      href: "/index.html#home-tech",   ct: "3"  },
-    { ic: "🚗", label: "Automotive",           href: "/index.html#automotive",  ct: "1"  },
-    { ic: "⌨️", label: "Computing & Desk",     href: "/index.html#computing",   ct: "3"  },
-    { ic: "📱", label: "Tablets & Wearables",  href: "/index.html#mobile-tech", ct: "4"  },
+    { ic: "🚁", label: "Drones & Aerial",      href: "/#drones",      ct: "12" },
+    { ic: "🎧", label: "Headphones & Audio",   href: "/#audio",       ct: "3"  },
+    { ic: "🏠", label: "Home & Cleaning",      href: "/#home-tech",   ct: "3"  },
+    { ic: "🚗", label: "Automotive",           href: "/#automotive",  ct: "1"  },
+    { ic: "⌨️", label: "Computing & Desk",     href: "/#computing",   ct: "3"  },
+    { ic: "📱", label: "Tablets & Wearables",  href: "/#mobile-tech", ct: "4"  },
     { ic: "🔥", label: "Today's Deals",        href: "/deals.html",             ct: "↗" }
   ];
 
@@ -53,7 +53,7 @@
     var menu = document.createElement("div");
     menu.id = "lpMenu";
     menu.innerHTML =
-      '<div class="lp-top"><a class="lp-logo" href="/index.html"><i>⊕</i>Loiter<b>Point</b></a>' +
+      '<div class="lp-top"><a class="lp-logo" href="/"><i>⊕</i>Loiter<b>Point</b></a>' +
       '<button class="lp-x" aria-label="Close menu">✕</button></div>' +
       '<div class="lp-body">' + rows +
       '<a class="lp-cta" href="/site-map.html">View full site map →</a></div>';
@@ -66,6 +66,11 @@
     }
     burger.addEventListener("click", function () { setOpen(!menu.classList.contains("open")); });
     menu.querySelector(".lp-x").addEventListener("click", function () { setOpen(false); });
+    // Close the overlay on any link tap — same-page hash jumps don't reload,
+    // so without this the menu stays open and body scrolling stays locked.
+    Array.prototype.forEach.call(menu.querySelectorAll("a"), function (a) {
+      a.addEventListener("click", function () { setOpen(false); });
+    });
 
     var navLinks = document.querySelector(".nav-links");
     if (navLinks && !navLinks.querySelector('a[href*="site-map"]')) {
