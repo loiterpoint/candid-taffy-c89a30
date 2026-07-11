@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Site Map — Loiter Point</title>
+<meta name="description" content="Every page on Loiter Point in one place: drones, audio, home tech, automotive, computing, tablets and wearables — plus deals and site info." />
+<link rel="canonical" href="https://loiterpoint.com/site-map.html"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--bg: #0c0c0e;
+--surface: #141418;
+--surface2: #1c1c22;
+--accent: #e8ff47;
+--accent2: #ff6b35;
+--text: #e2e2e8;
+--muted: #7a7a8a;
+--border: #26262e;
+--radius: 10px;
+--mono: 'IBM Plex Mono', monospace;
+}
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+
+nav {
+display: flex; align-items: center; justify-content: space-between;
+padding: 1rem 2rem; border-bottom: 1px solid var(--border);
+position: sticky; top: 0; background: rgba(12,12,14,0.97);
+backdrop-filter: blur(12px); z-index: 100;
+}
+.nav-logo { display: flex; align-items: center; gap: 0.6rem; font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; }
+.nav-logo .icon { width: 28px; height: 28px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #000; }
+.nav-logo span { color: var(--text); }
+.nav-logo .dot { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { color: var(--muted); font-size: 0.875rem; font-weight: 500; transition: color 0.15s; }
+.nav-links a:hover { color: var(--text); }
+.nav-links a.current { color: var(--accent); }
+.nav-tag { font-family: var(--mono); font-size: 0.7rem; background: var(--surface2); border: 1px solid var(--border); padding: 0.25rem 0.6rem; border-radius: 4px; color: var(--accent); }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+.page-eyebrow { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.9rem; }
+.page-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+.page-sub { color: var(--muted); font-size: 1rem; max-width: 620px; line-height: 1.7; margin-bottom: 2.5rem; }
+.page-sub strong { color: var(--text); }
+
+.tree-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.branch { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 1.25rem 1.4rem 1.4rem; }
+.branch-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--border); }
+.branch-icon { font-size: 1.35rem; line-height: 1; }
+.branch-name { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+.branch-name a:hover { color: var(--accent); }
+.branch-count { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); margin-left: auto; background: var(--surface2); border: 1px solid var(--border); padding: 0.18rem 0.5rem; border-radius: 20px; }
+.leaves { list-style: none; }
+.leaves li { position: relative; padding: 0.34rem 0 0.34rem 1.1rem; font-size: 0.9rem; }
+.leaves li::before { content: ""; position: absolute; left: 0; top: 0; bottom: 50%; width: 0.7rem; border-left: 1px solid var(--border); border-bottom: 1px solid var(--border); border-bottom-left-radius: 4px; }
+.leaves a { color: var(--muted); transition: color 0.12s; }
+.leaves a:hover { color: var(--accent); }
+.leaves .tag { font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); border: 1px solid var(--border); border-radius: 3px; padding: 0.02rem 0.32rem; margin-left: 0.4rem; }
+
+.pages-row { margin-top: 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.4rem; }
+.pages-row h3 { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.9rem; }
+.pages-links { display: flex; flex-wrap: wrap; gap: 0.6rem 0.75rem; }
+.pages-links a { font-size: 0.85rem; color: var(--muted); border: 1px solid var(--border); background: var(--surface2); border-radius: 7px; padding: 0.45rem 0.85rem; transition: all 0.12s; }
+.pages-links a:hover { color: var(--text); border-color: var(--accent); }
+
+footer { border-top: 1px solid var(--border); padding: 2rem; margin-top: 2rem; }
+.footer-bottom { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p { font-size: 0.75rem; color: var(--muted); }
+.disclosure { font-size: 0.72rem; color: var(--muted); opacity: 0.6; max-width: 500px; line-height: 1.5; }
+
+@media (max-width: 768px) {
+nav { padding: 0.85rem 1.1rem; }
+.nav-links { display: none; }
+.wrap { padding: 2rem 1.1rem 3rem; }
+.tree-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a class="nav-logo" href="index.html">
+<div class="icon">⊕</div>
+<span>Loiter<span class="dot">Point</span></span>
+</a>
+<div class="nav-links">
+<a href="index.html#drones">Drones</a>
+<a href="index.html#audio">Audio</a>
+<a href="index.html#home-tech">Home Tech</a>
+<a href="index.html#guides">Buyer Guides</a>
+<a href="deals.html">Deals</a>
+<a href="site-map.html" class="current">Site Map</a>
+</div>
+<span class="nav-tag">Evidence-first</span>
+</nav>
+
+<div class="wrap">
+<div class="page-eyebrow">// Everything on Loiter Point, one tap away</div>
+<h1 class="page-title">Site Map</h1>
+<p class="page-sub">Every page we've published, grouped by category. <strong>Tap a heading to jump to that section</strong>, or pick an individual review or guide below.</p>
+
+<div class="tree-grid">
+
+<div class="branch">
+<div class="branch-head">
+<span class="branch-icon">🚁</span>
+<span class="branch-name"><a href="index.html#drones">Drones &amp; Aerial</a></span>
+<span class="branch-count">12</span>
+</div>
+<ul class="leaves">
+<li><a href="articles/best-drones-2026.html">Best Drones 2026</a><span class="tag">guide</span></li>
+<li><a href="articles/best-drones-for-beginners.html">Best Drones for Beginners</a><span class="tag">guide</span></li>
+<li><a href="articles/best-drones-under-500.html">Best Drones Under $500</a><span class="tag">guide</span></li>
+<li><a href="articles/best-drones-real-estate.html">Best Drones for Real Estate</a><span class="tag">guide</span></li>
+<li><a href="articles/dji-mini-5-pro-review.html">DJI Mini 5 Pro Review</a><span class="tag">review</span></li>
+<li><a href="articles/dji-mini-4-pro-review.html">DJI Mini 4 Pro Review</a><span class="tag">review</span></li>
+<li><a href="articles/dji-air-3-review.html">DJI Air 3 Review</a><span class="tag">review</span></li>
+<li><a href="articles/dji-mavic-3-classic-review.html">DJI Mavic 3 Classic Review</a><span class="tag">review</span></li>
+<li><a href="articles/dji-neo-review.html">DJI Neo Review</a><span class="tag">review</span></li>
+<li><a href="articles/mini-4-pro-vs-air-3.html">Mini 4 Pro vs Air 3</a><span class="tag">compare</span></li>
+<li><a href="articles/faa-remote-id-guide.html">FAA Remote ID Guide</a><span class="tag">regs</span></li>
+<li><a href="articles/nd-filter-math-drone.html">ND Filter Math for Pilots</a><span class="tag">guide</span></li>
+</ul>
+</div>
+
+<div class="branch">
+<div class="branch-head">
+<span class="branch-icon">🎧</span>
+<span class="branch-name"><a href="index.html#audio">Headphones &amp; Audio</a></span>
+<span class="branch-count">3</span>
+</div>
+<ul class="leaves">
+<li><a href="articles/best-headphones-under-200.html">Best Headphones Under $200</a><span class="tag">guide</span></li>
+<li><a href="articles/best-wireless-earbuds-under-100.html">Best Wireless Earbuds Under $100</a><span class="tag">guide</span></li>
+<li><a href="articles/best-gaming-headsets-under-100.html">Best Gaming Headsets Under $100</a><span class="tag">guide</span></li>
+</ul>
+</div>
+
+<div class="branch">
+<div class="branch-head">
+<span class="branch-icon">🏠</span>
+<span class="branch-name"><a href="index.html#home-tech">Home &amp; Cleaning</a></span>
+<span class="branch-count">3</span>
+</div>
+<ul class="leaves">
+<li><a href="articles/best-robot-vacuums-2024.html">Best Robot Vacuums</a><span class="tag">guide</span></li>
+<li><a href="articles/best-car-vacuums.html">Best Car Vacuums</a><span class="tag">guide</span></li>
+<li><a href="articles/best-air-fryers-2024.html">Best Air Fryers</a><span class="tag">guide</span></li>
+</ul>
+</div>
+
+<div class="branch">
+<div class="branch-head">
+<span class="branch-icon">🚗</span>
+<span class="branch-name"><a href="index.html#automotive">Automotive</a></span>
+<span class="branch-count">1</span>
+</div>
+<ul class="leaves">
+<li><a href="articles/best-dash-cams-2024.html">Best Dash Cams</a><span class="tag">guide</span></li>
+</ul>
+</div>
+
+<div class="branch">
+<div class="branch-head">
+<span class="branch-icon">⌨️</span>
+<span class="branch-name"><a href="index.html#computing">Computing &amp; Desk</a></span>
+<span class="branch-count">3</span>
+</div>
+<ul class="leaves">
+<li><a href="articles/best-standing-desks.html">Best Standing Desks</a><span class="tag">guide</span></li>
+<li><a href="articles/best-wireless-keyboards.html">Best Wireless Keyboards</a><span class="tag">guide</span></li>
+<li><a href="articles/best-power-banks.html">Best Power Banks</a><span class="tag">guide</span></li>
+</ul>
+</div>
+
+<div class="branch">
+<div class="branch-head">
+<span class="branch-icon">📱</span>
+<span class="branch-name"><a href="index.html#mobile-tech">Tablets, Wearables &amp; Media</a></span>
+<span class="branch-count">4</span>
+</div>
+<ul class="leaves">
+<li><a href="articles/best-tablets.html">Best Tablets 2026</a><span class="tag">guide</span></li>
+<li><a href="articles/best-smartwatches.html">Best Smartwatches 2026</a><span class="tag">guide</span></li>
+<li><a href="articles/best-ereaders.html">Best E-Readers 2026</a><span class="tag">guide</span></li>
+<li><a href="articles/best-streaming-devices-2024.html">Best Streaming Devices</a><span class="tag">guide</span></li>
+</ul>
+</div>
+
+</div>
+
+<div class="pages-row">
+<h3>// Main pages &amp; site info</h3>
+<div class="pages-links">
+<a href="index.html">🏠 Home</a>
+<a href="deals.html">🔥 Deal Radar</a>
+<a href="about.html">About</a>
+<a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Service</a>
+</div>
+</div>
+
+</div>
+
+<footer>
+<div class="footer-bottom">
+<p>© 2026 Loiter Point. All rights reserved.</p>
+<p class="disclosure">Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase — at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions.</p>
+</div>
+</footer>
+
+<script src="/nav.js" defer></script>
+</body>
+</html>
