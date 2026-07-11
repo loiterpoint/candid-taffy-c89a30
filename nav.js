@@ -68,7 +68,7 @@
     menu.querySelector(".lp-x").addEventListener("click", function () { setOpen(false); });
 
     var navLinks = document.querySelector(".nav-links");
-    if (navLinks && !navLinks.querySelector(".lp-map-desktop")) {
+    if (navLinks && !navLinks.querySelector('a[href*="site-map"]')) {
       var a = document.createElement("a");
       a.className = "lp-map-desktop";
       a.href = "/site-map.html";
