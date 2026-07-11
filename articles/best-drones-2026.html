@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>Best Drones 2026: Buyer's Guide for Every Budget | Loiter Point</title>
+<meta name="description" content="The best drones to buy in 2026, ranked by evidence. DJI Air 3S, Mini 5 Pro, Mini 4 Pro, Flip and the best non-DJI pick — rated specs vs. estimated real-world performance, real prices, and what the FCC Covered List means for buyers." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:860px; margin:0 auto; padding:32px 20px 80px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .backlink { font-family:'IBM Plex Mono',monospace; font-size:.82rem; color:var(--muted); display:inline-block; margin-bottom:28px; }
+  .backlink:hover { color:var(--accent); }
+  h1 { font-size:2.15rem; line-height:1.15; letter-spacing:-.02em; margin-bottom:14px; }
+  h2 { font-size:1.5rem; letter-spacing:-.01em; margin:44px 0 16px; padding-top:8px; }
+  h3 { font-size:1.15rem; margin:0 0 4px; }
+  p { margin-bottom:16px; color:var(--text); }
+  .kicker { font-family:'IBM Plex Mono',monospace; font-size:.78rem; text-transform:uppercase; letter-spacing:.14em; color:var(--accent); margin-bottom:12px; }
+  .meta { font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--muted); margin-bottom:28px; }
+  .lede { font-size:1.12rem; color:#c9c9d4; }
+
+  /* TLDR */
+  .tldr { background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:10px; padding:22px 24px; margin:26px 0 8px; }
+  .tldr h2 { margin:0 0 12px; font-size:1.05rem; font-family:'IBM Plex Mono',monospace; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); padding:0; }
+  .tldr ul { margin:0 0 6px 18px; }
+  .tldr li { margin-bottom:9px; }
+  .grab { font-family:'IBM Plex Mono',monospace; font-size:.9rem; color:var(--text); background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin-top:14px; line-height:2; }
+  .grab strong { color:var(--accent); text-transform:uppercase; font-size:.78rem; letter-spacing:.1em; }
+
+  /* Cards */
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:24px; margin:22px 0; position:relative; }
+  .card-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .rank { font-family:'IBM Plex Mono',monospace; font-size:.72rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--bg); background:var(--accent); border-radius:6px; padding:5px 10px; display:inline-block; margin-bottom:10px; }
+  .price { font-family:'IBM Plex Mono',monospace; font-size:1.35rem; color:var(--accent); font-weight:600; white-space:nowrap; }
+  .price small { display:block; font-size:.7rem; color:var(--muted); font-weight:400; letter-spacing:.04em; }
+  .tag { font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--muted); margin-bottom:4px; }
+
+  .specgrid { width:100%; border-collapse:collapse; margin:16px 0; font-size:.9rem; }
+  .specgrid th { text-align:left; font-family:'IBM Plex Mono',monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); padding:8px 10px; border-bottom:1px solid var(--border); }
+  .specgrid td { padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  .specgrid td:first-child { color:var(--muted); width:34%; }
+  .specgrid .rw { color:var(--accent); }
+
+  .btn { display:inline-block; background:var(--accent); color:var(--bg); font-weight:600; font-size:.92rem; padding:11px 22px; border-radius:8px; margin-top:6px; font-family:'IBM Plex Mono',monospace; letter-spacing:.02em; }
+  .btn:hover { text-decoration:none; filter:brightness(1.08); }
+  .verdict { font-size:.95rem; color:#c9c9d4; margin-top:14px; }
+  .verdict strong { color:var(--text); }
+
+  /* Nerd box */
+  .nerd { background:linear-gradient(180deg,#16161c,#121216); border:1px dashed #34343f; border-radius:12px; padding:22px 24px; margin:28px 0; }
+  .nerd .label { font-family:'IBM Plex Mono',monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.14em; color:var(--accent); margin-bottom:10px; }
+  .nerd h3 { font-family:'IBM Plex Mono',monospace; font-size:1rem; margin-bottom:10px; }
+  .nerd code { font-family:'IBM Plex Mono',monospace; background:var(--surface2); padding:2px 6px; border-radius:4px; font-size:.85rem; color:var(--accent); }
+
+  /* Comparison table */
+  .cmp-scroll { overflow-x:auto; margin:18px 0; border:1px solid var(--border); border-radius:12px; }
+  table.cmp { width:100%; border-collapse:collapse; font-size:.86rem; min-width:640px; }
+  table.cmp th, table.cmp td { padding:11px 12px; border-bottom:1px solid var(--border); text-align:left; }
+  table.cmp thead th { font-family:'IBM Plex Mono',monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); background:var(--surface); }
+  table.cmp tbody tr:hover { background:var(--surface); }
+  table.cmp td:first-child { color:var(--text); font-weight:500; }
+
+  .callout { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin:22px 0; font-size:.95rem; }
+  .callout .label { font-family:'IBM Plex Mono',monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; color:var(--accent); margin-bottom:8px; }
+
+  .bottom { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:26px; margin:34px 0; }
+
+  footer { border-top:1px solid var(--border); margin-top:56px; padding-top:24px; font-size:.82rem; color:var(--muted); }
+  footer p { color:var(--muted); font-size:.82rem; }
+  .disclosure { font-size:.8rem; color:var(--muted); background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:22px 0; }
+  hr { border:none; border-top:1px solid var(--border); margin:36px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backlink" href="../index.html">&larr; Loiter Point</a>
+
+  <div class="kicker">Buyer's Guide &middot; Drones</div>
+  <h1>Best Drones 2026: The Ones Worth Buying, Ranked by Evidence</h1>
+  <div class="meta">Updated July 9, 2026 &middot; How We Evaluate below &middot; ~11 min read</div>
+
+  <p class="lede">2026 is a strange, good year to buy a drone. The hardware has never been better &mdash; 1-inch sensors and 40-plus-minute batteries are now normal &mdash; but DJI landed on the FCC Covered List in December 2025, which puts a question mark over future U.S. imports. Current stock is legal to buy and fly. This guide sorts the lineup into picks that actually make sense for how you'll fly, with rated specs held up against estimated real-world numbers.</p>
+
+  <div class="tldr">
+    <h2>TL;DR</h2>
+    <ul>
+      <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/s?k=DJI+Air+3S&amp;tag=loiterpoint20-20" rel="sponsored nofollow">DJI Air 3S</a> (~$1,099) &mdash; dual 1-inch-class cameras, ~45&nbsp;min rated flight, all-around obstacle sensing. The safe money for anyone serious about the footage.</li>
+      <li><strong>Best sub-250g flagship:</strong> the <a href="https://www.amazon.com/dp/B0F6XJ7W9M?tag=loiterpoint20-20" rel="sponsored nofollow">DJI Mini 5 Pro</a> (~$799) &mdash; a 1-inch sensor under 250g means big-drone image quality with no FAA registration for recreational flyers.</li>
+      <li><strong>Best value / beginner:</strong> the <a href="https://www.amazon.com/s?k=DJI+Flip+drone&amp;tag=loiterpoint20-20" rel="sponsored nofollow">DJI Flip</a> (~$439) for a foldable 4K creator drone, or the <a href="https://www.amazon.com/s?k=Potensic+Atom+2&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Potensic Atom 2</a> (~$179) if you want a capable pick outside the DJI ecosystem.</li>
+      <li><strong>Watch this:</strong> DJI's FCC Covered List status doesn't ground the drone you own &mdash; but if you've been waiting, waiting longer carries supply risk, not upside.</li>
+    </ul>
+    <div class="grab">
+      <strong>Grab your pick:</strong><br />
+      &#9654; <a href="https://www.amazon.com/s?k=DJI+Air+3S&amp;tag=loiterpoint20-20" rel="sponsored nofollow">DJI Air 3S &mdash; ~$1,099</a><br />
+      &#9654; <a href="https://www.amazon.com/dp/B0F6XJ7W9M?tag=loiterpoint20-20" rel="sponsored nofollow">DJI Mini 5 Pro &mdash; ~$799</a><br />
+      &#9654; <a href="https://www.amazon.com/s?k=DJI+Mini+4+Pro&amp;tag=loiterpoint20-20" rel="sponsored nofollow">DJI Mini 4 Pro &mdash; ~$599&ndash;759</a><br />
+      &#9654; <a href="https://www.amazon.com/s?k=DJI+Flip+drone&amp;tag=loiterpoint20-20" rel="sponsored nofollow">DJI Flip &mdash; ~$439</a><br />
+      &#9654; <a href="https://www.amazon.com/s?k=Potensic+Atom+2&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Potensic Atom 2 &mdash; ~$179</a>
+    </div>
+  </div>
+
+  <div class="disclosure">
+    Loiter Point is reader-supported. When you buy through links on this page we may earn an affiliate commission at no extra cost to you. It doesn't change our rankings &mdash; the evidence does.
+  </div>
+
+  <h2>How We Evaluate Drones</h2>
+  <p>Loiter Point does not run a flight lab, and we don't pretend to. We don't publish flight-hour counts or "we measured" numbers. Instead, every rating here synthesizes published independent testing from outlets that do controlled measurements, plus a read of aggregated owner reports for the failure modes that only show up after months of flying &mdash; battery sag in cold wind, gimbal drift, transmission dropouts in cluttered RF.</p>
+  <p>In the spec grids below, the manufacturer's rated figure sits next to an <span style="color:var(--accent)">est. real-world</span> or <span style="color:var(--accent)">reported</span> value. Rated flight times come from DJI/manufacturer hover tests in ideal conditions; the real-world estimate is what owners and independent reviewers consistently land on with mixed flying and a safe return-to-home buffer. Where the evidence is thin or sources disagree &mdash; the Flip's street price is a live example &mdash; we say so instead of inventing a clean number.</p>
+
+  <h2>The Picks</h2>
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <span class="rank">#1 &middot; Best Overall</span>
+        <div class="tag">Prosumer &middot; dual camera</div>
+        <h3>DJI Air 3S</h3>
+      </div>
+      <div class="price">~$1,099<small>street ~$989 on deals</small></div>
+    </div>
+    <p class="verdict">If you want one drone that just does everything well, this is it. The Air 3S pairs a 1-inch main sensor with a 70mm medium-tele second camera, so you get genuine framing flexibility instead of a digital crop, and its battery is the longest-legged in this guide. It's heavier and needs FAA registration, but for anyone who cares about the footage first, the extra grams are worth it.</p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr></thead>
+      <tbody>
+        <tr><td>Main sensor</td><td>1" CMOS + 70mm tele</td><td class="rw">Best low-light in guide (reported)</td></tr>
+        <tr><td>Flight time</td><td>~45 min</td><td class="rw">~30&ndash;35 min est. real-world</td></tr>
+        <tr><td>Obstacle sensing</td><td>Omnidirectional</td><td class="rw">Reliable per owner reports</td></tr>
+        <tr><td>Weight</td><td>~724 g</td><td class="rw">FAA registration required</td></tr>
+        <tr><td>Transmission</td><td>20 km (O4)</td><td class="rw">Strong in mixed RF (reported)</td></tr>
+      </tbody>
+    </table>
+    <a class="btn" href="https://www.amazon.com/s?k=DJI+Air+3S&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <span class="rank">#2 &middot; Best Sub-250g</span>
+        <div class="tag">Travel &middot; no registration</div>
+        <h3>DJI Mini 5 Pro</h3>
+      </div>
+      <div class="price">~$799<small>base w/ RC-N3</small></div>
+    </div>
+    <p class="verdict">The Mini 5 Pro is the first sub-250g DJI to carry a true 1-inch sensor, and that's the whole story: flagship image quality in a body light enough to skip recreational FAA registration and slide through most travel rules. You trade some wind stability and the Air's second camera, but for travel and everyday flying it's the sweet spot. Standard SKU ASIN <code>B0F6XJ7W9M</code> is the one to buy unless you want a Fly More Combo.</p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr></thead>
+      <tbody>
+        <tr><td>Sensor</td><td>1" CMOS</td><td class="rw">Class-leading for the weight (reported)</td></tr>
+        <tr><td>Flight time</td><td>~36 min</td><td class="rw">~27&ndash;30 min est. real-world</td></tr>
+        <tr><td>Weight</td><td>&lt;250 g</td><td class="rw">No recreational registration</td></tr>
+        <tr><td>Tracking</td><td>ActiveTrack 360&deg;</td><td class="rw">225&deg; gimbal rotation</td></tr>
+        <tr><td>Obstacle sensing</td><td>Omnidirectional</td><td class="rw">Solid; weaker in gusts (reported)</td></tr>
+      </tbody>
+    </table>
+    <a class="btn" href="https://www.amazon.com/dp/B0F6XJ7W9M?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <span class="rank">#3 &middot; Best Value Sub-250g</span>
+        <div class="tag">Still excellent in 2026</div>
+        <h3>DJI Mini 4 Pro</h3>
+      </div>
+      <div class="price">~$599&ndash;759<small>varies by combo</small></div>
+    </div>
+    <p class="verdict">The Mini 4 Pro didn't stop being a great drone when the Mini 5 Pro arrived &mdash; it got cheaper. It keeps omnidirectional sensing, sub-250g weight and strong 4K/HDR, on a smaller 1/1.3-inch sensor. If the Mini 5 Pro's price makes you wince, this is where the value lives, especially with the Plus battery.</p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr></thead>
+      <tbody>
+        <tr><td>Sensor</td><td>1/1.3" CMOS</td><td class="rw">Great to ISO limits (reported)</td></tr>
+        <tr><td>Flight time</td><td>~34 min (45 w/ Plus)</td><td class="rw">~26 min est. real-world (std)</td></tr>
+        <tr><td>Weight</td><td>&lt;250 g</td><td class="rw">No recreational registration</td></tr>
+        <tr><td>Obstacle sensing</td><td>Omnidirectional</td><td class="rw">Same class as Mini 5 (reported)</td></tr>
+      </tbody>
+    </table>
+    <a class="btn" href="https://www.amazon.com/s?k=DJI+Mini+4+Pro&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <span class="rank">#4 &middot; Best Beginner Creator</span>
+        <div class="tag">Foldable &middot; palm-friendly</div>
+        <h3>DJI Flip</h3>
+      </div>
+      <div class="price">~$439<small>often discounted lower</small></div>
+    </div>
+    <p class="verdict">The Flip is the budget pick that doesn't feel like a compromise on the camera. A 1/1.3-inch sensor and a full 3-axis gimbal put its footage a clear step above palm-drone toys, it stays under 249g, and prop guards make it friendly for first-timers. The catch: a single forward Time-of-Flight sensor, not the omnidirectional sensing of the pricier picks &mdash; fine for open flying, less so for tight, cluttered spaces. <em>Note on price: sources disagree, listing it anywhere from ~$309 on promotion to a ~$439 MSRP, so check the live price before you commit.</em></p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr></thead>
+      <tbody>
+        <tr><td>Sensor</td><td>1/1.3" CMOS</td><td class="rw">Punches above price (reported)</td></tr>
+        <tr><td>Gimbal</td><td>3-axis mechanical</td><td class="rw">Smooth 4K/60 + RAW</td></tr>
+        <tr><td>Flight time</td><td>~31 min</td><td class="rw">~24 min est. real-world</td></tr>
+        <tr><td>Obstacle sensing</td><td>Forward ToF only</td><td class="rw">Open-air use, not tight spaces</td></tr>
+        <tr><td>Weight</td><td>&lt;249 g</td><td class="rw">No recreational registration</td></tr>
+      </tbody>
+    </table>
+    <a class="btn" href="https://www.amazon.com/s?k=DJI+Flip+drone&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <span class="rank">#5 &middot; Best Non-DJI</span>
+        <div class="tag">Ecosystem-independent</div>
+        <h3>Potensic Atom 2</h3>
+      </div>
+      <div class="price">~$179<small>frequently on sale</small></div>
+    </div>
+    <p class="verdict">With DJI on the FCC Covered List, "what if I don't want to bet on DJI?" is a fair question, and the Atom 2 is the best answer under $200. It undercuts DJI's cheapest 4K options while still offering a 3-axis mechanical gimbal &mdash; the single feature that separates real footage from jelly. It won't match a 1-inch sensor for image quality, but for a first drone or a knock-around second, the value is hard to argue with.</p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr></thead>
+      <tbody>
+        <tr><td>Sensor</td><td>1/2" CMOS</td><td class="rw">Good in daylight (reported)</td></tr>
+        <tr><td>Gimbal</td><td>3-axis mechanical</td><td class="rw">Rare at this price</td></tr>
+        <tr><td>Flight time</td><td>~32 min</td><td class="rw">~24 min est. real-world</td></tr>
+        <tr><td>Weight</td><td>&lt;250 g</td><td class="rw">No recreational registration</td></tr>
+      </tbody>
+    </table>
+    <a class="btn" href="https://www.amazon.com/s?k=Potensic+Atom+2&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <div class="nerd">
+    <div class="label">/// Nerd Box</div>
+    <h3>Why "sub-250g" is the number that actually matters</h3>
+    <p>The 249g cutoff isn't marketing &mdash; it's a regulatory cliff. In the U.S., recreational drones at or under 250g don't require FAA registration, and most countries mirror that line. But weight also drives physics that no firmware can hide.</p>
+    <p>Kinetic energy scales with mass: <code>KE = &frac12; &middot; m &middot; v&sup2;</code>. Everything below 250g carries a fraction of the impact energy of a 724g Air 3S at the same speed, which is why light drones clear more rules &mdash; and also why they get shoved around in wind. A gust imparts force on frontal area, but the drone's ability to resist it scales with mass and thrust. That's the real trade you're making at 249g: easier paperwork and easier travel, in exchange for less authority in gusty air. The Mini 5 Pro's headline trick is smuggling a 1-inch sensor under that line without giving up as much stability as earlier featherweights &mdash; that's the engineering worth paying for, not the spec sheet alone.</p>
+  </div>
+
+  <h2>Head-to-Head Comparison</h2>
+  <div class="cmp-scroll">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th>Drone</th><th>Price (approx)</th><th>Sensor</th><th>Rated flight</th><th>Weight</th><th>Obstacle sensing</th><th>Best for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>DJI Air 3S</td><td>~$1,099</td><td>1" + 70mm tele</td><td>~45 min</td><td>~724 g</td><td>Omnidirectional</td><td>Serious footage</td></tr>
+        <tr><td>DJI Mini 5 Pro</td><td>~$799</td><td>1"</td><td>~36 min</td><td>&lt;250 g</td><td>Omnidirectional</td><td>Travel flagship</td></tr>
+        <tr><td>DJI Mini 4 Pro</td><td>~$599&ndash;759</td><td>1/1.3"</td><td>~34 min</td><td>&lt;250 g</td><td>Omnidirectional</td><td>Value sub-250g</td></tr>
+        <tr><td>DJI Flip</td><td>~$439</td><td>1/1.3"</td><td>~31 min</td><td>&lt;249 g</td><td>Forward ToF</td><td>Beginner creator</td></tr>
+        <tr><td>Potensic Atom 2</td><td>~$179</td><td>1/2"</td><td>~32 min</td><td>&lt;250 g</td><td>Downward/vision</td><td>Non-DJI budget</td></tr>
+        <tr><td>DJI Neo 2</td><td>~$229</td><td>1/2"</td><td>~19 min</td><td>~151&ndash;209 g</td><td>Fwd LiDAR + vision</td><td>Palm-launch selfies</td></tr>
+        <tr><td>HoverAir X1 Pro Max</td><td>~$600</td><td>Dual (wide+tele)</td><td>~16 min</td><td>~192 g</td><td>Prop-caged, tracking</td><td>Solo self-filming</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="label">Regulatory reality check</div>
+    <p style="margin:0">DJI was added to the FCC Covered List in December 2025. In plain terms: it raises uncertainty about <em>future</em> U.S. imports and new-model availability &mdash; it does not make the drone in your bag illegal, and current retail stock is legal to buy and fly. If you've been on the fence about a DJI, the risk of waiting is supply and price, not a sudden ban on the unit you already own. Non-DJI options like the Atom 2 exist precisely for buyers who'd rather not carry that uncertainty. Always confirm current FAA rules and any local registration or Remote ID requirements before your first flight.</p>
+  </div>
+
+  <div class="bottom">
+    <h2 style="margin-top:0">Bottom Line</h2>
+    <p>For most people who care about the footage, the <strong>DJI Air 3S</strong> is the drone to buy in 2026 &mdash; the dual camera and long battery earn the higher price and the registration hassle. If you fly to travel, or you just don't want the paperwork, the <strong>DJI Mini 5 Pro</strong> is the most capable thing you can put in a jacket pocket, and the <strong>Mini 4 Pro</strong> is the smarter buy the moment its price dips. Beginners and budget creators are well served by the <strong>DJI Flip</strong>, and if you'd rather stay out of the DJI ecosystem entirely, the <strong>Potensic Atom 2</strong> is a legitimately good drone for the money. The palm-launch <strong>Neo 2</strong> and the autonomous <strong>HoverAir X1 Pro Max</strong> are worth a look only if hands-free self-filming &mdash; not piloting &mdash; is the actual goal. Buy for how you'll fly, not for the biggest spec sheet.</p>
+  </div>
+
+  <div class="disclosure">
+    <strong>Affiliate disclosure:</strong> This article contains affiliate links. If you purchase through them, Loiter Point may earn a commission at no additional cost to you. Prices and availability change constantly &mdash; always confirm the current price on the retailer's page before buying.
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+  </footer>
+</div>
+</body>
+</html>
