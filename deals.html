@@ -93,6 +93,9 @@ p{margin-bottom:16px;}
 .nerd-box strong{color:var(--text);}
 
 table{width:100%;border-collapse:collapse;margin:20px 0 8px;font-size:14px;}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0 8px;}
+.tbl-scroll table{min-width:600px;margin:0;}
+html,body{overflow-x:clip;}
 th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:left;padding:9px 10px;border-bottom:2px solid var(--border);}
 td{padding:10px;border-bottom:1px solid var(--border);vertical-align:middle;}
 td.mono{font-family:'IBM Plex Mono',monospace;font-size:13px;}
@@ -286,6 +289,7 @@ footer p{font-size:13px;color:var(--muted);margin-bottom:10px;}
 </div>
 
 <h2>Every deal, one table</h2>
+<div class="tbl-scroll">
 <table>
 <tr><th>Product</th><th>Was</th><th>Now</th><th>Cut</th><th></th></tr>
 <tr><td>Sony WH-1000XM5</td><td class="mono">$399.99</td><td class="mono hl">$248</td><td class="mono">−38%</td><td><a class="tbl-buy" href="https://www.amazon.com/dp/B09XS7JWHH?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon ↗</a></td></tr>
@@ -302,6 +306,7 @@ footer p{font-size:13px;color:var(--muted);margin-bottom:10px;}
 <tr><td>DJI Osmo Action 5 Pro Essential</td><td class="mono">$339</td><td class="mono hl">$309</td><td class="mono">−9%</td><td><a class="tbl-buy" href="https://www.amazon.com/dp/B0DS2DF5S5?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon ↗</a></td></tr>
 <tr><td>Canon EOS R8</td><td class="mono">$1,376.82</td><td class="mono hl">$1,299</td><td class="mono">−6%</td><td><a class="tbl-buy" href="https://www.amazon.com/dp/B0BTTTH5G6?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon ↗</a></td></tr>
 </table>
+</div>
 
 <div class="expiry-note">
 <div class="dot"></div>
