@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>Best Robot Vacuums Under $300 (2026): LiDAR & Self-Empty Picks | Loiter Point</title>
+<meta name="description" content="The best robot vacuums under $300 in 2026. Evidence-first picks with LiDAR navigation and self-empty docks — rated specs vs. reported real-world performance, honest trade-offs, and no fluff." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e; --surface:#141418; --surface2:#1c1c22;
+    --accent:#e8ff47; --text:#e2e2e8; --muted:#7a7a8a; --border:#26262e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 20px 80px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .backlink{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);display:inline-block;margin-bottom:28px}
+  .backlink:hover{color:var(--accent)}
+  h1{font-size:2.15rem;line-height:1.15;font-weight:700;letter-spacing:-0.02em;margin-bottom:14px}
+  h2{font-size:1.5rem;font-weight:700;letter-spacing:-0.01em;margin:44px 0 16px;padding-top:8px}
+  h3{font-size:1.15rem;font-weight:600;margin:0}
+  p{margin:0 0 16px;color:var(--text)}
+  .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-bottom:12px}
+  .meta{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);margin-bottom:28px;border-bottom:1px solid var(--border);padding-bottom:20px}
+  .lede{font-size:1.08rem;color:#c8c8d2}
+  /* TLDR */
+  .tldr{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px 24px;margin:26px 0 34px}
+  .tldr h2{margin:0 0 12px;font-size:1rem;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);padding-top:0}
+  .tldr ul{margin:0 0 4px;padding-left:20px}
+  .tldr li{margin-bottom:9px;color:#d4d4de}
+  .grab{margin-top:16px;padding-top:16px;border-top:1px dashed var(--border);font-size:0.95rem}
+  .grab strong{color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px}
+  .grab a{white-space:nowrap}
+  /* Pick cards */
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin:22px 0}
+  .card-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:6px;flex-wrap:wrap}
+  .badge{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;background:var(--accent);color:#0c0c0e;border-radius:6px;padding:4px 9px;white-space:nowrap}
+  .role{font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-top:5px}
+  .price{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:1.05rem;font-weight:600;color:var(--accent);white-space:nowrap}
+  .specs{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.9rem}
+  .specs th{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);border-bottom:1px solid var(--border);padding:8px 10px}
+  .specs td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+  .specs tr td:first-child{color:var(--muted);width:34%}
+  .buy{display:inline-block;background:var(--accent);color:#0c0c0e;font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:10px 18px;border-radius:8px;margin-top:6px}
+  .buy:hover{text-decoration:none;filter:brightness(1.08)}
+  .pros-cons{display:flex;gap:20px;flex-wrap:wrap;margin:14px 0 4px}
+  .pros-cons div{flex:1;min-width:220px}
+  .pros-cons h4{font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:7px}
+  .pros h4{color:var(--accent)}
+  .cons h4{color:#ff8a8a}
+  .pros-cons ul{list-style:none;padding:0;font-size:0.9rem}
+  .pros-cons li{padding-left:16px;position:relative;margin-bottom:6px;color:#cfcfda}
+  .pros li:before{content:"+";position:absolute;left:0;color:var(--accent)}
+  .cons li:before{content:"\2013";position:absolute;left:0;color:#ff8a8a}
+  /* Nerd box */
+  .nerd{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin:28px 0}
+  .nerd .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:10px}
+  .nerd p{font-size:0.94rem;color:#cbcbd6;margin-bottom:10px}
+  .nerd p:last-child{margin-bottom:0}
+  /* Comparison table */
+  .compare-wrap{overflow-x:auto;margin:20px 0}
+  table.compare{width:100%;border-collapse:collapse;font-size:0.88rem;min-width:640px}
+  table.compare th,table.compare td{padding:11px 12px;border-bottom:1px solid var(--border);text-align:left}
+  table.compare thead th{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);background:var(--surface)}
+  table.compare tbody tr:hover{background:var(--surface)}
+  table.compare td:first-child{font-weight:600}
+  .callout{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin:24px 0;font-size:0.95rem;color:#cbcbd6}
+  .callout strong{color:var(--text)}
+  footer{margin-top:56px;border-top:1px solid var(--border);padding-top:24px;font-size:0.82rem;color:var(--muted);font-family:'IBM Plex Mono',monospace;line-height:1.7}
+  footer a{color:var(--muted);text-decoration:underline}
+  .disc{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px 18px;font-size:0.82rem;color:var(--muted);margin:30px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backlink" href="../index.html">&larr; Loiter Point</a>
+
+  <div class="kicker">Buyer's Guide &middot; Home &amp; Kitchen</div>
+  <h1>The Best Robot Vacuums Under $300 (2026)</h1>
+  <div class="meta">Updated July 13, 2026 &nbsp;&middot;&nbsp; Evidence-first &middot; No lab, no fluff &nbsp;&middot;&nbsp; ~9 min read</div>
+
+  <p class="lede">The sub-$300 tier stopped being the compromise bracket. In 2026 you can get true LiDAR mapping, 5,000&ndash;6,000&nbsp;Pa suction, and a self-emptying dock without crossing $300 &mdash; features that cost $600+ two years ago. The catch: the trade-offs moved from "does it navigate?" to obstacle avoidance, mopping quality, and app polish. Here are five picks that hold up, ranked by who each one is actually for.</p>
+
+  <div class="tldr">
+    <h2>TL;DR</h2>
+    <ul>
+      <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B09NNF5RHN?tag=loiterpoint20-20" rel="sponsored nofollow">Roborock Q7 Max+</a> &mdash; PreciSense LiDAR, 4,200&nbsp;Pa, and an auto-empty dock, routinely on sale around $300.</li>
+      <li><strong>Best value with auto-empty:</strong> the <a href="https://www.amazon.com/dp/B0CDB831GV?tag=loiterpoint20-20" rel="sponsored nofollow">Eufy L60 SES</a> at ~$280 &mdash; LiDAR + self-empty + hair-detangling brush (note: officially discontinued but still stocked).</li>
+      <li><strong>Cheapest self-empty base:</strong> the <a href="https://www.amazon.com/dp/B0FKH1RW65?tag=loiterpoint20-20" rel="sponsored nofollow">Tikom L8000 Plus</a> at ~$220 packs LiDAR and a dock for the least money.</li>
+      <li><strong>Skip the dock &amp; small apartments:</strong> the app-driven <a href="https://www.amazon.com/dp/B0CVM8TXHP?tag=loiterpoint20-20" rel="sponsored nofollow">iRobot Roomba Vac</a> (~$180) or the bare-bones <a href="https://www.amazon.com/dp/B07R295MLS?tag=loiterpoint20-20" rel="sponsored nofollow">Eufy 11S MAX</a> (~$140).</li>
+    </ul>
+    <div class="grab">
+      <strong>Grab your pick:</strong>
+      <a href="https://www.amazon.com/dp/B09NNF5RHN?tag=loiterpoint20-20" rel="sponsored nofollow">Roborock Q7 Max+ &middot; ~$300</a> &nbsp;|&nbsp;
+      <a href="https://www.amazon.com/dp/B0CDB831GV?tag=loiterpoint20-20" rel="sponsored nofollow">Eufy L60 SES &middot; ~$280</a> &nbsp;|&nbsp;
+      <a href="https://www.amazon.com/dp/B0FKH1RW65?tag=loiterpoint20-20" rel="sponsored nofollow">Tikom L8000 Plus &middot; ~$220</a> &nbsp;|&nbsp;
+      <a href="https://www.amazon.com/dp/B0CVM8TXHP?tag=loiterpoint20-20" rel="sponsored nofollow">Roomba Vac &middot; ~$180</a> &nbsp;|&nbsp;
+      <a href="https://www.amazon.com/dp/B07R295MLS?tag=loiterpoint20-20" rel="sponsored nofollow">Eufy 11S MAX &middot; ~$140</a>
+    </div>
+  </div>
+
+  <p>Prices below are approximate street prices as of July 2026 and move constantly &mdash; especially on the Roborock, which carries a higher list price and lands near $300 only on sale. Confirm the live price before you buy. "Reported real-world" rows synthesize published independent testing and verified owner reports, not our own measurements (see <a href="#how">How We Evaluate</a>).</p>
+
+  <h2>1. Roborock Q7 Max+ &mdash; Best Overall</h2>
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">#1 OVERALL</span>
+      <div>
+        <h3>Roborock Q7 Max+</h3>
+        <div class="role">LiDAR + auto-empty + mop</div>
+      </div>
+      <span class="price">~$300*</span>
+    </div>
+    <p>The Q7 Max+ is the most complete package that regularly dips under $300. You get genuine PreciSense LiDAR that draws an accurate, editable multi-level map, strong suction, and an auto-empty dock that buys you weeks between hands-on emptying. It mops, too &mdash; adequately for maintenance passes, not for dried-on messes.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
+      <tr><td>Suction</td><td>4,200&nbsp;Pa</td><td>Strong on hard floors &amp; low-pile; est. real-world edge/deep-carpet pickup mid-pack</td></tr>
+      <tr><td>Navigation</td><td>PreciSense LiDAR</td><td>Reported accurate mapping; no camera obstacle avoidance &mdash; will bump cords/socks</td></tr>
+      <tr><td>Dock</td><td>Auto-empty (Pure)</td><td>Reported ~7 weeks between bag changes for average homes</td></tr>
+      <tr><td>Runtime</td><td>Up to 180&nbsp;min</td><td>Ample for most single-floor homes</td></tr>
+      <tr><td>Mopping</td><td>30-level water flow</td><td>Fine for maintenance; no scrubbing pressure</td></tr>
+    </table>
+    <div class="pros-cons">
+      <div class="pros"><h4>Strengths</h4><ul><li>Mature, reliable LiDAR mapping &amp; app</li><li>Auto-empty dock at this price</li><li>Handles pet hair well on hard floors</li></ul></div>
+      <div class="cons"><h4>Trade-offs</h4><ul><li>No obstacle avoidance camera</li><li>List price is higher &mdash; wait for a sale</li><li>Mopping is basic</li></ul></div>
+    </div>
+    <a class="buy" href="https://www.amazon.com/dp/B09NNF5RHN?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:12px;margin-bottom:0">*Frequent sale price; list runs higher. Verify before buying.</p>
+  </div>
+
+  <h2>2. Eufy L60 SES &mdash; Best Value With Auto-Empty</h2>
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">#2 VALUE</span>
+      <div>
+        <h3>Eufy L60 (Self-Empty Station)</h3>
+        <div class="role">LiDAR + self-empty + hair detangle</div>
+      </div>
+      <span class="price">~$280</span>
+    </div>
+    <p>The L60 undercuts the Roborock while keeping the two features that matter most: real LiDAR navigation and a self-empty dock. Its standout trick is a hair-detangling comb built into the station that cuts tangled hair off the brush during emptying &mdash; a real win for long-hair and pet households. One honesty flag: Eufy discontinued the L60 in October 2025, but Amazon stock and app updates have persisted through 2026. Buy it as a still-supported closeout, not a brand-new flagship.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
+      <tr><td>Suction</td><td>5,000&nbsp;Pa</td><td>Reported strong hard-floor &amp; low-pile pickup; among the best in tier</td></tr>
+      <tr><td>Navigation</td><td>iPath Laser (LiDAR)</td><td>Reported quick, accurate mapping; no obstacle camera</td></tr>
+      <tr><td>Dock</td><td>Self-empty, 2.5&nbsp;L bag</td><td>Reported ~60 days between bag changes</td></tr>
+      <tr><td>Hair handling</td><td>Detangling comb in dock</td><td>Reported to genuinely reduce brush wrap</td></tr>
+      <tr><td>Support status</td><td>Discontinued Oct 2025</td><td>Still stocked &amp; receiving app updates as of mid-2026</td></tr>
+    </table>
+    <div class="pros-cons">
+      <div class="pros"><h4>Strengths</h4><ul><li>Self-empty + LiDAR under $300</li><li>Best-in-tier hair management</li><li>Strong suction figure that owners back up</li></ul></div>
+      <div class="cons"><h4>Trade-offs</h4><ul><li>Officially discontinued line</li><li>No mopping</li><li>No obstacle avoidance</li></ul></div>
+    </div>
+    <a class="buy" href="https://www.amazon.com/dp/B0CDB831GV?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <h2>3. Tikom L8000 Plus &mdash; Cheapest Self-Empty Base</h2>
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">#3 BUDGET DOCK</span>
+      <div>
+        <h3>Tikom L8000 Plus</h3>
+        <div class="role">LiDAR + self-empty, lowest price</div>
+      </div>
+      <span class="price">~$220</span>
+    </div>
+    <p>If a self-emptying dock is the one feature you refuse to give up but $280 is too much, the L8000 Plus is the answer. For around $220 it bundles 360&deg; LiDAR, a high rated-suction figure, and a self-empty base &mdash; a combination that simply didn't exist at this price before 2026. The trade-off is a less refined app and a younger brand with a shorter support track record than Roborock or Eufy.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
+      <tr><td>Suction</td><td>6,000&nbsp;Pa</td><td>High rated figure; reported real-world pickup solid but flatters the spec sheet vs. name brands</td></tr>
+      <tr><td>Navigation</td><td>360&deg; LiDAR + mapping</td><td>Reported reliable mapping; app less polished</td></tr>
+      <tr><td>Dock</td><td>Self-empty, 3&nbsp;L bag</td><td>Reported up to ~90 days capacity</td></tr>
+      <tr><td>Runtime</td><td>Up to 150&nbsp;min</td><td>Enough for most apartments/single floors</td></tr>
+      <tr><td>Mopping</td><td>Yes (basic)</td><td>Maintenance-level only</td></tr>
+    </table>
+    <div class="pros-cons">
+      <div class="pros"><h4>Strengths</h4><ul><li>Lowest-cost LiDAR + self-empty combo</li><li>Large 3&nbsp;L dock bag</li><li>Genuinely strong value</li></ul></div>
+      <div class="cons"><h4>Trade-offs</h4><ul><li>Less mature app &amp; ecosystem</li><li>Pa rating outruns real-world pickup</li><li>Shorter brand support history</li></ul></div>
+    </div>
+    <a class="buy" href="https://www.amazon.com/dp/B0FKH1RW65?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <div class="nerd">
+    <div class="tag">&#9881; Nerd box &middot; Pa is not the whole story</div>
+    <p>Suction is advertised in pascals (Pa), and the sub-$300 tier has entered a spec-sheet arms race &mdash; 4,200 here, 6,000 there. But Pa measures static sealed-nozzle pressure, not cleaning outcome. Real pickup depends on airflow (CFM), brush-roll design, nozzle seal against the floor, and how aggressively the firmware ramps suction on carpet.</p>
+    <p>That's why a name-brand 4,200&nbsp;Pa unit and a value-brand 6,000&nbsp;Pa unit can perform within a whisker of each other on published debris-pickup tests: the higher number often reflects a peak burst the machine rarely sustains, while brush geometry and edge coverage do the quiet work. Treat a Pa figure as a ceiling, not a promise &mdash; and weight independent pickup tests over the box.</p>
+  </div>
+
+  <h2>4. iRobot Roomba Vac &mdash; Best App &amp; Ecosystem</h2>
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">#4 ECOSYSTEM</span>
+      <div>
+        <h3>iRobot Roomba Vac (Q0120)</h3>
+        <div class="role">No dock &middot; best software</div>
+      </div>
+      <span class="price">~$180</span>
+    </div>
+    <p>iRobot's 2025-era entry Roomba lands around $180 (list $299) and leans on the thing budget rivals still can't match: software. The app is the most approachable in the category, scheduling and zone control just work, and the dual rubber brushes resist hair wrap better than bristle designs. There's no self-empty dock at this price, so you'll empty the bin yourself &mdash; the tax for the best app and the most trusted support ecosystem.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
+      <tr><td>Suction</td><td>Power-lifting (unrated Pa)</td><td>Reported solid everyday pickup; not a deep-carpet champion</td></tr>
+      <tr><td>Navigation</td><td>Smart nav, neat rows</td><td>Reported tidy row-by-row coverage; maps simpler than LiDAR rivals</td></tr>
+      <tr><td>Dock</td><td>Charging only (no auto-empty)</td><td>Manual bin emptying</td></tr>
+      <tr><td>Brush</td><td>Dual rubber</td><td>Reported better hair resistance than bristle brushes</td></tr>
+      <tr><td>App</td><td>iRobot Home</td><td>Widely reported as the easiest app in the tier</td></tr>
+    </table>
+    <div class="pros-cons">
+      <div class="pros"><h4>Strengths</h4><ul><li>Best-in-class app &amp; support</li><li>Hair-resistant rubber brushes</li><li>Frequently the cheapest name-brand pick</li></ul></div>
+      <div class="cons"><h4>Trade-offs</h4><ul><li>No self-empty dock</li><li>Simpler mapping than LiDAR rivals</li><li>No mopping</li></ul></div>
+    </div>
+    <a class="buy" href="https://www.amazon.com/dp/B0CVM8TXHP?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <h2>5. Eufy RoboVac 11S MAX &mdash; Best Ultra-Budget for Small Apartments</h2>
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">#5 SIMPLEST</span>
+      <div>
+        <h3>Eufy RoboVac 11S MAX</h3>
+        <div class="role">No app, no map &middot; ~$140</div>
+      </div>
+      <span class="price">~$140</span>
+    </div>
+    <p>Sometimes you don't want a map, an app, or a subscription &mdash; you want a quiet puck that runs a random pattern across a studio or one-bedroom and keeps the floors presentable. The 11S MAX is exactly that: super-thin (fits under most furniture), quiet, and dead simple with a physical remote. No Wi-Fi, no LiDAR, no zones. For small, mostly-open hard-floor spaces it's the most cost-effective robot here.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
+      <tr><td>Suction</td><td>2,000&nbsp;Pa (BoostIQ)</td><td>Reported fine for hard floors &amp; thin carpet; not for deep pile</td></tr>
+      <tr><td>Navigation</td><td>Bump &amp; random pattern</td><td>Works in small/open rooms; inefficient in large or cluttered layouts</td></tr>
+      <tr><td>Profile</td><td>2.85&nbsp;in tall</td><td>Reaches under most sofas/beds</td></tr>
+      <tr><td>Control</td><td>Remote only, no app</td><td>No mapping, scheduling limited to remote</td></tr>
+    </table>
+    <div class="pros-cons">
+      <div class="pros"><h4>Strengths</h4><ul><li>Cheapest reliable option</li><li>Very quiet, very thin</li><li>Nothing to configure</li></ul></div>
+      <div class="cons"><h4>Trade-offs</h4><ul><li>No mapping or app</li><li>Inefficient in big/cluttered homes</li><li>No self-empty, no mop</li></ul></div>
+    </div>
+    <a class="buy" href="https://www.amazon.com/dp/B07R295MLS?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <h2>How They Compare</h2>
+  <div class="compare-wrap">
+    <table class="compare">
+      <thead>
+        <tr><th>Model</th><th>Price*</th><th>Navigation</th><th>Suction (rated)</th><th>Self-empty</th><th>Mop</th><th>Best for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Roborock Q7 Max+</td><td>~$300</td><td>LiDAR</td><td>4,200&nbsp;Pa</td><td>Yes</td><td>Yes</td><td>Best all-round</td></tr>
+        <tr><td>Eufy L60 SES</td><td>~$280</td><td>LiDAR</td><td>5,000&nbsp;Pa</td><td>Yes</td><td>No</td><td>Value + hair</td></tr>
+        <tr><td>Tikom L8000 Plus</td><td>~$220</td><td>LiDAR</td><td>6,000&nbsp;Pa</td><td>Yes</td><td>Basic</td><td>Cheapest dock</td></tr>
+        <tr><td>iRobot Roomba Vac</td><td>~$180</td><td>Smart rows</td><td>Unrated</td><td>No</td><td>No</td><td>App &amp; support</td></tr>
+        <tr><td>Eufy 11S MAX</td><td>~$140</td><td>Bump/random</td><td>2,000&nbsp;Pa</td><td>No</td><td>No</td><td>Small apartments</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.82rem;color:var(--muted)">*Approximate street prices, July 2026. These fluctuate &mdash; confirm live pricing at the retailer.</p>
+
+  <h2 id="how">How We Evaluate Robot Vacuums</h2>
+  <div class="callout">
+    <p style="margin-bottom:10px">Loiter Point does not run a testing lab, and we don't claim flight hours or bench measurements we didn't take. Instead we <strong>synthesize published independent testing</strong> (debris-pickup runs, navigation and obstacle trials, noise readings) from established reviewers with large samples of <strong>verified owner reports</strong> for durability, app reliability, and dock behavior over time.</p>
+    <p style="margin-bottom:0">Spec-grid rows are labeled "rated" for manufacturer figures and "reported / est. real-world" when they come from that synthesized evidence. Where sources conflict &mdash; as they do on value-brand suction claims &mdash; we say so rather than pick a number that looks tidy. Prices are checked at publish time and will drift afterward.</p>
+  </div>
+
+  <h2>Bottom Line</h2>
+  <p>Under $300 in 2026 is no longer a compromise &mdash; it's a decision about which one feature you value most. If you want the most complete, proven package and can catch a sale, the <a href="https://www.amazon.com/dp/B09NNF5RHN?tag=loiterpoint20-20" rel="sponsored nofollow">Roborock Q7 Max+</a> is the pick. Want a self-empty dock and great hair handling for less? The <a href="https://www.amazon.com/dp/B0CDB831GV?tag=loiterpoint20-20" rel="sponsored nofollow">Eufy L60 SES</a> is the value play, with the honest caveat that it's a discontinued-but-supported line. On the tightest budget that still insists on a dock, the <a href="https://www.amazon.com/dp/B0FKH1RW65?tag=loiterpoint20-20" rel="sponsored nofollow">Tikom L8000 Plus</a> is unbeatable on price. Prefer the best software and don't mind emptying a bin? Take the <a href="https://www.amazon.com/dp/B0CVM8TXHP?tag=loiterpoint20-20" rel="sponsored nofollow">Roomba Vac</a>. And for a small apartment where simple beats smart, the <a href="https://www.amazon.com/dp/B07R295MLS?tag=loiterpoint20-20" rel="sponsored nofollow">Eufy 11S MAX</a> does the job for ~$140.</p>
+  <p>Whatever you choose, treat the suction numbers as ceilings and buy for the feature you'll use every week, not the biggest figure on the box.</p>
+
+  <div class="disc">
+    <strong>Affiliate disclosure:</strong> Loiter Point earns commissions from qualifying purchases made through links on this page (Amazon Associates, tag loiterpoint20-20). This never changes our rankings or what we recommend &mdash; picks are based on independent testing and owner evidence. Prices and availability are accurate as of publication and subject to change.
+  </div>
+
+  <footer>
+    <a href="../index.html">&larr; Back to Loiter Point</a><br /><br />
+    &copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.
+  </footer>
+</div>
+</body>
+</html>
