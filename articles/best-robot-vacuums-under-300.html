@@ -75,6 +75,20 @@
   footer{margin-top:56px;border-top:1px solid var(--border);padding-top:24px;font-size:0.82rem;color:var(--muted);font-family:'IBM Plex Mono',monospace;line-height:1.7}
   footer a{color:var(--muted);text-decoration:underline}
   .disc{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px 18px;font-size:0.82rem;color:var(--muted);margin:30px 0}
+
+.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+.pick-media:hover{border-color:var(--accent);}
+.pick-media img{width:100%;height:auto;display:block;}
+.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+#lb.open{display:block;}
+#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
+
 </style>
 </head>
 <body>
@@ -117,6 +131,7 @@
       </div>
       <span class="price">~$300*</span>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61PSNFaHEjL._SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61PSNFaHEjL._SL500_.jpg" alt="Roborock Q7 Max+" loading="lazy"><span>Click to zoom</span></div>
     <p>The Q7 Max+ is the most complete package that regularly dips under $300. You get genuine PreciSense LiDAR that draws an accurate, editable multi-level map, strong suction, and an auto-empty dock that buys you weeks between hands-on emptying. It mops, too &mdash; adequately for maintenance passes, not for dried-on messes.</p>
     <table class="specs">
       <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
@@ -144,6 +159,7 @@
       </div>
       <span class="price">~$280</span>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61xDCHthTbL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61xDCHthTbL._AC_SL500_.jpg" alt="Eufy L60 (Self-Empty Station)" loading="lazy"><span>Click to zoom</span></div>
     <p>The L60 undercuts the Roborock while keeping the two features that matter most: real LiDAR navigation and a self-empty dock. Its standout trick is a hair-detangling comb built into the station that cuts tangled hair off the brush during emptying &mdash; a real win for long-hair and pet households. One honesty flag: Eufy discontinued the L60 in October 2025, but Amazon stock and app updates have persisted through 2026. Buy it as a still-supported closeout, not a brand-new flagship.</p>
     <table class="specs">
       <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
@@ -170,6 +186,7 @@
       </div>
       <span class="price">~$220</span>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/712+1GJM3rL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/712+1GJM3rL._AC_SL500_.jpg" alt="Tikom L8000 Plus" loading="lazy"><span>Click to zoom</span></div>
     <p>If a self-emptying dock is the one feature you refuse to give up but $280 is too much, the L8000 Plus is the answer. For around $220 it bundles 360&deg; LiDAR, a high rated-suction figure, and a self-empty base &mdash; a combination that simply didn't exist at this price before 2026. The trade-off is a less refined app and a younger brand with a shorter support track record than Roborock or Eufy.</p>
     <table class="specs">
       <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
@@ -202,6 +219,7 @@
       </div>
       <span class="price">~$180</span>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61gUwtXedTL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61gUwtXedTL._AC_SL500_.jpg" alt="iRobot Roomba Vac (Q0120)" loading="lazy"><span>Click to zoom</span></div>
     <p>iRobot's 2025-era entry Roomba lands around $180 (list $299) and leans on the thing budget rivals still can't match: software. The app is the most approachable in the category, scheduling and zone control just work, and the dual rubber brushes resist hair wrap better than bristle designs. There's no self-empty dock at this price, so you'll empty the bin yourself &mdash; the tax for the best app and the most trusted support ecosystem.</p>
     <table class="specs">
       <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
@@ -228,6 +246,7 @@
       </div>
       <span class="price">~$140</span>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/7162dbcZW3L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/7162dbcZW3L._AC_SL500_.jpg" alt="Eufy RoboVac 11S MAX" loading="lazy"><span>Click to zoom</span></div>
     <p>Sometimes you don't want a map, an app, or a subscription &mdash; you want a quiet puck that runs a random pattern across a studio or one-bedroom and keeps the floors presentable. The 11S MAX is exactly that: super-thin (fits under most furniture), quiet, and dead simple with a physical remote. No Wi-Fi, no LiDAR, no zones. For small, mostly-open hard-floor spaces it's the most cost-effective robot here.</p>
     <table class="specs">
       <tr><th>Spec</th><th>Rated</th><th>Reported real-world</th></tr>
@@ -279,5 +298,27 @@
     &copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.
   </footer>
 </div>
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 </body>
 </html>

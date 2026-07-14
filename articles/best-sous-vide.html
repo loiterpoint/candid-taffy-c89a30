@@ -86,6 +86,20 @@
     .card-head { flex-wrap: wrap; }
     .price { margin-left: 52px; text-align: left; }
   }
+
+.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+.pick-media:hover{border-color:var(--accent);}
+.pick-media img{width:100%;height:auto;display:block;}
+.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+#lb.open{display:block;}
+#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
+
 </style>
 </head>
 <body>
@@ -140,6 +154,7 @@
     </div>
     <div class="price"><span class="num">~$150–250</span><span class="note">street vs. MSRP $249.95</span></div>
   </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/51Q5bcZKm8L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/51Q5bcZKm8L._AC_SL500_.jpg" alt="Breville Joule Turbo" loading="lazy"><span>Click to zoom</span></div>
   <span class="tag">BEST OVERALL</span>
   <p>The Joule Turbo is the smallest capable circulator you can buy — about 11 inches tall and 1.3 pounds — which sounds like a gimmick until you try to store a full-size Anova in a crowded drawer. Its magnetic foot grips steel pots without a clamp, and its circulation design lets it run in as little as 1.5 inches of water, both details owners cite constantly. The catch, and it's a real one: there is no screen. You control everything through the app, so a dead phone means no cook. The upside is that the app is the best in the category, and the "Turbo" mode is not marketing — independent reviewers confirm it meaningfully shortens preheat and cook times versus standard mode.</p>
   <div class="specs">
@@ -162,6 +177,7 @@
     </div>
     <div class="price"><span class="num">~$169</span><span class="note">Amazon, mid-2026</span></div>
   </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61ufN4G1TeL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61ufN4G1TeL._AC_SL500_.jpg" alt="Anova Precision Cooker 3.0" loading="lazy"><span>Click to zoom</span></div>
   <span class="tag">BEST ONBOARD CONTROLS</span>
   <p>If the Joule's phone-only approach is a dealbreaker, this is your machine. The 3.0 pairs the same 1100W heater with a full touchscreen, so you can set time and temperature and walk away without ever opening an app. Owner reports and independent testers put its accuracy a hair tighter than the Joule's on paper, though in a real pot the difference is academic. Anova redesigned the clamp and made this generation easier to secure to thin pot walls than the older 2.0. It's bigger and heavier than the Joule, which is the price of that display and the beefier build.</p>
   <div class="specs">
@@ -184,6 +200,7 @@
     </div>
     <div class="price"><span class="num">~$100–125</span><span class="note">frequent coupons</span></div>
   </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/71Nio+P+ihL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/71Nio+P+ihL._AC_SL500_.jpg" alt="Inkbird ISV-200W" loading="lazy"><span>Click to zoom</span></div>
   <span class="tag">BEST VALUE</span>
   <p>The Inkbird is the value pick that doesn't feel like a compromise. Independent testers have repeatedly called it the quietest circulator they've run — a genuinely underrated quality if the machine lives on your counter during a 24-hour short-rib cook. Its 1000W element is a touch below the name brands, so it preheats slightly slower, but once it's holding temperature owners report it's rock-steady. Wi-Fi, a full app with preset recipes, a 100-hour timer, and a 4.9-star reception across a large owner base make it the easiest recommendation for anyone who wants to try sous vide without spending $200.</p>
   <div class="specs">
@@ -206,6 +223,7 @@
     </div>
     <div class="price"><span class="num">~$65–85</span><span class="note">often discounted</span></div>
   </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/613PPTKbQGL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/613PPTKbQGL._AC_SL500_.jpg" alt="Anova Precision Cooker Nano 3.0" loading="lazy"><span>Click to zoom</span></div>
   <span class="tag">BEST BUDGET</span>
   <p>The Nano is Anova's small, lower-wattage circulator, and it exists to answer one question: what's the cheapest machine I can buy that still has real software behind it? The 3.0 revision brought Wi-Fi to the Nano line and access to the same well-stocked Anova app the flagship uses. The trade-offs are honest ones — a lower-power heater means slower preheat and less comfort with very large baths — but for one or two people cooking a few pounds at a time, owners consistently report it's more than enough. If you're sous-vide-curious and don't want to gamble on an unknown brand, this is the floor.</p>
   <div class="specs">
@@ -228,6 +246,7 @@
     </div>
     <div class="price"><span class="num">~$199+</span><span class="note">list varies widely</span></div>
   </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61WsGtbFzfL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61WsGtbFzfL._AC_SL500_.jpg" alt="Anova Precision Cooker Pro" loading="lazy"><span>Click to zoom</span></div>
   <span class="tag">BEST FOR HIGH VOLUME</span>
   <p>The Pro is overkill for a weeknight steak and exactly right for anyone doing serious meal prep or feeding a crowd. Its 1200W element and roughly 12 L/min flow rate let it heat and hold much larger baths than the consumer units above — reviewers note it'll manage on the order of 100 liters with a lid. It's IPX7-rated, meaning it can survive full submersion, and Anova rates it for extended continuous duty, so it's the one to buy if your circulator runs for days at a stretch. It's bigger, heavier, and pricier, and its list price bounces around a lot depending on sales, so watch the listing before committing.</p>
   <div class="specs">
@@ -279,5 +298,27 @@
     <div class="foot-meta">© 2026 Loiter Point — Consumer tech reviews built on real evidence.</div>
   </div>
 </footer>
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 </body>
 </html>
