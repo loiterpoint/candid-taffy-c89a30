@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Best Smart Thermostats (2026): Ecobee vs Nest vs Amazon, Ranked | Loiter Point</title>
+<meta name="description" content="We ranked the best smart thermostats for 2026 using published independent testing and owner reports. Ecobee Premium, Nest Learning 4th Gen, and the budget Amazon pick compared on real-world savings, compatibility, and payback." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e; --surface:#141418; --surface2:#1c1c22;
+    --accent:#e8ff47; --text:#e2e2e8; --muted:#7a7a8a; --border:#26262e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:840px;margin:0 auto;padding:0 20px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header.site{border-bottom:1px solid var(--border);padding:18px 0;position:sticky;top:0;background:rgba(12,12,14,.9);backdrop-filter:blur(8px);z-index:10}
+  header.site .wrap{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:-.5px}
+  .logo span{color:var(--accent)}
+  .back{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--muted)}
+  h1{font-size:2.15rem;line-height:1.15;letter-spacing:-1px;margin:34px 0 10px;font-weight:700}
+  h2{font-size:1.5rem;margin:44px 0 14px;letter-spacing:-.5px;font-weight:700}
+  h3{font-size:1.15rem;margin:6px 0}
+  p{margin:14px 0;color:#d3d3db}
+  .meta{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--muted);margin-bottom:6px}
+  .lede{font-size:1.12rem;color:#c6c6d0}
+  .tldr{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:10px;padding:22px 24px;margin:28px 0}
+  .tldr h2{margin:0 0 12px;font-size:1.05rem;font-family:'IBM Plex Mono',monospace;color:var(--accent);letter-spacing:0}
+  .tldr ul{margin:0 0 4px;padding-left:20px}
+  .tldr li{margin:9px 0;color:#d8d8e0}
+  .grab{margin-top:16px;padding-top:14px;border-top:1px dashed var(--border);font-size:.95rem}
+  .grab strong{font-family:'IBM Plex Mono',monospace;color:var(--accent)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin:22px 0;position:relative}
+  .rank{position:absolute;top:-13px;left:22px;background:var(--accent);color:#0c0c0e;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.78rem;padding:4px 12px;border-radius:20px}
+  .card .head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:8px}
+  .price{font-family:'IBM Plex Mono',monospace;font-size:1.2rem;color:var(--accent);white-space:nowrap}
+  .tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:2px 8px;margin-bottom:6px}
+  .specs{width:100%;border-collapse:collapse;margin:16px 0;font-size:.9rem}
+  .specs th,.specs td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  .specs th{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:500}
+  .specs td:first-child{color:var(--muted);width:38%}
+  .rw{color:var(--accent)}
+  .btn{display:inline-block;background:var(--accent);color:#0c0c0e;font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:.9rem;padding:11px 20px;border-radius:8px;margin-top:6px}
+  .btn:hover{text-decoration:none;filter:brightness(1.08)}
+  .pros{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;margin:14px 0;font-size:.92rem}
+  .pros div{color:#d3d3db}
+  .pros .p::before{content:"+ ";color:var(--accent);font-family:'IBM Plex Mono',monospace}
+  .pros .c::before{content:"– ";color:#ff6b6b;font-family:'IBM Plex Mono',monospace}
+  .nerd{background:linear-gradient(180deg,#16161c,#121217);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:28px 0}
+  .nerd h3{font-family:'IBM Plex Mono',monospace;color:var(--accent);font-size:.95rem;margin-bottom:8px}
+  .nerd .label{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+  table.cmp{width:100%;border-collapse:collapse;margin:18px 0;font-size:.88rem}
+  table.cmp th,table.cmp td{padding:10px 8px;border-bottom:1px solid var(--border);text-align:left}
+  table.cmp th{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  table.cmp td:first-child{color:#fff;font-weight:500}
+  table.cmp tr:hover td{background:var(--surface2)}
+  .method{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:26px 0}
+  .method h2{margin-top:0}
+  .bottom{background:var(--surface);border:1px solid var(--accent);border-radius:12px;padding:24px;margin:30px 0}
+  .bottom h2{margin-top:0}
+  footer{border-top:1px solid var(--border);margin-top:50px;padding:26px 0 60px}
+  footer p{font-size:.82rem;color:var(--muted);margin:8px 0}
+  .disc{font-size:.8rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin:24px 0}
+  @media(max-width:560px){h1{font-size:1.7rem}.pros{grid-template-columns:1fr}.card .head{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="logo">LOITER<span>·</span>POINT</div>
+    <a class="back" href="../index.html">&larr; back to index</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="meta">BUYER'S GUIDE · SMART HOME · UPDATED JULY 14, 2026</div>
+  <h1>The Best Smart Thermostats for 2026</h1>
+  <p class="lede">A smart thermostat is one of the few gadgets that can pay for itself. We cut through the marketing and ranked five that actually earn their keep — weighing rated savings against what independent testing and owners report in real homes.</p>
+
+  <div class="tldr">
+    <h2>TL;DR — THE SHORT VERSION</h2>
+    <ul>
+      <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B09XXS48P8?tag=loiterpoint20-20" rel="sponsored nofollow">Ecobee Smart Thermostat Premium</a> (~$249) pairs occupancy sensing, a bundled remote SmartSensor, and the widest compatibility — including Apple HomeKit.</li>
+      <li><strong>Best auto-learning:</strong> the <a href="https://www.amazon.com/dp/B0D5BGST5N?tag=loiterpoint20-20" rel="sponsored nofollow">Nest Learning Thermostat (4th Gen)</a> (~$279, often ~$230) builds your schedule for you and adds heat-pump balance-point control.</li>
+      <li><strong>Best value / fastest payback:</strong> the <a href="https://www.amazon.com/dp/B08J4C8871?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon Smart Thermostat</a> (~$80, often ~$58) delivers ENERGY STAR certified savings for a third of the price of the flagships.</li>
+      <li><strong>The sweet spot:</strong> the <a href="https://www.amazon.com/dp/B09XXTQPXC?tag=loiterpoint20-20" rel="sponsored nofollow">Ecobee Enhanced</a> (~$189) keeps HomeKit and the eco+ engine but drops the speaker and air-quality sensor.</li>
+    </ul>
+    <div class="grab">
+      <strong>Grab your pick:</strong>
+      <a href="https://www.amazon.com/dp/B09XXS48P8?tag=loiterpoint20-20" rel="sponsored nofollow">Ecobee Premium — ~$249</a> ·
+      <a href="https://www.amazon.com/dp/B0D5BGST5N?tag=loiterpoint20-20" rel="sponsored nofollow">Nest 4th Gen — ~$279</a> ·
+      <a href="https://www.amazon.com/dp/B08J4C8871?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon Smart — ~$80</a> ·
+      <a href="https://www.amazon.com/dp/B09XXTQPXC?tag=loiterpoint20-20" rel="sponsored nofollow">Ecobee Enhanced — ~$189</a> ·
+      <a href="https://www.amazon.com/dp/B08HRPDBFF?tag=loiterpoint20-20" rel="sponsored nofollow">Nest Thermostat — ~$130</a>
+    </div>
+  </div>
+
+  <p>Prices below are recent street prices at the time of writing and move around a lot — thermostats are perennial sale items, dropping hard around Prime Day, Black Friday, and utility-rebate season. Treat the numbers as a snapshot, not a promise, and check the live listing before you buy. Many local utilities also offer $50–$100 instant rebates on ENERGY STAR models, which can change the math entirely.</p>
+
+  <!-- PICK 1 -->
+  <div class="card">
+    <span class="rank">#1 · BEST OVERALL</span>
+    <div class="head">
+      <div>
+        <span class="tag">HomeKit · Alexa · Google · Matter</span>
+        <h3>Ecobee Smart Thermostat Premium</h3>
+      </div>
+      <span class="price">~$249</span>
+    </div>
+    <p>The Premium is the thermostat that does the most without asking you to think about it. A bundled remote SmartSensor means it reads temperature and occupancy in the room you actually use — not just the hallway where the thermostat lives — so its eco+ automation can pre-cool, respond to time-of-use rates, and avoid heating empty rooms. It's also the rare flagship that speaks Apple HomeKit alongside Alexa, Google Home, and Matter, and it has a built-in Alexa speaker and air-quality monitor if you want them.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr>
+      <tr><td>Energy savings</td><td>Up to 26%/yr</td><td class="rw">~8–15%/yr (reported, varies by home)</td></tr>
+      <tr><td>Bundled sensor</td><td>1 SmartSensor</td><td class="rw">Occupancy + temp, ~60 ft range (reported)</td></tr>
+      <tr><td>Ecosystems</td><td>HomeKit/Alexa/Google/Matter</td><td class="rw">Widest of any pick (est. real-world)</td></tr>
+      <tr><td>C-wire</td><td>Required (PEK included)</td><td class="rw">PEK adapter covers most 2-wire homes</td></tr>
+    </table>
+    <div class="pros">
+      <div class="p">Only flagship with full HomeKit support</div>
+      <div class="p">Remote sensor in the box</div>
+      <div class="p">Air-quality monitor + Alexa built in</div>
+      <div class="c">Priciest of the mainstream picks</div>
+      <div class="c">Big glass face won't suit every wall</div>
+      <div class="c">Some owners find the mic gimmicky</div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/dp/B09XXS48P8?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 2 -->
+  <div class="card">
+    <span class="rank">#2 · BEST AUTO-LEARNING</span>
+    <div class="head">
+      <div>
+        <span class="tag">Alexa · Google · Matter · No HomeKit</span>
+        <h3>Google Nest Learning Thermostat (4th Gen, 2024)</h3>
+      </div>
+      <span class="price">~$279</span>
+    </div>
+    <p>If you never want to build a schedule, the Nest is still the one to beat. Its learning algorithm watches your first week of manual adjustments and constructs a schedule automatically, then keeps refining it. The 4th-gen redesign added a larger edge-to-edge display, Soli-based presence sensing, and — the headline for anyone with a heat pump — balance-point control that decides when to lean on the compressor versus auxiliary heat. It ships with a Nest Temperature Sensor in the box now, closing an old gap with Ecobee.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr>
+      <tr><td>Energy savings</td><td>~10–12%/yr</td><td class="rw">~8–15%/yr (reported)</td></tr>
+      <tr><td>Scheduling</td><td>Auto-learning</td><td class="rw">Usable schedule in ~1 week (reported)</td></tr>
+      <tr><td>Heat-pump control</td><td>Balance point</td><td class="rw">Only pick with it (est. real-world)</td></tr>
+      <tr><td>Included sensor</td><td>1 Temp Sensor</td><td class="rw">Temp only — no occupancy</td></tr>
+    </table>
+    <div class="pros">
+      <div class="p">Best hands-off scheduling</div>
+      <div class="p">Heat-pump balance-point control</div>
+      <div class="p">Gorgeous, high-res display</div>
+      <div class="c">No Apple HomeKit support</div>
+      <div class="c">List price is the highest here</div>
+      <div class="c">Sensor lacks occupancy detection</div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/dp/B0D5BGST5N?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 3 -->
+  <div class="card">
+    <span class="rank">#3 · BEST VALUE</span>
+    <div class="head">
+      <div>
+        <span class="tag">Alexa · ENERGY STAR</span>
+        <h3>Amazon Smart Thermostat</h3>
+      </div>
+      <span class="price">~$80</span>
+    </div>
+    <p>The value play of the category, and it isn't close. Built on Honeywell Home thermostat tech and ENERGY STAR certified, the Amazon Smart Thermostat proves you don't need $250 to capture certified savings. There's no touchscreen flourish and it's tied to the Alexa app rather than a rich standalone ecosystem, but on pure return-on-investment it wins: at typical prices — and it frequently dips under $60 on sale — the payback period is the shortest of anything here, often under a year in homes that were running a dumb thermostat.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr>
+      <tr><td>Est. annual savings</td><td>~$50 (EPA est.)</td><td class="rw">Payback often &lt;1 yr (reported)</td></tr>
+      <tr><td>Control</td><td>Alexa app</td><td class="rw">No web/iOS-native app; Alexa only</td></tr>
+      <tr><td>Sensors</td><td>None included</td><td class="rw">No remote-sensor support</td></tr>
+      <tr><td>C-wire</td><td>Required (no adapter)</td><td class="rw">Buy a C-wire kit if you lack one</td></tr>
+    </table>
+    <div class="pros">
+      <div class="p">Unbeatable price-to-savings ratio</div>
+      <div class="p">ENERGY STAR certified</div>
+      <div class="p">Simple, reliable Honeywell base</div>
+      <div class="c">Alexa-only control</div>
+      <div class="c">No remote sensors</div>
+      <div class="c">No C-wire adapter in box</div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/dp/B08J4C8871?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 4 -->
+  <div class="card">
+    <span class="rank">#4 · THE SWEET SPOT</span>
+    <div class="head">
+      <div>
+        <span class="tag">HomeKit · Alexa · Google</span>
+        <h3>Ecobee Smart Thermostat Enhanced</h3>
+      </div>
+      <span class="price">~$189</span>
+    </div>
+    <p>The Enhanced is the Premium with the flourishes shaved off — and for most people that's the smarter buy. You keep the same app, the same eco+ automation engine, and the same HomeKit/Alexa/Google compatibility; you lose the built-in Alexa speaker, the air-quality monitor, and a bundled sensor. If you want Ecobee's platform and HomeKit support without paying for a microphone you'll never use, this is the pick. Add a SmartSensor separately later if you want per-room occupancy.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr>
+      <tr><td>Energy savings</td><td>Up to 26%/yr</td><td class="rw">~8–15%/yr (reported)</td></tr>
+      <tr><td>Platform</td><td>Same as Premium</td><td class="rw">Identical app + eco+ engine</td></tr>
+      <tr><td>HomeKit</td><td>Yes</td><td class="rw">Best-in-class for Apple homes</td></tr>
+      <tr><td>Included sensor</td><td>None</td><td class="rw">SmartSensor sold separately</td></tr>
+    </table>
+    <div class="pros">
+      <div class="p">Full HomeKit at a lower price</div>
+      <div class="p">Same automation as the Premium</div>
+      <div class="p">Cleaner, less flashy face</div>
+      <div class="c">No bundled remote sensor</div>
+      <div class="c">No air-quality monitor</div>
+      <div class="c">No built-in speaker</div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/dp/B09XXTQPXC?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 5 -->
+  <div class="card">
+    <span class="rank">#5 · BUDGET NEST</span>
+    <div class="head">
+      <div>
+        <span class="tag">Google Home · Matter · No HomeKit</span>
+        <h3>Google Nest Thermostat</h3>
+      </div>
+      <span class="price">~$130</span>
+    </div>
+    <p>Not to be confused with the Learning model above, the plain Nest Thermostat is Google's mid-tier option: a mirrored face, a cheaper mirror-touch strip instead of the click ring, and Savings Finder suggestions rather than full auto-learning. It's the right call if you're already in the Google Home ecosystem, want something that looks sharp on the wall, and don't need HomeKit. It regularly drops to around $100, which narrows the gap to the far cheaper Amazon pick — so buy it for the looks and Google integration, not the price.</p>
+    <table class="specs">
+      <tr><th>Spec</th><th>Rated</th><th>Real-world</th></tr>
+      <tr><td>Est. annual savings</td><td>~15% HVAC (Google est.)</td><td class="rw">~8–12%/yr (reported)</td></tr>
+      <tr><td>Scheduling</td><td>Savings Finder</td><td class="rw">No full learning like 4th Gen</td></tr>
+      <tr><td>Ecosystem</td><td>Google Home / Matter</td><td class="rw">No HomeKit; Google-first</td></tr>
+      <tr><td>Sensors</td><td>Optional add-on</td><td class="rw">Temp sensor sold separately</td></tr>
+    </table>
+    <div class="pros">
+      <div class="p">Sharp mirrored design</div>
+      <div class="p">Clean Google Home integration</div>
+      <div class="p">Often on sale near $100</div>
+      <div class="c">No true auto-learning</div>
+      <div class="c">No HomeKit</div>
+      <div class="c">Mirror-touch strip divides owners</div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/dp/B08HRPDBFF?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <div class="nerd">
+    <div class="label">// NERD BOX</div>
+    <h3>The C-wire is the thing that actually breaks installs</h3>
+    <p>Smart thermostats need constant power for their Wi-Fi radio and display, and that comes from the "common" (C) wire. Older homes — especially those wired for a simple heat-only or millivolt system — frequently don't have one. When a smart thermostat lacks a C-wire, it "power steals" small amounts of current through the heating/cooling wires, which can cause phantom cycling, HVAC chatter, or a thermostat that reboots itself.</p>
+    <p>Ecobee sidesteps this with its included Power Extender Kit (PEK), which reroutes an existing wire at the furnace control board to supply constant power — the single most under-appreciated reason Ecobee installs go smoothly in old houses. Nest is generally more tolerant of power-stealing than most but can still misbehave on marginal systems. The Amazon Smart Thermostat assumes you have a C-wire and ships no adapter, so budget for a ~$15 add-a-wire kit if you're not sure. <strong>Before you buy anything, pull your current thermostat off the wall and photograph the wiring.</strong> A terminal labeled C with a wire in it means you're set; an empty C is the deciding factor between a 20-minute install and an afternoon.</p>
+  </div>
+
+  <h2>Head-to-head comparison</h2>
+  <table class="cmp">
+    <tr><th>Model</th><th>Price</th><th>HomeKit</th><th>Sensor incl.</th><th>Standout</th></tr>
+    <tr><td>Ecobee Premium</td><td>~$249</td><td>Yes</td><td>Yes (1)</td><td>Widest compatibility</td></tr>
+    <tr><td>Nest Learning 4th Gen</td><td>~$279</td><td>No</td><td>Yes (temp)</td><td>Auto-learning + heat pump</td></tr>
+    <tr><td>Amazon Smart</td><td>~$80</td><td>No</td><td>No</td><td>Fastest payback</td></tr>
+    <tr><td>Ecobee Enhanced</td><td>~$189</td><td>Yes</td><td>No</td><td>HomeKit for less</td></tr>
+    <tr><td>Nest Thermostat</td><td>~$130</td><td>No</td><td>No</td><td>Looks + Google Home</td></tr>
+  </table>
+
+  <div class="method">
+    <h2>How We Evaluate Smart Thermostats</h2>
+    <p>Loiter Point does not run a lab and we don't claim first-hand HVAC testing. Instead, we synthesize published independent testing from outlets that do run controlled evaluations, cross-reference manufacturer specifications, and weigh a large volume of verified owner reports — the recurring, real-world complaints and wins that only show up after months on the wall.</p>
+    <p>For a thermostat specifically, that means we weight three things heavily: <em>installation friction</em> (C-wire behavior is where most one-star reviews come from), <em>ecosystem fit</em> (HomeKit support is binary and non-negotiable for Apple households), and <em>honest savings expectations</em>. Manufacturers quote "up to" figures under ideal conditions; independent testing and owner data consistently land savings in the high-single-digits to mid-teens percent range annually, driven far more by your habits and existing setup than by which brand you pick. Where evidence is thin or conflicting — as it is on exact savings — we say so rather than invent a number.</p>
+  </div>
+
+  <div class="bottom">
+    <h2>Bottom Line</h2>
+    <p>For most homes, the <a href="https://www.amazon.com/dp/B09XXS48P8?tag=loiterpoint20-20" rel="sponsored nofollow">Ecobee Smart Thermostat Premium</a> is the safest recommendation: it works with every major ecosystem including HomeKit, it comes with a remote sensor, and its automation is genuinely useful. If you never want to touch a schedule and don't own Apple gear, the <a href="https://www.amazon.com/dp/B0D5BGST5N?tag=loiterpoint20-20" rel="sponsored nofollow">Nest Learning 4th Gen</a> is the better fit — and the only pick with real heat-pump balance-point control. And if you just want certified savings for the least money, the <a href="https://www.amazon.com/dp/B08J4C8871?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon Smart Thermostat</a> pays for itself faster than anything else on this list. Apple households on a budget should jump to the <a href="https://www.amazon.com/dp/B09XXTQPXC?tag=loiterpoint20-20" rel="sponsored nofollow">Ecobee Enhanced</a>. Whichever you choose: check your C-wire first, and check for a utility rebate before you check out.</p>
+  </div>
+
+  <div class="disc">
+    <strong>Affiliate disclosure:</strong> Loiter Point earns commissions from qualifying purchases made through links on this page as an Amazon Associate (tag: loiterpoint20-20). This never changes what we recommend or how we rank products — our picks are driven by published evidence and owner reports, not commissions. Prices and availability are accurate as of the update date and change frequently.
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="../index.html">&larr; back to Loiter Point</a></p>
+    <p>© 2026 Loiter Point — Consumer tech reviews built on real evidence.</p>
+  </div>
+</footer>
+</body>
+</html>
