@@ -66,6 +66,19 @@
   .disc{background:var(--surface2);border-radius:8px;padding:14px 16px;font-size:13px;color:var(--muted);margin:24px 0}
   ul.body{margin:14px 0;padding-left:22px}
   ul.body li{margin:8px 0;color:#d3d3db}
+.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+.pick-media:hover{border-color:var(--accent);}
+.pick-media img{width:100%;height:auto;display:block;}
+.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+#lb.open{display:block;}
+#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
+
 </style>
 </head>
 <body>
@@ -114,6 +127,7 @@
       </div>
       <div class="price">~$180<small>LIST $230</small></div>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61qa9EgWVzL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61qa9EgWVzL._AC_SL500_.jpg" alt="Coway AP-1512HH Mighty" loading="lazy"><span>Click to zoom</span></div>
     <p>The Mighty has topped independent recommendations for the better part of a decade, and nothing at its price has dislodged it. It's a real four-stage stack — washable pre-filter, carbon deodorizer, True HEPA, and a bipolar ionizer you can (and should) leave off — on a compact unit that clears a mid-size room fast. It's the safest default for a bedroom, office or living room up to roughly 250–360 sq ft.</p>
     <div class="specgrid"><table>
       <tr><td>Rated coverage</td><td>361 sq ft @ ~2 ACH</td></tr>
@@ -134,6 +148,7 @@
       </div>
       <div class="price">~$185<small>LIST $220</small></div>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/71zj41yHChL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/71zj41yHChL._AC_SL500_.jpg" alt="Levoit Core 400S" loading="lazy"><span>Click to zoom</span></div>
     <p>If you want app control, scheduling and a genuine PM2.5 auto mode, the Core 400S is the value pick. Its 360-degree intake and AHAM-verified pollen CADR of 259 CFM edge out the Coway on raw throughput, and the VeSync app gives you real air-quality readouts and filter-life tracking. The trade-off is a proprietary app account and a slightly pricier filter than the Coway.</p>
     <div class="specgrid"><table>
       <tr><td>Rated coverage</td><td>up to 1,733 sq ft @ 1 ACH (403 sq ft @ ~4.8 ACH)</td></tr>
@@ -154,6 +169,7 @@
       </div>
       <div class="price">~$330<small>LIST $350</small></div>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/712FK2wvqRL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/712FK2wvqRL._AC_SL500_.jpg" alt="Blueair Blue Pure 211i Max" loading="lazy"><span>Click to zoom</span></div>
     <p>For a great room, open-plan kitchen/living, or a genuinely large bedroom, the 211i Max delivers the highest real throughput here — a reported CADR around 410 — while sipping roughly 32 watts on high. That efficiency comes from Blueair's HEPASilent hybrid (mechanical filter plus electrostatic charging), which lets it hit high CADR quietly. Ignore the 3,235 sq ft box claim; think of it as the right tool for rooms up to ~550–650 sq ft at real air-change rates.</p>
     <div class="specgrid"><table>
       <tr><td>Rated coverage</td><td>3,235 sq ft @ 1 ACH (marketing)</td></tr>
@@ -174,6 +190,7 @@
       </div>
       <div class="price">~$250<small>LIST $280</small></div>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/717L1lcSQCL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/717L1lcSQCL._AC_SL500_.jpg" alt="Blueair Blue Pure 311i Max" loading="lazy"><span>Click to zoom</span></div>
     <p>The 311i Max is the 211i's smaller sibling — same HEPASilent efficiency, tuned for medium bedrooms and offices. Independent reports put it around 23 dB on low, which is about as close to silent as an air purifier gets while still meaningfully moving air (reported CADR ~250). If your priority is sleeping next to it, this is the pick over the louder-at-max Coway.</p>
     <div class="specgrid"><table>
       <tr><td>Rated coverage</td><td>2,107 sq ft @ 1 ACH (marketing)</td></tr>
@@ -194,6 +211,7 @@
       </div>
       <div class="price">~$110<small>LIST $150</small></div>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/611IHNMpkJL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/611IHNMpkJL._AC_SL500_.jpg" alt="Levoit Core 300S" loading="lazy"><span>Click to zoom</span></div>
     <p>For a nursery, home office or small bedroom, the Core 300S delivers real True HEPA filtration and smart control for around a hundred bucks. It won't clean a great room, but for spaces up to ~200 sq ft it's the most air-per-dollar you can buy, and cheap filters keep the running cost low. Skip the pricier non-smart Core 300 unless you truly don't want an app.</p>
     <div class="specgrid"><table>
       <tr><td>Rated coverage</td><td>up to 1,051 sq ft @ 1 ACH (~219 sq ft @ ~4.8 ACH)</td></tr>
@@ -245,5 +263,29 @@
     <p style="margin-top:10px">© 2026 Loiter Point — Consumer tech reviews built on real evidence.</p>
   </div>
 </footer>
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+<script src="/nav.js" defer></script>
+
 </body>
 </html>
