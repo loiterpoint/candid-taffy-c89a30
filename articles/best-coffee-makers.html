@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>The Best Coffee Makers of 2026 — Loiter Point</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Inter",system-ui,sans-serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:32px 20px 80px;}
+  nav{font-family:"IBM Plex Mono",monospace;font-size:13px;margin-bottom:28px;}
+  nav a{color:var(--muted);text-decoration:none;}
+  nav a:hover{color:var(--accent);}
+  h1{
+    font-size:2.4rem;
+    line-height:1.15;
+    margin:0 0 8px;
+    letter-spacing:-0.02em;
+    font-weight:700;
+  }
+  .dateline{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:28px;}
+  h2{font-size:1.6rem;margin:48px 0 16px;letter-spacing:-0.01em;font-weight:700;}
+  h3{font-size:1.2rem;margin:0 0 4px;font-weight:600;}
+  p{margin:0 0 16px;}
+  a{color:var(--accent);}
+  a:hover{color:#f4ff8f;}
+  .tldr{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:22px 24px;
+    margin:0 0 20px;
+  }
+  .tldr h2{margin:0 0 12px;font-size:1.15rem;font-family:"IBM Plex Mono",monospace;letter-spacing:0.02em;color:var(--accent);}
+  .tldr ul{margin:0 0 14px;padding-left:20px;}
+  .tldr li{margin-bottom:8px;}
+  .grab{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:12px 14px;
+    color:var(--muted);
+    line-height:1.9;
+  }
+  .grab strong{color:var(--text);}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:26px 26px 30px;
+    margin:22px 0;
+  }
+  .cardhead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin-bottom:18px;}
+  .badge{
+    display:inline-block;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    font-weight:600;
+    color:var(--bg);
+    background:var(--accent);
+    padding:4px 10px;
+    border-radius:6px;
+    margin-bottom:8px;
+    letter-spacing:0.02em;
+  }
+  .price{font-family:"IBM Plex Mono",monospace;font-size:1.3rem;font-weight:600;color:var(--accent);white-space:nowrap;}
+  .price small{display:block;font-size:11px;color:var(--muted);font-weight:400;text-align:right;letter-spacing:0.04em;}
+  .specs{
+    width:100%;
+    border-collapse:collapse;
+    margin:14px 0 18px;
+    font-size:14px;
+  }
+  .specs th,.specs td{
+    text-align:left;
+    padding:8px 12px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  .specs th{
+    font-family:"IBM Plex Mono",monospace;
+    font-weight:500;
+    color:var(--muted);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    width:42%;
+  }
+  .specs tr:last-child th,.specs tr:last-child td{border-bottom:none;}
+  .buy{
+    display:inline-block;
+    background:var(--accent);
+    color:var(--bg);
+    font-family:"IBM Plex Mono",monospace;
+    font-weight:600;
+    font-size:14px;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:8px;
+    margin-top:6px;
+  }
+  .buy:hover{background:#f4ff8f;color:var(--bg);}
+  .nerd{
+    background:var(--surface2);
+    border:1px dashed var(--border);
+    border-radius:12px;
+    padding:22px 24px;
+    margin:28px 0;
+  }
+  .nerd h3{font-family:"IBM Plex Mono",monospace;font-size:0.95rem;color:var(--accent);letter-spacing:0.03em;margin-bottom:10px;}
+  .nerd p:last-child{margin-bottom:0;}
+  table.compare{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    margin:18px 0;
+    display:block;
+    overflow-x:auto;
+  }
+  table.compare th,table.compare td{
+    border:1px solid var(--border);
+    padding:10px 12px;
+    text-align:left;
+    white-space:nowrap;
+  }
+  table.compare thead th{
+    background:var(--surface2);
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  table.compare tbody th{
+    font-weight:600;
+    color:var(--text);
+    white-space:normal;
+    min-width:150px;
+  }
+  .yes{color:var(--accent);font-weight:600;}
+  .no{color:var(--muted);}
+  footer{
+    margin-top:56px;
+    padding-top:24px;
+    border-top:1px solid var(--border);
+    font-size:13px;
+    color:var(--muted);
+  }
+  footer p{margin-bottom:10px;}
+  .tag{color:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:11px;}
+  @media(max-width:560px){
+    h1{font-size:1.9rem;}
+    .specs th{width:48%;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a href="../index.html">&larr; Loiter Point</a> / Coffee Makers</nav>
+
+  <h1>The Best Coffee Makers of 2026</h1>
+  <div class="dateline">Drip machines &middot; Updated July 2026</div>
+
+  <!-- 1. TL;DR -->
+  <div class="tldr">
+    <h2>The Short Version</h2>
+    <ul>
+      <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B00YEYKK8U?tag=loiterpoint20-20" rel="sponsored nofollow">OXO Brew 9-Cup</a> is SCA-certified, holds a tight brew temperature in independent tests, and costs far less than the boutique machines it competes with.</li>
+      <li><strong>Buy it for life:</strong> the <a href="https://www.amazon.com/dp/B093DYPBYR?tag=loiterpoint20-20" rel="sponsored nofollow">Technivorm Moccamaster KBGV Select</a> is the only brewer certified to hit Golden Cup on both a half and full carafe, and it is famously repairable.</li>
+      <li><strong>Most control:</strong> the app-driven <a href="https://www.amazon.com/dp/B0D8HVBVS6?tag=loiterpoint20-20" rel="sponsored nofollow">Fellow Aiden</a> lets you tune temperature, bloom, and pulse patterns; the <a href="https://www.amazon.com/dp/B08QZSN97Z?tag=loiterpoint20-20" rel="sponsored nofollow">Ninja DualBrew Pro</a> brews grounds and pods for households that can't agree.</li>
+      <li><strong>Budget pick that still hits the standard:</strong> the <a href="https://www.amazon.com/dp/B076PFMRGX?tag=loiterpoint20-20" rel="sponsored nofollow">Bonavita Connoisseur 8-Cup</a> is SCA-certified for around $149.</li>
+    </ul>
+    <div class="grab">
+      <strong>Grab your pick:</strong><br />
+      <a href="https://www.amazon.com/dp/B00YEYKK8U?tag=loiterpoint20-20" rel="sponsored nofollow">OXO Brew 9-Cup — ~$220</a> &middot;
+      <a href="https://www.amazon.com/dp/B093DYPBYR?tag=loiterpoint20-20" rel="sponsored nofollow">Moccamaster KBGV Select — $349</a> &middot;
+      <a href="https://www.amazon.com/dp/B0D8HVBVS6?tag=loiterpoint20-20" rel="sponsored nofollow">Fellow Aiden — $400</a> &middot;
+      <a href="https://www.amazon.com/dp/B08QZSN97Z?tag=loiterpoint20-20" rel="sponsored nofollow">Ninja DualBrew Pro — $239.95</a> &middot;
+      <a href="https://www.amazon.com/dp/B076PFMRGX?tag=loiterpoint20-20" rel="sponsored nofollow">Bonavita Connoisseur — ~$149</a>
+    </div>
+  </div>
+
+  <!-- 2. Methodology -->
+  <h2>How We Evaluate Coffee Makers</h2>
+  <p>Loiter Point does not run a coffee lab, and we won't pretend otherwise. This guide is a synthesis of evidence that already exists: SCA (Specialty Coffee Association) Golden Cup certification data, published thermocouple measurements from independent reviewers who put probes in the brew basket, Consumer Reports-style lab testing, and verified owner reports gathered from retailer listings and enthusiast communities. When those sources agree, we say so with confidence. When they conflict — or when the data is thin — we flag it rather than paper over it.</p>
+  <p>The single most useful anchor for a drip machine is SCA Golden Cup certification. To earn it, a brewer has to hold water between <strong>195&deg;F and 205&deg;F</strong> at the grounds, saturate the bed evenly, and land the brew time in the right window. It is the closest thing drip coffee has to an independent, repeatable standard, so this guide leans on it heavily. Where a machine is <em>not</em> certified, we treat that as a real trade-off and explain what you get in exchange. Any real-world figures below — brew temperatures, brew times — are framed as what independent testing or owner reports have found, not something we measured ourselves.</p>
+  <!-- 3. Pick cards -->
+
+  <!-- #1 -->
+  <div class="card">
+    <div class="cardhead">
+      <div>
+        <span class="badge">#1 &middot; Best Overall</span>
+        <h3>OXO Brew 9-Cup Coffee Maker</h3>
+      </div>
+      <div class="price">~$220<small>seen as low as ~$150</small></div>
+    </div>
+    <table class="specs">
+      <tr><th>SCA certification</th><td>Certified Golden Cup brewer</td></tr>
+      <tr><th>Brew temp (rated)</th><td>SCA 195&ndash;205&deg;F window</td></tr>
+      <tr><th>Brew temp (reported)</th><td>197&ndash;204&deg;F at the grounds &mdash; independent thermocouple measurements, probe in the basket across 50+ brew cycles, never outside that band</td></tr>
+      <tr><th>Carafe</th><td>Double-wall thermal, 9-cup</td></tr>
+      <tr><th>Standout</th><td>"Rainmaker" showerhead, programmable wake-up timer, single-cup or full-carafe modes</td></tr>
+      <tr><th>Warranty</th><td>2 years</td></tr>
+    </table>
+    <p>This is the machine we point most people to. It carries SCA Golden Cup certification, and independent thermocouple tests back it up: with a probe sitting in the brew basket across dozens of cycles, water hit the grounds between 197&deg;F and 204&deg;F every time — squarely inside the SCA band. The Rainmaker showerhead saturates the bed evenly, and the programmable timer means coffee is waiting when you wake up, a convenience the pricier purist machines skip. The one honest caveat: in a head-to-head, one reviewer scored its cup slightly behind the Moccamaster on flavor clarity (8/10 vs 9/10, calling it "somewhat muted"). For the money, that is a small gap.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B00YEYKK8U?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- #2 -->
+  <div class="card">
+    <div class="cardhead">
+      <div>
+        <span class="badge">#2 &middot; Upgrade / Buy It For Life</span>
+        <h3>Technivorm Moccamaster KBGV Select</h3>
+      </div>
+      <div class="price">$349<small>historically ~$235&ndash;279 on sale</small></div>
+    </div>
+    <table class="specs">
+      <tr><th>SCA certification</th><td>Certified &mdash; the only brewer certified to Golden Cup on <em>both</em> half and full carafe</td></tr>
+      <tr><th>Brew temp (rated)</th><td>Copper element holds 196&ndash;205&deg;F</td></tr>
+      <tr><th>Brew time (reported)</th><td>Full carafe in roughly 4&ndash;6 minutes, per published specs</td></tr>
+      <tr><th>Carafe</th><td>Glass carafe with hot plate; selectable half/full switch</td></tr>
+      <tr><th>Standout</th><td>Handmade in the Netherlands, repairable with available parts</td></tr>
+      <tr><th>Warranty</th><td>5 years</td></tr>
+    </table>
+    <p>If you want one coffee maker for the next decade, this is it. The KBGV Select is the only machine here certified to brew both a half and a full carafe to Golden Cup standard, thanks to a selectable switch that adjusts the flow. Its copper heating element holds 196&ndash;205&deg;F, and comparative reviews consistently rank its cup at the very top of the drip category. The real argument, though, is longevity: it is handmade, carries a 5-year warranty, and is famously repairable with parts you can actually buy — the "build life and parts" edge it holds over the OXO. The trade-off is simplicity. There is no programmability; it is a manual on/off machine, full stop.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B093DYPBYR?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- #3 -->
+  <div class="card">
+    <div class="cardhead">
+      <div>
+        <span class="badge">#3 &middot; Precision / Enthusiast</span>
+        <h3>Fellow Aiden</h3>
+      </div>
+      <div class="price">$400<small>Fellow list price</small></div>
+    </div>
+    <table class="specs">
+      <tr><th>SCA certification</th><td>Certified Golden Cup brewer</td></tr>
+      <tr><th>Temperature control</th><td>PID-controlled thermoblock; adjusts water temp between pulses</td></tr>
+      <tr><th>Control</th><td>Touchscreen + companion app: bloom time, pulse patterns, brew ratios, scheduled brews, cold-brew preset</td></tr>
+      <tr><th>Capacity</th><td>Single-serve to 10-cup, interchangeable baskets, dual showerhead</td></tr>
+      <tr><th>Carafe</th><td>Thermal</td></tr>
+      <tr><th>Standout</th><td>Beats larger machines on small batches</td></tr>
+    </table>
+    <p>The Aiden is for the person who wants to dial in every variable. A PID-controlled thermoblock lets it adjust water temperature between pulses, and the touchscreen and app expose bloom time, pulse patterns, brew ratios, and scheduled brews — plus a cold-brew preset. It is SCA-certified, and reviewers found it particularly strong on <em>small</em> batches, where big machines struggle; one comparison put it clearly ahead of the Breville Precision Brewer for single-cup and small-carafe brewing. Two honest caveats: it is the most expensive machine in this guide, and the app-driven setup genuinely isn't for everyone. If you'd rather press one button, look higher up this list.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0D8HVBVS6?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- Nerd box -->
+  <div class="nerd">
+    <h3>// Nerd box: what SCA Golden Cup certification actually measures</h3>
+    <p>"Golden Cup" gets thrown around loosely, so it's worth being precise. The SCA doesn't certify how good the coffee <em>tastes</em> — taste is subjective. It certifies the physics that make good extraction <em>possible</em>. To pass, a brewer has to keep water in contact with the grounds at 195&ndash;205&deg;F throughout the brew, saturate the coffee bed evenly (no dry pockets, no channeling), and complete the brew inside a defined time window so the grounds aren't under- or over-extracted.</p>
+    <p>Temperature is the part most cheap machines fail. Below ~195&deg;F you under-extract — the cup comes out sour, weak, and thin, because the water never gets hot enough to pull the sugars and oils out of the grounds. Push past ~205&deg;F and you start scorching, dragging out bitter compounds. The 10-degree window is narrow, and holding it for the entire brew cycle — not just at the start — is genuinely hard engineering. That's why a certification backed by independent measurement is worth more than any marketing claim about a "precision heating system," and why every SCA-certified machine on this list earns the label honestly.</p>
+  </div>
+  <!-- #4 -->
+  <div class="card">
+    <div class="cardhead">
+      <div>
+        <span class="badge">#4 &middot; Versatility Pick</span>
+        <h3>Ninja DualBrew Pro CFP301</h3>
+      </div>
+      <div class="price">$239.95<small>frequently discounted</small></div>
+    </div>
+    <table class="specs">
+      <tr><th>SCA certification</th><td>Not SCA-certified &mdash; the trade-off for flexibility</td></tr>
+      <tr><th>Brews</th><td>Ground coffee <em>and</em> K-Cup pods</td></tr>
+      <tr><th>Brew styles</th><td>Classic, Rich, Over Ice, Specialty concentrate</td></tr>
+      <tr><th>Capacity</th><td>13 sizes, single cup to 12-cup glass carafe</td></tr>
+      <tr><th>Extras</th><td>Fold-away frother, separate hot-water system for tea</td></tr>
+      <tr><th>Temp (reported)</th><td>Reviewers note consistent temperature and good water distribution for a versatility machine</td></tr>
+    </table>
+    <p>Buy this one for what it does, not for a certification it doesn't have. The DualBrew Pro brews both ground coffee and K-Cup pods, offers four brew styles including an Over Ice mode and a Specialty concentrate for lattes, and scales from a single cup to a 12-cup carafe across 13 size settings. There's a fold-away frother and a separate hot-water line for tea. Consumer Reports has reviewed it, and reviewers praise its temperature consistency and water distribution for a machine this flexible. It is <strong>not</strong> SCA-certified, and that's the deliberate trade-off: if a purist single-origin cup is the goal, one of the certified picks will serve you better. For a household that can't agree on how to make coffee, this is the peacemaker.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B08QZSN97Z?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- #5 -->
+  <div class="card">
+    <div class="cardhead">
+      <div>
+        <span class="badge">#5 &middot; Budget SCA Pick</span>
+        <h3>Bonavita Connoisseur 8-Cup (BV1901TS)</h3>
+      </div>
+      <div class="price">~$149<small>street price</small></div>
+    </div>
+    <table class="specs">
+      <tr><th>SCA certification</th><td>Certified Golden Cup brewer</td></tr>
+      <tr><th>Heater / temp (rated)</th><td>1500W heater maintaining 195&ndash;205&deg;F</td></tr>
+      <tr><th>Brew time (reported)</th><td>8 cups in about 6 minutes, per published specs</td></tr>
+      <tr><th>Carafe</th><td>Double-wall stainless thermal</td></tr>
+      <tr><th>Standout</th><td>Optional pre-infusion mode, dishwasher-safe lid/basket/showerhead</td></tr>
+      <tr><th>Warranty / features</th><td>One-touch operation &mdash; no timer</td></tr>
+    </table>
+    <p>The Connoisseur proves you don't have to spend $300 to hit the standard. Its 1500W heater maintains 195&ndash;205&deg;F, it's SCA-certified, and an optional pre-infusion mode saturates the grounds before the main brew begins — the same bloom step baristas do by hand — for around $149. Per published specs it brews 8 cups in roughly 6 minutes into a double-wall stainless thermal carafe, and the lid, basket, and showerhead are dishwasher-safe. The catch is what's missing: features. There's no programmable timer, so you can't wake up to fresh coffee. If one-touch simplicity at a Golden Cup price is what you want, nothing here beats it on value.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B076PFMRGX?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+  <!-- 5. Comparison table -->
+  <h2>Head-to-Head Comparison</h2>
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Price</th>
+        <th>SCA cert</th>
+        <th>Carafe</th>
+        <th>Capacity</th>
+        <th>Warranty</th>
+        <th>Standout</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>OXO Brew 9-Cup</th>
+        <td>~$220</td>
+        <td class="yes">Yes</td>
+        <td>Thermal</td>
+        <td>1&ndash;9 cups</td>
+        <td>2 yr</td>
+        <td>Best all-round value</td>
+      </tr>
+      <tr>
+        <th>Moccamaster KBGV Select</th>
+        <td>$349</td>
+        <td class="yes">Yes (half + full)</td>
+        <td>Glass + hot plate</td>
+        <td>Half / full</td>
+        <td>5 yr</td>
+        <td>Repairable, buy-it-for-life</td>
+      </tr>
+      <tr>
+        <th>Fellow Aiden</th>
+        <td>$400</td>
+        <td class="yes">Yes</td>
+        <td>Thermal</td>
+        <td>1&ndash;10 cups</td>
+        <td>&mdash;</td>
+        <td>App-driven precision control</td>
+      </tr>
+      <tr>
+        <th>Ninja DualBrew Pro</th>
+        <td>$239.95</td>
+        <td class="no">No</td>
+        <td>Glass</td>
+        <td>1&ndash;12 cups + pods</td>
+        <td>&mdash;</td>
+        <td>Grounds + K-Cup versatility</td>
+      </tr>
+      <tr>
+        <th>Bonavita Connoisseur 8-Cup</th>
+        <td>~$149</td>
+        <td class="yes">Yes</td>
+        <td>Stainless thermal</td>
+        <td>8 cups</td>
+        <td>&mdash;</td>
+        <td>Cheapest certified brewer</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 6. Bottom line -->
+  <h2>The Bottom Line</h2>
+  <p>Most people should buy the <a href="https://www.amazon.com/dp/B00YEYKK8U?tag=loiterpoint20-20" rel="sponsored nofollow">OXO Brew 9-Cup</a>. It is certified, the independent temperature data is excellent, it has a timer, and it costs less than the boutique competition. If you want a machine that will outlive your next three phones and can be repaired instead of replaced, pay up for the <a href="https://www.amazon.com/dp/B093DYPBYR?tag=loiterpoint20-20" rel="sponsored nofollow">Moccamaster KBGV Select</a> — just accept that it only does one thing, on and off.</p>
+  <p>From there it's about priorities. Coffee obsessives who want to tune every variable should look at the <a href="https://www.amazon.com/dp/B0D8HVBVS6?tag=loiterpoint20-20" rel="sponsored nofollow">Fellow Aiden</a>, provided the price and app don't put them off. Mixed households get the most out of the <a href="https://www.amazon.com/dp/B08QZSN97Z?tag=loiterpoint20-20" rel="sponsored nofollow">Ninja DualBrew Pro</a>, as long as they understand it trades certification for flexibility. And if you want Golden Cup coffee for the least money, the <a href="https://www.amazon.com/dp/B076PFMRGX?tag=loiterpoint20-20" rel="sponsored nofollow">Bonavita Connoisseur</a> is the honest answer — no timer, no frills, right temperature.</p>
+
+  <footer>
+    <p><strong>Affiliate disclosure:</strong> Loiter Point earns a commission when you buy through the links on this page, at no extra cost to you. Those commissions fund the site. They never change which products we recommend or how we rank them — our picks are built on published independent testing and verified owner reports, not on payouts.</p>
+    <p class="tag">Updated July 2026</p>
+    <p>&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+  </footer>
+</div>
+</body>
+</html>
