@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>Best Fitness Trackers of 2026: Bands Ranked by Evidence | Loiter Point</title>
+<meta name="description" content="The best fitness trackers of 2026, ranked from independent measurements and verified owner reports. Fitbit Charge 6, Xiaomi Smart Band 10, Garmin Vivosmart 5, Amazfit Active 2 and the new Fitbit Air compared on battery, accuracy, GPS and subscription cost." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.65;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px;}
+  nav.topnav{
+    max-width:820px;margin:0 auto;padding:22px 20px;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;
+  }
+  nav.topnav a{color:var(--muted);}
+  nav.topnav a:hover{color:var(--accent);}
+  h1{
+    font-size:2.35rem;line-height:1.12;font-weight:700;
+    margin:14px 0 10px;letter-spacing:-0.02em;
+  }
+  h2{
+    font-size:1.5rem;font-weight:700;margin:52px 0 16px;
+    letter-spacing:-0.01em;
+  }
+  h3{font-size:1.2rem;font-weight:600;margin:0 0 6px;}
+  p{margin:0 0 16px;}
+  .byline{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;
+    color:var(--muted);margin-bottom:8px;
+  }
+  .byline .tag{color:var(--accent);}
+  .lede{font-size:1.08rem;color:var(--text);}
+  .tldr{
+    background:var(--surface);border:1px solid var(--border);
+    border-left:3px solid var(--accent);border-radius:10px;
+    padding:22px 24px;margin:26px 0 10px;
+  }
+  .tldr h2{margin:0 0 12px;font-size:1.15rem;}
+  .tldr ul{margin:0 0 14px 18px;}
+  .tldr li{margin-bottom:8px;}
+  .grab{
+    font-family:'IBM Plex Mono',monospace;font-size:13.5px;
+    border-top:1px solid var(--border);padding-top:14px;color:var(--muted);
+  }
+  .grab a{font-weight:600;}
+  .card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:14px;padding:26px 26px 30px;margin:26px 0;
+  }
+  .rankbadge{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;
+    font-size:12px;font-weight:600;letter-spacing:0.06em;
+    color:var(--bg);background:var(--accent);
+    padding:4px 10px;border-radius:6px;margin-bottom:14px;
+    text-transform:uppercase;
+  }
+  .price{
+    font-family:'IBM Plex Mono',monospace;font-size:14px;
+    color:var(--muted);margin:2px 0 16px;
+  }
+  .price strong{color:var(--text);}
+  .specgrid{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--border);border:1px solid var(--border);
+    border-radius:10px;overflow:hidden;margin:18px 0 20px;
+  }
+  .specgrid div{
+    background:var(--surface2);padding:10px 14px;font-size:13.5px;
+  }
+  .specgrid .k{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12px;}
+  .specgrid .v{color:var(--text);}
+  .lab{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    text-transform:uppercase;letter-spacing:0.05em;
+    color:var(--accent);opacity:0.8;
+  }
+  .downside{
+    background:var(--surface2);border-radius:8px;
+    padding:12px 16px;margin:16px 0;font-size:14.5px;
+  }
+  .downside strong{color:var(--accent);}
+  .btn{
+    display:inline-block;background:var(--accent);color:var(--bg);
+    font-weight:700;font-size:14.5px;padding:12px 22px;border-radius:8px;
+    margin-top:8px;font-family:'Inter',sans-serif;
+  }
+  .btn:hover{text-decoration:none;opacity:0.9;}
+  .nerd{
+    background:var(--surface2);border:1px dashed var(--border);
+    border-radius:12px;padding:22px 24px;margin:30px 0;
+  }
+  .nerd h3{color:var(--accent);font-family:'IBM Plex Mono',monospace;
+    font-size:13px;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;}
+  .nerd p{font-size:15px;margin-bottom:12px;}
+  table{
+    width:100%;border-collapse:collapse;margin:20px 0;
+    font-size:13px;font-family:'IBM Plex Mono',monospace;
+  }
+  th,td{border:1px solid var(--border);padding:9px 11px;text-align:left;vertical-align:top;}
+  th{background:var(--surface2);color:var(--accent);font-weight:600;}
+  td{background:var(--surface);color:var(--text);}
+  .tablewrap{overflow-x:auto;}
+  footer{
+    max-width:820px;margin:40px auto 0;padding:26px 20px 60px;
+    border-top:1px solid var(--border);
+    font-size:13px;color:var(--muted);font-family:'IBM Plex Mono',monospace;line-height:1.6;
+  }
+  footer p{margin-bottom:10px;}
+  .internal{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:10px;padding:16px 20px;margin:24px 0;font-size:15px;
+  }
+  @media(max-width:560px){
+    h1{font-size:1.85rem;}
+    .specgrid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav"><a href="../index.html">&larr; Loiter Point</a> &nbsp;/&nbsp; Fitness Trackers</nav>
+
+<div class="wrap">
+
+  <h1>Best Fitness Trackers of 2026</h1>
+  <p class="byline"><span class="tag">Updated July 2026</span> &nbsp;&middot;&nbsp; Loiter Point &mdash; evidence-first tech reviews</p>
+
+  <p class="lede">A fitness band should do a few things well: track your heart rate without lying to you, survive most of a week on a charge, and stay out of the way. This guide ranks the dedicated trackers &mdash; the slim bands and screen-free pucks, not the full smartwatches &mdash; using published independent measurements and verified owner reports rather than marketing spec sheets. If you actually want a full smartwatch with apps and a big screen, we keep that separate over in our <a href="./best-smartwatches.html">best smartwatches guide</a>.</p>
+
+  <div class="tldr">
+    <h2>The Short Version</h2>
+    <ul>
+      <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B0CC62ZG1M?tag=loiterpoint20-20" rel="sponsored nofollow">Fitbit Charge 6</a> &mdash; built-in GPS, ECG, a color screen, and it goes on sale constantly.</li>
+      <li><strong>Best budget:</strong> the <a href="https://www.amazon.com/dp/B0DYF82545?tag=loiterpoint20-20" rel="sponsored nofollow">Xiaomi Smart Band 10</a> &mdash; a bright AMOLED band, ~9 real-world days, no subscription, often under $70.</li>
+      <li><strong>Slimmest / most discreet:</strong> the <a href="https://www.amazon.com/dp/B09VY63659?tag=loiterpoint20-20" rel="sponsored nofollow">Garmin Vivosmart 5</a> &mdash; thin, comfortable, and Garmin's health data is all free.</li>
+      <li><strong>Also worth a look:</strong> the watch-shaped <a href="https://www.amazon.com/s?k=Amazfit+Active+2&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Amazfit Active 2</a> and the brand-new screen-free <a href="https://www.amazon.com/s?k=Google+Fitbit+Air+fitness+tracker&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Google Fitbit Air</a>.</li>
+    </ul>
+    <p class="grab"><strong>Grab your pick:</strong>
+      <a href="https://www.amazon.com/dp/B0CC62ZG1M?tag=loiterpoint20-20" rel="sponsored nofollow">Fitbit Charge 6 &mdash; $159 (often ~$119)</a> &nbsp;&middot;&nbsp;
+      <a href="https://www.amazon.com/dp/B0DYF82545?tag=loiterpoint20-20" rel="sponsored nofollow">Xiaomi Smart Band 10 &mdash; ~$53&ndash;70</a> &nbsp;&middot;&nbsp;
+      <a href="https://www.amazon.com/dp/B09VY63659?tag=loiterpoint20-20" rel="sponsored nofollow">Garmin Vivosmart 5 &mdash; $149.99</a> &nbsp;&middot;&nbsp;
+      <a href="https://www.amazon.com/s?k=Amazfit+Active+2&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Amazfit Active 2 &mdash; $99/$129</a> &nbsp;&middot;&nbsp;
+      <a href="https://www.amazon.com/s?k=Google+Fitbit+Air+fitness+tracker&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Google Fitbit Air &mdash; $99</a>
+    </p>
+  </div>
+
+  <h2>How We Evaluate Fitness Trackers</h2>
+  <p>Loiter Point does not run a hardware lab, and we won't pretend to. What we do is read widely and cross-check. For every tracker here we synthesize published independent measurements &mdash; instrumented heart-rate comparisons against chest straps, timed battery runs, and GPS accuracy tests from outlets like TechRadar, Notebookcheck, Android Authority, Tom's Guide, Live Science, Engadget and Wareable &mdash; alongside verified owner reports that describe how these bands behave over weeks and months of real use.</p>
+  <p>When a manufacturer prints a rated battery figure, we treat it as the optimistic ceiling and pair it with what reviewers and owners actually see, which is almost always lower once the always-on display and GPS get involved. In the spec grids below, anything a maker claims is labeled <span class="lab">rated</span>; anything drawn from third-party testing or owner reports is labeled <span class="lab">est. real-world</span> or <span class="lab">reported</span>. We never present an estimate as if we measured it ourselves.</p>
+  <p>Where the evidence is thin or the reviews disagree, we say so directly. One product here launched only weeks ago, and the honest answer about its long-term accuracy is that nobody has enough data yet. Prices move constantly, so we quote list prices and the discount ranges deal coverage has documented rather than pretending there's one true number. Our links are affiliate links; that pays for the site and never changes a ranking.</p>
+
+  <!-- PICK 1 -->
+  <div class="card">
+    <span class="rankbadge">#1 &middot; Best Overall</span>
+    <h3>Fitbit Charge 6</h3>
+    <p class="price"><strong>List price $159</strong>, frequently discounted &mdash; around $119 in May 2026, and as low as ~$90 during Prime Day per deal coverage.</p>
+    <div class="specgrid">
+      <div><span class="k">Battery</span><br><span class="v">Up to 7 days <span class="lab">rated</span></span></div>
+      <div><span class="k">Battery in use</span><br><span class="v">5&ndash;7 days (AOD off) / ~3 days (AOD on) <span class="lab">reported</span></span></div>
+      <div><span class="k">GPS</span><br><span class="v">Built-in</span></div>
+      <div><span class="k">Display</span><br><span class="v">Color AMOLED touchscreen</span></div>
+      <div><span class="k">HR accuracy</span><br><span class="v">Within ~&plusmn;3 bpm of chest strap steady-state <span class="lab">reported</span></span></div>
+      <div><span class="k">Charge time</span><br><span class="v">~97 min to full <span class="lab">reported</span></span></div>
+    </div>
+    <p>The Charge 6 is the tracker we'd hand most people without a second thought, and the 2026 roundups from Consumer Reports, Engadget and Wareable land in the same place. It packs genuinely useful hardware into a band-sized shell: built-in GPS so you can leave your phone home on a run, an ECG app, EDA stress scanning, 40+ exercise modes, and the ability to broadcast your heart rate over Bluetooth to gym equipment. Google's software adds Wallet, Maps turn-by-turn directions and YouTube Music controls on the wrist.</p>
+    <p>On battery, Fitbit rates it for up to 7 days and independent testers back up a realistic version of that: TechRadar and others consistently report five to seven days with the always-on display off, dropping to about three days once you enable it. One reviewer clocked a full charge at roughly 97 minutes. On accuracy, independent tests put steady-state heart rate within about &plusmn;3 bpm of a chest-strap reference &mdash; solid for a wrist optical sensor.</p>
+    <div class="downside"><strong>Downsides:</strong> like most wrist sensors, readings can wander in the first 5&ndash;10 minutes of a run and lag during HIIT, something TechRadar and others flag directly. It ships with 6 months of Fitbit/Google Health Premium, after which some deeper insights sit behind the $9.99/mo subscription &mdash; the core tracking stays free.</div>
+    <a class="btn" href="https://www.amazon.com/dp/B0CC62ZG1M?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  </div>
+
+  <!-- PICK 2 -->
+  <div class="card">
+    <span class="rankbadge">#2 &middot; Best Budget</span>
+    <h3>Xiaomi Smart Band 10 (Global Version)</h3>
+    <p class="price">About <strong>$53&ndash;70</strong> depending on seller and colorway; the Amazon US listing has run $69.99.</p>
+    <div class="specgrid">
+      <div><span class="k">Battery</span><br><span class="v">Up to 21 days <span class="lab">rated</span></span></div>
+      <div><span class="k">Battery in use</span><br><span class="v">~9 days with always-on display <span class="lab">reported</span></span></div>
+      <div><span class="k">GPS</span><br><span class="v">None (connected via phone)</span></div>
+      <div><span class="k">Display</span><br><span class="v">1.72" AMOLED, brighter than Band 9</span></div>
+      <div><span class="k">Charge time</span><br><span class="v">~1 hour to full <span class="lab">reported</span></span></div>
+      <div><span class="k">Subscription</span><br><span class="v">None &mdash; Mi Fitness app is free</span></div>
+    </div>
+    <p>If you want a capable tracker for the price of a nice dinner, this is it. Android Authority went as far as calling the Smart Band 10 "the best fitness tracker for under $50" at street price. The 1.72" AMOLED is noticeably brighter than the Band 9's, and Xiaomi upgraded the vibration motor so notifications are easier to feel. Everything in the Mi Fitness app is free &mdash; no subscription, ever.</p>
+    <p>Battery is the headline: Xiaomi rates it for up to 21 days, and while nobody hits that with the screen doing real work, reviewers report roughly nine days with the always-on display enabled, which is still excellent. A full charge takes about an hour.</p>
+    <div class="downside"><strong>Downsides:</strong> reviewers at TechRadar, Android Authority and Live Science agree sleep-tracking accuracy is mediocre, and there's no built-in GPS &mdash; it leans on your phone. It's also only a modest step up from the Band 9, so existing Band 9 owners shouldn't bother upgrading.</div>
+    <a class="btn" href="https://www.amazon.com/dp/B0DYF82545?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  </div>
+
+  <!-- NERD BOX -->
+  <div class="nerd">
+    <h3>Nerd box: why your wrist HR lags during intervals</h3>
+    <p>Every band here except the chest-strap-capable ones measures heart rate optically &mdash; green LEDs shine into your wrist and a photosensor reads how the light scatters as blood pulses through. That works well when your heart rate is steady, which is why the Charge 6 and Amazfit Active 2 both land within a few bpm of a chest strap at cruising effort. The trouble starts during hard intervals and HIIT: sudden spikes, wrist tendon movement, sweat and looser cuff contact all corrupt the optical signal, and the smoothing algorithms that hide noise also make the reading slow to catch a fast climb. That's the mechanism behind the "readings wander in the first 5&ndash;10 minutes and lag during HIIT" caveat you'll see on the Charge 6 and, frankly, on almost any wrist device. A chest strap measures the heart's electrical signal directly, so it doesn't have this problem &mdash; which is why the Amazfit Active 2's support for an external HR sensor is a genuinely useful feature if interval accuracy matters to you.</p>
+  </div>
+
+  <!-- PICK 3 -->
+  <div class="card">
+    <span class="rankbadge">#3 &middot; Slimmest / Most Discreet</span>
+    <h3>Garmin Vivosmart 5</h3>
+    <p class="price"><strong>List price $149.99.</strong></p>
+    <div class="specgrid">
+      <div><span class="k">Battery</span><br><span class="v">Up to 7 days <span class="lab">rated</span></span></div>
+      <div><span class="k">GPS</span><br><span class="v">None &mdash; connected GPS via phone</span></div>
+      <div><span class="k">Display</span><br><span class="v">Small OLED + physical button</span></div>
+      <div><span class="k">Form factor</span><br><span class="v">Thinner than Charge 6</span></div>
+      <div><span class="k">Health data</span><br><span class="v">Body Battery, respiration, Pulse Ox, stress</span></div>
+      <div><span class="k">Subscription</span><br><span class="v">None &mdash; all data free in Garmin Connect</span></div>
+    </div>
+    <p>Some people don't want a slab of glass on their wrist &mdash; they want something that disappears under a shirt cuff or sits politely next to a watch or bracelet. The Vivosmart 5 is that band. It's thinner than the Charge 6, uses a touchscreen plus a physical button, and carries Garmin's genuinely deep health metrics: Body Battery energy score, respiration tracking, Pulse Ox, stress and women's health tracking. Crucially, all of it lives in Garmin Connect for free, with no subscription upsell anywhere.</p>
+    <div class="downside"><strong>Downsides:</strong> this is a 2022 device and it shows. There's no built-in GPS (connected GPS via your phone only), and the small monochrome-era OLED looks dated next to the Charge 6's color screen. Buy it for the comfort and Garmin's free data depth, not for the display.</div>
+    <a class="btn" href="https://www.amazon.com/dp/B09VY63659?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  </div>
+
+  <!-- PICK 4 -->
+  <div class="card">
+    <span class="rankbadge">#4 &middot; Best Smartwatch-Style Value</span>
+    <h3>Amazfit Active 2</h3>
+    <p class="price"><strong>$99 standard / $129 premium</strong> version.</p>
+    <div class="specgrid">
+      <div><span class="k">Battery</span><br><span class="v">Up to 10 days typical / 19 days saver <span class="lab">rated</span></span></div>
+      <div><span class="k">Battery in use</span><br><span class="v">~1 week with a few GPS runs, AOD off <span class="lab">reported</span></span></div>
+      <div><span class="k">GPS</span><br><span class="v">Built-in</span></div>
+      <div><span class="k">Display</span><br><span class="v">Bright AMOLED (watch-shaped)</span></div>
+      <div><span class="k">HR accuracy</span><br><span class="v">3.77% avg deviation vs Polar H10 <span class="lab">reported</span></span></div>
+      <div><span class="k">Extras</span><br><span class="v">160+ workout modes, free offline maps, external HR support</span></div>
+    </div>
+    <p>The Active 2 is technically a watch-shaped device, so we're positioning it as the crossover pick: watch looks at band money. For $99 (or $129 for the premium version) you get a bright AMOLED, built-in GPS, free downloadable offline maps, 160+ workout modes and support for pairing an external chest-strap HR sensor. TechRadar, Tom's Guide and Notebookcheck all rate it a standout at the price.</p>
+    <p>On accuracy the numbers are strong for a device this cheap: Notebookcheck's instrumented review measured an average heart-rate deviation of 3.77% against a Polar H10 chest strap, with the largest single deviation at 5 bpm. Battery is rated up to 10 days typical, about 5 days under heavy use, and 19 days in saver mode; reviewers report a solid week with a few GPS runs and the always-on display off.</p>
+    <div class="downside"><strong>Downsides:</strong> it's a watch, not a slim band, so if the whole appeal of a tracker for you is that it's tiny and discreet, this isn't that. Consider it the option for someone who wants a smartwatch silhouette without smartwatch pricing.</div>
+    <a class="btn" href="https://www.amazon.com/s?k=Amazfit+Active+2&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Search on Amazon</a>
+  </div>
+
+  <!-- PICK 5 -->
+  <div class="card">
+    <span class="rankbadge">#5 &middot; Best Screen-Free / Recovery Focus</span>
+    <h3>Google Fitbit Air</h3>
+    <p class="price"><strong>$99</strong> ($129.99 Stephen Curry Special Edition). Launched May 7, 2026; shipping from May 26, 2026.</p>
+    <div class="specgrid">
+      <div><span class="k">Battery</span><br><span class="v">Up to a week <span class="lab">rated</span></span></div>
+      <div><span class="k">GPS</span><br><span class="v">Not advertised</span></div>
+      <div><span class="k">Display</span><br><span class="v">None &mdash; pebble-style, stats in Google Health app</span></div>
+      <div><span class="k">Tracking</span><br><span class="v">24/7 HR, SpO2, sleep stages, HRV, AFib alerts</span></div>
+      <div><span class="k">Coaching</span><br><span class="v">Google Health Coach (Gemini-based AI)</span></div>
+      <div><span class="k">Subscription</span><br><span class="v">Core features free; full set needs Premium $10/mo or $100/yr</span></div>
+    </div>
+    <p>The Fitbit Air is the wildcard: a screenless, pebble-style wrist tracker aimed at people who want recovery and sleep insight without a display constantly begging for attention. All your stats live in the new Google Health app on Android and iOS. It tracks 24/7 heart rate, SpO2, sleep stages, HRV and AFib alerts, is rated for up to a week per charge, and ties into Google Health Coach, a Gemini-based AI coaching layer. The press framing has been blunt: a "$99 Whoop killer," because the core health features work without a subscription where Whoop mandates one. The full feature set does still want Google Health Premium at $10/mo or $100/yr.</p>
+    <div class="downside"><strong>Downsides:</strong> it's brand new. Long-term reliability and independent accuracy data are genuinely thin right now, and we won't pretend otherwise &mdash; treat the accuracy claims as unproven until third-party testing catches up. If you want a screen-free recovery band and you're comfortable being an early adopter, it's the most interesting option here.</div>
+    <a class="btn" href="https://www.amazon.com/s?k=Google+Fitbit+Air+fitness+tracker&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Search on Amazon</a>
+  </div>
+
+  <div class="internal">
+    <p style="margin:0;">Want a full smartwatch with apps, a big screen and cellular instead of a slim tracker? That's a different tool &mdash; see our <a href="./best-smartwatches.html">best smartwatches guide</a>.</p>
+  </div>
+
+  <h2>The 5 picks side by side</h2>
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Tracker</th><th>Price</th><th>Display</th><th>Battery (rated)</th><th>Battery (reported real-world)</th><th>GPS</th><th>Subscription</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fitbit Charge 6</td><td>$159 (often ~$119, ~$90 Prime Day)</td><td>Color AMOLED touch</td><td>Up to 7 days</td><td>5&ndash;7 days AOD off / ~3 days AOD on</td><td>Built-in</td><td>Optional Premium $9.99/mo</td>
+      </tr>
+      <tr>
+        <td>Xiaomi Smart Band 10</td><td>~$53&ndash;70</td><td>1.72" AMOLED</td><td>Up to 21 days</td><td>~9 days with AOD</td><td>Phone only</td><td>None (free)</td>
+      </tr>
+      <tr>
+        <td>Garmin Vivosmart 5</td><td>$149.99</td><td>Small OLED</td><td>Up to 7 days</td><td>&mdash;</td><td>Phone only</td><td>None (free)</td>
+      </tr>
+      <tr>
+        <td>Amazfit Active 2</td><td>$99 / $129</td><td>Bright AMOLED (watch)</td><td>Up to 10 days (19 saver)</td><td>~1 week w/ some GPS, AOD off</td><td>Built-in</td><td>None (free)</td>
+      </tr>
+      <tr>
+        <td>Google Fitbit Air</td><td>$99 ($129.99 SE)</td><td>None (screenless)</td><td>Up to a week</td><td>&mdash; (too new)</td><td>Not advertised</td><td>Core free; Premium $10/mo</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Bottom Line</h2>
+  <p>For most people, buy the <a href="https://www.amazon.com/dp/B0CC62ZG1M?tag=loiterpoint20-20" rel="sponsored nofollow">Fitbit Charge 6</a>. It's the most complete band here &mdash; built-in GPS, a color screen, strong steady-state accuracy and constant discounts that regularly drag its $159 list price down toward $119 or lower. If your budget is tight, the <a href="https://www.amazon.com/dp/B0DYF82545?tag=loiterpoint20-20" rel="sponsored nofollow">Xiaomi Smart Band 10</a> gives up surprisingly little for often under $70, as long as you can live with weak sleep tracking and no onboard GPS. Want something that vanishes on your wrist and never asks for a subscription? The <a href="https://www.amazon.com/dp/B09VY63659?tag=loiterpoint20-20" rel="sponsored nofollow">Garmin Vivosmart 5</a> trades a modern screen for comfort and free, deep data. The <a href="https://www.amazon.com/s?k=Amazfit+Active+2&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Amazfit Active 2</a> is the pick if you'd rather have a watch shape, and the screen-free <a href="https://www.amazon.com/s?k=Google+Fitbit+Air+fitness+tracker&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Fitbit Air</a> is the one to watch for recovery-focused early adopters &mdash; just know the accuracy data isn't in yet.</p>
+  <p>One honorable mention for the truly budget-minded: the <a href="https://www.amazon.com/dp/B0B5FGP237?tag=loiterpoint20-20" rel="sponsored nofollow">Fitbit Inspire 3</a> ($99.95 list, seen around $66 in mid-2026, 10-day rated battery) is fine if you just want the cheapest Fitbit. But the Charge 6's frequent discounts usually make it the smarter buy for only a little more.</p>
+
+</div>
+
+<footer>
+  <p>Affiliate disclosure: Loiter Point earns commissions from qualifying purchases made through the Amazon links on this page. This never influences our rankings, which are built from published independent measurements and verified owner reports.</p>
+  <p>&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+</footer>
+
+</body>
+</html>
