@@ -53,6 +53,18 @@
   .foot{border-top:1px solid var(--border);margin-top:44px;padding:24px 0 60px;color:var(--muted);font-size:.82rem}
   .foot p{margin-bottom:10px}
   .disc{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;font-size:.8rem;color:var(--muted);margin:18px 0}
+  .pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+  .pick-media:hover{border-color:var(--accent);}
+  .pick-media img{width:100%;height:auto;display:block;}
+  .pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+  @media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+  #lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+  #lb.open{display:block;}
+  #lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+  .lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+  .lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+  .lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+  .lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
 </style>
 </head>
 <body>
@@ -90,6 +102,7 @@
 <p>Three things separate a good smart bulb from a frustrating one: it stays connected, the color and dimming look good at the low end, and it plays nicely with the ecosystem you already use. Raw brightness matters far less than most listings imply — an 800-lumen bulb is a standard 60W replacement, and most rooms don't need more.</p>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61FU5sGvhHL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61FU5sGvhHL._AC_SL500_.jpg" alt="Philips Hue White &amp; Color Ambiance A19" loading="lazy"><span>Click to zoom</span></div>
   <div class="card-head">
     <span class="rank">#1 · Best Overall</span>
     <h3>Philips Hue White &amp; Color Ambiance A19</h3>
@@ -107,6 +120,7 @@
 </div>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/81to5bPRDwL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/81to5bPRDwL._AC_SL500_.jpg" alt="LIFX Color A19" loading="lazy"><span>Click to zoom</span></div>
   <div class="card-head">
     <span class="rank">#2 · Brightest / No Hub</span>
     <h3>LIFX Color A19 (1100 lm)</h3>
@@ -124,6 +138,7 @@
 </div>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61UmNb44wbL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61UmNb44wbL._AC_SL500_.jpg" alt="WiZ Color A19 (Matter)" loading="lazy"><span>Click to zoom</span></div>
   <div class="card-head">
     <span class="rank">#3 · Best Value</span>
     <h3>WiZ Color A19 (Matter)</h3>
@@ -141,6 +156,7 @@
 </div>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61m82Uwqt6L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61m82Uwqt6L._AC_SL500_.jpg" alt="Govee Smart Bulbs A19 (4-Pack)" loading="lazy"><span>Click to zoom</span></div>
   <div class="card-head">
     <span class="rank">#4 · Best for Effects</span>
     <h3>Govee Smart Bulbs A19 (4-Pack)</h3>
@@ -158,6 +174,7 @@
 </div>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/71AUqh9Zl8L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/71AUqh9Zl8L._AC_SL500_.jpg" alt="Nanoleaf Essentials Matter A19" loading="lazy"><span>Click to zoom</span></div>
   <div class="card-head">
     <span class="rank">#5 · Best for Apple / Thread</span>
     <h3>Nanoleaf Essentials Matter A19</h3>
@@ -205,5 +222,27 @@
   <p><a href="../index.html">← Back to all reviews</a></p>
 </div>
 </div>
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 </body>
 </html>
