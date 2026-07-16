@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Best TVs Under $500 (2026): 4 Picks Backed by Independent Testing | Loiter Point</title>
+<meta name="description" content="The best TVs under $500 for 2026, ranked by synthesizing independent lab measurements from RTINGS, Tom's Guide and others plus verified owner reports. Mini-LED brightness, local dimming, and smart-TV picks compared." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    line-height:1.65;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  nav.top{
+    border-bottom:1px solid var(--border);
+    padding:16px 0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+  }
+  nav.top .wrap{display:flex;justify-content:space-between;align-items:center;}
+  nav.top .brand{color:var(--text);font-weight:600;letter-spacing:.02em;}
+  nav.top .brand span{color:var(--accent);}
+  h1{
+    font-size:40px;
+    line-height:1.12;
+    font-weight:700;
+    letter-spacing:-.02em;
+    margin:36px 0 8px;
+  }
+  .dateline{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:28px;
+  }
+  h2{
+    font-size:27px;
+    font-weight:700;
+    letter-spacing:-.01em;
+    margin:44px 0 14px;
+    padding-top:8px;
+  }
+  h3{font-size:20px;font-weight:600;margin:24px 0 8px;}
+  p{margin:0 0 16px;}
+  .short-version{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:22px 24px;
+    margin:0 0 32px;
+  }
+  .short-version h2{
+    margin:0 0 12px;
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--accent);
+  }
+  .short-version ul{margin:0 0 16px;padding-left:20px;}
+  .short-version li{margin-bottom:9px;}
+  .grab{
+    border-top:1px solid var(--border);
+    padding-top:14px;
+    font-size:15px;
+    color:var(--muted);
+  }
+  .grab strong{color:var(--text);}
+  .grab a{white-space:nowrap;}
+  .methodology{
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:20px 24px;
+    font-size:15.5px;
+    color:#cfcfd8;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:26px 26px 24px;
+    margin:26px 0;
+  }
+  .card-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:6px;}
+  .badge{
+    flex:0 0 auto;
+    background:var(--accent);
+    color:#111;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:6px;
+    margin-top:4px;
+    white-space:nowrap;
+  }
+  .card-title{margin:0;font-size:23px;font-weight:700;line-height:1.2;}
+  .card-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    display:block;
+    margin-top:4px;
+  }
+  .price-line{
+    font-size:15px;
+    color:var(--muted);
+    margin:2px 0 16px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .price-line strong{color:var(--text);}
+  .specs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    margin:0 0 18px;
+    font-size:14px;
+  }
+  .specs div{background:var(--surface2);padding:9px 12px;}
+  .specs .k{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12px;}
+  .specs .v{color:var(--text);}
+  .buy{
+    display:inline-block;
+    background:var(--accent);
+    color:#111;
+    font-weight:600;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14px;
+    padding:12px 22px;
+    border-radius:8px;
+    margin-top:6px;
+  }
+  .buy:hover{text-decoration:none;filter:brightness(1.06);}
+  .nerd{
+    background:var(--surface2);
+    border:1px dashed var(--border);
+    border-radius:10px;
+    padding:20px 22px;
+    margin:28px 0;
+    font-size:15.5px;
+  }
+  .nerd h3{margin-top:0;font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:20px 0 12px;
+    font-size:14px;
+  }
+  th,td{
+    border:1px solid var(--border);
+    padding:10px 12px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--surface2);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--muted);
+  }
+  td strong{color:var(--text);}
+  .table-note{font-size:13px;color:var(--muted);margin-top:0;}
+  .bottom-line{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:22px 24px;
+    margin:28px 0;
+  }
+  footer{
+    border-top:1px solid var(--border);
+    margin-top:48px;
+    padding:28px 0 44px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  footer .wrap{font-family:'IBM Plex Mono',monospace;line-height:1.7;}
+  footer strong{color:var(--text);}
+  .disclosure{
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:14px 18px;
+    margin-bottom:18px;
+    color:#b9b9c4;
+    font-family:'Inter',sans-serif;
+    font-size:13.5px;
+    line-height:1.6;
+  }
+  @media(max-width:600px){
+    h1{font-size:31px;}
+    h2{font-size:23px;}
+    .specs{grid-template-columns:1fr;}
+    body{font-size:16px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <span class="brand">LOITER<span>&middot;</span>POINT</span>
+    <a href="../index.html">&larr; back to all reviews</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <h1>Best TVs Under $500 (2026)</h1>
+  <p class="dateline">Updated July 2026 &middot; 4 picks &middot; evidence-first</p>
+
+  <div class="short-version">
+    <h2>The Short Version</h2>
+    <ul>
+      <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B0DSR9CHB1?tag=loiterpoint20-20" rel="sponsored nofollow">TCL 55QM6K</a> — QD-Mini LED with roughly 500 dimming zones and the deepest blacks you'll find at this price, per RTINGS.</li>
+      <li><strong>Brightest:</strong> the <a href="https://www.amazon.com/dp/B0DYWG3BL1?tag=loiterpoint20-20" rel="sponsored nofollow">Hisense 55U65QF (U6 series)</a> — Tom's Guide clocked it near 1,000 nits, brighter than sets costing far more.</li>
+      <li><strong>Best interface / streaming:</strong> the <a href="https://www.amazon.com/dp/B0C92VCZ48?tag=loiterpoint20-20" rel="sponsored nofollow">Roku Plus Series (55R6A5R)</a> — a full-array QLED with the cleanest smart platform going, if you don't need high refresh.</li>
+      <li><strong>Budget pick:</strong> the <a href="https://www.amazon.com/s?k=TCL+55QM5K+mini+LED+TV&amp;tag=loiterpoint20-20" rel="sponsored nofollow">TCL 55QM5K</a> — entry Mini-LED on Google TV, usually cheapest at Best Buy.</li>
+    </ul>
+    <p class="grab"><strong>Grab your pick:</strong>
+      <a href="https://www.amazon.com/dp/B0DSR9CHB1?tag=loiterpoint20-20" rel="sponsored nofollow">TCL 55QM6K (~$448–$498)</a> &middot;
+      <a href="https://www.amazon.com/dp/B0DYWG3BL1?tag=loiterpoint20-20" rel="sponsored nofollow">Hisense 55U65QF (under $500)</a> &middot;
+      <a href="https://www.amazon.com/dp/B0C92VCZ48?tag=loiterpoint20-20" rel="sponsored nofollow">Roku Plus Series (~$400–$450)</a> &middot;
+      <a href="https://www.amazon.com/s?k=TCL+55QM5K+mini+LED+TV&amp;tag=loiterpoint20-20" rel="sponsored nofollow">TCL 55QM5K (~$379–$400)</a>
+    </p>
+  </div>
+
+  <p>Five hundred dollars buys a genuinely good 55-inch TV in 2026 — a fact that would have sounded absurd a few years ago. Mini-LED backlights, quantum-dot color and 120Hz-plus panels have all trickled down into the budget tier, and the gap between a cheap set and a mid-range one is narrower than the marketing suggests. The catch is that the sub-$500 shelf is crowded and noisy, packed with near-identical model numbers and specs that mean little without independent measurement to back them up. Below are the four sets worth your money, why each one earns its spot, and where the trade-offs actually bite.</p>
+
+  <h2>How We Evaluate Budget TVs</h2>
+  <div class="methodology">
+    <p>Loiter Point does not run a test lab and does not measure TVs first-hand. Instead, we synthesize published measurements from the independent outlets that do own the gear and the light meters — <strong>RTINGS, Tom's Guide, TechRadar, Digital Trends, Reviewed and Consumer Reports</strong> — and cross-check those figures against verified owner reports from retail listings and forums.</p>
+    <p>Every performance number in this guide is attributed to whoever recorded it. When a figure is a manufacturer spec or a reasoned estimate rather than a lab reading, we label it <em>reported</em> or <em>est. real-world</em> so you know exactly how much weight to put on it. Where the published evidence is thin, conflicting or missing, we say so plainly rather than papering over it. Brightness figures depend heavily on window size and picture mode, so we note those conditions too — a "1,000-nit" TV and a "1,000-nit" TV measured differently can be very different things.</p>
+    <p>Prices move constantly at this end of the market. Every dollar figure here is a street price at the time of writing; always check the live listing before you buy.</p>
+  </div>
+
+  <h2>The Picks</h2>
+
+  <!-- PICK 1 -->
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">#1 BEST OVERALL</span>
+      <div>
+        <h3 class="card-title">TCL 55QM6K</h3>
+        <span class="card-tag">QD-Mini LED &middot; Google TV &middot; 2025 model</span>
+      </div>
+    </div>
+    <p class="price-line"><strong>~$448–$498</strong> street for the 55" at time of writing &middot; check the listing</p>
+    <div class="specs">
+      <div class="k">Backlight</div><div class="v">QD-Mini LED, ~500 dimming zones (reported)</div>
+      <div class="k">Panel</div><div class="v">120Hz native, up to 144Hz VRR</div>
+      <div class="k">HDR peak</div><div class="v">~812 nits, 10% window, Filmmaker Mode (Tom's Guide)</div>
+      <div class="k">SDR peak</div><div class="v">~688 nits (Tom's Guide)</div>
+      <div class="k">Input lag</div><div class="v">~13.1 ms (Tom's Guide measured)</div>
+      <div class="k">Smart OS / audio</div><div class="v">Google TV &middot; Dolby Atmos / Onkyo</div>
+    </div>
+    <p>This is the one to beat. RTINGS names the QM6K the best TV under $500 they've tested, and the reason is its local dimming: TCL's "Precise Dimming" LD500 system drives roughly 500 zones, which is a lot for the money and translates into deep, bold blacks and controlled contrast that cheaper edge-lit sets simply can't match. In a dark room with letterboxed film content, that's the single biggest thing separating a "good" budget TV from a merely acceptable one.</p>
+    <p>Brightness is strong without leading the pack. Tom's Guide's review recorded about 812 nits on a 10% HDR window in Filmmaker Mode before calibration, and roughly 688 nits in SDR — plenty for a bright living room, and enough to give HDR highlights real punch. The 120Hz native panel (up to 144Hz with VRR) makes it a capable gaming display, though the ~13.1 ms input lag Tom's Guide measured is fine for casual play rather than best-in-class; twitchy competitive players will notice the fastest rivals edge it out.</p>
+    <p>Google TV is a full-featured, if occasionally busy, smart platform, and the Onkyo-tuned audio with Dolby Atmos support is a cut above the tinny norm at this price. Note the price does swing: Best Buy has listed it at $549.99 at times, so the sub-$500 window is real but not guaranteed. If it's under $500 on Amazon when you look, it's the easy recommendation for most people.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0DSR9CHB1?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 2 -->
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">#2 BRIGHTEST</span>
+      <div>
+        <h3 class="card-title">Hisense 55U65QF (U6 series)</h3>
+        <span class="card-tag">Mini-LED &middot; Fire TV &middot; 2025 model</span>
+      </div>
+    </div>
+    <p class="price-line"><strong>Widely under $500</strong> for the 55" at time of writing &middot; check the listing</p>
+    <div class="specs">
+      <div class="k">Backlight</div><div class="v">Mini-LED, 120–600 zones by size (reported)</div>
+      <div class="k">Panel</div><div class="v">Native 144Hz</div>
+      <div class="k">HDR peak</div><div class="v">~946 nits (10%) / ~1,041 nits (25%), Filmmaker Mode (Tom's Guide)</div>
+      <div class="k">HDR formats</div><div class="v">HDR10+, Dolby Vision IQ</div>
+      <div class="k">Smart OS</div><div class="v">Fire TV</div>
+      <div class="k">Standout</div><div class="v">Brightness — beats Roku Pro &amp; TCL QM6K per Tom's Guide</div>
+    </div>
+    <p>If your room fights you with sunlight, this is the pick. Tom's Guide's review recorded roughly 946 nits on a 10% window and about 1,041 nits on a 25% window in Filmmaker Mode — figures that, per their testing, out-brighten both the Roku Pro Series and TCL's QM6K. That's remarkable output for a set that routinely sells under $500, and TechRadar's verdict that it "punches well above its price range" tracks with the measured numbers. Bright specular highlights and glare-heavy daytime viewing are where it pulls ahead.</p>
+    <p>The spec sheet backs up the ambition: a native 144Hz panel, HDR10+ and Dolby Vision IQ support, and a Mini-LED backlight running anywhere from 120 to 600 local dimming zones depending on screen size (reported). The one consistent gripe across reviews is the software. This is a Fire TV, and reviewers repeatedly flag the ad-heavy home screen and occasional sluggishness as the price you pay. If you route everything through a separate streaming stick or a game console, that complaint largely evaporates; if you live in the built-in interface, it's worth weighing.</p>
+    <p>One sizing note: the 55" is the sweet spot here and the one that stays comfortably under $500. The 65" carries a $999 MSRP but has been seen under $600 on sale — a different value calculation, and one worth watching for if you want the larger screen.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0DYWG3BL1?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- NERD BOX -->
+  <div class="nerd">
+    <h3>Nerd box: nits, windows, and why "brightness" isn't one number</h3>
+    <p>When a review says a TV hits "946 nits," the next question should always be: <em>on what window?</em> Brightness is measured against a white patch of a given size — a 10% window is a small bright object on a dark field, a 25% window a larger one, and a 100% window a full-screen flash. Most TVs put out more light on smaller windows because they're not straining the whole backlight at once, so a set can post a big 10% number and a more modest 100% number. Picture mode matters just as much: Filmmaker Mode is color-accurate but often dimmer than the punchy "Vivid" presets, so a Filmmaker-Mode reading is a conservative, honest floor rather than the max the panel can throw. That's why we cite window size and mode next to every brightness figure — a headline nit count with no context is close to meaningless.</p>
+  </div>
+
+  <!-- PICK 3 -->
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">#3 BEST INTERFACE</span>
+      <div>
+        <h3 class="card-title">Roku Plus Series (55R6A5R)</h3>
+        <span class="card-tag">QLED &middot; Full-array local dimming &middot; Roku OS</span>
+      </div>
+    </div>
+    <p class="price-line"><strong>~$400–$450</strong> typical, seen as low as $348 &middot; check the listing</p>
+    <div class="specs">
+      <div class="k">Backlight</div><div class="v">Full-array local dimming (FALD), QLED</div>
+      <div class="k">Contrast</div><div class="v">~20,500:1 (Reviewed lab measured)</div>
+      <div class="k">HDR highlights</div><div class="v">Rarely above ~700 nits (Digital Trends)</div>
+      <div class="k">Panel</div><div class="v">60Hz — not for serious gamers</div>
+      <div class="k">Smart OS</div><div class="v">Roku OS — cleanest, simplest platform</div>
+      <div class="k">Blooming</div><div class="v">Minimal, deep blacks (Digital Trends)</div>
+    </div>
+    <p>Pick this one for the experience as much as the panel. Roku OS remains the cleanest, least cluttered smart-TV platform on the market — fast to navigate, light on nagging, and genuinely pleasant to live with day to day. If the thought of wrestling with a busy Google TV homescreen or a Fire TV ad banner makes you tired, this is the antidote.</p>
+    <p>The picture holds up its end too. Reviewed's lab measured contrast around 20,500:1 thanks to the full-array local dimming backlight, and Digital Trends notes deep blacks with minimal blooming — the halos of light that bleed around bright objects on lesser backlights. Where it gives ground is peak brightness: Digital Trends observed specular highlights rarely climbing above about 700 nits, so it can't match the Hisense for raw punch in a bright room. The other hard limit is the 60Hz panel. For movies, TV and casual console play that's a non-issue, but anyone chasing 120Hz gaming should look at the TCL instead. Within its lane — a calm, great-looking streaming TV — it's excellent, and Tom's Guide has spotted it as low as $348, which is a lot of picture for the money.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0C92VCZ48?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 4 -->
+  <div class="card">
+    <div class="card-head">
+      <span class="badge">#4 BUDGET PICK</span>
+      <div>
+        <h3 class="card-title">TCL 55QM5K</h3>
+        <span class="card-tag">Entry Mini-LED &middot; Google TV</span>
+      </div>
+    </div>
+    <p class="price-line"><strong>~$379.99–$399.99</strong> — usually cheapest at Best Buy (a Best Buy exclusive) &middot; check the listing</p>
+    <div class="specs">
+      <div class="k">Backlight</div><div class="v">Entry-level Mini-LED (reported)</div>
+      <div class="k">Smart OS</div><div class="v">Google TV</div>
+      <div class="k">Positioning</div><div class="v">One of three sub-$500 sets Tom's Guide would buy</div>
+      <div class="k">Availability</div><div class="v">Best Buy exclusive; not reliably on Amazon</div>
+    </div>
+    <p>When the budget is tight and every dollar counts, the QM5K is the entry point into Mini-LED on the excellent Google TV platform. Tom's Guide highlights it as one of only three budget sets they'd actually buy under $500, which is meaningful company. It steps down from the QM6K on dimming performance and brightness — this is the value tier, not the performance tier — but it clears the bar that matters: it's a legitimately good TV, not a compromise you'll regret.</p>
+    <p>A straight-talk buying note: the QM5K is effectively a Best Buy exclusive, priced around $379.99 to $399.99 there, and it is <em>not</em> reliably stocked on Amazon. We've linked an Amazon search below so you can check whether a listing exists when you shop, but if you want this specific set at its usual price, Best Buy is almost certainly where you'll find it. Don't overpay for a marked-up third-party Amazon listing when the first-party price is lower elsewhere.</p>
+    <a class="buy" href="https://www.amazon.com/s?k=TCL+55QM5K+mini+LED+TV&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Search on Amazon &rarr;</a>
+  </div>
+
+  <h2>Honorable Mention</h2>
+  <p>Yahoo Tech named the <strong>Vizio VQM55C-10</strong> a top budget pick in May 2026, and on reputation it's worth knowing about. We're keeping it to an honorable mention here for one honest reason: we could not verify a stable Amazon listing for it, and we won't attach a buy button or invented specs to a product we can't point you to reliably. If you come across it at a retailer you trust and the price is right, it's a name that has earned some credibility — just go in knowing we haven't been able to pin down verified, current measurements for it.</p>
+
+  <h2>All Four Compared</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Best for</th>
+        <th>Backlight</th>
+        <th>Brightness (reported)</th>
+        <th>Refresh</th>
+        <th>Smart OS</th>
+        <th>Price (est. real-world)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>TCL 55QM6K</strong></td>
+        <td>Overall</td>
+        <td>QD-Mini LED, ~500 zones</td>
+        <td>~812 nits HDR, 10% (Tom's Guide)</td>
+        <td>120Hz / 144Hz VRR</td>
+        <td>Google TV</td>
+        <td>~$448–$498</td>
+      </tr>
+      <tr>
+        <td><strong>Hisense 55U65QF</strong></td>
+        <td>Bright rooms</td>
+        <td>Mini-LED, 120–600 zones</td>
+        <td>~946 nits (10%) / ~1,041 (25%) (Tom's Guide)</td>
+        <td>144Hz</td>
+        <td>Fire TV</td>
+        <td>Under $500</td>
+      </tr>
+      <tr>
+        <td><strong>Roku Plus 55R6A5R</strong></td>
+        <td>Interface / streaming</td>
+        <td>Full-array QLED</td>
+        <td>~700 nits highlights (Digital Trends)</td>
+        <td>60Hz</td>
+        <td>Roku OS</td>
+        <td>~$400–$450 (seen $348)</td>
+      </tr>
+      <tr>
+        <td><strong>TCL 55QM5K</strong></td>
+        <td>Tight budgets</td>
+        <td>Entry Mini-LED</td>
+        <td>Not independently verified</td>
+        <td>Not verified here</td>
+        <td>Google TV</td>
+        <td>~$379–$400 (Best Buy)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="table-note">All figures attributed to the outlet that recorded them; price and availability shift constantly, so confirm on the live listing.</p>
+
+  <div class="bottom-line">
+    <h2 style="margin-top:0;">Bottom Line</h2>
+    <p>For most people, the <a href="https://www.amazon.com/dp/B0DSR9CHB1?tag=loiterpoint20-20" rel="sponsored nofollow">TCL 55QM6K</a> is the buy: RTINGS' pick for the best sub-$500 TV, with the local dimming and black levels to justify it, plus a 120Hz panel that covers gaming. Choose the <a href="https://www.amazon.com/dp/B0DYWG3BL1?tag=loiterpoint20-20" rel="sponsored nofollow">Hisense U6</a> if you're fighting a bright room and can live with Fire TV, since nothing else here comes close on measured brightness. Choose the <a href="https://www.amazon.com/dp/B0C92VCZ48?tag=loiterpoint20-20" rel="sponsored nofollow">Roku Plus Series</a> if a clean, simple interface and deep contrast matter more than high refresh or peak nits. And if you just need a solid Mini-LED set for the least money, the <a href="https://www.amazon.com/s?k=TCL+55QM5K+mini+LED+TV&amp;tag=loiterpoint20-20" rel="sponsored nofollow">TCL 55QM5K</a> delivers — likely at Best Buy rather than Amazon. Whichever you pick, confirm the price is still under $500 on the live listing before you commit; the whole reason these are on the list is the value, and that value lives and dies by the current price.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclosure">
+      <strong>Affiliate disclosure:</strong> Loiter Point participates in the Amazon Associates program. Some links on this page are affiliate links, and we may earn a commission on qualifying purchases at no extra cost to you. This never changes which products we recommend or how we rank them — our picks are built by synthesizing independent measurements and verified owner reports, not by who pays us. We do not run a lab or test products first-hand; all performance figures are attributed to the outlets that recorded them.
+    </div>
+    &copy; 2026 Loiter Point — Consumer tech reviews built on real evidence.
+  </div>
+</footer>
+
+</body>
+</html>
