@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Best Laptops Under $1,000 (2026) — Loiter Point</title>
+<meta name="description" content="The best laptops under $1,000 in 2026, ranked from published independent measurements and verified owner reports. Top picks for value, battery life, budget gaming, 2-in-1, and cheap Copilot+." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.65;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:32px 20px 80px;}
+  nav.top{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    margin-bottom:36px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--border);
+    padding-bottom:16px;
+  }
+  nav.top a{color:var(--muted);text-decoration:none;}
+  nav.top a:hover{color:var(--accent);}
+  .brand{color:var(--accent);font-weight:600;letter-spacing:.5px;}
+  .dateline{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:14px;
+  }
+  h1{
+    font-size:38px;
+    line-height:1.15;
+    font-weight:700;
+    letter-spacing:-.5px;
+    margin-bottom:20px;
+  }
+  h2{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:-.3px;
+    margin:48px 0 16px;
+    padding-top:8px;
+  }
+  h3{font-size:20px;font-weight:600;margin:0;}
+  p{margin:0 0 16px;}
+  a{color:var(--accent);}
+  .lede{font-size:19px;color:#cfcfd8;margin-bottom:28px;}
+  .shortversion{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:22px 24px;
+    margin:0 0 34px;
+  }
+  .shortversion h2{
+    margin:0 0 12px;
+    font-size:15px;
+    font-family:'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--accent);
+  }
+  .shortversion ul{margin:0 0 14px;padding-left:20px;}
+  .shortversion li{margin-bottom:8px;}
+  .grab{
+    font-size:15px;
+    border-top:1px solid var(--border);
+    padding-top:14px;
+    margin-top:6px;
+    color:var(--muted);
+  }
+  .grab a{font-weight:600;}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px 24px 26px;
+    margin:22px 0;
+  }
+  .badge{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.5px;
+    background:var(--accent);
+    color:#0c0c0e;
+    padding:4px 10px;
+    border-radius:5px;
+    margin-bottom:12px;
+  }
+  .cardhead{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;}
+  .price{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14px;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  .price span{color:var(--muted);}
+  .specs{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:6px 16px;
+    font-size:14px;
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:14px 16px;
+    margin:14px 0;
+  }
+  .specs dt{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12.5px;white-space:nowrap;}
+  .specs dd{margin:0;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    color:#0c0c0e;
+    background:var(--muted);
+    padding:1px 5px;
+    border-radius:3px;
+    margin-left:6px;
+    vertical-align:middle;
+  }
+  .downside{
+    font-size:14.5px;
+    color:#cfcfd8;
+    border-left:2px solid var(--muted);
+    padding-left:14px;
+    margin:14px 0;
+  }
+  .downside strong{color:var(--text);}
+  .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#0c0c0e;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    padding:11px 22px;
+    border-radius:8px;
+    margin-top:6px;
+  }
+  .btn:hover{filter:brightness(1.08);}
+  .nerd{
+    background:var(--surface2);
+    border:1px dashed var(--border);
+    border-radius:10px;
+    padding:20px 22px;
+    margin:26px 0;
+    font-size:15px;
+  }
+  .nerd h3{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  .nerd p:last-child{margin-bottom:0;}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    margin:18px 0;
+    display:block;
+    overflow-x:auto;
+  }
+  th,td{
+    border:1px solid var(--border);
+    padding:10px 12px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--surface2);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+  td strong{color:var(--accent);}
+  footer{
+    margin-top:56px;
+    border-top:1px solid var(--border);
+    padding-top:24px;
+    font-size:13px;
+    color:var(--muted);
+  }
+  footer p{margin-bottom:12px;}
+  .disclosure{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:14px 16px;
+    font-size:13px;
+    color:var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="../index.html">&larr; Loiter Point</a>
+    <span class="brand">LOITER POINT</span>
+  </nav>
+
+  <div class="dateline">Buying Guide &middot; Updated July 2026</div>
+  <h1>Best Laptops Under $1,000 (2026)</h1>
+  <p class="lede">Five machines that punch well above their price — ranked from published independent measurements and verified owner reports, not marketing decks.</p>
+
+  <div class="shortversion">
+    <h2>The Short Version</h2>
+    <ul>
+      <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B0DZDC3WW5?tag=loiterpoint20-20" rel="sponsored nofollow">Apple MacBook Air 13" (M4)</a> — RTINGS' top laptop under $1,000, and Amazon keeps dropping the 16GB/256GB config below its $999 list price.</li>
+      <li><strong>Longest battery:</strong> the <a href="https://www.amazon.com/dp/B0DV9YB8PP?tag=loiterpoint20-20" rel="sponsored nofollow">ASUS Zenbook A14</a> — a ~2.2 lb Snapdragon X ultralight reviewers clock at 20+ hours.</li>
+      <li><strong>Best on a budget:</strong> gamers want the <a href="https://www.amazon.com/dp/B0D9KHZ12S?tag=loiterpoint20-20" rel="sponsored nofollow">HP Victus 15</a> with its RTX 4050; everyone else should look at the <a href="https://www.amazon.com/s?k=Acer+Aspire+16+Copilot+laptop&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Acer Aspire 16</a> around $700.</li>
+      <li>Want it to fold into a tablet? The <a href="https://www.amazon.com/dp/B0FN3XHHJG?tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Yoga 7 2-in-1</a> with a 2.8K OLED and included pen is the convertible to beat.</li>
+    </ul>
+    <p class="grab"><strong>Grab your pick:</strong>
+      <a href="https://www.amazon.com/dp/B0DZDC3WW5?tag=loiterpoint20-20" rel="sponsored nofollow">MacBook Air M4 (~$799&ndash;$999)</a> &middot;
+      <a href="https://www.amazon.com/dp/B0DV9YB8PP?tag=loiterpoint20-20" rel="sponsored nofollow">Zenbook A14 (~$699&ndash;$899)</a> &middot;
+      <a href="https://www.amazon.com/dp/B0D9KHZ12S?tag=loiterpoint20-20" rel="sponsored nofollow">HP Victus 15 (~$599&ndash;$800)</a> &middot;
+      <a href="https://www.amazon.com/dp/B0FN3XHHJG?tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Yoga 7 (~$800&ndash;$1,000)</a> &middot;
+      <a href="https://www.amazon.com/s?k=Acer+Aspire+16+Copilot+laptop&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Acer Aspire 16 (~$700)</a>
+    </p>
+  </div>
+
+  <h2>How We Evaluate Laptops</h2>
+  <p>Loiter Point does not run a hardware lab, and we won't pretend otherwise. What we do is synthesize the numbers that already exist: published measurements from independent test labs — RTINGS, PCMag, and Notebookcheck-style outlets that put every panel on a colorimeter and every battery through a standardized rundown — cross-referenced against verified owner reports from people who actually live with these machines.</p>
+  <p>That means when we say a laptop runs 20 hours, it's because reviewers reported that figure under a defined workload, not because we watched a clock. Where a number comes from the manufacturer, we label it "reported" or "manufacturer-rated" and flag that real-world results usually land lower. Where the evidence is thin or configurations vary, we say so rather than round up. Prices move constantly at this end of the market, so we quote ranges and tell you to check the current price before you buy — the sticker you see today is the only one that matters.</p>
+  <p>Our shortlist starts from a simple filter: a genuinely useful machine you can buy for under $1,000 at typical street pricing, with at least 16GB of RAM and a modern SSD, because in 2026 anything less is a false economy. From there we sorted by the job each laptop does best.</p>
+
+  <h2>The Picks</h2>
+
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#1 &middot; Best Overall</span>
+      <h3>Apple MacBook Air 13" (M4, 2025)</h3>
+    </div>
+    <div class="price">Around $799&ndash;$999 &middot; <span>MSRP $999 (check current price)</span></div>
+    <p>If you don't specifically need Windows, this is the easy answer. RTINGS names the M4 Air the best laptop they've tested under $1,000, and the reasons are unglamorous but decisive: a silent fanless design, a genuinely excellent 13.6-inch display, all-day battery, and the kind of sustained responsiveness that makes cheaper Windows ultrabooks feel harried. The 16GB/256GB configuration lists at $999, but Amazon has repeatedly discounted it into the $799&ndash;$899 range through 2026 (documented by 9to5Toys and Tom's-Hardware-tier deal coverage), which is where it goes from "good" to "no-brainer."</p>
+    <dl class="specs">
+      <dt>Chip</dt><dd>Apple M4 (10-core)</dd>
+      <dt>Memory</dt><dd>16GB unified</dd>
+      <dt>Storage</dt><dd>256GB SSD</dd>
+      <dt>Display</dt><dd>13.6" Liquid Retina, 2560&times;1664</dd>
+      <dt>Battery</dt><dd>All-day; multi-day light use <span class="tag">reported</span></dd>
+      <dt>Weight</dt><dd>~2.7 lb</dd>
+    </dl>
+    <p class="downside"><strong>The catch:</strong> 256GB fills up fast, and Apple's storage upgrades are expensive, so budget for external storage. There's a newer M5 Air (2026), but it typically starts above $1,000 — the M4 is the value play, not a compromise.</p>
+    <a class="btn" href="https://www.amazon.com/dp/B0DZDC3WW5?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  </div>
+
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#2 &middot; Best Battery Life</span>
+      <h3>ASUS Zenbook A14 (UX3407QA)</h3>
+    </div>
+    <div class="price">Around $699&ndash;$899 <span>(check current price)</span></div>
+    <p>The Zenbook A14 is the closest a Windows machine gets to the endurance crown. Built around Qualcomm's Snapdragon X platform and a ceraluminum chassis that tips the scales near 2.2 pounds, it's the laptop you forget is in your bag. Reviewers at Laptop Mag and elsewhere report 20-plus-hour battery runtimes — the kind of number that lets you leave the charger at home for a full workday and then some. The 14-inch WUXGA OLED panel is a legitimately nice place to read and write.</p>
+    <dl class="specs">
+      <dt>Chip</dt><dd>Snapdragon X (Arm)</dd>
+      <dt>Memory</dt><dd>16GB</dd>
+      <dt>Storage</dt><dd>512GB SSD</dd>
+      <dt>Display</dt><dd>14" WUXGA OLED</dd>
+      <dt>Battery</dt><dd>20+ hours <span class="tag">reported</span></dd>
+      <dt>Weight</dt><dd>~2.2 lb</dd>
+    </dl>
+    <p class="downside"><strong>The catch:</strong> Windows-on-Arm still has app-compatibility edge cases. Mainstream productivity apps run fine, but some games and older legacy software either won't run or run emulated. If your workflow leans on niche or ancient Windows software, verify it first.</p>
+    <a class="btn" href="https://www.amazon.com/dp/B0DV9YB8PP?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  </div>
+
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#3 &middot; Best Budget Gaming</span>
+      <h3>HP Victus 15</h3>
+    </div>
+    <div class="price">Around $599&ndash;$800 <span>(check current price)</span></div>
+    <p>Discrete-GPU gaming under $1,000 means accepting trade-offs, and the Victus 15 makes the right ones. A Ryzen 5 8645HS paired with an RTX 4050 handles 1080p gaming at the 15.6-inch panel's 144Hz refresh with room to spare in most titles, and deal coverage has repeatedly seen RTX 4050 Victus configs land at $599&ndash;$650 — remarkable money for real ray-tracing-capable hardware. The 16GB of DDR5 and a roomy 1TB SSD mean you're not immediately upgrading anything.</p>
+    <dl class="specs">
+      <dt>CPU</dt><dd>AMD Ryzen 5 8645HS</dd>
+      <dt>GPU</dt><dd>NVIDIA RTX 4050</dd>
+      <dt>Memory</dt><dd>16GB DDR5</dd>
+      <dt>Storage</dt><dd>1TB SSD</dd>
+      <dt>Display</dt><dd>15.6" FHD 144Hz</dd>
+      <dt>1080p gaming</dt><dd>Solid in most titles <span class="tag">reported</span></dd>
+    </dl>
+    <p class="downside"><strong>The catch:</strong> independent reviews consistently call out mediocre display color coverage — fine for gaming, not ideal for color-critical photo or video work. It's also a chunky, plastic-heavy machine, not a thin-and-light. You're buying the GPU, not the chassis.</p>
+    <a class="btn" href="https://www.amazon.com/dp/B0D9KHZ12S?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  </div>
+
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#4 &middot; Best 2-in-1</span>
+      <h3>Lenovo Yoga 7 2-in-1 14"</h3>
+    </div>
+    <div class="price">Around $800&ndash;$1,000 <span>(frequently under $1,000 — check current price)</span></div>
+    <p>The Yoga 7 is the convertible that doesn't feel like a compromise. The 360-degree hinge lets it flip from laptop to tablet to tent mode, and unlike a lot of budget 2-in-1s it brings a genuinely premium 2.8K OLED touchscreen and an included pen — no separate $70 stylus purchase. Under the hood, a Ryzen AI 7 350 with 16GB of RAM and a 1TB SSD gives it enough headroom for everyday multitasking, note-taking, and light creative work.</p>
+    <dl class="specs">
+      <dt>CPU</dt><dd>AMD Ryzen AI 7 350</dd>
+      <dt>Memory</dt><dd>16GB</dd>
+      <dt>Storage</dt><dd>1TB SSD</dd>
+      <dt>Display</dt><dd>14" 2.8K OLED touch</dd>
+      <dt>Battery</dt><dd>~13.5h <span class="tag">manufacturer-rated</span>; est. real-world lower</dd>
+      <dt>Extras</dt><dd>Pen included, 360&deg; hinge</dd>
+    </dl>
+    <p class="downside"><strong>The catch:</strong> Lenovo's ~13.5-hour battery figure is a manufacturer rating; expect real-world runtime to land meaningfully lower, especially driving that bright OLED. And OLED convertibles are more prone to glare and reflections than matte panels.</p>
+    <a class="btn" href="https://www.amazon.com/dp/B0FN3XHHJG?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  </div>
+
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#5 &middot; Best Budget</span>
+      <h3>Acer Aspire 16 (Copilot+)</h3>
+    </div>
+    <div class="price">Around $700 <span>(check current price)</span></div>
+    <p>When the priority is spending as little as possible without buying junk, the Aspire 16 is the pick — Consumer Reports flagged it as a top budget choice in 2026 coverage. As a Copilot+ machine it clears Microsoft's bar for on-device AI features and modern efficiency, and the 16-inch screen gives you more usable workspace than the 13- and 14-inch ultralights above it for the same money or less. It's the sensible default for students, home offices, and anyone who wants a competent do-everything Windows laptop cheap.</p>
+    <dl class="specs">
+      <dt>Class</dt><dd>Copilot+ PC</dd>
+      <dt>Display</dt><dd>16" (large workspace)</dd>
+      <dt>Positioning</dt><dd>Consumer Reports top budget pick <span class="tag">reported</span></dd>
+      <dt>Price</dt><dd>~$700 <span class="tag">reported</span></dd>
+    </dl>
+    <p class="downside"><strong>Honest note:</strong> this is the one pick without a single verified Amazon listing on our end — configurations vary, so we link a search rather than a fixed ASIN. Confirm the exact CPU, RAM, and storage before you buy; at this price, spec sheets differ from one retailer to the next.</p>
+    <a class="btn" href="https://www.amazon.com/s?k=Acer+Aspire+16+Copilot+laptop&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Search on Amazon</a>
+  </div>
+
+  <div class="nerd">
+    <h3>Nerd box: why Snapdragon X battery life is so wild</h3>
+    <p>The Zenbook A14's 20-hour numbers aren't magic — they're architecture. Qualcomm's Snapdragon X chips use the Arm instruction set, the same efficiency-first lineage that powers phones, rather than the x86 design behind most Intel and AMD laptop chips. Arm cores were built from the ground up to sip power at idle and scale up only when needed, so a lightly loaded machine — email, docs, browsing — draws remarkably little. Pair that with a large battery in a 2.2 lb chassis that has almost no power-hungry components, and 20 hours stops looking like a marketing stunt.</p>
+    <p>The trade-off is the compatibility caveat above: Windows apps compiled for x86 have to run through an emulation layer, which costs some performance and occasionally breaks. For mainstream work it's a non-issue in 2026; for gaming or legacy software, it's the whole ballgame. That's also why x86 Windows ultrabooks — and the Victus's power-hungry gaming silicon — can't match these runtimes. (The MacBook Air's Apple Silicon is Arm-based too, which is a big part of its own endurance story.)</p>
+  </div>
+
+  <div class="nerd">
+    <h3>Nerd box: your 2026 minimums are 16GB and a real SSD</h3>
+    <p>Every laptop on this list ships with at least 16GB of RAM, and that's not a coincidence — it's the floor we refuse to go under. Modern browsers, Windows 11, and background AI features have pushed 8GB machines into constant swapping, where the system dumps memory onto the SSD and everything stutters. 16GB is the difference between a laptop that feels fast in year three and one that felt slow in month three. Same logic on storage: a modern NVMe SSD, not eMMC or a spinning drive, is what makes boots, app launches, and file transfers feel instant. Buy under either bar to save $80 and you'll feel it every single day.</p>
+  </div>
+
+  <h2>How They Compare</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Laptop</th>
+        <th>Best for</th>
+        <th>Key specs</th>
+        <th>Display</th>
+        <th>Battery</th>
+        <th>Price (check current)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>MacBook Air M4</strong></td>
+        <td>Overall value</td>
+        <td>M4 / 16GB / 256GB</td>
+        <td>13.6" Retina</td>
+        <td>All-day <span class="tag">reported</span></td>
+        <td>~$799&ndash;$999</td>
+      </tr>
+      <tr>
+        <td><strong>ASUS Zenbook A14</strong></td>
+        <td>Battery &amp; weight</td>
+        <td>Snapdragon X / 16GB / 512GB</td>
+        <td>14" OLED</td>
+        <td>20+ hrs <span class="tag">reported</span></td>
+        <td>~$699&ndash;$899</td>
+      </tr>
+      <tr>
+        <td><strong>HP Victus 15</strong></td>
+        <td>Budget gaming</td>
+        <td>Ryzen 5 / RTX 4050 / 16GB / 1TB</td>
+        <td>15.6" FHD 144Hz</td>
+        <td>Short (gaming) <span class="tag">est. real-world</span></td>
+        <td>~$599&ndash;$800</td>
+      </tr>
+      <tr>
+        <td><strong>Lenovo Yoga 7</strong></td>
+        <td>2-in-1 / pen</td>
+        <td>Ryzen AI 7 / 16GB / 1TB</td>
+        <td>14" 2.8K OLED touch</td>
+        <td>~13.5h <span class="tag">mfr-rated</span></td>
+        <td>~$800&ndash;$1,000</td>
+      </tr>
+      <tr>
+        <td><strong>Acer Aspire 16</strong></td>
+        <td>Cheapest good pick</td>
+        <td>Copilot+ PC</td>
+        <td>16" large</td>
+        <td>N/A <span class="tag">est. real-world</span></td>
+        <td>~$700</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Bottom Line</h2>
+  <p>Under $1,000, there's no single "best laptop" — there's a best laptop <em>for you</em>, and the honest answer depends on one question: what do you actually do all day? For most people who don't need Windows, the <a href="https://www.amazon.com/dp/B0DZDC3WW5?tag=loiterpoint20-20" rel="sponsored nofollow">MacBook Air M4</a> is the pick that will feel great for years, especially when Amazon knocks it below list. If you live untethered from an outlet, the <a href="https://www.amazon.com/dp/B0DV9YB8PP?tag=loiterpoint20-20" rel="sponsored nofollow">Zenbook A14</a> and its 20-hour battery is unmatched at the weight. Gamers should grab the <a href="https://www.amazon.com/dp/B0D9KHZ12S?tag=loiterpoint20-20" rel="sponsored nofollow">HP Victus 15</a> when it dips near $600, note-takers and tablet-flippers the <a href="https://www.amazon.com/dp/B0FN3XHHJG?tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Yoga 7</a>, and the budget-first crowd the <a href="https://www.amazon.com/s?k=Acer+Aspire+16+Copilot+laptop&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Acer Aspire 16</a> around $700. Whichever you choose, check the live price before you commit — at this end of the market, the deal is the difference.</p>
+
+  <footer>
+    <div class="disclosure">
+      <strong>Affiliate disclosure:</strong> Loiter Point earns a commission on purchases made through the links on this page, at no extra cost to you. Our rankings are built from published independent measurements and verified owner reports — commissions never buy a spot on the list.
+    </div>
+    <p style="margin-top:16px;">&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+  </footer>
+
+</div>
+</body>
+</html>
