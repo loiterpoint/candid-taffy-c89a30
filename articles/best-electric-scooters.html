@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>Best Electric Scooters for Commuting (2026) | Loiter Point</title>
+<meta name="description" content="Five commuter e-scooters ranked on published lab data and owner reports, not marketing. Real-world range vs. rated specs, prices, and honest picks for 2026." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
+  nav {
+    max-width: 820px; margin: 0 auto; padding: 22px 20px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 14px;
+  }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+  h1 {
+    font-family: 'Inter', sans-serif; font-weight: 700;
+    font-size: 2.15rem; line-height: 1.15; margin: 12px 0 8px;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-family: 'Inter', sans-serif; font-weight: 700;
+    font-size: 1.5rem; margin: 48px 0 14px; letter-spacing: -0.01em;
+  }
+  h3 { font-weight: 600; font-size: 1.2rem; margin: 0 0 4px; }
+  .updated {
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  a { color: var(--accent); }
+  p { margin: 0 0 16px; }
+  .shortver {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px; padding: 20px 24px; margin: 28px 0;
+  }
+  .shortver h2 { margin: 0 0 12px; font-size: 1.15rem; }
+  .shortver ul { margin: 0 0 14px; padding-left: 20px; }
+  .shortver li { margin-bottom: 8px; }
+  .grab {
+    font-family: 'IBM Plex Mono', monospace; font-size: 14px;
+    border-top: 1px solid var(--border); padding-top: 14px; line-height: 2.1;
+  }
+  .grab strong { color: var(--text); }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px; margin: 22px 0;
+  }
+  .cardhead { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .badge {
+    font-family: 'IBM Plex Mono', monospace; font-weight: 600;
+    background: var(--accent); color: #111; border-radius: 6px;
+    padding: 2px 9px; font-size: 13px; white-space: nowrap;
+  }
+  .role { color: var(--muted); font-family: 'IBM Plex Mono', monospace; font-size: 13px; }
+  .price { font-family: 'IBM Plex Mono', monospace; color: var(--accent); font-size: 15px; margin: 6px 0 14px; }
+  .specs { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14.5px; }
+  .specs th, .specs td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .specs th { color: var(--muted); font-weight: 500; width: 40%; }
+  .specs .rw { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; }
+  .pc { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; margin: 14px 0; font-size: 15px; }
+  .pc ul { margin: 4px 0; padding-left: 20px; }
+  .pc .h { font-family:'IBM Plex Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+  .buy {
+    display: inline-block; background: var(--accent); color: #111;
+    font-weight: 600; text-decoration: none; padding: 11px 22px;
+    border-radius: 8px; margin-top: 8px; font-size: 15px;
+  }
+  .buy:hover { filter: brightness(1.08); }
+  .nerd {
+    background: var(--surface2); border: 1px dashed var(--border);
+    border-radius: 10px; padding: 20px 24px; margin: 28px 0;
+  }
+  .nerd h3 { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; }
+  table.compare { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13.5px; }
+  table.compare th, table.compare td { padding: 9px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+  table.compare th { color: var(--muted); font-weight: 600; font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+  table.compare thead th { border-bottom: 2px solid var(--border); }
+  .scroll { overflow-x: auto; }
+  footer {
+    max-width: 820px; margin: 0 auto; padding: 30px 20px;
+    border-top: 1px solid var(--border); color: var(--muted); font-size: 13.5px;
+  }
+  footer p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<nav><a href="../index.html">&larr; Loiter Point</a></nav>
+<div class="wrap">
+
+  <span class="updated">Updated July 2026 · Roundup</span>
+  <h1>Best Electric Scooters for Commuting (2026)</h1>
+
+  <div class="shortver">
+    <h2>The Short Version</h2>
+    <ul>
+      <li><strong>Best overall commuter:</strong> the <a href="https://www.amazon.com/dp/B0CWVRZFXC?tag=loiterpoint20-20" rel="sponsored nofollow">Segway Ninebot Max G2</a> — big battery, real suspension, and independent labs back up most of its range claim.</li>
+      <li><strong>Performance upgrade:</strong> the <a href="https://www.amazon.com/s?k=Segway+Max+G3+electric+scooter&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Segway Max G3</a> — faster and longer-legged on paper, but real-world range reports are all over the map.</li>
+      <li><strong>Mid-range value:</strong> the <a href="https://www.amazon.com/dp/B0CNWR237W?tag=loiterpoint20-20" rel="sponsored nofollow">NIU KQi3 Pro</a> rides above its price; the <a href="https://www.amazon.com/s?k=Gotrax+G6+electric+scooter&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Gotrax G6</a> is the budget long-range play.</li>
+      <li><strong>First scooter / short hops:</strong> the <a href="https://www.amazon.com/dp/B0FCLN9QWR?tag=loiterpoint20-20" rel="sponsored nofollow">Segway Ninebot E2 Plus II</a> — light, cheap, honest about being a short-hauler.</li>
+    </ul>
+    <div class="grab">
+      <strong>Grab your pick:</strong><br />
+      <a href="https://www.amazon.com/dp/B0CWVRZFXC?tag=loiterpoint20-20" rel="sponsored nofollow">Ninebot Max G2 — around $750</a> ·
+      <a href="https://www.amazon.com/s?k=Segway+Max+G3+electric+scooter&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Segway Max G3 — ~$1,099</a> ·
+      <a href="https://www.amazon.com/dp/B0CNWR237W?tag=loiterpoint20-20" rel="sponsored nofollow">NIU KQi3 Pro — $599–699</a> ·
+      <a href="https://www.amazon.com/s?k=Gotrax+G6+electric+scooter&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Gotrax G6 — ~$629 on sale</a> ·
+      <a href="https://www.amazon.com/dp/B0FCLN9QWR?tag=loiterpoint20-20" rel="sponsored nofollow">Ninebot E2 Plus II — around $300</a>
+    </div>
+  </div>
+
+  <p>Commuting on an electric scooter is a numbers game, and most of the numbers you see are marketing. Rated range figures come from ideal conditions; rated top speeds are best-case. The scooters below are the ones worth your money in 2026 — but the reason to trust this list is that we separate what the spec sheet claims from what the road actually delivers. Here is how we do that, and then the picks.</p>
+
+  <h2>How We Evaluate Electric Scooters</h2>
+  <p>Loiter Point does not run a lab. We do not own a rolling road, a battery dyno, or a warehouse of scooters, and we are not going to pretend otherwise. What we do is synthesize evidence that already exists: published measurements from independent reviewers who <em>do</em> test on standardized routes, plus the aggregate of owner reports from forums, retailer reviews, and rider communities. When we cite a real-world figure, we tell you where it came from — "independent lab testing found," "owner reports put it at," "reported." Anything we label "est. real-world" or "reported" is a synthesis of those sources, not a Loiter Point measurement.</p>
+  <p>We weight three things for commuting specifically: honest range at a realistic speed and rider weight, ride quality (tires and suspension do more for a daily commute than raw wattage), and price stability on Amazon. Where the evidence is thin or the sources disagree, we say so plainly rather than papering over it with a confident single number. You will see that most in the Segway Max G3 and Gotrax G6 entries below, where the range claims genuinely conflict.</p>
+  <p>One recurring theme worth stating up front: rated range is almost always optimistic. Manufacturers quote it from a light rider, low constant speed, and flat ground. A 200-pound commuter riding at full throttle up a few hills will see far less. That is not a defect — it is physics — but it means you should size your battery to the worst version of your commute, not the best.</p>
+
+  <!-- PICK 1 -->
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#1 Best Overall</span>
+      <h3>Segway Ninebot Max G2</h3>
+    </div>
+    <div class="role">The all-rounder most commuters should buy</div>
+    <div class="price">Around $750, often discounted (seen from ~$700 in sales)</div>
+    <table class="specs">
+      <tr><th>Motor</th><td>1000W rated</td></tr>
+      <tr><th>Top speed (rated)</th><td>22 mph</td></tr>
+      <tr><th>Top speed (independent test)</th><td class="rw">~21.4 mph — independent lab testing found</td></tr>
+      <tr><th>Range (rated)</th><td>up to 43 mi</td></tr>
+      <tr><th>Range (independent test)</th><td class="rw">~34 mi — independent lab testing found</td></tr>
+      <tr><th>Tires</th><td>10" tubeless</td></tr>
+      <tr><th>Suspension / brakes</th><td>Dual suspension, dual brakes</td></tr>
+      <tr><th>Safety</th><td>UL-2272 certified</td></tr>
+    </table>
+    <div class="pc">
+      <div>
+        <div class="h">Pros</div>
+        <ul>
+          <li>Independent labs confirmed ~34 mi and ~21.4 mph — close to rated</li>
+          <li>Dual suspension + 10" tubeless tires ride genuinely well</li>
+          <li>Strong hill climbing for its class</li>
+        </ul>
+      </div>
+      <div>
+        <div class="h">Cons</div>
+        <ul>
+          <li>Heavy — this is not a carry-up-three-flights scooter</li>
+          <li>Price hovers near $750 unless a sale hits</li>
+        </ul>
+      </div>
+    </div>
+    <p>This is the pick if you want one scooter that does everything and lies to you the least. Independent lab testing found roughly 34 miles of real range and a tested top speed of about 21.4 mph — both close enough to Segway's rated 43 mi and 22 mph that you will not feel cheated. The dual suspension and tubeless tires make a daily commute comfortable, and it climbs hills better than most of the class.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0CWVRZFXC?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 2 -->
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#2 Performance</span>
+      <h3>Segway Max G3</h3>
+    </div>
+    <div class="role">More speed and battery — if the range claim holds for you</div>
+    <div class="price">~$1,099 at Amazon ($1,000–$1,200 with promos; Segway members deal $999)</div>
+    <table class="specs">
+      <tr><th>Motor</th><td>800W rated (2,000W peak)</td></tr>
+      <tr><th>Battery</th><td>597Wh</td></tr>
+      <tr><th>Top speed (rated)</th><td>28 mph</td></tr>
+      <tr><th>Range (rated)</th><td>up to 50 mi</td></tr>
+      <tr><th>Range (reported — conflicting)</th><td class="rw">near 50 mi for some reviewers; ~28 mi (45 km) average across a community aggregate of 66 rider reports</td></tr>
+      <tr><th>Charge time</th><td>~3.5 hr (fast-charging)</td></tr>
+      <tr><th>Tires</th><td>11" self-sealing</td></tr>
+      <tr><th>Suspension / rating</th><td>Dual suspension, IPX6, smart display</td></tr>
+    </table>
+    <p>The G3 is the spec-sheet upgrade: 28 mph rated, a 597Wh battery, self-sealing 11" tires, IPX6 weather resistance and a ~3.5-hour fast charge. But the range story is genuinely conflicting and you deserve to hear both halves. Some reviewers report getting near the rated 50 miles. Meanwhile a community aggregate of 66 rider reports averages about 28 miles (45 km) of real-world range. The gap is explained by rider weight and throttle habits — heavier riders running full throttle land far below the rated figure. If your commute is under ~25 miles round trip, the G3 has margin to spare. If you were buying it <em>because</em> of the 50-mile number, temper that expectation.</p>
+    <a class="buy" href="https://www.amazon.com/s?k=Segway+Max+G3+electric+scooter&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Search on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 3 -->
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#3 Mid-Range Value</span>
+      <h3>NIU KQi3 Pro</h3>
+    </div>
+    <div class="role">Rides above its price, especially on the tires</div>
+    <div class="price">Typically $599–699</div>
+    <table class="specs">
+      <tr><th>Motor</th><td>350W rated (some listings cite 700W peak)</td></tr>
+      <tr><th>Top speed (rated)</th><td>20 mph</td></tr>
+      <tr><th>Range (rated)</th><td>up to 31 mi</td></tr>
+      <tr><th>Range (owner reports)</th><td class="rw">meaningfully below 31 mi at full speed — owner reports</td></tr>
+      <tr><th>Tires</th><td>9.5" tubeless fat tires</td></tr>
+      <tr><th>Braking / hills</th><td>Dual braking, 20% grade claim</td></tr>
+      <tr><th>Safety</th><td>UL certified</td></tr>
+    </table>
+    <div class="pc">
+      <div>
+        <div class="h">Pros</div>
+        <ul>
+          <li>Owner reports and independent reviews consistently praise ride quality</li>
+          <li>Wide 9.5" fat tires soak up bad pavement</li>
+          <li>Strong value in the $599–699 band</li>
+        </ul>
+      </div>
+      <div>
+        <div class="h">Cons</div>
+        <ul>
+          <li>Rated range assumes eco riding — expect notably less at 20 mph</li>
+          <li>350W rated motor is modest; peak wattage varies by listing</li>
+        </ul>
+      </div>
+    </div>
+    <p>If the G2 is out of budget, the KQi3 Pro is the value pick. Owner reports and independent reviews consistently single out the ride quality and those fat 9.5" tubeless tires as punching above the price. The honest caveat is range: the rated 31 miles assumes gentle eco riding, and owner reports put real-world range meaningfully lower once you hold 20 mph. For a short-to-medium commute on rough streets, it is hard to beat here.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0CNWR237W?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 4 -->
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#4 Budget Long-Range</span>
+      <h3>Gotrax G6</h3>
+    </div>
+    <div class="role">Most miles per dollar — if you trust the smaller of two range claims</div>
+    <div class="price">Commonly $629 on sale, $799 list (seen near $495–600 in deep sales)</div>
+    <table class="specs">
+      <tr><th>Battery</th><td>48V 15Ah</td></tr>
+      <tr><th>Top speed (rated)</th><td>20 mph</td></tr>
+      <tr><th>Range (rated — conflicts by retailer)</th><td>Gotrax claims up to 45 mi; Best Buy lists 32 mi max operating range</td></tr>
+      <tr><th>Range (est. real-world, reported)</th><td class="rw">mid-20s of miles is a realistic expectation — reported</td></tr>
+      <tr><th>Tires</th><td>10" pneumatic</td></tr>
+      <tr><th>Suspension / security</th><td>Front suspension, digital security code lock</td></tr>
+      <tr><th>Safety</th><td>UL-2272 certified</td></tr>
+    </table>
+    <p>The G6 is the budget long-range option, and it comes with an asterisk you should not ignore: its rated range genuinely conflicts across retailers. Gotrax advertises up to 45 miles, while Best Buy lists the same scooter at a 32-mile max operating range. Both cannot be the number you plan around. Owner reports suggest a realistic est. real-world figure lands in the mid-20s of miles — plenty for most commutes, but a long way from 45. Take the front suspension, 10" pneumatic tires, and code lock as a solid budget package, and treat the range as "mid-20s and be pleasantly surprised."</p>
+    <a class="buy" href="https://www.amazon.com/s?k=Gotrax+G6+electric+scooter&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Search on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 5 -->
+  <div class="card">
+    <div class="cardhead">
+      <span class="badge">#5 Budget / Portable</span>
+      <h3>Segway Ninebot E2 Plus II</h3>
+    </div>
+    <div class="role">A good first scooter and short-hop commuter</div>
+    <div class="price">Around $300 (recently ~$296; list $369.99)</div>
+    <table class="specs">
+      <tr><th>Top speed (rated)</th><td>15.5 mph</td></tr>
+      <tr><th>Range (rated)</th><td>16 mi max</td></tr>
+      <tr><th>Range (owner reports)</th><td class="rw">roughly 10+ miles — owner reports</td></tr>
+      <tr><th>Weight</th><td>under ~33 lb</td></tr>
+      <tr><th>Tires</th><td>8.1" shock-absorbing</td></tr>
+      <tr><th>Suspension / brakes</th><td>Front suspension, dual brakes</td></tr>
+      <tr><th>Safety</th><td>UL-2272 / UL-2271</td></tr>
+    </table>
+    <p>Not everyone needs 40 miles of range. If your commute is a couple of miles each way, or a last-mile hop from transit, the E2 Plus II is the sensible cheap entry. At around $300 and under ~33 lb it is easy to carry and store, and owner reports put real-world range at roughly 10+ miles — enough for short hops but not a long-hauler, and we would not pretend otherwise. Buy it as a first scooter or a portable second, not as your only ride if your commute is long.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0FCLN9QWR?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+  </div>
+
+  <p>One more worth naming if you want the cheapest possible entry: the <a href="https://www.amazon.com/dp/B086N23QBD?tag=loiterpoint20-20" rel="sponsored nofollow">Hiboy S2 Pro</a> (500W, rated 25 mi / 19 mph). Its 10" tires are solid (airless), which means zero flats ever — at the cost of a firmer, buzzier ride than pneumatic tires. It is a reasonable budget alternative if flat-proofing matters more to you than comfort.</p>
+
+  <div class="nerd">
+    <h3>Nerd box: why rated range is inflated</h3>
+    <p>Manufacturers quote range under conditions almost no commuter replicates: a light rider (test protocols often assume around a 165-lb rider), a low constant speed, flat ground, and no stop-start traffic. Add weight, hills, cold weather, or full-throttle riding and the number drops fast. That is why the honest capacity metric is not miles — it is watt-hours (Wh), the actual energy in the battery.</p>
+    <p>Compare the batteries directly: the Max G3 carries <strong>597Wh</strong>, the Max G2 <strong>551Wh</strong>, and the NIU KQi3 Pro roughly <strong>460Wh</strong>. More watt-hours means more real miles, all else equal — and it is a spec that cannot be inflated by a friendly test route the way a range figure can. When two scooters quote the same range but one has a bigger battery, the bigger battery is telling the truth. Use Wh to sanity-check any range claim before you trust it.</p>
+  </div>
+
+  <h2>Side-by-Side Comparison</h2>
+  <div class="scroll">
+  <table class="compare">
+    <thead>
+      <tr>
+        <th>Scooter</th>
+        <th>Price</th>
+        <th>Motor</th>
+        <th>Top speed (rated)</th>
+        <th>Range (rated)</th>
+        <th>Range (real-world / reported)</th>
+        <th>Weight / tires</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ninebot Max G2</td>
+        <td>~$750</td>
+        <td>1000W</td>
+        <td>22 mph</td>
+        <td>43 mi</td>
+        <td>~34 mi (independent test)</td>
+        <td>— / 10" tubeless</td>
+      </tr>
+      <tr>
+        <td>Segway Max G3</td>
+        <td>~$1,099</td>
+        <td>800W (2,000W peak)</td>
+        <td>28 mph</td>
+        <td>50 mi</td>
+        <td>~28 mi avg to near-50 (reported, conflicts)</td>
+        <td>— / 11" self-sealing</td>
+      </tr>
+      <tr>
+        <td>NIU KQi3 Pro</td>
+        <td>$599–699</td>
+        <td>350W (700W peak)</td>
+        <td>20 mph</td>
+        <td>31 mi</td>
+        <td>below 31 mi at full speed (owner reports)</td>
+        <td>— / 9.5" fat tubeless</td>
+      </tr>
+      <tr>
+        <td>Gotrax G6</td>
+        <td>~$629 sale</td>
+        <td>—</td>
+        <td>20 mph</td>
+        <td>45 mi (Gotrax) / 32 mi (Best Buy)</td>
+        <td>mid-20s mi (est. real-world, reported)</td>
+        <td>— / 10" pneumatic</td>
+      </tr>
+      <tr>
+        <td>Ninebot E2 Plus II</td>
+        <td>~$300</td>
+        <td>—</td>
+        <td>15.5 mph</td>
+        <td>16 mi</td>
+        <td>~10+ mi (owner reports)</td>
+        <td>under ~33 lb / 8.1"</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Bottom Line</h2>
+  <p>For most commuters, the <a href="https://www.amazon.com/dp/B0CWVRZFXC?tag=loiterpoint20-20" rel="sponsored nofollow">Segway Ninebot Max G2</a> is the right buy: around $750, and one of the few scooters where independent lab testing lands close to the rated numbers. Step up to the <a href="https://www.amazon.com/s?k=Segway+Max+G3+electric+scooter&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Max G3</a> only if you want the extra speed and can live with range reports that swing from ~28 miles to near 50 depending on who is riding. On a budget, the <a href="https://www.amazon.com/dp/B0CNWR237W?tag=loiterpoint20-20" rel="sponsored nofollow">NIU KQi3 Pro</a> gives the best ride for the money, the <a href="https://www.amazon.com/s?k=Gotrax+G6+electric+scooter&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Gotrax G6</a> stretches the most miles per dollar if you plan around the smaller range claim, and the <a href="https://www.amazon.com/dp/B0FCLN9QWR?tag=loiterpoint20-20" rel="sponsored nofollow">Ninebot E2 Plus II</a> is the honest ~$300 short-hop pick. Size the battery to the hard version of your commute, trust watt-hours over range claims, and you will not be disappointed.</p>
+
+</div>
+<footer>
+  <p><strong>Affiliate disclosure:</strong> Loiter Point earns commissions from qualifying purchases made through the Amazon links on this page (Amazon Associates tag <code>loiterpoint20-20</code>). It costs you nothing extra, and it does not change our picks — we do not run a lab, we synthesize published independent measurements and owner reports, and we tell you when the evidence conflicts.</p>
+  <p>&copy; 2026 Loiter Point — Consumer tech reviews built on real evidence.</p>
+</footer>
+</body>
+</html>
+
