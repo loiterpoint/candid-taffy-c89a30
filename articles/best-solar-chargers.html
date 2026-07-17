@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>Best Solar Chargers of 2026 — Loiter Point</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', system-ui, sans-serif;
+    line-height:1.65;
+    font-size:17px;
+  }
+  .wrap { max-width:820px; margin:0 auto; padding:0 20px 80px; }
+  nav {
+    max-width:820px; margin:0 auto; padding:24px 20px;
+    font-family:'IBM Plex Mono', monospace; font-size:14px;
+  }
+  nav a { color:var(--muted); text-decoration:none; }
+  nav a:hover { color:var(--accent); }
+  h1 {
+    font-size:2.3rem; line-height:1.15; margin:12px 0 8px;
+    font-weight:700; letter-spacing:-0.02em;
+  }
+  h2 {
+    font-size:1.5rem; margin:52px 0 16px; font-weight:700;
+    letter-spacing:-0.01em; border-bottom:1px solid var(--border); padding-bottom:8px;
+  }
+  h3 { font-size:1.2rem; margin:0 0 4px; font-weight:600; }
+  a { color:var(--accent); }
+  p { margin:0 0 16px; }
+  .updated {
+    font-family:'IBM Plex Mono', monospace; font-size:13px;
+    color:var(--muted); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.08em;
+  }
+  .tldr {
+    background:var(--surface); border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px; padding:22px 24px; margin:28px 0 12px;
+  }
+  .tldr h2 { border:none; margin:0 0 12px; font-size:1.15rem; padding:0;
+    font-family:'IBM Plex Mono', monospace; color:var(--accent); }
+  .tldr ul { margin:0 0 14px; padding-left:20px; }
+  .tldr li { margin-bottom:9px; }
+  .grab {
+    border-top:1px dashed var(--border); padding-top:14px; margin-top:6px;
+    font-size:15px; line-height:2;
+  }
+  .grab strong { font-family:'IBM Plex Mono', monospace; color:var(--accent); display:block; margin-bottom:4px; }
+  .grab a { margin-right:6px; }
+  .pick {
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:12px; padding:26px 26px 30px; margin:24px 0;
+  }
+  .pick-head { display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+  .badge {
+    font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:13px;
+    background:var(--accent); color:#0c0c0e; padding:5px 11px; border-radius:6px;
+    white-space:nowrap; margin-top:4px;
+  }
+  .pick-title { flex:1; min-width:220px; }
+  .pick-title .role {
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--accent);
+    text-transform:uppercase; letter-spacing:0.09em; margin-bottom:4px;
+  }
+  .price {
+    font-family:'IBM Plex Mono', monospace; font-size:1.15rem; font-weight:600;
+    color:var(--text); white-space:nowrap; margin-top:4px;
+  }
+  .specs {
+    display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--border); border:1px solid var(--border);
+    border-radius:8px; overflow:hidden; margin:20px 0;
+  }
+  .specs div { background:var(--surface2); padding:9px 13px; font-size:14px; }
+  .specs .k { color:var(--muted); font-family:'IBM Plex Mono', monospace; font-size:12px; }
+  .btn {
+    display:inline-block; background:var(--accent); color:#0c0c0e;
+    font-weight:600; text-decoration:none; padding:11px 22px; border-radius:8px;
+    font-family:'IBM Plex Mono', monospace; font-size:14px; margin-top:8px;
+  }
+  .btn:hover { filter:brightness(1.08); }
+  .nerd {
+    background:var(--surface2); border:1px solid var(--border);
+    border-radius:10px; padding:20px 24px; margin:30px 0;
+  }
+  .nerd h3 {
+    font-family:'IBM Plex Mono', monospace; color:var(--accent);
+    font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;
+  }
+  .nerd p { font-size:15px; color:#c8c8d2; margin-bottom:10px; }
+  table { width:100%; border-collapse:collapse; margin:20px 0; font-size:14px; }
+  th, td { border:1px solid var(--border); padding:10px 12px; text-align:left; vertical-align:top; }
+  th {
+    background:var(--surface2); font-family:'IBM Plex Mono', monospace;
+    font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted);
+  }
+  td { background:var(--surface); }
+  .table-scroll { overflow-x:auto; }
+  footer {
+    border-top:1px solid var(--border); margin-top:60px; padding-top:24px;
+    color:var(--muted); font-size:13px;
+  }
+  footer p { margin-bottom:12px; }
+  .disclosure {
+    font-family:'IBM Plex Mono', monospace; font-size:12px; line-height:1.7;
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:8px; padding:16px 18px; margin-bottom:18px;
+  }
+  em.flag { color:var(--accent); font-style:normal; font-family:'IBM Plex Mono', monospace; font-size:0.9em; }
+</style>
+</head>
+<body>
+<nav><a href="../index.html">&larr; Loiter Point</a></nav>
+<div class="wrap">
+
+  <div class="updated">Updated July 2026 &middot; Solar &amp; Off-Grid</div>
+  <h1>Best Solar Chargers of 2026</h1>
+
+  <div class="tldr">
+    <h2>The Short Version</h2>
+    <ul>
+      <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B01EXWCPLC?tag=loiterpoint20-20" rel="sponsored nofollow">BigBlue 28W (SolarPowa 28)</a> is the panel to beat — independent testing found it one of the most efficient units in <em>both</em> direct and cloudy light, and it costs around $75.</li>
+      <li><strong>The sweet spot is ~28W.</strong> That's enough to take a phone from empty to half in roughly two hours of direct sun, while still folding into a daypack. Bigger panels exist for power stations; smaller ones are mostly for emergencies.</li>
+      <li><strong>A panel stores nothing.</strong> The standard strategy is a panel <em>plus</em> a small power bank: charge the bank all day, charge your devices at night. If you only want one object, the budget pick below bundles both.</li>
+      <li><strong>Rated watts are optimistic.</strong> Real-world output in good sun typically runs 50&ndash;70% of the sticker figure, and clouds gut it. Buy accordingly.</li>
+    </ul>
+    <div class="grab">
+      <strong>Grab your pick:</strong>
+      <a href="https://www.amazon.com/dp/B01EXWCPLC?tag=loiterpoint20-20" rel="sponsored nofollow">BigBlue 28W &mdash; &asymp;$75</a> &middot;
+      <a href="https://www.amazon.com/dp/B0BX9FCSQQ?tag=loiterpoint20-20" rel="sponsored nofollow">Anker Solix PS30 &mdash; $79.99</a> &middot;
+      <a href="https://www.amazon.com/dp/B09H6GGK55?tag=loiterpoint20-20" rel="sponsored nofollow">FlexSolar 40W &mdash; &asymp;$100</a> &middot;
+      <a href="https://www.amazon.com/s?k=Goal+Zero+Nomad+20+solar+panel&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Goal Zero Nomad 20 &mdash; &asymp;$150</a> &middot;
+      <a href="https://www.amazon.com/dp/B07T2NRK8G?tag=loiterpoint20-20" rel="sponsored nofollow">BLAVOR Solar Power Bank &mdash; &asymp;$22</a>
+    </div>
+  </div>
+
+  <h2>How We Evaluate Solar Chargers</h2>
+  <p>Loiter Point does not run a solar lab, and we're not going to pretend otherwise. There is no bench of wattmeters in our basement and no "42 units tested over 300 hours" headline coming. What we do instead is read everyone who <em>does</em> run the numbers, then reconcile their findings against what actual owners report after a season in the field.</p>
+  <p>For this roundup that meant synthesizing published independent measurements from outfits like OutdoorGearLab, The Camping Nerd, Consumer Reports and long-term field write-ups, then cross-checking those against owner reviews for the failure modes that only show up after months of use &mdash; frayed cables, dead ports, panels that quietly under-deliver on a cloudy Tuesday. Where a manufacturer quotes a wattage, we treat it as a lab ceiling, not a promise (see the nerd-box below on why). Where the independent evidence is thin or the sources disagree, we say so out loud rather than laundering a guess into a spec.</p>
+  <p>Any real-world figure you see here is labeled as such &mdash; "est. real-world," "reported," or attributed to the test that produced it. If we can't source it, it isn't in the table.</p>
+
+  <h2>The Picks</h2>
+
+  <!-- PICK 1 -->
+  <div class="pick">
+    <div class="pick-head">
+      <span class="badge">#1</span>
+      <div class="pick-title">
+        <div class="role">Best Overall</div>
+        <h3>BigBlue 28W (SolarPowa 28)</h3>
+      </div>
+      <div class="price">&asymp;$75</div>
+    </div>
+    <div class="specs">
+      <div class="k">Rated wattage</div><div>28W (STC lab rating)</div>
+      <div class="k">Est. real-world (good sun)</div><div>~14&ndash;20W; ~2,177 mAh into a phone in 1 hr (Utah field test)</div>
+      <div class="k">Cells</div><div>SunPower monocrystalline, rated up to ~24% efficiency</div>
+      <div class="k">Ports</div><div>Dual USB-C + USB-A (3 total)</div>
+      <div class="k">Weatherproofing</div><div>IPX4 splash resistant</div>
+      <div class="k">Best for</div><div>Backpackers, most buyers</div>
+    </div>
+    <p>The BigBlue 28W is the default recommendation for a reason: it's the rare panel that performs when the sky isn't cooperating. OutdoorGearLab found it among the most efficient panels they compared in <em>both</em> direct and indirect light &mdash; notably, it beat other 28W panels in cloudy conditions, which is precisely when a solar charger stops being a gadget and starts being useful. A Utah field test clocked roughly 2,177 mAh into a phone during one hour of strong sun; a separate test took a phone up 34% in 65 minutes of full sun. Reviewers generally report a full phone charge in about two to three hours of good light, and tablets in four to five.</p>
+    <p>At 28W it sits right in the backpacking sweet spot &mdash; enough to meaningfully charge a phone, light enough to fold flat against a daypack, and it carries an IPX4 splash rating for surprise weather. Long-term reviewers who've run it across seasons of backpacking and bikepacking (Exploring Wild, among others) rate the build durable, which is not a given in a category full of panels that delaminate after one wet trip.</p>
+    <p><em class="flag">One caveat on the cloudy-day claims:</em> some reviewers put its overcast output as high as 15&ndash;18W. Treat that as an optimistic reported figure, not a floor &mdash; it runs against the general rule that real output lands at 50&ndash;70% of rating and drops hard under cloud. The panel is genuinely good in diffuse light; it is not magic.</p>
+    <a class="btn" href="https://www.amazon.com/dp/B01EXWCPLC?tag=loiterpoint20-20" rel="sponsored nofollow">Check price &rarr;</a>
+  </div>
+
+  <!-- PICK 2 -->
+  <div class="pick">
+    <div class="pick-head">
+      <span class="badge">#2</span>
+      <div class="pick-title">
+        <div class="role">Best for Casual Campers / Brand Support</div>
+        <h3>Anker Solix PS30 (30W)</h3>
+      </div>
+      <div class="price">$79.99</div>
+    </div>
+    <div class="specs">
+      <div class="k">Rated wattage</div><div>30W (STC lab rating)</div>
+      <div class="k">Reported real-world</div><div>~7&ndash;14W (reviewer measurements)</div>
+      <div class="k">Cells</div><div>Tri-fold monocrystalline</div>
+      <div class="k">Ports</div><div>USB-A 5V/2.4A + USB-C 5V/3A (no PD fast charge)</div>
+      <div class="k">Weatherproofing</div><div>IP65 dust/water (best sealing here)</div>
+      <div class="k">Best for</div><div>Casual trips, Anker owners</div>
+    </div>
+    <p>Anker's PS30 is the safe, well-supported pick for people who want a name they recognize and a warranty process that answers the phone. It's a tri-fold monocrystalline panel with IP65 sealing &mdash; the best weather resistance in this roundup &mdash; so it shrugs off dust and rain better than the splash-rated competition.</p>
+    <p>The honest asterisk is output. Reviewers measuring the PS30 in the field land around 7&ndash;14W from its 30W rating, a noticeably bigger gap than the BigBlue shows off a similar rated wattage. There's also no USB-C Power Delivery, so it tops devices up at conventional speeds rather than fast-charging them.</p>
+    <p>The verdict from those reviewers is clean: it's great for keeping a phone and small USB gadgets topped up on casual trips, and you should skip it if your goal is fast-charging a phone or feeding a power station. For a relaxed weekend camper who values the Anker ecosystem, it earns its spot.</p>
+    <a class="btn" href="https://www.amazon.com/dp/B0BX9FCSQQ?tag=loiterpoint20-20" rel="sponsored nofollow">Check price &rarr;</a>
+  </div>
+
+  <!-- PICK 3 -->
+  <div class="pick">
+    <div class="pick-head">
+      <span class="badge">#3</span>
+      <div class="pick-title">
+        <div class="role">Best High-Output / Power-Station Input</div>
+        <h3>FlexSolar 40W</h3>
+      </div>
+      <div class="price">&asymp;$100</div>
+    </div>
+    <div class="specs">
+      <div class="k">Rated wattage</div><div>40W (STC lab rating)</div>
+      <div class="k">Reported real-world</div><div>~30&ndash;35W over DC into a power station (good sun)</div>
+      <div class="k">Array</div><div>Six panels; unfolds to ~49", folds to ~7.5"&times;1"</div>
+      <div class="k">Weight</div><div>~47 oz (~3 lb)</div>
+      <div class="k">Ports</div><div>QC3.0 USB-A + PD USB-C (18W ea) + 19V DC (40W)</div>
+      <div class="k">Weatherproofing</div><div>IP67 waterproof</div>
+    </div>
+    <p>If you're charging more than a phone &mdash; a portable power station, a laptop, a base-camp cluster of devices &mdash; the FlexSolar 40W is the value play. It's a six-panel array that unfolds to about 49 inches, packs down to roughly 7.5" by 1", and carries a full IP67 waterproof rating. The port selection is the differentiator: QC3.0 USB-A, an 18W PD USB-C, and a 19V DC output rated to 40W for small power stations.</p>
+    <p>The Camping Nerd's testing is the reason it ranks here. Their measurements found the ports actually delivering their ratings &mdash; a MacBook recognized the USB-C output as a 40W charger &mdash; and feeding a power station over the DC port produced roughly 30&ndash;35W in good sun. For this category, that's unusually close to the rated figure and well above the 50&ndash;70% rule of thumb.</p>
+    <p>At around three pounds it's heavier than the pocket panels above, which is the trade for the output and the DC port. If your use case is "keep a power station alive off-grid," this is the one to look at first.</p>
+    <a class="btn" href="https://www.amazon.com/dp/B09H6GGK55?tag=loiterpoint20-20" rel="sponsored nofollow">Check price &rarr;</a>
+  </div>
+
+  <!-- PICK 4 -->
+  <div class="pick">
+    <div class="pick-head">
+      <span class="badge">#4</span>
+      <div class="pick-title">
+        <div class="role">Premium Build / Goal Zero Ecosystem</div>
+        <h3>Goal Zero Nomad 20</h3>
+      </div>
+      <div class="price">&asymp;$150</div>
+    </div>
+    <div class="specs">
+      <div class="k">Rated wattage</div><div>20W (STC lab rating)</div>
+      <div class="k">Reported real-world</div><div>Mixed: some owners solid; others as low as ~8W in direct sun</div>
+      <div class="k">Cells</div><div>Monocrystalline, adjustable kickstand</div>
+      <div class="k">Ports</div><div>Integrated 8mm (Yeti/Sherpa) + USB</div>
+      <div class="k">Weatherproofing</div><div>Highly weather-resistant</div>
+      <div class="k">Best for</div><div>Existing Goal Zero owners</div>
+    </div>
+    <p>The Nomad 20 is the boutique option: beautifully built, with an adjustable kickstand for chasing the sun's angle and a native 8mm output that plugs straight into Goal Zero's Yeti and Sherpa power banks. If you already live in that ecosystem, the integration is genuinely convenient and the hardware feels a cut above.</p>
+    <p><em class="flag">The evidence here is mixed, and we won't paper over it.</em> Some owners report solid, consistent performance; others report seeing no more than about 8W in direct sun and generally inconsistent output. On a 20W-rated panel, an 8W reading is a bad day by anyone's math. We can't reconcile those accounts into a single confident number, so we're flagging the spread rather than picking a flattering one.</p>
+    <p>It's also the priciest panel per rated watt in this roundup. The case for buying it is build quality, the kickstand, and native Goal Zero compatibility &mdash; not raw value or peak output. Go in with that framing and you won't be disappointed; buy it expecting the best watts-per-dollar and you will be.</p>
+    <a class="btn" href="https://www.amazon.com/s?k=Goal+Zero+Nomad+20+solar+panel&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Search on Amazon &rarr;</a>
+  </div>
+
+  <!-- PICK 5 -->
+  <div class="pick">
+    <div class="pick-head">
+      <span class="badge">#5</span>
+      <div class="pick-title">
+        <div class="role">Budget / Emergency Pick</div>
+        <h3>BLAVOR Solar Power Bank (10,000mAh)</h3>
+      </div>
+      <div class="price">&asymp;$22</div>
+    </div>
+    <div class="specs">
+      <div class="k">Type</div><div>10,000mAh power bank with small solar panel on top</div>
+      <div class="k">Wired output</div><div>20W USB-C (owner test: iPhone 15 to ~65% in 30 min)</div>
+      <div class="k">Solar input</div><div>~0.23A max &mdash; trickle only</div>
+      <div class="k">Wireless</div><div>10W Qi pad</div>
+      <div class="k">Extras</div><div>Dual flashlight, compass carabiner, IPX5</div>
+      <div class="k">Best for</div><div>Emergency kit, glovebox, go-bag</div>
+    </div>
+    <p>Let's be precise about what this is: a 10,000mAh power bank that happens to have a small solar panel glued to the top. As a power bank it's genuinely good value &mdash; 20W USB-C wired output took an iPhone 15 to about 65% in 30 minutes in owner testing, plus a 10W Qi pad, dual flashlight, IPX5 sealing, and a compass carabiner, all for around $22.</p>
+    <p><em class="flag">The solar is where honesty matters.</em> That panel maxes out around 0.23A &mdash; a trickle, not a charge. It would take days of direct sun to fill the bank from the panel alone, and owners report the unit can overheat if you leave it baking in the sun trying. This is not a real solar charger, and anyone selling it as one is selling you the marketing.</p>
+    <p>The correct way to buy it: charge it from the wall at home, throw it in your go-bag or glovebox, and treat the solar as the emergency fallback for when the grid is down and you need a few percent to send a text. Framed that way, it's the cheapest way to add a solar safety net to your kit. Framed as your primary charging solution, it will let you down.</p>
+    <a class="btn" href="https://www.amazon.com/dp/B07T2NRK8G?tag=loiterpoint20-20" rel="sponsored nofollow">Check price &rarr;</a>
+  </div>
+
+  <div class="nerd">
+    <h3>Nerd-box: Why rated watts &ne; real watts</h3>
+    <p>Every wattage on a solar panel's box is a lab number measured under Standard Test Conditions (STC): 1000 W/m&sup2; of light, cells held at 25&deg;C, and a clean, perpendicular beam. Your backyard is none of those things. The sun rarely hits 1000 W/m&sup2; outside of clear midday; panels bake well past 25&deg;C (and hotter cells are less efficient); and unless you're constantly re-aiming, the light hits at an angle.</p>
+    <p>The practical result is that real-world output in good direct sun typically lands at 50&ndash;70% of the rating, and clouds or shade cut it far more than intuition suggests &mdash; a hazy sky can drop output by more than half. Monocrystalline cells (every pick here is mono) help by converting ~20&ndash;25% of incoming light versus 15&ndash;17% for polycrystalline, but no cell chemistry repeals the weather. When you compare panels, compare independent field measurements, not sticker wattages.</p>
+  </div>
+
+  <div class="nerd">
+    <h3>Nerd-box: The panel + power-bank strategy</h3>
+    <p>A solar panel stores exactly zero energy. The moment a cloud passes or the sun sets, its output is gone. That's why experienced users almost never charge a phone directly from a panel &mdash; every passing cloud interrupts the charge, and some phones sulk and stop when the current dips. The standard move is to pair the panel with a small power bank: let the panel charge the bank all day (banks don't care about flickering input), then charge your devices from the stable bank at night. If you'd rather carry one object than two, the BLAVOR pick above bundles both &mdash; just remember its solar input is a trickle.</p>
+  </div>
+
+  <h2>Side-by-Side</h2>
+  <div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>Pick</th>
+        <th>Price</th>
+        <th>Rated W</th>
+        <th>Reported real-world</th>
+        <th>Ports</th>
+        <th>Weatherproof</th>
+        <th>Weight</th>
+        <th>Best for</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>BigBlue 28W</td>
+        <td>&asymp;$75</td>
+        <td>28W</td>
+        <td>~14&ndash;20W; strong in cloud</td>
+        <td>2&times; USB-C + USB-A</td>
+        <td>IPX4</td>
+        <td>&mdash;</td>
+        <td>Overall / backpacking</td>
+      </tr>
+      <tr>
+        <td>Anker Solix PS30</td>
+        <td>$79.99</td>
+        <td>30W</td>
+        <td>~7&ndash;14W</td>
+        <td>USB-A + USB-C (no PD)</td>
+        <td>IP65</td>
+        <td>&mdash;</td>
+        <td>Casual campers</td>
+      </tr>
+      <tr>
+        <td>FlexSolar 40W</td>
+        <td>&asymp;$100</td>
+        <td>40W</td>
+        <td>~30&ndash;35W over DC</td>
+        <td>USB-A + USB-C (18W) + 19V DC</td>
+        <td>IP67</td>
+        <td>~47 oz (~3 lb)</td>
+        <td>Power stations / high output</td>
+      </tr>
+      <tr>
+        <td>Goal Zero Nomad 20</td>
+        <td>&asymp;$150</td>
+        <td>20W</td>
+        <td>Mixed: ~8W&ndash;solid</td>
+        <td>8mm (Yeti/Sherpa) + USB</td>
+        <td>High</td>
+        <td>&mdash;</td>
+        <td>Goal Zero ecosystem</td>
+      </tr>
+      <tr>
+        <td>BLAVOR Power Bank</td>
+        <td>&asymp;$22</td>
+        <td>Solar ~0.23A</td>
+        <td>Trickle only (bank is 10,000mAh)</td>
+        <td>USB-C 20W + 10W Qi</td>
+        <td>IPX5</td>
+        <td>&mdash;</td>
+        <td>Emergency backup</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Bottom Line</h2>
+  <p>For almost everyone, the <a href="https://www.amazon.com/dp/B01EXWCPLC?tag=loiterpoint20-20" rel="sponsored nofollow">BigBlue 28W</a> at around $75 is the right buy &mdash; it hits the 28W sweet spot, it's the standout in cloudy light, and long-term reviewers vouch for its durability. Casual campers who want brand support and top-tier weather sealing can reach for the <a href="https://www.amazon.com/dp/B0BX9FCSQQ?tag=loiterpoint20-20" rel="sponsored nofollow">Anker Solix PS30</a>, as long as they accept a bigger gap between rated and real output.</p>
+  <p>If you're charging a power station, the <a href="https://www.amazon.com/dp/B09H6GGK55?tag=loiterpoint20-20" rel="sponsored nofollow">FlexSolar 40W</a> delivers unusually close to its rating and adds a DC port to prove it. The <a href="https://www.amazon.com/s?k=Goal+Zero+Nomad+20+solar+panel&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Goal Zero Nomad 20</a> is a premium, ecosystem-driven choice with genuinely mixed output reports &mdash; buy it for the build and the Goal Zero integration, not the value. And the <a href="https://www.amazon.com/dp/B07T2NRK8G?tag=loiterpoint20-20" rel="sponsored nofollow">BLAVOR power bank</a> is the $22 way to tuck a solar safety net into a go-bag, provided you understand the solar is a fallback, not a feature. Whatever you pick: pair it with a power bank, and judge it by field measurements, not the number on the box.</p>
+
+  <footer>
+    <div class="disclosure">
+      Affiliate disclosure: Loiter Point is a participant in the Amazon Associates program. Links on this page carry our tag (loiterpoint20-20), and the site earns a commission from qualifying purchases at no extra cost to you. Commissions never influence our rankings &mdash; our picks are driven by published independent testing and owner reports, which is also why we tell you where the evidence is thin.
+    </div>
+    <p>Updated July 2026.</p>
+    <p>&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+  </footer>
+
+</div>
+</body>
+</html>
