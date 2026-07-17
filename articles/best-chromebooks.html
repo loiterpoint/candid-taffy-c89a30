@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Best Chromebooks in 2026: 4 Picks Worth Buying | Loiter Point</title>
+<meta name="description" content="The best Chromebooks in 2026, ranked from published independent measurements and verified owner reports. Best overall, best for cloud gaming, best budget, and best 2-in-1." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0c0c0e;
+    --surface: #141418;
+    --surface2: #1c1c22;
+    --accent: #e8ff47;
+    --text: #e2e2e8;
+    --muted: #7a7a8a;
+    --border: #26262e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 18px 20px;
+    max-width: 820px;
+    margin: 0 auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+  }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+  header { padding: 48px 0 8px; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 40px;
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .dateline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  h2 {
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 48px 0 16px;
+    padding-top: 8px;
+  }
+  h3 { font-size: 20px; font-weight: 600; margin: 4px 0; }
+  p { margin: 0 0 16px; }
+  a { color: var(--accent); }
+  strong { color: #fff; }
+  .short-version {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 24px 26px;
+    margin: 28px 0 8px;
+  }
+  .short-version h2 {
+    margin: 0 0 14px;
+    font-size: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    padding: 0;
+  }
+  .short-version ul { margin: 0 0 14px; padding-left: 20px; }
+  .short-version li { margin-bottom: 9px; }
+  .grab {
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+    font-size: 15px;
+  }
+  .grab strong { font-family: 'IBM Plex Mono', monospace; color: var(--accent); }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px;
+    margin: 22px 0;
+  }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--accent);
+    color: #0c0c0e;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .role {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .price {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    color: var(--accent);
+    margin: 8px 0 16px;
+  }
+  .specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 16px 0 18px;
+    font-size: 14px;
+  }
+  .specs div {
+    background: var(--surface2);
+    padding: 9px 13px;
+  }
+  .specs .k { color: var(--muted); font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+  .specs .v { color: var(--text); }
+  .tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .tag.rated { background: #2a2a1a; color: #d9d97a; }
+  .tag.reported { background: #1a2a24; color: #7ad9b0; }
+  .buy {
+    display: inline-block;
+    background: var(--accent);
+    color: #0c0c0e;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 11px 22px;
+    border-radius: 8px;
+    margin-top: 4px;
+  }
+  .buy:hover { filter: brightness(1.08); }
+  .buy.alt {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--border);
+  }
+  .nerd {
+    background: var(--surface2);
+    border: 1px dashed #3a3a46;
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 24px 0;
+  }
+  .nerd h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .nerd p { font-size: 15px; color: #cfcfd8; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  td { color: #cfcfd8; }
+  td:first-child { color: #fff; font-weight: 500; }
+  .table-scroll { overflow-x: auto; }
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+    padding: 28px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  footer p { margin-bottom: 10px; line-height: 1.6; }
+  @media (max-width: 560px) {
+    h1 { font-size: 30px; }
+    .specs { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav><a href="../index.html">&larr; Loiter Point</a> &nbsp;/&nbsp; Chromebooks</nav>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Buying Guide</div>
+  <h1>Best Chromebooks in 2026: 4 Picks Worth Buying</h1>
+  <div class="dateline">Updated July 2026 &middot; Evidence-first, no lab theater</div>
+</header>
+
+<div class="short-version">
+  <h2>The Short Version</h2>
+  <ul>
+    <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B0FMP1H4GT?tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Chromebook Plus 14</a> pairs a genuinely gorgeous OLED with the best battery figures we've seen reported for a Chromebook &mdash; Tom's Guide's review measured roughly 19 hours.</li>
+    <li><strong>Best for cloud gaming and a big screen:</strong> the <a href="https://www.amazon.com/dp/B0CV61RWHF?tag=loiterpoint20-20" rel="sponsored nofollow">Acer Chromebook Plus 516 GE</a>, a 16-inch 120Hz panel built for GeForce NOW and Xbox Cloud &mdash; just don't expect on-device gaming or long battery.</li>
+    <li><strong>Best budget:</strong> the <a href="https://www.amazon.com/dp/B0CX28KX1N?tag=loiterpoint20-20" rel="sponsored nofollow">Acer Chromebook Plus 514</a> hits the Chromebook Plus spec floor near $399.</li>
+    <li><strong>Best tablet / 2-in-1:</strong> the <a href="https://www.amazon.com/s?k=Lenovo+Chromebook+Duet+11&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Chromebook Duet 11</a> ships with keyboard and kickstand included from $379.</li>
+  </ul>
+  <div class="grab">
+    <strong>Grab your pick:</strong>
+    <a href="https://www.amazon.com/dp/B0FMP1H4GT?tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Plus 14 (~$749)</a> &middot;
+    <a href="https://www.amazon.com/dp/B0CV61RWHF?tag=loiterpoint20-20" rel="sponsored nofollow">Acer 516 GE (~$649, street varies)</a> &middot;
+    <a href="https://www.amazon.com/dp/B0CX28KX1N?tag=loiterpoint20-20" rel="sponsored nofollow">Acer 514 (~$399)</a> &middot;
+    <a href="https://www.amazon.com/s?k=Lenovo+Chromebook+Duet+11&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Duet 11 ($379&ndash;$399)</a>
+  </div>
+</div>
+
+<h2>How We Evaluate Chromebooks</h2>
+<p>Loiter Point does not run a hardware lab, and we won't pretend otherwise. There are no "units tested" counts here and no invented battery numbers. What you're reading is a synthesis: we collect the <strong>published independent measurements</strong> from outlets that do run labs &mdash; Tom's Guide, PCWorld, Laptop Mag, Digital Trends, Kotaku &mdash; and cross-check them against <strong>verified owner reports</strong> and manufacturer specifications. When a figure comes from a reviewer's bench, we attribute it. When it's a maker's own rating, we label it "rated." When it's an owner-reported real-world estimate, we call it that. If the evidence is thin, we say so instead of filling the gap with a confident-sounding fabrication.</p>
+<p>Two things we weigh heavily in 2026. First, <strong>Chromebook Plus certification</strong> &mdash; Google's spec floor that guarantees a minimum performance tier plus the on-device and cloud AI features. All four picks here clear it. Second, the <strong>ChromeOS auto-update expiration (AUE) date</strong>: recent models get roughly 10 years of updates, but it is genuinely worth confirming the AUE for the exact SKU before you buy, because a cheap Chromebook with two years left is a bad deal at any price. We prioritize display quality, keyboard, real reported battery life, and whether the machine actually does the job people buy Chromebooks for &mdash; cheap, fast, low-maintenance computing.</p>
+
+<h2>The 4 Picks</h2>
+
+<div class="card">
+  <div class="card-head">
+    <span class="badge">#1 &middot; BEST OVERALL</span>
+    <span class="role">The one to buy if you're not sure</span>
+  </div>
+  <h3>Lenovo Chromebook Plus 14</h3>
+  <div class="price">List ~$749 (16GB/256GB) &middot; starts $649 &middot; frequently discounted</div>
+  <p>This is the Chromebook that makes the category interesting again. It runs MediaTek's <strong>Kompanio Ultra 910</strong>, an ARM chip with a 50 TOPS NPU, behind a 14-inch 1920&times;1200 OLED touchscreen. PCWorld's review called it "radically delightful" and singled out the OLED, the speakers, and the build. The headline number is battery: <strong>Tom's Guide's review measured about 19 hours</strong> at conservative brightness &mdash; the strongest figure we've seen reported for any Chromebook. At 2.78 lb it's easy to carry, and the 60Wh battery is what makes those numbers plausible.</p>
+  <div class="specs">
+    <div><span class="k">CHIP</span></div><div><span class="v">MediaTek Kompanio Ultra 910 (50 TOPS NPU)</span></div>
+    <div><span class="k">DISPLAY</span></div><div><span class="v">14" 1920&times;1200 OLED touch</span></div>
+    <div><span class="k">MEMORY</span></div><div><span class="v">Up to 16GB RAM / 256GB UFS</span></div>
+    <div><span class="k">BATTERY</span></div><div><span class="v">~19h <span class="tag reported">reported (Tom's Guide)</span></span></div>
+    <div><span class="k">WEIGHT</span></div><div><span class="v">2.78 lb &middot; 60Wh</span></div>
+  </div>
+  <p style="font-size:14px;color:var(--muted)">Deal note: 9to5Toys tracked discounts of roughly $300 off in June 2026, so watch the price rather than paying full list.</p>
+  <a class="buy" href="https://www.amazon.com/dp/B0FMP1H4GT?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+</div>
+
+<div class="card">
+  <div class="card-head">
+    <span class="badge">#2 &middot; BEST FOR CLOUD GAMING</span>
+    <span class="role">Big 120Hz screen, built for the cloud</span>
+  </div>
+  <h3>Acer Chromebook Plus 516 GE</h3>
+  <div class="price">~$649 list &middot; street price varies by config, often mid-$500s</div>
+  <p>The 516 GE is a specialist. Its 16-inch 2560&times;1600 IPS panel runs at <strong>120Hz</strong>, with Wi-Fi 6E, an RGB keyboard, and a 1080p webcam &mdash; a stack aimed squarely at streaming games. Reviewers at Laptop Mag, Kotaku, Digital Trends, and PCWorld all found cloud gaming through <strong>GeForce NOW and Xbox Cloud excellent</strong>, and productivity strong on that roomy high-res screen. The honest caveats: on-device gaming is weak (this isn't a local-GPU machine), battery life is below average for a Chromebook, and Laptop Mag dinged the keyboard as mushy. The config we link is the CBG516-1H (Intel Core i5-1240P, 16GB, 256GB); the newer CBG516-2H moves to an Intel Core 5 120U.</p>
+  <div class="specs">
+    <div><span class="k">DISPLAY</span></div><div><span class="v">16" 2560&times;1600 IPS 120Hz</span></div>
+    <div><span class="k">CHIP</span></div><div><span class="v">Intel Core i5-1240P (1H) / Core 5 120U (2H)</span></div>
+    <div><span class="k">CONNECTIVITY</span></div><div><span class="v">Wi-Fi 6E &middot; 1080p webcam</span></div>
+    <div><span class="k">EXTRAS</span></div><div><span class="v">RGB keyboard</span></div>
+    <div><span class="k">BATTERY</span></div><div><span class="v">Below-average for a Chromebook <span class="tag reported">reported</span></span></div>
+  </div>
+  <a class="buy" href="https://www.amazon.com/dp/B0CV61RWHF?tag=loiterpoint20-20" rel="sponsored nofollow">Check 1H price on Amazon</a>
+  <a class="buy alt" href="https://www.amazon.com/s?k=Acer+Chromebook+Plus+516+GE+CBG516-2H&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Find the newer 2H</a>
+</div>
+
+<div class="nerd">
+  <h3>Nerd box: does cloud gaming actually work on Wi-Fi?</h3>
+  <p>Cloud gaming on the 516 GE lives or dies on your network, not the laptop. GeForce NOW's higher tiers stream up to 4K/120 and recommend roughly 40&ndash;45 Mbps of steady throughput; 1080p/60 is comfortable around 15&ndash;25 Mbps. Bandwidth is the easy part &mdash; the hard part is <em>latency and jitter</em>. A 120Hz panel refreshes every ~8.3 ms, so any added network lag stacks directly on top of that frame budget. This is why the 516 GE bundles Wi-Fi 6E: the 6GHz band is far less congested than 2.4/5GHz, which keeps jitter down. Wired Ethernet (via a USB-C dongle) is still the gold standard if you want the RGB keyboard to feel like it's connected to something responsive.</p>
+</div>
+
+<div class="card">
+  <div class="card-head">
+    <span class="badge">#3 &middot; BEST BUDGET</span>
+    <span class="role">Chromebook Plus without the sting</span>
+  </div>
+  <h3>Acer Chromebook Plus 514</h3>
+  <div class="price">List ~$399</div>
+  <p>If you want the Chromebook Plus feature set for the least money, the 514 is the sensible answer. The CB514-4HT-375Z config pairs an Intel <strong>Core i3-N305</strong> with 8GB LPDDR5 and 128GB of storage behind a 14-inch FHD IPS touchscreen, plus Wi-Fi 6E and a 1080p webcam. At 3.09 lb it's not the lightest here, but it hits the certification floor at a real budget price. Acer <strong>rates</strong> battery at up to 11 hours on this model; a newer variant built around the Core i3-1315U is <strong>rated</strong> up to 17 hours &mdash; treat both as manufacturer figures, not bench results.</p>
+  <div class="specs">
+    <div><span class="k">CHIP</span></div><div><span class="v">Intel Core i3-N305</span></div>
+    <div><span class="k">DISPLAY</span></div><div><span class="v">14" FHD IPS touch</span></div>
+    <div><span class="k">MEMORY</span></div><div><span class="v">8GB LPDDR5 / 128GB</span></div>
+    <div><span class="k">BATTERY</span></div><div><span class="v">Up to 11h <span class="tag rated">rated</span> (17h on i3-1315U variant)</span></div>
+    <div><span class="k">WEIGHT</span></div><div><span class="v">3.09 lb &middot; Wi-Fi 6E &middot; 1080p cam</span></div>
+  </div>
+  <a class="buy" href="https://www.amazon.com/dp/B0CX28KX1N?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+</div>
+
+<div class="card">
+  <div class="card-head">
+    <span class="badge">#4 &middot; BEST TABLET / 2-IN-1</span>
+    <span class="role">Keyboard and kickstand in the box</span>
+  </div>
+  <h3>Lenovo Chromebook Duet 11</h3>
+  <div class="price">$379 (4GB) &middot; $399 (8GB)</div>
+  <p>The Duet 11 is the pick when you want a tablet that becomes a laptop without buying extras. It runs a MediaTek <strong>Kompanio 838</strong> behind an 11-inch 16:10 display, and crucially the <strong>detachable keyboard and kickstand are included</strong> &mdash; no $150 accessory upsell. There's USB-C on both the side and the top (handy for charging in either orientation) and a spill-resistant keyboard. PCWorld's video-rundown test found <strong>nearly 12 hours of battery</strong> and called it "budget brilliance." There's no single verified Amazon listing we'd stake our name on, so we link a search rather than gamble on a wrong ASIN.</p>
+  <div class="specs">
+    <div><span class="k">CHIP</span></div><div><span class="v">MediaTek Kompanio 838</span></div>
+    <div><span class="k">DISPLAY</span></div><div><span class="v">11" 16:10</span></div>
+    <div><span class="k">INCLUDED</span></div><div><span class="v">Detachable keyboard + kickstand</span></div>
+    <div><span class="k">BATTERY</span></div><div><span class="v">~12h <span class="tag reported">reported (PCWorld)</span></span></div>
+    <div><span class="k">PORTS</span></div><div><span class="v">USB-C side + top &middot; spill-resistant keys</span></div>
+  </div>
+  <a class="buy" href="https://www.amazon.com/s?k=Lenovo+Chromebook+Duet+11&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Find it on Amazon</a>
+</div>
+
+<div class="nerd">
+  <h3>Nerd box: why ARM Chromebooks suddenly last all day</h3>
+  <p>Two of our four picks &mdash; the Lenovo Plus 14 and the Duet 11 &mdash; run MediaTek Kompanio ARM silicon, and that's not a coincidence. ARM cores are built around a leaner instruction set and aggressive per-core power gating, so they idle far lower than a typical Intel Core laptop chip and sip power during the light, bursty workloads ChromeOS spends most of its life doing: a few browser tabs, a video, some documents. That efficiency is exactly why Tom's Guide could measure ~19 hours on the OLED-equipped Plus 14 while the Intel-based, high-refresh 516 GE lands below average. The trade-off is that x86 Intel chips still pull ahead on sustained heavy compute. For a Chromebook, though, all-day battery usually beats peak throughput &mdash; which is why the ARM machines top this list.</p>
+</div>
+
+<h2>How the Picks Compare</h2>
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th>Model</th><th>Best for</th><th>Display</th><th>Chip</th><th>Battery</th><th>Price</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lenovo Chromebook Plus 14</td>
+      <td>Overall</td>
+      <td>14" OLED 1920&times;1200 touch</td>
+      <td>Kompanio Ultra 910</td>
+      <td>~19h <span class="tag reported">reported</span></td>
+      <td>~$749</td>
+    </tr>
+    <tr>
+      <td>Acer Chromebook Plus 516 GE</td>
+      <td>Cloud gaming / big screen</td>
+      <td>16" 2560&times;1600 120Hz</td>
+      <td>i5-1240P / Core 5 120U</td>
+      <td>Below-avg <span class="tag reported">reported</span></td>
+      <td>~$649*</td>
+    </tr>
+    <tr>
+      <td>Acer Chromebook Plus 514</td>
+      <td>Budget</td>
+      <td>14" FHD IPS touch</td>
+      <td>Core i3-N305</td>
+      <td>Up to 11h <span class="tag rated">rated</span></td>
+      <td>~$399</td>
+    </tr>
+    <tr>
+      <td>Lenovo Chromebook Duet 11</td>
+      <td>Tablet / 2-in-1</td>
+      <td>11" 16:10</td>
+      <td>Kompanio 838</td>
+      <td>~12h <span class="tag reported">reported</span></td>
+      <td>$379&ndash;$399</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p style="font-size:13px;color:var(--muted)">*Street price varies by config; the 516 GE is regularly discounted into the mid-$500s.</p>
+
+<h2>Bottom Line</h2>
+<p>For most people, the <a href="https://www.amazon.com/dp/B0FMP1H4GT?tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Chromebook Plus 14</a> is the easy recommendation: an OLED panel reviewers loved, the best reported battery in the category, and a light, well-built chassis &mdash; especially when it drops from list. If you live in GeForce NOW or Xbox Cloud and want a big, fast screen, the <a href="https://www.amazon.com/dp/B0CV61RWHF?tag=loiterpoint20-20" rel="sponsored nofollow">Acer 516 GE</a> is purpose-built, provided you accept weak local gaming and shorter battery. Shopping on a budget, the <a href="https://www.amazon.com/dp/B0CX28KX1N?tag=loiterpoint20-20" rel="sponsored nofollow">Acer 514</a> gets you Chromebook Plus certification near $399. And if you want a tablet first and a laptop second, the <a href="https://www.amazon.com/s?k=Lenovo+Chromebook+Duet+11&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Duet 11</a> includes the keyboard and kickstand others charge extra for. Whichever you pick, confirm the AUE date on the exact SKU before you check out &mdash; it's the one spec retailers never put on the box.</p>
+
+<footer>
+  <p>Buy links are affiliate links (Amazon tag loiterpoint20-20). If you buy through them, Loiter Point may earn a commission at no extra cost to you. It never changes our rankings, and we don't apologize for keeping the lights on this way &mdash; it's how evidence-first reviews stay free.</p>
+  <p>Battery and performance figures are attributed to their sources: reviewer bench results are labeled "reported," manufacturer figures "rated." Loiter Point does not operate a hardware lab. Prices and discounts change; verify current pricing on the retailer page.</p>
+  <p>Updated July 2026</p>
+  <p>&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+</footer>
+</div>
+</body>
+</html>
