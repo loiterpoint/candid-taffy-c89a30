@@ -20,6 +20,10 @@
   var css = [
     "#lpBurger{display:none;position:fixed;top:11px;right:14px;z-index:1000;width:40px;height:40px;align-items:center;justify-content:center;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-radius:8px;color:var(--text,#e2e2e8);cursor:pointer;padding:0;}",
     "#lpBurger svg{width:20px;height:20px;}",
+    // Wide comparison tables were overflowing the page on phones, which pushed
+    // the fixed hamburger off-screen to the right. Let any table scroll inside
+    // its own box instead of stretching the page wider than the screen.
+    "table{display:block;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;}",
     "#lpMenu{display:none;position:fixed;inset:0;z-index:1001;background:rgba(12,12,14,0.985);overflow-y:auto;font-family:'Inter',sans-serif;}",
     "#lpMenu.open{display:block;}",
     "#lpMenu .lp-top{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border,#26262e);}",
