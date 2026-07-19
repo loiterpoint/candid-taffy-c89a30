@@ -9,14 +9,13 @@
 { ic: "🎧", label: "Headphones & Audio", href: "/audio/", ct: "8" },
 { ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "10" },
 { ic: "🍳", label: "Kitchen", href: "/kitchen/", ct: "3" },
-{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "3" },
+{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "2" },
 { ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "15" },
 { ic: "📶", label: "Networking", href: "/networking/", ct: "2" },
 { ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "6" },
 { ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "6" },
 { ic: "🔋", label: "Power & Charging", href: "/power/", ct: "4" },
 { ic: "📺", label: "TVs & Streaming", href: "/streaming/", ct: "4" },
-{ ic: "📸", label: "Cameras", href: "/cameras/", ct: "2" },
 { ic: "🔥", label: "Today's Deals", href: "/deals.html", ct: "↗" }
 ];
 
@@ -41,7 +40,11 @@
     ".lp-acct{color:#0c0c0e;background:var(--accent,#e8ff47);font-size:0.8rem;font-weight:700;padding:5px 12px;border-radius:5px;line-height:1.4;}",
     ".lp-acct:hover{opacity:0.88;}",
     "#lpMenu a.lp-row.lp-acct-row{background:rgba(232,255,71,0.07);margin:0 -16px;padding-left:16px;padding-right:16px;}",
-    "#lpMenu a.lp-row.lp-acct-row .ic{color:var(--accent,#e8ff47);}"
+    "#lpMenu a.lp-row.lp-acct-row .ic{color:var(--accent,#e8ff47);}",
+    ".lp-signout{background:transparent;border:1px solid var(--border,#26262e);color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;padding:4px 11px;border-radius:5px;cursor:pointer;line-height:1.4;}",
+    ".lp-signout:hover{color:var(--text,#e2e2e8);border-color:var(--muted,#7a7a8a);}",
+    "#lpMenu .lp-signout-row{display:block;width:100%;text-align:center;background:transparent;border:1px solid var(--border,#26262e);border-radius:8px;color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:15px;font-weight:600;padding:13px;margin-top:10px;cursor:pointer;}",
+    "#lpMenu .lp-signout-row:hover{color:var(--text,#e2e2e8);}"
   ].join("");
 
   // Removes the hardcoded "Evidence-first" nav tag wherever it appears.
@@ -74,6 +77,91 @@
       row.innerHTML = '<span class="ic">\uD83D\uDC64</span>Account<span class="ct">\u2197</span>';
       menuBody.insertBefore(row, menuBody.firstChild);
     }
+
+    maybeAddSignOut(menuBody);
+  }
+
+  // Sitewide sign-out, without making every anonymous visitor download the
+  // Firebase SDK.
+  //
+  // Firebase persists the session under a localStorage key that starts with
+  // "firebase:authUser:". Reading that is free and needs no SDK. Only when the
+  // key exists do we dynamically import Firebase and wire up a real button, so
+  // logged-out traffic (nearly all of it) pays nothing.
+  //
+  // The key is a heuristic for "probably signed in", not proof — it can be
+  // stale if the token was revoked server-side. onAuthStateChanged below is the
+  // authority; if it reports no user, we remove the button again.
+  function maybeAddSignOut(menuBody) {
+    var looksSignedIn = false;
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        if (localStorage.key(i).indexOf("firebase:authUser:") === 0) { looksSignedIn = true; break; }
+      }
+    } catch (e) { return; }
+    if (!looksSignedIn) return;
+
+    var navLinks = document.querySelector(".nav-links");
+    var deskBtn = null;
+    if (navLinks && !navLinks.querySelector(".lp-signout")) {
+      deskBtn = document.createElement("button");
+      deskBtn.className = "lp-signout";
+      deskBtn.type = "button";
+      deskBtn.textContent = "Sign out";
+      deskBtn.disabled = true;
+      navLinks.appendChild(deskBtn);
+    }
+
+    var menuBtn = null;
+    if (menuBody && !menuBody.querySelector(".lp-signout-row")) {
+      menuBtn = document.createElement("button");
+      menuBtn.className = "lp-signout-row";
+      menuBtn.type = "button";
+      menuBtn.textContent = "Sign out";
+      menuBtn.disabled = true;
+      // Appended last, below the site-map CTA. Sign out is destructive and the
+      // menu is opened constantly for browsing — keeping it away from the
+      // category rows avoids thumb-slip sign-outs.
+      menuBody.appendChild(menuBtn);
+    }
+
+    var V = "https://www.gstatic.com/firebasejs/12.16.0/";
+    Promise.all([import(V + "firebase-app.js"), import(V + "firebase-auth.js")])
+      .then(function (mods) {
+        var app = mods[0].initializeApp({
+          apiKey: "AIzaSyBK0BtlKD1ye06vqlZQbLC_oLepD_z9hS4",
+          authDomain: "loiterpoint.firebaseapp.com",
+          projectId: "loiterpoint",
+          storageBucket: "loiterpoint.firebasestorage.app",
+          messagingSenderId: "720833786375",
+          appId: "1:720833786375:web:5a064020a9ccef596ab0a2"
+        });
+        var authMod = mods[1];
+        var auth = authMod.getAuth(app);
+
+        function remove(el) { if (el && el.parentNode) el.parentNode.removeChild(el); }
+
+        authMod.onAuthStateChanged(auth, function (user) {
+          if (!user) { remove(deskBtn); remove(menuBtn); return; }
+          [deskBtn, menuBtn].forEach(function (b) {
+            if (!b) return;
+            b.disabled = false;
+            b.title = "Signed in as " + user.email;
+            b.onclick = function () {
+              b.disabled = true;
+              b.textContent = "Signing out\u2026";
+              authMod.signOut(auth).then(function () { location.reload(); });
+            };
+          });
+        });
+      })
+      .catch(function (err) {
+        // Offline or CDN blocked. Leave the buttons out rather than showing
+        // a control that silently does nothing.
+        console.warn("Sign-out unavailable:", err);
+        if (deskBtn && deskBtn.parentNode) deskBtn.parentNode.removeChild(deskBtn);
+        if (menuBtn && menuBtn.parentNode) menuBtn.parentNode.removeChild(menuBtn);
+      });
   }
 
   function build() {
