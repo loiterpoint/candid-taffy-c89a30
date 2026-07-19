@@ -9,11 +9,11 @@
 { ic: "🎧", label: "Headphones & Audio", href: "/audio/", ct: "8" },
 { ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "10" },
 { ic: "🍳", label: "Kitchen", href: "/kitchen/", ct: "3" },
-{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "3" },
+{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "2" },
 { ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "15" },
 { ic: "📶", label: "Networking", href: "/networking/", ct: "2" },
 { ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "6" },
-{ ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "7" },
+{ ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "6" },
 { ic: "🔋", label: "Power & Charging", href: "/power/", ct: "4" },
 { ic: "📺", label: "TVs & Streaming", href: "/streaming/", ct: "4" },
 { ic: "🔥", label: "Today's Deals", href: "/deals.html", ct: "↗" }
@@ -36,8 +36,44 @@
     "#lpMenu a.lp-cta{display:block;text-align:center;margin-top:18px;background:var(--accent,#e8ff47);color:#000;font-weight:700;padding:14px;border-radius:8px;font-size:15px;text-decoration:none;}",
     ".lp-map-desktop{color:var(--muted,#7a7a8a);font-size:0.875rem;font-weight:500;}",
     ".lp-map-desktop:hover{color:var(--text,#e2e2e8);}",
-    "@media(max-width:768px){#lpBurger{display:flex;} .nav-tag{display:none!important;}}"
+    "@media(max-width:768px){#lpBurger{display:flex;}}",
+    ".lp-acct{color:#0c0c0e;background:var(--accent,#e8ff47);font-size:0.8rem;font-weight:700;padding:5px 12px;border-radius:5px;line-height:1.4;}",
+    ".lp-acct:hover{opacity:0.88;}",
+    "#lpMenu a.lp-row.lp-acct-row{background:rgba(232,255,71,0.07);margin:0 -16px;padding-left:16px;padding-right:16px;}",
+    "#lpMenu a.lp-row.lp-acct-row .ic{color:var(--accent,#e8ff47);}"
   ].join("");
+
+  // Removes the hardcoded "Evidence-first" nav tag wherever it appears.
+  // Matches on TEXT, not on the class: dji-mini-5-pro-review.html uses
+  // <span class="nav-tag">FULL REVIEW</span> for something unrelated, and a
+  // class-based selector would silently eat it.
+  function retireEvidenceTag() {
+    Array.prototype.forEach.call(document.querySelectorAll(".nav-tag"), function (el) {
+      if (el.textContent.trim().toLowerCase() === "evidence-first") {
+        el.parentNode.removeChild(el);
+      }
+    });
+  }
+
+  // Account link: appended to the desktop nav, and inserted as the first row
+  // of the mobile overlay (it is the only non-category item).
+  function addAccountLink(menuBody) {
+    var navLinks = document.querySelector(".nav-links");
+    if (navLinks && !navLinks.querySelector(".lp-acct")) {
+      var a = document.createElement("a");
+      a.className = "lp-acct";
+      a.href = "/account.html";
+      a.textContent = "Account";
+      navLinks.appendChild(a);
+    }
+    if (menuBody && !menuBody.querySelector(".lp-acct-row")) {
+      var row = document.createElement("a");
+      row.className = "lp-row lp-acct-row";
+      row.href = "/account.html";
+      row.innerHTML = '<span class="ic">\uD83D\uDC64</span>Account<span class="ct">\u2197</span>';
+      menuBody.insertBefore(row, menuBody.firstChild);
+    }
+  }
 
   function build() {
     var style = document.createElement("style");
@@ -85,6 +121,9 @@
       a.textContent = "Site Map";
       navLinks.appendChild(a);
     }
+
+    retireEvidenceTag();
+    addAccountLink(menu.querySelector(".lp-body"));
   }
 
   if (document.readyState === "loading") {
