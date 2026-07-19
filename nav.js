@@ -1,24 +1,35 @@
 /* Loiter Point — global mobile navigation.
    Self-injecting: adds a hamburger + full-screen jump menu on phones (<=768px),
-   and appends a "Site Map" link to the desktop nav where one exists.
+   and renders one canonical nav bar (see TOPNAV) on every page.
    Load once per page with:  <script src="/nav.js" defer></script>
    Uses the site's existing CSS variables, so it inherits the dark/lime theme. */
 (function () {
   var LINKS = [
 { ic: "🚁", label: "Drones & Aerial", href: "/drones/", ct: "13" },
 { ic: "🎧", label: "Headphones & Audio", href: "/audio/", ct: "8" },
-{ ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "11" },
+{ ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "10" },
 { ic: "🍳", label: "Kitchen", href: "/kitchen/", ct: "3" },
-{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "3" },
-{ ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "16" },
+{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "2" },
+{ ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "15" },
 { ic: "📶", label: "Networking", href: "/networking/", ct: "2" },
-{ ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "7" },
+{ ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "6" },
 { ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "6" },
 { ic: "🔋", label: "Power & Charging", href: "/power/", ct: "4" },
 { ic: "📺", label: "TVs & Streaming", href: "/streaming/", ct: "4" },
-{ ic: "📸", label: "Cameras", href: "/cameras/", ct: "2" },
 { ic: "🔥", label: "Today's Deals", href: "/deals.html", ct: "↗" }
 ];
+
+  // Canonical desktop nav, rendered identically on every page. Before this,
+  // the site had 25 different nav variants — category lists on 11 pages, bare
+  // back-links on ~50 articles ("← All reviews", "← back to reviews", and 16
+  // other wordings), a lone wordmark on deals.html, nothing at all on 30.
+  // Edit this array to change the nav sitewide.
+  var TOPNAV = [
+    { label: "Home", href: "/" },
+    { label: "Deals", href: "/deals.html" },
+    { label: "Buyer Guides", href: "/#guides" },
+    { label: "Compare", href: "/articles/mini-4-pro-vs-air-3.html" }
+  ];
 
   var css = [
     "#lpBurger{display:none;position:fixed;top:11px;right:14px;z-index:1000;width:40px;height:40px;align-items:center;justify-content:center;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-radius:8px;color:var(--text,#e2e2e8);cursor:pointer;padding:0;}",
@@ -35,8 +46,6 @@
     "#lpMenu a.lp-row .ic{font-size:18px;}",
     "#lpMenu a.lp-row .ct{margin-left:auto;font-family:var(--mono,monospace);font-size:12px;color:var(--muted,#7a7a8a);}",
     "#lpMenu a.lp-cta{display:block;text-align:center;margin-top:18px;background:var(--accent,#e8ff47);color:#000;font-weight:700;padding:14px;border-radius:8px;font-size:15px;text-decoration:none;}",
-    ".lp-map-desktop{color:var(--muted,#7a7a8a);font-size:0.875rem;font-weight:500;}",
-    ".lp-map-desktop:hover{color:var(--text,#e2e2e8);}",
     "@media(max-width:768px){#lpBurger{display:flex;}}",
     ".lp-acct{color:#0c0c0e;background:var(--accent,#e8ff47);font-size:0.8rem;font-weight:700;padding:5px 12px;border-radius:5px;line-height:1.4;}",
     ".lp-acct:hover{opacity:0.88;}",
@@ -45,6 +54,10 @@
     "#lpSynthNav .lp-mark{display:flex;align-items:center;gap:0.6rem;font-size:1rem;font-weight:800;color:var(--text,#e2e2e8);text-decoration:none;letter-spacing:-0.02em;}",
     "#lpSynthNav .lp-mark i{width:28px;height:28px;background:var(--accent,#e8ff47);color:#000;border-radius:6px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:0.9rem;}",
     "#lpSynthNav .lp-mark b{color:var(--accent,#e8ff47);font-weight:800;}",
+    "#lpSynthNav .lp-right{display:flex;align-items:center;gap:1.6rem;}",
+    "#lpSynthNav .lp-right a.lp-top{color:var(--muted,#7a7a8a);font-size:0.875rem;font-weight:500;text-decoration:none;transition:color .15s;}",
+    "#lpSynthNav .lp-right a.lp-top:hover{color:var(--text,#e2e2e8);}",
+    "@media(max-width:900px){#lpSynthNav .lp-right a.lp-top{display:none;}}",
     "@media(max-width:768px){#lpSynthNav{padding:1rem 1.25rem;}}",
     "#lpMenu a.lp-row.lp-acct-row{background:rgba(232,255,71,0.07);margin:0 -16px;padding-left:16px;padding-right:16px;}",
     "#lpMenu a.lp-row.lp-acct-row .ic{color:var(--accent,#e8ff47);}",
@@ -76,28 +89,33 @@
   // 30 pages (15 guides, 15 articles) have no <nav> element at all — they have
   // never had site navigation, which is a bigger problem than the account link.
   // Build a minimal one rather than leaving them orphaned.
+  // nav.js owns the bar outright: the page's own <nav> is removed and replaced
+  // with one canonical bar. Editing 110 pages into agreement was never going to
+  // hold — the next generated article would drift again.
   function synthesizeNav() {
-    if (document.getElementById("lpSynthNav")) return document.getElementById("lpSynthNav");
+    var existing = document.getElementById("lpSynthNav");
+    if (existing) return existing;
+
+    Array.prototype.forEach.call(document.querySelectorAll("nav"), function (el) {
+      if (el.id !== "lpSynthNav" && el.parentNode) el.parentNode.removeChild(el);
+    });
+
+    var links = TOPNAV.map(function (l) {
+      return '<a class="lp-top" href="' + l.href + '">' + l.label + '</a>';
+    }).join("");
+
     var bar = document.createElement("nav");
     bar.id = "lpSynthNav";
-    bar.innerHTML = '<a class="lp-mark" href="/"><i>&#8853;</i>Loiter<b>Point</b></a>';
+    bar.innerHTML =
+      '<a class="lp-mark" href="/"><i>&#8853;</i>Loiter<b>Point</b></a>' +
+      '<div class="lp-right nav-links">' + links + '</div>';
     document.body.insertBefore(bar, document.body.firstChild);
     return bar;
   }
 
   function navLinksHost() {
-    var existing = document.querySelector(".nav-links");
-    if (existing) return existing;
-    var shell = document.querySelector("nav .wrap") || document.querySelector("nav");
-    if (!shell) shell = synthesizeNav();
-    if (!shell) return null;
-    var holder = shell.querySelector(".lp-navlinks-fallback");
-    if (!holder) {
-      holder = document.createElement("div");
-      holder.className = "lp-navlinks-fallback";
-      shell.appendChild(holder);
-    }
-    return holder;
+    var bar = synthesizeNav();
+    return bar ? bar.querySelector(".lp-right") : null;
   }
 
   function addAccountLink(menuBody) {
@@ -256,15 +274,6 @@
     Array.prototype.forEach.call(menu.querySelectorAll("a"), function (a) {
       a.addEventListener("click", function () { setOpen(false); });
     });
-
-    var navLinks = document.querySelector(".nav-links");
-    if (navLinks && !navLinks.querySelector('a[href*="site-map"]')) {
-      var a = document.createElement("a");
-      a.className = "lp-map-desktop";
-      a.href = "/site-map.html";
-      a.textContent = "Site Map";
-      navLinks.appendChild(a);
-    }
 
     retireEvidenceTag();
     menuBodyRef = menu.querySelector(".lp-body");
