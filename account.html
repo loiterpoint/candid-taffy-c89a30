@@ -250,6 +250,14 @@ $("signoutBtn").addEventListener("click", () => signOut(auth));
 /* Fires on load and on every sign-in / sign-out. Firebase persists the session
    in the browser, so a returning user lands here already signed in. */
 onAuthStateChanged(auth, (user) => {
+  /* A plain localStorage flag so nav.js can tell whether to bother loading the
+     Firebase SDK. We do NOT read Firebase's own persistence: it uses IndexedDB,
+     the layout is internal, and probing it is both async and liable to change. */
+  try {
+    if (user) localStorage.setItem("lp_auth", "1");
+    else localStorage.removeItem("lp_auth");
+  } catch (e) { /* private mode; nav just won't show Sign out */ }
+
   if (user) {
     $("whoami").textContent = user.email;
     $("loggedOut").style.display = "none";

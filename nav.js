@@ -84,22 +84,22 @@
   // Sitewide sign-out, without making every anonymous visitor download the
   // Firebase SDK.
   //
-  // Firebase persists the session under a localStorage key that starts with
-  // "firebase:authUser:". Reading that is free and needs no SDK. Only when the
-  // key exists do we dynamically import Firebase and wire up a real button, so
-  // logged-out traffic (nearly all of it) pays nothing.
+  // account.html sets localStorage "lp_auth" on sign-in and clears it on
+  // sign-out. Reading that is free and needs no SDK, so logged-out traffic
+  // (nearly all of it) pays nothing.
   //
-  // The key is a heuristic for "probably signed in", not proof — it can be
-  // stale if the token was revoked server-side. onAuthStateChanged below is the
-  // authority; if it reports no user, we remove the button again.
+  // Deliberately NOT reading Firebase's own persistence: it lives in IndexedDB,
+  // the schema is internal, and reading it is async. An earlier version of this
+  // checked for a "firebase:authUser:" localStorage key, which does not exist
+  // in current SDK versions — the button silently never appeared.
+  //
+  // The flag means "probably signed in", not proof; it can be stale if the
+  // token was revoked. onAuthStateChanged below is the authority, and clears
+  // the flag if it disagrees.
   function maybeAddSignOut(menuBody) {
-    var looksSignedIn = false;
     try {
-      for (var i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i).indexOf("firebase:authUser:") === 0) { looksSignedIn = true; break; }
-      }
+      if (localStorage.getItem("lp_auth") !== "1") return;
     } catch (e) { return; }
-    if (!looksSignedIn) return;
 
     var navLinks = document.querySelector(".nav-links");
     var deskBtn = null;
@@ -142,7 +142,11 @@
         function remove(el) { if (el && el.parentNode) el.parentNode.removeChild(el); }
 
         authMod.onAuthStateChanged(auth, function (user) {
-          if (!user) { remove(deskBtn); remove(menuBtn); return; }
+          if (!user) {
+            try { localStorage.removeItem("lp_auth"); } catch (e) {}
+            remove(deskBtn); remove(menuBtn);
+            return;
+          }
           [deskBtn, menuBtn].forEach(function (b) {
             if (!b) return;
             b.disabled = false;
@@ -150,7 +154,10 @@
             b.onclick = function () {
               b.disabled = true;
               b.textContent = "Signing out\u2026";
-              authMod.signOut(auth).then(function () { location.reload(); });
+              authMod.signOut(auth).then(function () {
+                try { localStorage.removeItem("lp_auth"); } catch (e) {}
+                location.reload();
+              });
             };
           });
         });
