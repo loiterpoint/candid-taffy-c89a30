@@ -4,22 +4,6 @@
    Load once per page with:  <script src="/nav.js" defer></script>
    Uses the site's existing CSS variables, so it inherits the dark/lime theme. */
 (function () {
-  var LINKS = [
-{ ic: "🚁", label: "Drones & Aerial", href: "/drones/", ct: "13" },
-{ ic: "🎧", label: "Headphones & Audio", href: "/audio/", ct: "8" },
-{ ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "11" },
-{ ic: "🍳", label: "Kitchen", href: "/kitchen/", ct: "3" },
-{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "3" },
-{ ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "16" },
-{ ic: "📶", label: "Networking", href: "/networking/", ct: "2" },
-{ ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "7" },
-{ ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "6" },
-{ ic: "🔋", label: "Power & Charging", href: "/power/", ct: "4" },
-{ ic: "📺", label: "TVs & Streaming", href: "/streaming/", ct: "4" },
-{ ic: "📸", label: "Cameras", href: "/cameras/", ct: "2" },
-{ ic: "🔥", label: "Today's Deals", href: "/deals.html", ct: "↗" }
-];
-
   // Canonical desktop nav, rendered identically on every page. Before this,
   // the site had 25 different nav variants — category lists on 11 pages, bare
   // back-links on ~50 articles ("← All reviews", "← back to reviews", and 16
@@ -136,8 +120,11 @@
       var row = document.createElement("a");
       row.className = "lp-row lp-acct-row";
       row.href = "/account.html";
-      row.innerHTML = '<span class="ic">\uD83D\uDC64</span>Account<span class="ct">\u2197</span>';
-      menuBody.insertBefore(row, menuBody.firstChild);
+      row.textContent = "Account";
+      // Place Account after the nav rows (before the site-map CTA), matching
+      // the desktop bar where Account sits at the end.
+      var acctCta = menuBody.querySelector(".lp-cta");
+      menuBody.insertBefore(row, acctCta || menuBody.firstChild);
     }
 
     maybeAddSignOut(menuBody);
@@ -254,8 +241,11 @@
     burger.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
     document.body.appendChild(burger);
 
-    var rows = LINKS.map(function (l) {
-      return '<a class="lp-row" href="' + l.href + '"><span class="ic">' + l.ic + '</span>' + l.label + '<span class="ct">' + l.ct + '</span></a>';
+    // Mobile menu mirrors the desktop bar (TOPNAV) rather than listing every
+    // category — the two navs were showing different things, which read as a
+    // bug. Categories are still reachable via Buyer Guides and the site map.
+    var rows = TOPNAV.map(function (l) {
+      return '<a class="lp-row" href="' + l.href + '">' + l.label + '</a>';
     }).join("");
 
     var menu = document.createElement("div");
