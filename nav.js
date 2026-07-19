@@ -12,7 +12,8 @@
     { ic: "🚗", label: "Automotive", href: "/automotive/", ct: "3" },
     { ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "15" },
     { ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "6" },
-{ ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "6" },
+    { ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "7" },
+    { ic: "🔋", label: "Power & Charging", href: "/power/", ct: "4" },
     { ic: "🔥", label: "Today's Deals", href: "/deals.html", ct: "↗" }
   ];
 
