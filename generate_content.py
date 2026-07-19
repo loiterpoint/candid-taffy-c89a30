@@ -316,8 +316,8 @@ def wrap_page(item: dict, body: str) -> str:
 </head>
 <body>
 <nav>
-  <a href="../index.html" style="font-size:1rem;font-weight:800;text-decoration:none;color:#e2e2e8;">◈ Drone<span class="dot" style="color:#e8ff47;">Authority</span></a>
-  <a href="../index.html" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#7a7a8a;text-decoration:none;">← All Articles</a>
+  <a href="/" style="font-size:1rem;font-weight:800;text-decoration:none;color:#e2e2e8;">⊕ Loiter<span class="dot" style="color:#e8ff47;">Point</span></a>
+  <a href="/" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#7a7a8a;text-decoration:none;">← All Articles</a>
 </nav>
 <div class="article">
   <div class="article-eyebrow">// {type_label}</div>
@@ -361,7 +361,7 @@ def run():
             print(f"  ✓ Saved: {path}")
         except Exception as e:
             print(f"  ✗ Error: {e}")
-    print("\nDone. Deploy /drone-authority/ to Netlify.")
+    print("\nDone. Commit to main — GitHub Pages deploys from there.")
 
 
 if __name__ == "__main__":
