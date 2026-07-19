@@ -9,8 +9,7 @@
 { ic: "🎧", label: "Headphones & Audio", href: "/audio/", ct: "8" },
 { ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "10" },
 { ic: "🍳", label: "Kitchen", href: "/kitchen/", ct: "3" },
-{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "3" },
-{ ic: "📸", label: "Cameras", href: "/cameras/", ct: "2" },
+{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "2" },
 { ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "15" },
 { ic: "📶", label: "Networking", href: "/networking/", ct: "2" },
 { ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "6" },
@@ -40,6 +39,12 @@
     "@media(max-width:768px){#lpBurger{display:flex;}}",
     ".lp-acct{color:#0c0c0e;background:var(--accent,#e8ff47);font-size:0.8rem;font-weight:700;padding:5px 12px;border-radius:5px;line-height:1.4;}",
     ".lp-acct:hover{opacity:0.88;}",
+    ".lp-navlinks-fallback{display:flex;align-items:center;gap:10px;}",
+    "#lpSynthNav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border,#26262e);position:sticky;top:0;background:rgba(12,12,14,0.97);z-index:100;font-family:'Inter',sans-serif;}",
+    "#lpSynthNav .lp-mark{display:flex;align-items:center;gap:0.6rem;font-size:1rem;font-weight:800;color:var(--text,#e2e2e8);text-decoration:none;letter-spacing:-0.02em;}",
+    "#lpSynthNav .lp-mark i{width:28px;height:28px;background:var(--accent,#e8ff47);color:#000;border-radius:6px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:0.9rem;}",
+    "#lpSynthNav .lp-mark b{color:var(--accent,#e8ff47);font-weight:800;}",
+    "@media(max-width:768px){#lpSynthNav{padding:1rem 1.25rem;}}",
     "#lpMenu a.lp-row.lp-acct-row{background:rgba(232,255,71,0.07);margin:0 -16px;padding-left:16px;padding-right:16px;}",
     "#lpMenu a.lp-row.lp-acct-row .ic{color:var(--accent,#e8ff47);}",
     ".lp-signout{background:transparent;border:1px solid var(--border,#26262e);color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;padding:4px 11px;border-radius:5px;cursor:pointer;line-height:1.4;}",
@@ -62,8 +67,40 @@
 
   // Account link: appended to the desktop nav, and inserted as the first row
   // of the mobile overlay (it is the only non-category item).
+  // Where the desktop account controls go. index.html and the article pages
+  // have a .nav-links div; deals.html uses a different shell (nav.topnav with
+  // only a sitemark) and has none. Rather than edit deals.html — which AGENTS.md
+  // assigns to the deal-radar task — create a holder inside whatever nav exists.
+  // .topnav .wrap is already flex with space-between, so it lands on the right.
+  // 30 pages (15 guides, 15 articles) have no <nav> element at all — they have
+  // never had site navigation, which is a bigger problem than the account link.
+  // Build a minimal one rather than leaving them orphaned.
+  function synthesizeNav() {
+    if (document.getElementById("lpSynthNav")) return document.getElementById("lpSynthNav");
+    var bar = document.createElement("nav");
+    bar.id = "lpSynthNav";
+    bar.innerHTML = '<a class="lp-mark" href="/"><i>&#8853;</i>Loiter<b>Point</b></a>';
+    document.body.insertBefore(bar, document.body.firstChild);
+    return bar;
+  }
+
+  function navLinksHost() {
+    var existing = document.querySelector(".nav-links");
+    if (existing) return existing;
+    var shell = document.querySelector("nav .wrap") || document.querySelector("nav");
+    if (!shell) shell = synthesizeNav();
+    if (!shell) return null;
+    var holder = shell.querySelector(".lp-navlinks-fallback");
+    if (!holder) {
+      holder = document.createElement("div");
+      holder.className = "lp-navlinks-fallback";
+      shell.appendChild(holder);
+    }
+    return holder;
+  }
+
   function addAccountLink(menuBody) {
-    var navLinks = document.querySelector(".nav-links");
+    var navLinks = navLinksHost();
     if (navLinks && !navLinks.querySelector(".lp-acct")) {
       var a = document.createElement("a");
       a.className = "lp-acct";
@@ -104,7 +141,7 @@
       if (localStorage.getItem("lp_auth") !== "1") return;
     } catch (e) { return; }
 
-    var navLinks = document.querySelector(".nav-links");
+    var navLinks = navLinksHost();
     var deskBtn = null;
     if (navLinks && !navLinks.querySelector(".lp-signout")) {
       deskBtn = document.createElement("button");
