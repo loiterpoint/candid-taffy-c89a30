@@ -64,6 +64,11 @@ button.primary:disabled { opacity: 0.55; cursor: default; }
 .msg.err { background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.35); color: #ffb694; }
 .msg.ok { background: rgba(232,255,71,0.08); border: 1px solid rgba(232,255,71,0.3); color: var(--accent); }
 
+#loggedOut { display: none; }
+#authLoading { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 3rem 0; color: var(--muted); font-size: 0.875rem; }
+#authLoading .spin { width: 15px; height: 15px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: lpspin 0.7s linear infinite; }
+@keyframes lpspin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { #authLoading .spin { animation-duration: 2.4s; } }
 .signed-in { display: none; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.5rem; }
 .signed-in.show { display: block; }
 .signed-in h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
@@ -96,6 +101,8 @@ footer p { font-size: 0.75rem; color: var(--muted); }
 
 <div class="wrap">
   <div class="eyebrow">// Account</div>
+
+  <div id="authLoading"><span class="spin" aria-hidden="true"></span><span role="status">Checking your session…</span></div>
 
   <div id="loggedOut">
     <h1 id="headline">Welcome back.</h1>
@@ -249,6 +256,26 @@ $("signoutBtn").addEventListener("click", () => signOut(auth));
 
 /* Fires on load and on every sign-in / sign-out. Firebase persists the session
    in the browser, so a returning user lands here already signed in. */
+let authResolved = false;
+
+function showView(which) {
+  authResolved = true;
+  const loading = $("authLoading");
+  if (loading) loading.style.display = "none";
+  $("loggedOut").style.display = which === "out" ? "block" : "none";
+  $("loggedIn").classList.toggle("show", which === "in");
+}
+
+/* If Firebase never answers — offline, CDN blocked, adblocker — don't strand
+   the user on a spinner forever. Fall back to the sign-in form, which is the
+   safe default: worst case a signed-in user signs in again. */
+setTimeout(() => {
+  if (!authResolved) {
+    showView("out");
+    say("Couldn't reach the sign-in service. Check your connection.", "err");
+  }
+}, 8000);
+
 onAuthStateChanged(auth, (user) => {
   /* A plain localStorage flag so nav.js can tell whether to bother loading the
      Firebase SDK. We do NOT read Firebase's own persistence: it uses IndexedDB,
@@ -260,11 +287,9 @@ onAuthStateChanged(auth, (user) => {
 
   if (user) {
     $("whoami").textContent = user.email;
-    $("loggedOut").style.display = "none";
-    $("loggedIn").classList.add("show");
+    showView("in");
   } else {
-    $("loggedOut").style.display = "";
-    $("loggedIn").classList.remove("show");
+    showView("out");
     $("formSignin").reset();
     $("formSignup").reset();
   }
