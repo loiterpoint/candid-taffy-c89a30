@@ -332,12 +332,14 @@ def wrap_page(item: dict, body: str) -> str:
   {buy_block}
 </div>
 <footer>
-  <p>© 2024 Loiter Point — Independent coverage for serious pilots.</p>
+  <p>© 2026 Loiter Point — Consumer tech reviews built on real evidence.</p>
   <p style="max-width:560px;margin:0.5rem auto 0;opacity:0.6;line-height:1.6;">
-    Loiter Point participates in the Amazon Associates program. Affiliate commissions help fund our testing.
-    They never influence scores or editorial decisions. <a href="#">Affiliate disclosure →</a>
+    Loiter Point participates in the Amazon Associates program. We may earn a commission when you
+    click through and purchase — at no extra cost to you. Affiliate relationships never influence
+    our review scores or editorial decisions. <a href="/affiliate-disclosure.html">Affiliate disclosure →</a>
   </p>
 </footer>
+<script src="/nav.js" defer></script>
 </body>
 </html>"""
 

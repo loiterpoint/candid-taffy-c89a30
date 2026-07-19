@@ -30,6 +30,10 @@ ASINs (every buy link 404'd). Follow these rules exactly.
 - New articles: add the article file + one sitemap <url> entry + (optionally) one
   homepage card. Never rewrite the whole sitemap or homepage to do this.
 - Filenames: no year suffixes (best-webcams.html, not best-webcams-2024.html). It is 2026.
+- EVERY page must load `<script src="/nav.js" defer></script>` before `</body>`. nav.js
+  self-injects the nav bar, mobile menu, and Account/Sign out buttons — a page without it
+  ships with no navigation at all. If the page has no `<nav>`, nav.js builds a minimal one.
+  generate_content.py emits this line; hand-written pages must include it too.
 
 ## 3. Site conventions
 - Hosting: GitHub Pages from main (Netlify is paused — ignore netlify.toml).
