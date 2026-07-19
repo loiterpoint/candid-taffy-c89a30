@@ -9,13 +9,14 @@
 { ic: "🎧", label: "Headphones & Audio", href: "/audio/", ct: "8" },
 { ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "10" },
 { ic: "🍳", label: "Kitchen", href: "/kitchen/", ct: "3" },
-{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "2" },
+{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "3" },
 { ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "15" },
 { ic: "📶", label: "Networking", href: "/networking/", ct: "2" },
 { ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "6" },
 { ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "6" },
 { ic: "🔋", label: "Power & Charging", href: "/power/", ct: "4" },
 { ic: "📺", label: "TVs & Streaming", href: "/streaming/", ct: "4" },
+{ ic: "📸", label: "Cameras", href: "/cameras/", ct: "2" },
 { ic: "🔥", label: "Today's Deals", href: "/deals.html", ct: "↗" }
 ];
 
