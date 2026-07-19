@@ -27,7 +27,7 @@
   var TOPNAV = [
     { label: "Home", href: "/" },
     { label: "Deals", href: "/deals.html" },
-    { label: "Buyer Guides", href: "/#guides" },
+    { label: "Buyer Guides", href: "/guides/" },
     { label: "Compare", href: "/articles/mini-4-pro-vs-air-3.html" }
   ];
 
