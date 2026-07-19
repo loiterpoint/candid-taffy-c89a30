@@ -2,7 +2,8 @@
    Self-injecting: adds a hamburger + full-screen jump menu on phones (<=768px),
    and renders one canonical nav bar (see TOPNAV) on every page.
    Load once per page with:  <script src="/nav.js" defer></script>
-   Uses the site's existing CSS variables, so it inherits the dark/lime theme. */
+   Uses the site's existing CSS variables, so it inherits the dark/lime theme.
+   Build marker: nav-2026-07-19b (mobile menu = TOPNAV; hamburger has JS width fallback). */
 (function () {
   // Canonical desktop nav, rendered identically on every page. Before this,
   // the site had 25 different nav variants — category lists on 11 pages, bare
@@ -240,6 +241,15 @@
     burger.setAttribute("aria-expanded", "false");
     burger.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
     document.body.appendChild(burger);
+
+    // Belt-and-suspenders: also toggle the burger by viewport width in JS, so
+    // it still appears on narrow screens even if the CSS media query is
+    // overridden by page styles or a stale cached stylesheet.
+    function syncBurger() {
+      burger.style.display = (window.innerWidth <= 768) ? "flex" : "none";
+    }
+    syncBurger();
+    window.addEventListener("resize", syncBurger);
 
     // Mobile menu mirrors the desktop bar (TOPNAV) rather than listing every
     // category — the two navs were showing different things, which read as a
