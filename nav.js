@@ -59,6 +59,10 @@
     "#lpSynthNav .lp-right a.lp-top:hover{color:var(--text,#e2e2e8);}",
     "@media(max-width:900px){#lpSynthNav .lp-right a.lp-top{display:none;}}",
     "@media(max-width:768px){#lpSynthNav{padding:1rem 1.25rem;}}",
+    // On phones the fixed hamburger overlaps the top bar's right edge. The
+    // account/sign-out controls also live in the mobile overlay menu, so hide
+    // the desktop-bar copies here rather than let them collide with the burger.
+    "@media(max-width:768px){#lpSynthNav .lp-acct,#lpSynthNav .lp-signout{display:none;}}",
     "#lpMenu a.lp-row.lp-acct-row{background:rgba(232,255,71,0.07);margin:0 -16px;padding-left:16px;padding-right:16px;}",
     "#lpMenu a.lp-row.lp-acct-row .ic{color:var(--accent,#e8ff47);}",
     ".lp-signout{background:transparent;border:1px solid var(--border,#26262e);color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;padding:4px 11px;border-radius:5px;cursor:pointer;line-height:1.4;}",
