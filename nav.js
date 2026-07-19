@@ -5,18 +5,19 @@
    Uses the site's existing CSS variables, so it inherits the dark/lime theme. */
 (function () {
   var LINKS = [
-    { ic: "🚁", label: "Drones & Aerial", href: "/drones/", ct: "13" },
-    { ic: "🎧", label: "Headphones & Audio", href: "/audio/", ct: "8" },
-    { ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "10" },
-    { ic: "🍳", label: "Kitchen", href: "/kitchen/", ct: "3" },
-    { ic: "🚗", label: "Automotive", href: "/automotive/", ct: "3" },
-    { ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "15" },
-    { ic: "📶", label: "Networking", href: "/networking/", ct: "2" },
-    { ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "6" },
-    { ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "7" },
-    { ic: "🔋", label: "Power & Charging", href: "/power/", ct: "4" },
-    { ic: "🔥", label: "Today's Deals", href: "/deals.html", ct: "↗" }
-  ];
+{ ic: "🚁", label: "Drones & Aerial", href: "/drones/", ct: "13" },
+{ ic: "🎧", label: "Headphones & Audio", href: "/audio/", ct: "8" },
+{ ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "10" },
+{ ic: "🍳", label: "Kitchen", href: "/kitchen/", ct: "3" },
+{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "2" },
+{ ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "15" },
+{ ic: "📶", label: "Networking", href: "/networking/", ct: "2" },
+{ ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "6" },
+{ ic: "💡", label: "Smart Home", href: "/smart-home/", ct: "6" },
+{ ic: "🔋", label: "Power & Charging", href: "/power/", ct: "4" },
+{ ic: "📺", label: "TVs & Streaming", href: "/streaming/", ct: "4" },
+{ ic: "🔥", label: "Today's Deals", href: "/deals.html", ct: "↗" }
+];
 
   var css = [
     "#lpBurger{display:none;position:fixed;top:11px;right:14px;z-index:1000;width:40px;height:40px;align-items:center;justify-content:center;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-radius:8px;color:var(--text,#e2e2e8);cursor:pointer;padding:0;}",
