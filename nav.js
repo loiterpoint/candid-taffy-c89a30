@@ -9,8 +9,7 @@
 { ic: "🎧", label: "Headphones & Audio", href: "/audio/", ct: "8" },
 { ic: "🏠", label: "Home & Cleaning", href: "/home-tech/", ct: "10" },
 { ic: "🍳", label: "Kitchen", href: "/kitchen/", ct: "3" },
-{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "3" },
-{ ic: "📸", label: "Cameras", href: "/cameras/", ct: "2" },
+{ ic: "🚗", label: "Automotive", href: "/automotive/", ct: "2" },
 { ic: "⌨️", label: "Computing & Desk", href: "/computing/", ct: "15" },
 { ic: "📶", label: "Networking", href: "/networking/", ct: "2" },
 { ic: "📱", label: "Tablets & Wearables", href: "/mobile-tech/", ct: "6" },
@@ -97,6 +96,8 @@
   // The flag means "probably signed in", not proof; it can be stale if the
   // token was revoked. onAuthStateChanged below is the authority, and clears
   // the flag if it disagrees.
+  var menuBodyRef = null;
+
   function maybeAddSignOut(menuBody) {
     try {
       if (localStorage.getItem("lp_auth") !== "1") return;
@@ -129,14 +130,21 @@
     var V = "https://www.gstatic.com/firebasejs/12.16.0/";
     Promise.all([import(V + "firebase-app.js"), import(V + "firebase-auth.js")])
       .then(function (mods) {
-        var app = mods[0].initializeApp({
-          apiKey: "AIzaSyBK0BtlKD1ye06vqlZQbLC_oLepD_z9hS4",
-          authDomain: "loiterpoint.firebaseapp.com",
-          projectId: "loiterpoint",
-          storageBucket: "loiterpoint.firebasestorage.app",
-          messagingSenderId: "720833786375",
-          appId: "1:720833786375:web:5a064020a9ccef596ab0a2"
-        });
+        // account.html already creates the default app. Calling initializeApp
+        // again there throws "duplicate-app" unless the options match exactly,
+        // so reuse whatever exists and only create one if there is none.
+        var appMod = mods[0];
+        var app = appMod.getApps().length
+          ? appMod.getApp()
+          : appMod.initializeApp({
+              apiKey: "AIzaSyBK0BtlKD1ye06vqlZQbLC_oLepD_z9hS4",
+              authDomain: "loiterpoint.firebaseapp.com",
+              projectId: "loiterpoint",
+              storageBucket: "loiterpoint.firebasestorage.app",
+              messagingSenderId: "720833786375",
+              appId: "1:720833786375:web:5a064020a9ccef596ab0a2",
+              measurementId: "G-4B11NT8CR4"
+            });
         var authMod = mods[1];
         var auth = authMod.getAuth(app);
 
@@ -220,7 +228,12 @@
     }
 
     retireEvidenceTag();
-    addAccountLink(menu.querySelector(".lp-body"));
+    menuBodyRef = menu.querySelector(".lp-body");
+    addAccountLink(menuBodyRef);
+
+    // account.html calls this after sign-in so the Sign out button appears
+    // straight away instead of only after the next page load.
+    window.lpAuthChanged = function () { maybeAddSignOut(menuBodyRef); };
   }
 
   if (document.readyState === "loading") {

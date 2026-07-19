@@ -285,6 +285,10 @@ onAuthStateChanged(auth, (user) => {
     else localStorage.removeItem("lp_auth");
   } catch (e) { /* private mode; nav just won't show Sign out */ }
 
+  /* nav.js builds the menu on DOMContentLoaded, before this fires. Tell it to
+     re-check so Sign out appears without needing a reload. */
+  if (typeof window.lpAuthChanged === "function") window.lpAuthChanged();
+
   if (user) {
     $("whoami").textContent = user.email;
     showView("in");
