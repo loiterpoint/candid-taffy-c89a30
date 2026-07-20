@@ -1,12 +1,28 @@
 #!/bin/sh
-# Regenerates sitemap.xml when the page set has changed, and stages it.
+# Blocks the commit when the site's integrity checks fail, so CI never has to.
 # Enable once per clone:  git config core.hooksPath .githooks
+#
+# Deliberately does NOT fix anything for you. A hook that silently rewrites
+# files during a commit makes the diff you reviewed not the diff you pushed.
 
-python3 generate_sitemap.py --check >/dev/null 2>&1
-if [ $? -eq 1 ]; then
-    echo "sitemap.xml is stale -- regenerating:"
-    python3 generate_sitemap.py || exit 1
-    git add sitemap.xml
-    echo "sitemap.xml regenerated and staged."
+fail=0
+
+if ! python3 generate_sitemap.py --check; then
+    echo
+    echo "sitemap.xml is stale. Run:  python3 generate_sitemap.py"
+    fail=1
 fi
+
+if ! python3 check_surfaced.py; then
+    echo
+    echo "Some articles are unreachable. Add the missing cards or site-map entries."
+    fail=1
+fi
+
+if [ "$fail" -ne 0 ]; then
+    echo
+    echo "Commit blocked. Bypass with --no-verify if you know what you are doing."
+    exit 1
+fi
+
 exit 0
