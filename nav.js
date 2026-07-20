@@ -60,29 +60,6 @@
     ".lp-signout:hover{color:var(--text,#e2e2e8);border-color:var(--muted,#7a7a8a);}",
     "#lpMenu .lp-signout-row{display:block;width:100%;text-align:center;background:transparent;border:1px solid var(--border,#26262e);border-radius:8px;color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:15px;font-weight:600;padding:13px;margin-top:10px;cursor:pointer;}",
     "#lpMenu .lp-signout-row:hover{color:var(--text,#e2e2e8);}"
-    "@media(max-width:768px){#lpBurger{display:flex;}}",
-    ".lp-acct{color:#0c0c0e;background:var(--accent,#e8ff47);font-size:0.8rem;font-weight:700;padding:5px 12px;border-radius:5px;line-height:1.4;}",
-    ".lp-acct:hover{opacity:0.88;}",
-    ".lp-navlinks-fallback{display:flex;align-items:center;gap:10px;}",
-    "#lpSynthNav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border,#26262e);position:sticky;top:0;background:rgba(12,12,14,0.97);z-index:100;font-family:'Inter',sans-serif;}",
-    "#lpSynthNav .lp-mark{display:flex;align-items:center;gap:0.6rem;font-size:1rem;font-weight:800;color:var(--text,#e2e2e8);text-decoration:none;letter-spacing:-0.02em;}",
-    "#lpSynthNav .lp-mark i{width:28px;height:28px;background:var(--accent,#e8ff47);color:#000;border-radius:6px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:0.9rem;}",
-    "#lpSynthNav .lp-mark b{color:var(--accent,#e8ff47);font-weight:800;}",
-    "#lpSynthNav .lp-right{display:flex;align-items:center;gap:1.6rem;}",
-    "#lpSynthNav .lp-right a.lp-top{color:var(--muted,#7a7a8a);font-size:0.875rem;font-weight:500;text-decoration:none;transition:color .15s;}",
-    "#lpSynthNav .lp-right a.lp-top:hover{color:var(--text,#e2e2e8);}",
-    "@media(max-width:900px){#lpSynthNav .lp-right a.lp-top{display:none;}}",
-    "@media(max-width:768px){#lpSynthNav{padding:1rem 1.25rem;}}",
-    // On phones the fixed hamburger overlaps the top bar's right edge. The
-    // account/sign-out controls also live in the mobile overlay menu, so hide
-    // the desktop-bar copies here rather than let them collide with the burger.
-    "@media(max-width:768px){#lpSynthNav .lp-acct,#lpSynthNav .lp-signout{display:none;}}",
-    "#lpMenu a.lp-row.lp-acct-row{background:rgba(232,255,71,0.07);margin:0 -16px;padding-left:16px;padding-right:16px;}",
-    "#lpMenu a.lp-row.lp-acct-row .ic{color:var(--accent,#e8ff47);}",
-    ".lp-signout{background:transparent;border:1px solid var(--border,#26262e);color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;padding:4px 11px;border-radius:5px;cursor:pointer;line-height:1.4;}",
-    ".lp-signout:hover{color:var(--text,#e2e2e8);border-color:var(--muted,#7a7a8a);}",
-    "#lpMenu .lp-signout-row{display:block;width:100%;text-align:center;background:transparent;border:1px solid var(--border,#26262e);border-radius:8px;color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:15px;font-weight:600;padding:13px;margin-top:10px;cursor:pointer;}",
-    "#lpMenu .lp-signout-row:hover{color:var(--text,#e2e2e8);}"
   ].join("");
 
   // Removes the hardcoded "Evidence-first" nav tag wherever it appears.
@@ -149,8 +126,11 @@
       var row = document.createElement("a");
       row.className = "lp-row lp-acct-row";
       row.href = "/account.html";
-      row.innerHTML = '<span class="ic">\uD83D\uDC64</span>Account<span class="ct">\u2197</span>';
-      menuBody.insertBefore(row, menuBody.firstChild);
+      row.textContent = "Account";
+      // Place Account after the nav rows (before the site-map CTA), matching
+      // the desktop bar where Account sits at the end.
+      var acctCta = menuBody.querySelector(".lp-cta");
+      menuBody.insertBefore(row, acctCta || menuBody.firstChild);
     }
 
     maybeAddSignOut(menuBody);
