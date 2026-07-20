@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rated vs. Real: Where Spec Sheets Break — Loiter Point</title>
+<meta name="description" content="Manufacturer claims measured against independent testing. Battery life, solar output, runtime and weight — what the box says versus what testing found. Every figure sourced." />
+<link rel="canonical" href="https://loiterpoint.com/rated-vs-real.html"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:title" content="Rated vs. Real: Where Spec Sheets Break"/>
+<meta property="og:description" content="Manufacturer claims measured against independent testing. Every figure sourced to a full review."/>
+<meta property="og:url" content="https://loiterpoint.com/rated-vs-real.html"/>
+<meta property="og:type" content="article"/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--bg:#0c0c0e; --surface:#141418; --surface2:#1c1c22; --accent:#e8ff47; --accent2:#ff6b35;
+--text:#e2e2e8; --muted:#7a7a8a; --border:#26262e; --radius:10px; --mono:'IBM Plex Mono',monospace;
+--bad:#ff7070; --good:#86efac;
+}
+body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+a { color:inherit; text-decoration:none; }
+
+nav { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; border-bottom:1px solid var(--border); position:sticky; top:0; background:rgba(12,12,14,0.97); backdrop-filter:blur(12px); z-index:100; }
+.nav-logo { display:flex; align-items:center; gap:0.6rem; font-size:1rem; font-weight:800; letter-spacing:-0.02em; }
+.nav-logo .icon { width:28px; height:28px; background:var(--accent); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; color:#000; }
+.nav-logo .dot { color:var(--accent); }
+.nav-links { display:flex; gap:2rem; align-items:center; }
+.nav-links a { color:var(--muted); font-size:0.875rem; font-weight:500; }
+.nav-links a:hover { color:var(--text); }
+.nav-links a.current { color:var(--accent); }
+.nav-tag { font-family:var(--mono); font-size:0.7rem; background:var(--surface2); border:1px solid var(--border); padding:0.25rem 0.6rem; border-radius:4px; color:var(--accent); }
+
+.wrap { max-width:1000px; margin:0 auto; padding:3rem 2rem 4rem; }
+.eyebrow { font-family:var(--mono); font-size:0.7rem; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.9rem; }
+h1 { font-size:clamp(1.9rem,4.5vw,2.9rem); font-weight:800; letter-spacing:-0.03em; line-height:1.12; margin-bottom:1rem; }
+h1 em { font-style:normal; color:var(--accent); }
+.lede { color:var(--muted); font-size:1.05rem; max-width:680px; line-height:1.75; margin-bottom:1.6rem; }
+.lede strong { color:var(--text); }
+
+.stats { display:flex; gap:2rem; flex-wrap:wrap; padding:1.2rem 0 1.6rem; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:2.4rem; }
+.stat { display:flex; flex-direction:column; gap:0.15rem; }
+.stat b { font-family:var(--mono); font-size:1.5rem; font-weight:500; }
+.stat span { font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; }
+
+h2.sec { font-size:1.25rem; font-weight:700; letter-spacing:-0.02em; margin:2.4rem 0 0.4rem; display:flex; align-items:center; gap:0.6rem; }
+.sec-sub { color:var(--muted); font-size:0.9rem; margin-bottom:1.2rem; }
+
+table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+th { font-family:var(--mono); font-size:0.66rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); font-weight:500; text-align:left; padding:0.6rem 0.8rem; border-bottom:1px solid var(--border); }
+td { padding:0.85rem 0.8rem; border-bottom:1px solid var(--border); vertical-align:middle; }
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:var(--surface); }
+.prod { font-weight:600; }
+.prod a:hover { color:var(--accent); }
+.metric { font-size:0.78rem; color:var(--muted); margin-top:0.15rem; }
+.num { font-family:var(--mono); font-size:0.88rem; white-space:nowrap; }
+.claimed { color:var(--muted); }
+.measured { color:var(--text); font-weight:600; }
+.gap { font-family:var(--mono); font-size:0.82rem; font-weight:500; padding:0.18rem 0.55rem; border-radius:20px; white-space:nowrap; }
+.g-bad { background:rgba(255,112,112,0.12); color:var(--bad); border:1px solid rgba(255,112,112,0.3); }
+.g-good { background:rgba(134,239,172,0.12); color:var(--good); border:1px solid rgba(134,239,172,0.3); }
+.g-flat { background:var(--surface2); color:var(--muted); border:1px solid var(--border); }
+
+.note { background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:var(--radius); padding:1.2rem 1.4rem; margin:2.4rem 0 0; }
+.note-label { font-family:var(--mono); font-size:0.65rem; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem; }
+.note p { font-size:0.88rem; color:var(--muted); line-height:1.7; }
+.note p + p { margin-top:0.7rem; }
+.note strong { color:var(--text); }
+
+footer { border-top:1px solid var(--border); padding:2rem; margin-top:2.5rem; }
+.footer-bottom { max-width:1000px; margin:0 auto; display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.footer-bottom p { font-size:0.75rem; color:var(--muted); }
+.disclosure { font-size:0.72rem; color:var(--muted); opacity:0.6; max-width:520px; line-height:1.5; }
+
+@media (max-width:768px){
+nav{padding:0.85rem 1.1rem;} .nav-links{display:none;} .wrap{padding:2rem 1.1rem 3rem;}
+.hide-sm{display:none;} td,th{padding:0.7rem 0.5rem;} .stats{gap:1.25rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a class="nav-logo" href="/index.html">
+<div class="icon">&#8853;</div>
+<span>Loiter<span class="dot">Point</span></span>
+</a>
+<div class="nav-links">
+<a href="/index.html">Home</a>
+<a href="/guides/">Buyer Guides</a>
+<a href="/deals.html">Deals</a>
+<a href="/rated-vs-real.html" class="current">Rated vs. Real</a>
+<a href="/site-map.html">Site Map</a>
+</div>
+<span class="nav-tag">Evidence-first</span>
+</nav>
+
+<div class="wrap">
+<div class="eyebrow">// The spec sheet is a marketing document</div>
+<h1>Rated vs. Real:<br /><em>where the numbers break.</em></h1>
+<p class="lede">Manufacturers rate battery life, runtime and output under conditions you will never reproduce. We track every case where independent testing measured something different from the box. <strong>Some claims collapse. A few are genuinely conservative.</strong> Every figure below links to the full review it came from.</p>
+
+<div class="stats">
+<div class="stat"><b>16</b><span>Verified comparisons</span></div>
+<div class="stat"><b>12</b><span>Fell short</span></div>
+<div class="stat"><b>4</b><span>Beat the claim</span></div>
+<div class="stat"><b>&minus;60%</b><span>Worst gap</span></div>
+</div>
+
+<h2 class="sec">📉 Falls short of the claim</h2>
+<p class="sec-sub">Ranked by how far the measured figure lands below the rating.</p>
+<table>
+<thead><tr><th>Product</th><th>Claimed</th><th>Measured</th><th>Gap</th><th class="hide-sm">Source</th></tr></thead>
+<tbody>
+<tr><td class="prod">Goal Zero Nomad 20<div class="metric">Solar output</div></td><td class="num claimed">20 W</td><td class="num measured">8 W</td><td><span class="gap g-bad">&minus;60%</span></td><td class="hide-sm"><a href="/articles/best-solar-chargers.html">Solar chargers &rarr;</a></td></tr>
+<tr><td class="prod">Anker Solix PS30<div class="metric">Solar output</div></td><td class="num claimed">30 W</td><td class="num measured">14 W</td><td><span class="gap g-bad">&minus;53%</span></td><td class="hide-sm"><a href="/articles/best-solar-chargers.html">Solar chargers &rarr;</a></td></tr>
+<tr><td class="prod">Dyson V15 Detect<div class="metric">Runtime</div></td><td class="num claimed">60 min</td><td class="num measured">20&ndash;40 min</td><td><span class="gap g-bad">&minus;50%</span></td><td class="hide-sm"><a href="/articles/best-cordless-stick-vacuums.html">Stick vacuums &rarr;</a></td></tr>
+<tr><td class="prod">JBL Charge 6<div class="metric">Battery</div></td><td class="num claimed">24 h</td><td class="num measured">~13 h</td><td><span class="gap g-bad">&minus;46%</span></td><td class="hide-sm"><a href="/articles/best-bluetooth-speakers.html">Bluetooth speakers &rarr;</a></td></tr>
+<tr><td class="prod">Levoit LVAC-200<div class="metric">Runtime</div></td><td class="num claimed">50 min</td><td class="num measured">30 min</td><td><span class="gap g-bad">&minus;40%</span></td><td class="hide-sm"><a href="/articles/best-cordless-stick-vacuums.html">Stick vacuums &rarr;</a></td></tr>
+<tr><td class="prod">Bose SoundLink Flex (2nd&nbsp;Gen)<div class="metric">Battery</div></td><td class="num claimed">12 h</td><td class="num measured">~7&ndash;10 h</td><td><span class="gap g-bad">&minus;29%</span></td><td class="hide-sm"><a href="/articles/best-bluetooth-speakers.html">Bluetooth speakers &rarr;</a></td></tr>
+<tr><td class="prod">BigBlue 28W<div class="metric">Solar output</div></td><td class="num claimed">28 W</td><td class="num measured">20 W</td><td><span class="gap g-bad">&minus;29%</span></td><td class="hide-sm"><a href="/articles/best-solar-chargers.html">Solar chargers &rarr;</a></td></tr>
+<tr><td class="prod">JBL Flip 7<div class="metric">Battery</div></td><td class="num claimed">16 h</td><td class="num measured">~10&ndash;13 h</td><td><span class="gap g-bad">&minus;28%</span></td><td class="hide-sm"><a href="/articles/best-bluetooth-speakers.html">Bluetooth speakers &rarr;</a></td></tr>
+<tr><td class="prod">DJI Mini 5 Pro<div class="metric">Flight time</div></td><td class="num claimed">36 min</td><td class="num measured">27&ndash;33 min</td><td><span class="gap g-bad">&minus;17%</span></td><td class="hide-sm"><a href="/articles/dji-mini-5-pro-review.html">Mini 5 Pro review &rarr;</a></td></tr>
+<tr><td class="prod">FlexSolar 40W<div class="metric">Solar output</div></td><td class="num claimed">40 W</td><td class="num measured">35 W</td><td><span class="gap g-bad">&minus;13%</span></td><td class="hide-sm"><a href="/articles/best-solar-chargers.html">Solar chargers &rarr;</a></td></tr>
+<tr><td class="prod">Fitbit Charge 6<div class="metric">Battery &mdash; rating assumes always-on display off</div></td><td class="num claimed">5&ndash;7 days</td><td class="num measured">~3 days</td><td><span class="gap g-bad">setting-dependent</span></td><td class="hide-sm"><a href="/articles/best-fitness-trackers.html">Fitness trackers &rarr;</a></td></tr>
+<tr><td class="prod">DJI Mini 5 Pro<div class="metric">Weight &mdash; the 250 g regulatory line</div></td><td class="num claimed">249.9 g</td><td class="num measured">252&ndash;253 g</td><td><span class="gap g-bad">over the limit</span></td><td class="hide-sm"><a href="/articles/dji-mini-5-pro-review.html">Mini 5 Pro review &rarr;</a></td></tr>
+</tbody>
+</table>
+
+<h2 class="sec">📈 Beats the claim</h2>
+<p class="sec-sub">Credit where it is due &mdash; these were measured better than advertised.</p>
+<table>
+<thead><tr><th>Product</th><th>Claimed</th><th>Measured</th><th>Gap</th><th class="hide-sm">Source</th></tr></thead>
+<tbody>
+<tr><td class="prod">Anker Soundcore Motion 300<div class="metric">Battery</div></td><td class="num claimed">13 h</td><td class="num measured">~16 h</td><td><span class="gap g-good">+23%</span></td><td class="hide-sm"><a href="/articles/best-bluetooth-speakers.html">Bluetooth speakers &rarr;</a></td></tr>
+<tr><td class="prod">Anker Soundcore Q45<div class="metric">Battery, ANC on</div></td><td class="num claimed">official spec</td><td class="num measured">~56 h</td><td><span class="gap g-good">beats spec</span></td><td class="hide-sm"><a href="/articles/best-headphones-under-200.html">Headphones under $200 &rarr;</a></td></tr>
+<tr><td class="prod">Sony WH-CH720N<div class="metric">Battery, ANC on</div></td><td class="num claimed">official spec</td><td class="num measured">40+ h</td><td><span class="gap g-good">beats spec</span></td><td class="hide-sm"><a href="/articles/best-headphones-under-200.html">Headphones under $200 &rarr;</a></td></tr>
+<tr><td class="prod">Turtle Beach Stealth 600 Gen&nbsp;3<div class="metric">Battery</div></td><td class="num claimed">80 h</td><td class="num measured">83 h 42 m</td><td><span class="gap g-good">+5%</span></td><td class="hide-sm"><a href="/articles/best-gaming-headsets-under-100.html">Gaming headsets &rarr;</a></td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<div class="note-label">// How to read this</div>
+<p><strong>We don't run our own lab, and we say so.</strong> Every measured figure here is drawn from published independent testing or verified owner reports, and is cited in the full review linked on each row. Where a source reported a range, we show the range rather than the flattering end of it.</p>
+<p>A gap is not automatically a scandal. Battery ratings are measured at fixed volume or with features disabled, and solar output is rated at panel-face irradiance you will not see on a cloudy afternoon. <strong>The point isn't that manufacturers lie &mdash; it's that the rated number and the number you'll live with are different, and only one of them is printed on the box.</strong></p>
+<p>Found a figure we got wrong, or newer testing that supersedes ours? That's a correction we want &mdash; our scores move when the evidence does.</p>
+</div>
+</div>
+
+<footer>
+<div class="footer-bottom">
+<p>&copy; 2026 Loiter Point. All rights reserved.</p>
+<p class="disclosure">Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase &mdash; at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions.</p>
+</div>
+</footer>
+
+<script src="/nav.js" defer></script>
+</body>
+</html>
