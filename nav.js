@@ -4,7 +4,7 @@
    canonical footer (see FOOTER) at the bottom of every page.
    Load once per page with:  <script src="/nav.js" defer></script>
    Uses the site's existing CSS variables, so it inherits the dark/lime theme.
-   Build marker: nav-2026-07-20a (TOPNAV bar + FOOTER; mobile menu = TOPNAV). */
+   Build marker: nav-2026-07-20b (TOPNAV bar + FOOTER + mobile back-to-top). */
 (function () {
   // Canonical desktop nav, rendered identically on every page. Before this,
   // the site had 25 different nav variants — category lists on 11 pages, bare
@@ -103,7 +103,16 @@
     "#lpFooter .lpf-bottom p{font-size:0.75rem;color:var(--muted,#7a7a8a);}",
     "#lpFooter .lpf-bottom .lpf-disc{opacity:0.7;max-width:520px;line-height:1.5;font-size:0.72rem;}",
     "@media(max-width:760px){#lpFooter .lpf-inner{grid-template-columns:1fr 1fr;justify-content:normal;column-gap:2rem;row-gap:1.75rem;}#lpFooter .lpf-brand{grid-column:1 / -1;max-width:none;}}",
-    "@media(max-width:460px){#lpFooter .lpf-inner{grid-template-columns:1fr;}}"
+    "@media(max-width:460px){#lpFooter .lpf-inner{grid-template-columns:1fr;}}",
+    // Back-to-top button (see build). Mobile-only: display:none on desktop where
+    // the sticky nav already covers this; on phones it fades in past ~600px of
+    // scroll. Bottom-right so it never collides with the top-right hamburger.
+    "#lpTop{position:fixed;bottom:18px;right:16px;z-index:999;width:46px;height:46px;border-radius:50%;background:var(--surface,#141418);border:1px solid var(--border,#26262e);color:var(--accent,#e8ff47);display:none;align-items:center;justify-content:center;cursor:pointer;padding:0;box-shadow:0 6px 18px rgba(0,0,0,0.45);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .22s ease,transform .22s ease,border-color .15s;-webkit-tap-highlight-color:transparent;}",
+    "#lpTop svg{width:20px;height:20px;}",
+    "#lpTop:hover{border-color:var(--accent,#e8ff47);}",
+    "#lpTop.lp-show{opacity:1;transform:translateY(0);pointer-events:auto;}",
+    "@media(max-width:768px){#lpTop{display:flex;}}",
+    "@media(prefers-reduced-motion:reduce){#lpTop{transition:none;}}"
   ].join("");
 
   // Removes the hardcoded "Evidence-first" nav tag wherever it appears.
@@ -374,6 +383,28 @@
 
     retireEvidenceTag();
     synthesizeFooter();
+
+    // Back-to-top: CSS keeps it display:none above 768px, so this only ever
+    // shows on mobile. Reveal it past ~600px of scroll; smooth-scroll on tap
+    // unless the visitor prefers reduced motion.
+    var toTop = document.createElement("button");
+    toTop.id = "lpTop";
+    toTop.type = "button";
+    toTop.setAttribute("aria-label", "Back to top");
+    toTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="6"/><polyline points="6 11 12 5 18 11"/></svg>';
+    document.body.appendChild(toTop);
+    var lpReduceMotion = false;
+    try { lpReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    function syncToTop() {
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      toTop.classList.toggle("lp-show", y > 600);
+    }
+    window.addEventListener("scroll", syncToTop, { passive: true });
+    syncToTop();
+    toTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: lpReduceMotion ? "auto" : "smooth" });
+    });
+
     menuBodyRef = menu.querySelector(".lp-body");
     addAccountLink(menuBodyRef);
 
