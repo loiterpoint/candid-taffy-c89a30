@@ -1,3 +1,8 @@
+/* Idempotency guard: some pages include nav.js twice, which previously
+   rendered two hamburgers/menus. Run the whole script only once. */
+if (!window.__lpNavInit) {
+  window.__lpNavInit = true;
+
 /* Loiter Point — global navigation + footer.
    Self-injecting: adds a hamburger + full-screen jump menu on phones (<=768px),
    renders one canonical nav bar (see TOPNAV) on every page, and renders one
@@ -419,3 +424,5 @@
     build();
   }
 })();
+
+}
