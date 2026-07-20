@@ -106,19 +106,6 @@ footer { border-top: 1px solid var(--border); padding: 2rem; margin-top: 3rem; }
 .specs { grid-template-columns: 1fr; }
 .pros-cons { grid-template-columns: 1fr; }
 }
-.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
-.pick-media:hover{border-color:var(--accent);}
-.pick-media img{width:100%;height:auto;display:block;}
-.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
-@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
-#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
-#lb.open{display:block;}
-#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
-.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
-.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
-.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
-.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
-
 </style>
 </head>
 <body>
@@ -170,7 +157,6 @@ footer { border-top: 1px solid var(--border); padding: 2rem; margin-top: 3rem; }
 
 <!-- Pick 1 -->
 <div class="pick">
-  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61-e+RtPL4L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61-e+RtPL4L._AC_SL500_.jpg" alt="Dyson Car+Boat Handheld Vacuum" loading="lazy"><span>Click to zoom</span></div>
 <div class="pick-head">
 <div>
 <span class="rank-badge">01 · Best Overall</span>
@@ -195,7 +181,6 @@ footer { border-top: 1px solid var(--border); padding: 2rem; margin-top: 3rem; }
 
 <!-- Pick 2 -->
 <div class="pick">
-  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/71kqnxG46zL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/71kqnxG46zL._AC_SL500_.jpg" alt="Shark UltraCyclone Pro Cordless Vacuum" loading="lazy"><span>Click to zoom</span></div>
 <div class="pick-head">
 <div>
 <span class="rank-badge">02 · Best Value Cordless</span>
@@ -220,7 +205,6 @@ footer { border-top: 1px solid var(--border); padding: 2rem; margin-top: 3rem; }
 
 <!-- Pick 3 -->
 <div class="pick">
-  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/71PvQGOa7qL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/71PvQGOa7qL._AC_SL500_.jpg" alt="BLACK+DECKER dustbuster FLEX" loading="lazy"><span>Click to zoom</span></div>
 <div class="pick-head">
 <div>
 <span class="rank-badge">03 · Best Reach</span>
@@ -245,7 +229,6 @@ footer { border-top: 1px solid var(--border); padding: 2rem; margin-top: 3rem; }
 
 <!-- Pick 4 -->
 <div class="pick">
-  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/81fjAbrqt5L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/81fjAbrqt5L._AC_SL500_.jpg" alt="THISWORX Car Vacuum Cleaner" loading="lazy"><span>Click to zoom</span></div>
 <div class="pick-head">
 <div>
 <span class="rank-badge">04 · Best Budget</span>
@@ -286,41 +269,47 @@ footer { border-top: 1px solid var(--border); padding: 2rem; margin-top: 3rem; }
 
 </article>
 
+
+<script src="/nav.js" defer></script>
 <footer>
 <div class="footer-inner">
-<div class="nav-logo">
+<div class="footer-brand">
+<div class="nav-logo" style="margin-bottom:0.5rem;">
 <div class="icon">⊕</div>
 <span>Loiter<span class="dot">Point</span></span>
 </div>
-<p class="disclosure">Loiter Point participates in the Amazon Associates program. We may earn a commission when you click through and purchase — at no extra cost to you. We do not run a testing lab; our rankings synthesize published independent testing and verified owner reports, and affiliate relationships never influence them.</p>
-<p class="copyright">© 2026 Loiter Point — Consumer tech reviews built on real evidence.</p>
+<p>Independent tech coverage written by people who actually use the gear. No sponsored reviews, no brand deals on our scores.</p>
+</div>
+<div class="footer-links">
+<h4>Top Picks</h4>
+<a href="/articles/best-headphones-under-200.html">Best Headphones Under $200</a>
+<a href="/articles/best-robot-vacuums-2024.html">Best Robot Vacuums</a>
+<a href="/articles/best-dash-cams-2024.html">Best Dash Cams</a>
+<a href="/articles/best-wireless-keyboards.html">Best Wireless Keyboards</a>
+<a href="/articles/best-gaming-headsets-under-100.html">Best Gaming Headsets Under $100</a>
+<a href="/articles/dji-mini-4-pro-review.html">DJI Mini 4 Pro Review</a>
+<a href="/articles/dji-air-3-review.html">DJI Air 3 Review</a>
+</div>
+<div class="footer-links">
+<h4>Buyer Guides</h4>
+<a href="/articles/best-drones-for-beginners.html">Best Drones for Beginners</a>
+<a href="/articles/best-drones-under-500.html">Best Drones Under $500</a>
+<a href="/articles/best-drones-real-estate.html">Drones for Real Estate</a>
+<a href="/articles/mini-4-pro-vs-air-3.html">Mini 4 Pro vs Air 3</a>
+<a href="/articles/faa-remote-id-guide.html">FAA Remote ID Guide</a>
+</div>
+<div class="footer-links">
+<h4>Site</h4>
+<a href="about.html">About</a>
+<a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Loiter Point. All rights reserved.</p>
+<p class="disclosure">Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase — at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions.</p>
 </div>
 </footer>
-
-<script src="/nav.js" defer></script>
-<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
-<script>
-(function(){
-var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
-function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
-function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
-im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
-function close(){lb.classList.remove('open');document.body.style.overflow='';}
-document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
-function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
-lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
-im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
-im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
-im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
-im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
-lb.addEventListener('click',function(e){if(e.target===lb)close();});
-document.getElementById('lbclose').onclick=close;
-document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
-document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
-addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-})();
-</script>
-<script src="/nav.js" defer></script>
-
 </body>
 </html>
