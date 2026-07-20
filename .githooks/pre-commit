@@ -1,0 +1,12 @@
+#!/bin/sh
+# Regenerates sitemap.xml when the page set has changed, and stages it.
+# Enable once per clone:  git config core.hooksPath .githooks
+
+python3 generate_sitemap.py --check >/dev/null 2>&1
+if [ $? -eq 1 ]; then
+    echo "sitemap.xml is stale -- regenerating:"
+    python3 generate_sitemap.py || exit 1
+    git add sitemap.xml
+    echo "sitemap.xml regenerated and staged."
+fi
+exit 0
