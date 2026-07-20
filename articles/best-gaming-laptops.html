@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Best Gaming Laptops in 2026 — RTX 50-Series Picks Across Every Budget | Loiter Point</title>
+<meta name="description" content="Five RTX 50-series gaming laptops worth buying in 2026, ranked by evidence from independent benchmarks and owner reports. Why TGP matters more than the GPU name." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0c0c0e;
+    --surface: #141418;
+    --surface2: #1c1c22;
+    --accent: #e8ff47;
+    --text: #e2e2e8;
+    --muted: #7a7a8a;
+    --border: #26262e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    margin-bottom: 40px;
+  }
+
+  nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+  }
+
+  nav a:hover { color: var(--accent); }
+
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .byline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 34px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    letter-spacing: -0.02em;
+    margin: 54px 0 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin: 30px 0 12px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  p { margin-bottom: 18px; }
+
+  a { color: var(--accent); }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+  }
+
+  .tldr h2 {
+    margin: 0 0 16px;
+    font-size: 1.15rem;
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .tldr ul { margin: 0 0 20px; padding-left: 20px; }
+  .tldr li { margin-bottom: 11px; }
+
+  .grab {
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    font-size: 15.5px;
+  }
+
+  .grab strong {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .grab-item {
+    display: block;
+    padding: 7px 0;
+    border-bottom: 1px dashed var(--border);
+    color: var(--muted);
+  }
+
+  .grab-item:last-child { border-bottom: none; }
+  .grab-item a { font-weight: 600; }
+  .grab-item .band {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .pricenote {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+    color: var(--muted);
+    margin-bottom: 30px;
+  }
+
+  .pricenote strong { color: var(--text); }
+
+  /* Pick cards */
+  .pick {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    margin: 30px 0;
+  }
+
+  .pick-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--accent);
+    color: #0c0c0e;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .rank {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 4px 9px;
+    border-radius: 3px;
+    letter-spacing: 0.08em;
+  }
+
+  .pick h3 { margin: 8px 0 4px; font-size: 1.45rem; }
+
+  .band-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+
+  .specs {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+
+  .spec-row {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    border-bottom: 1px solid var(--border);
+    font-size: 14.5px;
+  }
+
+  .spec-row:last-child { border-bottom: none; }
+
+  .spec-row dt {
+    background: var(--surface2);
+    padding: 10px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .spec-row dd { padding: 10px 14px; }
+
+  .est {
+    color: var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .buy {
+    display: inline-block;
+    background: var(--accent);
+    color: #0c0c0e;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 13px 26px;
+    border-radius: 5px;
+    margin-top: 8px;
+    transition: opacity 0.15s;
+  }
+
+  .buy:hover { opacity: 0.82; }
+
+  .verdict {
+    font-size: 15px;
+    color: var(--muted);
+    border-left: 2px solid var(--border);
+    padding-left: 16px;
+    margin: 20px 0;
+  }
+
+  .verdict strong { color: var(--text); }
+
+  /* Nerd box */
+  .nerd {
+    background: var(--surface2);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 28px;
+    margin: 44px 0;
+  }
+
+  .nerd .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .nerd h3 { margin-top: 0; }
+  .nerd p:last-child { margin-bottom: 0; }
+  .nerd code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+    background: var(--bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--accent);
+  }
+
+  /* Table */
+  .tablewrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 26px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 700px;
+  }
+
+  th {
+    background: var(--surface2);
+    text-align: left;
+    padding: 12px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: var(--surface); }
+
+  .method {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 26px 28px;
+    margin: 24px 0;
+  }
+
+  .method h2 { margin-top: 0; }
+  .method ul { padding-left: 20px; margin-bottom: 16px; }
+  .method li { margin-bottom: 9px; }
+  .method p:last-child { margin-bottom: 0; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+    padding-top: 28px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  footer p { margin-bottom: 14px; }
+
+  .copyright {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.4rem; }
+    .spec-row { grid-template-columns: 1fr; }
+    .spec-row dt { border-bottom: 1px solid var(--border); }
+    .pick, .nerd, .method, .tldr { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav><a href="../index.html">&larr; Loiter Point</a></nav>
+
+<div class="kicker">Buying Guide / Gaming Laptops</div>
+<h1>Best Gaming Laptops in 2026: Five RTX 50-Series Picks Worth Your Money</h1>
+<div class="byline">Updated July 2026 &nbsp;·&nbsp; Loiter Point does not operate a test lab. Every performance figure below is attributed to published independent measurement or verified owner reporting.</div>
+
+<div class="tldr">
+  <h2>The Short Version</h2>
+  <ul>
+    <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B0FN15LKGD?tag=loiterpoint20-20" rel="sponsored nofollow">Acer Predator Helios Neo 16 AI</a> — an RTX 5070 Ti in a thick chassis that can actually feed it power. The best 1440p frames-per-dollar on this list.</li>
+    <li><strong>Best budget:</strong> the <a href="https://www.amazon.com/dp/B0DZFVBQLK?tag=loiterpoint20-20" rel="sponsored nofollow">MSI Katana 15 HX</a> gets you into RTX 50-series 1440p gaming for the least money — but its 8GB frame buffer is the compromise, and its street price is all over the map.</li>
+    <li><strong>Best high-end:</strong> the <a href="https://www.amazon.com/dp/B0FKKBL4LH?tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Legion Pro 7i Gen 10</a> pairs an RTX 5080 with the strongest cooling in its class, which is the entire reason to buy an RTX 5080 laptop rather than a cheaper one.</li>
+    <li><strong>The thing nobody puts on the spec sheet:</strong> TGP. Two laptops with the same GPU name can differ by 15–20% in real frame rates. Read the nerd-box below before you spend anything.</li>
+  </ul>
+  <div class="grab">
+    <strong>Grab your pick:</strong>
+    <span class="grab-item"><a href="https://www.amazon.com/dp/B0FN15LKGD?tag=loiterpoint20-20" rel="sponsored nofollow">Acer Predator Helios Neo 16 AI</a> <span class="band">— best overall · ~$1,600–2,100 depending on config</span></span>
+    <span class="grab-item"><a href="https://www.amazon.com/dp/B0DZFVBQLK?tag=loiterpoint20-20" rel="sponsored nofollow">MSI Katana 15 HX</a> <span class="band">— best budget · ~$1,050–2,200 (unusually wide spread; see below)</span></span>
+    <span class="grab-item"><a href="https://www.amazon.com/dp/B0FC4T1R3K?tag=loiterpoint20-20" rel="sponsored nofollow">ASUS ROG Zephyrus G14</a> <span class="band">— best portable · ~$1,900–2,400 depending on config</span></span>
+    <span class="grab-item"><a href="https://www.amazon.com/dp/B0FKKBL4LH?tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Legion Pro 7i Gen 10</a> <span class="band">— best high-end · ~$2,500–3,200 depending on config</span></span>
+    <span class="grab-item"><a href="https://www.amazon.com/dp/B0FQ5NZK7N?tag=loiterpoint20-20" rel="sponsored nofollow">Acer Predator Helios Neo 16S AI</a> <span class="band">— best display · ~$1,700–2,200 depending on config</span></span>
+  </div>
+</div>
+
+<div class="pricenote">
+  <strong>About the prices.</strong> We could not verify live Amazon pricing at the time of writing, and gaming-laptop pricing swings harder than almost any other category — configuration changes, retailer-exclusive SKUs, and sale events routinely move the same model by several hundred dollars. Every figure here is an approximate street-price band, not a quote. <strong>Check the live listing and confirm the exact SKU before buying.</strong> Where our sources disagreed on price, we say so instead of splitting the difference.
+</div>
+
+<div class="method">
+<h2>How We Evaluate Gaming Laptops</h2>
+<p>Loiter Point does not run a hardware lab, and we are not going to pretend otherwise. What we do instead is synthesize evidence that already exists and is verifiable:</p>
+<ul>
+  <li><strong>Published independent measurements.</strong> We lean on outlets that publish repeatable methodology and full test conditions — Notebookcheck for GPU-level positioning and sustained-load behavior, Tom's Hardware and TechRadar for review-unit results, GamesRadar+ for gameplay-oriented impressions. When two of them disagree, we tell you rather than picking the flattering number.</li>
+  <li><strong>Verified owner reports.</strong> Battery life, coil whine, fan noise under load, and thermal throttling after a few months of dust are things review units rarely capture. We weigh patterns that show up repeatedly across owner reports, and we discount one-off complaints.</li>
+  <li><strong>Spec-sheet interrogation.</strong> Specifically, TGP and cooling capacity — the two numbers that most determine whether a given GPU performs like its name suggests. Manufacturers frequently omit TGP, which is itself a signal worth acting on.</li>
+</ul>
+<p>Rows in the spec tables below marked <span class="est">est. real-world</span> or <span class="est">reported</span> are derived from published third-party testing or aggregated owner reports — never from our own measurement, because we don't take any. Rated figures come from manufacturer or NVIDIA specifications. We keep those two categories visually separate on purpose.</p>
+</div>
+
+<h2>The Five Picks</h2>
+
+<!-- PICK 1 -->
+<div class="pick">
+  <div class="pick-head">
+    <span class="rank">01</span>
+    <span class="badge">Best Overall</span>
+  </div>
+  <h3>Acer Predator Helios Neo 16 AI (PHN16-73-92B8)</h3>
+  <div class="band-line">~$1,600–2,100 depending on config</div>
+  <p>This is the pick for most people buying a gaming laptop in 2026, and the reason is unglamorous: it is thick. The Helios Neo 16 pairs an RTX 5070 Ti with a chassis that has room for real heatsinks and real fans, which means the GPU spends more of its time near its rated power ceiling instead of thermally backing off. On a spec comparison it looks similar to thinner RTX 5070 Ti machines. In sustained gameplay it does not behave similarly, and that gap is the whole argument.</p>
+  <p>The Core Ultra 9 275HX is more CPU than most games need, but it matters for streaming, and it keeps the machine from being CPU-bound at 1440p in the handful of titles where that happens. The 16-inch WQXGA 240Hz panel with G-SYNC is the right resolution-refresh pairing for a 5070 Ti — high enough to look sharp, not so high that the GPU drowns.</p>
+  <div class="specs">
+    <dl>
+      <div class="spec-row"><dt>GPU</dt><dd>NVIDIA RTX 5070 Ti Laptop</dd></div>
+      <div class="spec-row"><dt>CPU</dt><dd>Intel Core Ultra 9 275HX</dd></div>
+      <div class="spec-row"><dt>Memory / Storage</dt><dd>16GB DDR5 / 1TB Gen4 NVMe SSD</dd></div>
+      <div class="spec-row"><dt>Display</dt><dd>16" WQXGA (2560×1600) 240Hz, G-SYNC</dd></div>
+      <div class="spec-row"><dt>Sustained clocks <span class="est">reported</span></dt><dd>Strong — the thick chassis and high TGP configuration are consistently cited in independent reviews as the reason this line holds clocks better than slimmer rivals</dd></div>
+      <div class="spec-row"><dt>Best use case <span class="est">est. real-world</span></dt><dd>High-to-ultra 1440p with DLSS 4 enabled; ray tracing playable in most current titles</dd></div>
+    </dl>
+  </div>
+  <div class="verdict"><strong>Buy it if</strong> you want the most sustained 1440p performance per dollar and you do not need to carry it around every day. <strong>Skip it if</strong> portability or battery life is a real constraint — this is not a thin machine, and gaming laptops in this class are not all-day-battery devices.</div>
+  <a class="buy" href="https://www.amazon.com/dp/B0FN15LKGD?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- PICK 2 -->
+<div class="pick">
+  <div class="pick-head">
+    <span class="rank">02</span>
+    <span class="badge">Best Budget</span>
+  </div>
+  <h3>MSI Katana 15 HX</h3>
+  <div class="band-line">~$1,050–2,200 — an unusually wide spread, see note below</div>
+  <p>The Katana 15 HX is the cheapest credible way into RTX 50-series gaming, and it is a genuinely good deal at the bottom of its price range. You get an i9-14900HX, 32GB of DDR5, a 1TB NVMe drive, and a 15.6-inch QHD+ 165Hz panel — a configuration that would have been flagship money two generations ago.</p>
+  <p>The compromise is the frame buffer. The RTX 5070 Laptop ships with 8GB of GDDR7 on a 128-bit bus, and 8GB is the number that will age worst on this list. In 2026, texture settings at 1440p are already where 8GB cards start making you choose. DLSS 4 helps considerably — it renders at lower internal resolution, which reduces VRAM pressure as well as GPU load — but it is a mitigation, not a fix.</p>
+  <p><strong>On the price:</strong> reported street pricing for this model ranges from roughly $1,050 to $2,200 across retailers and configurations. That is not a normal spread, and it means the model name alone tells you almost nothing about what you are paying for. Confirm the exact SKU — GPU, RAM, storage, and panel — against the listing before you commit. At the low end of that band this is the best value on the page. At the high end it is not competitive with the Helios Neo 16.</p>
+  <div class="specs">
+    <dl>
+      <div class="spec-row"><dt>GPU</dt><dd>NVIDIA RTX 5070 Laptop, 8GB GDDR7</dd></div>
+      <div class="spec-row"><dt>CPU</dt><dd>Intel Core i9-14900HX</dd></div>
+      <div class="spec-row"><dt>Memory / Storage</dt><dd>32GB DDR5 / 1TB NVMe SSD</dd></div>
+      <div class="spec-row"><dt>Display</dt><dd>15.6" QHD+ (2560×1440) 165Hz</dd></div>
+      <div class="spec-row"><dt>GPU rated max TGP</dt><dd>Up to 115W, including up to 15W shifted from the CPU via Dynamic Boost 2.0 (per Notebookcheck)</dd></div>
+      <div class="spec-row"><dt>Class positioning <span class="est">reported</span></dt><dd>Notebookcheck places the RTX 5070 Laptop slightly above the old RTX 4070 Laptop and below the RTX 3080 Ti Laptop — with the caveat that results depend heavily on each laptop's cooling and TDP settings</dd></div>
+      <div class="spec-row"><dt>VRAM headroom <span class="est">est. real-world</span></dt><dd>8GB is the limiting factor at 1440p ultra in newer titles; expect to dial back textures or lean on DLSS 4</dd></div>
+    </dl>
+  </div>
+  <div class="verdict"><strong>Buy it if</strong> you find it near the bottom of its price band and you accept 8GB of VRAM as the trade. <strong>Skip it if</strong> you plan to keep this machine four-plus years at high texture settings — spend up for a 12GB or 16GB card instead.</div>
+  <a class="buy" href="https://www.amazon.com/dp/B0DZFVBQLK?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- NERD BOX -->
+<div class="nerd">
+  <div class="tag">Nerd Box</div>
+  <h3>The GPU name is not the product. TGP is.</h3>
+  <p>This is the single most useful thing on this page. When you buy a gaming laptop, the sticker says "RTX 5070" or "RTX 5080," and you reasonably assume that name describes performance. It does not. What actually determines frame rates is <code>TGP</code> — Total Graphics Power, the wattage the laptop's design permits the GPU to draw sustained.</p>
+  <p>NVIDIA publishes a range, not a fixed number. The RTX 5070 Laptop GPU (Blackwell GB206, 4,608 CUDA cores, roughly 1425–2347 MHz, 8GB GDDR7 on a 128-bit bus) has a maximum TGP of 115W, including up to 15W shifted over from the CPU via Dynamic Boost 2.0. The RTX 5080 Laptop runs 16GB of GDDR7 at up to 175W. Those are ceilings. Laptop makers pick where inside the range they land, based on how much heat the chassis can move.</p>
+  <p>The practical consequence: <strong>a thin RTX 5070 configured at ~80W will lose to a thick RTX 5070 at 115W in the same game on the same settings.</strong> Same name on the box, meaningfully different product. Reported figures across the class indicate roughly 15–20% higher 1440p ray-traced frame rates moving from a ~100W implementation to a ~140W-class one — a bigger delta than you get from most one-tier GPU upgrades.</p>
+  <p>Notebookcheck makes this point directly in its RTX 5070 Laptop positioning: performance is heavily dependent on the individual laptop's cooling and TDP settings, which is why they place the part in a range rather than at a fixed position. So before you buy: look up the specific SKU's TGP. Manufacturers frequently leave it off the spec sheet entirely — and when a maker hides the number, it is usually because the number is not flattering. If you cannot find it in the official documentation, check whether a review outlet has stated it for that exact model.</p>
+  <p>One more lever worth understanding: <strong>DLSS 4 with Multi Frame Generation</strong> is what makes 1440p and 4K playable on mid-tier cards, and it is the reason a 5070 Ti is a reasonable 1440p purchase in 2026. Be honest with yourself about what it does, though. Frame generation inserts synthesized frames between rendered ones; it raises the number on the counter and smooths perceived motion, but it adds latency and is not equivalent to native frames. In fast competitive shooters, plenty of players turn it off. Treat generated frames as a visual-smoothness feature, not as free performance.</p>
+</div>
+
+<!-- PICK 3 -->
+<div class="pick">
+  <div class="pick-head">
+    <span class="rank">03</span>
+    <span class="badge">Best Portable</span>
+  </div>
+  <h3>ASUS ROG Zephyrus G14</h3>
+  <div class="band-line">~$1,900–2,400 depending on config</div>
+  <p>The G14 is the machine you buy when the laptop has to actually be a laptop. At roughly 3.3–3.5 lb with a 14-inch 3K OLED panel, it is the only pick here you would carry daily without resenting it. The Ryzen AI 9 HX 370 is efficient enough that it behaves like a normal ultraportable when you are not gaming, which is more than can be said for the 16-inch machines on this list.</p>
+  <p>Now the honest part, and it follows directly from the nerd-box above: <strong>a 14-inch chassis cannot cool an RTX 5070 Ti the way a 16-inch chassis can.</strong> ASUS power-limits the GPU well below what the Helios Neo 16 or Legion Pro 7i can sustain. You are not getting 16-inch frame rates in a 14-inch body — you are trading sustained performance for portability and battery life. That is a legitimate trade and for a lot of buyers it is the right one. It is just not a free one, and reviewers who describe the G14 as a full-size gaming laptop that happens to be small are glossing over the physics.</p>
+  <p>On configurations: a 2026 Intel refresh with the Core Ultra 9 386H exists, and reported pricing for it lands around $3,199–3,599. At that money the value case falls apart. The AMD Ryzen AI 9 HX 370 model is the one to buy.</p>
+  <div class="specs">
+    <dl>
+      <div class="spec-row"><dt>GPU</dt><dd>NVIDIA RTX 5070 Ti Laptop, 12GB</dd></div>
+      <div class="spec-row"><dt>CPU</dt><dd>AMD Ryzen AI 9 HX 370</dd></div>
+      <div class="spec-row"><dt>Memory / Storage</dt><dd>32GB LPDDR5X / 1TB SSD</dd></div>
+      <div class="spec-row"><dt>Display</dt><dd>14" 3K OLED, 120Hz</dd></div>
+      <div class="spec-row"><dt>Weight</dt><dd>~3.3–3.5 lb</dd></div>
+      <div class="spec-row"><dt>Sustained GPU power <span class="est">est. real-world</span></dt><dd>Materially below the 16" machines on this list — the chassis is the constraint, not the silicon. Expect lower sustained frame rates than a same-GPU 16" laptop.</dd></div>
+      <div class="spec-row"><dt>Battery <span class="est">reported</span></dt><dd>Owner reports and reviews consistently rate the G14 as one of the better gaming laptops for unplugged use, helped by the efficient AMD chip and OLED panel — but gaming on battery still throttles hard, as it does on every gaming laptop</dd></div>
+    </dl>
+  </div>
+  <div class="verdict"><strong>Buy it if</strong> the laptop has to travel and you would rather have 85% of the frames in something you will actually bring with you. <strong>Skip it if</strong> it lives on a desk — you are paying a portability premium and taking a performance cut for nothing.</div>
+  <a class="buy" href="https://www.amazon.com/dp/B0FC4T1R3K?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- PICK 4 -->
+<div class="pick">
+  <div class="pick-head">
+    <span class="rank">04</span>
+    <span class="badge">Best High-End</span>
+  </div>
+  <h3>Lenovo Legion Pro 7i Gen 10</h3>
+  <div class="band-line">~$2,500–3,200 depending on config</div>
+  <p>If you are spending RTX 5080 money, the cooling system is what you are actually buying. The RTX 5080 Laptop GPU runs 16GB of GDDR7 at up to 175W, and that ceiling is only worth paying for if the laptop can hold it. The Legion Pro 7i Gen 10 has a reputation across independent reviews for class-leading thermals and high sustained TGP, which is precisely why it belongs at the top of this list rather than a thinner machine with the same GPU on the sticker.</p>
+  <p>The rest of the configuration is appropriately serious: a 24-core Core Ultra 9 275HX, 32GB of RAM, a Gen5 NVMe drive, and a 16-inch WQXGA OLED panel rated at 500 nits and 240Hz. That display is genuinely excellent, and it is the one meaningful point of overlap with our best-display pick below.</p>
+  <p><strong>On price:</strong> TechRadar reported a pre-Prime-Day discount bringing an RTX 5080 configuration to around $2,549 at one retailer. Treat that as a reported deal price at a moment in time, not a standing price. Machines in this class move on sale cycles, and if you are not in a hurry, waiting for one is the single highest-leverage thing you can do here.</p>
+  <div class="specs">
+    <dl>
+      <div class="spec-row"><dt>GPU</dt><dd>NVIDIA RTX 5080 Laptop, 16GB GDDR7</dd></div>
+      <div class="spec-row"><dt>GPU rated max TGP</dt><dd>Up to 175W</dd></div>
+      <div class="spec-row"><dt>CPU</dt><dd>Intel Core Ultra 9 275HX (24 cores)</dd></div>
+      <div class="spec-row"><dt>Memory / Storage</dt><dd>32GB / 1TB Gen5 NVMe SSD</dd></div>
+      <div class="spec-row"><dt>Display</dt><dd>16" WQXGA OLED, 500 nits, 240Hz</dd></div>
+      <div class="spec-row"><dt>Cooling <span class="est">reported</span></dt><dd>Independent reviews consistently cite this line for class-leading thermal headroom and high sustained TGP — the reason to pick it over a thinner RTX 5080 machine</dd></div>
+      <div class="spec-row"><dt>Deal pricing <span class="est">reported</span></dt><dd>TechRadar reported an RTX 5080 config near $2,549 during a pre-Prime-Day promotion at one retailer — a point-in-time deal, not a standing price</dd></div>
+    </dl>
+  </div>
+  <div class="verdict"><strong>Buy it if</strong> you want 1440p ultra with ray tracing on and headroom for 4K on an external display. <strong>Skip it if</strong> your budget only reaches an RTX 5080 in a thin chassis — a well-cooled RTX 5070 Ti is the better buy than a suffocated 5080.</div>
+  <a class="buy" href="https://www.amazon.com/dp/B0FKKBL4LH?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- PICK 5 -->
+<div class="pick">
+  <div class="pick-head">
+    <span class="rank">05</span>
+    <span class="badge">Best Display</span>
+  </div>
+  <h3>Acer Predator Helios Neo 16S AI</h3>
+  <div class="band-line">~$1,700–2,200 depending on config</div>
+  <p>The 16S is the thinner sibling of our best-overall pick, and the trade is exactly what you would predict: you gain a more portable 16-inch machine and a better panel, and you give up some thermal headroom. Same RTX 5070 Ti, same Core Ultra 9 275HX, 32GB of RAM — but a slimmer body means less room to move heat, which per the nerd-box means you should expect somewhat lower sustained clocks than the standard Neo 16 under a long gaming session.</p>
+  <p>What you get for it is the best screen on this list: a 16-inch 2560×1600 OLED at 240Hz covering 100% of DCI-P3. OLED contrast in a dark game is not a spec-sheet nicety — it is the most visible upgrade most people will notice day to day, more than a 10% frame rate difference. If you also do color work, the DCI-P3 coverage makes this a dual-purpose machine in a way the Katana and the standard Neo 16 are not.</p>
+  <p>Evidence note: because the 16S is newer than the standard Neo 16, there is less independent long-run testing available on its sustained thermal behavior specifically. Our expectation of lower sustained clocks is inference from chassis thickness and the general pattern documented across the category, not a measured result for this exact model. If sustained performance is your top priority over display quality, buy the standard Neo 16 instead.</p>
+  <div class="specs">
+    <dl>
+      <div class="spec-row"><dt>GPU</dt><dd>NVIDIA RTX 5070 Ti Laptop</dd></div>
+      <div class="spec-row"><dt>CPU</dt><dd>Intel Core Ultra 9 275HX</dd></div>
+      <div class="spec-row"><dt>Memory / Storage</dt><dd>32GB / 1TB SSD</dd></div>
+      <div class="spec-row"><dt>Display</dt><dd>16" 2560×1600 OLED, 240Hz, 100% DCI-P3</dd></div>
+      <div class="spec-row"><dt>Sustained clocks <span class="est">est. real-world</span></dt><dd>Expected below the thicker Neo 16 — inference from chassis design and category-wide patterns; independent long-run data on this specific model is thin</dd></div>
+      <div class="spec-row"><dt>Color <span class="est">reported</span></dt><dd>100% DCI-P3 coverage per manufacturer specification — usable for color-critical work as well as gaming</dd></div>
+    </dl>
+  </div>
+  <div class="verdict"><strong>Buy it if</strong> image quality matters to you as much as frame rate, or you want one machine for gaming and creative work. <strong>Skip it if</strong> you are optimizing purely for sustained frames per dollar — the thicker Neo 16 wins that comparison.</div>
+  <a class="buy" href="https://www.amazon.com/dp/B0FQ5NZK7N?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<h2>All Five, Side by Side</h2>
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Role</th>
+      <th>GPU</th>
+      <th>CPU</th>
+      <th>Display</th>
+      <th>Price band</th>
+      <th>Buy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Acer Predator Helios Neo 16 AI</td>
+      <td>Best overall</td>
+      <td>RTX 5070 Ti</td>
+      <td>Core Ultra 9 275HX</td>
+      <td>16" WQXGA 240Hz G-SYNC</td>
+      <td>~$1,600–2,100</td>
+      <td><a href="https://www.amazon.com/dp/B0FN15LKGD?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon</a></td>
+    </tr>
+    <tr>
+      <td>MSI Katana 15 HX</td>
+      <td>Best budget</td>
+      <td>RTX 5070 (8GB)</td>
+      <td>Core i9-14900HX</td>
+      <td>15.6" QHD+ 165Hz</td>
+      <td>~$1,050–2,200</td>
+      <td><a href="https://www.amazon.com/dp/B0DZFVBQLK?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon</a></td>
+    </tr>
+    <tr>
+      <td>ASUS ROG Zephyrus G14</td>
+      <td>Best portable</td>
+      <td>RTX 5070 Ti (12GB)</td>
+      <td>Ryzen AI 9 HX 370</td>
+      <td>14" 3K OLED 120Hz</td>
+      <td>~$1,900–2,400</td>
+      <td><a href="https://www.amazon.com/dp/B0FC4T1R3K?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon</a></td>
+    </tr>
+    <tr>
+      <td>Lenovo Legion Pro 7i Gen 10</td>
+      <td>Best high-end</td>
+      <td>RTX 5080 (16GB)</td>
+      <td>Core Ultra 9 275HX, 24C</td>
+      <td>16" WQXGA OLED 240Hz</td>
+      <td>~$2,500–3,200</td>
+      <td><a href="https://www.amazon.com/dp/B0FKKBL4LH?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon</a></td>
+    </tr>
+    <tr>
+      <td>Acer Predator Helios Neo 16S AI</td>
+      <td>Best display</td>
+      <td>RTX 5070 Ti</td>
+      <td>Core Ultra 9 275HX</td>
+      <td>16" 2560×1600 OLED 240Hz</td>
+      <td>~$1,700–2,200</td>
+      <td><a href="https://www.amazon.com/dp/B0FQ5NZK7N?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p style="font-size:14px;color:var(--muted);">Price bands are approximate street-price ranges, not quotes. Gaming-laptop pricing moves substantially with configuration and sale events — confirm the live listing and exact SKU.</p>
+
+<h2>Bottom Line</h2>
+<p>If you take one thing from this page, make it the TGP argument. The gaming-laptop market is built on the assumption that buyers shop by GPU name, and that assumption is what lets a thin, power-starved RTX 5070 sit on a shelf next to a properly cooled one at a similar price. Look up the wattage for the exact SKU you are considering. If nobody will tell you the number, that is information too.</p>
+<p>For most buyers, the <a href="https://www.amazon.com/dp/B0FN15LKGD?tag=loiterpoint20-20" rel="sponsored nofollow">Acer Predator Helios Neo 16 AI</a> is the right answer — a well-fed RTX 5070 Ti at 1440p is the sweet spot of the current generation, and the thick chassis is a feature, not a compromise. If money is tight, the <a href="https://www.amazon.com/dp/B0DZFVBQLK?tag=loiterpoint20-20" rel="sponsored nofollow">MSI Katana 15 HX</a> is a real bargain near the bottom of its price band and a poor one near the top, so pay attention to which one you are being offered. If you need to carry it, the <a href="https://www.amazon.com/dp/B0FC4T1R3K?tag=loiterpoint20-20" rel="sponsored nofollow">ASUS ROG Zephyrus G14</a> makes an honest trade. If you want the ceiling, the <a href="https://www.amazon.com/dp/B0FKKBL4LH?tag=loiterpoint20-20" rel="sponsored nofollow">Lenovo Legion Pro 7i Gen 10</a> is the RTX 5080 machine with the cooling to justify the GPU. And if what you look at matters as much as how fast it moves, the <a href="https://www.amazon.com/dp/B0FQ5NZK7N?tag=loiterpoint20-20" rel="sponsored nofollow">Acer Predator Helios Neo 16S AI</a> has the best panel here.</p>
+<p>Where the evidence is thin, we have said so in the relevant sections rather than filling the gap with confident-sounding numbers. The 16S in particular is new enough that long-run independent thermal data is limited, and pricing across this entire category is volatile enough that any specific dollar figure would be stale before you read it.</p>
+
+<footer>
+  <p><strong>Affiliate disclosure:</strong> Loiter Point participates in the Amazon Associates program. Links to Amazon on this page are affiliate links, and we earn a commission on qualifying purchases at no additional cost to you. Commissions do not influence which products we recommend or how we rank them — our picks are driven by published independent measurement and verified owner reporting, and we recommend against products in this category regularly.</p>
+  <p><strong>Methodology note:</strong> Loiter Point does not operate a hardware test lab. We do not perform first-hand benchmarking. Every performance claim on this page is either a manufacturer or NVIDIA specification, an attributed finding from an independent outlet such as Notebookcheck, Tom's Hardware, TechRadar, or GamesRadar+, or a clearly labeled estimate derived from those sources and aggregated owner reports.</p>
+  <p class="copyright">© 2026 Loiter Point — Consumer tech reviews built on real evidence.</p>
+</footer>
+
+</div>
+</body>
+</html>
