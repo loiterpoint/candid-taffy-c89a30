@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dyson V15 Detect Review (2026): Is the Value Flagship Still Worth It? | Loiter Point</title>
+<meta name="description" content="An evidence-first Dyson V15 Detect review built on TechGearLab and Vacuum Wars independent test data. Suction, battery, filtration, price and whether it beats the Gen5detect." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e; --surface:#141418; --surface2:#1c1c22;
+    --accent:#e8ff47; --text:#e2e2e8; --muted:#7a7a8a; --border:#26262e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Inter',system-ui,sans-serif; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:820px; margin:0 auto; padding:0 20px;}
+  nav{border-bottom:1px solid var(--border); padding:18px 0; font-family:'IBM Plex Mono',monospace; font-size:14px;}
+  nav .wrap{display:flex; justify-content:space-between; align-items:center;}
+  nav .brand{color:var(--text); font-weight:600; letter-spacing:.02em;}
+  nav .brand span{color:var(--accent);}
+  header.post{padding:48px 0 8px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--accent); text-transform:uppercase; letter-spacing:.12em; margin-bottom:14px;}
+  h1{font-size:2.5rem; line-height:1.12; font-weight:800; letter-spacing:-.02em; margin-bottom:16px;}
+  .meta{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--muted); margin-bottom:8px;}
+  h2{font-size:1.6rem; font-weight:700; letter-spacing:-.01em; margin:44px 0 14px; padding-top:10px;}
+  h3{font-size:1.2rem; font-weight:600; margin:28px 0 10px;}
+  p{margin:0 0 16px;}
+  .tldr{
+    background:var(--surface); border:1px solid var(--border);
+    border-left:4px solid var(--accent); border-radius:12px;
+    padding:26px 28px; margin:28px 0 8px;
+  }
+  .tldr h2{margin:0 0 14px; font-size:1.35rem; padding:0;}
+  .tldr ul{list-style:none; margin:0 0 18px;}
+  .tldr li{position:relative; padding-left:26px; margin-bottom:12px;}
+  .tldr li::before{content:"\25B6"; color:var(--accent); position:absolute; left:0; top:1px; font-size:12px;}
+  .grab{
+    font-family:'IBM Plex Mono',monospace; font-size:14px;
+    background:var(--surface2); border:1px solid var(--border); border-radius:8px;
+    padding:14px 16px; margin-top:6px;
+  }
+  .grab strong{color:var(--accent);}
+  .btn{
+    display:inline-block; background:var(--accent); color:#0c0c0e !important;
+    font-weight:700; font-family:'IBM Plex Mono',monospace; font-size:15px;
+    padding:14px 26px; border-radius:8px; margin:8px 0; letter-spacing:.01em;
+  }
+  .btn:hover{text-decoration:none; filter:brightness(1.08);}
+  .verdict-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:26px 28px; margin:24px 0; display:flex; gap:24px; align-items:center; flex-wrap:wrap;
+  }
+  .badge{
+    background:var(--accent); color:#0c0c0e; font-family:'IBM Plex Mono',monospace;
+    font-weight:600; font-size:13px; padding:6px 12px; border-radius:6px; display:inline-block;
+    text-transform:uppercase; letter-spacing:.06em;
+  }
+  .score{font-size:2.6rem; font-weight:800; line-height:1; color:var(--accent);}
+  .score small{font-size:1rem; color:var(--muted); font-weight:500;}
+  .verdict-card .vtext{flex:1; min-width:240px;}
+  table{width:100%; border-collapse:collapse; margin:20px 0; font-size:14.5px;}
+  th,td{border:1px solid var(--border); padding:11px 13px; text-align:left; vertical-align:top;}
+  th{background:var(--surface2); font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.04em;}
+  td:first-child{color:var(--muted); font-family:'IBM Plex Mono',monospace; font-size:13.5px;}
+  .specs td:first-child{color:var(--text);}
+  .nerd{
+    background:var(--surface2); border:1px solid var(--border); border-radius:12px;
+    padding:22px 24px; margin:28px 0;
+  }
+  .nerd .tag{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--accent); text-transform:uppercase; letter-spacing:.12em; margin-bottom:10px;}
+  .nerd h3{margin-top:0;}
+  .proscons{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:24px 0;}
+  .proscons > div{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 22px;}
+  .proscons h3{margin-top:0;}
+  .proscons ul{list-style:none;}
+  .proscons li{padding-left:24px; position:relative; margin-bottom:10px; font-size:14.5px;}
+  .pros li::before{content:"+"; color:var(--accent); position:absolute; left:2px; font-weight:700;}
+  .cons li::before{content:"\2212"; color:#ff6b6b; position:absolute; left:2px; font-weight:700;}
+  .callout{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin:22px 0; font-size:14.5px; color:var(--muted);}
+  footer{border-top:1px solid var(--border); margin-top:56px; padding:32px 0 60px; color:var(--muted); font-size:13.5px;}
+  footer .disc{font-size:13px; margin-bottom:16px; line-height:1.6;}
+  @media(max-width:640px){
+    h1{font-size:2rem;}
+    .proscons{grid-template-columns:1fr;}
+    .verdict-card{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="../index.html">Loiter<span>.</span>Point</a>
+    <a href="../index.html">&larr; All reviews</a>
+  </div>
+</nav>
+
+<main class="wrap">
+<header class="post">
+  <div class="eyebrow">Cordless Vacuum Review</div>
+  <h1>Dyson V15 Detect Review: The Value Flagship That Refuses to Retire</h1>
+  <div class="meta">By Loiter Point Staff &middot; Updated July 2026</div>
+</header>
+
+<div class="tldr">
+  <h2>The Short Version</h2>
+  <ul>
+    <li>The <strong>Dyson V15 Detect</strong> is now Dyson's value/mid-flagship cordless. Launched March 2021, it is still an actively sold 2026 model, sitting below the newer Gen5detect, V16 and PencilVac. It remains the pick most buyers should look at first.</li>
+    <li>Independent labs love it. <strong>TechGearLab</strong> scored it 78/100 and named it "Editors' Choice &mdash; Best Premium Cleaner," ranking it #3 of 21 cordless vacuums. <strong>Vacuum Wars</strong> rated it 4.77/5 against a 2.53/5 category average and made it their 2025 Best Cordless Runner-Up.</li>
+    <li>Two honest caveats: on Max power the trigger must be held continuously (hand fatigue) and battery drops to roughly 9 minutes; and despite Dyson's "detangling" marketing, TechGearLab found long hair still wraps the main roller. The <a href="https://www.amazon.com/dp/B0CT97D9R2?tag=loiterpoint20-20" rel="sponsored nofollow">hair screw handheld tool</a> handles that better.</li>
+    <li>Expect to pay roughly <strong>$650&ndash;$750</strong> depending on retailer, bundle and sales. If you want more suction, battery and a bigger HEPA filter and can spend ~$1,050+, the Gen5detect is the step up.</li>
+  </ul>
+  <div class="grab">
+    <strong>Grab your pick:</strong> Dyson V15 Detect Plus (Yellow/Nickel) &mdash; <a href="https://www.amazon.com/dp/B0CT97D9R2?tag=loiterpoint20-20" rel="sponsored nofollow">check price on Amazon</a> (recently ~$649.99). Prefer the base config? <a href="https://www.amazon.com/dp/B0979R48CX?tag=loiterpoint20-20" rel="sponsored nofollow">Dyson V15 Detect (Multicolor)</a>.
+  </div>
+</div>
+
+<h2>How We Evaluate</h2>
+<p>Loiter Point does not run its own test lab. We do not vacuum sand into carpet swatches or wave a laser over hardwood in a garage. Instead, we synthesize <em>published, independent test data</em> from labs that buy their own units, plus verified owner and retailer reviews, and we tell you exactly where every number comes from. For this review the two primary sources are <strong>TechGearLab</strong> (which states it buys all products with no manufacturer freebies and updated its V15 Detect review on Nov 28, 2024) and <strong>Vacuum Wars</strong> (which independently buys and tests every unit, most recently updated April 29, 2026). Where those two disagree, we say so rather than quietly picking the friendlier figure. Manufacturer specifications are labeled as "Dyson states" and are never presented as independently confirmed.</p>
+
+<div class="verdict-card">
+  <div>
+    <div class="score">78<small>/100</small></div>
+    <div class="meta" style="margin-top:6px;">TechGearLab score</div>
+  </div>
+  <div class="vtext">
+    <span class="badge">Verdict: Best Value Flagship</span>
+    <p style="margin:12px 0 0;">A genuinely excellent cordless vacuum whose biggest weaknesses are ergonomic (trigger hold, Max-power battery) rather than about cleaning ability. If you are not chasing the absolute top of Dyson's lineup, this is the smart buy.</p>
+  </div>
+</div>
+
+<h2>Where the V15 Detect Sits in 2026</h2>
+<p>Dyson has expanded its cordless range considerably since the V15 Detect arrived in March 2021. The current flagship is the <strong>Gen5detect</strong> (from $1,049.99), which Dyson positions above the V15 with more suction, a longer-running battery, a larger 0.1-micron HEPA filter and a push-button power control instead of a squeeze trigger. Above that sit the newer V16 and PencilVac. Crucially, the V15 Detect was <em>not</em> discontinued when those launched. It slid down into the value/mid-flagship slot, which is exactly why it is interesting: you get most of the flagship cleaning story at a meaningfully lower price. For context, the entry-level Dyson V8 costs roughly half as much with less power, and is the budget alternative for anyone who does not need this much vacuum.</p>
+
+<h2>Cleaning Performance: What the Labs Actually Measured</h2>
+<p>This is where the V15 earns its reputation. TechGearLab's independent testing found <strong>99% pickup on hardwood</strong> (a 9.0/10 hardwood score) and strong carpet numbers: <strong>94% low-pile pickup and 49% high-pile pickup</strong>, both above the category averages of 82.5% and 42.1% respectively. On pet hair, TechGearLab measured <strong>88% pickup on low-pile and 60% on high-pile</strong>, again ahead of the 72.4% / 48.4% category averages.</p>
+<p>Vacuum Wars, using its own scoring, reached the same conclusion from a different angle: an overall 4.77/5 versus a 2.53/5 category average, with a <strong>perfect carpet deep-clean score in their embedded-sand test</strong>. Their component ratings were Performance 4.51 (vs 2.98 avg), Hard Floor 3.70 (vs 1.91 avg), Carpet 4.56 (vs 3.7 avg), Features 4.24 (vs 1.85 avg) and Battery 4.31 (vs 2.4 avg). Two independent buyers, two testing methods, one verdict: this vacuum cleans.</p>
+
+<h2>The Suction Numbers, Honestly Labeled</h2>
+<p>Dyson rates the V15 Detect at <strong>240 AW (air watts)</strong> of suction &mdash; that is a manufacturer specification, not an independently verified measurement. The figure a lab actually measured is different in both metric and meaning: TechGearLab measured <strong>2,239 pascals</strong> of suction, versus 2,388 Pa for the category-leading Gen5detect. In other words, the V15 sits just below the current flagship on raw measured suction, which tracks with the price gap between them. Do not conflate the two numbers &mdash; AW and Pa measure different things &mdash; and be skeptical of any spec sheet that only quotes the flattering one.</p>
+
+<div class="nerd">
+  <div class="tag">Nerd Box</div>
+  <h3>Air watts vs pascals, and why "230AW" figures float around</h3>
+  <p>You will see the V15's suction quoted as air watts (AW), pascals (Pa) or kilopascals (kPa) depending on the source, and they are not interchangeable. <strong>Air watts</strong> is Dyson's preferred spec &mdash; it combines airflow and vacuum pressure into a single "cleaning power" figure, and Dyson states <strong>240 AW</strong> for the V15 Detect. <strong>Pascals</strong> measures pressure alone; TechGearLab's bench measured <strong>2,239 Pa</strong>. Both are legitimate, but they answer different questions, so a bigger AW number does not linearly map to a bigger Pa number. We are deliberately ignoring the unsourced "17.6 kPa," "124-inch sealed suction" and "230AW" figures that circulate in AI-generated summaries because none of them trace back to a primary source we could verify. Trust the manufacturer's clearly-labeled 240 AW spec and TechGearLab's measured 2,239 Pa &mdash; nothing in between.</p>
+</div>
+
+<h2>Manufacturer-Rated vs Independently Measured</h2>
+<p>Here is the side-by-side that matters, because the manufacturer spec and the lab bench do not always agree &mdash; especially on battery life, weight and noise.</p>
+<table class="specs">
+  <thead><tr><th>Spec</th><th>Dyson states</th><th>Independently measured</th></tr></thead>
+  <tbody>
+    <tr><td>Suction</td><td>240 AW (air watts)</td><td>2,239 Pa (TechGearLab)</td></tr>
+    <tr><td>Battery, best case</td><td>Up to 60 min (varies 20&ndash;60 by mode)</td><td>64 min on Low (TechGearLab); 68 min manufacturer-spec cited by Vacuum Wars</td></tr>
+    <tr><td>Battery, Max/Boost</td><td>&mdash;</td><td>~9 min on Max (TechGearLab)</td></tr>
+    <tr><td>Charge time</td><td>&mdash;</td><td>3.8 hours (TechGearLab)</td></tr>
+    <tr><td>Handheld weight</td><td>&mdash;</td><td>4.5 lbs (TechGearLab) / ~4.56 lbs / 2069 g (Vacuum Wars)</td></tr>
+    <tr><td>Noise</td><td>&mdash;</td><td>79 dBA (TechGearLab) / 76 dB (Vacuum Wars)</td></tr>
+    <tr><td>Bin capacity</td><td>0.76&ndash;0.8 L; Vacuum Wars lists 880 mL</td><td>&mdash;</td></tr>
+    <tr><td>Filtration</td><td>HEPA sealed system (on Detect Plus / Absolute)</td><td>55 small-particle count on Dylos meter, in the 0&ndash;75 "Excellent" band (TechGearLab; note their tested unit was NOT the HEPA config)</td></tr>
+  </tbody>
+</table>
+<p>Note the honest discrepancies: TechGearLab measured 64 minutes on Low while Vacuum Wars cites Dyson's 68-minute spec; the two labs report 79 dBA vs 76 dB on noise and 4.5 vs 4.56 lbs on weight. These are small gaps, but we would rather show you both than pretend there is a single canonical number.</p>
+
+<div class="callout">
+  <strong>Filtration footnote worth reading:</strong> TechGearLab's "Excellent"-band filtration result (55 on the Dylos meter) came from a unit that was <em>not</em> the HEPA-filter configuration. Dyson states the sealed HEPA system ships on the Detect Plus and Detect Absolute variants. If whole-machine HEPA filtration matters to you (allergies, asthma), confirm the specific bundle you are buying includes it rather than assuming every "V15 Detect" box does.
+</div>
+
+<h2>The Two Real Weaknesses</h2>
+<p>No pretending here. First, the <strong>trigger must be held down continuously</strong> while cleaning. TechGearLab flagged this as a source of hand fatigue on long sessions, and it is one of the headline reasons Dyson moved the Gen5detect to a push-button. Related: at Max power the strong suction can make the head hard to push and turn on carpet, and battery collapses to roughly 9 minutes.</p>
+<p>Second, the <strong>anti-tangle marketing is overstated for the main floor head</strong>. Despite Dyson's "detangling" claims, TechGearLab found 7-inch test hair strands still wrapped around the roller, and called it out as marketing overstatement. Vacuum Wars agreed that the main floor head traps some hair &mdash; but praised the <a href="https://www.amazon.com/dp/B0CT97D9R2?tag=loiterpoint20-20" rel="sponsored nofollow">hair screw handheld attachment</a> as excellent for tangle-prone long hair. So the capability exists; it just lives on the right tool rather than the primary head.</p>
+
+<div class="nerd">
+  <div class="tag">Nerd Box</div>
+  <h3>The green laser is not a gimmick</h3>
+  <p>The V15's Fluffy Optic / Laser Slim Fluffy hardwood head projects a green laser across the floor at a low angle. Physically, low-angle raking light casts long shadows off fine dust that ambient room light hides, so particles you would normally miss become visible mid-clean. It is one of the few "feature" gimmicks that has a real optical basis, and it pairs with the piezo sensor that counts and sizes particles for the on-handle dust readout. The 9.0/10 hardwood score and 99% measured hardwood pickup suggest the whole system is doing real work, not just theater.</p>
+</div>
+
+<h2>V15 Detect vs Gen5detect vs V8</h2>
+<p>Only using the facts we can source &mdash; we have deliberately left cells blank rather than invent specs for the comparison models.</p>
+<table>
+  <thead><tr><th>&nbsp;</th><th>Dyson V15 Detect</th><th>Gen5detect (step up)</th><th>Dyson V8 (budget)</th></tr></thead>
+  <tbody>
+    <tr><td>Tier</td><td>Value / mid-flagship</td><td>Current flagship</td><td>Entry level</td></tr>
+    <tr><td>Price</td><td>~$650&ndash;$750</td><td>From $1,049.99</td><td>Roughly half the V15</td></tr>
+    <tr><td>Suction</td><td>240 AW stated / 2,239 Pa measured</td><td>More; 2,388 Pa measured (TechGearLab)</td><td>Less power</td></tr>
+    <tr><td>Battery</td><td>Up to 60 min stated</td><td>Longer battery</td><td>Shorter</td></tr>
+    <tr><td>Filtration</td><td>HEPA on Plus/Absolute configs</td><td>Larger 0.1-micron HEPA</td><td>&mdash;</td></tr>
+    <tr><td>Power control</td><td>Squeeze trigger (hold)</td><td>Push button</td><td>Trigger</td></tr>
+    <tr><td>Buy</td><td><a href="https://www.amazon.com/dp/B0CT97D9R2?tag=loiterpoint20-20" rel="sponsored nofollow">Amazon</a></td><td><a href="https://www.amazon.com/s?k=Dyson+Gen5detect&tag=loiterpoint20-20" rel="sponsored nofollow">Search Amazon</a></td><td>&mdash;</td></tr>
+  </tbody>
+</table>
+<p>The takeaway both labs endorse: the Gen5detect is the better machine on paper, but the V15 Detect is the better <em>value</em> for most buyers. Unless the extra battery, extra suction, larger HEPA filter or button control specifically solve a problem you have, the money is better kept.</p>
+
+<h2>Pricing: Expect Variance</h2>
+<p>Do not anchor to one number. TechGearLab lists the V15 Detect at <strong>$750</strong> (a figure still live on their Editors' Choice review as of our research). Vacuum Wars logged a <strong>$649.99</strong> "current price as of May 18, 2026" for the Detect Plus (Yellow/Nickel) at Amazon. Bundle matters a lot here: the base Detect, Detect Plus and Detect Absolute carry different tool kits and filter configs, and Dyson runs frequent sales. Frame your budget as roughly <strong>$650&ndash;$750</strong> and buy when a config with the tools you want dips toward the bottom of that band.</p>
+
+<div class="proscons">
+  <div class="pros"><h3>Pros</h3>
+    <ul>
+      <li>Elite measured cleaning: 99% hardwood, 94% low-pile carpet pickup (TechGearLab)</li>
+      <li>Top-tier scores from two independent buyers (78/100 TGL; 4.77/5 VW)</li>
+      <li>Measured suction (2,239 Pa) just behind the flagship Gen5detect</li>
+      <li>"Excellent"-band filtration; HEPA sealed system on Plus/Absolute</li>
+      <li>Excellent hair screw tool for long, tangle-prone hair</li>
+      <li>Real value versus the $1,050+ Gen5detect</li>
+    </ul>
+  </div>
+  <div class="cons"><h3>Cons</h3>
+    <ul>
+      <li>Trigger must be held continuously &mdash; hand fatigue on long cleans</li>
+      <li>Max power lasts only ~9 minutes and is hard to push on carpet</li>
+      <li>Main floor head still tangles long hair despite "detangling" claims</li>
+      <li>Expensive; ~3.8 hr charge time</li>
+      <li>The specific HEPA config is not on every "V15 Detect" box &mdash; check the bundle</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Bottom Line</h2>
+<p>The Dyson V15 Detect is the rare "old flagship" that is still one of the smartest cordless vacuums you can buy. Two independent labs that purchase their own units &mdash; TechGearLab and Vacuum Wars &mdash; both rank it near the very top of the category, and its measured cleaning performance on hardwood, carpet and pet hair beats category averages comfortably. Its flaws are real but narrow: the hold-down trigger and the ~9-minute Max-power window are ergonomic annoyances, and the main head's anti-tangle marketing oversells what the hair screw tool actually delivers. None of that undercuts how well it cleans. If you want the absolute best and can spend $1,050+, the Gen5detect is the upgrade; if you want most of that performance for $650&ndash;$750, this is the one to buy.</p>
+
+<a class="btn" href="https://www.amazon.com/dp/B0CT97D9R2?tag=loiterpoint20-20" rel="sponsored nofollow">Check the Dyson V15 Detect Plus on Amazon &rarr;</a>
+<p style="font-size:14px; color:var(--muted); margin-top:10px;">Prefer the base configuration? <a href="https://www.amazon.com/dp/B0979R48CX?tag=loiterpoint20-20" rel="sponsored nofollow">Dyson V15 Detect (Multicolor) on Amazon</a>.</p>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="disc"><strong>Affiliate disclosure:</strong> Loiter Point participates in the Amazon Associates Program (tag: loiterpoint20-20). When you buy through links on this page we may earn a commission at no additional cost to you. This never changes our verdicts &mdash; our recommendations are built on published independent test data and verified owner reviews, not on who pays us. We do not run our own test lab; performance figures are attributed to their original sources.</p>
+    <p>&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+  </div>
+</footer>
+</body>
+</html>
+</body>
+</html>
