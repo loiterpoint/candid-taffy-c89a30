@@ -52,6 +52,7 @@ CATEGORIES: dict[str, dict[str, str]] = {
     "power":       {"label": "Power & Charging",           "icon": "🔋", "meta": "Power & Charging"},
     "cameras":     {"label": "Cameras",                    "icon": "📸", "meta": "Cameras"},
     "networking":  {"label": "Networking",                 "icon": "📶", "meta": "Networking"},
+    "smartphones": {"label": "Smartphones",                "icon": "📲", "meta": "Smartphones"},
 }
 
 # ── Keyword guesser (fallback only). First matching (substring-in-slug) wins, so
@@ -72,7 +73,8 @@ KEYWORD_RULES: list[tuple[tuple[str, ...], str]] = [
     (("espresso", "coffee", "air-fryer", "sous-vide", "kitchen"), "kitchen"),
     (("headphone", "earbud", "open-ear", "noise-canceling", "soundbar",
       "bluetooth-speaker", "sony-wh"), "audio"),
-    (("smartphone", "tablet", "smartwatch", "fitness-tracker", "sleep-tracker",
+    (("smartphone", "iphone", "galaxy-s", "pixel-"), "smartphones"),
+    (("tablet", "smartwatch", "fitness-tracker", "sleep-tracker",
       "ereader", "e-reader", "bluetooth-tracker", "handheld-gaming", "vr-headset"), "mobile-tech"),
     (("drone", "dji", "fpv", "faa", "nd-filter", "mavic", "betafpv", "autel"), "drones"),
     (("laptop", "monitor", "keyboard", "mouse", "mice", "ssd", "usb-c-hub", "mini-pc",
