@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Best NAS for Home in 2026 — Backup, Photos and Plex | Loiter Point</title>
+<meta name="description" content="Five home NAS picks for 2026, from a 10GbE media-server box to a cheap turnkey backup drive. Evidence-first, no invented benchmarks, with the Synology drive-lock history you should know before buying." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px;}
+  nav{border-bottom:1px solid var(--border);margin-bottom:36px;}
+  nav .wrap{padding-top:18px;padding-bottom:18px;display:flex;align-items:center;gap:14px;}
+  nav a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--muted);
+    text-decoration:none;
+    letter-spacing:.04em;
+  }
+  nav a:hover{color:var(--accent);}
+  .brand{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;}
+  h1{
+    font-size:2.35rem;
+    line-height:1.15;
+    letter-spacing:-.02em;
+    margin:0 0 10px;
+    font-weight:700;
+  }
+  h2{
+    font-size:1.5rem;
+    letter-spacing:-.01em;
+    margin:52px 0 14px;
+    border-left:3px solid var(--accent);
+    padding-left:12px;
+  }
+  h3{font-size:1.18rem;margin:26px 0 8px;}
+  p{margin:0 0 16px;}
+  a{color:var(--accent);}
+  .byline{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    margin:0 0 28px;
+  }
+  .tldr{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-top:3px solid var(--accent);
+    border-radius:10px;
+    padding:22px 24px 8px;
+    margin:0 0 36px;
+  }
+  .tldr h2{
+    margin:0 0 12px;
+    border:0;
+    padding:0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .tldr ul{margin:0 0 14px;padding-left:20px;}
+  .tldr li{margin-bottom:9px;}
+  .grabline{
+    border-top:1px solid var(--border);
+    padding-top:14px;
+    margin:0 0 16px;
+    font-size:15.5px;
+    color:var(--muted);
+  }
+  .grabline strong{color:var(--text);}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px;
+    margin:26px 0;
+  }
+  .cardhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+  .rank{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:14px;
+    background:var(--accent);
+    color:#0c0c0e;
+    padding:3px 10px;
+    border-radius:5px;
+  }
+  .role{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .price{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14.5px;
+    color:var(--accent);
+    margin:2px 0 16px;
+  }
+  .price span{color:var(--muted);font-size:12.5px;}
+  .specs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    margin:0 0 18px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+  }
+  .specs div{background:var(--surface2);padding:8px 12px;}
+  .specs .k{color:var(--muted);}
+  .tag{
+    display:inline-block;
+    font-size:10.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:#0c0c0e;
+    background:var(--muted);
+    border-radius:3px;
+    padding:1px 5px;
+    margin-left:6px;
+    vertical-align:middle;
+  }
+  .pc{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 18px;}
+  .pc ul{margin:6px 0 0;padding-left:18px;font-size:15.5px;}
+  .pc li{margin-bottom:6px;}
+  .pc h4{
+    margin:0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#0c0c0e;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    padding:11px 20px;
+    border-radius:7px;
+    margin-top:4px;
+  }
+  .btn:hover{filter:brightness(1.08);}
+  .nerd{
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:22px 24px;
+    margin:34px 0;
+  }
+  .nerd h3{
+    margin:0 0 10px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .nerd p:last-child{margin-bottom:0;}
+  .tablewrap{overflow-x:auto;margin:20px 0;}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    min-width:680px;
+  }
+  th,td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  th{color:var(--accent);font-weight:600;letter-spacing:.05em;text-transform:uppercase;font-size:11.5px;}
+  tbody tr:nth-child(odd){background:var(--surface);}
+  footer{
+    border-top:1px solid var(--border);
+    margin-top:60px;
+    padding-top:24px;
+    color:var(--muted);
+    font-size:14px;
+  }
+  footer p{margin:0 0 12px;}
+  .copyright{font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+  @media(max-width:640px){
+    h1{font-size:1.85rem;}
+    .pc,.specs{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="../index.html">&larr; Loiter Point</a>
+    <span class="brand">Storage</span>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<h1>Best NAS for Home in 2026</h1>
+<p class="byline">Updated July 2026 &middot; Loiter Point Storage Desk</p>
+
+<div class="tldr">
+  <h2>The Short Version</h2>
+  <ul>
+    <li><strong>Best overall / best for Plex:</strong> the <a href="https://www.amazon.com/dp/B0D22JRHZB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">UGREEN NASync DXP4800 Plus</a> — a 4-bay box with a 5-core Pentium Gold, 8GB DDR5, two M.2 NVMe slots and a 10GbE port, which is genuinely rare at this money.</li>
+    <li><strong>Best software:</strong> the <a href="https://www.amazon.com/dp/B0C8S7SF4B?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Synology DS925+</a>. DSM is still the most polished NAS operating system on the market. Caveat: no HDMI, and the Ryzen V1500B has no iGPU, so no hardware transcoding.</li>
+    <li><strong>Best value:</strong> the <a href="https://www.amazon.com/dp/B0D22HBFK1?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">UGREEN NASync DXP2800</a> — N100, 8GB DDR5, 2.5GbE, dual M.2, aluminium chassis, usually under $320.</li>
+    <li><strong>Most horsepower per dollar:</strong> the <a href="https://www.amazon.com/dp/B0CPPD51B9?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">TerraMaster F4-424 Pro</a> (8-core i3-N305, 32GB DDR5) — if you can live with the least mature software of the three ecosystems.</li>
+  </ul>
+  <p class="grabline"><strong>Grab your pick:</strong>
+    <a href="https://www.amazon.com/dp/B0D22JRHZB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">UGREEN DXP4800 Plus — MSRP $699.99, often ~$630</a> &middot;
+    <a href="https://www.amazon.com/dp/B0C8S7SF4B?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Synology DS925+ — ~$589.99</a> &middot;
+    <a href="https://www.amazon.com/dp/B0D22HBFK1?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">UGREEN DXP2800 — ~$296.99&ndash;$314</a> &middot;
+    <a href="https://www.amazon.com/dp/B0C6927XPX?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Synology DS224+</a> &middot;
+    <a href="https://www.amazon.com/dp/B0CPPD51B9?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">TerraMaster F4-424 Pro — ~$699.99</a>.
+    All prices are street price at time of writing; NAS pricing swings hard with coupons and promos.
+  </p>
+</div>
+
+<p>A home NAS solves three problems at once: it gives every machine in the house a backup target, it gets your photo library off a cloud subscription and onto hardware you own, and it feeds Plex or Jellyfin without a laptop being left awake. The hard part of buying one in 2026 isn't finding capable hardware — it's that the four-figure decision is really about software, networking, and platform policy, none of which appear on the spec sheet in a useful way.</p>
+
+<p>This roundup picks five boxes across roughly $300 to $700, all sold diskless. Read the budget section at the bottom before you decide how much box you can afford, because drives usually cost as much as the NAS itself.</p>
+
+<h2>How We Evaluate Home NAS Boxes</h2>
+
+<p>Loiter Point does not run a lab, and we are not going to pretend otherwise. We do not own these units, we have not benchmarked them, and any number in this article that describes real-world behaviour is attributed to somebody who did the work.</p>
+
+<p>What we actually do: we synthesise published independent measurements and reviews, manufacturer specifications, and verified owner reports from support forums and retail feedback, then cross-check them against each other. Where those sources disagree — and on NAS transfer speeds they frequently do, because results depend heavily on the switch, the client NIC, and the drives fitted — we say so rather than picking the flattering number. Interface ceilings (1GbE, 2.5GbE, 10GbE) are quoted as theoretical maximums, not results. Spec rows marked "est. real-world" or "reported" are exactly that: estimates and third-party reports, never our measurements.</p>
+
+<p>We weight four things: the maturity of the software platform, because you live in it daily; networking headroom, because it is the most common bottleneck; transcoding capability, because it decides whether Plex works for remote users; and total cost including drives. We also weight vendor policy history, which is why the Synology section below is longer than the rest.</p>
+
+<h2>The Five Picks</h2>
+
+<div class="card">
+  <div class="cardhead"><span class="rank">#1</span><span class="role">Best Overall &middot; Best for Plex / Jellyfin</span></div>
+  <h3>UGREEN NASync DXP4800 Plus</h3>
+  <p class="price">MSRP $699.99 &middot; frequently around $630, seen near $657 <span>(street price at time of writing)</span></p>
+  <div class="specs">
+    <div class="k">Bays</div><div>4 &times; 3.5" SATA</div>
+    <div class="k">CPU</div><div>Intel Pentium Gold 8505, 5-core, with iGPU</div>
+    <div class="k">RAM</div><div>8GB DDR5, expandable</div>
+    <div class="k">Networking (rated)</div><div>1 &times; 10GbE + 1 &times; 2.5GbE</div>
+    <div class="k">10GbE ceiling <span class="tag">theoretical</span></div><div>~1.1 GB/s, chain permitting</div>
+    <div class="k">Spinning-disk array throughput <span class="tag">est. real-world</span></div><div>Typically saturates 2.5GbE, not 10GbE</div>
+    <div class="k">M.2 NVMe</div><div>2 slots</div>
+    <div class="k">Extras</div><div>128GB internal SSD, 4K HDMI out</div>
+  </div>
+  <div class="pc">
+    <div><h4>Pros</h4><ul>
+      <li>10GbE at this price is close to unheard of</li>
+      <li>Pentium Gold 8505 has an iGPU — hardware transcoding is on the table</li>
+      <li>Two NVMe slots plus a built-in 128GB SSD for the OS and apps</li>
+      <li>HDMI out means it can double as a local media player</li>
+    </ul></div>
+    <div><h4>Cons</h4><ul>
+      <li>UGOS Pro is a young OS; app ecosystem and long-term update record are thinner than DSM's</li>
+      <li>10GbE only pays for itself if your switch and client can match it</li>
+      <li>8GB is fine, but 4-bay users doing containers will want more</li>
+    </ul></div>
+  </div>
+  <p>This is the box we would point most people at. The hardware sheet reads like something a tier above the price: five cores with integrated graphics, DDR5, dual M.2, and a 10GbE port that competitors reserve for $900-plus models. For a household running Plex or Jellyfin with a couple of remote streams, the iGPU matters more than raw clock speed, and this has one.</p>
+  <p>The honest counterweight is software. UGREEN's UGOS Pro is newer and less mature than Synology DSM — fewer first-party apps, a shorter track record on security updates, and a smaller community when something breaks at 11pm. If you are comfortable with Docker and don't need hand-holding, that trade is worth taking for the hardware. If you want the appliance to be boring, look at #2.</p>
+  <p><a class="btn" href="https://www.amazon.com/dp/B0D22JRHZB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a></p>
+</div>
+
+<div class="card">
+  <div class="cardhead"><span class="rank">#2</span><span class="role">Best Software &middot; Best for Set-and-Forget</span></div>
+  <h3>Synology DS925+</h3>
+  <p class="price">Street around $589.99 &middot; 90-day average ~$639.67 &middot; hit $549.99 with a $90 coupon in Oct 2025 <span>(street price at time of writing)</span></p>
+  <div class="specs">
+    <div class="k">Bays</div><div>4 &times; 3.5" SATA, expandable to 9 with an expansion unit</div>
+    <div class="k">CPU</div><div>AMD Ryzen V1500B, quad-core &mdash; no iGPU</div>
+    <div class="k">RAM</div><div>4GB ECC DDR4, expandable to 32GB</div>
+    <div class="k">Networking (rated)</div><div>Dual 2.5GbE</div>
+    <div class="k">2.5GbE ceiling <span class="tag">theoretical</span></div><div>~280 MB/s per link</div>
+    <div class="k">Hardware transcoding</div><div>Not available (no iGPU); direct play / direct stream fine</div>
+    <div class="k">M.2 NVMe</div><div>2 slots (Synology-listed drives required for M.2 pools)</div>
+    <div class="k">Video out</div><div>None &mdash; no HDMI</div>
+  </div>
+  <div class="pc">
+    <div><h4>Pros</h4><ul>
+      <li>DSM is the most polished, best-documented NAS OS you can buy</li>
+      <li>ECC memory, expandable to 32GB</li>
+      <li>Expandable to nine bays — the longest runway here</li>
+      <li>Synology Photos and Hyper Backup are genuinely good first-party apps</li>
+    </ul></div>
+    <div><h4>Cons</h4><ul>
+      <li>No iGPU: hardware video transcoding is simply not available</li>
+      <li>No HDMI output</li>
+      <li>4GB base RAM is stingy at this price</li>
+      <li>Carries the 2025 drive-policy history — see the nerd box below</li>
+    </ul></div>
+  </div>
+  <p>Buy the DS925+ for DSM. Snapshot replication, Hyper Backup to a second target, Synology Photos with face and subject recognition, and an update cadence that has been dependable for a decade — that's the product, and the hardware is a delivery mechanism for it. ECC RAM and nine-bay expansion also make this the pick if you expect the library to keep growing.</p>
+  <p>Be clear-eyed about the media limitation. The Ryzen V1500B has no integrated GPU, so Plex cannot hardware-transcode on this box. If every client in your house direct-plays your files — which is typical for smart TVs and Apple TV with well-encoded libraries — you will never notice. If you routinely stream to phones on cellular, or you have a mixed bag of formats, pick #1 or #5 instead.</p>
+  <p><a class="btn" href="https://www.amazon.com/dp/B0C8S7SF4B?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a></p>
+</div>
+
+<div class="card">
+  <div class="cardhead"><span class="rank">#3</span><span class="role">Best Value</span></div>
+  <h3>UGREEN NASync DXP2800</h3>
+  <p class="price">List $349.99 &middot; seen at $296.99 on Amazon US, around $314 with promo <span>(street price at time of writing)</span></p>
+  <div class="specs">
+    <div class="k">Bays</div><div>2 &times; 3.5" SATA</div>
+    <div class="k">CPU</div><div>Intel N100, quad-core, with iGPU</div>
+    <div class="k">RAM</div><div>8GB DDR5</div>
+    <div class="k">Networking (rated)</div><div>2.5GbE</div>
+    <div class="k">2.5GbE ceiling <span class="tag">theoretical</span></div><div>~280 MB/s</div>
+    <div class="k">Two-drive array throughput <span class="tag">est. real-world</span></div><div>Spinning disks may not fully saturate 2.5GbE</div>
+    <div class="k">M.2 NVMe</div><div>2 slots</div>
+    <div class="k">Chassis</div><div>All-aluminium; 4K HDMI out</div>
+  </div>
+  <div class="pc">
+    <div><h4>Pros</h4><ul>
+      <li>8GB DDR5 and dual M.2 at under $320 is unusually generous</li>
+      <li>N100 has an iGPU — light transcoding is realistic</li>
+      <li>Android Central called it one of the best 2-bay NAS servers you can buy and rated its build quality best in category</li>
+      <li>HDMI out for local playback</li>
+    </ul></div>
+    <div><h4>Cons</h4><ul>
+      <li>Two bays means limited redundancy options and a hard capacity ceiling</li>
+      <li>Same UGOS Pro maturity caveat as the DXP4800 Plus</li>
+      <li>N100 will run out of headroom with several simultaneous transcodes</li>
+    </ul></div>
+  </div>
+  <p>If you want the most competent hardware per dollar and don't need four bays, this is it. The spec list — N100, 8GB of DDR5, 2.5GbE, two NVMe slots, machined aluminium — reads like a $450 box. Android Central singled out the build quality as the best in the two-bay category, which matters more than it sounds for something that sits in a living room and runs continuously.</p>
+  <p>The limitation is structural, not a flaw: two bays in a mirror gives you one drive of usable capacity and no room to grow without replacing both disks. If your photo and media library is already past a few terabytes, buy four bays now.</p>
+  <p><a class="btn" href="https://www.amazon.com/dp/B0D22HBFK1?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a></p>
+</div>
+
+<div class="card">
+  <div class="cardhead"><span class="rank">#4</span><span class="role">Simplest Turnkey Backup + Photo Box</span></div>
+  <h3>Synology DS224+</h3>
+  <p class="price">Street pricing varies; check current listing <span>(NAS prices move with coupons)</span></p>
+  <div class="specs">
+    <div class="k">Bays</div><div>2 &times; 3.5" SATA</div>
+    <div class="k">CPU</div><div>Intel Celeron J4125, quad-core, with iGPU</div>
+    <div class="k">RAM</div><div>2GB DDR4, expandable</div>
+    <div class="k">Networking (rated)</div><div>Dual 1GbE</div>
+    <div class="k">1GbE ceiling <span class="tag">theoretical</span></div><div>~110 MB/s &mdash; the binding constraint on this box</div>
+    <div class="k">Hardware transcoding</div><div>Available (J4125 iGPU)</div>
+    <div class="k">Software</div><div>Synology DSM</div>
+  </div>
+  <div class="pc">
+    <div><h4>Pros</h4><ul>
+      <li>Full DSM experience at the lowest entry point in this list</li>
+      <li>J4125 does have an iGPU, unlike the pricier DS925+</li>
+      <li>Genuinely turnkey: plug in, run the wizard, Synology Photos is working in twenty minutes</li>
+    </ul></div>
+    <div><h4>Cons</h4><ul>
+      <li>1GbE networking caps transfers around ~110 MB/s — no way around it</li>
+      <li>2GB of RAM is tight; budget for an upgrade</li>
+      <li>Older platform than everything else here</li>
+    </ul></div>
+  </div>
+  <p>We are recommending this one on honest terms: it is the oldest and slowest box in this roundup, and it is here because DSM on cheap hardware is still a better daily experience than a fast box with immature software. If your use case is "back up two laptops overnight and get my phone photos out of iCloud," 1GbE is adequate and you will never notice the ceiling.</p>
+  <p>You will notice it the first time you dump a 200GB video project over the network. At roughly 110 MB/s theoretical — realistically less once protocol overhead is counted — that is a coffee break, not a moment. If large sequential transfers are part of your week, buy a 2.5GbE box instead, and pair it with a switch that can actually carry it; our <a href="../guides/best-home-networking-gear.html">home networking gear guide</a> covers what to look for.</p>
+  <p><a class="btn" href="https://www.amazon.com/dp/B0C6927XPX?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a></p>
+</div>
+
+<div class="card">
+  <div class="cardhead"><span class="rank">#5</span><span class="role">Most Horsepower Per Dollar</span></div>
+  <h3>TerraMaster F4-424 Pro</h3>
+  <p class="price">Around $699.99 on Amazon &middot; non-Pro F4-424 line starts around $499.99 &middot; a 32GB config was seen at $559.99 in a deal <span>(street price at time of writing)</span></p>
+  <div class="specs">
+    <div class="k">Bays</div><div>4 &times; 3.5" SATA</div>
+    <div class="k">CPU</div><div>Intel Core i3-N305, 8-core / 8-thread, with iGPU</div>
+    <div class="k">RAM</div><div>32GB DDR5</div>
+    <div class="k">Networking (rated)</div><div>Dual 2.5GbE</div>
+    <div class="k">Aggregate 2.5GbE ceiling <span class="tag">theoretical</span></div><div>~280 MB/s per link; link aggregation needs a capable switch</div>
+    <div class="k">Media performance <span class="tag">reported</span></div><div>Neowin called it the most powerful media-class 4-bay NAS on the market</div>
+    <div class="k">Software</div><div>TerraMaster TNAS</div>
+  </div>
+  <div class="pc">
+    <div><h4>Pros</h4><ul>
+      <li>8-core i3-N305 with 32GB of DDR5 is far more compute than anything else here</li>
+      <li>Neowin called it the most powerful media-class 4-bay NAS on the market; XDA called it a powerful NAS at a reasonable price</li>
+      <li>Enough headroom for multiple containers, VMs and transcodes at once</li>
+    </ul></div>
+    <div><h4>Cons</h4><ul>
+      <li>TNAS is the least mature of the three ecosystems here — firmware maturity is the real tradeoff</li>
+      <li>No 10GbE despite the compute to use it</li>
+      <li>Priced at the same level as the DXP4800 Plus, which has faster networking</li>
+    </ul></div>
+  </div>
+  <p>Pure compute, this wins and it isn't close. Eight cores and 32GB of DDR5 give you room to run Plex, Immich, a few Docker services and a light VM simultaneously without the box thinking about it. Reviewers have been consistent on the value of the hardware: Neowin's framing of it as the most powerful media-class 4-bay on the market matches XDA's read of it as a lot of NAS for the money.</p>
+  <p>The reservation is the platform. TNAS has historically been the least polished of the three software stacks in this article, and TerraMaster has had a rougher security and firmware history than Synology. That is a real risk for a box holding your only copy of the family photos — it is manageable if you keep the NAS off the open internet, patch promptly, and maintain an off-box backup, which you should be doing regardless.</p>
+  <p><a class="btn" href="https://www.amazon.com/dp/B0CPPD51B9?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a></p>
+</div>
+
+<div class="nerd">
+  <h3>Nerd Box: The Synology Drive-Lock Saga</h3>
+  <p>In early 2025 Synology introduced a drive-compatibility policy that made third-party hard drives — Seagate IronWolf, WD Red Plus, the standard NAS drives everyone owns — effectively unusable in its 2025-generation models, including the DS925+, DS1825+ and DS425+. The unit would refuse to complete setup with an unverified drive. Not a warning banner: a hard stop.</p>
+  <p>After significant backlash, Synology reversed course in DSM 7.3, released October 2025. Third-party HDDs and 2.5" SATA SSDs are now accepted on those models without warnings or restrictions. The caveat that still applies, and that buyers keep missing: the reversal does <strong>not</strong> extend to M.2 NVMe drives. Creating an M.2 storage pool still requires drives from Synology's official compatibility list, so if you were planning to drop a pair of cheap consumer NVMe sticks into the DS925+ for caching, check the list first.</p>
+  <p>We are including this history because the fix does not make the episode irrelevant. Platform policy — what the vendor can decide about your hardware after you have bought it, via a firmware update — is part of what you are purchasing. Synology reversed this one under pressure, which is a reasonable sign. It is still worth knowing the policy existed. (Sources: Tom's Hardware, Synology Knowledge Center, NASCompares.)</p>
+</div>
+
+<div class="nerd">
+  <h3>Nerd Box: Networking Is Usually the Real Bottleneck</h3>
+  <p>Interface ceilings, as theoretical maximums rather than measured results: 1GbE tops out around <strong>110 MB/s</strong>, 2.5GbE around <strong>280 MB/s</strong>, and 10GbE around <strong>1.1 GB/s</strong>. You only see those numbers if every link in the chain keeps up — the switch, the client's NIC, the cabling, and critically the drives themselves.</p>
+  <p>That last one is where 10GbE marketing gets ahead of reality. A four-drive array of spinning disks will typically saturate 2.5GbE comfortably but will not come close to filling a 10GbE pipe. Ten-gigabit mainly pays off when you add NVMe caching or run an all-SSD array. Buying a 10GbE NAS and plugging it into a 1GbE switch buys you nothing at all — check your switch and your client machine before you pay for the port. If your network is the weak link, start with our guides to <a href="./best-wifi-routers.html">Wi-Fi routers</a> and <a href="./best-mesh-wifi-systems.html">mesh Wi-Fi systems</a>, and remember that Wi-Fi 6E or 7 clients will still be slower to the NAS than a wired 2.5GbE link.</p>
+</div>
+
+<h2>All Five Compared</h2>
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th>Model</th><th>Bays</th><th>CPU</th><th>RAM</th><th>Networking</th><th>M.2</th><th>Street price</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UGREEN DXP4800 Plus</td><td>4</td><td>Pentium Gold 8505 (5-core, iGPU)</td><td>8GB DDR5, exp.</td><td>10GbE + 2.5GbE</td><td>2</td><td>MSRP $699.99; often ~$630</td>
+    </tr>
+    <tr>
+      <td>Synology DS925+</td><td>4 (to 9)</td><td>Ryzen V1500B (4-core, no iGPU)</td><td>4GB ECC, to 32GB</td><td>2 &times; 2.5GbE</td><td>2</td><td>~$589.99</td>
+    </tr>
+    <tr>
+      <td>UGREEN DXP2800</td><td>2</td><td>Intel N100 (4-core, iGPU)</td><td>8GB DDR5</td><td>2.5GbE</td><td>2</td><td>~$296.99&ndash;$314</td>
+    </tr>
+    <tr>
+      <td>Synology DS224+</td><td>2</td><td>Celeron J4125 (4-core, iGPU)</td><td>2GB, exp.</td><td>2 &times; 1GbE</td><td>&mdash;</td><td>Check listing</td>
+    </tr>
+    <tr>
+      <td>TerraMaster F4-424 Pro</td><td>4</td><td>Core i3-N305 (8-core, iGPU)</td><td>32GB DDR5</td><td>2 &times; 2.5GbE</td><td>Yes</td><td>~$699.99</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p style="font-size:14px;color:var(--muted);">All prices are street price at time of writing and move frequently with coupons and promotional pricing. Verify before buying.</p>
+
+<h2>What Else You Need to Budget For</h2>
+
+<p><strong>Drives.</strong> Every box in this article ships diskless. This is the single most common budgeting mistake — filling four bays with NAS-rated drives often costs as much as the NAS itself, sometimes more, and it means the real entry price of a 4-bay build is well north of $1,000. Decide your capacity target first, then work backwards to the chassis you can afford. Buy NAS-rated drives; desktop drives in a 24/7 vibrating four-bay array are a false economy.</p>
+
+<p><strong>A UPS.</strong> Strongly recommended, not optional in our view. A NAS is a computer that is always on, always holding dirty write caches, and running a filesystem that does not enjoy sudden power loss. Every OS here supports graceful shutdown triggered by a USB-connected UPS. A basic line-interactive unit is cheap insurance against a rebuild — see our <a href="./best-ups-battery-backup.html">UPS and battery backup picks</a> for sizing.</p>
+
+<p><strong>An actual backup.</strong> RAID is not a backup. RAID protects against a drive failing; it does nothing about ransomware, a bad delete, a failed controller, a fire, or a theft. Follow 3-2-1: three copies of the data, on two different media types, with one copy off-site. In practice that means the NAS plus a cloud target or a rotating <a href="./best-portable-ssds.html">portable SSD</a> you keep somewhere else. Synology's Hyper Backup and standard tools like restic or rclone all handle this.</p>
+
+<h2>Bottom Line</h2>
+
+<p>For most households the <a href="https://www.amazon.com/dp/B0D22JRHZB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">UGREEN NASync DXP4800 Plus</a> is the right buy: four bays, an iGPU that makes Plex behave, dual M.2, and 10GbE you can grow into, at a price where competitors give you 2.5GbE and a slower chip. The cost is a younger software platform.</p>
+
+<p>If you would rather the appliance be boring and dependable, buy the <a href="https://www.amazon.com/dp/B0C8S7SF4B?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Synology DS925+</a> and accept that hardware transcoding is off the table — just go in knowing the 2025 drive-policy history and the M.2 compatibility-list caveat that survived the reversal. On a tighter budget, the <a href="https://www.amazon.com/dp/B0D22HBFK1?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">UGREEN DXP2800</a> is the value play and the <a href="https://www.amazon.com/dp/B0C6927XPX?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Synology DS224+</a> is the simplest possible on-ramp if you can live with 1GbE. And if you want maximum compute and are comfortable managing a less mature platform yourself, the <a href="https://www.amazon.com/dp/B0CPPD51B9?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">TerraMaster F4-424 Pro</a> gives you eight cores and 32GB for the money.</p>
+
+<p>Whichever you pick: budget for the drives, put it behind a UPS, and set up an off-box backup on day one. The hardware choice matters far less than doing those three things.</p>
+
+<footer>
+  <p><strong>Affiliate disclosure.</strong> Loiter Point earns from qualifying Amazon purchases. Buy links in this article are affiliate links, and clicking them costs you nothing extra. Our picks are made from published independent reviews, manufacturer specifications, and verified owner reports — commercial relationships do not influence rankings.</p>
+  <p class="copyright">&copy; 2026 Loiter Point — Consumer tech reviews built on real evidence.</p>
+</footer>
+
+</div>
+</body>
+</html>
