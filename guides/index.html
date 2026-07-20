@@ -38,76 +38,85 @@ h1{font-size:2.2rem;line-height:1.15;font-weight:700;letter-spacing:-0.5px;margi
 footer{border-top:1px solid var(--border);margin-top:3rem;padding:1.6rem 0 2.5rem;color:var(--muted);font-size:0.85rem}
 footer a{color:var(--muted);text-decoration:underline}
 @media(max-width:768px){.wrap{padding:0 1.25rem}main{padding:2.5rem 0 1rem}h1{font-size:1.75rem}}
+
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.9rem; margin-top: 1.5rem; }
+    .guide-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.15rem 1.1rem; transition: all 0.15s; }
+    .guide-card:hover { border-color: var(--accent); background: var(--surface2); }
+    .guide-title { font-size: 0.95rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.45rem; }
+    .guide-excerpt { font-size: 0.8rem; line-height: 1.55; color: var(--muted); }
 </style>
 </head>
 <body>
 <main>
 <div class="wrap">
-<div class="section-label">// Buyer Guides</div>
-<h1>Browse by Category</h1>
-<p class="lede">Every Loiter Point review and buying guide, organized by category. Pick a category to see our recommendations for it &mdash; rankings built on published independent testing and verified owner reports, not in-house lab claims.</p>
-<div class="cat-grid">
-<a href="/drones/" class="cat-card">
-<div class="cat-icon">&#128641;</div>
-<div class="cat-name">Drones</div>
-<div class="cat-count">13 articles</div>
-</a>
-<a href="/audio/" class="cat-card">
-<div class="cat-icon">&#127911;</div>
-<div class="cat-name">Headphones &amp; Audio</div>
-<div class="cat-count">8 articles</div>
-</a>
-<a href="/home-tech/" class="cat-card">
-<div class="cat-icon">&#127968;</div>
-<div class="cat-name">Home Tech</div>
-<div class="cat-count">11 articles</div>
-</a>
-<a href="/kitchen/" class="cat-card">
-<div class="cat-icon">&#127859;</div>
-<div class="cat-name">Kitchen</div>
-<div class="cat-count">3 articles</div>
-</a>
-<a href="/automotive/" class="cat-card">
-<div class="cat-icon">&#128663;</div>
-<div class="cat-name">Automotive Tech</div>
-<div class="cat-count">3 articles</div>
-</a>
-<a href="/computing/" class="cat-card">
-<div class="cat-icon">&#9000;&#65039;</div>
-<div class="cat-name">Computing &amp; Peripherals</div>
-<div class="cat-count">16 articles</div>
-</a>
-<a href="/networking/" class="cat-card">
-<div class="cat-icon">&#128246;</div>
-<div class="cat-name">Networking</div>
-<div class="cat-count">2 articles</div>
-</a>
-<a href="/mobile-tech/" class="cat-card">
-<div class="cat-icon">&#128241;</div>
-<div class="cat-name">Tablets &amp; Wearables</div>
-<div class="cat-count">7 articles</div>
-</a>
-<a href="/smart-home/" class="cat-card">
-<div class="cat-icon">&#128161;</div>
-<div class="cat-name">Smart Home</div>
-<div class="cat-count">6 articles</div>
-</a>
-<a href="/power/" class="cat-card">
-<div class="cat-icon">&#128267;</div>
-<div class="cat-name">Power &amp; Charging</div>
-<div class="cat-count">4 articles</div>
-</a>
-<a href="/streaming/" class="cat-card">
-<div class="cat-icon">&#128250;</div>
-<div class="cat-name">TVs &amp; Streaming</div>
-<div class="cat-count">4 articles</div>
-</a>
-<a href="/cameras/" class="cat-card">
-<div class="cat-icon">&#128248;</div>
-<div class="cat-name">Cameras</div>
-<div class="cat-count">2 articles</div>
-</a>
-</div>
+  <div class="section-label">// Buyer Guides</div>
+
+  <h1>Buyer Guides</h1>
+
+  <p class="lede">Multi-product guides that pull our individual reviews together into a complete setup — 15 guides, updated for 2026.</p>
+
+  <div class="guide-grid">
+      <a class="guide-card" href="/guides/best-content-creator-gear.html">
+        <div class="guide-title">The Best Content Creator &amp; Streaming Gear (2026): Camera, Mic &amp; Audio Picks</div>
+        <div class="guide-excerpt">A curated content-creator setup guide for 2026 — our best-reviewed webcam, action camera, USB microphone, and monitoring-headphone picks, each linked to the full evidence-based guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-dorm-room-tech.html">
+        <div class="guide-title">The Best Dorm Room Tech for 2026: A Back-to-School Gear Guide</div>
+        <div class="guide-excerpt">The dorm tech actually worth packing for 2026 — noise-cancelling earbuds, an all-day power bank, a sub-$50 streaming stick, no-rewire smart bulbs, a study keyboard, a gaming headset, and a cross-platform smartwatch, each pulled from a full evidence-based guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-drones.html">
+        <div class="guide-title">The Best Drones for 2026, Curated: DJI Neo to Mavic 4 Pro</div>
+        <div class="guide-excerpt">A curated 2026 drone buying hub — the right DJI or consumer drone for beginners, travel, real estate, and pro work, each linked to our full evidence-based review or guide. Plus the FAA Remote ID rules you need before you fly.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-headphones-and-earbuds.html">
+        <div class="guide-title">The Best Headphones &amp; Earbuds (2026): ANC, Budget, Gaming Picks</div>
+        <div class="guide-excerpt">A curated audio hub for 2026 — our top noise-cancelling headphones, value over-ears, sub-$100 earbuds, and gaming headset picks, each linked to the full evidence-based guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-home-cleaning-tech.html">
+        <div class="guide-title">The Best Home Cleaning Tech (2026): Robot Vacuums, Car Vacs &amp; Air Purifiers</div>
+        <div class="guide-excerpt">A curated 2026 cleaning-tech guide — our top robot vacuum, budget robot vac, car vacuum, and air purifier picks, each linked to the full evidence-based Loiter Point buying guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-home-climate-tech.html">
+        <div class="guide-title">The Best Home Climate Tech (2026): Portable AC, Dehumidifiers, Air Purifiers &amp; Thermostats</div>
+        <div class="guide-excerpt">A curated 2026 home-climate guide — our top portable air conditioner, dehumidifier, air purifier, and smart thermostat picks, each linked to the full evidence-based Loiter Point buying guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-home-entertainment-tech.html">
+        <div class="guide-title">The Best Home Entertainment Tech (2026): TV Setup</div>
+        <div class="guide-excerpt">A curated home entertainment setup for 2026 — our best-reviewed streaming device, soundbar, Bluetooth speaker, and noise-cancelling headphone picks, each linked to the full evidence-based guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-home-networking-gear.html">
+        <div class="guide-title">The Best Home Networking Gear (2026): Wi-Fi Routers, Mesh Systems &amp; the Devices That Ride Them</div>
+        <div class="guide-excerpt">A curated 2026 home-networking guide — our top standalone Wi-Fi router and mesh system picks, plus the streaming, security, and smart-home gear that depends on a solid network, each linked to the full evidence-based Loiter Point guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-home-office-gear.html">
+        <div class="guide-title">The Best Home Office Tech (2026): Desk, Audio &amp; Power Picks</div>
+        <div class="guide-excerpt">A curated home office setup guide for 2026 — our best-reviewed standing desk, keyboard, headphones, earbuds, power bank, and tablet picks, each linked to the full evidence-based guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-home-security-tech.html">
+        <div class="guide-title">The Best Home Security Tech (2026): Doorbell, Cameras, Lighting &amp; Network</div>
+        <div class="guide-excerpt">A curated home security starter guide for 2026 — our top-ranked video doorbell, security camera, deterrent lighting, and mesh Wi-Fi picks, each linked to the full evidence-based guide. Built around subscription-free local storage.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-kitchen-tech.html">
+        <div class="guide-title">The Best Kitchen Tech (2026): Air Fryers &amp; Sous Vide</div>
+        <div class="guide-excerpt">A curated 2026 countertop-cooking guide — our top air fryer and sous vide picks, from budget to family-sized, each linked to the full evidence-based Loiter Point buying guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-pc-gaming-gear.html">
+        <div class="guide-title">The Best PC Gaming Gear (2026): Build a Battlestation</div>
+        <div class="guide-excerpt">A curated PC gaming setup for 2026 — our best-reviewed gaming monitor, headset, mouse, keyboard, fast storage, and low-latency mesh Wi-Fi picks, each linked to the full evidence-based guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-smart-home-tech.html">
+        <div class="guide-title">The Best Smart Home Tech (2026): Lighting, Wi-Fi, Media, Air &amp; Cleaning</div>
+        <div class="guide-excerpt">A curated smart home starter guide for 2026 — our top-ranked smart bulb, mesh Wi-Fi system, streaming/Matter hub, air purifier, soundbar, and robot vacuum picks, each linked to the full evidence-based guide.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-tech-under-100.html">
+        <div class="guide-title">The Best Tech Under $100 (2026): Six Categories</div>
+        <div class="guide-excerpt">The best tech you can buy for under $100 in 2026 — our top-ranked wireless earbuds, gaming headset, mechanical keyboard, smart bulbs, power bank, and smartwatch, each pulled from a full evidence-based guide with cheaper alternatives noted.</div>
+      </a>
+      <a class="guide-card" href="/guides/best-travel-tech.html">
+        <div class="guide-title">The Best Travel Tech (2026): Carry-On Gadgets</div>
+        <div class="guide-excerpt">A curated travel tech packing list for 2026 — our best-reviewed e-reader, tablet, noise-cancelling headphones, power bank, portable SSD, and smartwatch picks, each linked to the full evidence-based guide.</div>
+      </a>
+  </div>
 </div>
 </main>
 
