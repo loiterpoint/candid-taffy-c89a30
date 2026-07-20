@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Best Smartphones of 2026 — Loiter Point</title>
+<meta name="description" content="Five flagship phones ranked on published independent battery tests, owner reports, and spec reality — not marketing. Updated July 2026." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 22px 90px;}
+  a{color:var(--accent);}
+
+  /* nav */
+  nav.top{
+    border-bottom:1px solid var(--border);
+    background:var(--surface);
+    position:sticky;top:0;z-index:20;
+  }
+  nav.top .inner{
+    max-width:820px;margin:0 auto;padding:14px 22px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  nav.top a.back{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;
+    text-decoration:none;color:var(--muted);
+  }
+  nav.top a.back:hover{color:var(--accent);}
+  nav.top .brand{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--text);
+  }
+
+  /* header */
+  header.post{padding:52px 0 8px;}
+  .kicker{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 14px;
+  }
+  h1{
+    font-size:clamp(2rem,5.4vw,3.05rem);line-height:1.13;margin:0 0 16px;
+    font-weight:700;letter-spacing:-.022em;
+  }
+  .dateline{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);
+    border-top:1px solid var(--border);padding-top:14px;margin-top:22px;
+    display:flex;flex-wrap:wrap;gap:10px 18px;
+  }
+
+  h2{
+    font-size:1.55rem;line-height:1.25;margin:52px 0 14px;font-weight:700;
+    letter-spacing:-.015em;
+  }
+  h3{font-size:1.12rem;margin:26px 0 8px;font-weight:600;}
+  p{margin:0 0 17px;}
+  .muted{color:var(--muted);}
+
+  /* TLDR */
+  .tldr{
+    background:var(--surface);border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;padding:24px 26px;margin:30px 0 8px;
+  }
+  .tldr h2{
+    margin:0 0 14px;font-size:1.02rem;font-family:'IBM Plex Mono',monospace;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;
+  }
+  .tldr ul{margin:0;padding-left:20px;}
+  .tldr li{margin-bottom:12px;}
+  .grab{
+    margin-top:20px;padding-top:18px;border-top:1px solid var(--border);
+    font-size:15.5px;line-height:2.1;
+  }
+  .grab strong{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;
+  }
+  .grab a{
+    display:inline-block;background:var(--surface2);border:1px solid var(--border);
+    border-radius:6px;padding:4px 11px;margin:0 6px 6px 0;text-decoration:none;
+    font-size:14px;color:var(--text);
+  }
+  .grab a:hover{border-color:var(--accent);color:var(--accent);}
+  .grab a .p{
+    font-family:'IBM Plex Mono',monospace;color:var(--accent);font-size:13px;margin-left:7px;
+  }
+  .grab a:hover .p{color:var(--accent);}
+
+  /* pick cards */
+  .pick{
+    background:var(--surface);border:1px solid var(--border);border-radius:12px;
+    padding:26px;margin:26px 0;
+  }
+  .pick-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:6px;}
+  .badge{
+    flex:none;width:42px;height:42px;border-radius:9px;background:var(--accent);
+    color:#0c0c0e;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:19px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pick h2{margin:0;font-size:1.42rem;}
+  .role{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--accent);margin:5px 0 0;
+  }
+  .price{
+    font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--text);
+    margin:14px 0 0;
+  }
+  .price span{color:var(--muted);}
+
+  .specs{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:1px;background:var(--border);border:1px solid var(--border);
+    border-radius:8px;overflow:hidden;margin:20px 0;
+  }
+  .specs div{background:var(--surface2);padding:11px 13px;}
+  .specs dt{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 4px;
+  }
+  .specs dd{margin:0;font-size:14.5px;font-weight:500;}
+
+  .cons{
+    background:var(--surface2);border-radius:8px;padding:16px 20px;margin:20px 0;
+    border-left:2px solid #6b6b7a;
+  }
+  .cons h4{
+    margin:0 0 8px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;
+  }
+  .cons ul{margin:0;padding-left:19px;font-size:15.5px;}
+  .cons li{margin-bottom:6px;}
+
+  .buy{
+    display:inline-block;background:var(--accent);color:#0c0c0e;font-weight:600;
+    text-decoration:none;padding:12px 22px;border-radius:8px;font-size:15px;
+    margin-top:4px;
+  }
+  .buy:hover{filter:brightness(1.08);}
+  .buy-note{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);
+    margin:10px 0 0;
+  }
+
+  /* nerd box */
+  .nerd{
+    background:var(--surface2);border:1px dashed var(--border);border-radius:10px;
+    padding:24px 26px;margin:36px 0;
+  }
+  .nerd h3{
+    margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+  }
+  .nerd p{font-size:15.5px;}
+  .nerd p:last-child{margin-bottom:0;}
+
+  /* table */
+  .tablewrap{overflow-x:auto;margin:24px 0;border:1px solid var(--border);border-radius:10px;}
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px;}
+  th,td{
+    text-align:left;padding:12px 14px;border-bottom:1px solid var(--border);
+    vertical-align:top;
+  }
+  th{
+    background:var(--surface2);font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600;
+    white-space:nowrap;
+  }
+  td{background:var(--surface);}
+  tbody tr:last-child td{border-bottom:none;}
+  td.name{font-weight:600;white-space:nowrap;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  /* footer */
+  footer{
+    border-top:1px solid var(--border);margin-top:60px;padding:30px 0 0;
+    font-size:13.5px;color:var(--muted);
+  }
+  footer p{margin:0 0 12px;}
+  .copy{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;padding-top:14px;
+    border-top:1px solid var(--border);margin-top:20px;
+  }
+  @media(max-width:560px){
+    body{font-size:16px;}
+    .pick,.tldr,.nerd{padding:20px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a class="back" href="../index.html">&larr; Loiter Point</a>
+    <span class="brand">Smartphones</span>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="post">
+  <p class="kicker">Buying Guide</p>
+  <h1>The Best Smartphones of 2026</h1>
+  <p class="muted">Premium phones now start around $700 and run past $1,000. We read the published lab results so you can spend that money once, correctly.</p>
+  <div class="dateline">
+    <span>Updated July 2026</span>
+    <span>Loiter Point Editorial</span>
+    <span>5 picks &middot; evidence-ranked</span>
+  </div>
+</header>
+
+<div class="tldr">
+  <h2>The Short Version</h2>
+  <ul>
+    <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B0FQFQG2VL?tag=loiterpoint20-20" rel="sponsored nofollow">Apple iPhone 17 Pro Max</a> tops GSMArena's Active Use Score at 17:58h and took first place in a 35-phone battery comparison reported by 9to5Mac. It is the endurance leader on published numbers, full stop.</li>
+    <li><strong>Best Android:</strong> the <a href="https://www.amazon.com/dp/B0G4SWDH8P?tag=loiterpoint20-20" rel="sponsored nofollow">Samsung Galaxy S26 Ultra</a> — 16:23h Active Use, 7 years of OS updates confirmed through 2033, and the most aggressive discounting of anything here.</li>
+    <li><strong>The value call that matters:</strong> the <a href="https://www.amazon.com/dp/B0GHRHXVN1?tag=loiterpoint20-20" rel="sponsored nofollow">Google Pixel 10a</a> posts 15:13h on GSMArena's Active Use Score. The <a href="https://www.amazon.com/dp/B0FFTQGTCK?tag=loiterpoint20-20" rel="sponsored nofollow">Pixel 10 Pro</a> posts 12:06h. The $499 phone out-endures the $999 phone by three hours in the same test. We rank it accordingly.</li>
+    <li><strong>Skip unless you want small:</strong> the <a href="https://www.amazon.com/dp/B0G4SW96R4?tag=loiterpoint20-20" rel="sponsored nofollow">Galaxy S26</a> is $899 for the smallest battery in this guide. It's a fine phone and the weakest value on the list.</li>
+  </ul>
+  <div class="grab">
+    <strong>Grab your pick:</strong>
+    <a href="https://www.amazon.com/dp/B0FQFQG2VL?tag=loiterpoint20-20" rel="sponsored nofollow">iPhone 17 Pro Max <span class="p">$1,199</span></a>
+    <a href="https://www.amazon.com/dp/B0G4SWDH8P?tag=loiterpoint20-20" rel="sponsored nofollow">Galaxy S26 Ultra <span class="p">$1,299 list</span></a>
+    <a href="https://www.amazon.com/dp/B0GHRHXVN1?tag=loiterpoint20-20" rel="sponsored nofollow">Pixel 10a <span class="p">$499</span></a>
+    <a href="https://www.amazon.com/dp/B0FFTQGTCK?tag=loiterpoint20-20" rel="sponsored nofollow">Pixel 10 Pro <span class="p">$999 list</span></a>
+    <a href="https://www.amazon.com/dp/B0G4SW96R4?tag=loiterpoint20-20" rel="sponsored nofollow">Galaxy S26 <span class="p">$899</span></a>
+  </div>
+</div>
+
+<h2>How We Evaluate Smartphones</h2>
+
+<p>Loiter Point does not run a lab. We don't own a light meter, a battery drain rig, or a climate-controlled bench, and we're not going to pretend otherwise — plenty of sites imply first-hand testing they never did, and it's the single easiest way to mislead someone about to spend $1,200.</p>
+
+<p>What we do instead: we synthesize <em>published independent measurements</em> from outlets that genuinely do run standardized tests — GSMArena, Tom's Guide, PhoneArena, CNN Underscored — and cross-check them against aggregated owner reports and retailer review data. Every number in this guide is attributed to whoever produced it. When two credible sources disagree, we print both and tell you they disagree rather than picking the flattering one.</p>
+
+<p>Our ranking weights, in order: <strong>real endurance under mixed use</strong> (the thing owners complain about most), <strong>software support length</strong> (a $1,000 phone should not be abandoned in three years), <strong>camera output quality including how honest the processing is</strong>, and <strong>price relative to the above</strong>. Benchmark scores get very little weight — sustained performance and thermals matter far more than a peak number a phone holds for ninety seconds.</p>
+
+<p>Rows in the spec grids marked <span class="mono">est. real-world</span> or <span class="mono">reported</span> come from third-party testing or owner accounts, not from manufacturer ratings and not from us. Manufacturer-rated figures are labeled as rated. We never call anything "measured" — we didn't measure it.</p>
+
+<div class="nerd">
+  <h3>Nerd box: what "Active Use Score" actually means — and why one of these numbers moved</h3>
+  <p>GSMArena's Active Use Score is the closest thing this guide has to an apples-to-apples endurance figure. Rather than reporting a single drain test, it combines standardized calling, web browsing, video playback, and gaming runs into one estimate of how many hours of active screen use a phone delivers per charge. It is not the same as "battery life" as an owner experiences it — it excludes standby drain, cellular conditions, and your particular addiction to a particular app — but because every phone runs the identical script, the <em>relative</em> ordering is meaningful.</p>
+  <p>Here's the caveat that matters, and it cuts against the tidiness of this guide: GSMArena <strong>re-ran the Pixel 10 series battery tests</strong> after discovering their own test automation was polling location services excessively, which drained the phones faster than a real device would. The 12:06h figure we cite for the Pixel 10 Pro is the corrected retest, not the original. That's a genuinely good disclosure by GSMArena — but it should also calibrate your confidence generally. Automated battery testing is fragile, results get revised, and a single number from a single outlet is a data point, not a verdict. That's exactly why we cross-reference PCMark, Tom's Guide, PhoneArena, and CNN Underscored below rather than leaning on one lab.</p>
+  <p>One more piece of honest uncertainty: the Pixel 10a runs the <em>same Tensor G4 chip</em> as the 9a and posts dramatically better endurance (15:13h vs the 9a's 12:42h; PCMark 20h 24m vs 14h 11m). Reviewers have openly admitted they can't fully account for the gain on effectively identical silicon. The consensus explanation is software and power-management optimization. Nobody has demonstrated the mechanism. Treat it as a well-replicated result with an unexplained cause.</p>
+</div>
+
+<h2>The Picks</h2>
+
+<!-- 1 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="badge">1</div>
+    <div>
+      <h2>Apple iPhone 17 Pro Max</h2>
+      <p class="role">Best overall</p>
+    </div>
+  </div>
+  <p class="price">$1,199 list (256GB) <span>&mdash; up to roughly $2,000 at 2TB. Apple held pricing flat versus the 16 Pro Max.</span></p>
+
+  <dl class="specs">
+    <div><dt>Build</dt><dd>Aluminum unibody</dd></div>
+    <div><dt>Rear cameras</dt><dd>All-48MP array, 8x optical-quality zoom</dd></div>
+    <div><dt>Durability</dt><dd>Ceramic Shield 2 &mdash; back 4x more crack-resistant, front 3x better scratch resistance</dd></div>
+    <div><dt>Video playback (rated)</dt><dd>39h, per Apple (vs 35h on 16 Pro Max)</dd></div>
+    <div><dt>Active Use Score (reported)</dt><dd>17:58h &mdash; GSMArena</dd></div>
+    <div><dt>4K video loop (reported)</dt><dd>21h 44m &mdash; CNN Underscored</dd></div>
+  </dl>
+
+  <p>This is the clearest evidence-backed pick in the guide. GSMArena's lab tests put the 17 Pro Max at an <strong>17:58h Active Use Score</strong>, the highest here by more than an hour and a half, built on component runs of roughly 12h gaming, 15.5h web browsing, and 25.5h video playback. CNN Underscored's 4K looping video test independently lands at <strong>21h 44m</strong> — beating the 16 Pro Max by 1h 4m and, by their account, the best result of any iPhone they've run. 9to5Mac reported in February 2026 that the 17 Pro Max took the top battery spot in a comparison of 35 phones tested. Three separate outlets, three methodologies, same conclusion.</p>
+
+  <p>The hardware supports it. The return to an aluminum unibody helps thermals, the whole rear array is now 48MP with 8x optical-quality reach, and Ceramic Shield 2 is a real durability step rather than a marketing one. PhoneArena scored the 17 Pro at 7.9 against 7.7 for the 16 Pro — an incremental bump, which is roughly what the generation deserves outside of battery.</p>
+
+  <div class="cons">
+    <h4>Honest cons</h4>
+    <ul>
+      <li><strong>The gaming result contradicts the headline.</strong> PhoneArena's gaming test put the 17 Pro Max at 8+ hours — a step <em>back</em> from the 16 Pro Max's 12 hours. That is a direct conflict with GSMArena's ~12h gaming component and with the overall endurance win. If you game heavily for hours at a stretch, the "best battery phone of 2026" framing may not hold for your specific use.</li>
+      <li>$1,199 is the entry point, and storage tiers escalate hard.</li>
+      <li>Generational gains outside battery and durability are modest.</li>
+    </ul>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0FQFQG2VL?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  <p class="buy-note">256GB, Cosmic Orange, unlocked. Prices move &mdash; $1,199 is list, not a live guarantee.</p>
+</div>
+
+<!-- 2 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="badge">2</div>
+    <div>
+      <h2>Samsung Galaxy S26 Ultra</h2>
+      <p class="role">Best Android</p>
+    </div>
+  </div>
+  <p class="price">$1,299 list <span>&mdash; frequently discounted. Amazon has hit $999&ndash;$1,099 for the 256GB; a $300-off best-ever cash discount was reported in May 2026.</span></p>
+
+  <dl class="specs">
+    <div><dt>Chip</dt><dd>Snapdragon 8 Elite Gen 5 for Galaxy</dd></div>
+    <div><dt>Battery</dt><dd>5,000mAh &mdash; unchanged from S25 Ultra</dd></div>
+    <div><dt>Active Use Score (reported)</dt><dd>16:23h &mdash; GSMArena</dd></div>
+    <div><dt>Web browsing (reported)</dt><dd>16h 10m &mdash; Tom's Guide</dd></div>
+    <div><dt>Screen-on time (reported)</dt><dd>~7h 3m per charge &mdash; PhoneArena real-world usage</dd></div>
+    <div><dt>Updates</dt><dd>7 years OS + security, confirmed through 2033</dd></div>
+  </dl>
+
+  <p>The S26 Ultra is the best Android phone you can buy in the US right now, and the endurance story is the interesting part. The cell is <strong>5,000mAh — identical to the S25 Ultra</strong>. Every hour of improvement came from software optimization, not a bigger battery. GSMArena puts it at 16:23h Active Use, Tom's Guide's web browsing test lands at 16h 10m, and PhoneArena's real-world usage averaged about 7h 3m of screen-on time per charge, which is the figure most owners will actually recognize.</p>
+
+  <p>The new Privacy Display is the standout hardware feature and the most practically useful thing Samsung shipped this year: a built-in privacy screen, no aftermarket film, no permanent loss of brightness or clarity when you don't need it. Seven years of OS and security updates through 2033 is genuinely the best support commitment in this lineup, and at a real-world $999–$1,099 street price it undercuts the iPhone while landing within about 90 minutes of it on Active Use.</p>
+
+  <div class="cons">
+    <h4>Honest cons</h4>
+    <ul>
+      <li><strong>No Qi2.</strong> Reviewers were openly disappointed, and it's a strange omission on a $1,299 phone in 2026.</li>
+      <li>Reviewers broadly describe it as incremental. No bigger camera sensors this generation.</li>
+      <li>Buying at list is a mistake given how consistently it discounts.</li>
+    </ul>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0G4SWDH8P?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  <p class="buy-note">256GB, Black, unlocked. Recently seen well below list &mdash; verify before buying.</p>
+</div>
+
+<!-- 3 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="badge">3</div>
+    <div>
+      <h2>Google Pixel 10a</h2>
+      <p class="role">Best value</p>
+    </div>
+  </div>
+  <p class="price">$499 (128GB) / $599 (256GB) <span>&mdash; recently seen around $449. Launched March 5, 2026.</span></p>
+
+  <dl class="specs">
+    <div><dt>Chip</dt><dd>Tensor G4 &mdash; same as the 9a</dd></div>
+    <div><dt>Display</dt><dd>6.3" pOLED, 60&ndash;120Hz</dd></div>
+    <div><dt>Battery</dt><dd>5,100mAh &middot; 8GB RAM</dd></div>
+    <div><dt>Active Use Score (reported)</dt><dd>15:13h &mdash; GSMArena (9a: 12:42h)</dd></div>
+    <div><dt>PCMark for Android (reported)</dt><dd>20h 24m (9a: 14h 11m)</dd></div>
+    <div><dt>4K video loop (reported)</dt><dd>16h 34m &mdash; CNN Underscored, 50% brightness</dd></div>
+  </dl>
+
+  <p>Here is the call that tells you whether a review site's rankings mean anything. <strong>The $499 Pixel 10a posts a 15:13h Active Use Score. The $999 Pixel 10 Pro posts 12:06h.</strong> The budget phone out-endures the flagship from the same company, in the same lab, on the same test, by over three hours — at half the price. We're not going to bury that under the more expensive phone because the more expensive phone pays a bigger commission. It ranks third overall and above its own flagship sibling.</p>
+
+  <p>The supporting evidence is consistent across methodologies. PCMark for Android reports 20h 24m, up enormously from the 9a's 14h 11m. CNN Underscored's 4K loop at 50% brightness gives 16h 34m. Owner reports describe roughly six hours of screen-on time for 50% of the battery on heavy days, with a day and a half easily doable on normal use. You also get IP68, an aluminum frame, a flat back with no camera hump, and <strong>seven years of Pixel Drops</strong> — the same support window as phones costing two and a half times more.</p>
+
+  <div class="cons">
+    <h4>Honest cons</h4>
+    <ul>
+      <li><strong>Existing 9a owners should not upgrade.</strong> Near-identical design, same Tensor G4. The main criticism from every reviewer, and it's fair.</li>
+      <li>Two cameras only (48MP wide + 13MP ultrawide). No telephoto.</li>
+      <li>The endurance gain on identical silicon is unexplained. Well-replicated, but nobody has shown the mechanism.</li>
+      <li>Tensor G4 is not a gaming chip and doesn't pretend to be.</li>
+    </ul>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0GHRHXVN1?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  <p class="buy-note">128GB, Obsidian, unlocked. $499 list; recently seen around $449.</p>
+</div>
+
+<!-- 4 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="badge">4</div>
+    <div>
+      <h2>Google Pixel 10 Pro</h2>
+      <p class="role">Best camera processing &amp; AI</p>
+    </div>
+  </div>
+  <p class="price">$999 list <span>&mdash; has dropped as low as $749 on Amazon (June 2026).</span></p>
+
+  <dl class="specs">
+    <div><dt>Chip</dt><dd>Tensor G5 &mdash; TPU up to 60% more powerful, CPU up to 25% faster</dd></div>
+    <div><dt>Display</dt><dd>6.3" Super Actua</dd></div>
+    <div><dt>Battery</dt><dd>4,870mAh &middot; 30W wired / 15W Qi2</dd></div>
+    <div><dt>Rear cameras</dt><dd>48MP f/1.7 main (OIS) + 13MP ultrawide 120&deg; + 10.8MP 5x telephoto</dd></div>
+    <div><dt>Active Use Score (reported)</dt><dd>12:06h &mdash; GSMArena, corrected retest</dd></div>
+    <div><dt>Owner rating (reported)</dt><dd>4.4/5 across 900+ Amazon reviews</dd></div>
+  </dl>
+
+  <p>If your priority is computational photography, this is still the phone. The Tensor G5's new ISP is the real story — up to 60% more TPU performance and 25% faster CPU, spent almost entirely on image processing and on-device AI rather than frame rates. The triple array is well-balanced, with genuine 5x optical reach from the 10.8MP telephoto and Qi2 wireless charging that the Galaxy S26 Ultra notably lacks. Owners rate it 4.4/5 across more than 900 Amazon reviews.</p>
+
+  <p>One feature needs plain language: <strong>100x Pro Res Zoom is generative reconstruction, not optical detail.</strong> Beyond the telephoto's true 5x reach, the phone is using generative processing to invent plausible detail that the lens never resolved. The output often looks good. It is not a photograph of what was there in the same sense the 5x shot is, and if you're documenting anything where accuracy matters, you should know which side of that line you're on.</p>
+
+  <div class="cons">
+    <h4>Honest cons</h4>
+    <ul>
+      <li><strong>Endurance is the weakest of the flagships here at 12:06h</strong> — beaten by Google's own $499 phone. At $999 list that is hard to defend; at the $749 it has hit, it's arguable.</li>
+      <li>Still trails Snapdragon flagships on sustained gaming performance.</li>
+      <li>The GSMArena figure is a corrected retest after their automation was found polling location excessively. Better data than the original, but a reminder that these numbers are revisable.</li>
+    </ul>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0FFTQGTCK?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  <p class="buy-note">256GB, Obsidian, unlocked. Worth waiting for a discount &mdash; it has been seen far below list.</p>
+</div>
+
+<!-- 5 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="badge">5</div>
+    <div>
+      <h2>Samsung Galaxy S26</h2>
+      <p class="role">Best compact flagship</p>
+    </div>
+  </div>
+  <p class="price">$899 list <span>&mdash; a $100 increase over the prior generation.</span></p>
+
+  <dl class="specs">
+    <div><dt>Battery</dt><dd>4,300mAh (up from 4,000mAh)</dd></div>
+    <div><dt>Charging</dt><dd>62% in 30 minutes; full charge 13 min faster than prior gen</dd></div>
+    <div><dt>Weight</dt><dd>Very light &mdash; the compact case</dd></div>
+    <div><dt>Updates</dt><dd>Samsung's 7-year support commitment</dd></div>
+    <div><dt>Review verdict (reported)</dt><dd>PhoneArena scores it on par with last year's model</dd></div>
+    <div><dt>Active Use Score</dt><dd>Not available in the sources we cite</dd></div>
+  </dl>
+
+  <p>The S26 exists for people who want a genuinely small, genuinely light flagship, and on that narrow brief it delivers — it's the most comfortable phone here to actually hold and pocket, and charging improved meaningfully (62% in half an hour, full charge 13 minutes quicker than the last generation).</p>
+
+  <p><strong>The honest caveat, and it's a big one: $899 buys you the smallest battery in this guide.</strong> The 4,300mAh cell is up from 4,000mAh, but reviewers note it may struggle on heavy-use days, PhoneArena scores the phone on par with last year's model, and the price went <em>up</em> $100 generation-over-generation. That combination — more money, least endurance, flat performance — makes this the weakest value on the list, and we'd rather say so than pad the ranking. Buy it if small-and-light is a hard requirement. If it isn't, the Pixel 10a costs $400 less and lasts longer, and the S26 Ultra at a discounted $999 is a far better phone for $100 more.</p>
+
+  <div class="cons">
+    <h4>Honest cons</h4>
+    <ul>
+      <li>Smallest battery here at the second-highest price-per-value ratio in the guide.</li>
+      <li>$100 price increase for performance reviewers call flat.</li>
+      <li>We could not find a GSMArena Active Use Score for it in the published testing we cite, so it can't be placed precisely against the other four on the one metric that's apples-to-apples. That's a gap in the evidence, not a verdict.</li>
+    </ul>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0G4SW96R4?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+  <p class="buy-note">256GB, Black, unlocked. $899 list.</p>
+</div>
+
+<h2>How They Compare</h2>
+
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr>
+      <th>Phone</th>
+      <th>Price</th>
+      <th>Chip</th>
+      <th>Battery</th>
+      <th>GSMArena Active Use</th>
+      <th>Update support</th>
+      <th>Standout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="name">iPhone 17 Pro Max</td>
+      <td class="mono">$1,199 list</td>
+      <td>Apple silicon</td>
+      <td class="mono">Rated 39h video</td>
+      <td class="mono">17:58h</td>
+      <td>Apple's iOS cycle</td>
+      <td>Endurance leader across three labs</td>
+    </tr>
+    <tr>
+      <td class="name">Galaxy S26 Ultra</td>
+      <td class="mono">$1,299 list<br /><span class="muted">seen $999&ndash;$1,099</span></td>
+      <td>Snapdragon 8 Elite Gen 5</td>
+      <td class="mono">5,000mAh</td>
+      <td class="mono">16:23h</td>
+      <td>7 yrs, through 2033</td>
+      <td>Privacy Display; best support</td>
+    </tr>
+    <tr>
+      <td class="name">Pixel 10a</td>
+      <td class="mono">$499<br /><span class="muted">seen $449</span></td>
+      <td>Tensor G4</td>
+      <td class="mono">5,100mAh</td>
+      <td class="mono">15:13h</td>
+      <td>7 yrs of Pixel Drops</td>
+      <td>Out-endures the Pixel 10 Pro at half price</td>
+    </tr>
+    <tr>
+      <td class="name">Pixel 10 Pro</td>
+      <td class="mono">$999 list<br /><span class="muted">seen $749</span></td>
+      <td>Tensor G5</td>
+      <td class="mono">4,870mAh</td>
+      <td class="mono">12:06h <span class="muted">(retest)</span></td>
+      <td>7 yrs of Pixel Drops</td>
+      <td>Camera processing &amp; on-device AI</td>
+    </tr>
+    <tr>
+      <td class="name">Galaxy S26</td>
+      <td class="mono">$899 list</td>
+      <td>Samsung flagship silicon</td>
+      <td class="mono">4,300mAh</td>
+      <td class="mono">Not published in cited sources</td>
+      <td>7 yrs</td>
+      <td>Lightest; fastest charging gains</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Should You Wait?</h2>
+
+<p>Two dates worth knowing. Samsung releases new foldables in July, so if a folding phone is on your list at all, don't buy a slab this week without at least looking. Google typically introduces new Pixels in August — which means the Pixel 10 Pro in particular is heading into the part of its cycle where discounts get real, and the $749 it already touched in June may not be the floor. The iPhone 17 Pro Max and the S26 Ultra are both mid-cycle and stable; there's no announcement-shaped reason to hold off on either.</p>
+
+<p>One notable omission: the <strong>Oppo Find X9 Ultra</strong> draws strong camera praise from reviewers, and on optics alone it would be worth a serious look. It is not straightforwardly available in the US, which means no carrier support, uncertain band compatibility, and no normal warranty path. We're not going to rank a phone most US readers can't buy and service — but if you're shopping from a market where it is properly sold, it deserves your attention.</p>
+
+<h2>Bottom Line</h2>
+
+<p>If you want the phone that lasts longest and you can absorb $1,199, buy the <a href="https://www.amazon.com/dp/B0FQFQG2VL?tag=loiterpoint20-20" rel="sponsored nofollow">iPhone 17 Pro Max</a> — three independent outlets agree, with the single honest asterisk that PhoneArena's gaming result went backwards versus the 16 Pro Max.</p>
+
+<p>If you're on Android, the <a href="https://www.amazon.com/dp/B0G4SWDH8P?tag=loiterpoint20-20" rel="sponsored nofollow">Galaxy S26 Ultra</a> at a discounted $999–$1,099 is the smartest large purchase here: 16:23h Active Use, updates locked in through 2033, and a privacy screen that actually solves a real problem. Wait for the discount; it always comes.</p>
+
+<p>And if you want the honest answer to "what should most people actually buy" — it's the <a href="https://www.amazon.com/dp/B0GHRHXVN1?tag=loiterpoint20-20" rel="sponsored nofollow">Pixel 10a</a> at $499. It beats a $999 flagship on the one endurance metric that's directly comparable, it gets seven years of updates, and the money you don't spend is real. It is not the most capable phone on this page. For most people, it is the correct one.</p>
+
+<p>The <a href="https://www.amazon.com/dp/B0FFTQGTCK?tag=loiterpoint20-20" rel="sponsored nofollow">Pixel 10 Pro</a> earns its place on camera processing and nothing else — buy it discounted, not at list. And the <a href="https://www.amazon.com/dp/B0G4SW96R4?tag=loiterpoint20-20" rel="sponsored nofollow">Galaxy S26</a> is for one buyer only: the person who wants a small, light flagship badly enough to pay $899 for the shortest battery in the guide. That's a legitimate want. It's just not a value pick, and we won't dress it up as one.</p>
+
+<footer>
+  <p><strong>Affiliate disclosure.</strong> Loiter Point is a participant in the Amazon Associates Program. We earn a commission on qualifying purchases made through links on this page, at no additional cost to you. Commission rates play no role in what we recommend or how we rank it — the Pixel 10a outranks the Pixel 10 Pro on this page precisely because the evidence says it should.</p>
+  <p><strong>No lab, no pretense.</strong> Loiter Point does not conduct first-hand device testing. Every performance figure here is attributed to the independent outlet that produced it, or to aggregated owner reports, and is labeled as such. Figures marked "est. real-world" or "reported" are third-party results, not our own measurements.</p>
+  <p><strong>Prices.</strong> All prices are list prices or amounts recently seen at retail as of July 2026. They change constantly and are not a guarantee of what you'll pay. Check the current listing before you buy.</p>
+  <p class="copy">&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+</footer>
+
+</div>
+</body>
+</html>
