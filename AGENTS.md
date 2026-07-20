@@ -45,3 +45,21 @@ ASINs (every buy link 404'd). Follow these rules exactly.
   footer with affiliate disclosure ("© 2026 Loiter Point — Consumer tech reviews
   built on real evidence.").
 - When evidence is thin or conflicting, say so in the article. That is the brand.
+
+## 4. Category prioritization — revenue-first (follow the money)
+- /category-priorities.json is the SINGLE SOURCE OF TRUTH for what to build next. Read it
+  before choosing any new article topic, homepage placement, nav ordering, or internal link.
+- Allocate effort in descending priorityScore order. Current order: smartphones (95, ZERO
+  coverage — top gap), computing (83), TVs/entertainment (68), smart home (64), wearables
+  (54), gaming (51), security (44), networking (43), audio (43), home-energy (36), cameras
+  (35), robotics (33), drones (20 — overweighted already; maintain, do not expand).
+- Homepage sections, nav.js LINKS, and category-grid tiles should be ORDERED by
+  priorityScore, not alphabetically or by legacy placement.
+- New articles: pick the highest-priority category with the thinnest coverage first.
+  Internal links in new articles should point up-priority (e.g. a drone article may link
+  to smartphone/computing guides, not only other drone pages).
+- Do not hardcode the ranking anywhere else. If market data changes, edit the JSON scores;
+  everything downstream follows.
+- EDITORIAL FIREWALL (unchanged by this section): prioritization is CATEGORY-level only.
+  Within a guide, pick order is evidence-based per §1 — never commission-based. The
+  affiliate disclosure's "never influences scores" claim must stay literally true.
