@@ -20,6 +20,14 @@ if ! python3 check_surfaced.py; then
     fail=1
 fi
 
+if ! python3 check_seo_head.py; then
+    echo
+    echo "Some pages are missing a canonical link, og: tags or valid JSON-LD."
+    echo "New articles get these from generate_content.py. Older pages need the head block added by hand."
+    fail=1
+fi
+
+
 if [ "$fail" -ne 0 ]; then
     echo
     echo "Commit blocked. Bypass with --no-verify if you know what you are doing."
