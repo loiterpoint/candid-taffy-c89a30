@@ -14,6 +14,7 @@
     { label: "Home", href: "/" },
     { label: "Deals", href: "/deals.html" },
     { label: "Buyer Guides", href: "/guides/" },
+    { label: "Categories", href: "/site-map.html" },
     { label: "Compare", href: "/articles/mini-4-pro-vs-air-3.html" }
   ];
 
