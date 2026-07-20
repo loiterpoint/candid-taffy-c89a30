@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Best VR Headsets in 2026: Quest 3 vs Quest 3S vs PSVR2 | Loiter Point</title>
+<meta name="description" content="The best VR headsets to buy in 2026, ranked. Meta Quest 3 vs Quest 3S vs PlayStation VR2 vs Bigscreen Beyond 2 vs Apple Vision Pro — current prices, real trade-offs, and whether you should wait for Valve's Steam Frame." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:24px 20px 80px;}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(232,255,71,0.35);}
+  a:hover{border-bottom-color:var(--accent);}
+  h1,h2,h3,h4,.mono,.badge,.tag,.price,th,.specs,.btn,nav{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+  nav{
+    font-size:12px;letter-spacing:0.09em;text-transform:uppercase;
+    padding-bottom:22px;margin-bottom:26px;border-bottom:1px solid var(--border);
+  }
+  nav a{color:var(--muted);border-bottom:none;}
+  nav a:hover{color:var(--accent);}
+  h1{
+    font-size:clamp(28px,5.4vw,44px);line-height:1.14;font-weight:700;
+    letter-spacing:-0.02em;margin:0 0 14px;
+  }
+  h2{
+    font-size:clamp(20px,3.4vw,27px);line-height:1.25;font-weight:600;
+    letter-spacing:-0.01em;margin:56px 0 16px;
+  }
+  h3{font-size:19px;font-weight:600;margin:30px 0 10px;}
+  p{margin:0 0 17px;}
+  .byline{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);
+    letter-spacing:0.05em;margin:0 0 30px;
+  }
+  .byline span{color:var(--accent);}
+
+  /* short version */
+  .short{
+    background:var(--surface);border:1px solid var(--border);
+    border-left:3px solid var(--accent);border-radius:6px;
+    padding:22px 24px;margin:0 0 34px;
+  }
+  .short h2{
+    margin:0 0 14px;font-size:14px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--accent);
+  }
+  .short ul{margin:0 0 18px;padding-left:20px;}
+  .short li{margin-bottom:11px;}
+  .grab{
+    border-top:1px solid var(--border);padding-top:16px;margin-top:4px;
+    font-size:15px;
+  }
+  .grab strong{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--muted);display:block;margin-bottom:9px;
+  }
+  .grab-links a{display:inline-block;margin:0 14px 8px 0;}
+
+  /* pick cards */
+  .card{
+    background:var(--surface);border:1px solid var(--border);border-radius:8px;
+    padding:26px 24px;margin:26px 0;
+  }
+  .card-head{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px;
+  }
+  .badge{
+    background:var(--accent);color:#0c0c0e;font-weight:700;font-size:12px;
+    letter-spacing:0.06em;padding:4px 9px;border-radius:4px;
+  }
+  .role{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.13em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .card h3{margin:0 0 4px;font-size:23px;letter-spacing:-0.01em;}
+  .price{
+    font-size:21px;color:var(--accent);font-weight:600;margin:0 0 18px;
+  }
+  .price small{
+    font-family:'Inter',sans-serif;font-size:13.5px;color:var(--muted);
+    font-weight:400;letter-spacing:0;
+  }
+  .specs{
+    font-size:13px;border:1px solid var(--border);border-radius:6px;
+    overflow:hidden;margin:0 0 20px;background:var(--surface2);
+  }
+  .specs div{
+    display:grid;grid-template-columns:minmax(120px,38%) 1fr;gap:0;
+    border-bottom:1px solid var(--border);
+  }
+  .specs div:last-child{border-bottom:none;}
+  .specs dt,.specs .k{
+    padding:9px 12px;color:var(--muted);letter-spacing:0.03em;
+    border-right:1px solid var(--border);
+  }
+  .specs .v{padding:9px 12px;color:var(--text);}
+  .lbl{
+    display:inline-block;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;
+    padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:1px;
+    border:1px solid var(--border);color:var(--muted);background:var(--bg);
+  }
+  .btn{
+    display:inline-block;background:var(--accent);color:#0c0c0e;font-weight:700;
+    font-size:14px;letter-spacing:0.03em;padding:12px 20px;border-radius:5px;
+    border-bottom:none;margin-top:4px;
+  }
+  .btn:hover{background:#f2ff7a;border-bottom:none;}
+  .btn-plain{
+    display:inline-block;background:transparent;color:var(--text);font-weight:600;
+    font-size:14px;letter-spacing:0.03em;padding:12px 20px;border-radius:5px;
+    border:1px solid var(--border);border-bottom:1px solid var(--border);
+  }
+  .btn-plain:hover{border-color:var(--accent);color:var(--accent);}
+  .note{
+    font-size:13px;color:var(--muted);margin-top:12px;line-height:1.55;
+  }
+
+  /* nerd box */
+  .nerd{
+    background:linear-gradient(180deg,var(--surface2),var(--surface));
+    border:1px dashed var(--border);border-radius:8px;padding:24px;margin:40px 0;
+  }
+  .nerd h3{
+    margin-top:0;color:var(--accent);font-size:13px;letter-spacing:0.14em;
+    text-transform:uppercase;
+  }
+  .nerd h4{font-size:16px;margin:22px 0 8px;}
+  .nerd p{font-size:15.5px;}
+
+  /* wait callout */
+  .wait{
+    background:var(--surface);border:1px solid var(--accent);border-radius:8px;
+    padding:24px;margin:40px 0;
+  }
+  .wait h3{margin-top:0;font-size:20px;}
+
+  /* table */
+  .tablewrap{
+    overflow-x:auto;-webkit-overflow-scrolling:touch;margin:22px 0 8px;
+    border:1px solid var(--border);border-radius:8px;
+  }
+  table{border-collapse:collapse;width:100%;min-width:760px;font-size:13.5px;}
+  th,td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--border);}
+  th{
+    background:var(--surface2);color:var(--muted);font-size:11.5px;
+    letter-spacing:0.09em;text-transform:uppercase;font-weight:500;white-space:nowrap;
+  }
+  td{color:var(--text);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:rgba(255,255,255,0.015);}
+  .scrollhint{font-size:12px;color:var(--muted);font-family:'IBM Plex Mono',monospace;}
+
+  footer{
+    margin-top:64px;padding-top:26px;border-top:1px solid var(--border);
+    font-size:13px;color:var(--muted);line-height:1.6;
+  }
+  footer p{margin:0 0 12px;}
+  .copy{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;
+    color:var(--muted);margin-top:18px;
+  }
+  @media(max-width:520px){
+    body{font-size:16px;}
+    .wrap{padding:18px 15px 60px;}
+    .card{padding:20px 17px;}
+    .specs div{grid-template-columns:1fr;}
+    .specs dt,.specs .k{border-right:none;border-bottom:1px solid var(--border);padding-bottom:4px;}
+    .btn,.btn-plain{display:block;text-align:center;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav><a href="../index.html">&larr; Loiter Point</a></nav>
+
+<h1>The Best VR Headsets in 2026</h1>
+<p class="byline">Loiter Point Reviews &nbsp;/&nbsp; <span>Updated July 2026</span> &nbsp;/&nbsp; Evidence-first, no test lab, no sponsorships</p>
+
+<div class="short">
+  <h2>The Short Version</h2>
+  <ul>
+    <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/dp/B0DDWH41HB?tag=loiterpoint20-20" rel="sponsored nofollow">Meta Quest 3 (512GB)</a> at $599.99. Pancake lenses, the biggest software library in VR, no PC required. It is the default answer for almost everyone.</li>
+    <li><strong>Best value:</strong> the <a href="https://www.amazon.com/dp/B0DDK1WM9K?tag=loiterpoint20-20" rel="sponsored nofollow">Meta Quest 3S (128GB)</a> at $349.99 list, with street price dipping to roughly $300. Same chip, same games, older optics.</li>
+    <li><strong>Best if you own a PS5:</strong> the <a href="https://www.amazon.com/dp/B0C1QJ6VHY?tag=loiterpoint20-20" rel="sponsored nofollow">PlayStation VR2</a> at $399.99. OLED blacks and HDR the Quests physically cannot produce.</li>
+    <li><strong>Best for PC VR enthusiasts:</strong> the Bigscreen Beyond 2 at $1,019 — 107 grams, micro-OLED, sold direct, and we earn nothing on it.</li>
+  </ul>
+  <div class="grab">
+    <strong>Grab your pick:</strong>
+    <div class="grab-links">
+      <a href="https://www.amazon.com/dp/B0DDWH41HB?tag=loiterpoint20-20" rel="sponsored nofollow">Quest 3 512GB &mdash; $599.99</a>
+      <a href="https://www.amazon.com/dp/B0DDK1WM9K?tag=loiterpoint20-20" rel="sponsored nofollow">Quest 3S 128GB &mdash; $349.99</a>
+      <a href="https://www.amazon.com/dp/B0C1QJ6VHY?tag=loiterpoint20-20" rel="sponsored nofollow">PlayStation VR2 &mdash; $399.99</a>
+      <a href="https://www.amazon.com/s?k=Apple+Vision+Pro&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Apple Vision Pro (M5) &mdash; $3,699</a>
+    </div>
+  </div>
+</div>
+
+<h2>How We Evaluate VR Headsets</h2>
+
+<p>Loiter Point does not run a test lab. We do not own a photometer, we have not strapped these headsets to a dummy head, and we are not going to pretend otherwise. What we do is read every credible independent measurement that has been published, cross-reference it against verified owner reports, and throw out anything that only exists in a manufacturer's press release.</p>
+
+<p>That means the numbers in this guide fall into two buckets, and we label them. <strong>Rated</strong> figures are manufacturer specifications: panel resolution, refresh rate, advertised field of view, shipping weight. Those are useful for comparison but they are marketing numbers, and in VR they are unusually easy to game. <strong>Est. real-world</strong> and <strong>reported</strong> figures come from independent reviews and owner consensus — comfort over long sessions, how a headset actually behaves once you put a demanding title on it, what the practical total cost ends up being once you buy the accessories the box does not include.</p>
+
+<p>Prices move constantly right now, and 2026 has been unusually ugly for that. A global surge in memory-chip costs pushed Meta to raise Quest 3 and Quest 3S prices on April 19, 2026 — the Quest 3 went up $100 and the Quest 3S up $50 — and Apple raised the Vision Pro from $3,499 to $3,699 in June for the same underlying reason. Prices in this guide are current as of July 2026. Where evidence is thin or reviewers disagree, we say so instead of splitting the difference and pretending it is a finding.</p>
+
+<h2>The Picks</h2>
+
+<!-- PICK 1 -->
+<div class="card">
+  <div class="card-head">
+    <span class="badge">01</span>
+    <span class="role">Best overall</span>
+  </div>
+  <h3>Meta Quest 3 (512GB)</h3>
+  <p class="price">$599.99 <small>&mdash; raised $100 on April 19, 2026</small></p>
+
+  <div class="specs">
+    <div><span class="k">Processor</span><span class="v">Snapdragon XR2 Gen 2 <span class="lbl">rated</span></span></div>
+    <div><span class="k">Optics</span><span class="v">Pancake lenses &mdash; sharp edge to edge</span></div>
+    <div><span class="k">Panels</span><span class="v">LCD <span class="lbl">rated</span></span></div>
+    <div><span class="k">Needs a PC</span><span class="v">No &mdash; fully standalone</span></div>
+    <div><span class="k">Passthrough</span><span class="v">Best on any standalone headset <span class="lbl">reported</span></span></div>
+    <div><span class="k">Library</span><span class="v">Largest in VR</span></div>
+  </div>
+
+  <p>The Quest 3 wins on a boring but decisive argument: it is the only headset here that is genuinely complete out of the box. No PC, no console, no base stations, no separate controller purchase. You charge it, you draw a boundary, you are in VR in under ten minutes. Every other pick on this list has an asterisk attached to that sentence.</p>
+
+  <p>The pancake optics are the thing people underrate. Meta's earlier Fresnel lenses had a narrow sweet spot — text was crisp dead center and smeared toward the edges, so you learned to turn your head instead of moving your eyes. Pancake lenses largely erase that. Published reviews consistently describe the Quest 3 image as sharp edge to edge, and that changes what the headset is good for: reading, browsing, working in a virtual desktop, anything where you look around a scene rather than staring at its middle. Color-accurate passthrough is the other differentiator, and independent reviews still rate it the best mixed-reality passthrough available on a standalone headset.</p>
+
+  <p><strong>Who should not buy this:</strong> anyone whose priority is contrast. The Quest 3 uses LCD panels, so black is dark grey, and space sims or horror titles will look washed out next to an OLED headset. If you already own a PS5 and mostly play seated cinematic games, the PSVR2 is the better screen for $200 less. And if you are price-sensitive and mainly play brightly lit action titles, the Quest 3S runs the exact same games on the exact same chip for $250 less.</p>
+
+  <a class="btn" href="https://www.amazon.com/dp/B0DDWH41HB?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- PICK 2 -->
+<div class="card">
+  <div class="card-head">
+    <span class="badge">02</span>
+    <span class="role">Best value</span>
+  </div>
+  <h3>Meta Quest 3S (128GB)</h3>
+  <p class="price">$349.99 list <small>&mdash; street price has dipped to roughly $300</small></p>
+
+  <div class="specs">
+    <div><span class="k">Processor</span><span class="v">Snapdragon XR2 Gen 2 &mdash; identical to Quest 3 <span class="lbl">rated</span></span></div>
+    <div><span class="k">Optics</span><span class="v">Fresnel lenses &mdash; the real trade-off</span></div>
+    <div><span class="k">Panels</span><span class="v">Lower resolution than Quest 3 <span class="lbl">rated</span></span></div>
+    <div><span class="k">Needs a PC</span><span class="v">No &mdash; fully standalone</span></div>
+    <div><span class="k">Game library</span><span class="v">Identical to Quest 3</span></div>
+    <div><span class="k">Street price</span><span class="v">~$296&ndash;$297 in late June 2026 <span class="lbl">reported</span></span></div>
+  </div>
+
+  <p>This is the headset to buy if you are not sure you will love VR. It runs the same Snapdragon XR2 Gen 2 as the Quest 3, which means performance and the entire game library are identical — not similar, identical. Nothing is locked off. A developer cannot ship a title that runs on Quest 3 and refuses to run here, because it is the same silicon. The Amazon listing is the Batman: Arkham Shadow bundle, which is one of the better pack-ins Meta has done.</p>
+
+  <p>What you give up is optics, and you should understand exactly what that means before you save the money. The 3S uses the older Fresnel lenses and lower-resolution panels. Fresnel optics produce a narrower sweet spot and visible concentric artifacts in high-contrast scenes, and the resolution drop is most obvious on text and on distant detail. In a fast, colourful action game you will barely register it. In a cockpit sim reading instrument labels, or in a productivity app, you will register it constantly.</p>
+
+  <p>The price is worth watching. List is $349.99 after the April 19 increase, but Amazon has repeatedly discounted below that — around $296 to $297 in late June 2026, near its all-time low, including through Prime Day from June 23 to 26. If it is sitting near $300 when you look, that is a genuinely strong buy. At full list, the gap to the Quest 3 narrows enough that the better lenses start to look worth it.</p>
+
+  <p><strong>Who should not buy this:</strong> anyone planning to use VR for work, reading, or flight and space sims, and anyone who is already certain VR will stick. Buying the 3S and upgrading in a year costs more than buying the Quest 3 once.</p>
+
+  <a class="btn" href="https://www.amazon.com/dp/B0DDK1WM9K?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- PICK 3 -->
+<div class="card">
+  <div class="card-head">
+    <span class="badge">03</span>
+    <span class="role">Best for PS5 owners</span>
+  </div>
+  <h3>PlayStation VR2</h3>
+  <p class="price">$399.99 <small>&mdash; permanent cut from a $549.99 launch price</small></p>
+
+  <div class="specs">
+    <div><span class="k">Panels</span><span class="v">OLED &mdash; true blacks, HDR <span class="lbl">rated</span></span></div>
+    <div><span class="k">Eye tracking</span><span class="v">Yes</span></div>
+    <div><span class="k">Haptics</span><span class="v">Headset rumble + adaptive triggers</span></div>
+    <div><span class="k">Needs a console</span><span class="v">Yes &mdash; PS5 required, not standalone</span></div>
+    <div><span class="k">Launched</span><span class="v">February 2023</span></div>
+    <div><span class="k">Price cut</span><span class="v">Announced Feb 2025, effective March 2025</span></div>
+  </div>
+
+  <p>If a PS5 is already sitting under your television, this is the most headset-for-the-money on the list. It launched at $549.99 in February 2023; Sony announced a permanent cut to $399.99 in February 2025, effective that March. That is not a sale — it is the price now.</p>
+
+  <p>The OLED panels are the reason to want it. LCD-based headsets like the Quests light their pixels from behind, so a black pixel is really a dimmed one. OLED pixels switch off entirely, which produces true blacks and an HDR range the Quests physically cannot match. In practice that means space, horror, and anything set at night looks dramatically better here — no grey haze where the void should be. It also has hardware the Quests do not: eye tracking, haptics built into the headset itself so impacts rumble against your face, and the adaptive-trigger controllers PS5 owners already know.</p>
+
+  <p><strong>Who should not buy this:</strong> anyone without a PS5. It is not standalone and it is not a PC headset out of the box, so the real price for a non-owner is the headset plus a console. The other honest caveat is the library — it is curated and console-shaped rather than sprawling, and it does not approach the Quest catalog in raw volume. Buy it because you want a small number of excellent games to look genuinely spectacular, not because you want the most things to play.</p>
+
+  <a class="btn" href="https://www.amazon.com/dp/B0C1QJ6VHY?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- PICK 4 -->
+<div class="card">
+  <div class="card-head">
+    <span class="badge">04</span>
+    <span class="role">Best for PC VR enthusiasts</span>
+  </div>
+  <h3>Bigscreen Beyond 2</h3>
+  <p class="price">$1,019 <small>&mdash; Beyond 2e with eye tracking is $1,219</small></p>
+
+  <div class="specs">
+    <div><span class="k">Weight</span><span class="v">107 grams <span class="lbl">rated</span></span></div>
+    <div><span class="k">Resolution</span><span class="v">2560&times;2560 per eye, micro-OLED <span class="lbl">rated</span></span></div>
+    <div><span class="k">Field of view</span><span class="v">116&deg; horizontal <span class="lbl">rated</span></span></div>
+    <div><span class="k">Tracking</span><span class="v">Requires external SteamVR base stations</span></div>
+    <div><span class="k">Controllers</span><span class="v">Not included</span></div>
+    <div><span class="k">Connection</span><span class="v">Tethered, PC only</span></div>
+  </div>
+
+  <p>Everything about the Beyond 2 is aimed at one problem: headsets are heavy and you stop wearing them. At 107 grams it is a fraction of the weight of every other pick here, and that changes the calculus of a three-hour sim session more than any spec sheet line. Pair that with 2560&times;2560 micro-OLED per eye and you get the combination enthusiasts have been chasing — per-pixel black levels plus a pixel density high enough that the screen door effect stops being a topic of conversation.</p>
+
+  <p>Now the costs, stated plainly, because the sticker price is not the price. It is tethered and PC-only, so you need a capable gaming PC. It requires external SteamVR base stations, which you buy separately and mount on your walls. It does not include controllers. Add all of that up and the realistic entry cost is well above $1,019 unless you already own a Valve Index or Vive setup and are reusing the tracking hardware you have. For that specific person — existing SteamVR owner, sim racer or flight-sim pilot, long sessions — it is close to ideal. For anyone else it is a very expensive way to discover you needed three more purchases.</p>
+
+  <p><strong>Who should not buy this:</strong> anybody who wants standalone VR, anybody without SteamVR base stations already on the wall, and anybody who wants to be playing within an hour of the box arriving.</p>
+
+  <a class="btn-plain" href="https://store.bigscreenvr.com">Sold direct from Bigscreen &rarr;</a>
+  <p class="note">Not sold on Amazon &mdash; this is a plain link to Bigscreen's own store with no affiliate tag. <strong>Loiter Point earns nothing on this pick.</strong> We are pointing that out because it is the whole test of a guide like this: if the best headset for a given buyer happens to be one we cannot monetize, it still goes on the list.</p>
+</div>
+
+<!-- PICK 5 -->
+<div class="card">
+  <div class="card-head">
+    <span class="badge">05</span>
+    <span class="role">Only if you specifically want visionOS</span>
+  </div>
+  <h3>Apple Vision Pro (M5)</h3>
+  <p class="price">$3,699 <small>&mdash; raised from $3,499 in June 2026</small></p>
+
+  <div class="specs">
+    <div><span class="k">Weight</span><span class="v">26.4&ndash;28.2 oz depending on band <span class="lbl">rated</span></span></div>
+    <div><span class="k">vs. M2 original</span><span class="v">21.2&ndash;22.9 oz &mdash; it got heavier</span></div>
+    <div><span class="k">Refresh rate</span><span class="v">120Hz <span class="lbl">rated</span></span></div>
+    <div><span class="k">M5 gains</span><span class="v">~30 min more battery, ~10% more rendered pixels vs M2</span></div>
+    <div><span class="k">Band</span><span class="v">New Dual Knit Band</span></div>
+    <div><span class="k">Amazon listing</span><span class="v">No verified ASIN &mdash; search link only</span></div>
+  </div>
+
+  <p>The M5 refresh is a real but narrow improvement: roughly 30 minutes of additional battery life and about 10% more rendered pixels compared to the M2 model, at 120Hz, with a new Dual Knit Band. It also got heavier — 26.4 to 28.2 oz depending on which band you use, against 21.2 to 22.9 oz for the original. In a device whose most common criticism was fatigue, going up in weight is a strange direction to travel, and the new band is doing a lot of work to compensate.</p>
+
+  <p>The price went the wrong way too, from $3,499 to $3,699 in June 2026, driven by the same memory-cost pressure that hit Meta. And there is a bigger cloud over it: MacRumors has reported that Apple has largely deprioritised the Vision Pro line after the M5 refresh failed to lift interest. We are flagging that as reporting, not as something we independently established — but it is the kind of reporting a buyer contemplating a $3,699 purchase deserves to weigh, because platform momentum determines what software exists in two years.</p>
+
+  <p><strong>Who should not buy this:</strong> nearly everyone. Buy it if you specifically need visionOS — if you are developing for the platform, or you are deep enough in Apple's ecosystem that spatial video and Mac Virtual Display genuinely change your workflow. As a gaming headset at ten times the price of a Quest 3, it is not a rational purchase, and the reporting on Apple's commitment makes it harder to recommend rather than easier.</p>
+
+  <a class="btn" href="https://www.amazon.com/s?k=Apple+Vision+Pro&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Search Apple Vision Pro on Amazon &rarr;</a>
+  <p class="note">We could not verify a specific Amazon product listing for the M5 Vision Pro, so this is a search link rather than a direct product link. We do not link to ASINs we have not confirmed.</p>
+</div>
+
+<!-- NERD BOX -->
+<div class="nerd">
+  <h3>Nerd box &mdash; optics, and why spec sheets lie</h3>
+
+  <h4>Pancake and micro-OLED are not just "better", they fix different problems</h4>
+  <p>Two headsets can list identical panel resolutions and look nothing alike, because resolution is only one term in the equation. The lens decides how much of that resolution actually reaches your retina, and how evenly.</p>
+  <p>Fresnel lenses — the older design, still used on the Quest 3S — get their focusing power from a series of concentric ridges stamped into a thin piece of plastic. That makes them light and cheap, but those ridges scatter light. The consequence is a small sweet spot: the image is sharp where your eye is aligned with the lens axis and degrades as you look away from centre, plus you get visible ring artefacts wherever a bright object sits against a dark background. Pancake lenses fold the light path back on itself between polarised surfaces instead, which produces a much flatter, more uniform focus across the whole lens. That is why reviewers describe the Quest 3 as sharp edge to edge while the same reviewers describe Fresnel headsets in terms of a sweet spot you have to aim your head at. The panel did not necessarily change much. The delivery did.</p>
+  <p>Micro-OLED attacks a different axis. Because each pixel emits its own light and can switch fully off, contrast is effectively per-pixel — a black pixel next to a white one is genuinely black, not backlit grey. That is why an OLED or micro-OLED headset looks so much more convincing in dark scenes than an LCD one with the same nominal resolution. Perceived sharpness is partly a contrast phenomenon: edges read as crisper when the dark side of the edge is actually dark. This is the main reason a spec-for-spec comparison between an LCD and an OLED headset undersells the OLED.</p>
+
+  <h4>Field-of-view numbers are not comparable across manufacturers</h4>
+  <p>Treat every advertised FOV figure as brand-internal. There is no enforced industry standard for how it is measured, and the variables that move the number are all under the manufacturer's control: whether they quote horizontal, vertical, or diagonal; how far the lens sits from the eye when they measure; what interpupillary distance they set; whether they report the best case for one eye or the binocular overlap you actually perceive. Any of those choices can swing the published figure substantially, in the same way diagonal screen measurements make two differently shaped displays look equivalent.</p>
+  <p>The practical implication: a headset advertising a larger FOV than another is not reliably wider in use, and eye relief alone — how close the lens sits to your face, which changes with the facial interface, glasses, or a different gasket — can meaningfully change what you personally see. Compare FOV within a manufacturer's own lineup, where the methodology is at least consistent. Across brands, trust reviewers who look at multiple headsets under the same conditions over any number on a box.</p>
+</div>
+
+<!-- WAIT CALLOUT -->
+<div class="wait">
+  <h3>Should you wait for Steam Frame?</h3>
+  <p>Valve's Steam Frame is confirmed for summer 2026, with an expected price somewhere in the $899 to $1,199 range. It ships with a bundled 6GHz dongle for wireless PC streaming, which is the single most interesting confirmed detail — untethered PC VR without fighting your household Wi-Fi has been the missing piece for years.</p>
+  <p>The signals that it is genuinely imminent rather than vapour: the hardware has cleared US customs, the FCC filings are public, and Valve has a "Great on Frame" section live on the store. That is the shape a launch takes weeks out, not months.</p>
+  <p>What we will not do is tell you how it performs, because nobody outside Valve can source that yet. Our position is narrow and specific: <strong>if you are a PC VR buyer, it is reasonable to wait a few weeks and see.</strong> Even if the Frame disappoints, its arrival is likely to reset expectations and pricing in that segment. If you are buying standalone or for a PS5, the Frame is not aimed at you and there is nothing to wait for.</p>
+</div>
+
+<h2>Compare All Five</h2>
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr>
+      <th>Headset</th>
+      <th>Price</th>
+      <th>Display tech</th>
+      <th>Standalone or tethered</th>
+      <th>Needs PC / PS5</th>
+      <th>Weight</th>
+      <th>Eye tracking</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Meta Quest 3 (512GB)</td>
+      <td>$599.99</td>
+      <td>LCD, pancake lenses</td>
+      <td>Standalone</td>
+      <td>No</td>
+      <td>Not verified</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Meta Quest 3S (128GB)</td>
+      <td>$349.99 list (~$300 street)</td>
+      <td>LCD, Fresnel lenses</td>
+      <td>Standalone</td>
+      <td>No</td>
+      <td>Not verified</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>PlayStation VR2</td>
+      <td>$399.99</td>
+      <td>OLED, HDR</td>
+      <td>Tethered to console</td>
+      <td>Yes &mdash; PS5</td>
+      <td>Not verified</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Bigscreen Beyond 2</td>
+      <td>$1,019 ($1,219 for 2e)</td>
+      <td>Micro-OLED, 2560&times;2560/eye</td>
+      <td>Tethered</td>
+      <td>Yes &mdash; PC + base stations</td>
+      <td>107 g</td>
+      <td>2e variant only</td>
+    </tr>
+    <tr>
+      <td>Apple Vision Pro (M5)</td>
+      <td>$3,699</td>
+      <td>120Hz refresh</td>
+      <td>Standalone</td>
+      <td>No</td>
+      <td>26.4&ndash;28.2 oz</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p class="scrollhint">&larr; scroll table horizontally on mobile &rarr;</p>
+
+<h2>Bottom Line</h2>
+
+<p>For the overwhelming majority of buyers the answer is the <a href="https://www.amazon.com/dp/B0DDWH41HB?tag=loiterpoint20-20" rel="sponsored nofollow">Meta Quest 3</a>, and it is not especially close. It needs nothing else to work, the library is the largest in VR, and the pancake optics deliver a sharp image across the whole lens rather than in a small central window. The April price increase to $599.99 stings, but it did not change what the headset is.</p>
+
+<p>If $600 is more than you want to risk on a category you have not tried, the <a href="https://www.amazon.com/dp/B0DDK1WM9K?tag=loiterpoint20-20" rel="sponsored nofollow">Quest 3S</a> plays every single one of the same games on the same chip. Watch the price — near $300 it is one of the best deals in consumer tech, and at full list the case for spending up on the Quest 3's lenses gets stronger. If you already own a PS5, the <a href="https://www.amazon.com/dp/B0C1QJ6VHY?tag=loiterpoint20-20" rel="sponsored nofollow">PlayStation VR2</a> at $399.99 gives you OLED contrast, eye tracking, and headset haptics that no Quest can match, at the cost of a smaller catalogue.</p>
+
+<p>The Bigscreen Beyond 2 is a specialist tool for people who already have SteamVR base stations and want to forget they are wearing a headset — brilliant for that person, an expensive trap for anyone else. And the <a href="https://www.amazon.com/s?k=Apple+Vision+Pro&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Apple Vision Pro</a> at $3,699 only makes sense if visionOS specifically is the thing you want, with the reported deprioritization of the line factored into your thinking.</p>
+
+<p>One last piece of timing advice: PC VR buyers should sit tight for a few weeks. Steam Frame is confirmed for this summer, the hardware has cleared customs, and even an imperfect launch is likely to move prices in that corner of the market. Everyone else can buy today without regret.</p>
+
+<footer>
+  <p><strong>Affiliate disclosure:</strong> Loiter Point earns a commission on purchases made through the Amazon links in this article. That does not cost you anything and it does not decide our rankings — the Bigscreen Beyond 2 link on this page carries no affiliate tag at all, because it is not sold through Amazon and we make nothing on it. We do not accept payment for placement and we do not link to product listings we have not verified.</p>
+  <p>Loiter Point does not operate a testing lab. Our recommendations synthesise published independent measurements and verified owner reports, with every figure labelled as a manufacturer rating or a reported real-world result. Prices current as of July 2026 and subject to change.</p>
+  <p class="copy">&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+</footer>
+
+</div>
+</body>
+</html>
