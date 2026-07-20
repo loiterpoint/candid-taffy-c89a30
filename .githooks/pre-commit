@@ -15,7 +15,8 @@ fi
 
 if ! python3 check_surfaced.py; then
     echo
-    echo "Some articles are unreachable. Add the missing cards or site-map entries."
+    echo "Some articles are unreachable. Fix:  python3 surface_articles.py"
+    echo "(add a <meta name=\"lp:category\" content=\"...\"> tag to any brand-new article first)"
     fail=1
 fi
 

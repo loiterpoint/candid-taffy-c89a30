@@ -192,6 +192,8 @@ def main() -> int:
         for f in failures:
             say(f"  {f}")
         say("")
+        say('Fix:  add <meta name="lp:category" content="<slug>"> to any new '
+            "article, then run  python3 surface_articles.py")
         return 1
 
     say(
