@@ -1,0 +1,229 @@
+{
+ "_doc": "Loiter Point category ranking config — single source of truth for revenue-first prioritization. All agents/tasks MUST read this before choosing what to build, feature, or link. Reorder happens by editing scores here, never by hardcoding. All figures are ESTIMATES for internal prioritization only — never publish them on the site. Verify commission rates against live affiliate program terms.",
+ "_scoring": "priorityScore = 0.40*marketScore + 0.25*revenuePotential + 0.20*searchDemand + 0.15*seoOpportunity (each 0-100). Recompute when inputs change; sort desc.",
+ "_updated": "2026-07-19",
+ "categories": [
+  {
+   "slug": "smartphones",
+   "label": "Smartphones & Mobile",
+   "marketUSD_B": [
+    550,
+    700
+   ],
+   "marketScore": 100,
+   "estCommissionPct": 1.5,
+   "estConversion": "high",
+   "revenuePotential": 80,
+   "searchDemand": 100,
+   "seoOpportunity": 95,
+   "priorityScore": 95,
+   "siteAuthority": "NONE — zero articles. Biggest gap on the site.",
+   "nav": "/smartphones/"
+  },
+  {
+   "slug": "computing",
+   "label": "Computers & Monitors",
+   "marketUSD_B": [
+    350,
+    450
+   ],
+   "marketScore": 75,
+   "estCommissionPct": 2.5,
+   "estConversion": "high",
+   "revenuePotential": 85,
+   "searchDemand": 90,
+   "seoOpportunity": 85,
+   "priorityScore": 83,
+   "siteAuthority": "16 articles — strongest section",
+   "nav": "/computing/"
+  },
+  {
+   "slug": "tv-entertainment",
+   "label": "TVs & Home Entertainment",
+   "marketUSD_B": [
+    220,
+    300
+   ],
+   "marketScore": 55,
+   "estCommissionPct": 2,
+   "estConversion": "med-high",
+   "revenuePotential": 70,
+   "searchDemand": 85,
+   "seoOpportunity": 80,
+   "priorityScore": 68,
+   "siteAuthority": "4 articles (streaming) — thin",
+   "nav": "/streaming/"
+  },
+  {
+   "slug": "smart-home",
+   "label": "Smart Home",
+   "marketUSD_B": [
+    180,
+    250
+   ],
+   "marketScore": 45,
+   "estCommissionPct": 3.5,
+   "estConversion": "med-high",
+   "revenuePotential": 75,
+   "searchDemand": 75,
+   "seoOpportunity": 80,
+   "priorityScore": 64,
+   "siteAuthority": "7 articles",
+   "nav": "/smart-home/"
+  },
+  {
+   "slug": "wearables",
+   "label": "Wearables & Smartwatches",
+   "marketUSD_B": [
+    120,
+    180
+   ],
+   "marketScore": 35,
+   "estCommissionPct": 3,
+   "estConversion": "med",
+   "revenuePotential": 60,
+   "searchDemand": 70,
+   "seoOpportunity": 70,
+   "priorityScore": 54,
+   "siteAuthority": "in mobile-tech (7)",
+   "nav": "/mobile-tech/"
+  },
+  {
+   "slug": "gaming",
+   "label": "Gaming Hardware",
+   "marketUSD_B": [
+    90,
+    140
+   ],
+   "marketScore": 28,
+   "estCommissionPct": 2,
+   "estConversion": "med-high",
+   "revenuePotential": 55,
+   "searchDemand": 75,
+   "seoOpportunity": 65,
+   "priorityScore": 51,
+   "siteAuthority": "partial (headsets, gaming laptops in computing)",
+   "nav": "/computing/"
+  },
+  {
+   "slug": "networking",
+   "label": "Home Networking",
+   "marketUSD_B": [
+    70,
+    100
+   ],
+   "marketScore": 22,
+   "estCommissionPct": 3,
+   "estConversion": "med",
+   "revenuePotential": 50,
+   "searchDemand": 55,
+   "seoOpportunity": 65,
+   "priorityScore": 43,
+   "siteAuthority": "2 articles",
+   "nav": "/networking/"
+  },
+  {
+   "slug": "security",
+   "label": "Home Security",
+   "marketUSD_B": [
+    60,
+    90
+   ],
+   "marketScore": 20,
+   "estCommissionPct": 3.5,
+   "estConversion": "med-high",
+   "revenuePotential": 55,
+   "searchDemand": 60,
+   "seoOpportunity": 65,
+   "priorityScore": 44,
+   "siteAuthority": "in smart-home",
+   "nav": "/smart-home/"
+  },
+  {
+   "slug": "audio",
+   "label": "Audio",
+   "marketUSD_B": [
+    55,
+    80
+   ],
+   "marketScore": 18,
+   "estCommissionPct": 3.5,
+   "estConversion": "high",
+   "revenuePotential": 55,
+   "searchDemand": 65,
+   "seoOpportunity": 55,
+   "priorityScore": 43,
+   "siteAuthority": "8 articles",
+   "nav": "/audio/"
+  },
+  {
+   "slug": "cameras",
+   "label": "Cameras & Photography",
+   "marketUSD_B": [
+    40,
+    60
+   ],
+   "marketScore": 14,
+   "estCommissionPct": 3,
+   "estConversion": "med",
+   "revenuePotential": 40,
+   "searchDemand": 50,
+   "seoOpportunity": 55,
+   "priorityScore": 35,
+   "siteAuthority": "2 articles",
+   "nav": "/cameras/"
+  },
+  {
+   "slug": "home-energy",
+   "label": "Home Energy Tech",
+   "marketUSD_B": [
+    35,
+    60
+   ],
+   "marketScore": 13,
+   "estCommissionPct": 3,
+   "estConversion": "low-med",
+   "revenuePotential": 40,
+   "searchDemand": 45,
+   "seoOpportunity": 70,
+   "priorityScore": 36,
+   "siteAuthority": "NONE",
+   "nav": "/power/"
+  },
+  {
+   "slug": "robotics",
+   "label": "Consumer Robotics",
+   "marketUSD_B": [
+    25,
+    45
+   ],
+   "marketScore": 10,
+   "estCommissionPct": 3,
+   "estConversion": "med",
+   "revenuePotential": 40,
+   "searchDemand": 50,
+   "seoOpportunity": 55,
+   "priorityScore": 33,
+   "siteAuthority": "robot vacuums in home-tech (11)",
+   "nav": "/home-tech/"
+  },
+  {
+   "slug": "drones",
+   "label": "Drones",
+   "marketUSD_B": [
+    8,
+    15
+   ],
+   "marketScore": 4,
+   "estCommissionPct": 3,
+   "estConversion": "med",
+   "revenuePotential": 25,
+   "searchDemand": 35,
+   "seoOpportunity": 30,
+   "priorityScore": 20,
+   "siteAuthority": "13 articles — OVERWEIGHTED vs market; maintain, do not expand",
+   "nav": "/drones/"
+  }
+ ],
+ "_editorialFirewall": "Prioritization operates at CATEGORY level only: what we cover, feature, and internally link. Within any single guide, picks are ranked on published evidence, never on commission. This is what keeps the affiliate disclosure ('never influences scores') true."
+}
