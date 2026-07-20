@@ -1,0 +1,22 @@
+name: sitemap
+
+# Fails when sitemap.xml no longer matches the files in the repo -- i.e. an
+# article, guide or category page was added or removed without regenerating.
+# Fix locally with:  python3 generate_sitemap.py  (then commit sitemap.xml)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: sitemap.xml is up to date
+        run: python3 generate_sitemap.py --check
