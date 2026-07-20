@@ -11,6 +11,7 @@ Setup:
 
 import os
 import json
+import html
 from pathlib import Path
 from datetime import datetime
 from slugify import slugify
@@ -268,15 +269,27 @@ def wrap_page(item: dict, body: str) -> str:
   </a>
   <p class="buy-note">Affiliate link — we earn a small commission at no cost to you. It never affects our score.</p>
 </div>"""
-
+    slug = slugify(item["title"])
+    canonical = f"https://loiterpoint.com/articles/{slug}.html"
+    description = f"In-depth {type_label.lower()}: {title}. Real field test data, firmware notes, and an honest verdict from pilots who actually fly."
+    esc_title = html.escape(title, quote=True)
+    esc_desc = html.escape(description, quote=True)
+    ld_json = json.dumps({"@context": "https://schema.org", "@type": "Article", "headline": title, "description": description, "url": canonical, "datePublished": datetime.now().strftime("%Y-%m-%d"), "author": {"@type": "Organization", "name": "Loiter Point"}, "publisher": {"@type": "Organization", "name": "Loiter Point"}}, ensure_ascii=False)
+    
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{title} — Loiter Point</title>
-  <meta name="description" content="In-depth {type_label.lower()}: {title}. Real field test data, firmware notes, and an honest verdict from pilots who actually fly."/>
+  <meta name="description" content="{esc_desc}"/>
   <meta name="lp:category" content="{item.get('category', 'drones')}"/>
+  <link rel="canonical" href="{canonical}"/>
+  <meta property="og:title" content="{esc_title}"/>
+  <meta property="og:description" content="{esc_desc}"/>
+  <meta property="og:url" content="{canonical}"/>
+  <meta property="og:type" content="article"/>
+  <script type="application/ld+json">{ld_json}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
