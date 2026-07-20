@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>Best Robot Lawn Mowers (2026): Rated Coverage vs. What They Actually Cut Per Charge | Loiter Point</title>
+<meta name="description" content="The five robot mowers worth buying in 2026 — eufy E15, Segway Navimow i110N, i210 AWD, X430 and Mammotion LUBA 3 AWD. Plus the spec that misleads every buyer: max supported area is not area per charge." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px;margin:0 auto;padding:0 20px 80px;}
+  a{color:var(--accent);}
+  nav.top{
+    border-bottom:1px solid var(--border);
+    background:rgba(12,12,14,.9);
+    position:sticky;top:0;z-index:20;
+    backdrop-filter:blur(8px);
+  }
+  nav.top .inner{
+    max-width:840px;margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  nav.top a.back{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;
+    text-decoration:none;color:var(--muted);
+  }
+  nav.top a.back:hover{color:var(--accent);}
+  nav.top .brand{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--text);
+  }
+  header.hero{padding:56px 0 8px;}
+  .kicker{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:44px;line-height:1.12;letter-spacing:-.02em;
+    font-weight:800;margin:0 0 18px;
+  }
+  .dek{font-size:20px;color:var(--muted);line-height:1.6;margin:0 0 22px;}
+  .byline{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:12px 0;display:flex;gap:18px;flex-wrap:wrap;
+  }
+  h2{
+    font-size:30px;line-height:1.2;letter-spacing:-.015em;font-weight:700;
+    margin:56px 0 16px;
+  }
+  h3{font-size:21px;font-weight:700;margin:34px 0 10px;letter-spacing:-.01em;}
+  p{margin:0 0 18px;}
+  strong{color:#fff;font-weight:600;}
+
+  /* TLDR */
+  .tldr{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:24px 26px;margin:34px 0 10px;
+  }
+  .tldr h2{
+    margin:0 0 14px;font-size:14px;font-family:'IBM Plex Mono',monospace;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;
+  }
+  .tldr ul{margin:0 0 18px;padding-left:20px;}
+  .tldr li{margin-bottom:11px;}
+  .grabline{
+    border-top:1px solid var(--border);padding-top:16px;
+    font-size:15px;line-height:2.1;
+  }
+  .grabline .lbl{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+    display:block;margin-bottom:8px;
+  }
+  .grabline a{
+    display:inline-block;
+    background:var(--surface2);border:1px solid var(--border);
+    border-radius:6px;padding:5px 11px;margin:0 6px 8px 0;
+    text-decoration:none;font-size:14px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .grabline a:hover{border-color:var(--accent);}
+  .grabline a .px{color:var(--muted);}
+
+  /* pick cards */
+  .pick{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:12px;padding:26px;margin:32px 0;
+  }
+  .pick-head{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;}
+  .rank{
+    background:var(--accent);color:#0c0c0e;
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;
+    width:38px;height:38px;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .pick-title{flex:1;min-width:240px;}
+  .award{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+    margin-bottom:5px;
+  }
+  .pick-title h3{margin:0;font-size:23px;}
+  .price{
+    font-family:'IBM Plex Mono',monospace;font-size:15px;
+    color:#fff;background:var(--surface2);border:1px solid var(--border);
+    padding:7px 12px;border-radius:6px;white-space:nowrap;
+  }
+  .price small{display:block;color:var(--muted);font-size:11px;white-space:normal;max-width:200px;}
+  .specgrid{
+    width:100%;border-collapse:collapse;margin:20px 0;
+    font-size:14.5px;
+  }
+  .specgrid th{
+    text-align:left;font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);font-weight:500;
+    border-bottom:1px solid var(--border);padding:8px 10px;
+  }
+  .specgrid td{
+    border-bottom:1px solid var(--border);padding:10px;vertical-align:top;
+  }
+  .specgrid td:first-child{color:var(--muted);width:32%;}
+  .specgrid tr.rw td{background:rgba(232,255,71,.035);}
+  .specgrid tr.rw td:nth-child(2){color:#fff;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;
+    letter-spacing:.1em;text-transform:uppercase;
+    border:1px solid var(--border);border-radius:4px;
+    padding:2px 6px;color:var(--muted);margin-left:6px;white-space:nowrap;
+  }
+  .buy{
+    display:inline-block;background:var(--accent);color:#0c0c0e;
+    font-weight:700;font-size:15px;text-decoration:none;
+    padding:13px 26px;border-radius:8px;margin-top:6px;
+  }
+  .buy:hover{filter:brightness(1.08);}
+  .prosandcons{display:flex;gap:22px;flex-wrap:wrap;margin:18px 0 4px;}
+  .prosandcons div{flex:1;min-width:220px;}
+  .prosandcons h4{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    margin:0 0 8px;font-weight:500;
+  }
+  .prosandcons ul{margin:0;padding-left:18px;font-size:15px;}
+  .prosandcons li{margin-bottom:6px;}
+
+  /* nerd box */
+  .nerd{
+    background:var(--surface2);border:1px solid var(--border);
+    border-radius:12px;padding:26px;margin:38px 0;
+  }
+  .nerd .lbl{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--accent);
+    margin-bottom:12px;
+  }
+  .nerd h3{margin-top:0;}
+  .nerd p:last-child{margin-bottom:0;}
+  .mathline{
+    font-family:'IBM Plex Mono',monospace;font-size:14px;
+    background:var(--bg);border:1px solid var(--border);border-radius:8px;
+    padding:14px 16px;margin:16px 0;color:#fff;line-height:1.9;
+  }
+  .mathline span{color:var(--muted);}
+
+  /* comparison table */
+  .tablewrap{overflow-x:auto;margin:26px 0;border:1px solid var(--border);border-radius:10px;}
+  table.cmp{width:100%;border-collapse:collapse;font-size:14px;min-width:720px;}
+  table.cmp th{
+    background:var(--surface2);text-align:left;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    font-weight:500;padding:12px 14px;border-bottom:1px solid var(--border);
+  }
+  table.cmp td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top;}
+  table.cmp tr:last-child td{border-bottom:none;}
+  table.cmp td:first-child{color:#fff;font-weight:600;}
+
+  .callout{
+    border-left:3px solid var(--border);padding:4px 0 4px 20px;
+    color:var(--muted);margin:24px 0;font-size:16px;
+  }
+  ul.body,ol.body{padding-left:22px;margin:0 0 20px;}
+  ul.body li,ol.body li{margin-bottom:12px;}
+
+  .bottomline{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:12px;padding:28px;margin-top:20px;
+  }
+  .bottomline h2{margin-top:0;}
+
+  footer{
+    border-top:1px solid var(--border);margin-top:70px;padding:34px 0 60px;
+    color:var(--muted);font-size:13.5px;
+  }
+  footer .disc{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:10px;padding:18px 20px;margin-bottom:22px;line-height:1.65;
+  }
+  footer .cr{font-family:'IBM Plex Mono',monospace;font-size:12px;}
+  @media(max-width:640px){
+    h1{font-size:32px;}
+    .dek{font-size:17px;}
+    h2{font-size:24px;}
+    .wrap{padding:0 16px 60px;}
+    .pick{padding:20px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a class="back" href="../index.html">&larr; All guides</a>
+    <span class="brand">Loiter Point</span>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Buyer's Guide // Outdoor Robotics</div>
+  <h1>The Best Robot Lawn Mowers of 2026</h1>
+  <p class="dek">Five mowers worth your money — and the one spec on every box that quietly misleads almost everyone who buys one.</p>
+  <div class="byline">
+    <span>Updated July 2026</span>
+    <span>Evidence-first · No lab, no test yard</span>
+    <span>Affiliate-supported</span>
+  </div>
+</header>
+
+<div class="tldr">
+  <h2>TL;DR</h2>
+  <ul>
+    <li><strong>Buy the <a href="https://www.amazon.com/dp/B0G8173C6Y?tag=loiterpoint20-20" rel="sponsored nofollow">Segway Navimow i210 AWD</a> if you just want the right answer.</strong> Up to 0.25 acre, no yard antenna to install, built-in 4G, all-wheel drive rated for 24° slopes. Frequently discounted well below its ~$1,499 list.</li>
+    <li><strong>Small, simple yard? The <a href="https://www.amazon.com/dp/B0DRVYDXWX?tag=loiterpoint20-20" rel="sponsored nofollow">eufy E15</a> is the easiest setup here</strong> — pure camera-based navigation, no RTK antenna staked into your lawn. Its pricing is genuinely chaotic right now (list has been seen near $1,800; street pricing has landed under $1,000), so <em>do not buy it at list</em>.</li>
+    <li><strong>The "max supported area" number is not what it cuts per charge.</strong> The i210 is sold as a 0.25-acre mower but covers roughly 0.06 acre per battery cycle — it docks, recharges and resumes. Nothing here mows an acre in one pass.</li>
+    <li><strong>Steep or chopped-up lawn?</strong> The <a href="https://www.amazon.com/dp/B0GKNQKJJQ?tag=loiterpoint20-20" rel="sponsored nofollow">Mammotion LUBA 3 AWD 3000H</a> adds 360° LiDAR to RTK, which is what keeps it positioned where RTK-only mowers lose their fix. Got an acre? <a href="https://www.amazon.com/dp/B0G8Y8CNH7?tag=loiterpoint20-20" rel="sponsored nofollow">Navimow X430</a>.</li>
+  </ul>
+  <div class="grabline">
+    <span class="lbl">Grab your pick:</span>
+    <a href="https://www.amazon.com/dp/B0DRVYDXWX?tag=loiterpoint20-20" rel="sponsored nofollow">eufy E15 <span class="px">· price varies wildly</span></a>
+    <a href="https://www.amazon.com/dp/B0CX7T6BR3?tag=loiterpoint20-20" rel="sponsored nofollow">Navimow i110N <span class="px">· $1,299</span></a>
+    <a href="https://www.amazon.com/dp/B0G8173C6Y?tag=loiterpoint20-20" rel="sponsored nofollow">Navimow i210 AWD <span class="px">· ~$1,499 list</span></a>
+    <a href="https://www.amazon.com/dp/B0GKNQKJJQ?tag=loiterpoint20-20" rel="sponsored nofollow">LUBA 3 AWD 3000H <span class="px">· $2,499</span></a>
+    <a href="https://www.amazon.com/dp/B0G8Y8CNH7?tag=loiterpoint20-20" rel="sponsored nofollow">Navimow X430 <span class="px">· $2,499 list</span></a>
+  </div>
+</div>
+
+<h2>The spec that misleads everyone</h2>
+
+<p>Read the box on any robot mower and you will find a headline number: <em>up to 0.25 acre</em>. <em>Up to 1 acre</em>. It reads like a capability claim. It is actually a management claim.</p>
+
+<p>What that number means is the total lawn area the mower's software will maintain on a schedule — not the area it cuts before the battery dies. Those are wildly different quantities. The Segway Navimow i210 AWD is marketed as a quarter-acre machine. Its actual coverage per charge is roughly <strong>0.06 acre</strong>. It cuts, notices the battery is low, drives itself back to the dock, charges, and resumes where it stopped. Over a day or two it gets through the quarter acre. It never once mows a quarter acre in a sitting.</p>
+
+<p>There is nothing wrong with that design. Dock-and-resume is exactly how these machines are supposed to work, and it is why they can maintain lawns that no single battery could clear. The problem is expectation. Buyers read "1 acre," picture the thing finishing the yard before lunch, and then feel cheated when it is still working at dusk on day two. That gap — rated coverage versus real-world coverage — is the single most common source of robot mower buyer's remorse, and it is the frame we've used for every pick below.</p>
+
+<div class="nerd">
+  <div class="lbl">// Nerd box</div>
+  <h3>Max supported area vs. area per charge</h3>
+  <p>Treat the advertised area as a <em>duty cycle rating</em>, not a range rating. Here is the i210 AWD's own published figures side by side:</p>
+  <div class="mathline">
+    <span>Advertised max supported area .....</span> 0.25 acre (~10,890 sq ft)<br />
+    <span>Battery .........................</span> 5.1 Ah<br />
+    <span>Runtime per charge ..............</span> up to ~120 min<br />
+    <span>Coverage per charge .............</span> ~0.06 acre (~2,600 sq ft)<br />
+    <span>Charge cycles to clear the max ...</span> roughly 4
+  </div>
+  <p>So a full pass of a maxed-out yard is four mow-charge-resume cycles, plus dock time between each. The practical consequence: if you are near the top of a mower's rated area, the machine is running most days rather than a couple of times a week, and a single rainy stretch can put it meaningfully behind. If your lawn is close to a model's ceiling, buy the next size up. That is the whole lesson.</p>
+  <p>The same math is why the Navimow X430's reported figure is a useful sanity check: about <strong>9,600 sq ft in 110 minutes</strong> per independent reporting, at roughly 2.6 ft/sec across a 17-inch swath. That's a genuinely fast machine — and it's still only about a fifth of its rated 1-acre ceiling in one run.</p>
+</div>
+
+<h2>How We Evaluate Robot Mowers</h2>
+
+<p>Loiter Point does not operate a test lab or a test yard, and we are not going to pretend otherwise. What we do is narrower and, for a category like this, more useful: we synthesize <strong>published independent testing</strong> with <strong>verified owner reports</strong>, then check both against manufacturer specifications to find where the claims and the outcomes diverge.</p>
+
+<p>For this guide that means outlets that actually put mowers on grass — Android Authority, Bob Vila, Reviewed, Ideal Home, BBC Gardeners' World, PCWorld, SlashGear, 9to5Toys and price-tracking from trivando — cross-referenced against aggregated buyer feedback on recurring failure modes. Manufacturer blogs and brand-owned "review" pages were treated as marketing, not evidence, and excluded.</p>
+
+<p>Where independent evidence is thin or contradictory, we say so in plain language instead of manufacturing confidence. Two places in this guide where that matters a lot:</p>
+
+<ul class="body">
+  <li><strong>eufy E15 pricing is currently a mess.</strong> eufy's own store has listed it at $1,799.99 and one source cites an $1,800 MSRP, but street pricing has been observed at $949.99 and $999.99 on Amazon and $1,199.99 at Costco. We are not printing a single confident price for it because there isn't one.</li>
+  <li><strong>Canopy and RTK behavior varies by yard.</strong> The physics is well understood; the per-yard outcome is not predictable from specs. We describe the mechanism and the reported symptoms, not a number.</li>
+</ul>
+
+<p>Every spec grid below separates <em>rated</em> figures (what the manufacturer publishes) from <em>est. real-world / reported</em> figures (what independent testing and owners describe). Nothing in this guide is labeled "measured," because we didn't measure it.</p>
+
+<!-- ===================== PICKS ===================== -->
+
+<h2>The Picks</h2>
+
+<!-- 1 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="rank">1</div>
+    <div class="pick-title">
+      <div class="award">Best for small yards / easiest setup</div>
+      <h3>eufy E15</h3>
+    </div>
+    <div class="price">Price varies<small>Seen $949.99–$1,799.99. See note below.</small></div>
+  </div>
+
+  <p>The E15's actual selling point is what it <em>doesn't</em> make you do. There is no RTK reference antenna to mount, no post to stake into your lawn, no line-of-sight geometry to plan around. It navigates purely by vision — stereo cameras plus onboard AI — which collapses setup from an afternoon project into something closer to unboxing a robot vacuum. For a compact suburban lot, that is worth real money.</p>
+
+  <p>Coverage tops out at 0.2 acre (about 8,700 sq ft), with 3D obstacle avoidance, multi-zone management and GPS anti-theft. Max slope is 18°, which is a fairly ordinary residential grade — this is not the pick for a bank or a hillside. Two constraints matter more than most buyers expect: it wants grass under 3.5 inches, and it wants height differences under 1.2 inches. If your lawn regularly gets shaggy between mows, or your yard has abrupt transitions and root humps, the E15 will struggle where an all-wheel-drive machine wouldn't.</p>
+
+  <p><strong>About that price.</strong> The spread here is the widest of anything in this guide — eufy's own store has shown $1,799.99 and one source cites an $1,800 MSRP, while Amazon street pricing has been observed at $949.99 and $999.99, and Costco at $1,199.99. That is not a small gap; it is nearly a 2× swing on the same SKU. Buying this at list is a mistake. Discounts on the E15 have been recurring rather than one-off, so if you see it near four figures, that's the number to act on — and if you see it near eighteen hundred, wait.</p>
+
+  <table class="specgrid">
+    <tr><th>Spec</th><th>Figure</th></tr>
+    <tr><td>Max supported area <span class="tag">rated</span></td><td>0.2 acre (~8,700 sq ft)</td></tr>
+    <tr><td>Navigation</td><td>Vision only — stereo cameras + AI. No RTK, no yard antenna.</td></tr>
+    <tr><td>Max slope <span class="tag">rated</span></td><td>18°</td></tr>
+    <tr><td>Obstacle handling</td><td>3D obstacle avoidance</td></tr>
+    <tr><td>Zones</td><td>Multi-zone management</td></tr>
+    <tr><td>Security</td><td>GPS anti-theft</td></tr>
+    <tr class="rw"><td>Setup burden <span class="tag">est. real-world</span></td><td>Lowest here — no antenna install step at all</td></tr>
+    <tr class="rw"><td>Grass condition limits <span class="tag">reported</span></td><td>Grass under 3.5 in; height differences under 1.2 in</td></tr>
+    <tr class="rw"><td>Street price <span class="tag">reported</span></td><td>$949.99 / $999.99 (Amazon), $1,199.99 (Costco) vs. $1,799.99 list</td></tr>
+  </table>
+
+  <div class="prosandcons">
+    <div>
+      <h4>Strengths</h4>
+      <ul>
+        <li>No RTK antenna to install — genuinely the simplest setup in the category</li>
+        <li>Vision navigation degrades more gracefully than RTK-only under trees</li>
+        <li>Frequently discounted to roughly half its list price</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Limits</h4>
+      <ul>
+        <li>18° slope ceiling rules out banks and steep grades</li>
+        <li>Tight tolerances on grass height and ground unevenness</li>
+        <li>Pricing is chaotic; list price is bad value</li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0DRVYDXWX?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- 2 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="rank">2</div>
+    <div class="pick-title">
+      <div class="award">Budget RTK pick</div>
+      <h3>Segway Navimow i110N</h3>
+    </div>
+    <div class="price">$1,299<small>MSRP</small></div>
+  </div>
+
+  <p>The i110N is the cheapest way into serious navigation. It pairs RTK positioning with vision assistance, runs entirely wire-free — no perimeter wire to bury — and uses AI-assisted mapping with virtual boundaries and multi-zone scheduling. Coverage is up to a quarter acre. PCWorld reviewed it and characterized it as a low-cost compact mower with the best navigation feature set in its class, which is a fair summary of the value proposition: you are paying entry-level money for mid-tier positioning.</p>
+
+  <p>The tradeoff versus its more expensive sibling is physical. The i110N <strong>requires a yard antenna</strong> — an RTK reference receiver that has to go somewhere with clear sky and stay there. That's a real install decision, a real cable run, and a real aesthetic compromise in a small yard. If that bothers you, the i210 AWD's antenna-free design is precisely what the extra money buys.</p>
+
+  <p>Two other notes. Noise is rated 58 dB(A), which is quiet enough to run without irritating a neighbor. And there is an optional 4G add-on that acts as a backup path when Wi-Fi doesn't reach the far corner of the lawn — worth budgeting for if your router is on the wrong side of the house, since the i210 includes cellular in the box and this one doesn't.</p>
+
+  <table class="specgrid">
+    <tr><th>Spec</th><th>Figure</th></tr>
+    <tr><td>Max supported area <span class="tag">rated</span></td><td>Up to 1/4 acre</td></tr>
+    <tr><td>Navigation</td><td>RTK + Vision, AI-assisted mapping</td></tr>
+    <tr><td>Boundary</td><td>Wire-free, virtual boundaries, multi-zone</td></tr>
+    <tr><td>Noise <span class="tag">rated</span></td><td>58 dB(A)</td></tr>
+    <tr><td>Connectivity</td><td>Wi-Fi; optional 4G add-on as backup</td></tr>
+    <tr class="rw"><td>Install requirement <span class="tag">reported</span></td><td>Yard antenna required — unlike the i210</td></tr>
+    <tr class="rw"><td>Independent verdict <span class="tag">reported</span></td><td>PCWorld: low-cost compact mower, best navigation features in its class</td></tr>
+    <tr class="rw"><td>Coverage per charge <span class="tag">est. real-world</span></td><td>Expect several dock-and-resume cycles to clear a maxed-out quarter acre</td></tr>
+  </table>
+
+  <div class="prosandcons">
+    <div>
+      <h4>Strengths</h4>
+      <ul>
+        <li>Cheapest credible RTK + vision combination</li>
+        <li>Wire-free install, no perimeter wire to bury</li>
+        <li>Quiet at 58 dB(A)</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Limits</h4>
+      <ul>
+        <li>Yard antenna is mandatory</li>
+        <li>4G is an add-on cost, not included</li>
+        <li>No all-wheel drive — flat-to-moderate lawns only</li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0CX7T6BR3?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- 3 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="rank">3</div>
+    <div class="pick-title">
+      <div class="award">Best all-around</div>
+      <h3>Segway Navimow i210 AWD</h3>
+    </div>
+    <div class="price">~$1,499 list<small>Widely seen $1,199–$1,299; a Prime-member promo cut $300</small></div>
+  </div>
+
+  <p>This is the one most people should buy. The i210 AWD takes the i110N's quarter-acre remit and fixes the two things that annoy owners: it uses NRTK plus vision with auto-mapping and <strong>requires no yard antenna</strong>, and it has <strong>4G built in</strong> rather than sold separately. Between those two changes, setup drops to placing a dock and letting it map, and connectivity stops depending on how far your Wi-Fi throws.</p>
+
+  <p>The drivetrain is the other upgrade. All-wheel drive rated for 45% (24°) slopes plus all-terrain tires puts it comfortably past the E15's 18° ceiling, which covers most real suburban grades including the awkward strip by the driveway. A 5-blade cutting disc handles a cutting height range of 2 to 3.6 inches, and the 5.1 Ah battery is rated for up to about 120 minutes.</p>
+
+  <p>Which brings us back to the central point of this guide. That 120 minutes translates to roughly <strong>0.06 acre per charge</strong> against a 0.25-acre rating. Four-ish cycles to do the whole lawn. Plan for the mower to be a resident of your yard rather than a visitor, and it's an easy machine to live with.</p>
+
+  <p>On price: list is around $1,499 but it has been widely available at $1,199–$1,299, including a Prime-member promotion that took $300 off. At $1,199 it is straightforwardly the best value in this guide; at full list the gap to the i110N gets harder to justify unless the antenna-free install matters to you — which, for a lot of people, it does.</p>
+
+  <table class="specgrid">
+    <tr><th>Spec</th><th>Figure</th></tr>
+    <tr><td>Max supported area <span class="tag">rated</span></td><td>Up to 0.25 acre</td></tr>
+    <tr><td>Navigation</td><td>NRTK + Vision, auto-mapping, no antenna required</td></tr>
+    <tr><td>Connectivity</td><td>4G built in</td></tr>
+    <tr><td>Drivetrain / slope <span class="tag">rated</span></td><td>AWD, 45% (24°), all-terrain tires</td></tr>
+    <tr><td>Cutting system</td><td>5-blade disc, 2–3.6 in cutting height</td></tr>
+    <tr><td>Battery / runtime <span class="tag">rated</span></td><td>5.1 Ah, up to ~120 min</td></tr>
+    <tr class="rw"><td>Coverage per charge <span class="tag">reported</span></td><td>~0.06 acre — about 4 cycles to clear a full 0.25 acre</td></tr>
+    <tr class="rw"><td>Street price <span class="tag">reported</span></td><td>$1,199–$1,299 seen widely vs. ~$1,499 list</td></tr>
+  </table>
+
+  <div class="prosandcons">
+    <div>
+      <h4>Strengths</h4>
+      <ul>
+        <li>No yard antenna and built-in 4G — a real upgrade over the i110N</li>
+        <li>AWD to 24° covers most suburban grades</li>
+        <li>Regularly discounted to $1,199–$1,299</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Limits</h4>
+      <ul>
+        <li>0.06 acre per charge means multi-cycle mowing days</li>
+        <li>Quarter-acre ceiling — size up if you're near it</li>
+        <li>2 in minimum cutting height won't suit a low-cut lawn</li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0G8173C6Y?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- 4 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="rank">4</div>
+    <div class="pick-title">
+      <div class="award">Best for complex and steep lawns</div>
+      <h3>Mammotion LUBA 3 AWD 3000H</h3>
+    </div>
+    <div class="price">$2,499</div>
+  </div>
+
+  <p>Everything above navigates by some blend of satellite positioning and cameras. The LUBA 3 adds a third leg: <strong>360° LiDAR</strong>, on top of NetRTK and AI vision. Mammotion calls it tri-fusion positioning, and the marketing name is less interesting than the engineering reason it exists. LiDAR gives the mower a geometric model of its surroundings that doesn't depend on seeing satellites at all. When an RTK-only mower drives under a mature oak and its fix degrades, it has nothing to fall back on. The LUBA 3 still knows where the fence, the shed and the tree trunks are.</p>
+
+  <p>That is the entire argument for spending $2,499 here rather than $1,199 on the i210. If your lawn is open sky and simple shapes, you do not need it. If your lawn is carved into pieces by mature trees, hedges and beds, it's the difference between a mower that works and one that pauses constantly.</p>
+
+  <p>The slope rating is the other reason. All-wheel drive rated for <strong>80% grades — roughly 38°</strong> — is more than double the i210's ceiling and comfortably into terrain most people currently handle with a string trimmer and a bad attitude. Coverage is up to 0.75 acre, with 30-zone multi-zone management and a 2.2–4.0 inch cutting height range that suits taller-cut warm-season grasses better than the Navimows do.</p>
+
+  <p><strong>Sizing alternatives.</strong> The 3000H is the middle of a family, so if 0.75 acre is the wrong number, buy the right one rather than fighting the ceiling: the <a href="https://www.amazon.com/dp/B0GK18JFJP?tag=loiterpoint20-20" rel="sponsored nofollow">LUBA 3 AWD 1500H</a> covers 0.37 acre at $2,099, and the <a href="https://www.amazon.com/dp/B0GKM8JZDF?tag=loiterpoint20-20" rel="sponsored nofollow">LUBA 3 AWD 5000</a> covers 1.25 acres at $2,899.</p>
+
+  <table class="specgrid">
+    <tr><th>Spec</th><th>Figure</th></tr>
+    <tr><td>Max supported area <span class="tag">rated</span></td><td>Up to 0.75 acre</td></tr>
+    <tr><td>Navigation</td><td>Tri-fusion: 360° LiDAR + NetRTK + AI vision</td></tr>
+    <tr><td>Drivetrain / slope <span class="tag">rated</span></td><td>AWD, 80% grade (~38°)</td></tr>
+    <tr><td>Zones</td><td>30 multi-zone management</td></tr>
+    <tr><td>Cutting height</td><td>2.2–4.0 in</td></tr>
+    <tr class="rw"><td>Canopy behavior <span class="tag">est. real-world</span></td><td>LiDAR holds position where RTK-only designs lose fix</td></tr>
+    <tr class="rw"><td>Sizing alternatives <span class="tag">reported</span></td><td>1500H — 0.37 acre, $2,099 · 5000 — 1.25 acres, $2,899</td></tr>
+  </table>
+
+  <div class="prosandcons">
+    <div>
+      <h4>Strengths</h4>
+      <ul>
+        <li>LiDAR is the real fix for tree-canopy positioning trouble</li>
+        <li>38° slope rating handles terrain nothing else here will</li>
+        <li>30 zones, and a family of sizes from 0.37 to 1.25 acres</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Limits</h4>
+      <ul>
+        <li>$2,499 — double the i210's street price</li>
+        <li>Overkill on an open, rectangular lawn</li>
+        <li>More sensors means more complexity to configure</li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0GKNQKJJQ?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- 5 -->
+<div class="pick">
+  <div class="pick-head">
+    <div class="rank">5</div>
+    <div class="pick-title">
+      <div class="award">Best for large yards</div>
+      <h3>Segway Navimow X430</h3>
+    </div>
+    <div class="price">$2,499 list<small>Seen $2,099–$2,299 on sale</small></div>
+  </div>
+
+  <p>The X430 is the acre machine. Rated for up to 1 acre, four-wheel drive good for <strong>84% grades (about 40°)</strong>, dual 180W motors and a 10.2 Ah battery that charges in up to 90 minutes. It uses zero-turn steering, which matters more than it sounds — pivoting in place instead of skidding is how you avoid tearing divots in turf every time the mower changes direction, and on a large lawn it changes direction thousands of times a season.</p>
+
+  <p>The cutting spec is the widest here: <strong>0.75 to 4 inches</strong>, which spans everything from a tightly maintained lawn to a shaggy back paddock. It also clears vertical obstacles up to 2.8 inches, so root flares, paver edges and the lip where the lawn meets the patio stop being pause-and-call-for-help events.</p>
+
+  <p>Independent reporting gives us the most concrete throughput figures in this guide: dual 6-blade discs cutting a <strong>17-inch swath</strong>, moving at about <strong>2.6 ft/sec</strong>, covering roughly <strong>9,600 sq ft in 110 minutes</strong>. Run that against the 1-acre rating (43,560 sq ft) and you get the point of this whole article in one line — the acre mower does about a fifth of an acre per run. 9to5Toys reviewed it as a highly advanced machine but a genuinely expensive investment, which is the right note. At $2,099–$2,299 on sale it makes sense for an acre. At $2,499 for a quarter acre it does not.</p>
+
+  <table class="specgrid">
+    <tr><th>Spec</th><th>Figure</th></tr>
+    <tr><td>Max supported area <span class="tag">rated</span></td><td>Up to 1 acre</td></tr>
+    <tr><td>Drivetrain / slope <span class="tag">rated</span></td><td>4WD, 84% grade (~40°), zero-turn</td></tr>
+    <tr><td>Motors / battery <span class="tag">rated</span></td><td>Dual 180W motors; 10.2 Ah, charges in up to 90 min</td></tr>
+    <tr><td>Cutting height</td><td>0.75–4 in</td></tr>
+    <tr><td>Obstacle clearance <span class="tag">rated</span></td><td>Vertical obstacles up to 2.8 in</td></tr>
+    <tr class="rw"><td>Throughput <span class="tag">reported</span></td><td>~9,600 sq ft in 110 min</td></tr>
+    <tr class="rw"><td>Cutting geometry <span class="tag">reported</span></td><td>Dual 6-blade discs, 17-inch swath, ~2.6 ft/sec</td></tr>
+    <tr class="rw"><td>Independent verdict <span class="tag">reported</span></td><td>9to5Toys: highly advanced, genuinely expensive investment</td></tr>
+  </table>
+
+  <div class="prosandcons">
+    <div>
+      <h4>Strengths</h4>
+      <ul>
+        <li>Fastest throughput here by reported figures</li>
+        <li>Zero-turn steering protects turf on high-traffic paths</li>
+        <li>Widest cutting-height range: 0.75–4 in</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Limits</h4>
+      <ul>
+        <li>Expensive, and only justified at real acre-scale</li>
+        <li>Still roughly a fifth of an acre per charge cycle</li>
+        <li>Large machine — needs somewhere sensible to dock</li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="buy" href="https://www.amazon.com/dp/B0G8Y8CNH7?tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+</div>
+
+<!-- ===================== COMPARISON ===================== -->
+
+<h2>Head to head</h2>
+
+<div class="tablewrap">
+<table class="cmp">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Price</th>
+      <th>Max area (rated)</th>
+      <th>Navigation</th>
+      <th>Slope (rated)</th>
+      <th>Cut height</th>
+      <th>Antenna?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>eufy E15</td>
+      <td>Varies wildly ($949.99–$1,799.99 seen)</td>
+      <td>0.2 acre (~8,700 sq ft)</td>
+      <td>Vision only (stereo cameras + AI)</td>
+      <td>18°</td>
+      <td>&mdash;</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Navimow i110N</td>
+      <td>$1,299 MSRP</td>
+      <td>1/4 acre</td>
+      <td>RTK + Vision</td>
+      <td>&mdash;</td>
+      <td>&mdash;</td>
+      <td>Yes — required</td>
+    </tr>
+    <tr>
+      <td>Navimow i210 AWD</td>
+      <td>~$1,499 list; $1,199–$1,299 seen</td>
+      <td>0.25 acre</td>
+      <td>NRTK + Vision, auto-mapping</td>
+      <td>45% / 24°</td>
+      <td>2–3.6 in</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Mammotion LUBA 3 AWD 3000H</td>
+      <td>$2,499</td>
+      <td>0.75 acre</td>
+      <td>360° LiDAR + NetRTK + AI vision</td>
+      <td>80% / ~38°</td>
+      <td>2.2–4.0 in</td>
+      <td>NetRTK-based</td>
+    </tr>
+    <tr>
+      <td>Navimow X430</td>
+      <td>$2,499 list; $2,099–$2,299 on sale</td>
+      <td>1 acre</td>
+      <td>Segway navigation stack</td>
+      <td>84% / ~40°</td>
+      <td>0.75–4 in</td>
+      <td>&mdash;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="callout">Dashes indicate figures we don't have from a source we trust. We'd rather leave a cell empty than fill it with a guess.</p>
+
+<!-- ===================== LIMITATIONS ===================== -->
+
+<h2>What robot mowers still can't do</h2>
+
+<p>Every machine in this guide has the same five weaknesses. None of them are dealbreakers. All of them will surprise you if nobody tells you first, so here they are, unsoftened. These are drawn from independent reporting and aggregated owner reports.</p>
+
+<h3>1. RTK versus tree canopy is where marketing meets physics</h3>
+<p>RTK positioning needs satellites. Under open sky, an RTK fix holds most of the time and the mower tracks its planned path accurately. Under dense canopy, the visible satellite count drops and fix loss follows. This is not a firmware problem anyone is going to patch away — it's line of sight.</p>
+<p>What differs is the fallback. Vision and vSLAM-assisted designs ride out short GNSS outages considerably better than RTK-only designs, because they still have a positional reference when the satellites go away. LiDAR-equipped machines like the LUBA 3 have the most robust fallback of the group. What you should expect in the shadiest zone of your yard is slowdowns or outright pauses, with the specific behavior depending on how conservative the manufacturer's fail-safe is. We can't tell you how bad it will be in <em>your</em> yard — that depends on your trees, and the evidence here is inherently site-specific.</p>
+
+<h3>2. Edge cutting is universally imperfect</h3>
+<p>All five leave an uncut border. Every one. Owners of all of these machines still trim edges and tight corners by hand. Curved borders and dense landscaping are the worst cases, because the mower's turning geometry and its safety margin around obstacles compound. If your mental model is "I will never touch a trimmer again," recalibrate now: the robot handles the field, you handle the perimeter.</p>
+
+<h3>3. Wet grass and rain</h3>
+<p>Most of these are not designed to cut well on wet grass or mud. Traction suffers, they slip, and they get stuck. Rain sensors will delay or pause mowing and resume once things dry out — which is correct behavior, but it also means a wet week puts the schedule behind, and that hurts most when you're near the mower's rated area ceiling. Prolonged operation in wet conditions accelerates wear on wheels and electronics, so don't fight the rain sensor.</p>
+
+<h3>4. Getting stuck</h3>
+<p>Rocks, fallen branches and bushes strand these machines. Cheaper models need rescuing more often than expensive ones, but no model here is immune. Budget for some babysitting during the first few weeks while you learn where your yard's traps are and either remove them or fence them off virtually. After that initial period, intervention frequency drops sharply for most owners.</p>
+
+<h3>5. Mapping takes real time</h3>
+<p>A simple rectangular lawn can map in about 15 minutes. A multi-zone yard with garden beds, slopes and separated areas takes substantially longer — and it's the setup step people most often underestimate. Do it on a day you have time, not fifteen minutes before you need to leave.</p>
+
+<!-- ===================== HOW TO CHOOSE ===================== -->
+
+<h2>How to choose in 60 seconds</h2>
+
+<ol class="body">
+  <li><strong>Measure your lawn, then add headroom.</strong> If your mowable area is within about 20% of a model's rated ceiling, buy the next size up. Running at the ceiling means daily mowing and no slack for rain.</li>
+  <li><strong>Check your steepest slope honestly.</strong> Under 18°, the E15 is fine. Up to 24°, the i210. Beyond that you need the LUBA 3 or the X430.</li>
+  <li><strong>Count your trees.</strong> Heavy canopy pushes you toward vision-assisted or LiDAR designs, not RTK-only.</li>
+  <li><strong>Decide how you feel about a yard antenna.</strong> It's the single biggest install difference between the i110N and the i210.</li>
+  <li><strong>Don't pay list for the eufy E15.</strong> Wait for the discount. It recurs.</li>
+</ol>
+
+<!-- ===================== BOTTOM LINE ===================== -->
+
+<div class="bottomline">
+<h2>Bottom Line</h2>
+
+<p>For most people the answer is the <a href="https://www.amazon.com/dp/B0G8173C6Y?tag=loiterpoint20-20" rel="sponsored nofollow">Segway Navimow i210 AWD</a>. No antenna to install, 4G in the box, all-wheel drive to 24°, and a street price that has repeatedly landed at $1,199–$1,299 against a ~$1,499 list. It is the least compromised machine per dollar in this guide.</p>
+
+<p>If your lawn is small and simple and you want the setup to take an afternoon rather than a weekend, the <a href="https://www.amazon.com/dp/B0DRVYDXWX?tag=loiterpoint20-20" rel="sponsored nofollow">eufy E15</a> is the easiest thing here to live with — bought on discount, not at list. If you want RTK on the cheapest possible budget and don't mind staking an antenna, the <a href="https://www.amazon.com/dp/B0CX7T6BR3?tag=loiterpoint20-20" rel="sponsored nofollow">Navimow i110N</a> at $1,299 is a lot of navigation for the money.</p>
+
+<p>Complex, sloped, tree-heavy lawns are the case for the <a href="https://www.amazon.com/dp/B0GKNQKJJQ?tag=loiterpoint20-20" rel="sponsored nofollow">Mammotion LUBA 3 AWD 3000H</a> at $2,499 — the LiDAR is the feature you're buying, and it's the right one. Size it properly with the <a href="https://www.amazon.com/dp/B0GK18JFJP?tag=loiterpoint20-20" rel="sponsored nofollow">1500H</a> or <a href="https://www.amazon.com/dp/B0GKM8JZDF?tag=loiterpoint20-20" rel="sponsored nofollow">5000</a> if 0.75 acre is wrong. And at genuine acre scale, the <a href="https://www.amazon.com/dp/B0G8Y8CNH7?tag=loiterpoint20-20" rel="sponsored nofollow">Navimow X430</a> is the machine, ideally caught at $2,099–$2,299.</p>
+
+<p>Whichever you pick, hold onto the one idea that matters: the number on the box is what the mower will <em>maintain</em>, not what it will <em>cut today</em>. Buy for the maintenance job, not the sprint, and you'll be happy with any of these.</p>
+</div>
+
+<footer>
+  <div class="disc">
+    <strong>Affiliate disclosure.</strong> Loiter Point participates in the Amazon Services LLC Associates Program. Links in this article are affiliate links (tag: loiterpoint20-20) and we earn a commission on qualifying purchases at no additional cost to you. Commissions do not influence our picks or our ordering — we tell you when a product's pricing is a mess, when a spec is misleading, and when a cheaper option is the better buy.
+  </div>
+  <div class="disc">
+    <strong>Methodology note.</strong> Loiter Point does not operate a testing lab or a test yard. This guide synthesizes published independent testing and verified owner reports against manufacturer specifications. Figures labeled "rated" come from manufacturers; figures labeled "est. real-world" or "reported" come from independent sources or aggregated owner feedback. Nothing here is first-hand measurement, and we don't claim otherwise. Prices and availability change constantly — verify current pricing before buying.
+  </div>
+  <p class="cr">&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+  <p><a href="../index.html">&larr; Back to all guides</a></p>
+</footer>
+
+</div>
+</body>
+</html>
