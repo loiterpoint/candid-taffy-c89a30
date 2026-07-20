@@ -171,6 +171,8 @@ def main() -> int:
         tp = TileParser()
         tp.feed(index.read_text(encoding="utf-8"))
         for href, count_text in tp.tiles:
+            if href.startswith("#"):
+                continue  # in-page anchor (e.g. Buyer Guides jump link), not a category
             name = href.strip("/")
             if name not in real_counts:
                 failures.append(f"homepage tile links to missing category page: {href}")
