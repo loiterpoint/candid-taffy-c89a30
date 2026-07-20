@@ -1,9 +1,10 @@
-/* Loiter Point — global mobile navigation.
+/* Loiter Point — global navigation + footer.
    Self-injecting: adds a hamburger + full-screen jump menu on phones (<=768px),
-   and renders one canonical nav bar (see TOPNAV) on every page.
+   renders one canonical nav bar (see TOPNAV) on every page, and renders one
+   canonical footer (see FOOTER) at the bottom of every page.
    Load once per page with:  <script src="/nav.js" defer></script>
    Uses the site's existing CSS variables, so it inherits the dark/lime theme.
-   Build marker: nav-2026-07-19b (mobile menu = TOPNAV; hamburger has JS width fallback). */
+   Build marker: nav-2026-07-20a (TOPNAV bar + FOOTER; mobile menu = TOPNAV). */
 (function () {
   // Canonical desktop nav, rendered identically on every page. Before this,
   // the site had 25 different nav variants — category lists on 11 pages, bare
@@ -16,6 +17,31 @@
     { label: "Buyer Guides", href: "/guides/" },
     { label: "Categories", href: "/site-map.html" }
   ];
+
+  // Canonical footer, rendered identically on every page (existing and future).
+  // nav.js owns the footer outright: each page's own <footer> is removed and
+  // replaced with this one, so it can never drift. Edit these arrays to change
+  // the footer sitewide. Keep "Popular Guides" pointed at evergreen guides so it
+  // does not go stale as new articles are added.
+  var FOOTER = {
+    tagline: "Independent tech coverage based on published testing and owner reports. No sponsored reviews, no brand deals on our scores.",
+    guides: [
+      { label: "Best Drones for Beginners", href: "/articles/best-drones-for-beginners.html" },
+      { label: "Best Wireless Earbuds Under $100", href: "/articles/best-wireless-earbuds-under-100.html" },
+      { label: "Best Robot Vacuums", href: "/articles/best-robot-vacuums-2024.html" },
+      { label: "Best Smart Bulbs", href: "/articles/best-smart-bulbs.html" },
+      { label: "Best Portable Power Stations", href: "/articles/best-portable-power-stations.html" }
+    ],
+    site: [
+      { label: "About", href: "/about.html" },
+      { label: "How We Score", href: "/methodology.html" },
+      { label: "Affiliate Disclosure", href: "/affiliate-disclosure.html" },
+      { label: "Privacy Policy", href: "/privacy-policy.html" },
+      { label: "Terms of Service", href: "/terms.html" }
+    ],
+    copyright: "© 2026 Loiter Point. All rights reserved.",
+    disclosure: "Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase — at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions."
+  };
 
   var css = [
     "#lpBurger{display:none;position:fixed;top:11px;right:14px;z-index:1000;width:40px;height:40px;align-items:center;justify-content:center;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-radius:8px;color:var(--text,#e2e2e8);cursor:pointer;padding:0;}",
@@ -58,7 +84,26 @@
     ".lp-signout{background:transparent;border:1px solid var(--border,#26262e);color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;padding:4px 11px;border-radius:5px;cursor:pointer;line-height:1.4;}",
     ".lp-signout:hover{color:var(--text,#e2e2e8);border-color:var(--muted,#7a7a8a);}",
     "#lpMenu .lp-signout-row{display:block;width:100%;text-align:center;background:transparent;border:1px solid var(--border,#26262e);border-radius:8px;color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:15px;font-weight:600;padding:13px;margin-top:10px;cursor:pointer;}",
-    "#lpMenu .lp-signout-row:hover{color:var(--text,#e2e2e8);}"
+    "#lpMenu .lp-signout-row:hover{color:var(--text,#e2e2e8);}",
+    // Canonical footer (see synthesizeFooter). Scoped under #lpFooter with its
+    // own classes so it never depends on — or collides with — a page's own
+    // .footer-* styles. Three content-width columns, evenly distributed.
+    "#lpFooter{border-top:1px solid var(--border,#26262e);background:var(--bg,#0c0c0e);padding:2.5rem 2rem 2rem;margin-top:2rem;font-family:'Inter',sans-serif;line-height:1.6;}",
+    "#lpFooter a{text-decoration:none;color:inherit;}",
+    "#lpFooter .lpf-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:auto auto auto;justify-content:space-between;column-gap:3rem;row-gap:2rem;align-items:start;}",
+    "#lpFooter .lpf-brand{max-width:360px;}",
+    "#lpFooter .lpf-mark{display:flex;align-items:center;gap:0.6rem;font-size:1rem;font-weight:800;color:var(--text,#e2e2e8);letter-spacing:-0.02em;}",
+    "#lpFooter .lpf-mark i{width:28px;height:28px;background:var(--accent,#e8ff47);color:#000;border-radius:6px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:0.9rem;}",
+    "#lpFooter .lpf-mark b{color:var(--accent,#e8ff47);font-weight:800;}",
+    "#lpFooter .lpf-brand p{font-size:0.8rem;color:var(--muted,#7a7a8a);margin-top:0.6rem;line-height:1.6;}",
+    "#lpFooter .lpf-col h4{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted,#7a7a8a);margin-bottom:0.75rem;}",
+    "#lpFooter .lpf-col a{display:block;font-size:0.85rem;color:var(--muted,#7a7a8a);margin-bottom:0.45rem;transition:color .15s;}",
+    "#lpFooter .lpf-col a:hover{color:var(--text,#e2e2e8);}",
+    "#lpFooter .lpf-bottom{max-width:1040px;margin:1.75rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border,#26262e);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}",
+    "#lpFooter .lpf-bottom p{font-size:0.75rem;color:var(--muted,#7a7a8a);}",
+    "#lpFooter .lpf-bottom .lpf-disc{opacity:0.7;max-width:520px;line-height:1.5;font-size:0.72rem;}",
+    "@media(max-width:760px){#lpFooter .lpf-inner{grid-template-columns:1fr 1fr;justify-content:normal;column-gap:2rem;row-gap:1.75rem;}#lpFooter .lpf-brand{grid-column:1 / -1;max-width:none;}}",
+    "@media(max-width:460px){#lpFooter .lpf-inner{grid-template-columns:1fr;}}"
   ].join("");
 
   // Removes the hardcoded "Evidence-first" nav tag wherever it appears.
@@ -234,6 +279,49 @@
       });
   }
 
+  // nav.js owns the footer outright, same as the nav bar: remove the page's own
+  // <footer> (and a divider immediately above it, so the border-top doesn't
+  // double up) and append one canonical footer. Pages that never had a footer
+  // get one too. check_surfaced.py reads the static HTML, not this runtime DOM,
+  // so removing per-page footer link lists here does not affect surfacing.
+  function synthesizeFooter() {
+    if (document.getElementById("lpFooter")) return;
+
+    Array.prototype.forEach.call(document.querySelectorAll("footer"), function (el) {
+      if (el.id === "lpFooter") return;
+      var prev = el.previousElementSibling;
+      if (prev && prev.tagName === "HR" &&
+          (prev.className || "").indexOf("divider") !== -1 && prev.parentNode) {
+        prev.parentNode.removeChild(prev);
+      }
+      if (el.parentNode) el.parentNode.removeChild(el);
+    });
+
+    function linkList(items) {
+      return items.map(function (l) {
+        return '<a href="' + l.href + '">' + l.label + '</a>';
+      }).join("");
+    }
+
+    var f = document.createElement("footer");
+    f.id = "lpFooter";
+    f.innerHTML =
+      '<div class="lpf-inner">' +
+        '<div class="lpf-brand">' +
+          '<a class="lpf-mark" href="/"><i>&#8853;</i>Loiter<b>Point</b></a>' +
+          '<p>' + FOOTER.tagline + '</p>' +
+        '</div>' +
+        '<div class="lpf-col"><h4>Popular Guides</h4>' + linkList(FOOTER.guides) + '</div>' +
+        '<div class="lpf-col"><h4>Site</h4>' + linkList(FOOTER.site) + '</div>' +
+      '</div>' +
+      '<div class="lpf-bottom">' +
+        '<p>' + FOOTER.copyright + '</p>' +
+        '<p class="lpf-disc">' + FOOTER.disclosure + '</p>' +
+      '</div>';
+    document.body.appendChild(f);
+    return f;
+  }
+
   function build() {
     var style = document.createElement("style");
     style.textContent = css;
@@ -285,6 +373,7 @@
     });
 
     retireEvidenceTag();
+    synthesizeFooter();
     menuBodyRef = menu.querySelector(".lp-body");
     addAccountLink(menuBodyRef);
 
