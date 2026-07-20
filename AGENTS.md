@@ -51,3 +51,27 @@ ASINs (every buy link 404'd). Follow these rules exactly.
   footer with affiliate disclosure ("© 2026 Loiter Point — Consumer tech reviews
   built on real evidence.").
 - When evidence is thin or conflicting, say so in the article. That is the brand.
+
+## 4. Category prioritization — revenue-first (follow the money)
+`category-priorities.json` in the repo root is the SINGLE SOURCE OF TRUTH for what to build next. Read it before choosing any topic; never hardcode the order anywhere else.
+- Allocate effort by descending `priorityScore`. Current order: smartphones (95), computing (83), tv-entertainment (68), smart-home (64), wearables (54), gaming (51), security (44), networking (43), audio (43), home-energy (36), cameras (35), robotics (33), drones (20).
+- Homepage placement, nav ordering, category tiles and internal linking are ORDERED BY priorityScore — not alphabetically, not by legacy placement.
+- New articles: pick the highest-priority category with the thinnest coverage. Internal links should point up-priority.
+- DRONES ARE OVERWEIGHTED relative to their market. Maintain existing drone content; do NOT expand it.
+- If market data changes, edit the JSON scores — everything downstream follows.
+- EDITORIAL FIREWALL: this governs CATEGORY-level coverage and placement only. It NEVER affects the ranking of picks inside a guide, which stays strictly evidence-based. This is what keeps the affiliate disclosure literally true.
+
+## 5. Encoding safety — the atob() trap (caused a live incident 2026-07-20)
+When editing a repo file through the browser, NEVER use `atob(content)` alone. `atob` returns a Latin-1 byte string, so every multi-byte UTF-8 character (em dash, en dash, copyright sign, curly quotes) becomes several separate characters. Committing that re-encodes each one and corrupts the file — the live homepage title rendered as garbage bytes this way.
+- ALWAYS decode with: `new TextDecoder('utf-8').decode(Uint8Array.from(atob(b64), c => c.charCodeAt(0)))`
+- Before committing, assert ZERO occurrences of the mojibake markers, i.e. the code-point sequences \u00e2\u0080\u0094 and \u00c2\u00a9, in the new content. (Written escaped here on purpose so this file stays scan-clean.)
+- Byte-size is the tripwire: a pure reorder or small text edit must not change file size by hundreds of bytes. If the committed size does not match what you produced, you corrupted the encoding — restore from the last good commit and redo.
+- GitHub's Copilot auto-suggests commit messages that are frequently WRONG (it labelled an unrelated edit "Correct character encoding"). Always overwrite the suggested message with what you actually did.
+
+## 6. Affiliate link durability
+Dead or gouging affiliate links cost more than missing ones.
+- Prefer `https://www.amazon.com/s?k=QUERY&tag=loiterpoint20-20` (search links) by DEFAULT. They never 404, never go out of stock, and always reflect current pricing.
+- Only use a direct `/dp/ASIN` link when you have loaded that ASIN and confirmed it is the right product AND the offer is sold/shipped by Amazon or the brand — not a marginal third-party listing. A verified-but-gouging listing is still a bad link (an iPhone ASIN sold at $1,429 against a $1,199 list price was replaced with a search link on 2026-07-20).
+- Every Amazon link carries `?tag=loiterpoint20-20` and `rel="sponsored nofollow"`.
+- Every pick also gets a `.compare` row of plain retailer SEARCH links (no fake tracking) for the retailers that actually sell that product type.
+- State prices as "list" or "recently seen" with the footer price disclaimer. Never present a scraped price as a guaranteed one.
