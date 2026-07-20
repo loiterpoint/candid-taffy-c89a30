@@ -276,6 +276,7 @@ def wrap_page(item: dict, body: str) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>{title} — Loiter Point</title>
   <meta name="description" content="In-depth {type_label.lower()}: {title}. Real field test data, firmware notes, and an honest verdict from pilots who actually fly."/>
+  <meta name="lp:category" content="{item.get('category', 'drones')}"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <style>
