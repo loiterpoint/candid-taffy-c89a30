@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Best OLED TVs (2026) | Loiter Point</title>
+<meta name="description" content="The best OLED TVs of 2026, based on published independent lab measurements and verified owner reports. Including why RTINGS says 2025 models are the smarter buy right now." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+  }
+  a{color:var(--accent);}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px 80px;}
+  header.site{
+    border-bottom:1px solid var(--border);
+    padding:18px 0;
+    margin-bottom:36px;
+    background:var(--bg);
+  }
+  header.site .wrap{padding-bottom:0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .brand{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:var(--text);
+    text-decoration:none;
+    font-size:15px;
+  }
+  .brand span{color:var(--accent);}
+  .backlink{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--muted);
+    text-decoration:none;
+  }
+  .backlink:hover{color:var(--accent);}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 14px;
+  }
+  h1{
+    font-size:clamp(30px,6vw,46px);
+    line-height:1.12;
+    letter-spacing:-.02em;
+    margin:0 0 14px;
+    font-weight:700;
+  }
+  h2{
+    font-size:clamp(22px,4vw,28px);
+    line-height:1.2;
+    letter-spacing:-.01em;
+    margin:52px 0 16px;
+    font-weight:700;
+  }
+  h3{font-size:20px;margin:0 0 6px;font-weight:600;letter-spacing:-.01em;}
+  p{margin:0 0 16px;}
+  .byline{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    margin:0 0 30px;
+  }
+  .tldr{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:22px 24px;
+    margin:0 0 34px;
+  }
+  .tldr h2{
+    margin:0 0 12px;
+    font-size:14px;
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .tldr ul{margin:0 0 18px;padding-left:20px;}
+  .tldr li{margin-bottom:10px;}
+  .grab{
+    border-top:1px solid var(--border);
+    padding-top:16px;
+    font-size:15.5px;
+    line-height:1.9;
+  }
+  .grab strong{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    display:block;
+    margin-bottom:6px;
+  }
+  .method{
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:20px 24px;
+  }
+  .method p:last-child{margin-bottom:0;}
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px;
+    margin:0 0 24px;
+  }
+  .card-head{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    margin-bottom:6px;
+  }
+  .rank{
+    flex:0 0 auto;
+    background:var(--accent);
+    color:#0c0c0e;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:13px;
+    width:30px;height:30px;
+    display:flex;align-items:center;justify-content:center;
+    border-radius:7px;
+    margin-top:3px;
+  }
+  .tagline{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 14px 44px;
+  }
+  .price{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14px;
+    color:var(--text);
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:8px 12px;
+    display:inline-block;
+    margin:0 0 16px;
+  }
+  .price em{color:var(--muted);font-style:normal;}
+  .specs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    margin:18px 0;
+  }
+  .spec{background:var(--surface2);padding:10px 12px;}
+  .spec dt{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 3px;
+  }
+  .spec dd{margin:0;font-size:14.5px;font-weight:500;}
+  .buy{
+    display:inline-block;
+    background:var(--accent);
+    color:#0c0c0e;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    padding:11px 20px;
+    border-radius:8px;
+    margin-top:4px;
+  }
+  .buy:hover{filter:brightness(1.08);}
+  .buy.alt{
+    background:transparent;
+    color:var(--text);
+    border:1px solid var(--border);
+    margin-left:8px;
+  }
+  .verdict{
+    font-size:15px;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+    margin-top:20px;
+    padding-top:14px;
+  }
+  .verdict strong{color:var(--text);}
+  .nerd{
+    background:var(--surface2);
+    border:1px dashed var(--border);
+    border-radius:10px;
+    padding:22px 24px;
+    margin:34px 0;
+  }
+  .nerd h3{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:12px;
+  }
+  .nerd p:last-child{margin-bottom:0;}
+  .table-scroll{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:20px 0;}
+  table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px;}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;}
+  th{
+    background:var(--surface2);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+    white-space:nowrap;
+  }
+  td{background:var(--surface);}
+  tbody tr:last-child td{border-bottom:none;}
+  .na{color:var(--muted);font-style:italic;}
+  footer.site{
+    border-top:1px solid var(--border);
+    margin-top:60px;
+    padding:28px 0 60px;
+    color:var(--muted);
+    font-size:13.5px;
+  }
+  footer.site .wrap{padding-bottom:0;}
+  footer.site p{margin:0 0 12px;}
+  .copy{font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+  @media (max-width:560px){
+    body{font-size:16px;}
+    .card{padding:20px 18px;}
+    .tldr{padding:20px 18px;}
+    .tagline{margin-left:0;}
+    .buy,.buy.alt{display:block;text-align:center;margin-left:0;margin-top:10px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../index.html">LOITER<span>.</span>POINT</a>
+    <a class="backlink" href="../index.html">&larr; Back to all reviews</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="eyebrow">Buying Guide &middot; Televisions</p>
+  <h1>The Best OLED TVs of 2026</h1>
+  <p class="byline">Updated July 2026 &middot; Built from published independent lab measurements and verified owner reports</p>
+
+  <section class="tldr">
+    <h2>The Short Version</h2>
+    <ul>
+      <li><strong>The single most useful fact this year:</strong> RTINGS states on its Best OLED TVs page (updated June 19, 2026) that many 2026 OLEDs are very expensive near release and that most of them <em>don't offer a big improvement over their 2025 predecessors</em>. RTINGS' conclusion is blunt &mdash; right now is a great time to buy a 2025 OLED, because they're on sale for much cheaper.</li>
+      <li><strong>Most people should buy the <a href="https://www.amazon.com/dp/B0GRK5D3RW?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG C6 (2026)</a></strong> &mdash; it's RTINGS' Best Mid-Range OLED pick, it has Dolby Vision, and per RTINGS its dark-room picture is nearly identical to the flagship.</li>
+      <li><strong>Buy the <a href="https://www.amazon.com/s?k=Samsung+S95H+OLED&amp;tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Samsung S95H</a> only if your room is bright.</strong> RTINGS calls it the best OLED they've tested in 2026, and its matte anti-reflective coating is the reason &mdash; RTINGS says it effectively eliminates glare from lamps and windows. No Dolby Vision, though.</li>
+      <li><strong>The value play is the <a href="https://www.amazon.com/dp/B0DYQM4BDB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG C5 (2025)</a>.</strong> Tom's Guide reported the 65-inch on sale at Amazon at about $1,299, against a $2,699 original price. That is the discount RTINGS is talking about.</li>
+    </ul>
+    <div class="grab">
+      <strong>Grab your pick:</strong>
+      <a href="https://www.amazon.com/dp/B0GRK5D3RW?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG C6 65"</a> &mdash; around $2,000&ndash;$2,700 &middot;
+      <a href="https://www.amazon.com/s?k=Samsung+S95H+OLED&amp;tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Samsung S95H 65"</a> &mdash; around $3,400 &middot;
+      <a href="https://www.amazon.com/dp/B0DYQM4BDB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG C5 65"</a> &mdash; around $1,300 &middot;
+      <a href="https://www.amazon.com/dp/B0GPY4Y2VF?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Samsung S90H 65"</a> &mdash; around $2,300 &middot;
+      <a href="https://www.amazon.com/dp/B0FFWW5BZZ?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG B5 65"</a> &mdash; price varies by size.
+      All figures are approximate and reflect listings as of July 2026 &mdash; check the current price before you buy.
+    </div>
+  </section>
+
+  <p>OLED is no longer a question of whether the picture is good. Every set on this page produces the same fundamentally correct image: per-pixel light control, black that is genuinely black rather than dark grey, and near-instantaneous pixel response that makes motion look clean. The differences between them come down to three things &mdash; how bright the panel gets, what the screen coating does to the light in your actual room, and how much you pay for the privilege.</p>
+
+  <p>That last point matters more in 2026 than it usually does. The headline finding above is not our editorializing; it is RTINGS' stated position, and it reframes the whole category. If the 2026 sets are only marginally better than the 2025 sets, and the 2025 sets are now heavily discounted, then the "best" OLED for a lot of buyers is a last-generation one. We have built this guide around that reality rather than around release dates.</p>
+
+  <h2>How We Evaluate OLED TVs</h2>
+  <div class="method">
+    <p>Loiter Point does not run a test lab, and we do not evaluate these TVs first-hand. There are outlets that do this properly &mdash; with darkened rooms, colorimeters, pattern generators and repeatable procedures &mdash; and pretending to duplicate that work would be dishonest.</p>
+    <p>What we do instead: we synthesize <strong>published independent lab measurements</strong>, primarily RTINGS, alongside <strong>verified owner reports</strong> from people living with these sets in ordinary rooms. Every performance claim on this page is attributed to its source. Where a figure comes from a manufacturer or retailer listing rather than an independent lab, we say so.</p>
+    <p>We also state when the evidence is thin. Several specifications on this page &mdash; particularly for the Samsung S90H &mdash; are only available from retail listings, and we have marked those as unconfirmed rather than filling the gap with a plausible-sounding number. Prices are the least stable data on this page; treat every one of them as a snapshot, not a quote.</p>
+  </div>
+
+  <h2>The Picks</h2>
+
+  <!-- 1 -->
+  <article class="card">
+    <div class="card-head">
+      <div class="rank">1</div>
+      <div>
+        <h3>LG C6 OLED (2026)</h3>
+      </div>
+    </div>
+    <p class="tagline">Best for most people</p>
+    <p class="price">Approx. $1,999&ndash;$2,699 for the 65" <em>&mdash; MSRP is $2,699; it was listed at about $1,999.99 on Amazon in a March 2026 deal. As of July 2026, check the current price.</em></p>
+    <dl class="specs">
+      <div class="spec"><dt>Panel</dt><dd>WOLED</dd></div>
+      <div class="spec"><dt>Finish</dt><dd>Glossy</dd></div>
+      <div class="spec"><dt>Native refresh</dt><dd>165Hz</dd></div>
+      <div class="spec"><dt>Dolby Vision</dt><dd>Yes</dd></div>
+      <div class="spec"><dt>Sizes</dt><dd>42 / 48 / 55 / 65"</dd></div>
+      <div class="spec"><dt>Platform</dt><dd>webOS</dd></div>
+    </dl>
+    <p>This is RTINGS' Best Mid-Range OLED pick, and it earns that slot by giving up remarkably little. RTINGS describes its dark-room performance as nearly identical to the far more expensive S95H, with the same deep inky blacks and what they characterise as an almost 3D look to the image. If you watch in the evening with the lights down, you are getting flagship picture quality for meaningfully less money.</p>
+    <p>The compromise is daytime. RTINGS notes the C6 is not as bright as the S95H, and that its glossy coating makes glare more distracting during the day while bright scenes land with less impact. For gaming, though, there is effectively no gap: RTINGS reports high refresh rate support, VRR, and full HDMI 2.1 bandwidth across all four inputs, and says outright that there's "not much of a difference between this and the S95H when it comes to gaming."</p>
+    <p>One catch that RTINGS flags and most shoppers miss: the C6 panel differs by screen size. Read the panel lottery box below before you pick a size &mdash; it is the single most consequential decision in this guide.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0GRK5D3RW?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price &mdash; 65" on Amazon</a>
+    <a class="buy alt" href="https://www.amazon.com/dp/B0GS4231WF?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">55" version</a>
+    <p class="verdict"><strong>Buy it if</strong> you want the best all-round OLED without flagship pricing, you want Dolby Vision, and your viewing room isn't flooded with daylight.</p>
+  </article>
+
+  <!-- 2 -->
+  <article class="card">
+    <div class="card-head">
+      <div class="rank">2</div>
+      <div>
+        <h3>Samsung S95H OLED (2026)</h3>
+      </div>
+    </div>
+    <p class="tagline">Best overall &middot; Best in a bright room</p>
+    <p class="price">Approx. $3,399.99 for the 65" <em>&mdash; as listed at Samsung.com and Best Buy. Approximate and time-stamped to July 2026; check current price.</em></p>
+    <dl class="specs">
+      <div class="spec"><dt>Panel</dt><dd>QD-OLED</dd></div>
+      <div class="spec"><dt>Finish</dt><dd>Matte</dd></div>
+      <div class="spec"><dt>Native refresh</dt><dd>165Hz</dd></div>
+      <div class="spec"><dt>Dolby Vision</dt><dd>No</dd></div>
+      <div class="spec"><dt>Sizes</dt><dd>55 / 65 / 77 / 83"</dd></div>
+      <div class="spec"><dt>Platform</dt><dd>Tizen</dd></div>
+    </dl>
+    <p>RTINGS names this the best OLED TV on their list and calls it the best OLED they've tested in 2026. Their assessment covers the things that are hard to fake: very high peak brightness that holds up even when most of the screen is bright, true inky blacks, and colors they describe as bright and vibrant. They also report it is extremely accurate out of the box, meaning no calibration is needed &mdash; which quietly removes the cost of a professional calibration from the equation.</p>
+    <p>The real differentiator is the matte screen. RTINGS credits its superb anti-reflective coating with effectively eliminating glare from lamps and windows. If you have a west-facing living room, that single attribute will do more for your day-to-day picture than any spec on this page. Gamers get barely noticeable latency, near-instantaneous response time, and four HDMI 2.1 bandwidth inputs.</p>
+    <p>Two honest caveats. There is no Dolby Vision support &mdash; a real omission at this price if you care about it. And RTINGS specifically warns that the 83" size is a bit different and doesn't perform quite as well, so do not assume the reviews of the smaller sizes transfer to the largest one.</p>
+    <a class="buy" href="https://www.amazon.com/s?k=Samsung+S95H+OLED&amp;tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Search Amazon for the S95H</a>
+    <p class="verdict"><strong>Buy it if</strong> you watch in a bright room and want the best picture available in 2026. <strong>Skip it if</strong> Dolby Vision is non-negotiable, or you're eyeing the 83". <em>Note: we could not verify a direct Amazon product listing for this model, so the link above is a search, not a product page.</em></p>
+  </article>
+
+  <!-- 3 -->
+  <article class="card">
+    <div class="card-head">
+      <div class="rank">3</div>
+      <div>
+        <h3>LG C5 OLED (2025)</h3>
+      </div>
+    </div>
+    <p class="tagline">Best value right now</p>
+    <p class="price">Approx. $1,299 for the 65" <em>&mdash; Tom's Guide reported this Amazon sale price against a $2,699 original. Deal pricing moves fast; verify before buying, July 2026.</em></p>
+    <dl class="specs">
+      <div class="spec"><dt>Response time</dt><dd>0.1ms</dd></div>
+      <div class="spec"><dt>Native refresh</dt><dd>120Hz</dd></div>
+      <div class="spec"><dt>VRR</dt><dd>Up to 144Hz (PC)</dd></div>
+      <div class="spec"><dt>Dolby Vision</dt><dd>Yes</dd></div>
+      <div class="spec"><dt>HDMI 2.1</dt><dd>Four ports</dd></div>
+      <div class="spec"><dt>Platform</dt><dd>webOS</dd></div>
+    </dl>
+    <p>This is the pick that follows RTINGS' own advice to its logical conclusion. RTINGS moved the C5 into their Best Mid-Range OLED slot in a May 28, 2026 update &mdash; the 2025 model displacing newer hardware on the strength of what it costs. It has since been succeeded there by the C6, but the reasoning that put it in that slot hasn't changed: the price collapsed and the picture didn't.</p>
+    <p>Per the Amazon listing, you get a 0.1ms response time, a native 120Hz panel with VRR up to 144Hz for PC gaming, four HDMI 2.1 ports, Dolby Vision, Dolby Atmos and webOS. Against the C6 you give up the jump to a 165Hz native panel. For console gaming and for essentially all film and TV watching, that is a difference you will struggle to notice.</p>
+    <p>At roughly half the C6's list price, this is the most defensible purchase in the guide. The caveat is availability: sale prices on outgoing models are volatile and stock thins out, so if you find it near that figure, that's the moment.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0DYQM4BDB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price &mdash; 65" on Amazon</a>
+    <p class="verdict"><strong>Buy it if</strong> you want most of what the C6 offers for roughly half the money and you don't need a 165Hz panel.</p>
+  </article>
+
+  <!-- 4 -->
+  <article class="card">
+    <div class="card-head">
+      <div class="rank">4</div>
+      <div>
+        <h3>Samsung S90H OLED (2026)</h3>
+      </div>
+    </div>
+    <p class="tagline">Best QD-OLED color without flagship pricing</p>
+    <p class="price">Approx. $2,297.99 for the 65" on Amazon <em>&mdash; against a $2,699.99 MSRP. Approximate, July 2026; check current price.</em></p>
+    <dl class="specs">
+      <div class="spec"><dt>Panel</dt><dd>QD-OLED</dd></div>
+      <div class="spec"><dt>Screen</dt><dd>Glare Free (per listing)</dd></div>
+      <div class="spec"><dt>Processor</dt><dd>NQ4 AI Gen3</dd></div>
+      <div class="spec"><dt>Upscaling</dt><dd>4K AI Upscaling Pro</dd></div>
+      <div class="spec"><dt>Motion</dt><dd>AI Motion Enhancer Pro</dd></div>
+      <div class="spec"><dt>Voice</dt><dd>Alexa built-in</dd></div>
+    </dl>
+    <p>The S90H sits below the S95H in Samsung's 2026 OLED range and is the cheapest route to QD-OLED from Samsung this year. Per the Amazon listing it carries OLED HDR+ with a Glare Free screen, the NQ4 AI Gen3 processor, 4K AI Upscaling Pro, AI Motion Enhancer Pro and Alexa built in. At roughly $400 below MSRP it is the most aggressively discounted 2026 model here.</p>
+    <p>Here is where we have to be straight with you: <strong>the evidence on this specific set is thin.</strong> The specs above come from a retail listing, not an independent lab, and RTINGS does not currently list the S90H among its top OLED picks. We have not seen published independent measurements confirming its brightness, color volume or input lag, and we are not going to estimate them.</p>
+    <p>So treat this as a conditional recommendation. If you want QD-OLED's color characteristics and Samsung's glare handling but can't justify S95H money, it's the logical candidate &mdash; but the C6 and the discounted C5 are backed by far more published measurement data. If you want certainty, buy one of those instead.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0GPY4Y2VF?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price &mdash; 65" on Amazon</a>
+    <a class="buy alt" href="https://www.amazon.com/dp/B0DXMJGQWC?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">2025 S90F</a>
+    <p class="verdict"><strong>Buy it if</strong> you specifically want QD-OLED at mid-range money. <strong>Be aware</strong> that independent lab data on this model is limited at the time of writing.</p>
+  </article>
+
+  <!-- 5 -->
+  <article class="card">
+    <div class="card-head">
+      <div class="rank">5</div>
+      <div>
+        <h3>LG B5 OLED (2025)</h3>
+      </div>
+    </div>
+    <p class="tagline">Cheapest way into OLED</p>
+    <p class="price">Price varies by size and retailer <em>&mdash; we don't have a verified figure we're willing to print, so check the current price directly. July 2026.</em></p>
+    <dl class="specs">
+      <div class="spec"><dt>Panel</dt><dd>WOLED</dd></div>
+      <div class="spec"><dt>Finish</dt><dd>Glossy</dd></div>
+      <div class="spec"><dt>Native refresh</dt><dd>120Hz</dd></div>
+      <div class="spec"><dt>Dolby Vision</dt><dd>Yes</dd></div>
+      <div class="spec"><dt>Sizes</dt><dd>48 / 55 / 65 / 77 / 83"</dd></div>
+      <div class="spec"><dt>Resolution</dt><dd>4K</dd></div>
+    </dl>
+    <p>RTINGS names the B5 the best budget OLED on the market, while being refreshingly unromantic about what "budget" means here &mdash; they note it's "not cheap by any means," just a great entry point into the technology. That framing is worth internalising before you shop: the floor for a good OLED is still a real amount of money.</p>
+    <p>What you get is the part that matters most. RTINGS reports the same inky blacks as the pricier LG sets, and colors that are not as bright as the C6 but still rich and vibrant. What you give up is brightness: RTINGS describes it as noticeably dimmer than the C6, bright enough to handle glare only in dimly lit rooms. Importantly, they also confirm it still gets bright enough for HDR highlights to stand out, so HDR content isn't wasted on it.</p>
+    <p>Read that brightness note as a hard room requirement rather than a preference. In a dim or light-controlled room the B5 delivers the full OLED effect. In a sunlit room it will disappoint you, and no setting will fix it. It also drops to a 120Hz native panel, which is a non-issue for most people.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0FFWW5BZZ?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price &mdash; 65" on Amazon</a>
+    <p class="verdict"><strong>Buy it if</strong> you watch in a dim room and want inky OLED blacks for the least money. <strong>Skip it if</strong> your room gets a lot of daylight.</p>
+  </article>
+
+  <div class="nerd">
+    <h3>Nerd Box &mdash; QD-OLED vs WOLED, and what matte vs glossy actually changes</h3>
+    <p>Two different OLED panel technologies are in play here. Samsung's S95H and S90H use QD-OLED; LG's C6, C5 and B5 use WOLED. Both give you per-pixel illumination and the same true black floor. Where they diverge, based on RTINGS' assessments, is in color and brightness character: RTINGS describes the QD-OLED S95H as having bright, vibrant colors and very high peak brightness that holds up even when most of the screen is lit &mdash; and specifically notes that the older-panel C6 sizes don't produce colors as vivid as the S95H.</p>
+    <p>The screen coating is the part people underestimate, and it's the more practical decision. The S95H is matte; the C6 and B5 are glossy. RTINGS credits the S95H's anti-reflective coating with effectively eliminating glare from lamps and windows, and separately notes that the C6's glossy coating makes glare more distracting during the day. The physical trade-off is real and well understood: matte diffuses reflected light across the panel rather than bouncing a sharp mirror image at you.</p>
+    <p>Practical rule: if you can control the light in your room &mdash; blinds, evening viewing, no lamp behind the couch &mdash; glossy is fine and you should spend the money on something else. If your TV faces a window, the matte panel is the upgrade worth paying for, and it's the strongest argument for the S95H over anything else in this guide.</p>
+  </div>
+
+  <div class="nerd">
+    <h3>Nerd Box &mdash; the LG C6 panel lottery, by screen size</h3>
+    <p>This one is easy to get wrong and expensive to get wrong. RTINGS reports that the LG C6 does not use the same panel across every size in the range.</p>
+    <p>The <strong>42", 55" and 65"</strong> C6 use an <strong>older panel type</strong>, and RTINGS notes their colors aren't as vivid as the S95H. The <strong>48"</strong> C6 &mdash; and the <strong>77" and 83" LG C6H</strong> &mdash; use a <strong>newer panel</strong> with more vibrant colors. So the 48-inch model is, counter-intuitively, running better panel technology than the 65-inch model sitting next to it in the store.</p>
+    <p>What to do with that: if you're choosing between a 48" and a 55", you're not just choosing size &mdash; you're choosing a color performance tier, and the smaller one wins on panel. If you're set on 65", know that you're on the older panel and price your decision accordingly; that's a point in favour of buying a discounted <a href="https://www.amazon.com/dp/B0DYQM4BDB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">C5</a> instead and pocketing the difference. And if you want a very large LG with the newer panel, the 77" and 83" C6H are the models to search for, not the plain C6.</p>
+  </div>
+
+  <h2>Head-to-Head Comparison</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Year</th>
+          <th>Panel</th>
+          <th>Finish</th>
+          <th>Native refresh</th>
+          <th>Dolby Vision</th>
+          <th>Sizes</th>
+          <th>Approx. price (July 2026)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://www.amazon.com/dp/B0GRK5D3RW?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG C6</a></td>
+          <td>2026</td>
+          <td>WOLED</td>
+          <td>Glossy</td>
+          <td>165Hz</td>
+          <td>Yes</td>
+          <td>42 / 48 / 55 / 65"</td>
+          <td>$2,699 MSRP; seen ~$1,999.99 (65")</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/s?k=Samsung+S95H+OLED&amp;tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Samsung S95H</a></td>
+          <td>2026</td>
+          <td>QD-OLED</td>
+          <td>Matte</td>
+          <td>165Hz</td>
+          <td>No</td>
+          <td>55 / 65 / 77 / 83"</td>
+          <td>~$3,399.99 (65")</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/dp/B0DYQM4BDB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG C5</a></td>
+          <td>2025</td>
+          <td>WOLED</td>
+          <td class="na">Not stated in our sources</td>
+          <td>120Hz (VRR to 144Hz)</td>
+          <td>Yes</td>
+          <td class="na">Not stated in our sources</td>
+          <td>~$1,299 (65", on sale)</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/dp/B0GPY4Y2VF?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Samsung S90H</a></td>
+          <td>2026</td>
+          <td>QD-OLED</td>
+          <td>"Glare Free" (per listing)</td>
+          <td class="na">Not stated in our sources</td>
+          <td class="na">Not stated in our sources</td>
+          <td class="na">Not stated in our sources</td>
+          <td>~$2,297.99 (65"), $2,699.99 MSRP</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/dp/B0FFWW5BZZ?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG B5</a></td>
+          <td>2025</td>
+          <td>WOLED</td>
+          <td>Glossy</td>
+          <td>120Hz</td>
+          <td>Yes</td>
+          <td>48 / 55 / 65 / 77 / 83"</td>
+          <td class="na">No verified figure &mdash; check current</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:14px;color:var(--muted);">Specification sources: RTINGS for the S95H, C6 and B5; Amazon listings for the C5 and S90H. Blank cells are gaps in our sourcing, not zeros &mdash; we'd rather show you the hole than fill it with a guess.</p>
+
+  <h2>Also Worth Knowing</h2>
+  <p><strong>The LG G6</strong> is LG's 2026 flagship, sitting above the C6 in the range &mdash; the 65-inch model (OLED65G6WUA) is listed around $3,399 at Best Buy, putting it in the same bracket as the S95H. We're mentioning it rather than ranking it: we could not verify an Amazon product listing for it, and we don't have independent measurements to place it against the S95H. If you're shopping at that price point it belongs on your shortlist, but we can't tell you where it lands. <a href="https://www.amazon.com/s?k=LG+G6+OLED&amp;tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Search Amazon for the LG G6</a>.</p>
+  <p><strong>Last year's flagships</strong> are the other place the RTINGS logic points. If the 2026 sets are only incrementally better and the 2025 sets are discounted, then Samsung's 2025 flagship <a href="https://www.amazon.com/dp/B0DXMJFJ7W?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">S95F</a> and the step-down <a href="https://www.amazon.com/dp/B0DXMJGQWC?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">S90F</a> deserve a look on price alone &mdash; the same argument that makes the C5 our value pick.</p>
+
+  <h2>Bottom Line</h2>
+  <p>The honest summary of OLED in 2026 is that it's a good year to be a patient buyer and a bad year to be an early adopter. RTINGS' own framing &mdash; that 2026 models are expensive near release, that most don't improve much on their 2025 predecessors, and that now is a great time to buy a discounted 2025 OLED &mdash; is the most valuable thing on this page, and it happens to point away from the most expensive products.</p>
+  <p>So: if your room is bright and budget isn't the constraint, buy the <a href="https://www.amazon.com/s?k=Samsung+S95H+OLED&amp;tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Samsung S95H</a>, because the matte coating solves a problem no amount of brightness alone can. If you want the best balance of price and performance in current hardware, buy the <a href="https://www.amazon.com/dp/B0GRK5D3RW?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG C6</a> &mdash; and check the panel lottery box before you commit to a size. If you want the most sensible purchase on this page, buy the discounted <a href="https://www.amazon.com/dp/B0DYQM4BDB?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG C5</a> and spend the savings on a soundbar. And if you're getting into OLED for the first time in a dim room, the <a href="https://www.amazon.com/dp/B0FFWW5BZZ?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">LG B5</a> gets you the blacks that made the technology famous.</p>
+  <p>Whatever you choose, confirm the price yourself before you click. Every figure on this page is a snapshot of July 2026, and OLED pricing moves faster than almost anything else in consumer tech.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Affiliate disclosure:</strong> Loiter Point participates in the Amazon Associates program. Links on this page are affiliate links, and we earn a commission on qualifying purchases at no extra cost to you. Commissions do not influence our picks &mdash; the rankings here follow the published independent measurements cited throughout, and we link to products we recommend against buying only when it clarifies a comparison.</p>
+    <p><strong>Sourcing:</strong> Performance claims are attributed to RTINGS' Best OLED TVs page (updated June 19, 2026) and its related model assessments; pricing references include Samsung.com, Best Buy, Amazon listings and Tom's Guide deal reporting. Loiter Point does not operate a test lab and does not evaluate products first-hand.</p>
+    <p class="copy">&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+  </div>
+</footer>
+
+</body>
+</html>
