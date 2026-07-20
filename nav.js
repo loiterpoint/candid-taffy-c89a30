@@ -2,24 +2,9 @@
    Self-injecting: adds a hamburger + full-screen jump menu on phones (<=768px),
    and renders one canonical nav bar (see TOPNAV) on every page.
    Load once per page with:  <script src="/nav.js" defer></script>
-   Uses the site's existing CSS variables, so it inherits the dark/lime theme. */
+   Uses the site's existing CSS variables, so it inherits the dark/lime theme.
+   Build marker: nav-2026-07-19b (mobile menu = TOPNAV; hamburger has JS width fallback). */
 (function () {
-  var LINKS = [
-    {ic:'🚁', label:'Drones & Aerial', href:'/drones/', ct:'13'},
-    {ic:'🎧', label:'Headphones & Audio', href:'/audio/', ct:'9'},
-    {ic:'🏠', label:'Home & Cleaning', href:'/home-tech/', ct:'12'},
-    {ic:'🚗', label:'Automotive', href:'/automotive/', ct:'3'},
-    {ic:'⌨️', label:'Computing & Desk', href:'/computing/', ct:'20'},
-    {ic:'📱', label:'Tablets, Wearables & Media', href:'/mobile-tech/', ct:'7'},
-    {ic:'🍳', label:'Kitchen', href:'/kitchen/', ct:'4'},
-    {ic:'💡', label:'Smart Home', href:'/smart-home/', ct:'7'},
-    {ic:'📺', label:'TVs & Streaming', href:'/streaming/', ct:'5'},
-    {ic:'🔋', label:'Power & Charging', href:'/power/', ct:'5'},
-    {ic:'📸', label:'Cameras', href:'/cameras/', ct:'3'},
-    {ic:'📶', label:'Networking', href:'/networking/', ct:'2'},
-    {ic:'🔥', label:'Today\'s Deals', href:'/deals.html', ct:'↗'}
-  ];
-
   // Canonical desktop nav, rendered identically on every page. Before this,
   // the site had 25 different nav variants — category lists on 11 pages, bare
   // back-links on ~50 articles ("← All reviews", "← back to reviews", and 16
@@ -29,12 +14,17 @@
     { label: "Home", href: "/" },
     { label: "Deals", href: "/deals.html" },
     { label: "Buyer Guides", href: "/guides/" },
+    { label: "Categories", href: "/site-map.html" },
     { label: "Compare", href: "/articles/mini-4-pro-vs-air-3.html" }
   ];
 
   var css = [
     "#lpBurger{display:none;position:fixed;top:11px;right:14px;z-index:1000;width:40px;height:40px;align-items:center;justify-content:center;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-radius:8px;color:var(--text,#e2e2e8);cursor:pointer;padding:0;}",
     "#lpBurger svg{width:20px;height:20px;}",
+    // Wide comparison tables were overflowing the page on phones, which pushed
+    // the fixed hamburger off-screen to the right. Let any table scroll inside
+    // its own box instead of stretching the page wider than the screen.
+    "table{display:block;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;}",
     "#lpMenu{display:none;position:fixed;inset:0;z-index:1001;background:rgba(12,12,14,0.985);overflow-y:auto;font-family:'Inter',sans-serif;}",
     "#lpMenu.open{display:block;}",
     "#lpMenu .lp-top{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border,#26262e);}",
@@ -47,6 +37,29 @@
     "#lpMenu a.lp-row .ic{font-size:18px;}",
     "#lpMenu a.lp-row .ct{margin-left:auto;font-family:var(--mono,monospace);font-size:12px;color:var(--muted,#7a7a8a);}",
     "#lpMenu a.lp-cta{display:block;text-align:center;margin-top:18px;background:var(--accent,#e8ff47);color:#000;font-weight:700;padding:14px;border-radius:8px;font-size:15px;text-decoration:none;}",
+    "@media(max-width:768px){#lpBurger{display:flex;}}",
+    ".lp-acct{color:#0c0c0e;background:var(--accent,#e8ff47);font-size:0.8rem;font-weight:700;padding:5px 12px;border-radius:5px;line-height:1.4;}",
+    ".lp-acct:hover{opacity:0.88;}",
+    ".lp-navlinks-fallback{display:flex;align-items:center;gap:10px;}",
+    "#lpSynthNav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;border-bottom:1px solid var(--border,#26262e);position:sticky;top:0;background:rgba(12,12,14,0.97);z-index:100;font-family:'Inter',sans-serif;}",
+    "#lpSynthNav .lp-mark{display:flex;align-items:center;gap:0.6rem;font-size:1rem;font-weight:800;color:var(--text,#e2e2e8);text-decoration:none;letter-spacing:-0.02em;}",
+    "#lpSynthNav .lp-mark i{width:28px;height:28px;background:var(--accent,#e8ff47);color:#000;border-radius:6px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:0.9rem;}",
+    "#lpSynthNav .lp-mark b{color:var(--accent,#e8ff47);font-weight:800;}",
+    "#lpSynthNav .lp-right{display:flex;align-items:center;gap:1.6rem;}",
+    "#lpSynthNav .lp-right a.lp-top{color:var(--muted,#7a7a8a);font-size:0.875rem;font-weight:500;text-decoration:none;transition:color .15s;}",
+    "#lpSynthNav .lp-right a.lp-top:hover{color:var(--text,#e2e2e8);}",
+    "@media(max-width:900px){#lpSynthNav .lp-right a.lp-top{display:none;}}",
+    "@media(max-width:768px){#lpSynthNav{padding:1rem 1.25rem;}}",
+    // On phones the fixed hamburger overlaps the top bar's right edge. The
+    // account/sign-out controls also live in the mobile overlay menu, so hide
+    // the desktop-bar copies here rather than let them collide with the burger.
+    "@media(max-width:768px){#lpSynthNav .lp-acct,#lpSynthNav .lp-signout{display:none;}}",
+    "#lpMenu a.lp-row.lp-acct-row{background:rgba(232,255,71,0.07);margin:0 -16px;padding-left:16px;padding-right:16px;}",
+    "#lpMenu a.lp-row.lp-acct-row .ic{color:var(--accent,#e8ff47);}",
+    ".lp-signout{background:transparent;border:1px solid var(--border,#26262e);color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:600;padding:4px 11px;border-radius:5px;cursor:pointer;line-height:1.4;}",
+    ".lp-signout:hover{color:var(--text,#e2e2e8);border-color:var(--muted,#7a7a8a);}",
+    "#lpMenu .lp-signout-row{display:block;width:100%;text-align:center;background:transparent;border:1px solid var(--border,#26262e);border-radius:8px;color:var(--muted,#7a7a8a);font-family:'Inter',sans-serif;font-size:15px;font-weight:600;padding:13px;margin-top:10px;cursor:pointer;}",
+    "#lpMenu .lp-signout-row:hover{color:var(--text,#e2e2e8);}"
     "@media(max-width:768px){#lpBurger{display:flex;}}",
     ".lp-acct{color:#0c0c0e;background:var(--accent,#e8ff47);font-size:0.8rem;font-weight:700;padding:5px 12px;border-radius:5px;line-height:1.4;}",
     ".lp-acct:hover{opacity:0.88;}",
@@ -254,8 +267,20 @@
     burger.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
     document.body.appendChild(burger);
 
-    var rows = LINKS.map(function (l) {
-      return '<a class="lp-row" href="' + l.href + '"><span class="ic">' + l.ic + '</span>' + l.label + '<span class="ct">' + l.ct + '</span></a>';
+    // Belt-and-suspenders: also toggle the burger by viewport width in JS, so
+    // it still appears on narrow screens even if the CSS media query is
+    // overridden by page styles or a stale cached stylesheet.
+    function syncBurger() {
+      burger.style.display = (window.innerWidth <= 768) ? "flex" : "none";
+    }
+    syncBurger();
+    window.addEventListener("resize", syncBurger);
+
+    // Mobile menu mirrors the desktop bar (TOPNAV) rather than listing every
+    // category — the two navs were showing different things, which read as a
+    // bug. Categories are still reachable via Buyer Guides and the site map.
+    var rows = TOPNAV.map(function (l) {
+      return '<a class="lp-row" href="' + l.href + '">' + l.label + '</a>';
     }).join("");
 
     var menu = document.createElement("div");
