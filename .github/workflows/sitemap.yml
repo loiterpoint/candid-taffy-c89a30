@@ -1,8 +1,13 @@
-name: sitemap
+name: site integrity
 
-# Fails when sitemap.xml no longer matches the files in the repo -- i.e. an
-# article, guide or category page was added or removed without regenerating.
-# Fix locally with:  python3 generate_sitemap.py  (then commit sitemap.xml)
+# Two invariants, both of which have silently broken before:
+#   1. sitemap.xml matches the files in the repo
+#   2. every article is reachable by a human -- a card on a category page and
+#      an entry in site-map.html, with homepage counts telling the truth
+#
+# Fix locally:
+#   python3 generate_sitemap.py    # rewrites sitemap.xml
+#   python3 check_surfaced.py      # reports what is unreachable (manual fix)
 
 on:
   push:
@@ -20,3 +25,6 @@ jobs:
           python-version: '3.11'
       - name: sitemap.xml is up to date
         run: python3 generate_sitemap.py --check
+      - name: every article is reachable
+        if: always()
+        run: python3 check_surfaced.py
