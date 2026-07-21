@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Best Graphics Cards in 2026 — Loiter Point</title>
+<meta name="description" content="An evidence-first buying guide to graphics cards in July 2026. Five picks ranked on published third-party benchmarks, with plain talk about VRAM, frame generation, CPU bottlenecks, power connectors, and street prices that sit well above MSRP." />
+<link rel="canonical" href="https://loiterpoint.com/articles/best-graphics-cards.html" />
+<meta property="og:title" content="The Best Graphics Cards in 2026" />
+<meta property="og:description" content="Five graphics cards ranked on published independent testing, plus the buying failures that FPS charts hide: VRAM limits, frame-generation math, CPU bottlenecks, power connectors, and case fit." />
+<meta property="og:url" content="https://loiterpoint.com/articles/best-graphics-cards.html" />
+<meta property="og:type" content="article" />
+<meta name="lp:category" content="computing" />
+<link rel="icon" href="../favicon.ico" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Best Graphics Cards in 2026",
+  "description": "An evidence-first buying guide to graphics cards in July 2026, ranked on published third-party benchmarks.",
+  "datePublished": "2026-07-21",
+  "dateModified": "2026-07-21",
+  "author": { "@type": "Organization", "name": "Loiter Point Editorial" },
+  "publisher": { "@type": "Organization", "name": "Loiter Point" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://loiterpoint.com/articles/best-graphics-cards.html" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+--bg:#0c0c0e;
+--surface:#141418;
+--surface2:#1c1c22;
+--accent:#e8ff47;
+--text:#e2e2e8;
+--muted:#7a7a8a;
+--border:#26262e;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:'Inter',system-ui,-apple-system,sans-serif;
+font-size:17px;
+line-height:1.7;
+-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px 90px;}
+a{color:var(--accent);}
+
+/* nav */
+nav.top{
+border-bottom:1px solid var(--border);
+background:var(--surface);
+position:sticky;top:0;z-index:20;
+}
+nav.top .inner{
+max-width:820px;margin:0 auto;padding:14px 22px;
+display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+nav.top a.back{
+font-family:'IBM Plex Mono',monospace;font-size:13px;
+text-decoration:none;color:var(--muted);
+}
+nav.top a.back:hover{color:var(--accent);}
+nav.top .brand{
+font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;
+letter-spacing:.14em;text-transform:uppercase;color:var(--text);
+}
+
+/* header */
+header.post{padding:52px 0 8px;}
+.kicker{
+font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;
+text-transform:uppercase;color:var(--accent);margin:0 0 14px;
+}
+h1{
+font-size:clamp(2rem,5.4vw,3.05rem);line-height:1.13;margin:0 0 16px;
+font-weight:700;letter-spacing:-.022em;
+}
+.dateline{
+font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);
+border-top:1px solid var(--border);padding-top:14px;margin-top:22px;
+display:flex;flex-wrap:wrap;gap:10px 18px;
+}
+
+h2{
+font-size:1.55rem;line-height:1.25;margin:52px 0 14px;font-weight:700;
+letter-spacing:-.015em;
+}
+h3{font-size:1.12rem;margin:26px 0 8px;font-weight:600;}
+p{margin:0 0 17px;}
+.muted{color:var(--muted);}
+
+/* TLDR */
+.tldr{
+background:var(--surface);border:1px solid var(--border);
+border-left:3px solid var(--accent);
+border-radius:10px;padding:24px 26px;margin:30px 0 8px;
+}
+.tldr h2{
+margin:0 0 14px;font-size:1.02rem;font-family:'IBM Plex Mono',monospace;
+letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;
+}
+.tldr ul{margin:0;padding-left:20px;}
+.tldr li{margin-bottom:12px;}
+.grab{
+margin-top:20px;padding-top:18px;border-top:1px solid var(--border);
+font-size:15.5px;line-height:2.1;
+}
+.grab strong{
+font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;
+}
+.grab a{
+display:inline-block;background:var(--surface2);border:1px solid var(--border);
+border-radius:6px;padding:4px 11px;margin:0 6px 6px 0;text-decoration:none;
+font-size:14px;color:var(--text);
+}
+.grab a:hover{border-color:var(--accent);color:var(--accent);}
+.grab a .p{
+font-family:'IBM Plex Mono',monospace;color:var(--accent);font-size:13px;margin-left:7px;
+}
+.grab a:hover .p{color:var(--accent);}
+
+/* pick cards */
+.pick{
+background:var(--surface);border:1px solid var(--border);border-radius:12px;
+padding:26px;margin:26px 0;
+}
+.pick-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:6px;}
+.badge{
+flex:none;width:42px;height:42px;border-radius:9px;background:var(--accent);
+color:#0c0c0e;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:19px;
+display:flex;align-items:center;justify-content:center;
+}
+.pick h2{margin:0;font-size:1.42rem;}
+.role{
+font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.15em;
+text-transform:uppercase;color:var(--accent);margin:5px 0 0;
+}
+.price{
+font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--text);
+margin:14px 0 0;
+}
+.price span{color:var(--muted);}
+
+.specs{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:1px;background:var(--border);border:1px solid var(--border);
+border-radius:8px;overflow:hidden;margin:20px 0;
+}
+.specs div{background:var(--surface2);padding:11px 13px;}
+.specs dt{
+font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--muted);margin:0 0 4px;
+}
+.specs dd{margin:0;font-size:14.5px;font-weight:500;}
+
+.cons{
+background:var(--surface2);border-radius:8px;padding:16px 20px;margin:20px 0;
+border-left:2px solid #6b6b7a;
+}
+.cons h4{
+margin:0 0 8px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;
+}
+.cons ul{margin:0;padding-left:19px;font-size:15.5px;}
+.cons li{margin-bottom:6px;}
+
+.buy{
+display:inline-block;background:var(--accent);color:#0c0c0e;font-weight:600;
+text-decoration:none;padding:12px 22px;border-radius:8px;font-size:15px;
+margin-top:4px;
+}
+.buy:hover{filter:brightness(1.08);}
+.buy-note{
+font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);
+margin:10px 0 0;
+}
+
+/* nerd box */
+.nerd{
+background:var(--surface2);border:1px dashed var(--border);border-radius:10px;
+padding:24px 26px;margin:36px 0;
+}
+.nerd h3{
+margin:0 0 12px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+}
+.nerd p{font-size:15.5px;}
+.nerd p:last-child{margin-bottom:0;}
+
+/* table */
+.tablewrap{overflow-x:auto;margin:24px 0;border:1px solid var(--border);border-radius:10px;}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px;}
+th,td{
+text-align:left;padding:12px 14px;border-bottom:1px solid var(--border);
+vertical-align:top;
+}
+th{
+background:var(--surface2);font-family:'IBM Plex Mono',monospace;font-size:11px;
+letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600;
+white-space:nowrap;
+}
+td{background:var(--surface);}
+tbody tr:last-child td{border-bottom:none;}
+td.name{font-weight:600;white-space:nowrap;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+
+/* footer */
+footer{
+border-top:1px solid var(--border);margin-top:60px;padding:30px 0 0;
+font-size:13.5px;color:var(--muted);
+}
+footer p{margin:0 0 12px;}
+.copy{
+font-family:'IBM Plex Mono',monospace;font-size:12px;padding-top:14px;
+border-top:1px solid var(--border);margin-top:20px;
+}
+@media(max-width:560px){
+body{font-size:16px;}
+.pick,.tldr,.nerd{padding:20px 18px;}
+}
+
+.compare{margin-top:.7rem;padding-top:.7rem;border-top:1px dashed var(--border,#26262e)}
+.compare .lbl{font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#7a7a8a);display:block;margin-bottom:.35rem}
+.compare a{display:inline-block;border:1px solid var(--border,#26262e);border-radius:5px;padding:.25rem .6rem;margin:.15rem .3rem .15rem 0;font-size:.75rem;color:var(--text,#e2e2e8);text-decoration:none}
+.compare a:hover{border-color:var(--accent,#e8ff47);color:var(--accent,#e8ff47)}
+.srcs li{font-size:.85rem;margin-bottom:.4rem}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="inner">
+  <a class="back" href="../index.html">&larr; Loiter Point</a>
+  <span class="brand">Computing</span>
+</div></nav>
+
+<div class="wrap">
+
+  <header class="post">
+    <p class="kicker">Buying Guide</p>
+    <h1>The Best Graphics Cards in 2026</h1>
+    <p class="muted">Five cards ranked on published third-party testing &mdash; and the five ways a GPU purchase goes wrong that no FPS chart shows you.</p>
+    <div class="dateline"><span>Updated July 2026</span><span>Loiter Point Editorial</span><span>5 picks &middot; evidence-ranked</span></div>
+  </header>
+
+  <div class="tldr"><h2>The Short Version</h2>
+    <ul>
+      <li><strong>Buy a 12&ndash;16GB card aimed at 1440p.</strong> That is the consensus safe purchase for 2026, and the reasoning is memory, not raw speed. Tom's Hardware measured the 8GB RTX 5060 Ti as roughly 18% slower than the identical 16GB card at 1440p ultra, with a reported 39.6% deficit in ray-traced titles &mdash; same silicon, different memory.</li>
+      <li><strong>Street prices are not MSRP, and the gap is large.</strong> The RTX 5080 carries a $999 MSRP and has been reported at $1,249 on Amazon; broader retail listings have been reported at 45% or more above MSRP. The RTX 5090's $1,999 MSRP is close to fiction &mdash; partner cards have been reported between roughly $2,900 and $3,300. Budget for what the card costs today, not what the launch slide said.</li>
+      <li><strong>Frame-generation numbers are not performance numbers.</strong> A vendor chart putting a frame-gen-on figure next to a native figure is not comparing like with like. Generated frames do not respond to your input. TechSpot's DLSS 4 review reported latency with Multi Frame Generation and Reflex 2 peaking around 60ms &mdash; roughly where the original single-frame generation sat.</li>
+      <li><strong>The card is only half the purchase.</strong> A fast GPU behind an old CPU at 1080p returns a fraction of its benchmarked figures; TechPowerUp data has been cited showing up to 12% FPS loss in Cyberpunk 2077 from CPU limits at that resolution. Check PSU headroom, connector revision, and whether the card physically fits your case before you check the price.</li>
+    </ul>
+    <div class="grab"><strong>Grab your pick:</strong>
+      <a href="https://www.amazon.com/s?k=GeForce%20RTX%205090%2032GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">RTX 5090<span class="p">~$2,900+</span></a>
+      <a href="https://www.amazon.com/s?k=GeForce%20RTX%205080%2016GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">RTX 5080<span class="p">~$1,249</span></a>
+      <a href="https://www.amazon.com/s?k=Radeon%20RX%209070%20XT%2016GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">RX 9070 XT<span class="p">~$599&ndash;699</span></a>
+      <a href="https://www.amazon.com/s?k=Radeon%20RX%209070%2016GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">RX 9070<span class="p">~$599</span></a>
+      <a href="https://www.amazon.com/s?k=Intel%20Arc%20B580%2012GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Arc B580<span class="p">~$249</span></a>
+    </div>
+  </div>
+
+  <h2>How We Evaluate Graphics Cards</h2>
+
+  <p>Loiter Point does not run a lab. We do not own a test bench, we do not bench graphics cards, and we have never put a frame-time capture rig on any product named on this page. Every performance figure below is reported by an independent outlet that does run the tests &mdash; Tom's Hardware, TechSpot and Hardware Unboxed, Gamers Nexus, Digital Foundry, Club386, TechPowerUp &mdash; and is labelled as reported. If a number here is not attributed to a named outlet, treat it as a specification from the manufacturer rather than a measurement.</p>
+
+  <p>Ranking is done on published evidence and nothing else. We read benchmark suites rather than headline slides: Tom's Hardware's GPU hierarchy runs a 19-game suite and reports a geometric mean across rasterization and ray tracing separately, which is the closest thing the category has to a neutral yardstick. We weight native-resolution rasterization as the baseline, treat ray-tracing results as a second axis, and treat upscaling and frame generation as a third, disclosed axis that is never blended into a single headline number. Where an outlet publishes 1% lows or frame-time data, that matters more to us than the average, because averages hide exactly the failure this guide is about.</p>
+
+  <p>Where two credible sources disagree, we print both figures and say plainly that they disagree. GPU pricing in 2026 makes this unavoidable: on the same week, one tracker will report an RX 9070 XT at $699 on Amazon while another reports $549 at Walmart and a third puts the running market average near $650. All three can be true simultaneously. A guide that prints one number and calls it "the price" is making the reader's decision harder, not easier.</p>
+
+  <p>Affiliate links appear throughout. They do not affect the order of the picks, and no manufacturer sees this article before publication. When a card we could earn a commission on is the wrong buy, we say so &mdash; the RTX 5090 below is the most expensive item on this page and the one we recommend against for almost everybody.</p>
+
+  <div class="nerd">
+    <h3>Nerd box: frame generation is not free performance</h3>
+    <p>This is the most misleading number in current GPU marketing, so it is worth being precise about what happens. In a normal rendering pipeline the GPU draws a frame from the current game state, which includes your mouse and keyboard input. Frame generation does something different: it takes two rendered frames, interpolates one or more intermediate images between them, and displays those. Those intermediate images contain no new game state. They do not know you moved the mouse. They are, in the strict sense, a smoother-looking video of a game running at the original frame rate.</p>
+    <p>Three consequences follow. First, latency does not improve in proportion to the frame counter, and it can regress, because the pipeline must hold a rendered frame back in order to interpolate toward it. TechSpot's review of DLSS 4 Multi Frame Generation reported latency peaking around 60ms with Reflex 2 active &mdash; roughly the same territory as the original frame generation, despite a much larger on-screen frame number. Second, interpolation can produce artifacts, and the artifacts get worse as the base frame rate drops, because there is more change between the two real frames to guess at. Digital Foundry's analysis of the technology reported that a 40&ndash;60fps base felt responsive, while a 30&ndash;40fps base felt poor with noticeably more visible artifacts. That inverts the marketing pitch: frame generation is least useful precisely where a card is struggling and you most want help.</p>
+    <p>Third, and most practically: a chart comparing card A with frame generation on against card B rendering natively is not a comparison. It is two different products. Nvidia's Multi Frame Generation is exclusive to the RTX 50-series, AMD's FSR frame generation is available more broadly, and any performance claim that switches these on for one card and off for the other tells you about the feature list, not the silicon. When you read a review, find the native-resolution rasterization chart first. That is the number that describes what the card can draw. Everything else is a setting you may or may not want to enable, and every one of those settings should be disclosed by name and by base frame rate.</p>
+    <p>None of which makes the feature worthless. On a high-refresh monitor, with a base frame rate already north of 60fps, generated frames are a reasonable way to convert a 90fps experience into something that looks like 160fps with latency that stays acceptable. Just do not buy a card on the strength of a number that came from it.</p>
+  </div>
+
+  <h2>The Picks</h2>
+
+  <div class="pick">
+    <div class="pick-head">
+      <div class="badge">1</div>
+      <div>
+        <h2>Nvidia GeForce RTX 5090</h2>
+        <p class="role">Halo &mdash; fastest, and the worst value here</p>
+      </div>
+    </div>
+    <p class="price">$1,999 MSRP <span>&middot; reported street roughly $2,900&ndash;$3,300 for partner cards; one tracker reported $4,329 in mid-2026</span></p>
+
+    <div class="specs">
+      <div><dt>Memory</dt><dd>32GB GDDR7</dd></div>
+      <div><dt>Bus width</dt><dd>512-bit</dd></div>
+      <div><dt>Board power</dt><dd>575W stock</dd></div>
+      <div><dt>Power connector</dt><dd>12V-2x6 (16-pin)</dd></div>
+      <div><dt>Target</dt><dd>4K, high refresh</dd></div>
+      <div><dt>PSU guidance</dt><dd>1000W class, quality unit</dd></div>
+    </div>
+
+    <p>It is the fastest consumer graphics card available, and Tom's Hardware's hierarchy has it at the top across the board. That is the entire case for it, and the case against it is long. The pricing situation reported through 2026 is not a small premium over MSRP &mdash; it is closer to a different price class, with partner cards reported between roughly $2,900 and $3,300 against a $1,999 MSRP, and at least one tracker reporting considerably higher figures earlier in the year. Sources disagree on the exact number by a wide margin, which tells you something about how thin and volatile supply has been.</p>
+
+    <p>The 32GB frame buffer is the one genuine future-proofing argument on this page, and it matters more for local AI model work and heavy content creation than for games, none of which come close to needing it. If you are buying for CUDA workloads with large memory footprints, the calculus is different from gaming and this card can be rational. For gaming, the reported performance-per-dollar against the RTX 5080 is poor, and it gets worse every time the street price moves.</p>
+
+    <p>The power situation deserves a direct warning rather than a footnote. The board draws up to around 575W stock and some partner designs have been observed pulling over 600W &mdash; against a connector rated at 600W. That leaves close to no headroom, and transient spikes go above the sustained figure. Reports of melted 12V-2x6 connectors on RTX 5090 cards have continued through 2026, documented by VideoCardz, Igor's Lab, and Club386, including cases on first-party cables and on cards with reduced power limits. One widely reported failure involved a Zotac card on an 850W supply, below Nvidia's recommendation. Buy a quality 1000W-class supply with a native 12V-2x6 cable, seat the connector until it clicks, and do not run the cable through a tight bend right at the plug.</p>
+
+    <div class="cons">
+      <h4>Honest cons</h4>
+      <ul>
+        <li>Reported street pricing sits far above the $1,999 MSRP &mdash; roughly $2,900&ndash;$3,300 for partner cards, with trackers disagreeing sharply on the figure.</li>
+        <li>Performance-per-dollar against the RTX 5080 is the worst on this page by a wide margin.</li>
+        <li>575W stock draw, some partner boards reported over 600W, against a 600W connector rating. Melted-connector reports have continued into 2026 across multiple outlets.</li>
+        <li>Physically enormous. Most partner designs are 3&ndash;4 slots and well over 300mm long; a substantial number of mid-tower cases will not take one without removing drive cages.</li>
+        <li>At 1440p and below it will be CPU-limited in a large fraction of games, wasting most of what you paid for.</li>
+      </ul>
+    </div>
+
+    <a class="buy" href="https://www.amazon.com/s?k=GeForce%20RTX%205090%2032GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+    <div class="compare"><span class="lbl">Compare at other retailers</span>
+      <a href="https://www.newegg.com/p/pl?d=GeForce%20RTX%205090" rel="nofollow">Newegg</a>
+      <a href="https://www.bestbuy.com/site/searchpage.jsp?st=GeForce%20RTX%205090" rel="nofollow">Best Buy</a>
+      <a href="https://www.bhphotovideo.com/c/search?q=GeForce%20RTX%205090" rel="nofollow">B&amp;H</a>
+    </div>
+    <p class="buy-note">Prices move weekly. Verify before buying; we do not update figures in real time.</p>
+  </div>
+
+  <div class="pick">
+    <div class="pick-head">
+      <div class="badge">2</div>
+      <div>
+        <h2>Nvidia GeForce RTX 5080</h2>
+        <p class="role">Best high-end card</p>
+      </div>
+    </div>
+    <p class="price">$999 MSRP <span>&middot; reported around $1,249 on Amazon; broader retail listings reported at 45%+ over MSRP; peak of roughly $1,500 reported in August 2025</span></p>
+
+    <div class="specs">
+      <div><dt>Memory</dt><dd>16GB GDDR7</dd></div>
+      <div><dt>Bus width</dt><dd>256-bit</dd></div>
+      <div><dt>Board power</dt><dd>360W</dd></div>
+      <div><dt>Power connector</dt><dd>12V-2x6 (16-pin)</dd></div>
+      <div><dt>Target</dt><dd>4K, or 1440p at very high refresh</dd></div>
+      <div><dt>PSU guidance</dt><dd>850W class, quality unit</dd></div>
+    </div>
+
+    <p>This is the card that makes sense at the top of the stack, and it is the one high-end recommendation we would defend on published evidence. It has been reported as roughly 25% faster than the RX 9070 XT and roughly 45% faster than the RX 9060 XT on average, and Tom's Hardware places it inside the top three of its hierarchy alongside the rest of the Blackwell flagships. The 16GB of GDDR7 on a 256-bit bus is enough for 4K with high textures today and is on the right side of the memory line discussed below.</p>
+
+    <p>Where it gets complicated is the comparison one rung down, and the sources disagree in a way worth printing. Tom's Hardware reports the RTX 5070 Ti as sitting anywhere from 10&ndash;15% behind the 5080 across the board while being 33% cheaper as of June 2026. TechTimes, looking at Prime Day pricing, reported a 39% price gap for a 17% performance gap. The two performance figures are not identical and the two price gaps are not identical, but they point the same direction: the 5080 is faster, and the 5070 Ti is better value on a strict dollars-per-frame basis. We rank the 5080 first among realistic high-end buys because it is the faster card on published testing, not because it is the cheaper frame. If your budget is the binding constraint rather than the frame rate target, read that gap and act on it.</p>
+
+    <p>At 4K the 5080 makes clear sense. At 1440p it is a card you buy for high-refresh esports and for headroom, and you will find CPU limits in a fair number of titles. This is also the tier at which the monitor decision starts driving the GPU decision rather than the other way round &mdash; our <a href="best-gaming-monitors.html">gaming monitor guide</a> covers what resolution and refresh combinations are worth pairing with a card at this level. A 5080 behind a 1080p 144Hz panel is money set on fire.</p>
+
+    <div class="cons">
+      <h4>Honest cons</h4>
+      <ul>
+        <li>Reported street pricing runs well above the $999 MSRP; ~$1,249 is the friendlier figure, with broader retail reported at 45%+ over.</li>
+        <li>The RTX 5070 Ti is reported as 10&ndash;17% slower for roughly a third less money &mdash; better value if dollars-per-frame is your metric. Sources disagree on the exact gap.</li>
+        <li>16GB is comfortable now but is the same buffer as cards costing a third as much; it is the generational floor for this tier, not generous.</li>
+        <li>Uses the same 12V-2x6 connector family as the 5090. Lower power draw means much more headroom, but seat it properly.</li>
+        <li>Partner designs are commonly triple-slot and over 300mm; measure your case.</li>
+      </ul>
+    </div>
+
+    <a class="buy" href="https://www.amazon.com/s?k=GeForce%20RTX%205080%2016GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+    <div class="compare"><span class="lbl">Compare at other retailers</span>
+      <a href="https://www.newegg.com/p/pl?d=GeForce%20RTX%205080" rel="nofollow">Newegg</a>
+      <a href="https://www.bestbuy.com/site/searchpage.jsp?st=GeForce%20RTX%205080" rel="nofollow">Best Buy</a>
+      <a href="https://www.bhphotovideo.com/c/search?q=GeForce%20RTX%205080" rel="nofollow">B&amp;H</a>
+    </div>
+    <p class="buy-note">Prices move weekly. Verify before buying; we do not update figures in real time.</p>
+  </div>
+
+  <div class="pick">
+    <div class="pick-head">
+      <div class="badge">3</div>
+      <div>
+        <h2>AMD Radeon RX 9070 XT</h2>
+        <p class="role">1440p sweet spot &mdash; best value overall</p>
+      </div>
+    </div>
+    <p class="price">$599 MSRP <span>&middot; sources disagree: reported at $699 on Amazon, $549 at Walmart, and a running market average near $650</span></p>
+
+    <div class="specs">
+      <div><dt>Memory</dt><dd>16GB GDDR6</dd></div>
+      <div><dt>Bus width</dt><dd>256-bit</dd></div>
+      <div><dt>Board power</dt><dd>304W</dd></div>
+      <div><dt>Power connector</dt><dd>2&ndash;3x 8-pin (model dependent)</dd></div>
+      <div><dt>Target</dt><dd>1440p ultra; entry 4K</dd></div>
+      <div><dt>PSU guidance</dt><dd>750W class</dd></div>
+    </div>
+
+    <p>If you are buying one card in 2026 and you want to stop thinking about it, this is the one. Tom's Hardware places the RX 9070 XT fourth in its hierarchy, just behind the RTX 5070 Ti, with Blackwell holding the three spots above it &mdash; and it does that at a price that has spent much of the last year hundreds below the Nvidia cards it trades blows with. PCWorld called the RDNA 4 pair the new 1440p champions on launch, and reported raw gaming performance within reach of the RTX 5070 Ti for considerably less money. It has also been reported as the cheapest route into 4K 60fps native.</p>
+
+    <p>Pricing is where you need to pay attention, because this is the clearest case on the page of credible sources disagreeing. Within a short window in 2026, the card was reported at $699 on Amazon, at $549 at Walmart (fifty dollars <em>below</em> MSRP), and at a running market average near $650. It took roughly eight to nine months after launch for the card to reach its $599 MSRP at all, having peaked around $975 in May 2025. The practical instruction is to check three retailers, not one, and to be willing to wait a week. The spread between the best and worst reported price is larger than the price difference between two adjacent product tiers.</p>
+
+    <p>RDNA 4 closed a lot of the ray-tracing gap that made previous Radeon generations hard to recommend, though reviewers consistently report it still trailing Blackwell in heavy ray-traced workloads. FSR 4 upscaling is a substantial improvement on what came before. Treat both as bonuses on top of a rasterization result that stands on its own, which is the correct way to evaluate any card. Sixteen gigabytes at this price is the single most important spec on the card &mdash; see the second nerd box for why.</p>
+
+    <div class="cons">
+      <h4>Honest cons</h4>
+      <ul>
+        <li>Ray-tracing performance, while much improved over RDNA 3, is reported as still behind equivalently priced Blackwell cards in heavy RT titles.</li>
+        <li>Street pricing is erratic. Reported figures within the same period span $549 to $699 for the same card.</li>
+        <li>304W board power with a fairly demanding cooler; several partner models are large and loud under sustained load.</li>
+        <li>Ecosystem gaps remain if you use CUDA-dependent creative or ML software &mdash; that software largely does not run on Radeon.</li>
+        <li>FSR 4 title support, while growing, is not as broad as DLSS support.</li>
+      </ul>
+    </div>
+
+    <a class="buy" href="https://www.amazon.com/s?k=Radeon%20RX%209070%20XT%2016GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+    <div class="compare"><span class="lbl">Compare at other retailers</span>
+      <a href="https://www.newegg.com/p/pl?d=Radeon%20RX%209070%20XT" rel="nofollow">Newegg</a>
+      <a href="https://www.bestbuy.com/site/searchpage.jsp?st=Radeon%20RX%209070%20XT" rel="nofollow">Best Buy</a>
+      <a href="https://www.bhphotovideo.com/c/search?q=Radeon%20RX%209070%20XT" rel="nofollow">B&amp;H</a>
+    </div>
+    <p class="buy-note">Prices move weekly. Verify before buying; we do not update figures in real time.</p>
+  </div>
+
+  <div class="pick">
+    <div class="pick-head">
+      <div class="badge">4</div>
+      <div>
+        <h2>AMD Radeon RX 9070</h2>
+        <p class="role">Value pick &mdash; 1440p raster champion</p>
+      </div>
+    </div>
+    <p class="price">$549 MSRP <span>&middot; reported around $599 street, roughly $50 over MSRP</span></p>
+
+    <div class="specs">
+      <div><dt>Memory</dt><dd>16GB GDDR6</dd></div>
+      <div><dt>Bus width</dt><dd>256-bit</dd></div>
+      <div><dt>Board power</dt><dd>220W</dd></div>
+      <div><dt>Power connector</dt><dd>2x 8-pin (model dependent)</dd></div>
+      <div><dt>Target</dt><dd>1440p high/ultra; strong 1080p</dd></div>
+      <div><dt>PSU guidance</dt><dd>650&ndash;700W class</dd></div>
+    </div>
+
+    <p>The non-XT is the card we would put in most builds where the budget has a ceiling and the monitor is 1440p. It has been reported as the 1440p raster value champion, and it carries the same 16GB frame buffer as its more expensive sibling &mdash; which means it ages on the same clock, not a shorter one. Gamers Nexus titled their review around its efficiency, and the 220W board power is the reason: it is a considerably easier card to cool, to power, and to fit than anything above it on this page, and it will run on a good 650W supply without drama.</p>
+
+    <p>The gap to the XT is real but modest, and the gap in system requirements is not. If you are reusing a supply from an older build, or your case is a compact mid-tower with limited clearance, or your room is small enough that fan noise registers, the 9070 is the pick that avoids three separate problems at once. RDNA 4's ray-tracing improvements apply here too, and FSR 4 support is identical. What you give up is headroom at 4K, where the XT is meaningfully more comfortable.</p>
+
+    <p>One caveat on the class as a whole: the price delta between the 9070 and the 9070 XT has been unstable enough that on any given week the XT can be the better buy outright. Check both. If the spread is under about $50, take the XT; if it is $100 or more, the 9070 is the better purchase and the difference goes toward a monitor.</p>
+
+    <div class="cons">
+      <h4>Honest cons</h4>
+      <ul>
+        <li>Slower than the XT, and the price gap between them fluctuates enough that the XT is sometimes the better deal outright.</li>
+        <li>Ray tracing improved over RDNA 3 but reported as still behind Blackwell.</li>
+        <li>4K is possible but not comfortable at high settings; this is a 1440p card by design.</li>
+        <li>No CUDA. If your workflow depends on it, this card is not an option regardless of gaming performance.</li>
+        <li>Reported street pricing still sits above MSRP, though by far less than the Nvidia cards above.</li>
+      </ul>
+    </div>
+
+    <a class="buy" href="https://www.amazon.com/s?k=Radeon%20RX%209070%2016GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+    <div class="compare"><span class="lbl">Compare at other retailers</span>
+      <a href="https://www.newegg.com/p/pl?d=Radeon%20RX%209070" rel="nofollow">Newegg</a>
+      <a href="https://www.bestbuy.com/site/searchpage.jsp?st=Radeon%20RX%209070" rel="nofollow">Best Buy</a>
+      <a href="https://www.bhphotovideo.com/c/search?q=Radeon%20RX%209070" rel="nofollow">B&amp;H</a>
+    </div>
+    <p class="buy-note">Prices move weekly. Verify before buying; we do not update figures in real time.</p>
+  </div>
+
+  <div class="pick">
+    <div class="pick-head">
+      <div class="badge">5</div>
+      <div>
+        <h2>Intel Arc B580</h2>
+        <p class="role">Budget pick &mdash; 12GB at $249</p>
+      </div>
+    </div>
+    <p class="price">$249 MSRP <span>&middot; but Tom's Hardware reported the card selling at &ldquo;$300-ish&rdquo; as of June 2026, so treat $249 as the floor rather than the going rate. The competing RTX 5050 shares the $249 MSRP and has been reported at $275&ndash;$300 street.</span></p>
+
+    <div class="specs">
+      <div><dt>Memory</dt><dd>12GB GDDR6</dd></div>
+      <div><dt>Bus width</dt><dd>192-bit</dd></div>
+      <div><dt>Board power</dt><dd>190W</dd></div>
+      <div><dt>Power connector</dt><dd>1x 8-pin</dd></div>
+      <div><dt>Target</dt><dd>1080p high; light 1440p</dd></div>
+      <div><dt>PSU guidance</dt><dd>550&ndash;600W class</dd></div>
+    </div>
+
+    <p>The budget tier in 2026 is a two-card argument between the Arc B580 and the RTX 5050, and the evidence favours Intel on two counts. TechSpot's head-to-head reported the B580 as 30% faster natively, 28% faster comparing equivalent render resolutions, and 34% faster comparing same-named upscaling modes. The B580 also carries 12GB against the RTX 5050's 8GB, which at this price point is the difference between a card that degrades gracefully and one that hits a wall. Both Tom's Hardware and Club386 have run the same face-off.</p>
+
+    <p>The counter-evidence should be printed too, because the result is not uniform. In Assassin's Creed Shadows, the same TechSpot testing reported the B580 as 5&ndash;6% <em>slower</em> than the RTX 5050, both natively and with upscaling. Intel's driver situation has improved substantially since Alchemist but remains the weakest of the three vendors, particularly in older DirectX 11 titles and in day-one support for new releases. If you play a narrow set of games and one of them is an outlier, check that specific title before buying.</p>
+
+    <p>There is a second caveat specific to Intel: Arc cards have historically depended on Resizable BAR being enabled to perform as tested, which requires a reasonably modern platform and a BIOS setting. On an older motherboard where ReBAR is unavailable, reviewers have reported significant performance loss. Check that before you buy. If your platform is old enough that ReBAR is off the table, that is also a strong signal that the CPU is your real bottleneck and a <a href="best-prebuilt-gaming-desktops.html">prebuilt system</a> may be the better purchase than a card dropped into an aging box.</p>
+
+    <div class="cons">
+      <h4>Honest cons</h4>
+      <ul>
+        <li>Intel's drivers are the least mature of the three vendors; older DX11 titles and day-one new releases are the weak spots.</li>
+        <li>Results are not uniform &mdash; TechSpot reported the B580 as 5&ndash;6% slower than the RTX 5050 in Assassin's Creed Shadows despite being 30% faster on average.</li>
+        <li><strong>Tom's Hardware disagrees with this pick outright.</strong> In their June 2026 hierarchy they call the B580 &ldquo;very much a budget part,&rdquo; note the RTX 5060 is 24% faster at 1080p, and advise readers to &ldquo;save up a few more bucks and grab an RTX 5060 or RX 9060 8GB instead&rdquo; &mdash; judging the 12GB longevity argument not worth the performance tradeoff. We weight the VRAM headroom more heavily than they do at this price. Readers who would rather have the frames today than the buffer in 2028 should follow their advice over ours.</li>
+        <li>Requires Resizable BAR for expected performance; older platforms lose a lot without it.</li>
+        <li>12GB is a real advantage over 8GB rivals but this is still a 1080p card. Do not buy it for 1440p ultra.</li>
+        <li>No CUDA, and the weakest third-party creative-app support of the three vendors.</li>
+      </ul>
+    </div>
+
+    <a class="buy" href="https://www.amazon.com/s?k=Intel%20Arc%20B580%2012GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon</a>
+    <div class="compare"><span class="lbl">Compare at other retailers</span>
+      <a href="https://www.newegg.com/p/pl?d=Intel%20Arc%20B580" rel="nofollow">Newegg</a>
+      <a href="https://www.bestbuy.com/site/searchpage.jsp?st=Intel%20Arc%20B580" rel="nofollow">Best Buy</a>
+      <a href="https://www.bhphotovideo.com/c/search?q=Intel%20Arc%20B580" rel="nofollow">B&amp;H</a>
+    </div>
+    <p class="buy-note">Prices move weekly. Verify before buying; we do not update figures in real time.</p>
+  </div>
+
+  <h2>How They Compare</h2>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Card</th>
+          <th>VRAM</th>
+          <th>Board power</th>
+          <th>MSRP</th>
+          <th>Reported street</th>
+          <th>Sensible target</th>
+          <th>Main reservation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">RTX 5090</td>
+          <td class="mono">32GB GDDR7</td>
+          <td class="mono">575W</td>
+          <td class="mono">$1,999</td>
+          <td class="mono">~$2,900&ndash;3,300</td>
+          <td>4K high refresh; AI/creator work</td>
+          <td>Price, power, connector history, size</td>
+        </tr>
+        <tr>
+          <td class="name">RTX 5080</td>
+          <td class="mono">16GB GDDR7</td>
+          <td class="mono">360W</td>
+          <td class="mono">$999</td>
+          <td class="mono">~$1,249+</td>
+          <td>4K; 1440p high refresh</td>
+          <td>5070 Ti reported 10&ndash;17% slower for ~a third less</td>
+        </tr>
+        <tr>
+          <td class="name">RX 9070 XT</td>
+          <td class="mono">16GB GDDR6</td>
+          <td class="mono">304W</td>
+          <td class="mono">$599</td>
+          <td class="mono">~$549&ndash;699</td>
+          <td>1440p ultra; entry 4K</td>
+          <td>Ray tracing behind Blackwell; volatile pricing</td>
+        </tr>
+        <tr>
+          <td class="name">RX 9070</td>
+          <td class="mono">16GB GDDR6</td>
+          <td class="mono">220W</td>
+          <td class="mono">$549</td>
+          <td class="mono">~$599</td>
+          <td>1440p high/ultra</td>
+          <td>XT is sometimes barely more expensive</td>
+        </tr>
+        <tr>
+          <td class="name">Arc B580</td>
+          <td class="mono">12GB GDDR6</td>
+          <td class="mono">190W</td>
+          <td class="mono">$249</td>
+          <td class="mono">~$249</td>
+          <td>1080p high</td>
+          <td>Driver maturity; needs Resizable BAR</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="muted">Street figures are reported by third-party price trackers and retail listings during June&ndash;July 2026 and will have moved by the time you read this. Where trackers disagree, the range is shown.</p>
+
+  <div class="nerd">
+    <h3>Nerd box: VRAM is the obsolescence clock</h3>
+    <p>A card that is merely slow degrades in a predictable way. You turn settings down, the frame rate goes up, and the relationship is roughly linear. A card that is out of video memory does something else entirely, and it is much worse to live with.</p>
+    <p>When a game's working set exceeds the frame buffer, the driver starts evicting assets to system RAM and streaming them back over PCIe, which is orders of magnitude slower than local memory. Three symptoms follow. Textures pop in visibly &mdash; you walk into a room and the surfaces resolve from blurry to sharp a second later, or never. Frame times spike, producing stutter that the average frame rate completely hides: a card can report a respectable 60fps average while delivering a hitch every time you turn a corner. And 1% lows collapse, sometimes to a fraction of the average, which is the number that describes how the game feels rather than how it charts.</p>
+    <p>This is measurable and it has been measured. Tom's Hardware's face-off between the 8GB and 16GB RTX 5060 Ti &mdash; identical silicon, identical clocks, different memory &mdash; reported the 8GB card as roughly 18% slower on average at 1440p ultra, with that average concealing a reported 39.6% deficit in ray-traced titles. Hardware Unboxed's testing of the same card reported texture pop-in persisting in Hogwarts Legacy and Space Marine 2, and roughly 35fps averages in The Last of Us Part II at 1080p with texture pop-in and crashes at maximum settings. Crashes. That is not a card being slow; that is a card running out of a resource. Titles including Horizon Forbidden West and Cyberpunk 2077 have been reported pushing 10&ndash;12GB at 1440p, and newer releases ask for more.</p>
+    <p>The practical rule for 2026: 8GB is a 1080p buffer and a compromised 1440p one, 12GB is the working minimum for 1440p, and 16GB is what you want if you intend to keep the card three or four years. Memory is the spec that decides when you are forced to upgrade, because a slow card can be fed lower settings indefinitely while a memory-starved card stutters at settings its GPU could otherwise handle. When two cards are close on FPS charts and one has more VRAM, that one has a longer life &mdash; and it will not show up in a launch-day benchmark, which is exactly why it gets ignored.</p>
+  </div>
+
+  <h2>The Rest of the Purchase</h2>
+
+  <h3>Your CPU is half the frame rate</h3>
+  <p>Benchmark charts are produced on test benches with the fastest available processor, specifically so the graphics card is the limiting factor. Your machine is not that bench. At 1080p in particular, a modern GPU finishes each frame so quickly that the processor becomes the constraint &mdash; it cannot feed draw calls, game logic, and physics fast enough to keep the card busy. Hardware Unboxed's testing has shown GPU utilization dropping below 90% at 1080p even with cards as fast as the RTX 5080, and TechPowerUp data has been cited showing FPS losses of up to 12% in CPU-heavy titles like Cyberpunk 2077 from processor limits at that resolution. Reviewers have made the point starkly: a mid-tier card behind a current CPU can feel better than a flagship behind an old one.</p>
+  <p>Two implications. First, if you play at 1080p on an older processor, buying up the GPU stack returns progressively less, and past a certain point returns nothing at all. Second, higher resolutions shift work back to the GPU, which is why the same card can look CPU-limited at 1080p and perfectly scaled at 4K. If your CPU is several generations old and your budget is fixed, the money is often better spent on a platform upgrade than on the card &mdash; and at that point a whole system is worth pricing against the parts. Our <a href="best-prebuilt-gaming-desktops.html">prebuilt gaming desktop guide</a> is the handoff for that decision, and our <a href="best-gaming-laptops.html">gaming laptop guide</a> covers the same question for people who need portability.</p>
+
+  <h3>Power supply, transients, and the connector</h3>
+  <p>Board power ratings describe sustained draw. Modern GPUs pull short transient spikes well above their rated figure, and a supply that is nominally adequate on paper can trip its own over-current protection when those spikes land, producing a hard shutdown mid-game that looks like a driver crash. Headroom is not a luxury purchase; it is the difference between a stable machine and an intermittent one. Buy above the sticker requirement, and buy a quality unit &mdash; wattage on the box is not a quality rating.</p>
+  <p>The 16-pin connector deserves its own paragraph. The original 12VHPWR design produced a well-documented run of melting failures on high-power cards. The 12V-2x6 revision shortened the sense pins by roughly 1.5mm and lengthened the power and ground pins slightly, so that a partially inserted plug fails to power on rather than running at partial contact with a few pins carrying the full load. That change did reduce failures. It did not eliminate them. As of 2026, outlets including VideoCardz, Igor's Lab, Club386 and TechPowerUp have continued to document melted connectors on RTX 5090 cards &mdash; on third-party cables, on first-party cables, and in at least one reported case on a card with a reduced power limit. Club386's own card failed, and they published the piece arguing the connector is not fit for purpose at these power levels. The underlying problem is arithmetic: a 600W-rated connector carrying a card that draws 575W stock and, on some partner boards, over 600W. Use a native cable from a modern supply rather than an adapter, push until it clicks, and keep the cable straight for the first inch or so out of the plug.</p>
+
+  <h3>Will it fit</h3>
+  <p>This is the failure that turns a purchase into a return. Flagship partner cards in this generation are routinely three to four expansion slots thick and well over 300mm long, and mid-tower cases with front-mounted radiators or drive cages often have less clearance than their spec sheet implies. Before ordering, look up the length of the exact SKU &mdash; not the reference design, since partner cards vary by 50mm or more within the same GPU &mdash; and compare it to your case's stated maximum GPU length. Then check slot count against how many expansion slots you have below the top one, and check that a thick card will not sit against your front fans. Also budget vertical clearance for the power cable, which needs to bend somewhere after the connector; several cases that nominally accept a card cannot close the side panel with the cable attached.</p>
+
+  <h2>Bottom Line</h2>
+
+  <p>For most people the answer is the <a href="https://www.amazon.com/s?k=Radeon%20RX%209070%20XT%2016GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">RX 9070 XT</a> or the <a href="https://www.amazon.com/s?k=Radeon%20RX%209070%2016GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">RX 9070</a>, paired with a 1440p monitor. Sixteen gigabytes of memory, performance that published testing puts within reach of cards costing considerably more, and a power and size envelope that fits a normal case on a normal supply. Check the price at three retailers on the day you buy, because the reported spread on the XT has run from $549 to $699 within the same period and the difference is real money.</p>
+
+  <p>If you want the fastest thing that still makes financial sense, the <a href="https://www.amazon.com/s?k=GeForce%20RTX%205080%2016GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">RTX 5080</a> is the high-end pick on published performance, with the caveat printed twice above: the RTX 5070 Ti is reported as somewhere between 10% and 17% slower for roughly a third less money, and outlets disagree on the exact figures. Buy the 5080 for the frame rate, buy the 5070 Ti if the frame rate per dollar is what you are optimizing. On a strict budget, the <a href="https://www.amazon.com/s?k=Intel%20Arc%20B580%2012GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">Arc B580</a> at $249 with 12GB is the better-evidenced choice against the RTX 5050, provided your platform supports Resizable BAR and you have checked your specific games.</p>
+
+  <p>The <a href="https://www.amazon.com/s?k=GeForce%20RTX%205090%2032GB%20graphics%20card&amp;tag=loiterpoint20-20" rel="sponsored nofollow">RTX 5090</a> is the fastest card you can buy and we would recommend it to almost nobody who is gaming. At reported street prices between roughly $2,900 and $3,300 against a $1,999 MSRP, with an ongoing connector failure history at its power level, it is a purchase that makes sense for large-memory professional workloads and very little else.</p>
+
+  <p>Two closing rules. Do not buy a card on a frame-generation number &mdash; find the native rasterization chart, and if a review does not publish one, find another review. And do not buy 8GB in 2026 unless you play at 1080p and intend to keep doing so; the measured evidence on what happens when a frame buffer runs out is now extensive enough that it is a known outcome rather than a risk.</p>
+
+  <section class="wrap">
+    <h2>Sources &amp; Further Reading</h2>
+    <ul class="srcs">
+      <li><a href="https://www.tomshardware.com/reviews/gpu-hierarchy,4388.html" rel="nofollow">Tom's Hardware &mdash; GPU Benchmarks Hierarchy 2026</a>: 19-game test suite, geometric means reported separately for rasterization and ray tracing; source for the overall ordering and the RTX 5070 Ti / RTX 5080 / RX 9070 XT relationships.</li>
+      <li><a href="https://www.tomshardware.com/pc-components/gpus/geforce-rtx-5060-ti-8gb-vs-rtx-5060-ti-16gb-gpu-face-off" rel="nofollow">Tom's Hardware &mdash; RTX 5060 Ti 8GB vs 16GB face-off</a>: the reported ~18% average deficit at 1440p ultra and 39.6% deficit in ray-traced titles on identical silicon.</li>
+      <li><a href="https://www.techspot.com/article/2945-nvidia-dlss-4/" rel="nofollow">TechSpot &mdash; A Review of Nvidia's DLSS 4 Multi Frame Generation</a>: reported latency figures with Reflex 2, and the methodological problems with benchmarking generated frames.</li>
+      <li><a href="https://www.techspot.com/review/3065-nvidia-rtx-5050-vs-intel-b580-dlss-xess/" rel="nofollow">TechSpot &mdash; Nvidia RTX 5050 vs Intel Arc B580</a>: the 30%/28%/34% native and upscaled margins, and the Assassin's Creed Shadows counter-result.</li>
+      <li><a href="https://www.club386.com/nvidia-geforce-rtx-5090-melted-12vhpwr-not-fit-for-purpose/" rel="nofollow">Club386 &mdash; on the melted 12VHPWR connector</a>: first-hand account of a failure and the argument about the connector's margin at RTX 5090 power levels.</li>
+      <li><a href="https://gamersnexus.net/gpus/incredibly-efficient-amd-rx-9070-gpu-review-benchmarks-vs-9070-xt-rtx-5070" rel="nofollow">Gamers Nexus &mdash; RX 9070 review and benchmarks vs 9070 XT and RTX 5070</a>: efficiency and power figures for the RDNA 4 pair.</li>
+    </ul>
+    <p class="muted">Compare links are retailer search links; Amazon links are affiliate links. Rankings are based on the published independent testing cited above and are not affected by affiliate relationships.</p>
+  </section>
+
+  <footer>
+    <p>Loiter Point earns a commission on some purchases made through links on this page. Retailer comparison links are plain search links. Commission arrangements have no bearing on which products appear or in what order.</p>
+    <p>Loiter Point does not operate a testing lab. We do not bench graphics cards and we have not tested any product on this page first-hand. Every performance figure above is reported by the named independent outlet that measured it, and is labelled as reported. Where credible sources disagree, we print both.</p>
+    <p>Prices and availability in this category change weekly and were accurate to the cited trackers and retail listings as of July 2026. Graphics card street prices frequently diverge from manufacturer MSRP by a wide margin; verify the current price before purchasing.</p>
+    <p class="copy">&copy; 2026 Loiter Point &mdash; Consumer &amp; home-improvement tech reviews based on published testing and owner reports.</p>
+  </footer>
+
+</div>
+<script src="/nav.js" defer></script>
+</body>
+</html>
