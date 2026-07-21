@@ -12,6 +12,7 @@ Setup:
 import os
 import json
 import html
+import re
 from pathlib import Path
 from datetime import datetime
 from slugify import slugify
@@ -271,7 +272,14 @@ def wrap_page(item: dict, body: str) -> str:
 </div>"""
     slug = slugify(item["title"])
     canonical = f"https://loiterpoint.com/articles/{slug}.html"
-    description = f"In-depth {type_label.lower()}: {title}. Real field test data, firmware notes, and an honest verdict from pilots who actually fly."
+    lede = ''
+    para = re.search(r'<p[^>]*>(.*?)</p>', body, re.S | re.I)
+    if para:
+        lede = re.sub(r'<[^>]+>', '', para.group(1))
+        lede = re.sub(r'\s+', ' ', html.unescape(lede)).strip()
+    if len(lede) > 155:
+        lede = lede[:152].rsplit(' ', 1)[0] + '...'
+    description = lede or f"{title}: independent testing and owner reports, with rated specs checked against measured results."
     esc_title = html.escape(title, quote=True)
     esc_desc = html.escape(description, quote=True)
     ld_json = json.dumps({"@context": "https://schema.org", "@type": "Article", "headline": title, "description": description, "url": canonical, "datePublished": datetime.now().strftime("%Y-%m-%d"), "author": {"@type": "Organization", "name": "Loiter Point"}, "publisher": {"@type": "Organization", "name": "Loiter Point"}}, ensure_ascii=False)
