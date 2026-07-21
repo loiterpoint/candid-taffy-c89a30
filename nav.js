@@ -1,15 +1,10 @@
-/* Idempotency guard: some pages include nav.js twice, which previously
-   rendered two hamburgers/menus. Run the whole script only once. */
-if (!window.__lpNavInit) {
-  window.__lpNavInit = true;
-
 /* Loiter Point — global navigation + footer.
    Self-injecting: adds a hamburger + full-screen jump menu on phones (<=768px),
    renders one canonical nav bar (see TOPNAV) on every page, and renders one
    canonical footer (see FOOTER) at the bottom of every page.
    Load once per page with:  <script src="/nav.js" defer></script>
    Uses the site's existing CSS variables, so it inherits the dark/lime theme.
-   Build marker: nav-2026-07-20b (TOPNAV bar + FOOTER + mobile back-to-top). */
+   Build marker: nav-2026-07-20c (TOPNAV bar + FOOTER + back-to-top + site-map filter). */
 (function () {
   // Canonical desktop nav, rendered identically on every page. Before this,
   // the site had 25 different nav variants — category lists on 11 pages, bare
@@ -20,9 +15,6 @@ if (!window.__lpNavInit) {
     { label: "Home", href: "/" },
     { label: "Deals", href: "/deals.html" },
     { label: "Buyer Guides", href: "/guides/" },
-    { label: "Short List", href: "/short-list.html" },
-    { label: "Rated vs. Real", href: "/rated-vs-real.html" },
-    { label: "Don't Buy Yet", href: "/dont-buy-yet.html" },
     { label: "Categories", href: "/site-map.html" }
   ];
 
@@ -120,7 +112,20 @@ if (!window.__lpNavInit) {
     "#lpTop:hover{border-color:var(--accent,#e8ff47);}",
     "#lpTop.lp-show{opacity:1;transform:translateY(0);pointer-events:auto;}",
     "@media(max-width:768px){#lpTop{display:flex;}}",
-    "@media(prefers-reduced-motion:reduce){#lpTop{transition:none;}}"
+    "@media(prefers-reduced-motion:reduce){#lpTop{transition:none;}}",
+    // Site-map filter (see synthesizeSiteFilter). Injected only on site-map.html.
+    "#lpSiteFilter{position:sticky;top:56px;z-index:50;background:rgba(12,12,14,0.98);border-bottom:1px solid var(--border,#26262e);padding:0.9rem 0;margin:1.4rem 0 1.6rem;font-family:'Inter',sans-serif;}",
+    "#lpSiteFilter .lpf-row{display:flex;gap:0.9rem;align-items:center;}",
+    "#lpSiteFilter .lpf-field{position:relative;flex:1;}",
+    "#lpSiteFilter input{width:100%;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-radius:10px;color:var(--text,#e2e2e8);font-family:'Inter',sans-serif;font-size:0.95rem;padding:0.7rem 2.4rem;outline:none;transition:border-color .15s;}",
+    "#lpSiteFilter input::placeholder{color:var(--muted,#7a7a8a);}",
+    "#lpSiteFilter input:focus{border-color:var(--accent,#e8ff47);}",
+    "#lpSiteFilter .lpf-mag{position:absolute;left:0.8rem;top:50%;transform:translateY(-50%);color:var(--muted,#7a7a8a);width:16px;height:16px;pointer-events:none;}",
+    "#lpSiteFilter .lpf-clear{position:absolute;right:0.55rem;top:50%;transform:translateY(-50%);background:transparent;border:none;color:var(--muted,#7a7a8a);cursor:pointer;font-size:1.15rem;line-height:1;padding:0.2rem 0.35rem;border-radius:6px;display:none;}",
+    "#lpSiteFilter .lpf-clear:hover{color:var(--text,#e2e2e8);}",
+    "#lpSiteFilter .lpf-count{font-family:var(--mono,monospace);font-size:0.75rem;color:var(--muted,#7a7a8a);white-space:nowrap;}",
+    "#lpSiteFilterNone{display:none;font-family:var(--mono,monospace);font-size:0.9rem;color:var(--muted,#7a7a8a);padding:1.5rem 0.25rem;}",
+    ".tree-grid mark{background:rgba(232,255,71,0.28);color:var(--accent,#e8ff47);border-radius:2px;padding:0 1px;}"
   ].join("");
 
   // Removes the hardcoded "Evidence-first" nav tag wherever it appears.
@@ -339,6 +344,98 @@ if (!window.__lpNavInit) {
     return f;
   }
 
+  // Site-map page only: inject a "type to filter" box over the category tree.
+  // Path-gated and operates on the existing .tree-grid / .branch / .leaves markup,
+  // so it keeps working even if site-map.html is regenerated. Matches on the
+  // article TITLE only (never the guide/review tag label) plus the category name.
+  function synthesizeSiteFilter() {
+    if (!/\/site-map\.html$/.test(location.pathname)) return;
+    var grid = document.querySelector(".tree-grid");
+    if (!grid || document.getElementById("lpSiteFilter")) return;
+
+    var branches = Array.prototype.map.call(grid.querySelectorAll(".branch"), function (b) {
+      var nameEl = b.querySelector(".branch-name");
+      return {
+        el: b,
+        name: (nameEl ? nameEl.textContent : "").toLowerCase(),
+        leaves: Array.prototype.map.call(b.querySelectorAll(".leaves li"), function (li) {
+          var a = li.querySelector("a");
+          // match the TITLE text only — li.textContent would include the tag label
+          return { li: li, a: a, text: (a ? a.textContent : "").toLowerCase(), orig: a ? a.textContent : "" };
+        })
+      };
+    });
+    var TOTAL = branches.reduce(function (n, b) { return n + b.leaves.length; }, 0);
+    if (!TOTAL) return;
+
+    var bar = document.createElement("div");
+    bar.id = "lpSiteFilter";
+    bar.innerHTML =
+      '<div class="lpf-row">' +
+        '<div class="lpf-field">' +
+          '<svg class="lpf-mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>' +
+          '<input type="search" role="searchbox" autocomplete="off" aria-label="Filter the site map" placeholder="Filter ' + TOTAL + ' guides & reviews…">' +
+          '<button class="lpf-clear" type="button" aria-label="Clear filter">✕</button>' +
+        '</div>' +
+        '<span class="lpf-count" aria-live="polite">' + TOTAL + ' pages</span>' +
+      '</div>';
+    grid.parentNode.insertBefore(bar, grid);
+
+    var none = document.createElement("div");
+    none.id = "lpSiteFilterNone";
+    grid.parentNode.insertBefore(none, grid);
+
+    var input = bar.querySelector("input");
+    var clearBtn = bar.querySelector(".lpf-clear");
+    var count = bar.querySelector(".lpf-count");
+
+    // keep the sticky offset just under the synthesized nav bar (height varies)
+    function placeUnderNav() {
+      var nv = document.getElementById("lpSynthNav");
+      bar.style.top = (nv ? nv.offsetHeight : 56) + "px";
+    }
+    placeUnderNav();
+    window.addEventListener("resize", placeUnderNav);
+
+    function esc(s) { return s.replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
+    function mark(a, orig, q) {
+      if (!a) return;
+      if (!q) { a.textContent = orig; return; }
+      var i = orig.toLowerCase().indexOf(q);
+      if (i < 0) { a.textContent = orig; return; }
+      a.innerHTML = esc(orig.slice(0, i)) + "<mark>" + esc(orig.slice(i, i + q.length)) + "</mark>" + esc(orig.slice(i + q.length));
+    }
+    function apply() {
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+      branches.forEach(function (b) {
+        var nameHit = q && b.name.indexOf(q) !== -1;
+        var any = 0;
+        b.leaves.forEach(function (l) {
+          var hit = !q || nameHit || l.text.indexOf(q) !== -1;
+          l.li.style.display = hit ? "" : "none";
+          mark(l.a, l.orig, (q && !nameHit) ? q : "");
+          if (hit) { any++; shown++; }
+        });
+        b.el.style.display = any ? "" : "none";
+      });
+      clearBtn.style.display = q ? "block" : "none";
+      count.textContent = q ? (shown + " of " + TOTAL) : (TOTAL + " pages");
+      if (q && shown === 0) {
+        none.style.display = "block";
+        none.textContent = "No pages match “" + input.value.trim() + "”.";
+        grid.style.display = "none";
+      } else {
+        none.style.display = "none";
+        grid.style.display = "";
+      }
+    }
+    input.addEventListener("input", apply);
+    input.addEventListener("keydown", function (e) { if (e.key === "Escape") { input.value = ""; apply(); } });
+    clearBtn.addEventListener("click", function () { input.value = ""; apply(); input.focus(); });
+    apply();
+  }
+
   function build() {
     var style = document.createElement("style");
     style.textContent = css;
@@ -416,6 +513,9 @@ if (!window.__lpNavInit) {
     menuBodyRef = menu.querySelector(".lp-body");
     addAccountLink(menuBodyRef);
 
+    // Site-map page only: type-to-filter box over the category tree.
+    synthesizeSiteFilter();
+
     // account.html calls this after sign-in so the Sign out button appears
     // straight away instead of only after the next page load.
     window.lpAuthChanged = function () { maybeAddSignOut(menuBodyRef); };
@@ -427,5 +527,3 @@ if (!window.__lpNavInit) {
     build();
   }
 })();
-
-}
