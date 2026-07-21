@@ -1,0 +1,70 @@
+name: auto-surface
+
+# Self-healing integrity for push-to-main.
+#
+# The content pipeline pushes new articles, categories, and a regenerated
+# index.html whose tile counts do not match the real cards. Instead of failing
+# the build and making a human reconcile it, this workflow runs the surfacing
+# tool, commits whatever it fixed, and only THEN enforces the integrity gate.
+#
+# Pull requests are still gated (without auto-rewriting) by sitemap.yml.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Never let two auto-surface runs push at the same time.
+concurrency:
+  group: auto-surface-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  surface:
+    runs-on: ubuntu-latest
+    # Skip the run that this workflow's own auto-commit creates.
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 1) Reconcile: add missing cards + site-map entries, recompute every
+      #    homepage tile count and site-map branch count from the real cards,
+      #    and regenerate sitemap.xml. Stdlib-only, idempotent.
+      - name: surface articles and reconcile counts
+        run: python3 surface_articles.py
+
+      # 2) Regenerate sitemap.xml explicitly too (harmless if already current).
+      - name: regenerate sitemap
+        run: python3 generate_sitemap.py
+
+      # 3) Commit anything the reconciliation changed. [skip ci] + the fact that
+      #    GITHUB_TOKEN pushes do not re-trigger workflows both prevent loops.
+      - name: commit fixes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "auto-surface: reconcile tile counts + sitemap [skip ci]"
+            git push
+          else
+            echo "nothing to reconcile"
+          fi
+
+      # 4) Enforce the invariants. If this fails now, it is a real problem the
+      #    tool could not auto-fix (e.g. an article it could not categorize).
+      - name: every article is reachable
+        run: python3 check_surfaced.py
+
+      - name: sitemap.xml is up to date
+        if: always()
+        run: python3 generate_sitemap.py --check
