@@ -68,6 +68,10 @@ table.cmp th { background:var(--surface2); font-family:'IBM Plex Mono',monospace
 .pick-media img{width:100%;height:auto;display:block;}
 .pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
 @media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+
+  div.compare { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--border); }
+  div.compare .lbl { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); display: block; margin-bottom: 6px; }
+  div.compare a { display: inline-block; border: 1px solid var(--border); border-radius: 5px; padding: 4px 10px; margin: 3px 6px 3px 0; font-size: 0.75rem; text-decoration: none; }
 </style>
 </head>
 <body>
@@ -103,15 +107,15 @@ table.cmp th { background:var(--surface2); font-family:'IBM Plex Mono',monospace
 
 <h2>How We Evaluate Mini PCs</h2>
 <p>Loiter Point does not operate a hardware testing lab, and we don't pretend otherwise. These rankings synthesize three sources: manufacturer specifications, published measurements and hands-on findings from independent outlets that <em>do</em> run controlled tests — in this category primarily ServeTheHome, Notebookcheck, TechRadar, Neowin, TweakTown, Creative Bloq, and StarryHope — and the pattern of verified owner reports from people running these boxes daily. Every real-world figure below is attributed to whoever produced it.</p>
-<p>The things we weight most heavily are the ones that separate mini PCs from each other rather than the ones printed on the box. Sustained thermal behaviour and noise matter more than peak clock speed, because every machine here is a laptop chip in a small metal box and the cooler decides how much of that chip you actually get. Serviceability matters — whether RAM and storage can be replaced, and how many M.2 slots there are. I/O matters enormously, since a mini PC has no expansion bays and whatever ports it ships with are the ports it will have in five years. And we flag price volatility explicitly, because in this category the sticker is the least stable specification of all.</p>
+<p>The things we weight most heavily are the ones that separate mini PCs from each other rather than the ones printed on the box. Sustained thermal behaviour and noise matter more than peak clock speed, because every machine here is a laptop chip in a small metal box and the cooler decides how much of that chip you get. Serviceability matters — whether RAM and storage can be replaced, and how many M.2 slots there are. I/O matters enormously, since a mini PC has no expansion bays and whatever ports it ships with are the ports it will have in five years. And we flag price volatility explicitly, because in this category the sticker is the least stable specification of all.</p>
 
 <div class="card">
 <span class="rank">#1 &middot; BEST OVERALL</span>
 <h3>Apple Mac mini (M4, 16GB / 256GB)</h3>
 <div class="price">$689.95 on Amazon when checked &middot; Apple's own store MSRP is $599 &middot; check current price</div>
-<p>The M4 Mac mini is the machine most people mean when they say they want a small computer that replaces a desktop. Ten CPU cores and ten GPU cores, 16GB of unified memory as the new baseline, near-silent operation, and a footprint that genuinely disappears under a monitor stand. For writing, development, photo work, and video editing, it is the least compromised small box you can buy, and at Apple's $599 MSRP it is arguably the best value in personal computing right now.</p>
-<p>The honest problem is the configuration on this listing. A 256GB SSD fills up fast in 2026 — a couple of Xcode toolchains or one serious video project and you're managing free space weekly — and neither the storage nor the memory is user-upgradeable. Ever. Apple's upgrade pricing is steep enough that many owners simply hang an <a href="best-portable-ssds.html">external portable SSD</a> off the back and treat the internal drive as boot-only, which works well over Thunderbolt but is a workaround, not a fix. Note also the gap between the $689.95 Amazon price observed here and Apple's own $599: on this particular product, the direct-from-Apple route is often cheaper.</p>
-<p>Port layout is thoughtful and slightly unusual: Thunderbolt, HDMI, and Gigabit Ethernet at the rear, with USB-C and a headphone jack moved to the front where you'll actually reach them. If you're driving more than one display or need legacy USB-A, budget for one of the <a href="best-usb-c-hubs.html">USB-C hubs</a> we've covered. Want more headroom without changing platforms? The <a href="https://www.amazon.com/dp/B0DLBVHSLD?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">M4 Pro model with 12 CPU cores, 16 GPU cores, 24GB and 512GB</a> was $1,599.00 when checked — a large jump, but it fixes both of the base model's real weaknesses at once.</p>
+<p>The M4 Mac mini is the machine most people mean when they say they want a small computer that replaces a desktop. Ten CPU cores and ten GPU cores, 16GB of unified memory as the new baseline, near-silent operation, and a footprint that disappears under a monitor stand. For writing, development, photo work, and video editing, it is the least compromised small box you can buy, and at Apple's $599 MSRP it is arguably the best value in personal computing right now.</p>
+<p>The problem is the configuration on this listing. A 256GB SSD fills up fast in 2026 — a couple of Xcode toolchains or one serious video project and you're managing free space weekly — and neither the storage nor the memory is user-upgradeable. Ever. Apple's upgrade pricing is steep enough that many owners simply hang an <a href="best-portable-ssds.html">external portable SSD</a> off the back and treat the internal drive as boot-only, which works well over Thunderbolt but is a workaround, not a fix. Note also the gap between the $689.95 Amazon price observed here and Apple's own $599: on this particular product, the direct-from-Apple route is often cheaper.</p>
+<p>Port layout is thoughtful and slightly unusual: Thunderbolt, HDMI, and Gigabit Ethernet at the rear, with USB-C and a headphone jack moved to the front where you'll reach them. If you're driving more than one display or need legacy USB-A, budget for one of the <a href="best-usb-c-hubs.html">USB-C hubs</a> we've covered. Want more headroom without changing platforms? The <a href="https://www.amazon.com/dp/B0DLBVHSLD?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">M4 Pro model with 12 CPU cores, 16 GPU cores, 24GB and 512GB</a> was $1,599.00 when checked — a large jump, but it fixes both of the base model's real weaknesses at once.</p>
 <table class="specs">
 <tr><td>CPU / GPU</td><td>Apple M4, 10-core CPU / 10-core GPU</td></tr>
 <tr><td>Memory</td><td>16GB unified — soldered, not upgradeable</td></tr>
@@ -121,13 +125,14 @@ table.cmp th { background:var(--surface2); font-family:'IBM Plex Mono',monospace
 <tr><td>Price seen</td><td>$689.95 Amazon / $599 Apple MSRP (reported)</td></tr>
 </table>
 <a class="buy" href="https://www.amazon.com/dp/B0DLBTPDCS?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  <div class="compare"><span class="lbl">Compare prices at</span><a href="https://www.bestbuy.com/site/searchpage.jsp?st=Apple%20Mac%20mini">Best Buy</a><a href="https://www.walmart.com/search?q=Apple%20Mac%20mini">Walmart</a><a href="https://www.newegg.com/p/pl?d=Apple%20Mac%20mini">Newegg</a><a href="https://www.bhphotovideo.com/c/search?q=Apple%20Mac%20mini">B&amp;H</a></div>
 </div>
 
 <div class="card">
 <span class="rank">#2 &middot; BEST WINDOWS ALL-ROUNDER</span>
 <h3>Beelink SER8 (Ryzen 7 8845HS, 32GB, 1TB)</h3>
 <div class="price">$939.00 on the listing when checked &middot; historically far lower &middot; check current price before buying</div>
-<p>The SER8 is the Windows box we'd point most people at. The Ryzen 7 8845HS is an eight-core, sixteen-thread part boosting to 5.1GHz with Radeon 780M graphics, and Beelink pairs it with 32GB of DDR5 and a 1TB NVMe drive — a configuration that doesn't need upgrading on day one, which is rarer than it should be. Both ServeTheHome and TechRadar reviewed it, and the consistent theme across their coverage is the cooling: a vapor chamber inside an aluminium chassis, which reviewers describe as unusually quiet for the performance on offer, alongside a maintenance-friendly internal layout. It has USB4 and can drive three 4K displays at once through HDMI 2.0, DisplayPort 1.4, and USB4 — genuinely useful if you're building out a <a href="best-monitors-home-office.html">multi-monitor home office</a>.</p>
+<p>The SER8 is the Windows box we'd point most people at. The Ryzen 7 8845HS is an eight-core, sixteen-thread part boosting to 5.1GHz with Radeon 780M graphics, and Beelink pairs it with 32GB of DDR5 and a 1TB NVMe drive — a configuration that doesn't need upgrading on day one, which is rarer than it should be. Both ServeTheHome and TechRadar reviewed it, and the consistent theme across their coverage is the cooling: a vapor chamber inside an aluminium chassis, which reviewers describe as unusually quiet for the performance on offer, alongside a maintenance-friendly internal layout. It has USB4 and can drive three 4K displays at once through HDMI 2.0, DisplayPort 1.4, and USB4 — useful if you're building out a <a href="best-monitors-home-office.html">multi-monitor home office</a>.</p>
 <p>Two honest warnings. First, price. The $939.00 we observed on this listing is well above what this machine has historically sold for — it has spent long stretches in the $500 to $600 range, and third-party seller pricing on Amazon swings hard enough that the number you see may bear no relation to the number above. At $939 it's a hard sell against the GEEKOM below; at $600 it's the obvious pick. Check before you commit. Second, the recurring criticisms in published reviews are consistent and worth taking seriously: price, wireless performance, and the absence of a VESA mount, which matters if your plan was to bolt it behind a display.</p>
 <table class="specs">
 <tr><td>CPU</td><td>AMD Ryzen 7 8845HS, 8C/16T, up to 5.1GHz</td></tr>
@@ -138,13 +143,14 @@ table.cmp th { background:var(--surface2); font-family:'IBM Plex Mono',monospace
 <tr><td>Known gripes</td><td>Price volatility, wireless performance, no VESA mount (reported)</td></tr>
 </table>
 <a class="buy" href="https://www.amazon.com/dp/B0CGMXTK2J?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  <div class="compare"><span class="lbl">Compare prices at</span><a href="https://www.bestbuy.com/site/searchpage.jsp?st=Beelink%20SER8">Best Buy</a><a href="https://www.walmart.com/search?q=Beelink%20SER8">Walmart</a><a href="https://www.newegg.com/p/pl?d=Beelink%20SER8">Newegg</a><a href="https://www.bhphotovideo.com/c/search?q=Beelink%20SER8">B&amp;H</a></div>
 </div>
 
 <div class="card">
 <span class="rank">#3 &middot; BEST VALUE WINDOWS BOX</span>
 <h3>GEEKOM A8 Max (Ryzen 7 8745HS, 16GB, 1TB)</h3>
 <div class="price">$719.10 when checked &middot; Ryzen 9 8945HS trim around $899 &middot; check current price</div>
-<p>The A8 Max is the pragmatist's answer to the SER8. The Ryzen 7 8745HS is a close relative of the 8845HS with the same Radeon 780M graphics, so day-to-day it feels much the same, and Notebookcheck framed the machine explicitly as a value play built on that chip. TechRadar's review highlighted the dual network ports and general connection flexibility, calling out creative studios as a natural fit — two independent NICs in a box this size is unusual, and it's what makes the A8 Max viable as a small server or a machine that lives on two networks at once. USB4, 8K output, and three-year coverage round it out, and the chassis is genuinely tiny at 135 x 132 x 45.9 mm and 685 grams.</p>
+<p>The A8 Max is the pragmatist's answer to the SER8. The Ryzen 7 8745HS is a close relative of the 8845HS with the same Radeon 780M graphics, so day-to-day it feels much the same, and Notebookcheck framed the machine explicitly as a value play built on that chip. TechRadar's review highlighted the dual network ports and general connection flexibility, calling out creative studios as a natural fit — two independent NICs in a box this size is unusual, and it's what makes the A8 Max viable as a small server or a machine that lives on two networks at once. USB4, 8K output, and three-year coverage round it out, and the chassis is tiny at 135 x 132 x 45.9 mm and 685 grams.</p>
 <p>Where it loses to the SER8 is memory: 16GB versus 32GB. That's fine for most work, but the Radeon 780M shares system RAM, so heavy multitasking plus graphics load will feel the pinch sooner — see the nerd box below on why single-channel and low-capacity RAM hurt an integrated GPU more than people expect. Verdict: at $719.10 against a $939 SER8, the A8 Max is the better buy. If the SER8 drops back toward its historical price, that flips.</p>
 <table class="specs">
 <tr><td>CPU</td><td>AMD Ryzen 7 8745HS</td></tr>
@@ -156,6 +162,7 @@ table.cmp th { background:var(--surface2); font-family:'IBM Plex Mono',monospace
 <tr><td>Warranty</td><td>3-year coverage</td></tr>
 </table>
 <a class="buy" href="https://www.amazon.com/dp/B0F8H4KWDX?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  <div class="compare"><span class="lbl">Compare prices at</span><a href="https://www.bestbuy.com/site/searchpage.jsp?st=GEEKOM%20A8%20Max">Best Buy</a><a href="https://www.walmart.com/search?q=GEEKOM%20A8%20Max">Walmart</a><a href="https://www.newegg.com/p/pl?d=GEEKOM%20A8%20Max">Newegg</a><a href="https://www.bhphotovideo.com/c/search?q=GEEKOM%20A8%20Max">B&amp;H</a></div>
 </div>
 
 <div class="card">
@@ -175,6 +182,7 @@ table.cmp th { background:var(--surface2); font-family:'IBM Plex Mono',monospace
 <tr><td>Expansion</td><td>Two M.2 slots, internal PSU</td></tr>
 </table>
 <a class="buy" href="https://www.amazon.com/dp/B0DPHFJSZM?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  <div class="compare"><span class="lbl">Compare prices at</span><a href="https://www.bestbuy.com/site/searchpage.jsp?st=Beelink%20EQ14">Best Buy</a><a href="https://www.walmart.com/search?q=Beelink%20EQ14">Walmart</a><a href="https://www.newegg.com/p/pl?d=Beelink%20EQ14">Newegg</a><a href="https://www.bhphotovideo.com/c/search?q=Beelink%20EQ14">B&amp;H</a></div>
 </div>
 
 <div class="card">
@@ -194,6 +202,7 @@ table.cmp th { background:var(--surface2); font-family:'IBM Plex Mono',monospace
 <tr><td>Idle power</td><td>~13&ndash;35W on a Proxmox home-lab workload (single owner report)</td></tr>
 </table>
 <a class="buy" href="https://www.amazon.com/dp/B0CT2LGBFR?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  <div class="compare"><span class="lbl">Compare prices at</span><a href="https://www.bestbuy.com/site/searchpage.jsp?st=Minisforum%20MS-01%20Mini%20Workstation">Best Buy</a><a href="https://www.walmart.com/search?q=Minisforum%20MS-01%20Mini%20Workstation">Walmart</a><a href="https://www.newegg.com/p/pl?d=Minisforum%20MS-01%20Mini%20Workstation">Newegg</a><a href="https://www.bhphotovideo.com/c/search?q=Minisforum%20MS-01%20Mini%20Workstation">B&amp;H</a></div>
 </div>
 
 <div class="nerd">
@@ -218,7 +227,7 @@ table.cmp th { background:var(--surface2); font-family:'IBM Plex Mono',monospace
 
 <h2>Who should skip a mini PC</h2>
 <p>Three groups should think hard before buying one of these.</p>
-<p><strong>Gamers and anyone who wants a GPU upgrade path.</strong> Every machine here except the MS-01 runs integrated graphics with no way to add a discrete card, and the MS-01's slot is x8 electrically and physically limited to a low-profile card. The Radeon 780M in the SER8 and A8 Max is a genuinely capable iGPU for light gaming, but it is not a replacement for a desktop graphics card, and the N150 in the EQ14 isn't in the conversation at all — under 20 fps in CS2 at 1080p lowest, per published testing, is the whole story. If your plan involves a GPU upgrade in two years, buy a tower.</p>
+<p><strong>Gamers and anyone who wants a GPU upgrade path.</strong> Every machine here except the MS-01 runs integrated graphics with no way to add a discrete card, and the MS-01's slot is x8 electrically and physically limited to a low-profile card. The Radeon 780M in the SER8 and A8 Max is a capable iGPU for light gaming, but it is not a replacement for a desktop graphics card, and the N150 in the EQ14 isn't in the conversation at all — under 20 fps in CS2 at 1080p lowest, per published testing, is the whole story. If your plan involves a GPU upgrade in two years, buy a tower.</p>
 <p><strong>Anyone who upgrades storage or memory later.</strong> On Apple, RAM and SSD are soldered and permanent; the 256GB base model in particular is a decision you make once. The Windows boxes are better here — the EQ14's two M.2 slots and the MS-01's three are real advantages — but you're still working within the space a 1-litre chassis allows.</p>
 <p><strong>Anyone running heavy sustained loads.</strong> These are laptop chips in small enclosures. They will throttle under long renders and long compiles in a way a tower with a large air cooler won't, and the degree varies by how the vendor configured TDP and cooling. For bursty desktop work this is a non-issue. For an eight-hour render queue, it isn't.</p>
 <p>One more honest note on evidence: independent coverage in this category is uneven. The Mac mini and the MS-01 have been reviewed to death; the specific 16GB/1TB EQ14 trim has less published testing behind it than the cheaper 512GB version most reviewers received. Where we've extrapolated from a nearby configuration, we've said so above rather than presenting it as a measured result. If you're cross-shopping against portable machines instead, our <a href="best-laptops-under-1000.html">laptops under $1,000</a> guide covers the other side of that trade.</p>
