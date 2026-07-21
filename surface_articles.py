@@ -53,8 +53,20 @@ CATEGORIES: dict[str, dict[str, str]] = {
     "cameras":     {"label": "Cameras",                    "icon": "📸", "meta": "Cameras"},
     "networking":  {"label": "Networking",                 "icon": "📶", "meta": "Networking"},
     "smartphones": {"label": "Smartphones",                "icon": "📲", "meta": "Smartphones"},
-    "tools":       {"label": "Power Tools & Workshop",  "icon": "🛠️", "meta": "Tools"},
+    "tools":       {"label": "Tools & DIY",                "icon": "🔧", "meta": "Tools"},
+    "outdoors":    {"label": "Outdoors",                   "icon": "🏕️", "meta": "Outdoors"},
 }
+
+
+def cat_meta(cat: str) -> dict:
+    """Return display config for a category, synthesizing a sane default for any
+    category dir not explicitly listed in CATEGORIES (keeps this tool
+    category-agnostic so brand-new category pages are handled automatically)."""
+    c = CATEGORIES.get(cat)
+    if c:
+        return c
+    nice = cat.replace("-", " ").title()
+    return {"label": nice, "icon": "📄", "meta": nice}
 
 # ── Keyword guesser (fallback only). First matching (substring-in-slug) wins, so
 # order matters: put the more specific patterns first. This is a safety net for
@@ -181,7 +193,7 @@ def featured_close_index(html: str) -> int | None:
 
 
 def build_card(slug: str, title: str, desc: str, cat: str) -> str:
-    c = CATEGORIES[cat]
+    c = cat_meta(cat)
     title = title or title_from_slug(slug)
     if not desc:
         desc = f"Our evidence-first pick roundup: {title}."
@@ -302,7 +314,7 @@ def main() -> int:
         print("error: no articles/ directory", file=sys.stderr)
         return 2
 
-    cats = [c for c in category_dirs(repo) if c in CATEGORIES]
+    cats = category_dirs(repo)
 
     # reverse-map: slug -> category it is already carded on
     carded: dict[str, str] = {}
