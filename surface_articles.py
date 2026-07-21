@@ -232,6 +232,14 @@ def sitemap_leaf(slug: str, title: str) -> str:
             f'<span class="tag">guide</span></li>\n')
 
 
+def leaf_sort_key(title: str) -> str:
+    """Sort key for site-map leaves: case-insensitive title, ignoring a leading
+    article word ("The"/"A"/"An") so "The Best…" sorts with the rest. Must match
+    the ordering the site-map was cleaned to, so inserts land in the right spot."""
+    t = title.replace("&amp;", "&").strip().lower()
+    return re.sub(r"^(the |a |an )", "", t)
+
+
 def add_sitemap_leaf(repo: Path, cat: str, slug: str, title: str, dry: bool) -> bool:
     smap = repo / "site-map.html"
     html = smap.read_text(encoding="utf-8")
@@ -247,8 +255,22 @@ def add_sitemap_leaf(repo: Path, cat: str, slug: str, title: str, dry: bool) -> 
     close = html.find("</ul>", ul_start)
     if close == -1:
         return False
+
+    # Insert in alphabetical position (before the first existing leaf whose title
+    # sorts after the new one); fall back to end-of-list if it sorts last. Keeps
+    # each branch A–Z instead of appending new leaves and re-introducing drift.
+    block = html[ul_start:close]
+    new_key = leaf_sort_key(title)
+    insert_at = close
+    for m in re.finditer(r"[^\n]*<li>.*?</li>[^\n]*\n?", block, flags=re.S):
+        tm = re.search(r"<a [^>]*>(.*?)</a>", m.group(0), flags=re.S)
+        if tm and new_key < leaf_sort_key(tm.group(1)):
+            insert_at = ul_start + m.start()
+            break
+
     if not dry:
-        smap.write_text(html[:close] + sitemap_leaf(slug, title) + html[close:], encoding="utf-8")
+        smap.write_text(html[:insert_at] + sitemap_leaf(slug, title) + html[insert_at:],
+                        encoding="utf-8")
     return True
 
 
