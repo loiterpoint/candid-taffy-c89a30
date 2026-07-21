@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Short List: 5 Things Worth Buying Right Now — Loiter Point</title>
+<meta name="description" content="Five products we'd actually buy today, one per category. What each one gets right, what would make us pick something else, and the price. No filler." />
+<link rel="canonical" href="https://loiterpoint.com/short-list.html"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:title" content="The Short List: 5 Things Worth Buying Right Now"/>
+<meta property="og:description" content="Five products we'd actually buy today. What each gets right, and what would make us pick something else."/>
+<meta property="og:url" content="https://loiterpoint.com/short-list.html"/>
+<meta property="og:type" content="article"/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root { --bg:#0c0c0e; --surface:#141418; --surface2:#1c1c22; --accent:#e8ff47; --accent2:#ff6b35;
+--text:#e2e2e8; --muted:#7a7a8a; --border:#26262e; --radius:10px; --mono:'IBM Plex Mono',monospace; --good:#86efac; }
+body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+a { color:inherit; text-decoration:none; }
+
+nav { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; border-bottom:1px solid var(--border); position:sticky; top:0; background:rgba(12,12,14,0.97); backdrop-filter:blur(12px); z-index:100; }
+.nav-logo { display:flex; align-items:center; gap:0.6rem; font-size:1rem; font-weight:800; letter-spacing:-0.02em; }
+.nav-logo .icon { width:28px; height:28px; background:var(--accent); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; color:#000; }
+.nav-logo .dot { color:var(--accent); }
+.nav-links { display:flex; gap:2rem; align-items:center; }
+.nav-links a { color:var(--muted); font-size:0.875rem; font-weight:500; }
+.nav-links a.current { color:var(--accent); }
+.nav-tag { font-family:var(--mono); font-size:0.7rem; background:var(--surface2); border:1px solid var(--border); padding:0.25rem 0.6rem; border-radius:4px; color:var(--accent); }
+
+.wrap { max-width:860px; margin:0 auto; padding:3rem 2rem 4rem; }
+.eyebrow { font-family:var(--mono); font-size:0.7rem; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.9rem; }
+h1 { font-size:clamp(1.9rem,4.5vw,2.9rem); font-weight:800; letter-spacing:-0.03em; line-height:1.12; margin-bottom:1rem; }
+h1 em { font-style:normal; color:var(--accent); }
+.lede { color:var(--muted); font-size:1.05rem; line-height:1.75; margin-bottom:2.4rem; max-width:640px; }
+.lede strong { color:var(--text); }
+
+.pick { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem 1.6rem; margin-bottom:1.1rem; position:relative; }
+.pick:hover { border-color:var(--accent); }
+.rank { position:absolute; top:-11px; left:1.4rem; background:var(--accent); color:#000; font-family:var(--mono); font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:0.22rem 0.7rem; border-radius:99px; }
+.pick-top { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap; margin:0.5rem 0 0.2rem; }
+.pick-name { font-size:1.2rem; font-weight:700; letter-spacing:-0.01em; }
+.pick-name a:hover { color:var(--accent); }
+.pick-price { font-family:var(--mono); font-size:1.05rem; color:var(--accent); font-weight:600; white-space:nowrap; }
+.pick-cat { font-family:var(--mono); font-size:0.68rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.9rem; }
+.line { display:flex; gap:0.7rem; font-size:0.92rem; line-height:1.65; margin-top:0.55rem; }
+.line .tag { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.06em; text-transform:uppercase; padding:0.16rem 0.5rem; border-radius:4px; height:fit-content; white-space:nowrap; margin-top:0.15rem; }
+.t-why { background:rgba(134,239,172,0.12); color:var(--good); border:1px solid rgba(134,239,172,0.28); }
+.t-not { background:rgba(255,107,53,0.12); color:var(--accent2); border:1px solid rgba(255,107,53,0.28); }
+.line p { color:var(--muted); }
+.line p strong { color:var(--text); font-weight:600; }
+.pick-foot { margin-top:1.1rem; padding-top:0.9rem; border-top:1px solid var(--border); }
+.pick-foot a { font-size:0.82rem; font-weight:600; color:var(--accent); }
+.pick-foot a:hover { text-decoration:underline; }
+
+.note { background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:var(--radius); padding:1.2rem 1.4rem; margin-top:2.2rem; }
+.note-label { font-family:var(--mono); font-size:0.65rem; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem; }
+.note p { font-size:0.88rem; color:var(--muted); line-height:1.7; }
+.note p + p { margin-top:0.7rem; }
+.note strong { color:var(--text); }
+
+footer { border-top:1px solid var(--border); padding:2rem; margin-top:2.5rem; }
+.footer-bottom { max-width:860px; margin:0 auto; display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.footer-bottom p { font-size:0.75rem; color:var(--muted); }
+.disclosure { font-size:0.72rem; color:var(--muted); opacity:0.6; max-width:520px; line-height:1.5; }
+
+@media (max-width:768px){ nav{padding:0.85rem 1.1rem;} .nav-links{display:none;} .wrap{padding:2rem 1.1rem 3rem;} }
+</style>
+</head>
+<body>
+
+<nav>
+<a class="nav-logo" href="/index.html"><div class="icon">&#8853;</div><span>Loiter<span class="dot">Point</span></span></a>
+<div class="nav-links">
+<a href="/index.html">Home</a>
+<a href="/guides/">Buyer Guides</a>
+<a href="/deals.html">Deals</a>
+<a href="/short-list.html" class="current">The Short List</a>
+<a href="/rated-vs-real.html">Rated vs. Real</a>
+</div>
+<span class="nav-tag">Evidence-first</span>
+</nav>
+
+<div class="wrap">
+<div class="eyebrow">// If you only have a minute</div>
+<h1>The Short List:<br /><em>five things worth buying.</em></h1>
+<p class="lede">One pick per category &mdash; the thing we'd buy today if we were spending our own money. Each one gets a reason to buy it and <strong>an honest reason you might not</strong>. If you want the full evidence, every pick links to its review.</p>
+
+<div class="pick">
+<span class="rank">01 &middot; Drones</span>
+<div class="pick-top"><div class="pick-name"><a href="/articles/dji-mini-5-pro-review.html">DJI Mini 5 Pro</a></div><div class="pick-price">$759</div></div>
+<div class="pick-cat">Sub-250g &middot; 1-inch sensor &middot; LiDAR obstacle sensing</div>
+<div class="line"><span class="tag t-why">Why</span><p>The most complete sub-250g drone made: a true 1-inch sensor, LiDAR that lets it fly and return home after sunset, and <strong>class-leading tested endurance</strong>.</p></div>
+<div class="line"><span class="tag t-not">Why not</span><p>The 249.9 g badge doesn't survive a scale &mdash; production units weigh <strong>252&ndash;253 g</strong>, and the FAA allows no tolerance. Budget five dollars and five minutes to register it.</p></div>
+<div class="pick-foot"><a href="/articles/dji-mini-5-pro-review.html">Read the full review &rarr;</a></div>
+</div>
+
+<div class="pick">
+<span class="rank">02 &middot; Home</span>
+<div class="pick-top"><div class="pick-name"><a href="/articles/best-robot-vacuums-2024.html">Roborock S8 Pro Ultra</a></div><div class="pick-price">$1,099</div></div>
+<div class="pick-cat">Self-empty &middot; Self-clean mop &middot; LiDAR nav</div>
+<div class="line"><span class="tag t-why">Why</span><p>Genuinely hands-free. The dock empties the bin, refills the mop water and washes the pads &mdash; <strong>the only one that actually earns the "set and forget" claim</strong>.</p></div>
+<div class="line"><span class="tag t-not">Why not</span><p>It's a grand. If you have pets or kids, the <strong>Roomba j7+ at $549</strong> wins on obstacle avoidance and is the smarter buy for half the money.</p></div>
+<div class="pick-foot"><a href="/articles/best-robot-vacuums-2024.html">Read the full guide &rarr;</a></div>
+</div>
+
+<div class="pick">
+<span class="rank">03 &middot; Audio</span>
+<div class="pick-top"><div class="pick-name"><a href="/articles/best-headphones-under-200.html">Sony WH-CH720N</a></div><div class="pick-price">$149</div></div>
+<div class="pick-cat">192g &middot; ANC &middot; Multipoint</div>
+<div class="line"><span class="tag t-why">Why</span><p>Light at 192 g, real ANC, and a battery that <strong>independent labs measured at 40+ hours with ANC on &mdash; beating its own spec</strong>. That's rare enough to be worth noting.</p></div>
+<div class="line"><span class="tag t-not">Why not</span><p>The <strong>Anker Q45 at $79</strong> measured near 56 hours and closes more of the gap than the price difference suggests. Buy the Sony for comfort, not for a spec win.</p></div>
+<div class="pick-foot"><a href="/articles/best-headphones-under-200.html">Read the full guide &rarr;</a></div>
+</div>
+
+<div class="pick">
+<span class="rank">04 &middot; Automotive</span>
+<div class="pick-top"><div class="pick-name"><a href="/articles/best-dash-cams-2024.html">Vantrue E2 Lite</a></div><div class="pick-price">$149</div></div>
+<div class="pick-cat">2.5K front &middot; 1080p rear &middot; Starvis 2</div>
+<div class="line"><span class="tag t-why">Why</span><p>Starvis 2 sensors front and rear at $149, and <strong>no subscription for features that should be built in</strong> &mdash; which rules out most of the competition on principle.</p></div>
+<div class="line"><span class="tag t-not">Why not</span><p>If you only ever park on the street and want 4K forensic detail on plates, you'll want to spend up. For everyone else this is the stopping point.</p></div>
+<div class="pick-foot"><a href="/articles/best-dash-cams-2024.html">Read the full guide &rarr;</a></div>
+</div>
+
+<div class="pick">
+<span class="rank">05 &middot; Gaming audio</span>
+<div class="pick-top"><div class="pick-name"><a href="/articles/best-gaming-headsets-under-100.html">Turtle Beach Stealth 600 Gen&nbsp;3</a></div><div class="pick-price">Under $100</div></div>
+<div class="pick-cat">Wireless &middot; 80-hour rated battery</div>
+<div class="line"><span class="tag t-why">Why</span><p>One of the only products we track whose battery rating a lab found <strong>conservative &mdash; 80 hours claimed, 83h 42m measured to cutoff</strong>. Everything else on this page fell short of its number.</p></div>
+<div class="line"><span class="tag t-not">Why not</span><p>Our wired pick does the same job for less and never needs charging. Wireless is a convenience purchase here, not a performance one.</p></div>
+<div class="pick-foot"><a href="/articles/best-gaming-headsets-under-100.html">Read the full guide &rarr;</a></div>
+</div>
+
+<div class="note">
+<div class="note-label">// How this list works</div>
+<p><strong>Five picks, one per category, no filler.</strong> These are pulled from our current top-rated products, and every claim above is drawn from the linked review &mdash; which cites the independent testing behind it. Prices are as of publication and move constantly; check <a href="/deals.html" style="color:var(--accent)">Deal Radar</a> before you buy.</p>
+<p>We don't get paid to rank things. Affiliate links earn us a commission if you buy, but they never decide the order &mdash; and you'll notice we tell you when a cheaper pick beats the headline one.</p>
+</div>
+</div>
+
+<footer>
+<div class="footer-bottom">
+<p>&copy; 2026 Loiter Point. All rights reserved.</p>
+<p class="disclosure">Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase &mdash; at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions.</p>
+</div>
+</footer>
+
+<script src="/nav.js" defer></script>
+</body>
+</html>
