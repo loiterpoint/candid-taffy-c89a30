@@ -46,6 +46,12 @@ ASINs (every buy link 404'd). Follow these rules exactly.
 - Dark theme CSS vars: --bg:#0c0c0e; --surface:#141418; --surface2:#1c1c22;
   --accent:#e8ff47; --text:#e2e2e8; --muted:#7a7a8a; --border:#26262e.
   Fonts: IBM Plex Mono + Inter. Favicon: /favicon.svg.
+- SHARED NAV/FOOTER: every page (articles, guides, root pages) must load the shared
+  nav script exactly once, immediately before </body>:
+  <script src="/nav.js" defer></script>
+  nav.js renders the canonical top nav, the mobile hamburger menu and the site
+  footer, so pages do not hand-roll their own. It guards against double-execution,
+  but a second tag is still a bug — never add one if the page already has it.
 - Article pattern: TLDR box first with quick-buy links ("Grab your pick:" strip),
   then How We Evaluate, pick-cards, nerd-box, comparison table, Bottom Line,
   footer with affiliate disclosure ("© 2026 Loiter Point — Consumer tech reviews
