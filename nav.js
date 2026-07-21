@@ -114,7 +114,7 @@
     "@media(max-width:768px){#lpTop{display:flex;}}",
     "@media(prefers-reduced-motion:reduce){#lpTop{transition:none;}}",
     // Site-map filter (see synthesizeSiteFilter). Injected only on site-map.html.
-    "#lpSiteFilter{position:sticky;top:56px;z-index:50;background:rgba(12,12,14,0.98);border-bottom:1px solid var(--border,#26262e);padding:0.9rem 0;margin:0.6rem 0 3.2rem;font-family:'Inter',sans-serif;}",
+    "#lpSiteFilter{position:sticky;top:56px;z-index:50;background:rgba(12,12,14,0.98);border-bottom:1px solid var(--border,#26262e);padding:0.9rem 0 1.9rem;margin:0.6rem 0 3.2rem;font-family:'Inter',sans-serif;}",
     "#lpSiteFilter .lpf-row{display:flex;gap:0.9rem;align-items:center;}",
     "#lpSiteFilter .lpf-field{position:relative;flex:1;}",
     "#lpSiteFilter input{width:100%;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-radius:10px;color:var(--text,#e2e2e8);font-family:'Inter',sans-serif;font-size:0.95rem;padding:0.7rem 2.4rem;outline:none;transition:border-color .15s;}",
