@@ -37,8 +37,7 @@
       { label: "How We Score", href: "/methodology.html" },
       { label: "Affiliate Disclosure", href: "/affiliate-disclosure.html" },
       { label: "Privacy Policy", href: "/privacy-policy.html" },
-      { label: "Terms of Service", href: "/terms.html" },
-      { label: "Sitemap (XML)", href: "/sitemap.xml" }
+      { label: "Terms of Service", href: "/terms.html" }
     ],
     copyright: "© 2026 Loiter Point. All rights reserved.",
     disclosure: "Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase — at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions."
@@ -100,8 +99,11 @@
     "#lpFooter .lpf-col h4{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted,#7a7a8a);margin-bottom:0.75rem;}",
     "#lpFooter .lpf-col a{display:block;font-size:0.85rem;color:var(--muted,#7a7a8a);margin-bottom:0.45rem;transition:color .15s;}",
     "#lpFooter .lpf-col a:hover{color:var(--text,#e2e2e8);}",
-    "#lpFooter .lpf-bottom{max-width:1040px;margin:1.75rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border,#26262e);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}",
+    "#lpFooter .lpf-bottom{max-width:1040px;margin:1.75rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border,#26262e);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;}",
     "#lpFooter .lpf-bottom p{font-size:0.75rem;color:var(--muted,#7a7a8a);}",
+    "#lpFooter .lpf-copy{display:flex;flex-direction:column;gap:0.45rem;}",
+    "#lpFooter .lpf-copy a{font-size:0.75rem;color:var(--accent,#e8ff47);text-decoration:none;width:fit-content;}",
+    "#lpFooter .lpf-copy a:hover{text-decoration:underline;}",
     "#lpFooter .lpf-bottom .lpf-disc{opacity:0.7;max-width:520px;line-height:1.5;font-size:0.72rem;}",
     "@media(max-width:760px){#lpFooter .lpf-inner{grid-template-columns:1fr 1fr;justify-content:normal;column-gap:2rem;row-gap:1.75rem;}#lpFooter .lpf-brand{grid-column:1 / -1;max-width:none;}}",
     "@media(max-width:460px){#lpFooter .lpf-inner{grid-template-columns:1fr;}}",
@@ -342,7 +344,8 @@
         '<div class="lpf-col"><h4>Site</h4>' + linkList(FOOTER.site) + '</div>' +
       '</div>' +
       '<div class="lpf-bottom">' +
-        '<p>' + FOOTER.copyright + '</p>' +
+        '<div class="lpf-copy"><p>' + FOOTER.copyright + '</p>' +
+          '<a href="/sitemap.xml">Sitemap (XML)</a></div>' +
         '<p class="lpf-disc">' + FOOTER.disclosure + '</p>' +
       '</div>';
     document.body.appendChild(f);
@@ -390,7 +393,7 @@
     // the first LEAF_CAP by default, with a toggle for the rest. Keeps the grid
     // balanced without hiding anything from the filter or search engines. When a
     // query is active the cap is ignored so a match is never hidden (see apply).
-    var LEAF_CAP = 10;
+    var LEAF_CAP = 5;
     branches.forEach(function (b) {
       if (b.leaves.length <= LEAF_CAP) return;
       b.collapsed = true;
