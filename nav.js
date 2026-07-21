@@ -127,6 +127,8 @@
     "#lpSiteFilterNone{display:none;font-family:var(--mono,monospace);font-size:0.9rem;color:var(--muted,#7a7a8a);padding:1.5rem 0.25rem;}",
     "#lpMapStat{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--muted,#7a7a8a);letter-spacing:0.02em;margin:0 0 1.15rem;}",
     "#lpMapStat strong{color:var(--accent,#e8ff47);font-weight:600;}",
+    ".tree-grid .lpf-more{margin:0.55rem 0 0 1.1rem;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--accent,#e8ff47);background:transparent;border:1px solid var(--border,#26262e);border-radius:7px;padding:0.3rem 0.72rem;cursor:pointer;transition:border-color .15s,background .15s;}",
+    ".tree-grid .lpf-more:hover{border-color:var(--accent,#e8ff47);background:rgba(232,255,71,0.06);}",
     ".tree-grid mark{background:rgba(232,255,71,0.28);color:var(--accent,#e8ff47);border-radius:2px;padding:0 1px;}"
   ].join("");
 
@@ -383,6 +385,24 @@
       titleEl.insertAdjacentElement("afterend", stat);
     }
 
+    // Long-category collapse: a category with more than LEAF_CAP items shows only
+    // the first LEAF_CAP by default, with a toggle for the rest. Keeps the grid
+    // balanced without hiding anything from the filter or search engines. When a
+    // query is active the cap is ignored so a match is never hidden (see apply).
+    var LEAF_CAP = 10;
+    branches.forEach(function (b) {
+      if (b.leaves.length <= LEAF_CAP) return;
+      b.collapsed = true;
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "lpf-more";
+      btn.setAttribute("aria-expanded", "false");
+      var ul = b.el.querySelector(".leaves");
+      if (ul && ul.parentNode) ul.parentNode.insertBefore(btn, ul.nextSibling);
+      b.moreBtn = btn;
+      btn.addEventListener("click", function () { b.collapsed = !b.collapsed; apply(); });
+    });
+
     var bar = document.createElement("div");
     bar.id = "lpSiteFilter";
     bar.innerHTML =
@@ -426,13 +446,27 @@
       branches.forEach(function (b) {
         var nameHit = q && b.name.indexOf(q) !== -1;
         var any = 0;
-        b.leaves.forEach(function (l) {
-          var hit = !q || nameHit || l.text.indexOf(q) !== -1;
-          l.li.style.display = hit ? "" : "none";
+        // With no query, a collapsed long category shows only its first LEAF_CAP
+        // items; while filtering, every match shows regardless of the cap.
+        var capped = !q && b.collapsed && b.moreBtn;
+        b.leaves.forEach(function (l, idx) {
+          var matches = !q || nameHit || l.text.indexOf(q) !== -1;
+          var visible = q ? matches : (capped ? idx < LEAF_CAP : true);
+          l.li.style.display = visible ? "" : "none";
           mark(l.a, l.orig, (q && !nameHit) ? q : "");
-          if (hit) { any++; shown++; }
+          if (matches) { any++; shown++; }
         });
         b.el.style.display = any ? "" : "none";
+        if (b.moreBtn) {
+          var showBtn = !q && any > 0;
+          b.moreBtn.style.display = showBtn ? "" : "none";
+          if (showBtn) {
+            b.moreBtn.textContent = b.collapsed
+              ? ("Show all " + b.leaves.length + " ↓")
+              : "Show fewer ↑";
+            b.moreBtn.setAttribute("aria-expanded", b.collapsed ? "false" : "true");
+          }
+        }
       });
       clearBtn.style.display = q ? "block" : "none";
       count.textContent = q ? (shown + " of " + TOTAL) : (TOTAL + " pages");
