@@ -64,6 +64,19 @@
   footer p{color:var(--muted);font-size:12.5px}
   .disclosure{background:var(--surface2);border-radius:8px;padding:14px 16px;margin-bottom:18px;font-size:12.5px;color:var(--muted)}
   @media(max-width:560px){.specs{grid-template-columns:1fr}h1{font-size:1.7rem}.price{margin-left:0}}
+
+.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+.pick-media:hover{border-color:var(--accent);}
+.pick-media img{width:100%;height:auto;display:block;}
+.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+#lb.open{display:block;}
+#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
 </style>
 </head>
 <body>
@@ -104,6 +117,7 @@
       <h3>Logitech MX Master 3S</h3>
       <span class="price">~$100</span>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61+OT7FPABL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61+OT7FPABL._AC_SL500_.jpg" alt="Logitech MX Master 3S" loading="lazy"><span>Click to zoom</span></div>
     <div class="subtitle">The productivity default, for good reason</div>
     <p>Years into its run, the MX Master 3S remains the mouse most reviewers reach for when the job is "get work done." The headline change over the older Master 3 is the switch to Quiet Clicks — Logitech rates them at roughly 90% less click noise — paired with an 8K DPI sensor that independent testers note tracks reliably even on glass. The MagSpeed wheel flips between ratcheted and free-spin scrolling automatically, which is genuinely useful once you live with it. It pairs to three devices over Bluetooth or the Logi Bolt receiver and hops between them instantly.</p>
     <div class="specs">
@@ -125,6 +139,7 @@
       <h3>Logitech G Pro X Superlight 2</h3>
       <span class="price">~$159</span>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/51uewoHckeL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/51uewoHckeL._AC_SL500_.jpg" alt="Logitech G Pro X Superlight 2" loading="lazy"><span>Click to zoom</span></div>
     <div class="subtitle">Featherweight, competition-grade tracking</div>
     <p>If your priority is a fast, low-latency pointer for shooters, the G Pro X Superlight 2 is the one esports pros actually use. At roughly 60 grams it's a fraction of the MX Master's heft, and it drops the productivity features in favor of Logitech's Hero 2 sensor, LIGHTFORCE hybrid switches, and 2.4&nbsp;GHz Lightspeed wireless that supports polling rates up to 8&nbsp;kHz. Independent tests put its click latency among the lowest of any wireless mouse, which is the whole point here.</p>
     <div class="specs">
@@ -167,6 +182,7 @@
       <h3>Logitech MX Anywhere 3S</h3>
       <span class="price">~$80</span>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/51PZmLp6u+L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/51PZmLp6u+L._AC_SL500_.jpg" alt="Logitech MX Anywhere 3S" loading="lazy"><span>Click to zoom</span></div>
     <div class="subtitle">MX polish in a bag-friendly size</div>
     <p>The MX Anywhere 3S takes most of what makes the Master great — the 8K DPI any-surface sensor, Quiet Clicks, MagSpeed scrolling, multi-device switching — and shrinks it into a mouse that disappears into a laptop sleeve. It's the obvious choice if you work from cafes, hot desks, or a couch, and it still tracks cleanly on glass and other awkward surfaces where cheaper compacts stumble.</p>
     <div class="specs">
@@ -187,6 +203,7 @@
       <h3>Logitech Lift Vertical</h3>
       <span class="price">~$70</span>
     </div>
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61OkuiCWbDL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61OkuiCWbDL._AC_SL500_.jpg" alt="Logitech Lift Vertical" loading="lazy"><span>Click to zoom</span></div>
     <div class="subtitle">A vertical grip that eases forearm rotation</div>
     <p>If a flat mouse leaves your wrist aching, the Lift's 57-degree vertical angle puts your hand in a more neutral "handshake" position, which many owners report meaningfully reduces strain. Unlike Logitech's larger MX Vertical, the Lift comes in sizes and a left-handed variant, so more people can find a comfortable fit. It keeps the quiet clicks, six buttons, and Bluetooth/Bolt multi-device switching that make Logitech's lineup easy to live with.</p>
     <div class="specs">
@@ -241,6 +258,28 @@
     <p>&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
   </footer>
 </div>
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 <script src="/nav.js" defer></script>
 </body>
 </html>
