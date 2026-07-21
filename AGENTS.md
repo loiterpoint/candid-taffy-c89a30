@@ -81,3 +81,17 @@ Dead or gouging affiliate links cost more than missing ones.
 - Every Amazon link carries `?tag=loiterpoint20-20` and `rel="sponsored nofollow"`.
 - Every pick also gets a `.compare` row of plain retailer SEARCH links (no fake tracking) for the retailers that actually sell that product type.
 - State prices as "list" or "recently seen" with the footer price disclaimer. Never present a scraped price as a guaranteed one.
+
+## 7. PROTECTED HEAD ELEMENTS — never drop these (regression 2026-07-20 and 2026-07-21)
+Automated rewrites of `index.html` have twice silently deleted verification tags that took real effort to obtain. Anything in this list must SURVIVE every rewrite of every page it appears on. If you regenerate a page, re-insert these first and verify them after committing.
+- `<meta name="impact-site-verification" value="a6881370-e20e-4608-bb1b-1c9175c548ab">` in the `<head>` of index.html. Required for the Impact affiliate application.
+- Any `google-site-verification` or `msvalidate.01` meta tag, if present.
+- `<link rel="canonical">`, the Open Graph tags, and `<link rel="icon" type="image/svg+xml" href="/favicon.svg" />`.
+- `robots.txt` must keep `Allow: /` and its `Sitemap:` line. The IndexNow key file in the repo root must not be deleted or renamed — it is what authorizes Bing/Yandex URL submission.
+BEFORE committing any regenerated page, diff your `<head>` against the live one and confirm no tag from this list disappeared. Losing one is a silent failure: nothing breaks visibly, but an affiliate application or search-engine verification quietly stops working.
+
+## 8. SEO reality check (2026-07-21)
+Google Search Console (a DNS-verified DOMAIN property) reports 24 indexed pages and 27 not indexed, against 158 HTML files in the repo — meaning roughly 100 pages have not been discovered at all. Publishing volume is NOT the constraint; discovery is.
+- The single highest-leverage action is keeping sitemap.xml complete and submitted, and pinging IndexNow on publish. Publishing another article that never gets crawled adds nothing.
+- Impact declined the affiliate application on 2026-07-21 citing insufficient domain traffic — not content quality. Traffic and indexing are therefore the priority over raw article count until that changes.
+- Do not inflate the homepage stat counters to look bigger. The counters are computed from the repo and honesty is the brand.
