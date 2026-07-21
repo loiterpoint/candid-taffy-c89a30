@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Best Phones for Battery Life (2026) | Loiter Point</title>
+<meta name="description" content="Five phones with the strongest published battery evidence in 2026, ranked from independent test results and owner reports — with an honest explanation of why cross-publication runtime numbers don't compare." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px 80px;}
+  nav.top{
+    border-bottom:1px solid var(--border);
+    background:var(--surface);
+    padding:14px 0;
+    margin-bottom:36px;
+  }
+  nav.top .wrap{padding-bottom:0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  nav.top a.back{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--accent);
+    text-decoration:none;
+    letter-spacing:.04em;
+  }
+  nav.top a.back:hover{text-decoration:underline;}
+  nav.top .brand{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--muted);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+  h1{
+    font-size:2.35rem;
+    line-height:1.15;
+    letter-spacing:-.02em;
+    margin:0 0 10px;
+    font-weight:700;
+  }
+  h2{
+    font-size:1.5rem;
+    line-height:1.25;
+    letter-spacing:-.01em;
+    margin:52px 0 14px;
+    font-weight:700;
+  }
+  h3{font-size:1.15rem;margin:26px 0 10px;font-weight:600;}
+  p{margin:0 0 16px;}
+  a{color:var(--accent);}
+  .dateline{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:30px;
+  }
+  /* TL;DR */
+  .tldr{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:22px 24px;
+    margin:0 0 14px;
+  }
+  .tldr h2{
+    margin:0 0 12px;
+    font-size:1rem;
+    font-family:'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    color:var(--accent);
+    font-weight:600;
+  }
+  .tldr ul{margin:0;padding-left:20px;}
+  .tldr li{margin-bottom:10px;}
+  .grabline{
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px dashed var(--border);
+    font-size:15.5px;
+    line-height:2;
+  }
+  .grabline .lab{
+    font-family:'IBM Plex Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-size:12px;
+    color:var(--muted);
+    display:block;
+    margin-bottom:6px;
+  }
+  .grabline a{
+    display:inline-block;
+    background:var(--surface2);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:4px 10px;
+    margin:0 6px 6px 0;
+    text-decoration:none;
+    font-size:14px;
+  }
+  .grabline a:hover{border-color:var(--accent);}
+  .grabline a .px{color:var(--muted);font-family:'IBM Plex Mono',monospace;}
+  /* Cards */
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px;
+    margin:28px 0;
+  }
+  .card-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;margin-bottom:6px;}
+  .rank{
+    flex:0 0 auto;
+    background:var(--accent);
+    color:#0c0c0e;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:13px;
+    border-radius:6px;
+    padding:5px 10px;
+    letter-spacing:.04em;
+  }
+  .card-head h3{margin:0;font-size:1.35rem;line-height:1.25;flex:1 1 260px;}
+  .price{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:15px;
+    color:var(--accent);
+    white-space:nowrap;
+    padding-top:3px;
+  }
+  .price small{color:var(--muted);display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
+  .specs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    margin:18px 0 20px;
+  }
+  .specs div{background:var(--surface2);padding:10px 12px;}
+  .specs dt{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:3px;
+  }
+  .specs dd{margin:0;font-size:14.5px;line-height:1.45;}
+  .specs .hl dd{color:var(--accent);}
+  .src{display:block;font-size:12px;color:var(--muted);margin-top:2px;font-style:italic;}
+  .forwho{
+    background:var(--surface2);
+    border-radius:8px;
+    padding:12px 14px;
+    font-size:15px;
+    margin:18px 0;
+  }
+  .forwho strong{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:block;
+    margin-bottom:4px;
+  }
+  .buy{
+    display:inline-block;
+    background:var(--accent);
+    color:#0c0c0e;
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    padding:11px 22px;
+    border-radius:8px;
+  }
+  .buy:hover{filter:brightness(1.08);}
+  /* Nerd box */
+  .nerd{
+    background:var(--surface2);
+    border:1px dashed var(--accent);
+    border-radius:12px;
+    padding:22px 24px;
+    margin:36px 0;
+  }
+  .nerd h3{
+    margin:0 0 10px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  .nerd p:last-child{margin-bottom:0;}
+  /* Table */
+  .tablewrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;margin:22px 0;}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px;}
+  th,td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;}
+  thead th{
+    background:var(--surface2);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(odd){background:var(--surface);}
+  td .sub{display:block;color:var(--muted);font-size:12px;}
+  .caveat{
+    border-left:3px solid var(--muted);
+    padding:2px 0 2px 16px;
+    color:var(--text);
+    margin:22px 0;
+  }
+  footer{
+    border-top:1px solid var(--border);
+    margin-top:60px;
+    padding-top:24px;
+    font-size:13.5px;
+    color:var(--muted);
+  }
+  footer p{margin-bottom:12px;}
+  footer .cr{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.03em;}
+  @media(max-width:620px){
+    body{font-size:16px;}
+    h1{font-size:1.9rem;}
+    .card{padding:18px;}
+    .specs{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="back" href="../index.html">&larr; Back to Loiter Point</a>
+    <span class="brand">Loiter Point</span>
+  </div>
+</nav>
+
+<div class="wrap">
+<article>
+
+  <h1>The Best Phones for Battery Life (2026)</h1>
+  <div class="dateline">Buying guide &middot; Updated July 2026</div>
+
+  <section class="tldr">
+    <h2>The Short Version</h2>
+    <ul>
+      <li><strong>Best overall battery:</strong> the <a href="https://www.amazon.com/dp/B0FSD2VX3R?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">OnePlus 15</a> ($899 MSRP). Tom's Guide recorded 25 hours 13 minutes in its battery test and reported it as the longest result the publication has logged.</li>
+      <li><strong>Best value:</strong> the <a href="https://www.amazon.com/dp/B0FXFZXCRG?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">OnePlus 15R</a> ($699) sits second on Tom's Guide's battery list behind only its own flagship sibling, for $200 less. Under $300, the <a href="https://www.amazon.com/dp/B0FXY81HJG?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Moto G Power (2026)</a> is the budget answer.</li>
+      <li><strong>Locked to an ecosystem?</strong> The <a href="https://www.amazon.com/dp/B0FQG765NM?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">iPhone 17 Pro Max</a> is the endurance pick on iOS; the <a href="https://www.amazon.com/dp/B0G4SWDH8P?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Galaxy S26 Ultra</a> is the longest-lasting Samsung flagship in Tom's Guide's test round.</li>
+      <li><strong>Read the caveat:</strong> the runtime figures below come from different publications running different protocols. They are not one apples-to-apples leaderboard, and we explain exactly why before the picks.</li>
+    </ul>
+    <div class="grabline">
+      <span class="lab">Grab your pick:</span>
+      <a href="https://www.amazon.com/dp/B0FSD2VX3R?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">OnePlus 15 <span class="px">$899</span></a>
+      <a href="https://www.amazon.com/dp/B0FXFZXCRG?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">OnePlus 15R <span class="px">$699</span></a>
+      <a href="https://www.amazon.com/dp/B0FXY81HJG?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Moto G Power (2026) <span class="px">$299.99</span></a>
+      <a href="https://www.amazon.com/dp/B0FQG765NM?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">iPhone 17 Pro Max <span class="px">$1,199</span></a>
+      <a href="https://www.amazon.com/dp/B0G4SWDH8P?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Galaxy S26 Ultra <span class="px">$1,299</span></a>
+    </div>
+  </section>
+
+  <h2>How We Evaluate Phone Battery Life</h2>
+
+  <p>Loiter Point does not run a hardware lab. We do not own dozens of phones, we do not have a light meter pointed at a display rig, and we are not going to pretend otherwise. What we do is read the published measurements from outlets that <em>do</em> run controlled battery tests — Tom's Guide, GSMArena, PhoneArena, Android Central, Digital Trends — cross-reference them against each other, and weigh them against what owners report after weeks of ordinary use. When a number in this guide comes from somewhere, we name the source in the same sentence.</p>
+
+  <p>That approach has one unavoidable complication, and it is the single most important thing to understand before you read a battery ranking anywhere on the internet: <strong>runtime numbers from different publications are not directly comparable.</strong> A battery test is a recipe, and every outlet writes its own. The variables that move the result most are:</p>
+
+  <ul>
+    <li><strong>Screen brightness.</strong> Most standardized tests nail the panel to a fixed nit value. Different targets across outlets can swing a result by hours on a large OLED.</li>
+    <li><strong>Network.</strong> A test run over cellular — with the modem negotiating, hunting for signal and drawing power — drains a phone considerably faster than the same workload run over Wi-Fi. This is the big one, and it is why the Moto G Power's number below is not what it looks like at first glance.</li>
+    <li><strong>Workload.</strong> Endlessly reloading web pages is not the same as gaming, navigating, video calling, or shooting 4K. Mixed-use drain tests routinely land well below web-surfing tests on the same handset.</li>
+    <li><strong>Software state.</strong> Firmware version, background sync, adaptive refresh behaviour and thermal conditions all shift results, which is why the same phone can post different figures months apart.</li>
+  </ul>
+
+  <p>So we rank by the <em>strength and consistency of the evidence</em>, not by lining up numbers from five different labs and sorting the column. Where a figure appears in a specs grid below, it is labelled "est. real-world" or "reported" and attributed. Nothing here is labelled "measured" by us, because we did not measure it.</p>
+
+  <p>Prices are manufacturer MSRP at the time of writing. Street prices on phones move constantly — carrier promos, trade-in credits and seasonal discounts routinely knock triple digits off flagships — so check the listing before you commit. We do not quote live pricing.</p>
+
+  <h2>1. OnePlus 15 — the battery champion</h2>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="rank">#1</span>
+      <h3>OnePlus 15</h3>
+      <span class="price">$899<small>MSRP 12GB/256GB</small></span>
+    </div>
+    <dl class="specs">
+      <div><dt>Rated capacity</dt><dd>7,300 mAh</dd></div>
+      <div><dt>Chip</dt><dd>Snapdragon 8 Elite Gen 5</dd></div>
+      <div><dt>Display</dt><dd>6.78" AMOLED, 165Hz</dd></div>
+      <div><dt>Software</dt><dd>OxygenOS 16</dd></div>
+      <div class="hl"><dt>Est. real-world runtime</dt><dd>25h 13m<span class="src">Reported by Tom's Guide's battery test</span></dd></div>
+      <div><dt>Storage as configured</dt><dd>256GB</dd></div>
+    </dl>
+
+    <p>Tom's Guide recorded 25 hours 13 minutes for the OnePlus 15 in its battery test and reported it as the longest result the publication has logged. That is the headline, and it is a genuinely unusual one — battery leaderboards normally move in fifteen-minute increments, not by opening a gap this wide over the field.</p>
+
+    <p>The mechanism is not mysterious. OnePlus fitted a 7,300 mAh cell, a figure that would have meant a brick-thick chassis a couple of generations ago, and paired it with a current-generation Snapdragon 8 Elite Gen 5. Capacity plus an efficient SoC plus OxygenOS 16's power management is a boring, effective combination. The 165Hz panel will happily eat some of that surplus if you leave it running flat out, but you are starting from such a large reserve that it barely matters for a normal day.</p>
+
+    <p>Practically, this is the phone to buy if your complaint is that you are hunting for outlets by mid-afternoon. It is the one pick on this list where two full days of moderate use is a reasonable expectation rather than an optimistic one, and where you can stop packing <a href="./best-power-banks.html">a power bank</a> for ordinary days out. If you are cross-shopping the wider Android field on things other than endurance, our <a href="./best-android-phones.html">best Android phones</a> guide covers the rest of the tradeoffs.</p>
+
+    <div class="forwho"><strong>Who it's for</strong>Anyone whose top-line requirement is endurance, full stop — heavy commuters, festival and travel use, on-call workers, anyone who resents charging.</div>
+
+    <a class="buy" href="https://www.amazon.com/dp/B0FSD2VX3R?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  </div>
+
+  <h2>2. OnePlus 15R — nearly the same endurance, $200 less</h2>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="rank">#2</span>
+      <h3>OnePlus 15R</h3>
+      <span class="price">$699<small>MSRP 12GB/256GB</small></span>
+    </div>
+    <dl class="specs">
+      <div><dt>Rated capacity</dt><dd>7,400 mAh</dd></div>
+      <div><dt>Chip</dt><dd>Snapdragon 8 Gen 5</dd></div>
+      <div class="hl"><dt>Reported ranking</dt><dd>2nd on Tom's Guide's battery list<span class="src">Behind only the OnePlus 15</span></dd></div>
+      <div><dt>Launch price</dt><dd>$699</dd></div>
+    </dl>
+
+    <p>Tom's Guide ranks the OnePlus 15R second on its battery list, behind only the OnePlus 15 itself. It launched at $699 — $200 below the flagship — and it carries a rated capacity of 7,400 mAh, slightly larger on paper than its more expensive sibling.</p>
+
+    <p>That larger cell paired with a lower final ranking is a useful lesson in itself: capacity is an input, not an outcome. The 15R runs a Snapdragon 8 Gen 5 rather than the Elite Gen 5, and the differences in silicon efficiency, display panel and tuning are enough to land it behind the flagship despite the extra 100 mAh. It is still second on the list, which for most buyers is the more relevant fact.</p>
+
+    <p>We would characterise the choice between the two as a straightforward one. If you want the best battery result available and the flagship chip, pay the $899. If you want most of that endurance for $699 and can live with a step down in silicon and finish, the 15R is the better-value purchase and it is not close. Street pricing moves on both, so compare listings rather than assuming the $200 gap holds.</p>
+
+    <div class="forwho"><strong>Who it's for</strong>Value buyers who want near-flagship endurance without flagship pricing, and anyone who has decided $899 is more than they want to spend on a phone.</div>
+
+    <a class="buy" href="https://www.amazon.com/dp/B0FXFZXCRG?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  </div>
+
+  <h2>3. Moto G Power (2026) — the budget pick, with an asterisk</h2>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="rank">#3</span>
+      <h3>Moto G Power (2026)</h3>
+      <span class="price">$299.99<small>MSRP 8GB/128GB</small></span>
+    </div>
+    <dl class="specs">
+      <div><dt>Rated capacity</dt><dd>6,720 mAh</dd></div>
+      <div><dt>Durability</dt><dd>IP68/IP69, Gorilla Glass 7i</dd></div>
+      <div><dt>Software</dt><dd>Android 16</dd></div>
+      <div><dt>Rear camera</dt><dd>50MP</dd></div>
+      <div class="hl"><dt>Reported runtime</dt><dd>Over 27 hours<span class="src">Reported in a Wi-Fi browsing test — a different, gentler protocol than the cellular web-surfing tests above</span></dd></div>
+      <div><dt>Storage as configured</dt><dd>128GB</dd></div>
+    </dl>
+
+    <p><strong>Read this before you read the number.</strong> The Moto G Power (2026) is reported to run over 27 hours in a Wi-Fi browsing test. That is a bigger figure than the OnePlus 15's 25 hours 13 minutes, and it <em>does not mean the Moto lasts longer.</em> The two results come from different protocols. A Wi-Fi browsing loop is generally a gentler workload than a cellular web-surfing test, because the modem is not doing the expensive work of maintaining and negotiating a mobile connection. Putting these two numbers side by side and declaring a winner would be straightforwardly misleading, so we are not doing it, and you should distrust anyone who does.</p>
+
+    <p>What we can say with confidence is that a 6,720 mAh cell in a $299.99 phone with a modest chipset is a well-established recipe for excellent real-world endurance. Motorola's G Power line has built its identity on exactly this, and owner reports have consistently supported it across generations. This is a phone that survives a long day and then some, without the flagship price.</p>
+
+    <p>The rest of the package is more sensible than exciting: IP68/IP69 ingress protection and Gorilla Glass 7i are unusually robust at this price, Android 16 is current, and the 50MP rear camera is adequate rather than notable. If photography matters more to you than endurance, our <a href="./best-camera-phones.html">best camera phones</a> guide is the better starting point, and if you are shopping this bracket generally, see <a href="./best-phones-under-500.html">the best phones under $500</a>.</p>
+
+    <div class="forwho"><strong>Who it's for</strong>Budget buyers, second phones, work phones, and anyone who wants multi-day endurance and genuinely does not care about benchmark scores or camera bragging rights.</div>
+
+    <a class="buy" href="https://www.amazon.com/dp/B0FXY81HJG?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  </div>
+
+  <h2>4. Apple iPhone 17 Pro Max — the iOS endurance pick</h2>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="rank">#4</span>
+      <h3>Apple iPhone 17 Pro Max</h3>
+      <span class="price">$1,199<small>MSRP 256GB</small></span>
+    </div>
+    <dl class="specs">
+      <div><dt>Chip</dt><dd>A19 Pro</dd></div>
+      <div><dt>Display</dt><dd>6.9"</dd></div>
+      <div><dt>Rear cameras</dt><dd>48MP</dd></div>
+      <div class="hl"><dt>Est. real-world runtime</dt><dd>17h 54m<span class="src">Tom's Guide's standardized web-browsing test</span></dd></div>
+      <div><dt>Also reported</dt><dd>~11h 30m<span class="src">Other independent drain tests, heavier mixed workloads</span></dd></div>
+      <div><dt>Storage as configured</dt><dd>256GB</dd></div>
+    </dl>
+
+    <p>Tom's Guide's standardized web-browsing test recorded 17 hours 54 minutes for the iPhone 17 Pro Max. That makes it the strongest battery option in Apple's lineup and a comfortable all-day phone by any reasonable standard — but it is well short of the OnePlus results, and if endurance is genuinely your first priority and you are not committed to iOS, the honest advice is to buy Android.</p>
+
+    <p>This phone is also the cleanest illustration of why we spent so long on the methodology caveat above. Other independent drain tests produced markedly lower figures for the same handset — around 11 hours 30 minutes under heavier mixed workloads. That is not a contradiction and neither result is wrong. Reloading web pages at a fixed brightness is a light, steady load; a mixed test that includes video, camera work, gaming and navigation pushes the A19 Pro and the 6.9-inch display far harder. The gap between roughly 11.5 and nearly 18 hours on one device is the whole argument for reading the protocol before you read the number.</p>
+
+    <p>Your own result will land somewhere in that range depending on what you actually do. If your day is messaging, mail, browsing and music, expect the upper end. If you shoot a lot of video, game, or run navigation for hours, plan for the lower end and carry <a href="./best-wireless-chargers.html">a charger</a>. For the broader iPhone-versus-everything comparison, see our <a href="./best-smartphones.html">best smartphones</a> guide.</p>
+
+    <div class="forwho"><strong>Who it's for</strong>iOS users who are not switching platforms and want the longest-lasting iPhone available, plus a top-tier camera system.</div>
+
+    <a class="buy" href="https://www.amazon.com/dp/B0FQG765NM?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  </div>
+
+  <h2>5. Samsung Galaxy S26 Ultra — the long-lasting Samsung flagship</h2>
+
+  <div class="card">
+    <div class="card-head">
+      <span class="rank">#5</span>
+      <h3>Samsung Galaxy S26 Ultra</h3>
+      <span class="price">$1,299<small>MSRP 256GB</small></span>
+    </div>
+    <dl class="specs">
+      <div><dt>Chip</dt><dd>Snapdragon 8 Elite Gen 5 for Galaxy</dd></div>
+      <div><dt>Display</dt><dd>6.9"</dd></div>
+      <div><dt>Rear camera</dt><dd>200MP</dd></div>
+      <div><dt>Extras</dt><dd>S Pen</dd></div>
+      <div class="hl"><dt>Est. real-world runtime</dt><dd>16h 10m<span class="src">Reported by Tom's Guide — longest-lasting Samsung flagship in that test round</span></dd></div>
+      <div><dt>Storage as configured</dt><dd>256GB</dd></div>
+    </dl>
+
+    <p>Tom's Guide recorded 16 hours 10 minutes for the Galaxy S26 Ultra, the longest-lasting Samsung flagship in that test round. In absolute terms it is last on this list of five, which says more about how strong the top of the field is than about any weakness here — 16 hours in a standardized browsing test is a solid all-day phone.</p>
+
+    <p>The more interesting result is comparative. Multiple outlets report the S26 Ultra outlasting the Google Pixel 10 Pro XL by roughly two hours, with the Pixel posting 9 hours 53 minutes in one comparison test. The Pixel carries the larger cell of the two at 5,200 mAh. Bigger battery, shorter runtime. That is the efficiency argument in one line, and it is worth internalising before you shop by capacity numbers.</p>
+
+    <p>Beyond battery, the S26 Ultra is the most feature-dense phone here: the 200MP camera, the S Pen, and Samsung's software suite. You are paying $1,299 MSRP for that breadth, not for endurance — if endurance is what you want, the OnePlus 15 costs $400 less and lasts substantially longer in the same publication's test.</p>
+
+    <div class="forwho"><strong>Who it's for</strong>Samsung buyers who want the S Pen and the 200MP camera system, and want to know they are getting the best battery result in the lineup while they are at it.</div>
+
+    <a class="buy" href="https://www.amazon.com/dp/B0G4SWDH8P?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon &rarr;</a>
+  </div>
+
+  <div class="nerd">
+    <h3>Nerd box: why mAh stopped predicting runtime</h3>
+    <p>Two things are happening at once in 2026, and they pull in different directions.</p>
+    <p>The first is chemistry. Silicon-carbon anode batteries are the reason the OnePlus phones fit 7,000-plus mAh cells into a chassis you can still put in a pocket. Replacing part of the conventional graphite anode with silicon raises energy density, so a given physical volume holds meaningfully more charge. That is a real, hardware-level jump rather than a spec-sheet trick, and it is why the capacity figures at the top of this list look implausible next to phones from a few years ago.</p>
+    <p>The second is that capacity has never been the only variable, and it is becoming a worse predictor every year. The Galaxy S26 Ultra versus Pixel 10 Pro XL comparison above is the clean example: the Pixel has the larger 5,200 mAh cell and reportedly runs roughly two hours shorter, posting 9 hours 53 minutes against the Samsung's 16 hours 10 minutes in Tom's Guide's test. The difference is efficiency — SoC process node, display panel characteristics, and how aggressively the software manages background work and refresh rate. A more efficient chip on a newer node does the same work for less energy, and a better panel spends less power hitting the same brightness.</p>
+    <p>The practical takeaway: treat mAh as one input among several, and weight published runtime results from a consistent protocol far more heavily. One more piece of context, offered honestly — some phones sold only outside the US, including the Oppo Find X9 Pro and Xiaomi 17 Ultra, post even longer runtimes in overseas testing. We are not linking them because they are not practical US purchases: band support, warranty and software update paths all get complicated. But if you see them topping global battery lists, that is why.</p>
+  </div>
+
+  <h2>The five picks, side by side</h2>
+
+  <div class="caveat">
+    <p>Reminder before you read this table: the runtime column mixes results from different test protocols. Compare rows within the same source and workload only. The Moto G Power figure in particular comes from a Wi-Fi browsing test and is not equivalent to the cellular web-surfing results above it.</p>
+  </div>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Phone</th>
+        <th>MSRP</th>
+        <th>Rated capacity</th>
+        <th>Reported runtime &amp; source</th>
+        <th>Best for</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>OnePlus 15</td>
+        <td>$899</td>
+        <td>7,300 mAh</td>
+        <td>25h 13m<span class="sub">Tom's Guide battery test; reported as the publication's longest logged result</span></td>
+        <td>Maximum endurance</td>
+      </tr>
+      <tr>
+        <td>OnePlus 15R</td>
+        <td>$699</td>
+        <td>7,400 mAh</td>
+        <td>2nd place<span class="sub">Tom's Guide battery list, behind only the OnePlus 15</span></td>
+        <td>Best value endurance</td>
+      </tr>
+      <tr>
+        <td>Moto G Power (2026)</td>
+        <td>$299.99</td>
+        <td>6,720 mAh</td>
+        <td>Over 27h<span class="sub">Wi-Fi browsing test — gentler protocol, not comparable to the rows above</span></td>
+        <td>Budget buyers</td>
+      </tr>
+      <tr>
+        <td>iPhone 17 Pro Max</td>
+        <td>$1,199</td>
+        <td>Not published by Apple</td>
+        <td>17h 54m<span class="sub">Tom's Guide standardized web-browsing test; other independent drain tests reported ~11h 30m on heavier mixed workloads</span></td>
+        <td>Best on iOS</td>
+      </tr>
+      <tr>
+        <td>Galaxy S26 Ultra</td>
+        <td>$1,299</td>
+        <td>Not published by Samsung</td>
+        <td>16h 10m<span class="sub">Tom's Guide; longest-lasting Samsung flagship in that test round</span></td>
+        <td>S Pen and 200MP camera</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Bottom Line</h2>
+
+  <p>If battery life is the thing you are actually shopping for, the answer in 2026 is the <a href="https://www.amazon.com/dp/B0FSD2VX3R?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">OnePlus 15</a> at $899 MSRP. The evidence is unusually clear: Tom's Guide recorded 25 hours 13 minutes and reported it as the longest result the publication has logged, and no other widely-available US phone is close in that same test. If $899 is more than you want to spend, the <a href="https://www.amazon.com/dp/B0FXFZXCRG?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">OnePlus 15R</a> at $699 sits second on the same list and is the better-value buy.</p>
+
+  <p>Under $300, the <a href="https://www.amazon.com/dp/B0FXY81HJG?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Moto G Power (2026)</a> is the obvious budget choice, as long as you understand that its 27-hour figure comes from a gentler Wi-Fi test and is not evidence that it beats the OnePlus. If you are staying on iOS, the <a href="https://www.amazon.com/dp/B0FQG765NM?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">iPhone 17 Pro Max</a> is the endurance pick at $1,199 — with the honest caveat that independent results for it range from roughly 11.5 hours to nearly 18 depending on workload. And if you want the S Pen and the 200MP camera, the <a href="https://www.amazon.com/dp/B0G4SWDH8P?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Galaxy S26 Ultra</a> at $1,299 gives you the best battery result in Samsung's lineup alongside everything else.</p>
+
+  <p>The meta-point is worth repeating, because it will serve you long after these five phones are discontinued: a runtime figure is only meaningful attached to its protocol. Brightness, network and workload move results by hours. When you see two numbers from two publications compared directly, that comparison is decorative. Check what was actually run, and weigh capacity as one factor rather than the answer.</p>
+
+</article>
+
+<footer>
+  <p><strong>Affiliate disclosure:</strong> Loiter Point earns a commission on purchases made through links in this article. This costs you nothing extra and does not influence our rankings — every product here is ordered by the strength of published independent battery evidence, and we say plainly when that evidence is limited or when figures are not comparable.</p>
+  <p>Loiter Point does not operate a testing lab. All runtime figures in this article are published results from independent outlets, attributed in-line, or aggregated owner reports. We do not conduct first-hand hardware testing and do not present any figure here as our own measurement. Prices are MSRP at the time of writing; street prices change.</p>
+  <p class="cr">&copy; 2026 Loiter Point — Consumer tech reviews built on real evidence.</p>
+</footer>
+
+</div>
+
+</body>
+</html>
