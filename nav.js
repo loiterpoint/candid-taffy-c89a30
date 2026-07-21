@@ -20,6 +20,9 @@ if (!window.__lpNavInit) {
     { label: "Home", href: "/" },
     { label: "Deals", href: "/deals.html" },
     { label: "Buyer Guides", href: "/guides/" },
+    { label: "Short List", href: "/short-list.html" },
+    { label: "Rated vs. Real", href: "/rated-vs-real.html" },
+    { label: "Don't Buy Yet", href: "/dont-buy-yet.html" },
     { label: "Categories", href: "/site-map.html" }
   ];
 
