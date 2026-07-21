@@ -53,6 +53,7 @@ CATEGORIES: dict[str, dict[str, str]] = {
     "cameras":     {"label": "Cameras",                    "icon": "📸", "meta": "Cameras"},
     "networking":  {"label": "Networking",                 "icon": "📶", "meta": "Networking"},
     "smartphones": {"label": "Smartphones",                "icon": "📲", "meta": "Smartphones"},
+    "tools":       {"label": "Power Tools & Workshop",  "icon": "🛠️", "meta": "Tools"},
 }
 
 # ── Keyword guesser (fallback only). First matching (substring-in-slug) wins, so
