@@ -125,6 +125,8 @@
     "#lpSiteFilter .lpf-clear:hover{color:var(--text,#e2e2e8);}",
     "#lpSiteFilter .lpf-count{font-family:var(--mono,monospace);font-size:0.75rem;color:var(--muted,#7a7a8a);white-space:nowrap;}",
     "#lpSiteFilterNone{display:none;font-family:var(--mono,monospace);font-size:0.9rem;color:var(--muted,#7a7a8a);padding:1.5rem 0.25rem;}",
+    "#lpMapStat{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--muted,#7a7a8a);letter-spacing:0.02em;margin:0 0 1.15rem;}",
+    "#lpMapStat strong{color:var(--accent,#e8ff47);font-weight:600;}",
     ".tree-grid mark{background:rgba(232,255,71,0.28);color:var(--accent,#e8ff47);border-radius:2px;padding:0 1px;}"
   ].join("");
 
@@ -367,6 +369,19 @@
     });
     var TOTAL = branches.reduce(function (n, b) { return n + b.leaves.length; }, 0);
     if (!TOTAL) return;
+
+    // Breadth stat under the page title — counts derived live from the map, so
+    // it updates automatically as articles/categories are added or removed.
+    var titleEl = document.querySelector(".page-title");
+    if (titleEl && !document.getElementById("lpMapStat")) {
+      var stat = document.createElement("div");
+      stat.id = "lpMapStat";
+      stat.innerHTML =
+        "<strong>" + TOTAL + "</strong> guides &amp; reviews across " +
+        "<strong>" + branches.length + "</strong> categor" +
+        (branches.length === 1 ? "y" : "ies");
+      titleEl.insertAdjacentElement("afterend", stat);
+    }
 
     var bar = document.createElement("div");
     bar.id = "lpSiteFilter";
