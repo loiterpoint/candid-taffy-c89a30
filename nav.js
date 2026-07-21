@@ -37,7 +37,8 @@
       { label: "How We Score", href: "/methodology.html" },
       { label: "Affiliate Disclosure", href: "/affiliate-disclosure.html" },
       { label: "Privacy Policy", href: "/privacy-policy.html" },
-      { label: "Terms of Service", href: "/terms.html" }
+      { label: "Terms of Service", href: "/terms.html" },
+      { label: "Sitemap (XML)", href: "/sitemap.xml" }
     ],
     copyright: "© 2026 Loiter Point. All rights reserved.",
     disclosure: "Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase — at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions."
