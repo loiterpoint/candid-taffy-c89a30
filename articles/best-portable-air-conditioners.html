@@ -68,6 +68,19 @@ table.cmp td:first-child{white-space:normal;min-width:150px}
 .foot{margin-top:56px;padding-top:22px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
 .foot p{margin-bottom:10px}
 small.rt{color:var(--muted);font-size:12px}
+.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+.pick-media:hover{border-color:var(--accent);}
+.pick-media img{width:100%;height:auto;display:block;}
+.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+#lb.open{display:block;}
+#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
+
 </style>
 </head>
 <body>
@@ -107,6 +120,7 @@ small.rt{color:var(--muted);font-size:12px}
 <h2>The Picks</h2>
 
 <div class="card">
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61iqT6ZR8LL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61iqT6ZR8LL._AC_SL500_.jpg" alt="Midea Duo MAP14S1TBL" loading="lazy"><span>Click to zoom</span></div>
 <span class="badge">#1 · BEST OVERALL</span>
 <div class="head">
 <h3>Midea Duo MAP14S1TBL</h3>
@@ -125,6 +139,7 @@ small.rt{color:var(--muted);font-size:12px}
 </div>
 
 <div class="card">
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/51iFlZS4WBL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/51iFlZS4WBL._AC_SL500_.jpg" alt="LG LP1419IVSM Dual Inverter" loading="lazy"><span>Click to zoom</span></div>
 <span class="badge">#2 · QUIETEST / EASIEST SETUP</span>
 <div class="head">
 <h3>LG LP1419IVSM Dual Inverter</h3>
@@ -143,6 +158,7 @@ small.rt{color:var(--muted);font-size:12px}
 </div>
 
 <div class="card">
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61OgaWOVA9L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61OgaWOVA9L._AC_SL500_.jpg" alt="Whynter ARC-14S" loading="lazy"><span>Click to zoom</span></div>
 <span class="badge">#3 · BEST DUAL-HOSE VALUE</span>
 <div class="head">
 <h3>Whynter ARC-14S</h3>
@@ -160,6 +176,7 @@ small.rt{color:var(--muted);font-size:12px}
 </div>
 
 <div class="card">
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61XUrufwgGL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61XUrufwgGL._AC_SL500_.jpg" alt="Black+Decker BPACT08WT" loading="lazy"><span>Click to zoom</span></div>
 <span class="badge">#4 · BEST BUDGET / SMALL ROOMS</span>
 <div class="head">
 <h3>Black+Decker BPACT08WT</h3>
@@ -176,6 +193,7 @@ small.rt{color:var(--muted);font-size:12px}
 </div>
 
 <div class="card">
+    <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61vKUtIFCFL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61vKUtIFCFL._AC_SL500_.jpg" alt="Midea Duo MAP14HS1TBL (Heat + Cool)" loading="lazy"><span>Click to zoom</span></div>
 <span class="badge">#5 · BEST YEAR-ROUND (HEAT + COOL)</span>
 <div class="head">
 <h3>Midea Duo MAP14HS1TBL (Heat + Cool)</h3>
@@ -230,6 +248,28 @@ small.rt{color:var(--muted);font-size:12px}
 </div>
 
 </div>
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 <script src="/nav.js" defer></script>
 </body>
 </html>
