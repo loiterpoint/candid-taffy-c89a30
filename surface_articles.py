@@ -298,8 +298,9 @@ def recount_sitemap_branches(repo: Path, dry: bool) -> int:
 
 # ── homepage tiles ───────────────────────────────────────────────────────────
 def recount_homepage(repo: Path, real_counts: dict[str, int], dry: bool) -> list[str]:
-    index = repo / "index.html"
-    html = index.read_text(encoding="utf-8")
+    # The homepage AND the buyer-guides page (/guides/) use the same
+    # .cat-card / .cat-count tiles, so recompute both from the real category
+    # counts — neither can then show a stale, hand-typed number.
     fixes: list[str] = []
 
     # each tile: <a href="/cat/" class="cat-card"> … <div class="cat-count">N articles</div>
@@ -307,17 +308,26 @@ def recount_homepage(repo: Path, real_counts: dict[str, int], dry: bool) -> list
         r'(<a href="/([a-z-]+)/" class="cat-card">.*?<div class="cat-count">)(\d+)( articles?</div>)',
         re.S)
 
-    def fix(m: re.Match) -> str:
-        pre, cat, shown, post = m.group(1), m.group(2), int(m.group(3)), m.group(4)
-        actual = real_counts.get(cat)
-        if actual is not None and actual != shown:
-            fixes.append(f"homepage {cat}: {shown} → {actual}")
-            return f"{pre}{actual}{post}"
-        return m.group(0)
+    for rel in ("index.html", "guides/index.html"):
+        page = repo / rel
+        if not page.exists():
+            continue
+        html = page.read_text(encoding="utf-8")
+        page_fixes: list[str] = []
 
-    html2 = tile.sub(fix, html)
-    if fixes and not dry:
-        index.write_text(html2, encoding="utf-8")
+        def fix(m: re.Match) -> str:
+            pre, cat, shown, post = m.group(1), m.group(2), int(m.group(3)), m.group(4)
+            actual = real_counts.get(cat)
+            if actual is not None and actual != shown:
+                page_fixes.append(f"{rel} {cat}: {shown} → {actual}")
+                return f"{pre}{actual}{post}"
+            return m.group(0)
+
+        html2 = tile.sub(fix, html)
+        if page_fixes and not dry:
+            page.write_text(html2, encoding="utf-8")
+        fixes.extend(page_fixes)
+
     return fixes
 
 
