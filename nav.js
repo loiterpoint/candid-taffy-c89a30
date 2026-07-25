@@ -43,6 +43,27 @@
     disclosure: "Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase — at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions."
   };
 
+  // Buyer guides — SINGLE SOURCE OF TRUTH. nav.js renders these into the site
+  // map's Buyer Guides section AND counts them in the home hero stat, so the two
+  // always agree. Add or remove a guide here (one place) and both update.
+  var GUIDES = [
+    { href: "/guides/best-content-creator-gear.html", label: "The Best Content Creator & Streaming Gear (2026)", icon: "🎥" },
+    { href: "/guides/best-dorm-room-tech.html", label: "The Best Dorm Room Tech for 2026", icon: "🎓" },
+    { href: "/guides/best-drones.html", label: "The Best Drones for 2026", icon: "🚁" },
+    { href: "/guides/best-headphones-and-earbuds.html", label: "The Best Headphones & Earbuds (2026)", icon: "🎧" },
+    { href: "/guides/best-home-cleaning-tech.html", label: "The Best Home Cleaning Tech (2026)", icon: "🧹" },
+    { href: "/guides/best-home-climate-tech.html", label: "The Best Home Climate Tech (2026)", icon: "🌡️" },
+    { href: "/guides/best-home-entertainment-tech.html", label: "The Best Home Entertainment Tech (2026)", icon: "📺" },
+    { href: "/guides/best-home-networking-gear.html", label: "The Best Home Networking Gear (2026)", icon: "📶" },
+    { href: "/guides/best-home-office-gear.html", label: "The Best Home Office Tech (2026)", icon: "🖥️" },
+    { href: "/guides/best-home-security-tech.html", label: "The Best Home Security Tech (2026)", icon: "🔒" },
+    { href: "/guides/best-kitchen-tech.html", label: "The Best Kitchen Tech (2026)", icon: "🍳" },
+    { href: "/guides/best-pc-gaming-gear.html", label: "The Best PC Gaming Gear (2026)", icon: "🎮" },
+    { href: "/guides/best-smart-home-tech.html", label: "The Best Smart Home Tech (2026)", icon: "💡" },
+    { href: "/guides/best-tech-under-100.html", label: "The Best Tech Under $100 (2026)", icon: "💵" },
+    { href: "/guides/best-travel-tech.html", label: "The Best Travel Tech (2026)", icon: "✈️" }
+  ];
+
   var css = [
     "#lpBurger{display:none;position:fixed;top:11px;right:14px;z-index:1000;width:40px;height:40px;align-items:center;justify-content:center;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-radius:8px;color:var(--text,#e2e2e8);cursor:pointer;padding:0;}",
     "#lpBurger svg{width:20px;height:20px;}",
@@ -132,7 +153,16 @@
     "#lpMapStat strong{color:var(--accent,#e8ff47);font-weight:600;}",
     ".tree-grid .lpf-more{margin:0.55rem 0 0 1.1rem;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--accent,#e8ff47);background:transparent;border:1px solid var(--border,#26262e);border-radius:7px;padding:0.3rem 0.72rem;cursor:pointer;transition:border-color .15s,background .15s;}",
     ".tree-grid .lpf-more:hover{border-color:var(--accent,#e8ff47);background:rgba(232,255,71,0.06);}",
-    ".tree-grid mark{background:rgba(232,255,71,0.28);color:var(--accent,#e8ff47);border-radius:2px;padding:0 1px;}"
+    ".tree-grid mark{background:rgba(232,255,71,0.28);color:var(--accent,#e8ff47);border-radius:2px;padding:0 1px;}",
+    "#lpGuidesGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:0.7rem;}",
+    "#lpGuidesGrid .lp-gcard{display:flex;align-items:center;gap:0.9rem;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-left:3px solid var(--accent,#e8ff47);border-radius:12px;padding:1rem 1.1rem;text-decoration:none;color:inherit;transition:background .15s,border-color .15s;}",
+    "#lpGuidesGrid .lp-gcard:hover{background:var(--surface2,#1c1c22);border-color:var(--accent,#e8ff47);}",
+    "#lpGuidesGrid .lp-gic{font-size:1.5rem;flex:none;width:2.4rem;height:2.4rem;display:flex;align-items:center;justify-content:center;background:var(--surface2,#1c1c22);border:1px solid var(--border,#26262e);border-radius:9px;}",
+    "#lpGuidesGrid .lp-gbody{flex:1;min-width:0;display:flex;flex-direction:column;}",
+    "#lpGuidesGrid .lp-gtitle{font-size:0.95rem;font-weight:600;color:var(--text,#e2e2e8);line-height:1.25;}",
+    "#lpGuidesGrid .lp-gtag{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--muted,#7a7a8a);margin-top:0.2rem;}",
+    "#lpGuidesGrid .lp-garrow{color:var(--muted,#7a7a8a);font-size:1.05rem;flex:none;}",
+    "#lpGuidesGrid .lp-gcard:hover .lp-garrow{color:var(--accent,#e8ff47);}"
   ].join("");
 
   // Removes the hardcoded "Evidence-first" nav tag wherever it appears.
@@ -352,6 +382,49 @@
     return f;
   }
 
+  // Home page only: keep the "Guides & full reviews" hero stat honest by
+  // computing it live — sum of the category tile counts (articles, kept accurate
+  // by surface_articles) plus the buyer-guide count — instead of a hardcoded
+  // number that drifts. The guide count comes from the shared GUIDES list (the
+  // same one that renders the site map's Buyer Guides section), so they agree.
+  function syncHomeStat() {
+    var target = null;
+    Array.prototype.forEach.call(document.querySelectorAll(".stat-item"), function (item) {
+      var label = item.querySelector(".stat-label");
+      if (label && /guides/i.test(label.textContent)) target = item.querySelector(".stat-num");
+    });
+    if (!target) return;
+    var tiles = document.querySelectorAll(".cat-card .cat-count");
+    if (!tiles.length) return;
+    var articles = 0;
+    Array.prototype.forEach.call(tiles, function (el) {
+      var m = (el.textContent || "").match(/\d+/);
+      if (m) articles += parseInt(m[0], 10);
+    });
+    // guides come from the same GUIDES list that renders the site map's Buyer
+    // Guides section, so the two counts can never drift apart.
+    target.textContent = articles + GUIDES.length;
+  }
+
+  // Buyer Guides page (/guides/): fill #lpGuidesGrid with a card per guide from
+  // the single-source GUIDES list, sorted A–Z (leading "The" ignored). Same list
+  // that drives the site map + home count, so all three stay in lockstep.
+  function renderGuidesPage() {
+    var grid = document.getElementById("lpGuidesGrid");
+    if (!grid || !GUIDES || !GUIDES.length) return;
+    function gkey(s) { return s.toLowerCase().replace(/^(the |a |an )/, ""); }
+    function gesc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+    grid.innerHTML = GUIDES.slice().sort(function (a, b) {
+      return gkey(a.label) < gkey(b.label) ? -1 : gkey(a.label) > gkey(b.label) ? 1 : 0;
+    }).map(function (g) {
+      return '<a class="lp-gcard" href="' + g.href + '">' +
+        '<span class="lp-gic">' + (g.icon || "📖") + '</span>' +
+        '<span class="lp-gbody"><span class="lp-gtitle">' + gesc(g.label) + '</span>' +
+        '<span class="lp-gtag">Buyer&#39;s guide &middot; ranked on evidence</span></span>' +
+        '<span class="lp-garrow">&rarr;</span></a>';
+    }).join("");
+  }
+
   // Site-map page only: inject a "type to filter" box over the category tree.
   // Path-gated and operates on the existing .tree-grid / .branch / .leaves markup,
   // so it keeps working even if site-map.html is regenerated. Matches on the
@@ -360,6 +433,27 @@
     if (!/\/site-map\.html$/.test(location.pathname)) return;
     var grid = document.querySelector(".tree-grid");
     if (!grid || document.getElementById("lpSiteFilter")) return;
+
+    // Render the Buyer Guides section from the single-source GUIDES list before
+    // we read the branches below, so it's counted, filtered, sorted and capped
+    // exactly like a category. This is the same list the home hero stat counts.
+    if (GUIDES && GUIDES.length && !grid.querySelector(".lp-guides-branch")) {
+      function gkey(s) { return s.toLowerCase().replace(/^(the |a |an )/, ""); }
+      function gesc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+      var gleaves = GUIDES.slice().sort(function (a, b) {
+        return gkey(a.label) < gkey(b.label) ? -1 : gkey(a.label) > gkey(b.label) ? 1 : 0;
+      }).map(function (g) {
+        return '<li><a href="' + g.href + '">' + gesc(g.label) + '</a><span class="tag">guide</span></li>';
+      }).join("");
+      var gb = document.createElement("div");
+      gb.className = "branch lp-guides-branch";
+      gb.innerHTML =
+        '<div class="branch-head"><span class="branch-icon">📖</span>' +
+        '<h2 class="branch-name"><a href="/guides/">Buyer Guides</a></h2>' +
+        '<span class="branch-count">' + GUIDES.length + '</span></div>' +
+        '<ul class="leaves">' + gleaves + '</ul>';
+      grid.appendChild(gb);
+    }
 
     var branches = Array.prototype.map.call(grid.querySelectorAll(".branch"), function (b) {
       var nameEl = b.querySelector(".branch-name");
@@ -541,6 +635,8 @@
 
     retireEvidenceTag();
     synthesizeFooter();
+    syncHomeStat();
+    renderGuidesPage();
 
     // Back-to-top: CSS keeps it display:none above 768px, so this only ever
     // shows on mobile. Reveal it past ~600px of scroll; smooth-scroll on tap
