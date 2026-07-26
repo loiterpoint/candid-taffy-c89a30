@@ -428,6 +428,7 @@
     if (!grid || !GUIDES || !GUIDES.length) return;
     function gkey(s) { return s.toLowerCase().replace(/^(the |a |an )/, ""); }
     function gesc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
     grid.innerHTML = GUIDES.slice().sort(function (a, b) {
       return gkey(a.label) < gkey(b.label) ? -1 : gkey(a.label) > gkey(b.label) ? 1 : 0;
     }).map(function (g) {

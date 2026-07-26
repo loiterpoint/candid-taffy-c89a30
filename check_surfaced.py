@@ -12,6 +12,8 @@ Checks, run from the repo root:
   3. every article link on a category page or site-map.html resolves to a real file
   4. each homepage category tile's count equals that category page's real card count
   5. each homepage category tile links to a category page that exists
+  6. guides/index.html ships the static guide list in its markup, and that list
+     still agrees with the GUIDES array in nav.js (href, label, picks, price)
 
     python3 check_surfaced.py           # report and exit 1 on any failure
     python3 check_surfaced.py --quiet   # exit code only
@@ -24,6 +26,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -123,6 +126,113 @@ def category_dirs(repo: Path) -> list[Path]:
     )
 
 
+# ── The static guide list on /guides/
+#
+# /guides/ builds its cards in the browser from the GUIDES array in nav.js.
+# surface_articles.py also writes that list into the markup between the
+# LP:GUIDES-FALLBACK markers, so crawlers, link unfurlers and anyone whose
+# nav.js request fails still get the guides. That copy can drift the moment
+# someone edits GUIDES without re-running surface_articles.py — which is what
+# this check is for. It compares meaning (href, label, chip text), not markup,
+# so the generator's HTML can be restyled without breaking the check.
+FB_BLOCK = re.compile(r"<!-- LP:GUIDES-FALLBACK -->(.*?)<!-- /LP:GUIDES-FALLBACK -->",
+                      re.S)
+
+
+def guides_sort_key(label: str) -> str:
+    """Match gkey() in nav.js and guides_sort_key() in surface_articles.py."""
+    return re.sub(r"^(the |a |an )", "", label.lower())
+
+
+def nav_guides(nav: Path) -> list[tuple[str, str, list[str]]] | None:
+    """(href, label, chips) per GUIDES entry, in the order the page shows them."""
+    m = re.search(r"  var GUIDES = \[\n(.*?)\n  \];",
+                  nav.read_text(encoding="utf-8"), flags=re.S)
+    if not m:
+        return None
+
+    out: list[tuple[str, str, list[str]]] = []
+    for line in m.group(1).split("\n"):
+        href = re.search(r'href: "([^"]+)"', line)
+        if not href:
+            continue
+        label = re.search(r'label: "([^"]*)"', line)
+        picks = re.search(r"picks: (\d+)", line)
+        price = re.search(r'price: "([^"]*)"', line)
+
+        chips: list[str] = []
+        if picks and int(picks.group(1)):
+            n = int(picks.group(1))
+            chips.append(f"{n} pick" if n == 1 else f"{n} picks")
+        if price and price.group(1):
+            chips.append(price.group(1))
+        if not chips:
+            chips = ["Buyer's guide"]
+        out.append((href.group(1), label.group(1) if label else "", chips))
+
+    out.sort(key=lambda g: guides_sort_key(g[1]))
+    return out
+
+
+def static_guides(page: Path) -> list[tuple[str, str, list[str]]] | None:
+    """The same triples read back out of guides/index.html, or None if unmarked."""
+    m = FB_BLOCK.search(page.read_text(encoding="utf-8"))
+    if not m:
+        return None
+
+    def text(s: str) -> str:
+        return unescape(re.sub(r"<[^>]+>", "", s)).strip()
+
+    out: list[tuple[str, str, list[str]]] = []
+    for card in re.findall(r'<a class="lp-gfb-card".*?</a>', m.group(1), flags=re.S):
+        href = re.search(r'href="([^"]+)"', card)
+        title = re.search(r'class="lp-gfb-title">(.*?)</span>', card, flags=re.S)
+        chips = re.findall(r'class="lp-gfb-chip[^"]*">(.*?)</span>', card, flags=re.S)
+        out.append((unescape(href.group(1)) if href else "",
+                    text(title.group(1)) if title else "",
+                    [text(c) for c in chips]))
+    return out
+
+
+def check_static_guides(repo: Path) -> list[str]:
+    nav, page = repo / "nav.js", repo / "guides" / "index.html"
+    if not page.exists():
+        return []
+    if not nav.exists():
+        return ["nav.js not found — cannot check the static guide list"]
+
+    want = nav_guides(nav)
+    if want is None:
+        return ["nav.js has no GUIDES array — cannot check the static guide list"]
+
+    got = static_guides(page)
+    if got is None:
+        return ["guides/index.html has no LP:GUIDES-FALLBACK markers, so its HTML "
+                "ships no guide links — restore the markers and run surface_articles.py"]
+
+    failures: list[str] = []
+    for href, _, _ in want:
+        if not (repo / href.lstrip("/")).exists():
+            failures.append(f"GUIDES lists a guide that is missing on disk: {href}")
+
+    if got != want:
+        w, g = {x[0] for x in want}, {x[0] for x in got}
+        for href in sorted(w - g):
+            failures.append(f"guides/index.html static list is missing {href}")
+        for href in sorted(g - w):
+            failures.append(f"guides/index.html static list has a stale entry: {href}")
+        for a, b in zip(want, got):
+            if a != b and a[0] == b[0]:
+                failures.append(
+                    f"guides/index.html static list is out of date for {a[0]}: "
+                    f"shows {b[1]!r} {b[2]} — nav.js says {a[1]!r} {a[2]}")
+        if not failures:
+            failures.append("guides/index.html static list no longer matches nav.js "
+                            "GUIDES (order differs)")
+
+    return failures
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--quiet", action="store_true")
@@ -187,6 +297,9 @@ def main() -> int:
     else:
         failures.append("index.html not found")
 
+    # --- the static guide list on /guides/
+    failures.extend(check_static_guides(repo))
+
     if failures:
         say(f"{len(failures)} problem(s):\n")
         for f in failures:
@@ -194,12 +307,17 @@ def main() -> int:
         say("")
         say('Fix:  add <meta name="lp:category" content="<slug>"> to any new '
             "article, then run  python3 surface_articles.py")
+        say("      (surface_articles.py also rebuilds the static guide list "
+            "on /guides/)")
         return 1
 
     say(
         f"all {len(articles)} articles surfaced "
         f"({len(real_counts)} category pages, counts match, no dead links)"
     )
+    listed = static_guides(repo / "guides" / "index.html")
+    if listed:
+        say(f"{len(listed)} buyer guides linked from /guides/ in the HTML itself")
     return 0
 
 
