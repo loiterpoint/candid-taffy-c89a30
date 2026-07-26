@@ -46,22 +46,30 @@
   // Buyer guides — SINGLE SOURCE OF TRUTH. nav.js renders these into the site
   // map's Buyer Guides section AND counts them in the home hero stat, so the two
   // always agree. Add or remove a guide here (one place) and both update.
+  //
+  // Per-entry fields:
+  //   href/label/icon — hand-maintained.
+  //   blurb           — hand-written, one line, shown on the /guides/ cards.
+  //   picks/price     — DERIVED. surface_articles.py recomputes both from each
+  //                     guide's own markup (.card blocks and .price tags) on
+  //                     every run, so they cannot go stale. Don't hand-edit them;
+  //                     a guide with no $ figures in its .price tags gets "".
   var GUIDES = [
-    { href: "/guides/best-content-creator-gear.html", label: "The Best Content Creator & Streaming Gear (2026)", icon: "🎥" },
-    { href: "/guides/best-dorm-room-tech.html", label: "The Best Dorm Room Tech for 2026", icon: "🎓" },
-    { href: "/guides/best-drones.html", label: "The Best Drones for 2026", icon: "🚁" },
-    { href: "/guides/best-headphones-and-earbuds.html", label: "The Best Headphones & Earbuds (2026)", icon: "🎧" },
-    { href: "/guides/best-home-cleaning-tech.html", label: "The Best Home Cleaning Tech (2026)", icon: "🧹" },
-    { href: "/guides/best-home-climate-tech.html", label: "The Best Home Climate Tech (2026)", icon: "🌡️" },
-    { href: "/guides/best-home-entertainment-tech.html", label: "The Best Home Entertainment Tech (2026)", icon: "📺" },
-    { href: "/guides/best-home-networking-gear.html", label: "The Best Home Networking Gear (2026)", icon: "📶" },
-    { href: "/guides/best-home-office-gear.html", label: "The Best Home Office Tech (2026)", icon: "🖥️" },
-    { href: "/guides/best-home-security-tech.html", label: "The Best Home Security Tech (2026)", icon: "🔒" },
-    { href: "/guides/best-kitchen-tech.html", label: "The Best Kitchen Tech (2026)", icon: "🍳" },
-    { href: "/guides/best-pc-gaming-gear.html", label: "The Best PC Gaming Gear (2026)", icon: "🎮" },
-    { href: "/guides/best-smart-home-tech.html", label: "The Best Smart Home Tech (2026)", icon: "💡" },
-    { href: "/guides/best-tech-under-100.html", label: "The Best Tech Under $100 (2026)", icon: "💵" },
-    { href: "/guides/best-travel-tech.html", label: "The Best Travel Tech (2026)", icon: "✈️" }
+    { href: "/guides/best-content-creator-gear.html", label: "The Best Content Creator & Streaming Gear (2026)", icon: "🎥", picks: 4, price: "$99–$379", blurb: "Camera, mic and monitoring picks for a full streaming rig." },
+    { href: "/guides/best-dorm-room-tech.html", label: "The Best Dorm Room Tech for 2026", icon: "🎓", picks: 7, price: "$33–$100", blurb: "Earbuds, power, streaming and lighting that fit a dorm budget." },
+    { href: "/guides/best-drones.html", label: "The Best Drones for 2026", icon: "🚁", picks: 6, price: "$199–$1,099", blurb: "Beginner to pro, plus the FAA Remote ID rules before you fly." },
+    { href: "/guides/best-headphones-and-earbuds.html", label: "The Best Headphones & Earbuds (2026)", icon: "🎧", picks: 4, price: "$100–$450", blurb: "Flagship noise cancelling down to honest sub-$100 earbuds." },
+    { href: "/guides/best-home-cleaning-tech.html", label: "The Best Home Cleaning Tech (2026)", icon: "🧹", picks: 5, price: "", blurb: "Robot vacs, a car vacuum and air purifiers that earn their price." },
+    { href: "/guides/best-home-climate-tech.html", label: "The Best Home Climate Tech (2026)", icon: "🌡️", picks: 4, price: "$180–$500", blurb: "Portable AC, dehumidifier, purifier and thermostat picks." },
+    { href: "/guides/best-home-entertainment-tech.html", label: "The Best Home Entertainment Tech (2026)", icon: "📺", picks: 4, price: "$79–$1,999", blurb: "A streaming device, soundbar, speaker and headphones that fit together." },
+    { href: "/guides/best-home-networking-gear.html", label: "The Best Home Networking Gear (2026)", icon: "📶", picks: 4, price: "$150–$700", blurb: "Routers and mesh systems, plus what depends on getting them right." },
+    { href: "/guides/best-home-office-gear.html", label: "The Best Home Office Tech (2026)", icon: "🖥️", picks: 6, price: "$33–$695", blurb: "Desk, keyboard, audio and power for a room you work in daily." },
+    { href: "/guides/best-home-security-tech.html", label: "The Best Home Security Tech (2026)", icon: "🔒", picks: 4, price: "$50–$400", blurb: "Doorbell, cameras and lighting, built around subscription-free local storage." },
+    { href: "/guides/best-kitchen-tech.html", label: "The Best Kitchen Tech (2026)", icon: "🍳", picks: 2, price: "$130–$150", blurb: "The air fryer and sous vide worth countertop space." },
+    { href: "/guides/best-pc-gaming-gear.html", label: "The Best PC Gaming Gear (2026)", icon: "🎮", picks: 6, price: "$99–$899", blurb: "Monitor, headset, mouse, keyboard and storage, chosen for latency." },
+    { href: "/guides/best-smart-home-tech.html", label: "The Best Smart Home Tech (2026)", icon: "💡", picks: 6, price: "$50–$999", blurb: "Bulbs, hub, network and vacuum — a starter kit that works together." },
+    { href: "/guides/best-tech-under-100.html", label: "The Best Tech Under $100 (2026)", icon: "💵", picks: 6, price: "$33–$100", blurb: "Six categories where under $100 buys something genuinely good." },
+    { href: "/guides/best-travel-tech.html", label: "The Best Travel Tech (2026)", icon: "✈️", picks: 6, price: "$33–$249", blurb: "E-reader, tablet, headphones and power that survive a long haul." }
   ];
 
   var css = [
@@ -155,12 +163,18 @@
     ".tree-grid .lpf-more:hover{border-color:var(--accent,#e8ff47);background:rgba(232,255,71,0.06);}",
     ".tree-grid mark{background:rgba(232,255,71,0.28);color:var(--accent,#e8ff47);border-radius:2px;padding:0 1px;}",
     "#lpGuidesGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:0.7rem;}",
-    "#lpGuidesGrid .lp-gcard{display:flex;align-items:center;gap:0.9rem;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-left:3px solid var(--accent,#e8ff47);border-radius:12px;padding:1rem 1.1rem;text-decoration:none;color:inherit;transition:background .15s,border-color .15s;}",
+    "#lpGuidesGrid .lp-gcard{display:flex;align-items:flex-start;gap:0.9rem;background:var(--surface,#141418);border:1px solid var(--border,#26262e);border-left:3px solid var(--accent,#e8ff47);border-radius:12px;padding:1rem 1.1rem;text-decoration:none;color:inherit;transition:background .15s,border-color .15s;}",
     "#lpGuidesGrid .lp-gcard:hover{background:var(--surface2,#1c1c22);border-color:var(--accent,#e8ff47);}",
     "#lpGuidesGrid .lp-gic{font-size:1.5rem;flex:none;width:2.4rem;height:2.4rem;display:flex;align-items:center;justify-content:center;background:var(--surface2,#1c1c22);border:1px solid var(--border,#26262e);border-radius:9px;}",
     "#lpGuidesGrid .lp-gbody{flex:1;min-width:0;display:flex;flex-direction:column;}",
     "#lpGuidesGrid .lp-gtitle{font-size:0.95rem;font-weight:600;color:var(--text,#e2e2e8);line-height:1.25;}",
     "#lpGuidesGrid .lp-gtag{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--muted,#7a7a8a);margin-top:0.2rem;}",
+    "#lpGuidesGrid .lp-gblurb{font-size:0.85rem;color:#a9a9b8;line-height:1.45;margin-top:0.28rem;}",
+    "#lpGuidesGrid .lp-gbody{align-self:stretch;}",
+    "#lpGuidesGrid .lp-gmeta{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:auto;padding-top:0.55rem;}",
+    "#lpGuidesGrid .lp-gchip{font-family:'IBM Plex Mono',monospace;font-size:0.63rem;letter-spacing:0.03em;color:var(--muted,#7a7a8a);background:var(--surface2,#1c1c22);border:1px solid var(--border,#26262e);border-radius:4px;padding:0.12rem 0.42rem;white-space:nowrap;}",
+    "#lpGuidesGrid .lp-gchip-n{color:var(--accent,#e8ff47);border-color:rgba(232,255,71,0.35);}",
+    "#lpGuidesGrid .lp-gcard:hover .lp-gchip{background:var(--bg,#0c0c0e);}",
     "#lpGuidesGrid .lp-garrow{color:var(--muted,#7a7a8a);font-size:1.05rem;flex:none;}",
     "#lpGuidesGrid .lp-gcard:hover .lp-garrow{color:var(--accent,#e8ff47);}"
   ].join("");
@@ -417,10 +431,24 @@
     grid.innerHTML = GUIDES.slice().sort(function (a, b) {
       return gkey(a.label) < gkey(b.label) ? -1 : gkey(a.label) > gkey(b.label) ? 1 : 0;
     }).map(function (g) {
+      // Blurb is hand-written; the picks/price chips are derived by
+      // surface_articles.py from each guide's own markup, so they stay honest.
+      var blurb = g.blurb
+        ? '<span class="lp-gblurb">' + gesc(g.blurb) + '</span>'
+        : "";
+      var chips = "";
+      if (g.picks) {
+        chips += '<span class="lp-gchip lp-gchip-n">' + g.picks +
+          (g.picks === 1 ? " pick" : " picks") + '</span>';
+      }
+      if (g.price) chips += '<span class="lp-gchip">' + gesc(g.price) + '</span>';
+      if (!chips) {
+        chips = '<span class="lp-gchip">Buyer&#39;s guide</span>';
+      }
       return '<a class="lp-gcard" href="' + g.href + '">' +
         '<span class="lp-gic">' + (g.icon || "📖") + '</span>' +
         '<span class="lp-gbody"><span class="lp-gtitle">' + gesc(g.label) + '</span>' +
-        '<span class="lp-gtag">Buyer&#39;s guide &middot; ranked on evidence</span></span>' +
+        blurb + '<span class="lp-gmeta">' + chips + '</span></span>' +
         '<span class="lp-garrow">&rarr;</span></a>';
     }).join("");
   }

@@ -331,6 +331,100 @@ def recount_homepage(repo: Path, real_counts: dict[str, int], dry: bool) -> list
     return fixes
 
 
+# ── buyer-guide cards (pick count + price range) ─────────────────────────────
+def guide_meta(path: Path) -> tuple[int, str]:
+    """Read one /guides/best-*.html and derive its pick count and price range.
+
+    A "pick" is a <div class="card"> block; each carries a <span class="price">.
+    Prices are free text (~$130 · 5.5 qt, ~$199–$499), so we pull every $ figure
+    out and take the min/max. A guide whose .price tags hold qualifiers rather
+    than figures (home-cleaning does this) yields "" and simply shows no price
+    chip — that's a fallback, not an error.
+    """
+    html = path.read_text(encoding="utf-8")
+    body = re.sub(r"<style.*?</style>", "", html, flags=re.S)
+    body = re.sub(r"<script.*?</script>", "", body, flags=re.S)
+
+    picks = len(re.findall(r'class="card"', body))
+
+    nums: list[int] = []
+    for raw in re.findall(r'class="price"[^>]*>(.*?)</', body, flags=re.S):
+        for v in re.findall(r"\$([\d,]+)", re.sub(r"<[^>]+>", "", raw)):
+            nums.append(int(v.replace(",", "")))
+
+    if not nums:
+        return picks, ""
+    lo, hi = min(nums), max(nums)
+    if lo == hi:
+        return picks, f"${lo:,}"
+    return picks, f"${lo:,}–${hi:,}"
+
+
+def resync_guide_cards(repo: Path, dry: bool) -> list[str]:
+    """Rewrite the derived picks/price fields in nav.js's GUIDES array.
+
+    GUIDES is the single source of truth for the /guides/ cards, the site map's
+    Buyer Guides branch and the home hero count. href/label/icon/blurb are
+    hand-maintained; picks and price are derived here so the cards can never
+    advertise a stale number the way the category tiles used to.
+    """
+    fixes: list[str] = []
+    nav = repo / "nav.js"
+    if not nav.exists():
+        return fixes
+
+    src = nav.read_text(encoding="utf-8")
+    m = re.search(r"(  var GUIDES = \[\n)(.*?)(\n  \];)", src, flags=re.S)
+    if not m:
+        print("  ! nav.js has no GUIDES array — cannot resync guide cards",
+              file=sys.stderr)
+        return fixes
+
+    out_lines: list[str] = []
+    for line in m.group(2).split("\n"):
+        href = re.search(r'href: "([^"]+)"', line)
+        if not href:
+            out_lines.append(line)
+            continue
+        page = repo / href.group(1).lstrip("/")
+        if not page.exists():
+            print(f"  ! {href.group(1)} listed in GUIDES but missing on disk",
+                  file=sys.stderr)
+            out_lines.append(line)
+            continue
+
+        picks, price = guide_meta(page)
+        name = page.name
+
+        shown = re.search(r"picks: (\d+)", line)
+        if shown is None:
+            print(f"  ! {name}: GUIDES entry has no picks field — skipping",
+                  file=sys.stderr)
+            out_lines.append(line)
+            continue
+        if int(shown.group(1)) != picks:
+            fixes.append(f"nav.js {name}: {shown.group(1)} → {picks} picks")
+            line = re.sub(r"picks: \d+", f"picks: {picks}", line)
+
+        shown_p = re.search(r'price: "([^"]*)"', line)
+        if shown_p is None:
+            print(f"  ! {name}: GUIDES entry has no price field — skipping",
+                  file=sys.stderr)
+        elif shown_p.group(1) != price:
+            fixes.append(
+                f"nav.js {name}: price {shown_p.group(1) or '(none)'} → {price or '(none)'}")
+            line = re.sub(r'price: "[^"]*"', f'price: "{price}"', line)
+
+        out_lines.append(line)
+
+    if fixes and not dry:
+        nav.write_text(
+            src[:m.start(2)] + "\n".join(out_lines) + src[m.end(2):],
+            encoding="utf-8")
+
+    return fixes
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
@@ -402,13 +496,17 @@ def main() -> int:
     real_counts = {cat: len(cards_on(repo / cat / "index.html")) for cat in cats}
     home_fixes = recount_homepage(repo, real_counts, dry)
     branch_fixes = recount_sitemap_branches(repo, dry)
+    guide_fixes = resync_guide_cards(repo, dry)
     for f in home_fixes:
+        print(f"  ~ {f}")
+    for f in guide_fixes:
         print(f"  ~ {f}")
 
     print()
     verb = "would add" if dry else "added"
     print(f"{verb}: {added_cards} card(s), {added_leaves} site-map entr(y/ies); "
-          f"fixed {len(home_fixes)} homepage count(s), {branch_fixes} site-map count(s).")
+          f"fixed {len(home_fixes)} homepage count(s), {branch_fixes} site-map count(s), "
+          f"{len(guide_fixes)} guide-card field(s).")
     if guessed:
         print("\nGUESSED categories from slug keywords — verify these are right:")
         for g in guessed:
