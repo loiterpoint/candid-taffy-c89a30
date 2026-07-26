@@ -14,6 +14,8 @@ Checks, run from the repo root:
   5. each homepage category tile links to a category page that exists
   6. guides/index.html ships the static guide list in its markup, and that list
      still agrees with the GUIDES array in nav.js (href, label, picks, price)
+  7. every page ships the static footer in its markup, and its tagline,
+     copyright, disclosure and links still agree with FOOTER in nav.js
 
     python3 check_surfaced.py           # report and exit 1 on any failure
     python3 check_surfaced.py --quiet   # exit code only
@@ -233,6 +235,115 @@ def check_static_guides(repo: Path) -> list[str]:
     return failures
 
 
+# ── The static footer, on every page
+#
+# nav.js deletes each page's <footer> at load and renders its own from the
+# FOOTER object, so a wrong static footer is invisible in a browser and can rot
+# for months. surface_articles.py now generates that block into every page from
+# FOOTER; this is what stops it drifting back. Like the guides check it compares
+# meaning — the tagline, copyright and disclosure text, and the label/href of
+# every link — not markup, so the generator can be restyled freely.
+FF_BLOCK = re.compile(r"<!-- LP:FOOTER-FALLBACK -->(.*?)<!-- /LP:FOOTER-FALLBACK -->",
+                      re.S)
+FF_SKIP_PREFIXES = ("ux-review",)
+
+
+def _text(s: str) -> str:
+    return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", "", s))).strip()
+
+
+def nav_footer(nav: Path) -> dict | None:
+    """The FOOTER object as (tagline, copyright, disclosure, [(label, href)])."""
+    m = re.search(r"  var FOOTER = \{\n(.*?)\n  \};",
+                  nav.read_text(encoding="utf-8"), flags=re.S)
+    if not m:
+        return None
+    body = m.group(1)
+
+    def scalar(name: str) -> str:
+        f = re.search(name + r': "((?:[^"\\]|\\.)*)"', body)
+        return _text(f.group(1).replace('\\"', '"')) if f else ""
+
+    links = [(_text(lab), href) for lab, href in
+             re.findall(r'label: "([^"]*)", href: "([^"]*)"', body)]
+    out = {
+        "tagline": scalar("tagline"),
+        "copyright": scalar("copyright"),
+        "disclosure": scalar("disclosure"),
+        "links": links,
+    }
+    return out if out["copyright"] and out["links"] else None
+
+
+def static_footer(page: Path) -> dict | None:
+    """The same fields read back out of a page, or None if it has no markers."""
+    m = FF_BLOCK.search(page.read_text(encoding="utf-8"))
+    if not m:
+        return None
+    blk = m.group(1)
+    tag = re.search(r'<p>(.*?)</p>', blk, flags=re.S)
+    copy = re.search(r'class="lp-ffb-copy"><p>(.*?)</p>', blk, flags=re.S)
+    disc = re.search(r'class="lp-ffb-disc">(.*?)</p>', blk, flags=re.S)
+    links = [(_text(lab), unescape(href)) for href, lab in
+             re.findall(r'<a href="([^"]+)">(.*?)</a>', blk, flags=re.S)
+             if not lab.startswith("<i>") and href != "/sitemap.xml"]
+    return {
+        "tagline": _text(tag.group(1)) if tag else "",
+        "copyright": _text(copy.group(1)) if copy else "",
+        "disclosure": _text(disc.group(1)) if disc else "",
+        "links": links,
+    }
+
+
+def check_static_footers(repo: Path) -> list[str]:
+    nav = repo / "nav.js"
+    if not nav.exists():
+        return ["nav.js not found — cannot check the static footers"]
+
+    want = nav_footer(nav)
+    if want is None:
+        return ["nav.js has no readable FOOTER object — cannot check the static footers"]
+
+    for _, href in want["links"]:
+        if href.startswith("/") and not (repo / href.lstrip("/")).exists():
+            return [f"FOOTER links to a page that is missing on disk: {href}"]
+
+    pages = [p for p in repo.glob("*.html")]
+    for d in sorted(repo.iterdir()):
+        if d.is_dir() and not d.name.startswith(".") and d.name != "node_modules":
+            pages += sorted(d.glob("*.html"))
+    pages = sorted(p for p in pages if not p.name.startswith(FF_SKIP_PREFIXES))
+
+    missing: list[str] = []
+    drifted: list[str] = []
+    for page in pages:
+        rel = page.relative_to(repo).as_posix()
+        got = static_footer(page)
+        if got is None:
+            missing.append(rel)
+        elif got != want:
+            which = [k for k in ("tagline", "copyright", "disclosure", "links")
+                     if got[k] != want[k]]
+            drifted.append(f"{rel} ({', '.join(which)})")
+
+    failures: list[str] = []
+    # Reported in bulk: one line per page would bury every other failure under
+    # 150 near-identical lines the first time someone forgets to run the script.
+    if missing:
+        failures.append(
+            f"{len(missing)} page(s) have no LP:FOOTER-FALLBACK block, so their "
+            f"HTML ships no footer: {', '.join(missing[:4])}"
+            + (f" … and {len(missing) - 4} more" if len(missing) > 4 else "")
+            + " — run surface_articles.py")
+    if drifted:
+        failures.append(
+            f"{len(drifted)} page(s) have a static footer that no longer matches "
+            f"nav.js FOOTER: {'; '.join(drifted[:4])}"
+            + (f" … and {len(drifted) - 4} more" if len(drifted) > 4 else "")
+            + " — edit FOOTER in nav.js, then run surface_articles.py")
+    return failures
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--quiet", action="store_true")
@@ -299,6 +410,9 @@ def main() -> int:
 
     # --- the static guide list on /guides/
     failures.extend(check_static_guides(repo))
+
+    # --- the static footer, on every page
+    failures.extend(check_static_footers(repo))
 
     if failures:
         say(f"{len(failures)} problem(s):\n")
