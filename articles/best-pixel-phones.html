@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>The Best Google Pixel Phones (2026) — Loiter Point</title>
+<meta name="description" content="An evidence-first buying guide to the Google Pixel 10 lineup. Ranked by use case, built on published lab data and verified owner reports — not our own lab." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0c0c0e;
+    --surface: #141418;
+    --surface2: #1c1c22;
+    --accent: #e8ff47;
+    --text: #e2e2e8;
+    --muted: #7a7a8a;
+    --border: #26262e;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+  }
+  h1, h2, h3, .label, .badge, .price, nav a, .btn, th {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  h1 {
+    font-size: clamp(1.9rem, 5vw, 2.9rem);
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    margin: 0.4em 0 0.15em;
+  }
+  h2 {
+    font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+    margin: 2.4em 0 0.6em;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: -0.3px;
+  }
+  h3 { font-size: 1.15rem; margin: 0.2em 0; }
+  a { color: var(--accent); }
+  p { margin: 0.8em 0; }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+  }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  nav a:hover { color: var(--accent); }
+  .updated {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 3px 9px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .lede { color: var(--muted); font-size: 1.02rem; }
+
+  /* TL;DR box */
+  .tldr {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 26px 0;
+  }
+  .tldr h2 {
+    margin: 0 0 0.5em;
+    border: 0;
+    padding: 0;
+    font-size: 1.15rem;
+    color: var(--accent);
+  }
+  .tldr ul { margin: 0.4em 0; padding-left: 1.2em; }
+  .tldr li { margin: 0.5em 0; }
+  .grab {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.95rem;
+  }
+  .grab strong { font-family: 'IBM Plex Mono', monospace; color: var(--accent); }
+  .grab a { display: inline-block; margin: 2px 0; }
+
+  /* Pick cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 22px 24px;
+    margin: 20px 0;
+  }
+  .card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px 14px;
+    margin-bottom: 2px;
+  }
+  .badge {
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+  }
+  .price {
+    margin-left: auto;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.15rem;
+  }
+  .role {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin: 4px 0 12px;
+  }
+  .verdict { margin: 0 0 16px; }
+
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 0 18px;
+  }
+  .spec {
+    background: var(--surface2);
+    padding: 10px 12px;
+  }
+  .spec .label {
+    display: block;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .spec .val { font-size: 0.92rem; }
+  .spec .val small { color: var(--muted); font-size: 0.8rem; }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg) !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 11px 20px;
+    border-radius: 8px;
+    letter-spacing: 0.3px;
+  }
+  .btn:hover { filter: brightness(1.08); }
+
+  /* Nerd box */
+  .nerd {
+    background: linear-gradient(180deg, var(--surface2), var(--surface));
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin: 26px 0;
+  }
+  .nerd .tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .nerd h3 { font-family: 'IBM Plex Mono', monospace; margin-bottom: 8px; }
+
+  /* Comparison table */
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 18px 0;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 720px;
+    font-size: 0.86rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: var(--surface2);
+    color: var(--accent);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    position: sticky;
+    top: 0;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  td small { color: var(--muted); }
+
+  footer {
+    margin-top: 50px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .disclosure {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+  .copy { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .specs { grid-template-columns: 1fr; }
+    .price { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a href="../index.html">&larr; All guides &middot; Loiter Point</a>
+    <a href="../index.html">loiterpoint.com</a>
+  </nav>
+
+  <span class="updated">Updated July 2026</span>
+  <h1>The Best Google Pixel Phones (2026)</h1>
+  <p class="lede">The Pixel 10 family is the whole current lineup — five phones from $499 to $1,799. We ranked them by use case, using published independent measurements and verified owner reports. We don't run a lab, and we say so.</p>
+
+  <!-- TL;DR -->
+  <section class="tldr">
+    <h2>The Short Version</h2>
+    <ul>
+      <li><strong>Best overall:</strong> the <a href="https://www.amazon.com/s?k=Google+Pixel+10+Pro&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 Pro ($999)</a> puts the flagship triple-camera system and Tensor G5 into a compact 6.3" body. It shares cameras and chip with the bigger XL, so it's the best balance for most buyers who want the top Pixel.</li>
+      <li><strong>Want the biggest battery and screen?</strong> The <a href="https://www.amazon.com/s?k=Google+Pixel+10+Pro+XL&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 Pro XL ($1,199)</a> is the same phone scaled up: 6.8" display, 5,200 mAh, faster 45W charging.</li>
+      <li><strong>Best value:</strong> the <a href="https://www.amazon.com/s?k=Google+Pixel+10&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 ($799)</a> adds a 5x telephoto for the first time — but shrinks its other sensors to fit it. On a budget, the <a href="https://www.amazon.com/s?k=Google+Pixel+10a&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10a ($499)</a> is the pick, with the caveat that it runs last year's Tensor G4.</li>
+      <li><strong>Best foldable:</strong> the <a href="https://www.amazon.com/s?k=Google+Pixel+10+Pro+Fold&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 Pro Fold ($1,799)</a> is the first foldable with IP68 and magnetic Qi2 charging — with one durability caveat we cover below.</li>
+    </ul>
+    <div class="grab">
+      <strong>Grab your pick:</strong><br />
+      <a href="https://www.amazon.com/s?k=Google+Pixel+10+Pro&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 Pro — $999</a> &nbsp;&middot;&nbsp;
+      <a href="https://www.amazon.com/s?k=Google+Pixel+10+Pro+XL&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 Pro XL — $1,199</a> &nbsp;&middot;&nbsp;
+      <a href="https://www.amazon.com/s?k=Google+Pixel+10&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 — $799</a> &nbsp;&middot;&nbsp;
+      <a href="https://www.amazon.com/s?k=Google+Pixel+10a&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10a — $499</a> &nbsp;&middot;&nbsp;
+      <a href="https://www.amazon.com/s?k=Google+Pixel+10+Pro+Fold&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 Pro Fold — $1,799</a>
+    </div>
+  </section>
+
+  <!-- How we evaluate -->
+  <h2>How We Evaluate Google Pixel Phones</h2>
+  <p>Loiter Point does not operate a testing lab, and we're not going to pretend otherwise. What we do is synthesize evidence: published independent measurements from outlets that <em>do</em> run labs — GSMArena's brightness and battery benchmarks, Consumer Reports' standardized battery methodology — plus verified reports from reviewers and owners about how these phones behave in daily use. Then we cross-check that against Google's rated specifications.</p>
+  <p>That distinction matters when you read the cards below. When we cite a peak-brightness figure or a charging percentage, we tell you whose lab produced it and how the number was framed (for example, a brightness reading taken at a specific screen fill and brightness mode). Manufacturer "rated" and "spec" numbers are labeled as such. Real-world figures are attributed to their source and, in the spec grids, marked as reported estimates. We never present a number as if we measured it ourselves — because we didn't.</p>
+  <p>Rankings are use-case first. Two of these phones (the 10 Pro and 10 Pro XL) share the same cameras and the same chip, which changes what "better" even means — so we rank on the things that actually differ. And where the evidence is thin or points in two directions, we say so instead of smoothing it over. That candor is the entire point of the site.</p>
+
+  <!-- PICK 1 -->
+  <section class="card">
+    <div class="card-head">
+      <span class="badge">#1</span>
+      <h3>Google Pixel 10 Pro</h3>
+      <span class="price">$999</span>
+    </div>
+    <div class="role">Best Pixel overall</div>
+    <p class="verdict">The 10 Pro is the sweet spot of the lineup. You get the flagship triple-camera system and the new Tensor G5 in a genuinely compact 6.3" body — and because it shares those cameras and that chip with the larger Pro XL, the only reasons to spend more are size, battery capacity, and charging speed. For most people who want the best Pixel, this is the one to buy.</p>
+    <div class="specs">
+      <div class="spec"><span class="label">Display</span><span class="val">6.3" LTPO OLED, 1–120Hz, 20:9, HDR10+</span></div>
+      <div class="spec"><span class="label">Brightness</span><span class="val">~3,300 nits rated (5% patch) <small>· ~2,351 nits est. real-world at 75% APL, auto-brightness (GSMArena lab)</small></span></div>
+      <div class="spec"><span class="label">Chip</span><span class="val">Google Tensor G5</span></div>
+      <div class="spec"><span class="label">Battery</span><span class="val">~38h est. real-world (reported) <small>· Consumer Reports rates battery life above average in its own test methodology</small></span></div>
+      <div class="spec"><span class="label">Cameras</span><span class="val">Same triple-camera system as the Pro XL</span></div>
+      <div class="spec"><span class="label">Charging</span><span class="val">30W rated <small>· Google claims up to ~55% in 30 min</small></span></div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/s?k=Google+Pixel+10+Pro&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a>
+  </section>
+
+  <!-- PICK 2 -->
+  <section class="card">
+    <div class="card-head">
+      <span class="badge">#2</span>
+      <h3>Google Pixel 10 Pro XL</h3>
+      <span class="price">$1,199</span>
+    </div>
+    <div class="role">Best for battery life &amp; big screen</div>
+    <p class="verdict">Mechanically, the XL is the 10 Pro made bigger: identical cameras, identical Tensor G5. What you're paying the extra $200 for is a 6.8" display, a larger 5,200 mAh battery, and faster 45W charging. If you want the most screen and the most endurance in the Pro line — and don't mind that the base configuration starts at 256GB with no 128GB option — this is your phone. Note the pricing quirk: some retailers and regions list it at $1,200.</p>
+    <div class="specs">
+      <div class="spec"><span class="label">Display</span><span class="val">6.8" LTPO OLED</span></div>
+      <div class="spec"><span class="label">Chip</span><span class="val">Google Tensor G5 (same as 10 Pro)</span></div>
+      <div class="spec"><span class="label">Battery (rated)</span><span class="val">5,200 mAh</span></div>
+      <div class="spec"><span class="label">Battery (est. real-world, reported)</span><span class="val">~12h29m "Active Use" score (GSMArena lab)</span></div>
+      <div class="spec"><span class="label">Cameras</span><span class="val">Same as the 10 Pro</span></div>
+      <div class="spec"><span class="label">Charging</span><span class="val">45W rated <small>· Google claims ~70% in 30 min; GSMArena measured ~64% in 30 min</small></span></div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/s?k=Google+Pixel+10+Pro+XL&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a>
+  </section>
+
+  <div class="nerd">
+    <span class="tag">Nerd box · the fine print</span>
+    <h3>The XL's charging claim doesn't quite land</h3>
+    <p>Google rates the Pro XL at 45W and claims roughly 70% in 30 minutes. GSMArena's lab measured about 64% in the same window — close, but a real shortfall against the marketing number. It's not a dealbreaker; 64% in half an hour is still fast. But it's the kind of gap we'd rather flag than quietly round up. Charge speed depends on the adapter, cable, and temperature, so your mileage will vary from both figures.</p>
+  </div>
+
+  <!-- PICK 3 -->
+  <section class="card">
+    <div class="card-head">
+      <span class="badge">#3</span>
+      <h3>Google Pixel 10</h3>
+      <span class="price">$799</span>
+    </div>
+    <div class="role">Best for most people / best value</div>
+    <p class="verdict">The headline is real: the base Pixel 10 finally gets a telephoto lens — a 5x, 10.8MP tele — making it a true triple-camera phone. But there's a genuine trade-off to fit it (see the nerd box below), so this isn't a pure upgrade over the Pixel 9's imaging. It still runs the new Tensor G5, lasts about a day for typical users, and starts at $799 with 128GB (256GB also offered). For most people, it's the value pick of the lineup.</p>
+    <div class="specs">
+      <div class="spec"><span class="label">Display</span><span class="val">6.3" OLED, up to ~3,000 nits peak (rated)</span></div>
+      <div class="spec"><span class="label">Chip</span><span class="val">Google Tensor G5</span></div>
+      <div class="spec"><span class="label">Battery (rated)</span><span class="val">4,970 mAh</span></div>
+      <div class="spec"><span class="label">Battery (est. real-world, reported)</span><span class="val">~24h / roughly a full day of typical use (reviewers)</span></div>
+      <div class="spec"><span class="label">Cameras</span><span class="val">48MP main (30.7mm²) · 13MP ultrawide (f/2.2) · NEW 5x 10.8MP telephoto</span></div>
+      <div class="spec"><span class="label">Released</span><span class="val">Aug 28, 2025</span></div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/s?k=Google+Pixel+10&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a>
+  </section>
+
+  <div class="nerd">
+    <span class="tag">Nerd box · the camera trade-off</span>
+    <h3>The Pixel 10 gained a telephoto — and shrank its other sensors</h3>
+    <p>This is the honest asterisk on the Pixel 10's big new feature. To make room for the 5x telephoto, Google downsized the two sensors you use most:</p>
+    <ul>
+      <li><strong>Main camera:</strong> from the Pixel 9's 50MP / 72mm² sensor to a 48MP / 30.7mm² sensor — a smaller sensor gathers less light.</li>
+      <li><strong>Ultrawide:</strong> from 50MP at f/1.68 down to 13MP at f/2.2 — a meaningful step down on paper.</li>
+    </ul>
+    <p>So the Pixel 10 is more <em>versatile</em> (you can now reach 5x optically), but its main and ultrawide hardware is smaller than last year's. Whether that's a net win depends on how you shoot: reach-hungry users gain a lot, while people who mostly shoot wide in low light are giving something up. We're flagging it because Google's marketing leads with the new lens, not the sensors it cost.</p>
+  </div>
+
+  <!-- PICK 4 -->
+  <section class="card">
+    <div class="card-head">
+      <span class="badge">#4</span>
+      <h3>Google Pixel 10a</h3>
+      <span class="price">$499</span>
+    </div>
+    <div class="role">Best budget Pixel</div>
+    <p class="verdict">The 10a is the value floor of the lineup and it hits the important notes: a 6.3" 120Hz display (about 11% brighter than the 9a), a recycled-aluminum frame, upgraded 45W charging, and availability on all major US carriers. The one thing to know before you buy: it uses last year's Tensor G4, not the G5 in the rest of the family. For a $499 phone that's a fair trade, but it's why the 10a sits below the base Pixel 10 rather than beside it.</p>
+    <div class="specs">
+      <div class="spec"><span class="label">Display</span><span class="val">6.3", 120Hz <small>· ~11% brighter than Pixel 9a</small></span></div>
+      <div class="spec"><span class="label">Chip</span><span class="val">Google Tensor G4 (older gen) + Titan M2 security</span></div>
+      <div class="spec"><span class="label">Storage / Price</span><span class="val">128GB — $499 · 256GB — $599</span></div>
+      <div class="spec"><span class="label">Cameras</span><span class="val">48MP main · 13MP ultrawide · 13MP selfie</span></div>
+      <div class="spec"><span class="label">Charging</span><span class="val">45W (rated) · recycled aluminum frame</span></div>
+      <div class="spec"><span class="label">Released</span><span class="val">Shipped March 5, 2026 · all major US carriers</span></div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/s?k=Google+Pixel+10a&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a>
+  </section>
+
+  <!-- PICK 5 -->
+  <section class="card">
+    <div class="card-head">
+      <span class="badge">#5</span>
+      <h3>Google Pixel 10 Pro Fold</h3>
+      <span class="price">$1,799</span>
+    </div>
+    <div class="role">Best Pixel foldable</div>
+    <p class="verdict">The Fold is the specialist pick: an 8" inner screen and 6.4" outer, 16GB of RAM, and a genuine engineering milestone — it's the first foldable with an IP68 dust/water rating and built-in magnetic Qi2 ("Pixelsnap") charging. Reviewers report strong endurance for a foldable, north of a day of use. It ranks last only because a folding phone at $1,799 is a niche within a niche — and because of one durability caveat we won't bury (see below).</p>
+    <div class="specs">
+      <div class="spec"><span class="label">Displays</span><span class="val">8" inner · 6.4" outer</span></div>
+      <div class="spec"><span class="label">Chip / RAM</span><span class="val">Google Tensor G5 · 16GB RAM</span></div>
+      <div class="spec"><span class="label">Storage</span><span class="val">256GB / 512GB / 1TB</span></div>
+      <div class="spec"><span class="label">Battery</span><span class="val">5,015 mAh rated <small>· ~24h+ est. real-world, strong for a foldable (reviewers)</small></span></div>
+      <div class="spec"><span class="label">Cameras</span><span class="val">48MP wide · 10.5MP ultrawide (macro) · 10.8MP tele · 10MP inner/front</span></div>
+      <div class="spec"><span class="label">Standout</span><span class="val">First foldable with IP68 + magnetic Qi2 "Pixelsnap" charging</span></div>
+    </div>
+    <a class="btn" href="https://www.amazon.com/s?k=Google+Pixel+10+Pro+Fold&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon</a>
+  </section>
+
+  <div class="nerd">
+    <span class="tag">Nerd box · durability, with balance</span>
+    <h3>About that Fold bend test</h3>
+    <p>In one extreme third-party bend/durability test, the Pixel 10 Pro Fold's battery ignited — reportedly the first time that's happened in such a test. That sounds alarming, so here's the context we think you deserve: it was a deliberate, extreme stress test, not normal use, and this kind of failure is highly unlikely in everyday handling. The phone otherwise carries an IP68 dust and water rating — a first for a foldable. We're not telling you to ignore it, and we're not telling you to panic. If you're the sort of buyer who wants a bleeding-edge foldable, this is a data point to weigh, not a verdict.</p>
+  </div>
+
+  <!-- Comparison table -->
+  <h2>The Pixel 10 Lineup at a Glance</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Price</th>
+          <th>Display</th>
+          <th>Chip</th>
+          <th>Battery</th>
+          <th>Charging</th>
+          <th>Standout</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pixel 10 Pro</td>
+          <td>$999</td>
+          <td>6.3" LTPO OLED, 1–120Hz</td>
+          <td>Tensor G5</td>
+          <td><small>~38h est. real-world per Consumer Reports' test</small></td>
+          <td>30W rated</td>
+          <td>Flagship cameras, compact</td>
+        </tr>
+        <tr>
+          <td>Pixel 10 Pro XL</td>
+          <td>$1,199</td>
+          <td>6.8" LTPO OLED</td>
+          <td>Tensor G5</td>
+          <td>5,200 mAh rated · <small>~12h29m Active Use per GSMArena</small></td>
+          <td>45W rated</td>
+          <td>Biggest screen &amp; battery</td>
+        </tr>
+        <tr>
+          <td>Pixel 10</td>
+          <td>$799</td>
+          <td>6.3" OLED, ~3,000 nits</td>
+          <td>Tensor G5</td>
+          <td>4,970 mAh rated · <small>~24h typical per reviewers</small></td>
+          <td>Fast (see card)</td>
+          <td>New 5x telephoto; best value</td>
+        </tr>
+        <tr>
+          <td>Pixel 10a</td>
+          <td>$499</td>
+          <td>6.3", 120Hz</td>
+          <td>Tensor G4 (older)</td>
+          <td><small>Reviewer reports not cited here</small></td>
+          <td>45W rated</td>
+          <td>Budget pick</td>
+        </tr>
+        <tr>
+          <td>Pixel 10 Pro Fold</td>
+          <td>$1,799</td>
+          <td>8" inner / 6.4" outer</td>
+          <td>Tensor G5</td>
+          <td>5,015 mAh rated · <small>~24h+ per reviewers</small></td>
+          <td>Qi2 magnetic</td>
+          <td>IP68 + Pixelsnap foldable</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--muted); font-size:0.85rem;">Battery notes are attributed to their published sources. GSMArena and Consumer Reports figures come from those outlets' own methodologies; "reviewers" reflects verified real-world reports. Loiter Point did not produce any of these numbers.</p>
+
+  <div class="nerd">
+    <span class="tag">Nerd box · the chip divide</span>
+    <h3>Tensor G5 vs G4 — and why it shapes this ranking</h3>
+    <p>Four of the five phones — the Pixel 10, 10 Pro, 10 Pro XL and 10 Pro Fold — run Google's new-generation Tensor G5. Only the budget Pixel 10a runs last year's Tensor G4 (paired with the Titan M2 security chip). That single fact does a lot of work in our ranking: it's the clearest reason the 10a sits at #4 as the value pick rather than competing head-on with the base Pixel 10. Separately, several 2026 Pixel models support Qi2 magnetic "Pixelsnap" charging, with the Fold being the first foldable to build it in.</p>
+  </div>
+
+  <!-- Bottom line -->
+  <h2>The Bottom Line</h2>
+  <p>If you want the best Pixel and don't need a giant screen, buy the <a href="https://www.amazon.com/s?k=Google+Pixel+10+Pro&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 Pro ($999)</a>. It has the same cameras and the same Tensor G5 as the more expensive XL, so the compact body isn't a compromise — it's the smart default. Step up to the <a href="https://www.amazon.com/s?k=Google+Pixel+10+Pro+XL&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 Pro XL ($1,199)</a> only if you specifically want the 6.8" screen, the 5,200 mAh battery, and 45W charging — just know the charging claim ran a touch behind in independent testing.</p>
+  <p>For most buyers, the <a href="https://www.amazon.com/s?k=Google+Pixel+10&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 ($799)</a> is the value play, with the honest caveat that its new 5x telephoto came at the cost of smaller main and ultrawide sensors. On a tighter budget, the <a href="https://www.amazon.com/s?k=Google+Pixel+10a&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10a ($499)</a> is the clear budget pick — accepting that it runs the older Tensor G4. And if you want the cutting edge of folding phones, the <a href="https://www.amazon.com/s?k=Google+Pixel+10+Pro+Fold&tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Pixel 10 Pro Fold ($1,799)</a> is genuinely novel — IP68 and built-in magnetic charging in a foldable — with a durability data point worth weighing. Whichever way you go, the evidence, not the commission, is what put these in order.</p>
+
+  <footer>
+    <div class="disclosure">
+      <strong>Affiliate disclosure:</strong> Loiter Point earns commissions from qualifying purchases made through the Amazon links on this page (Amazon Associates tag: loiterpoint20-20). Those commissions never influence our rankings — the order of these picks is based on published independent evidence and verified owner reports, not on what pays us. We do not run our own lab, and every real-world figure above is attributed to the outlet that produced it.
+    </div>
+    <p class="copy">© 2026 Loiter Point — Consumer tech reviews built on real evidence.</p>
+    <p class="copy">Updated July 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>
