@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>Best QLED TVs (2026): Mini-LED Picks Ranked by the Evidence | Loiter Point</title>
+<meta name="description" content="The best QLED and mini-LED TVs of 2026, ranked strictly by independent testing and owner reports. Samsung QN90F, Hisense U8QG, TCL QM8K, Hisense U7 and TCL QM6K compared on brightness, contrast, sound and price." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --surface:#141418;
+    --surface2:#1c1c22;
+    --accent:#e8ff47;
+    --text:#e2e2e8;
+    --muted:#7a7a8a;
+    --border:#26262e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.65;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 80px;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  h1,h2,h3{font-family:'Inter',sans-serif;line-height:1.2;letter-spacing:-0.02em;}
+  h1{font-size:2.35rem;margin:0 0 12px;}
+  h2{font-size:1.6rem;margin:52px 0 16px;padding-top:12px;border-top:1px solid var(--border);}
+  h3{font-size:1.2rem;margin:0 0 4px;}
+  p{margin:0 0 16px;}
+  code,.mono{font-family:'IBM Plex Mono',monospace;}
+  .topnav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:'IBM Plex Mono',monospace;font-size:0.85rem;}
+  .topnav a{color:var(--muted);}
+  .brand{color:var(--accent);font-weight:600;letter-spacing:0.02em;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;color:var(--accent);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:14px;}
+  .updated{color:var(--muted);font-size:0.85rem;font-family:'IBM Plex Mono',monospace;margin-bottom:8px;}
+  .lede{font-size:1.12rem;color:#c9c9d4;}
+
+  .tldr{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:10px;
+    padding:22px 26px;
+    margin:28px 0 10px;
+  }
+  .tldr h2{border:none;margin:0 0 10px;padding:0;font-size:1.05rem;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);}
+  .tldr ul{margin:0 0 16px;padding-left:20px;}
+  .tldr li{margin-bottom:9px;}
+  .grabline{border-top:1px dashed var(--border);padding-top:14px;font-size:0.95rem;}
+  .grabline strong{color:var(--accent);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;font-size:0.78rem;letter-spacing:0.1em;display:block;margin-bottom:8px;}
+  .grabline a{display:inline-block;margin:0 4px 6px 0;}
+
+  .note{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:0.9rem;color:var(--muted);margin:20px 0;}
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px 26px 26px;
+    margin:22px 0;
+    position:relative;
+  }
+  .card-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:6px;}
+  .rank{
+    flex:0 0 auto;
+    background:var(--accent);
+    color:#0c0c0e;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:1.05rem;
+    width:44px;height:44px;
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .bestfor{color:var(--accent);font-size:0.82rem;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;}
+  .price{font-family:'IBM Plex Mono',monospace;color:#c9c9d4;font-size:0.95rem;margin:10px 0 4px;}
+  .price b{color:var(--text);}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.9rem;}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+  th{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);font-weight:500;}
+  td:first-child{color:var(--muted);}
+  .specgrid td:first-child{color:#c9c9d4;font-weight:500;}
+
+  .compare-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;}
+  .compare-wrap table{margin:0;min-width:720px;font-size:0.84rem;}
+  .compare-wrap th,.compare-wrap td{padding:10px 12px;}
+  .compare-wrap thead th{background:var(--surface2);color:var(--accent);}
+  .compare-wrap td:first-child{color:var(--text);font-weight:600;}
+
+  .buy{
+    display:inline-block;
+    background:var(--accent);
+    color:#0c0c0e;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:0.9rem;
+    padding:11px 20px;
+    border-radius:8px;
+    margin-top:14px;
+    letter-spacing:0.01em;
+  }
+  .buy:hover{text-decoration:none;filter:brightness(1.08);}
+  .buy .arrow{opacity:0.65;}
+
+  .nerd{
+    background:linear-gradient(180deg,var(--surface2),var(--surface));
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:22px 26px;
+    margin:26px 0;
+  }
+  .nerd h3{color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;}
+  .nerd p{font-size:0.95rem;color:#c9c9d4;}
+  .nerd p:last-child{margin-bottom:0;}
+
+  footer{border-top:1px solid var(--border);margin-top:60px;padding-top:24px;font-size:0.82rem;color:var(--muted);}
+  footer p{font-size:0.82rem;}
+  .disclosure{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin-bottom:18px;}
+  .tag{font-family:'IBM Plex Mono',monospace;color:var(--muted);font-size:0.78rem;}
+  @media(max-width:560px){
+    h1{font-size:1.85rem;}
+    .compare-wrap table{font-size:0.8rem;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav">
+    <a href="../index.html">&larr; Loiter Point</a>
+    <span class="brand">LOITER POINT</span>
+  </nav>
+
+  <div class="eyebrow">Buyer's Guide &middot; Home Theater</div>
+  <h1>Best QLED TVs (2026)</h1>
+  <div class="updated mono">Updated July 2026 &middot; 5 picks ranked by the evidence</div>
+  <p class="lede">Every TV here is a quantum-dot LCD (QLED), and four of the five pair those quantum dots with a mini-LED backlight for deeper contrast and higher brightness. We ranked them strictly on merit &mdash; picture, brightness, sound and value as reported by independent testing and owners &mdash; not on price. If you want the short version, it's right below.</p>
+
+  <div class="tldr">
+    <h2>TL;DR &mdash; the fast version</h2>
+    <ul>
+      <li><strong>Best overall &amp; best for bright rooms:</strong> the <a href="https://www.amazon.com/dp/B0DXMYSQJC?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Samsung QN90F</a> (~$1,499, 65") &mdash; unmatched glare control and processing, even if it isn't the brightest.</li>
+      <li><strong>Most brightness for the money:</strong> the <a href="https://www.amazon.com/dp/B0F1DV217B?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Hisense U8QG</a> (~$1,399, dips to ~$997 on sale) &mdash; class-leading measured brightness and genuinely good built-in sound.</li>
+      <li><strong>Best big-screen value:</strong> the <a href="https://www.amazon.com/dp/B0F53CZ4WT?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">TCL QM8K</a> (~$1,000&ndash;1,250, 65") &mdash; the one to buy at 85"+.</li>
+      <li><strong>On a budget:</strong> real mini-LED starts at the <a href="https://www.amazon.com/dp/B0DSRSTJ54?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">TCL QM6K</a> (55" ~$550) &mdash; RTINGS' best budget TV of 2026.</li>
+    </ul>
+    <div class="grabline">
+      <strong>Grab your pick:</strong>
+      <a href="https://www.amazon.com/dp/B0DXMYSQJC?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">#1 Samsung QN90F &mdash; ~$1,499</a> &middot;
+      <a href="https://www.amazon.com/dp/B0F1DV217B?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">#2 Hisense U8QG &mdash; ~$1,399</a> &middot;
+      <a href="https://www.amazon.com/dp/B0F53CZ4WT?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">#3 TCL QM8K &mdash; ~$1,000&ndash;1,250</a> &middot;
+      <a href="https://www.amazon.com/dp/B0F1DWQKXC?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">#4 Hisense U7 &mdash; ~$1,000&ndash;1,300</a> &middot;
+      <a href="https://www.amazon.com/dp/B0DSRSTJ54?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">#5 TCL QM6K &mdash; 55" ~$550</a>
+    </div>
+  </div>
+
+  <p class="note">One thing to set expectations: TV prices swing a lot around sales events (Prime Day, Black Friday, model-year transitions). Every price below is approximate &mdash; treat "~$X" as a recent street price, not a fixed number, and check the live listing before you buy.</p>
+
+  <h2>The picks, ranked</h2>
+
+  <!-- PICK 1 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="rank">#1</div>
+      <div>
+        <h3>Samsung QN90F (65QN90F)</h3>
+        <div class="bestfor">Best overall &middot; best for bright rooms</div>
+      </div>
+    </div>
+    <p class="price">Street <b>~$1,499</b> for 65" &middot; Samsung MSRP $2,499.99</p>
+    <p>The QN90F is a VA-panel Neo QLED with a wide-viewing-angle layer, and it wins here not on raw output but on execution. Independent reviews (Tom's Guide) single out best-in-class reflection handling from Samsung's Glare-Free matte coating, strong picture processing, and off-angle viewing that's good for an LCD. Reviewers are also candid that its reported ~2,000-nit peak trails the Hisense U8QG and TCL QM8K &mdash; so if pure brightness is your only metric, look at #2. For a mixed bright living room, though, glare control and processing matter more than a bigger nit number, and that's why it tops the list.</p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated (Samsung)</th><th>Est. real-world / reported</th></tr></thead>
+      <tbody>
+        <tr><td>Peak brightness</td><td>Neo Quantum HDR+ (no nit figure published)</td><td>~2,000 nits, 10% window (independent reviews)</td></tr>
+        <tr><td>Panel / backlight</td><td>VA-type w/ wide-angle layer, mini-LED</td><td>Good off-angle for an LCD; strong contrast</td></tr>
+        <tr><td>Reflections</td><td>Glare-Free matte anti-reflection</td><td>Reported best-in-class glare handling</td></tr>
+        <tr><td>Refresh / gaming</td><td>4K 165Hz across 4&times; HDMI 2.1</td><td>Full-bandwidth 2.1 on all four ports</td></tr>
+        <tr><td>Processing / audio</td><td>Vision AI processor; OTS+ w/ Dolby Atmos</td><td>Reported as a group leader in processing</td></tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin:8px 0 0;">Reported (Tom's Guide): this is the last of Samsung's QN90 Neo QLED line, with the flagship reportedly shifting to "Micro RGB." Treat that as reported, not confirmed &mdash; it doesn't change how good the QN90F is today.</p>
+    <a class="buy" href="https://www.amazon.com/dp/B0DXMYSQJC?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon <span class="arrow">&rarr;</span></a>
+  </div>
+
+  <!-- PICK 2 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="rank">#2</div>
+      <div>
+        <h3>Hisense U8QG (65U8QG)</h3>
+        <div class="bestfor">Best brightness for the money</div>
+      </div>
+    </div>
+    <p class="price">Street <b>~$1,399</b> for 65" &middot; has dropped to ~$997 on sale &middot; original ~$2,199.99</p>
+    <p>If you want the most measured brightness per dollar, this is it. Hisense's marketing rates it up to 5,000 nits; independent measurement lands around 3,384 nits on a 10% window (Sound &amp; Vision / Tom's Guide) with roughly 800 nits full-screen &mdash; still class-leading, just short of the headline claim (see the nerd-box on why rated nits overstate). It backs that with a 4.1.2-channel, 72W Atmos speaker system that reviewers call unusually good for a built-in, plus a USB-C input with DisplayPort. AVSForum named it a 2025 "Top Choice." The trade-off owners note: some blooming in extreme high-contrast scenes.</p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated (Hisense)</th><th>Est. real-world / reported</th></tr></thead>
+      <tbody>
+        <tr><td>Peak brightness</td><td>Up to 5,000 nits</td><td>~3,384 nits 10% window; ~800 nits full-screen (S&amp;V / Tom's Guide)</td></tr>
+        <tr><td>Local dimming</td><td>Up to ~5,000 zones ("LD5600," size-dependent)</td><td>Some blooming reported in extreme contrast</td></tr>
+        <tr><td>Refresh / VRR</td><td>Native 165Hz, VRR up to 288</td><td>Reported as excellent for gaming</td></tr>
+        <tr><td>Audio</td><td>4.1.2-ch, 72W Dolby Atmos</td><td>Reported unusually good built-in sound</td></tr>
+        <tr><td>HDR / extras</td><td>HDR10+, Dolby Vision IQ, IMAX Enhanced; USB-C w/ DisplayPort</td><td>AVSForum 2025 "Top Choice"</td></tr>
+      </tbody>
+    </table>
+    <a class="buy" href="https://www.amazon.com/dp/B0F1DV217B?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon <span class="arrow">&rarr;</span></a>
+  </div>
+
+  <!-- PICK 3 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="rank">#3</div>
+      <div>
+        <h3>TCL QM8K (65QM8K)</h3>
+        <div class="bestfor">Best big-screen value</div>
+      </div>
+    </div>
+    <p class="price">Street <b>~$1,000&ndash;1,250</b> for 65" &middot; launch MSRP ~$1,499 &middot; scales to 85"+</p>
+    <p>The QM8K is a QD-Mini LED that reviewers report as very bright with strong contrast and noticeably reduced blooming versus prior TCL generations, helped by its anti-halo "Zero Halo" tech and Bang &amp; Olufsen-tuned audio. TCL rates the top sizes up to ~5,000 nits, but measured brightness varies by size, so we're not going to pin a single 65" number to it &mdash; independent figures differ across the lineup. Where it separates from the pack is on big panels: at 85 inches and up, the QM8K is the standout value in this group.</p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated (TCL)</th><th>Est. real-world / reported</th></tr></thead>
+      <tbody>
+        <tr><td>Peak brightness</td><td>Up to ~5,000 nits (top sizes)</td><td>Very high HDR brightness reported; measured nits vary by size</td></tr>
+        <tr><td>Panel / backlight</td><td>QD-Mini LED, "Zero Halo" anti-halo</td><td>Strong contrast, reduced blooming vs prior TCLs</td></tr>
+        <tr><td>Refresh / VRR</td><td>120&ndash;144Hz with VRR</td><td>Solid gaming feature set (TechRadar)</td></tr>
+        <tr><td>Audio / OS</td><td>Bang &amp; Olufsen audio; Google TV</td><td>Above-average built-in sound reported</td></tr>
+        <tr><td>Sizing</td><td>Scales to 85"+</td><td>Best value in the group at very large sizes</td></tr>
+      </tbody>
+    </table>
+    <a class="buy" href="https://www.amazon.com/dp/B0F53CZ4WT?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon <span class="arrow">&rarr;</span></a>
+  </div>
+
+  <!-- NERD BOX -->
+  <div class="nerd">
+    <h3>Nerd-box: QLED vs mini-LED vs OLED, and why "5,000 nits" isn't 5,000 nits</h3>
+    <p><b>QLED</b> is an LCD TV with a quantum-dot layer for richer, more saturated color. It still needs a backlight behind the LCD. <b>Mini-LED</b> upgrades that backlight to thousands of tiny LEDs grouped into <b>dimming zones</b> &mdash; independently controlled patches that dim or brighten to deepen black levels and boost highlights. More zones means finer control and less "blooming" (that faint halo around bright objects on a dark background). <b>OLED</b> is a different technology entirely: every pixel makes its own light, so blacks are perfect and there are no zones &mdash; but OLED generally can't hit the raw brightness these mini-LEDs can, which is why QLED/mini-LED wins in bright rooms.</p>
+    <p><b>About "nits."</b> A nit is a unit of brightness. The catch: a rated peak figure is usually a best-case, momentary flash on a tiny window (say 2&ndash;10% of the screen). Real content rarely lights up just a sliver, so full-screen brightness is far lower &mdash; the U8QG's ~3,384-nit 10%-window measurement drops to ~800 nits full-screen. That's why we split every spec grid into <b>rated</b> (the manufacturer's claim) and <b>est. real-world / reported</b> (what independent reviewers actually measured). When you see "up to 5,000 nits," read it as a ceiling, not a promise.</p>
+  </div>
+
+  <!-- PICK 4 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="rank">#4</div>
+      <div>
+        <h3>Hisense U7 (65U75QG)</h3>
+        <div class="bestfor">Best mid-range</div>
+      </div>
+    </div>
+    <p class="price">Street <b>~$1,000&ndash;1,300</b> for 65"</p>
+    <p>The U7 is the sensible step down from the U8QG: still a native-165Hz mini-LED with VRR up to 288 and up to ~3,000 dimming zones, which makes it a strong gaming and sports set. Hisense rates it up to 3,000 nits, but expect real-world peak to land below that &mdash; on mid-tier mini-LEDs, reviewers commonly report roughly half to two-thirds of the rated figure, and independent measurements vary, so we won't quote a single number. Against its bigger sibling it's a clear step down in both peak brightness and sound (2.1.2 vs 4.1.2 channels). If the U8QG is out of budget, this is the one.</p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated (Hisense)</th><th>Est. real-world / reported</th></tr></thead>
+      <tbody>
+        <tr><td>Peak brightness</td><td>Up to 3,000 nits</td><td>Reported below rated; independent measurements vary</td></tr>
+        <tr><td>Local dimming</td><td>Up to ~3,000 zones</td><td>Good contrast for the price</td></tr>
+        <tr><td>Refresh / VRR</td><td>Native 165Hz, VRR up to 288</td><td>Reported strong for gaming &amp; sports</td></tr>
+        <tr><td>Audio</td><td>2.1.2-ch Dolby Atmos</td><td>A step below the U8QG's sound</td></tr>
+        <tr><td>HDR / extras</td><td>HDR10+, Dolby Vision IQ, IMAX Enhanced</td><td>Full HDR format support at mid price</td></tr>
+      </tbody>
+    </table>
+    <a class="buy" href="https://www.amazon.com/dp/B0F1DWQKXC?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon <span class="arrow">&rarr;</span></a>
+  </div>
+
+  <!-- PICK 5 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="rank">#5</div>
+      <div>
+        <h3>TCL QM6K (65QM6K)</h3>
+        <div class="bestfor">Best budget</div>
+      </div>
+    </div>
+    <p class="price">55" <b>~$550</b> &middot; 65" ~$700&ndash;800</p>
+    <p>RTINGS named the QM6K the best budget TV of 2026, and the appeal is simple: it's a genuine QD-Mini LED at an entry price, with 120&ndash;144Hz gaming support, two HDMI 2.1 ports, Onkyo-tuned audio and Google TV. The compromises are exactly what you'd expect &mdash; fewer dimming zones (hundreds, not thousands) and lower peak brightness than the pricier picks &mdash; but for the money, nothing here beats it on value. If you want mini-LED contrast without spending four figures, start here.</p>
+    <table class="specgrid">
+      <thead><tr><th>Spec</th><th>Rated (TCL)</th><th>Est. real-world / reported</th></tr></thead>
+      <tbody>
+        <tr><td>Backlight</td><td>QD-Mini LED, hundreds of zones</td><td>Genuine mini-LED at entry price (RTINGS)</td></tr>
+        <tr><td>Peak brightness</td><td>Not a headline spec at this tier</td><td>Dimmer than pricier picks; measurements vary</td></tr>
+        <tr><td>Refresh</td><td>120&ndash;144Hz, 2&times; HDMI 2.1</td><td>Good gaming value for the price</td></tr>
+        <tr><td>Audio / OS</td><td>Onkyo audio; Google TV</td><td>Solid for a budget set</td></tr>
+        <tr><td>Verdict</td><td>&mdash;</td><td>RTINGS "best budget TV of 2026"</td></tr>
+      </tbody>
+    </table>
+    <a class="buy" href="https://www.amazon.com/dp/B0DSRSTJ54?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Check price on Amazon <span class="arrow">&rarr;</span></a>
+  </div>
+
+  <h2>All five, side by side</h2>
+  <div class="compare-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>TV</th>
+          <th>Approx. price (65")</th>
+          <th>Sizes</th>
+          <th>Panel / backlight</th>
+          <th>Refresh / VRR</th>
+          <th>Rated nits</th>
+          <th>Est. real-world / reported nits</th>
+          <th>Audio</th>
+          <th>HDMI 2.1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#1 Samsung QN90F</td>
+          <td>~$1,499</td>
+          <td>Multiple; 65" reviewed</td>
+          <td>VA + wide-angle layer, mini-LED</td>
+          <td>165Hz</td>
+          <td>Not published</td>
+          <td>~2,000 (10% window)</td>
+          <td>OTS+ Dolby Atmos</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>#2 Hisense U8QG</td>
+          <td>~$1,399 (to ~$997 on sale)</td>
+          <td>Multiple</td>
+          <td>QD mini-LED, ~5,000 zones</td>
+          <td>165Hz / VRR 288</td>
+          <td>Up to 5,000</td>
+          <td>~3,384 (10%); ~800 full-screen</td>
+          <td>4.1.2, 72W Atmos</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>#3 TCL QM8K</td>
+          <td>~$1,000&ndash;1,250</td>
+          <td>Up to 85"+</td>
+          <td>QD mini-LED, Zero Halo</td>
+          <td>120&ndash;144Hz / VRR</td>
+          <td>Up to ~5,000 (top sizes)</td>
+          <td>Very high; varies by size</td>
+          <td>Bang &amp; Olufsen</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>#4 Hisense U7</td>
+          <td>~$1,000&ndash;1,300</td>
+          <td>Multiple</td>
+          <td>QD mini-LED, ~3,000 zones</td>
+          <td>165Hz / VRR 288</td>
+          <td>Up to 3,000</td>
+          <td>Below rated; varies</td>
+          <td>2.1.2 Atmos</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>#5 TCL QM6K</td>
+          <td>~$700&ndash;800 (55" ~$550)</td>
+          <td>Multiple incl. 55"</td>
+          <td>QD mini-LED, hundreds of zones</td>
+          <td>120&ndash;144Hz</td>
+          <td>Not a headline spec</td>
+          <td>Dimmer than above; varies</td>
+          <td>Onkyo</td>
+          <td>2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Nit figures in the "rated" column are manufacturer claims; the "est. real-world / reported" column reflects published independent measurement or reviewer reporting. Where a single credible measured number isn't available, we say measurements vary rather than invent one.</p>
+
+  <h2>How We Evaluate QLED TVs</h2>
+  <p>Loiter Point does not run a test lab. We don't own light meters, we don't put units on a bench, and we'd never claim a nit reading as our own. What we do instead is synthesize the best published independent testing with verified owner reports, then rank on the balance of that evidence.</p>
+  <p>For this guide that means cross-referencing measured brightness, contrast, blooming, input lag and sound quality from <b>RTINGS</b> (best mini-LED and best budget picks), <b>Tom's Guide</b> (QN90F and U8QG reviews, best-Samsung and best-budget roundups), <b>Sound &amp; Vision</b> (65U8QG review), <b>AVSForum</b> (U8QG review) and <b>TechRadar</b> (QM8), alongside patterns in owner feedback. When those sources disagree &mdash; or when a rated figure and a measured figure diverge, as they routinely do on peak brightness &mdash; we flag it rather than paper over it. Every real-world number here is attributed to that published testing or to owner reports and labeled "est. real-world" or "reported," never presented as our own bench result. Where the evidence is thin, we tell you it's thin.</p>
+
+  <h2>Bottom Line</h2>
+  <p>Buy the <a href="https://www.amazon.com/dp/B0DXMYSQJC?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Samsung QN90F</a> if you want the best all-rounder and the best bright-room set, and you value glare control and processing over a bigger nit number. Buy the <a href="https://www.amazon.com/dp/B0F1DV217B?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Hisense U8QG</a> if you want the most measured brightness and the best built-in sound per dollar &mdash; especially if you can catch it on sale. Go <a href="https://www.amazon.com/dp/B0F53CZ4WT?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">TCL QM8K</a> for a big 85"+ screen, step down to the <a href="https://www.amazon.com/dp/B0F1DWQKXC?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">Hisense U7</a> if the U8QG stretches your budget, and grab the <a href="https://www.amazon.com/dp/B0DSRSTJ54?tag=loiterpoint20-20" rel="sponsored nofollow" target="_blank">TCL QM6K</a> if you want real mini-LED for the least money. Whatever you pick, wait for a sale if you can &mdash; on these models it can be the difference of several hundred dollars.</p>
+
+  <footer>
+    <div class="disclosure">
+      <b>Affiliate disclosure.</b> Loiter Point participates in the Amazon Associates program (tag: <span class="tag">loiterpoint20-20</span>). If you buy through links on this page, we may earn a commission at no extra cost to you. It never changes our rankings &mdash; picks are ordered by evidence, not by payout.
+    </div>
+    <p>Prices and availability are approximate and change frequently, especially around sales events. Verify the current price on the retailer's listing before purchasing.</p>
+    <p>&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</p>
+  </footer>
+
+</div>
+</body>
+</html>
