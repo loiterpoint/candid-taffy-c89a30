@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Best TVs Under $1,000 (2026) — Loiter Point</title>
+<meta name="description" content="The best TVs under $1,000 in 2026, ranked on published independent measurements. Mini-LED dominates this band; here are the picks that earn it." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0c0c0e;
+    --surface: #141418;
+    --surface2: #1c1c22;
+    --accent: #e8ff47;
+    --text: #e2e2e8;
+    --muted: #7a7a8a;
+    --border: #26262e;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .mono, .badge, .specs-grid dt, table th {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Nav */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(12,12,14,0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text);
+  }
+  .nav-brand span { color: var(--accent); }
+  .nav a.back {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .nav a.back:hover { color: var(--accent); }
+
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
+
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 40px 0 10px;
+  }
+  h1 {
+    font-size: 40px;
+    line-height: 1.12;
+    margin: 0 0 14px;
+    letter-spacing: -0.5px;
+  }
+  .meta-line {
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+  .meta-line .updated { color: var(--accent); }
+
+  h2 {
+    font-size: 26px;
+    margin: 52px 0 16px;
+    letter-spacing: -0.3px;
+  }
+  h2 .rule { color: var(--muted); }
+
+  p { margin: 0 0 16px; }
+
+  /* Short version box */
+  .shortbox {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin: 28px 0;
+  }
+  .shortbox h2 { margin: 0 0 12px; font-size: 20px; }
+  .shortbox ul { margin: 0; padding-left: 20px; }
+  .shortbox li { margin-bottom: 10px; }
+  .grab {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border);
+    font-size: 15px;
+  }
+  .grab strong { font-family: 'IBM Plex Mono', monospace; color: var(--accent); }
+  .grab a { white-space: nowrap; }
+
+  /* Pick cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 26px 22px;
+    margin: 26px 0;
+    position: relative;
+  }
+  .card-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 6px;
+  }
+  .badge {
+    flex: 0 0 auto;
+    background: var(--accent);
+    color: #0c0c0e;
+    font-weight: 700;
+    font-size: 18px;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-head .role {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 2px 0 4px;
+  }
+  .card-head h3 { margin: 0; font-size: 23px; line-height: 1.2; }
+  .price {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--text);
+    margin: 8px 0 0;
+  }
+  .price .muted { color: var(--muted); }
+
+  /* Specs grid */
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 0;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin: 18px 0 18px;
+    overflow: hidden;
+  }
+  .specs-grid dt {
+    padding: 10px 14px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,0,0,0.15);
+  }
+  .specs-grid dd {
+    margin: 0;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .specs-grid dt:last-of-type, .specs-grid dd:last-of-type { border-bottom: none; }
+  .tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(232,255,71,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(232,255,71,0.3);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* pros cons */
+  .procons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0;
+  }
+  .procons .col {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .procons h4 {
+    margin: 0 0 8px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .procons .pros h4 { color: var(--accent); }
+  .procons .cons h4 { color: #ff8a8a; }
+  .procons ul { margin: 0; padding-left: 18px; font-size: 14px; }
+  .procons li { margin-bottom: 6px; }
+
+  /* buy button */
+  .buy {
+    display: inline-block;
+    background: var(--accent);
+    color: #0c0c0e !important;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 11px 20px;
+    border-radius: 8px;
+    letter-spacing: 0.3px;
+  }
+  .buy:hover { text-decoration: none; filter: brightness(1.08); }
+
+  /* nerd box */
+  .nerdbox {
+    background: linear-gradient(180deg, rgba(232,255,71,0.05), rgba(20,20,24,0.4));
+    border: 1px solid rgba(232,255,71,0.35);
+    border-radius: 14px;
+    padding: 24px 26px;
+    margin: 34px 0;
+  }
+  .nerdbox .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .nerdbox h3 { margin: 0 0 12px; font-size: 20px; }
+  .nerdbox p:last-child { margin-bottom: 0; }
+
+  /* table */
+  .table-scroll { overflow-x: auto; margin: 22px 0; border-radius: 12px; border: 1px solid var(--border); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    min-width: 640px;
+  }
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  thead th {
+    background: var(--surface2);
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(odd) { background: rgba(255,255,255,0.015); }
+  td .pick { font-family: 'IBM Plex Mono', monospace; color: var(--text); font-weight: 600; }
+
+  /* bottom line */
+  .usecase {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 6px 22px;
+    margin: 22px 0;
+  }
+  .usecase .row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .usecase .row:last-child { border-bottom: none; }
+  .usecase .who {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+  }
+  .usecase .what { font-size: 15px; }
+  .usecase .what strong { color: var(--text); }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+    padding: 30px 20px 50px;
+  }
+  .footer-inner { max-width: 820px; margin: 0 auto; }
+  .disclosure {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .copyright {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 620px) {
+    h1 { font-size: 30px; }
+    .specs-grid { grid-template-columns: 130px 1fr; }
+    .procons { grid-template-columns: 1fr; }
+    .usecase .row { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">LOITER<span>·</span>POINT</div>
+      <a class="back" href="../index.html">&larr; All guides</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <div class="kicker">Buying Guide · TVs</div>
+    <h1>Best TVs Under $1,000 (2026)</h1>
+    <div class="meta-line">
+      <span class="updated">Updated July 2026</span> &nbsp;·&nbsp; Ranked on published independent measurements, not price.
+    </div>
+
+    <!-- SHORT VERSION -->
+    <div class="shortbox">
+      <h2>The Short Version</h2>
+      <ul>
+        <li><strong>Best overall &amp; brightest:</strong> The <a href="https://www.amazon.com/s?k=Hisense+U8QG+55&tag=loiterpoint20-20" rel="sponsored nofollow">Hisense U8QG</a> — RTINGS calls it the best Hisense they've tested and measured HDR peak brightness in the ~3,900&ndash;4,000+ nit range. Under $1,000 applies to the 55-inch.</li>
+        <li><strong>Best value mini-LED:</strong> The <a href="https://www.amazon.com/s?k=TCL+QM7K+65&tag=loiterpoint20-20" rel="sponsored nofollow">TCL QM7K (65")</a> — roughly 2,800 dimming zones and ~2,400+ measured nits for a lot less money.</li>
+        <li><strong>Best smart platform / gaming hub:</strong> The <a href="https://www.amazon.com/s?k=Samsung+QN70F+Neo+QLED&tag=loiterpoint20-20" rel="sponsored nofollow">Samsung QN70F Neo QLED</a> — Tizen, Samsung Gaming Hub, ~2,000-nit class. (No Dolby Vision.)</li>
+        <li><strong>Best OLED under $1,000:</strong> The <a href="https://www.amazon.com/s?k=LG+C4+OLED+42&tag=loiterpoint20-20" rel="sponsored nofollow">LG C-series OLED (42")</a> — perfect blacks and elite gaming, but only at small sizes in this budget.</li>
+      </ul>
+      <div class="grab">
+        <strong>Grab your pick:</strong>
+        <a href="https://www.amazon.com/s?k=Hisense+U8QG+55&tag=loiterpoint20-20" rel="sponsored nofollow">Hisense U8QG 55" (~$999)</a> &nbsp;·&nbsp;
+        <a href="https://www.amazon.com/s?k=TCL+QM7K+65&tag=loiterpoint20-20" rel="sponsored nofollow">TCL QM7K 65" (~$800&ndash;$999)</a> &nbsp;·&nbsp;
+        <a href="https://www.amazon.com/s?k=Samsung+QN70F+Neo+QLED&tag=loiterpoint20-20" rel="sponsored nofollow">Samsung QN70F 55&ndash;65" (~$800&ndash;$1,000)</a> &nbsp;·&nbsp;
+        <a href="https://www.amazon.com/s?k=TCL+QM6K+65&tag=loiterpoint20-20" rel="sponsored nofollow">TCL QM6K 65" (~$700)</a> &nbsp;·&nbsp;
+        <a href="https://www.amazon.com/s?k=LG+C4+OLED+42&tag=loiterpoint20-20" rel="sponsored nofollow">LG C-series OLED 42" (~$900&ndash;$1,000)</a>
+      </div>
+    </div>
+
+    <p>Here is the honest state of the sub-$1,000 TV market in 2026: <strong>mini-LED won it.</strong> A few years ago you could squeeze an entry OLED into this band at 55 inches. That has largely stopped. Budget OLED at big sizes has drifted above $1,000, leaving mini-LED &mdash; QLED panels with hundreds or thousands of independently dimmable backlight zones &mdash; as the dominant value technology. OLED still shows up under a grand, but only at smaller and/or outgoing-generation panels (think 42&ndash;48 inch). We'll be blunt about which size each price refers to, because "under $1,000" almost always means a specific size or a sale.</p>
+
+    <!-- HOW WE EVALUATE -->
+    <h2>How We Evaluate</h2>
+    <p>Loiter Point does not run a TV lab. We do not own a test bench, a colorimeter, or a darkroom, and we will never pretend otherwise. What we do is synthesize <strong>published independent measurements</strong> &mdash; the RTINGS-style labs that measure peak brightness in nits, contrast, input lag, color volume and dimming behavior under controlled conditions &mdash; alongside hands-on impressions from Tom's Guide, TechRadar and Digital Trends, and verified owner reports about reliability and real-room performance.</p>
+    <p>Every performance figure in this guide is attributed to the outlet that produced it. When a number is a lab measurement we label it "RTINGS-measured"; when it comes from other hands-on testing we say "independent testing reports"; when it is a real-world estimate or an owner observation we mark it as such. Rankings are ordered on that evidence, not on price and not on affiliate payout. Where reviewers disagree, or where the public data is thin, we say so out loud rather than papering over it.</p>
+
+    <!-- PICK 1 -->
+    <div class="card" id="pick1">
+      <div class="card-head">
+        <div class="badge">#1</div>
+        <div>
+          <div class="role">Best Overall · Brightest</div>
+          <h3>Hisense U8QG</h3>
+          <p class="price">Around <strong>$999 for the 55-inch</strong> <span class="muted">(launched ~$1,499). The 65-inch runs ~$1,299&ndash;$1,399 and only dips under $1,000 on sale.</span></p>
+        </div>
+      </div>
+
+      <dl class="specs-grid">
+        <dt>Panel type</dt><dd>QLED mini-LED</dd>
+        <dt>Peak brightness</dt><dd>~3,900&ndash;4,000+ nits (HDR) <span class="tag">RTINGS-measured</span></dd>
+        <dt>Dimming zones</dt><dd>Many-zone full-array local dimming (strong control) <span class="tag">reported</span></dd>
+        <dt>Refresh · HDMI 2.1</dt><dd>Native 144Hz (up to 165Hz) · multiple HDMI 2.1 ports</dd>
+        <dt>Standout</dt><dd>Class-leading brightness for bright rooms &amp; HDR</dd>
+      </dl>
+
+      <p>This is the one to beat. RTINGS calls the U8QG the best Hisense TV they've tested, landing an overall score around 8.2, and their measurements put extreme HDR peak brightness in the ~3,900&ndash;4,000+ nit range &mdash; numbers that were flagship-only territory not long ago. In practical terms that means HDR highlights that genuinely punch, and a picture that holds up in a sun-filled living room where dimmer sets wash out.</p>
+      <p>The rest of the sheet backs up the headline. A native 144Hz panel (up to 165Hz) with multiple HDMI 2.1 ports covers modern consoles and PCs, and reviewers consistently praise the strong many-zone local dimming for keeping black levels respectable next to all that brightness. It is not a perfect-black OLED &mdash; you will spot occasional blooming around bright objects on dark backgrounds &mdash; but for a bright-room HDR machine at this price, nothing here competes.</p>
+      <p>The honest catch is the size math: the sub-$1,000 price is the 55-inch. Want 65 inches? Budget closer to $1,300 outside of a sale.</p>
+
+      <div class="procons">
+        <div class="col pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Extreme measured brightness (~3,900&ndash;4,000+ nits, RTINGS)</li>
+            <li>Best-in-class for bright rooms and HDR</li>
+            <li>144Hz&ndash;165Hz, multiple HDMI 2.1 ports</li>
+          </ul>
+        </div>
+        <div class="col cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Under $1,000 only at 55"; 65" costs notably more</li>
+            <li>Some blooming vs OLED perfect blacks</li>
+            <li>Sale-dependent at the lowest prices</li>
+          </ul>
+        </div>
+      </div>
+      <a class="buy" href="https://www.amazon.com/s?k=Hisense+U8QG+55&tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+    </div>
+
+    <!-- PICK 2 -->
+    <div class="card" id="pick2">
+      <div class="card-head">
+        <div class="badge">#2</div>
+        <div>
+          <div class="role">Best Value Mini-LED</div>
+          <h3>TCL QM7K</h3>
+          <p class="price">Around <strong>$800&ndash;$999 for the 65-inch</strong></p>
+        </div>
+      </div>
+
+      <dl class="specs-grid">
+        <dt>Panel type</dt><dd>QLED mini-LED</dd>
+        <dt>Peak brightness</dt><dd>~2,400+ nits <span class="tag">independent testing</span></dd>
+        <dt>Dimming zones</dt><dd>~2,800 local dimming zones <span class="tag">reported</span></dd>
+        <dt>Refresh · HDMI 2.1</dt><dd>144Hz with AMD FreeSync Premium Pro · HDMI 2.1</dd>
+        <dt>Standout</dt><dd>Best features-per-dollar in the band</dd>
+      </dl>
+
+      <p>If the Hisense is the brightness king, the QM7K is the value king. It pairs roughly 2,800 local dimming zones with a 144Hz panel and AMD FreeSync Premium Pro, and independent testing reports peak brightness north of ~2,400 nits with very low, near-imperceptible input lag. That is a staggering feature set for a 65-inch that regularly sells between $800 and $999.</p>
+      <p>Yes, it gives up peak brightness to the U8QG &mdash; roughly 2,400 nits versus nearly 4,000 &mdash; so in a genuinely bright room the Hisense still pulls ahead. But 2,400 nits is plenty punchy for most living rooms, and the dense zone count keeps blooming well controlled. For the money, this is the mini-LED that makes the fewest compromises.</p>
+      <p>One clarification worth stating: TCL's newer 2026 QM7L and QM8L exist, but they launch well above $1,000. The 2025 QM7K is the value sweet spot that's still widely sold, and it's the one we're recommending here.</p>
+
+      <div class="procons">
+        <div class="col pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>~2,800 dimming zones controls blooming well</li>
+            <li>144Hz + FreeSync Premium Pro, very low input lag</li>
+            <li>65-inch for as little as ~$800</li>
+          </ul>
+        </div>
+        <div class="col cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Dimmer than the U8QG (~2,400 vs ~4,000 nits)</li>
+            <li>Newer QM7L/QM8L cost much more</li>
+          </ul>
+        </div>
+      </div>
+      <a class="buy" href="https://www.amazon.com/s?k=TCL+QM7K+65&tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+    </div>
+
+    <!-- PICK 3 -->
+    <div class="card" id="pick3">
+      <div class="card-head">
+        <div class="badge">#3</div>
+        <div>
+          <div class="role">Best Smart Platform · Gaming Hub</div>
+          <h3>Samsung QN70F Neo QLED</h3>
+          <p class="price">Around <strong>$800&ndash;$1,000 at 55&ndash;65 inches</strong></p>
+        </div>
+      </div>
+
+      <dl class="specs-grid">
+        <dt>Panel type</dt><dd>Neo QLED (mini-LED)</dd>
+        <dt>Peak brightness</dt><dd>~2,000-nit class <span class="tag">independent testing</span></dd>
+        <dt>Dimming zones</dt><dd>Full-array local dimming <span class="tag">reported</span></dd>
+        <dt>Refresh · HDMI 2.1</dt><dd>4K/120&ndash;144Hz gaming · HDMI 2.1</dd>
+        <dt>Standout</dt><dd>Tizen OS + Samsung Gaming Hub (cloud gaming)</dd>
+      </dl>
+
+      <p>Pick the QN70F if the software matters as much as the panel. This is a mini-LED Neo QLED with independent testing putting it in the ~2,000-nit class, and Samsung's Tizen platform brings the Samsung Gaming Hub &mdash; including cloud gaming without a console &mdash; plus the broadest, most polished app ecosystem of any pick here. It supports 4K/120&ndash;144Hz gaming, so it's no slouch for a PS5 or Series X either.</p>
+      <p>Two honest tradeoffs. First, at roughly 2,000 nits it is dimmer than both the Hisense and the TCL, so it's a step behind them for pure bright-room HDR impact. Second &mdash; and this is the one to weigh &mdash; Samsung omits Dolby Vision entirely. It handles HDR10+ instead, but a lot of streaming and disc content is mastered for Dolby Vision, and on this set you simply won't get it. If you're deep in the Samsung ecosystem, that may not bother you; if Dolby Vision is a priority, look at the picks above.</p>
+
+      <div class="procons">
+        <div class="col pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Best smart platform: Tizen + Gaming Hub, cloud gaming</li>
+            <li>4K/120&ndash;144Hz gaming support</li>
+            <li>Polished Samsung app ecosystem</li>
+          </ul>
+        </div>
+        <div class="col cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>No Dolby Vision (HDR10+ only) &mdash; a real tradeoff</li>
+            <li>Dimmer (~2,000 nits) than Hisense/TCL</li>
+          </ul>
+        </div>
+      </div>
+      <a class="buy" href="https://www.amazon.com/s?k=Samsung+QN70F+Neo+QLED&tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+    </div>
+
+    <!-- PICK 4 -->
+    <div class="card" id="pick4">
+      <div class="card-head">
+        <div class="badge">#4</div>
+        <div>
+          <div class="role">Best Budget · Biggest Screen Per Dollar</div>
+          <h3>TCL QM6K</h3>
+          <p class="price">Around <strong>$528 (55") · $700 (65")</strong> <span class="muted">· 75" sometimes dips under $1,000</span></p>
+        </div>
+      </div>
+
+      <dl class="specs-grid">
+        <dt>Panel type</dt><dd>QLED mini-LED</dd>
+        <dt>Peak brightness</dt><dd>Solid for the price; below QM7K/U8QG <span class="tag">est. real-world</span></dd>
+        <dt>Dimming zones</dt><dd>Fewer zones than QM7K <span class="tag">reported</span></dd>
+        <dt>Refresh · HDMI 2.1</dt><dd>144Hz · HDMI 2.1</dd>
+        <dt>Standout</dt><dd>Flagship-adjacent picture for the least money</dd>
+      </dl>
+
+      <p>The QM6K exists to answer one question: how big a good mini-LED can you buy on a tight budget? The answer is "surprisingly big." The 55-inch has sold around $528, the 65-inch around $700, and the 75-inch sometimes slips under $1,000 &mdash; all while keeping mini-LED backlighting, 144Hz and solid local dimming.</p>
+      <p>You are paying less for a reason: reviewers note it has fewer dimming zones and lower peak brightness than the QM7K and the U8QG, so blooming is a little more visible and HDR highlights don't pop as hard. But the fundamentals are here, and for a big-screen-on-a-budget buyer, nothing else gives you this much competent panel for the money.</p>
+
+      <div class="procons">
+        <div class="col pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Astonishing screen-size-per-dollar</li>
+            <li>Mini-LED + 144Hz + HDMI 2.1 at budget prices</li>
+            <li>75" can land under $1,000</li>
+          </ul>
+        </div>
+        <div class="col cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Fewer zones, more visible blooming than QM7K</li>
+            <li>Lower peak brightness than pricier picks</li>
+          </ul>
+        </div>
+      </div>
+      <a class="buy" href="https://www.amazon.com/s?k=TCL+QM6K+65&tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+    </div>
+
+    <!-- PICK 5 -->
+    <div class="card" id="pick5">
+      <div class="card-head">
+        <div class="badge">#5</div>
+        <div>
+          <div class="role">Best OLED Under $1,000 · Small-Room / Gaming</div>
+          <h3>LG C-series OLED (C4 / C5)</h3>
+          <p class="price">Around <strong>$900&ndash;$1,000 at 42" (sometimes 48")</strong> <span class="muted">· often on sale</span></p>
+        </div>
+      </div>
+
+      <dl class="specs-grid">
+        <dt>Panel type</dt><dd>OLED (per-pixel emissive)</dd>
+        <dt>Peak brightness</dt><dd>Much dimmer than mini-LED <span class="tag">RTINGS-measured</span></dd>
+        <dt>Contrast</dt><dd>Perfect blacks, per-pixel control <span class="tag">RTINGS-measured</span></dd>
+        <dt>Refresh · HDMI 2.1</dt><dd>144Hz · G-Sync + FreeSync · 4&times; HDMI 2.1</dd>
+        <dt>Standout</dt><dd>Perfect contrast + elite gaming in a small panel</dd>
+      </dl>
+
+      <p>The LG C-series is the only OLED that reliably dips under $1,000, and it does so at 42 inches (occasionally 48), frequently on sale. What you get for that is a fundamentally different picture: per-pixel OLED contrast means truly perfect blacks, no blooming at all, and superb off-angle viewing that no mini-LED here matches. RTINGS and Tom's Guide have long praised the C-series for gaming &mdash; 144Hz, NVIDIA G-Sync plus AMD FreeSync, four HDMI 2.1 ports, and near-zero input lag.</p>
+      <p>The tradeoffs are equally real, and they're the whole reason OLED sits at #5 rather than higher. It is much dimmer than every mini-LED on this list, so in a bright room it can't keep up. Under $1,000 you're limited to a small and/or outgoing-generation panel &mdash; this is a bedroom, desk, or dark-room movie set, not a big living-room centerpiece. And OLED carries some long-term burn-in risk with static content (news tickers, game HUDs, channel logos) over years of use.</p>
+      <p>For a dark room, a gaming desk, or a small space where contrast beats brightness, nothing else at this price looks like it.</p>
+
+      <div class="procons">
+        <div class="col pros">
+          <h4>Pros</h4>
+          <ul>
+            <li>Perfect blacks, per-pixel contrast, no blooming</li>
+            <li>Elite gaming: 144Hz, G-Sync + FreeSync, 4&times; HDMI 2.1</li>
+            <li>Superb off-angle viewing</li>
+          </ul>
+        </div>
+        <div class="col cons">
+          <h4>Cons</h4>
+          <ul>
+            <li>Much dimmer than mini-LED &mdash; weak in bright rooms</li>
+            <li>Only 42"/48" under $1,000</li>
+            <li>Some static-content burn-in risk over years</li>
+          </ul>
+        </div>
+      </div>
+      <a class="buy" href="https://www.amazon.com/s?k=LG+C4+OLED+42&tag=loiterpoint20-20" rel="sponsored nofollow">Check price on Amazon &rarr;</a>
+    </div>
+
+    <!-- NERD BOX -->
+    <div class="nerdbox">
+      <div class="label">Nerd Box</div>
+      <h3>Mini-LED zones vs OLED per-pixel: why brightness is the whole argument</h3>
+      <p>A mini-LED TV lights its picture with a grid of backlight zones &mdash; the QM7K has around 2,800 of them, the QM6K rather fewer. Each zone can brighten or dim on its own, which is how these sets get deep blacks next to searing highlights. But a zone is still bigger than a pixel, so a bright object on a black field can leak light into its surrounding zone. That halo is called <strong>blooming</strong>, and more zones means less of it.</p>
+      <p>OLED sidesteps the problem entirely: every pixel makes its own light and can switch fully off, giving <strong>perfect blacks</strong> and zero blooming. So why isn't OLED the automatic winner under $1,000? Two reasons. First, in this budget OLED only comes in small panels. Second &mdash; and this is the single thing mini-LED does that OLED at this price cannot &mdash; raw brightness. Nits measure light output, and they matter most for HDR highlights and for fighting daylight in a bright room. RTINGS measured the U8QG near 4,000 nits; an OLED in this band is a fraction of that. If your room has windows, brightness wins. If your room is dark and contrast is king, OLED wins. That single tradeoff decides most of this list.</p>
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <h2>All 5 Compared</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>TV</th>
+            <th>Price / Size</th>
+            <th>Panel tech</th>
+            <th>Peak brightness</th>
+            <th>Refresh / HDMI 2.1</th>
+            <th>Standout</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="pick">Hisense U8QG</span></td>
+            <td>~$999 (55")</td>
+            <td>QLED mini-LED</td>
+            <td>~3,900&ndash;4,000+ nits (RTINGS)</td>
+            <td>144&ndash;165Hz · yes</td>
+            <td>Brightest; best overall</td>
+          </tr>
+          <tr>
+            <td><span class="pick">TCL QM7K</span></td>
+            <td>~$800&ndash;$999 (65")</td>
+            <td>QLED mini-LED</td>
+            <td>~2,400+ nits (independent)</td>
+            <td>144Hz · yes</td>
+            <td>Best value; ~2,800 zones</td>
+          </tr>
+          <tr>
+            <td><span class="pick">Samsung QN70F</span></td>
+            <td>~$800&ndash;$1,000 (55&ndash;65")</td>
+            <td>Neo QLED mini-LED</td>
+            <td>~2,000-nit class (independent)</td>
+            <td>120&ndash;144Hz · yes</td>
+            <td>Smart platform / Gaming Hub</td>
+          </tr>
+          <tr>
+            <td><span class="pick">TCL QM6K</span></td>
+            <td>~$528 (55") / ~$700 (65")</td>
+            <td>QLED mini-LED</td>
+            <td>Solid; below QM7K/U8QG</td>
+            <td>144Hz · yes</td>
+            <td>Most screen per dollar</td>
+          </tr>
+          <tr>
+            <td><span class="pick">LG C-series OLED</span></td>
+            <td>~$900&ndash;$1,000 (42")</td>
+            <td>OLED (per-pixel)</td>
+            <td>Dim vs mini-LED; perfect blacks</td>
+            <td>144Hz · 4&times; yes</td>
+            <td>Contrast + elite gaming</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BOTTOM LINE -->
+    <h2>Bottom Line</h2>
+    <p>There is no single "best" TV under $1,000 &mdash; there's the best one for your room and how you use it. Here's the quick read:</p>
+    <div class="usecase">
+      <div class="row">
+        <div class="who">Bright room</div>
+        <div class="what"><strong>Hisense U8QG (55").</strong> RTINGS-measured ~4,000 nits beats daylight; nothing else here is close on brightness.</div>
+      </div>
+      <div class="row">
+        <div class="who">Gaming</div>
+        <div class="what"><strong>LG C-series OLED</strong> for a desk or dark room (144Hz, G-Sync, near-zero lag), or the <strong>TCL QM7K</strong> if you want a big bright living-room gaming screen with FreeSync.</div>
+      </div>
+      <div class="row">
+        <div class="who">Budget / big screen</div>
+        <div class="what"><strong>TCL QM6K.</strong> 65" around $700, 75" sometimes under $1,000 &mdash; the most competent panel per dollar.</div>
+      </div>
+      <div class="row">
+        <div class="who">Movies / dark room</div>
+        <div class="what"><strong>LG C-series OLED.</strong> Perfect blacks and per-pixel contrast win where brightness doesn't matter.</div>
+      </div>
+      <div class="row">
+        <div class="who">Smart platform</div>
+        <div class="what"><strong>Samsung QN70F.</strong> Tizen + Gaming Hub and the best app ecosystem &mdash; just remember, no Dolby Vision.</div>
+      </div>
+    </div>
+    <p>If you want one recommendation to stop reading on: the <a href="https://www.amazon.com/s?k=Hisense+U8QG+55&tag=loiterpoint20-20" rel="sponsored nofollow">Hisense U8QG</a> at 55 inches is the most complete TV in this band on published evidence. If your budget is tighter or your room is bigger, the <a href="https://www.amazon.com/s?k=TCL+QM7K+65&tag=loiterpoint20-20" rel="sponsored nofollow">TCL QM7K</a> gives up remarkably little for the money. Prices in this category move constantly, so check the current number before you buy.</p>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="disclosure">
+        Loiter Point earns commissions from qualifying Amazon purchases. Affiliate relationships never influence our rankings &mdash; picks are ordered on published evidence.
+      </div>
+      <div class="copyright">&copy; 2026 Loiter Point &mdash; Consumer tech reviews built on real evidence.</div>
+    </div>
+  </footer>
+</body>
+</html>
