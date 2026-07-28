@@ -115,6 +115,18 @@ footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; margin-top: 
 .pros-cons { grid-template-columns: 1fr; }
 .pick-price { margin-left: 0; width: 100%; }
 }
+.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+.pick-media:hover{border-color:var(--accent);}
+.pick-media img{width:100%;height:auto;display:block;}
+.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+#lb.open{display:block;}
+#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
 </style>
 </head>
 <body>
@@ -164,6 +176,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; margin-top: 
 <span class="verdict-tag v-best">Best Overall / No Subscription</span>
 <span class="pick-price"><strong>~$180</strong> · often $130–150</span>
 </div>
+<div class="pick-media" data-full="https://m.media-amazon.com/images/I/61Sfuf3fyEL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61Sfuf3fyEL._AC_SL500_.jpg" alt="eufy Video Doorbell E340" loading="lazy"><span>Click to zoom</span></div>
 <p class="muted">The E340 solves the one problem every single-lens doorbell has: it can't watch your face and your doormat at the same time. eufy's answer is two cameras — a 2K lens looking out and a second 1080p lens pointed straight down at the ground — so you see a visitor's face and the package they just set down in one view. Everything records to 8GB of built-in local storage (expandable through a eufy HomeBase), and there is no monthly fee for any of it, including AI person and package detection, which runs on-device.</p>
 <div class="specs">
 <div class="spec"><span>Resolution</span><span>2K front + 1080p down <span class="tag-rated">rated</span></span></div>
@@ -195,6 +208,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; margin-top: 
 <span class="verdict-tag v-orange">Best for Alexa Homes</span>
 <span class="pick-price"><strong>~$230</strong></span>
 </div>
+<div class="pick-media" data-full="https://m.media-amazon.com/images/I/81hfReLVdCL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/81hfReLVdCL._AC_SL500_.jpg" alt="Ring Battery Doorbell Pro" loading="lazy"><span>Click to zoom</span></div>
 <p class="muted">Ring still makes the most refined app in the category, and the Battery Doorbell Pro is its best wire-free unit: 1536p "HD+" video, a Head-to-Toe field of view, and 3D Motion Detection with a Bird's Eye View that maps where a visitor walked. Low-Light Sight keeps color in the frame until it's truly dark. The catch is structural — without a Ring Protect plan (around $5/month per device), the doorbell alerts you but won't save the clip. If you already live in Alexa, the integration is the smoothest here.</p>
 <div class="specs">
 <div class="spec"><span>Resolution</span><span>1536p HD+ <span class="tag-rated">rated</span></span></div>
@@ -226,6 +240,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; margin-top: 
 <span class="verdict-tag v-green">Best for Google Homes</span>
 <span class="pick-price"><strong>~$180</strong> MSRP</span>
 </div>
+<div class="pick-media" data-full="https://m.media-amazon.com/images/I/315WD1BnV8L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/315WD1BnV8L._AC_SL500_.jpg" alt="Google Nest Doorbell (Battery)" loading="lazy"><span>Click to zoom</span></div>
 <p class="muted">The Nest Doorbell's tall 3:4 aspect ratio is built for exactly what a doorbell should show — a person head to toe and the step in front of them — and in published motion-detection comparisons it was the most consistent at capturing the entire event rather than clipping the start. It's the only pick with meaningful free smarts: on-device person, package, and familiar-face alerts plus up to three hours of event history at no cost, with Nest Aware adding longer history and richer alerts. For anyone in Google Home (now with Gemini features), it's the natural buy.</p>
 <div class="specs">
 <div class="spec"><span>Resolution</span><span>960×1280 (3:4) HDR <span class="tag-rated">rated</span></span></div>
@@ -257,6 +272,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; margin-top: 
 <span class="verdict-tag v-purple">Best for HomeKit</span>
 <span class="pick-price"><strong>~$130</strong> MSRP · frequent sales</span>
 </div>
+<div class="pick-media" data-full="https://m.media-amazon.com/images/I/61uZs-NyAbL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61uZs-NyAbL._AC_SL500_.jpg" alt="Arlo Video Doorbell 2K (2nd Gen)" loading="lazy"><span>Click to zoom</span></div>
 <p class="muted">If you need Apple Home, this is effectively your only choice in this roundup — the Arlo Video Doorbell 2K is the one unit here with full HomeKit support alongside Alexa and Google. It backs that with a genuinely wide 180° head-to-toe view, 2K HDR, and detection that separates people, vehicles, packages, and animals. It lands mid-pack on price at MSRP and drops to bargain territory on sale. Like Ring, cloud recording lives behind Arlo Secure, though a one-month plan is included to start.</p>
 <div class="specs">
 <div class="spec"><span>Resolution</span><span>2K HDR <span class="tag-rated">rated</span></span></div>
@@ -288,6 +304,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; margin-top: 
 <span class="verdict-tag v-blue">Best Budget</span>
 <span class="pick-price"><strong>~$50</strong></span>
 </div>
+<div class="pick-media" data-full="https://m.media-amazon.com/images/I/71VNPiPJNXL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/71VNPiPJNXL._AC_SL500_.jpg" alt="Wyze Battery Video Doorbell" loading="lazy"><span>Click to zoom</span></div>
 <p class="muted">Wyze keeps doing the thing that annoys the rest of the industry: shipping most of a premium doorbell for a fraction of the price. The Battery Video Doorbell records a 1:1 head-to-toe frame at 1536×1536 with color night vision and two-way audio, detects people, vehicles, and packages, and stores footage to a microSD card so you can skip subscriptions entirely. The polish isn't Ring's, and Cam Plus unlocks some smarter alerts, but as a first doorbell or a second-door add-on, nothing else at this price is close.</p>
 <div class="specs">
 <div class="spec"><span>Resolution</span><span>1536×1536 (1:1) <span class="tag-rated">rated</span></span></div>
@@ -354,5 +371,27 @@ footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; margin-top: 
 <!-- /LP:FOOTER-FALLBACK -->
 
 <script src="/nav.js" defer></script>
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 </body>
 </html>
