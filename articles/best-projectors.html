@@ -104,6 +104,18 @@
   footer p{margin-bottom:10px;}
   .disc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;font-size:13.5px;color:var(--muted);margin:22px 0;}
   em.tag{color:var(--muted);font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+.pick-media:hover{border-color:var(--accent);}
+.pick-media img{width:100%;height:auto;display:block;}
+.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+#lb.open{display:block;}
+#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
 </style>
 </head>
 <body>
@@ -145,7 +157,7 @@
   <div class="cardhead">
     <span class="badge">#1</span>
     <span class="role">Best Overall Value 4K</span>
-  </div>
+  </div><div class="pick-media" data-full="https://m.media-amazon.com/images/I/71Ku4s0a+mL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/71Ku4s0a+mL._AC_SL500_.jpg" alt="Epson Home Cinema 2350" loading="lazy"><span>Click to zoom</span></div>
   <h3>Epson Home Cinema 2350</h3>
   <div class="price">~$800&ndash;$1,000 street</div>
   <p>If you want one projector to handle movies, sports, and console gaming without a research project, this is it. The HC2350 uses Epson's 4K PRO-UHD pixel-shifting on a 3-chip 3LCD engine, and crucially it ships with Android TV built in &mdash; no dongle dangling off the back. It's bright, it's flexible, and it has vertical lens shift so you're not fighting your furniture to get a straight image.</p>
@@ -166,7 +178,7 @@
   <div class="cardhead">
     <span class="badge">#2</span>
     <span class="role">Best Contrast Under $800</span>
-  </div>
+  </div><div class="pick-media" data-full="https://m.media-amazon.com/images/I/610aJKRDQFL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/610aJKRDQFL._AC_SL500_.jpg" alt="BenQ HT2060" loading="lazy"><span>Click to zoom</span></div>
   <h3>BenQ HT2060</h3>
   <div class="price">~$700</div>
   <p>Here's the case for buying "only" 1080p in 2026. The HT2060 is an LED projector &mdash; no lamp to replace, ever &mdash; and per RTINGS' comparison it delivers noticeably better contrast than the pricier Epson. In a dark room, contrast is what makes a projected image look like a real picture rather than a washed-out slideshow. Black levels, shadow detail, that sense of depth: this is the projector for people who care about those things more than they care about a resolution number on the box.</p>
@@ -186,7 +198,7 @@
   <div class="cardhead">
     <span class="badge">#3</span>
     <span class="role">Best Premium Lifestyle 4K</span>
-  </div>
+  </div><div class="pick-media" data-full="https://m.media-amazon.com/images/I/51k4TtyK42L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/51k4TtyK42L._AC_SL500_.jpg" alt="XGIMI Horizon Ultra" loading="lazy"><span>Click to zoom</span></div>
   <h3>XGIMI Horizon Ultra</h3>
   <div class="price">~$1,500&ndash;$1,700</div>
   <p>This is the pick for people who want a 4K projector that behaves like a smart, self-adjusting appliance rather than a piece of A/V gear. The headline is Dolby Vision support, which is genuinely rare at this price, driven by a hybrid "dual light" laser/LED engine. But the everyday magic is Intelligent Screen Adaption: point it roughly at a wall and it auto-focuses, auto-keystones, and even compensates for wall color. The 2x12W Harman Kardon speakers mean it can run without a soundbar in a pinch.</p>
@@ -206,7 +218,7 @@
   <div class="cardhead">
     <span class="badge">#4</span>
     <span class="role">Best Budget 4K / Gaming</span>
-  </div>
+  </div><div class="pick-media" data-full="https://m.media-amazon.com/images/I/51ajkYN-yLL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/51ajkYN-yLL._AC_SL500_.jpg" alt="ViewSonic PX701-4K" loading="lazy"><span>Click to zoom</span></div>
   <h3>ViewSonic PX701-4K</h3>
   <div class="price">List $879.99 &middot; often $700&ndash;$900</div>
   <p>Widely cited by independent reviewers as the best budget 4K projector heading into 2026, and it earns that on two fronts. First, it's a true 4K DLP panel &mdash; not just pixel-shifted 1080p &mdash; with a rated 3,200 lumens that handles rooms with some light. Second, it's a legitimately good gaming projector: it supports up to 240Hz and posts roughly 4.2ms input lag at 1080p, which is console-shooter territory.</p>
@@ -226,7 +238,7 @@
   <div class="cardhead">
     <span class="badge">#5</span>
     <span class="role">Best Portable</span>
-  </div>
+  </div><div class="pick-media" data-full="https://m.media-amazon.com/images/I/71J2D91ar0L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/71J2D91ar0L._AC_SL500_.jpg" alt="Anker Nebula Mars 3 Air" loading="lazy"><span>Click to zoom</span></div>
   <h3>Anker Nebula Mars 3 Air</h3>
   <div class="price">$599.99 list &middot; reported $420&ndash;$470 on discount</div>
   <p>The Mars 3 Air is the pick when the projector needs to move &mdash; backyard, camping, a friend's blank wall. It has a built-in battery good for a reported ~2.5 hours of video, native 1080p, Google TV, and &mdash; importantly &mdash; officially licensed Netflix, which is the app that trips up most portable projectors. It throws up to a 150-inch image and has Dolby Digital sound onboard.</p>
@@ -321,5 +333,27 @@
 <!-- /LP:FOOTER-FALLBACK -->
 </div>
 <script src="/nav.js" defer></script>
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 </body>
 </html>
