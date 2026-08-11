@@ -121,6 +121,20 @@
   }
   footer p{margin-bottom:12px;}
   .disclosure{font-style:italic;}
+
+.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+.pick-media:hover{border-color:var(--accent);}
+.pick-media img{width:100%;height:auto;display:block;}
+.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+#lb.open{display:block;}
+#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
+
 </style>
 </head>
 <body>
@@ -159,6 +173,7 @@
 <p>When we cite a number that comes from a spec sheet, we call it "rated." When it comes from real-world use, we attribute it — "owner reports put it at," "independent tests find," "published teardowns show" — and we flag any estimate as such. Where the public evidence is thin, we say so rather than inventing a figure. What we weight most heavily: certification (a real safety and interoperability signal), protocol openness, whether energy monitoring is present and trustworthy, and the price you'll actually pay, which for plugs swings constantly with sales and multi-pack math.</p>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61pj48oBf9L._SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61pj48oBf9L._SL500_.jpg" alt="TP-Link Kasa KP125M smart plug (2-pack)" loading="lazy"><span>Click to zoom</span></div>
   <span class="badge">#1 · Best Overall</span>
   <h3>TP-Link Kasa KP125M (2-pack)</h3>
   <div class="price">~$30 for the 2-pack (prices fluctuate; often $25–35)</div>
@@ -176,6 +191,7 @@
 </div>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61lVVt4ggSL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61lVVt4ggSL._AC_SL500_.jpg" alt="TP-Link Tapo P115 smart plug (4-pack)" loading="lazy"><span>Click to zoom</span></div>
   <span class="badge">#2 · Best Budget Multi-Pack</span>
   <h3>TP-Link Tapo P115 (4-pack)</h3>
   <div class="price">~$33 list for the 4-pack, frequently discounted</div>
@@ -193,6 +209,7 @@
 </div>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/31GvBvc2g7L._SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/31GvBvc2g7L._SL500_.jpg" alt="Eve Energy (Matter) smart plug" loading="lazy"><span>Click to zoom</span></div>
   <span class="badge">#3 · Best for Apple Home / Privacy</span>
   <h3>Eve Energy (Matter)</h3>
   <div class="price">$39.95 list (has sold ~$30 on sale)</div>
@@ -210,6 +227,7 @@
 </div>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61rT+M93qmL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61rT+M93qmL._AC_SL500_.jpg" alt="TP-Link Tapo P125M smart plug (3-pack)" loading="lazy"><span>Click to zoom</span></div>
   <span class="badge">#4 · Best Cheap Matter Plug</span>
   <h3>TP-Link Tapo P125M (3-pack)</h3>
   <div class="price">3-pack has sold as low as ~$19–27; singles often ~$10–13</div>
@@ -226,6 +244,7 @@
 </div>
 
 <div class="card">
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61t5zBS57gL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61t5zBS57gL._AC_SL500_.jpg" alt="Amazon Smart Plug" loading="lazy"><span>Click to zoom</span></div>
   <span class="badge">#5 · Best for Alexa-Only Homes</span>
   <h3>Amazon Smart Plug</h3>
   <div class="price">$24.99 list (often ~$13–15 on sale)</div>
@@ -291,5 +310,27 @@
 <!-- /LP:FOOTER-FALLBACK -->
 </div>
 <script src="/nav.js" defer></script>
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 </body>
 </html>
