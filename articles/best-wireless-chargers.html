@@ -72,6 +72,18 @@
   footer{border-top:1px solid var(--border); margin-top:50px; padding:28px 0 50px; color:var(--muted); font-size:13px}
   footer a{color:var(--muted); text-decoration:underline}
   @media(max-width:600px){h1{font-size:1.7rem} .pc{grid-template-columns:1fr} .specs th{width:50%}}
+.pick-media{float:right;width:150px;margin:4px 0 12px 18px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:zoom-in;transition:border-color .15s;}
+.pick-media:hover{border-color:var(--accent);}
+.pick-media img{width:100%;height:auto;display:block;}
+.pick-media span{display:block;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){.pick-media{float:none;margin:0 auto 16px;}}
+#lb{position:fixed;inset:0;background:rgba(12,12,14,.97);display:none;z-index:1000;overflow:hidden;}
+#lb.open{display:block;}
+#lb img{position:absolute;top:0;left:0;transform-origin:0 0;cursor:grab;user-select:none;-webkit-user-drag:none;background:#fff;border-radius:6px;}
+.lb-ui{position:fixed;top:16px;right:16px;display:flex;gap:8px;z-index:1001;}
+.lb-ui button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;width:40px;height:40px;font-size:18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;}
+.lb-ui button:hover{border-color:var(--accent);color:var(--accent);}
+.lb-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);z-index:1001;letter-spacing:1px;text-align:center;}
 </style>
 </head>
 <body>
@@ -120,7 +132,8 @@
 <!-- PICK 1 -->
 <div class="card" id="pick1">
   <span class="rank">#1 · Best overall pad</span>
-  <h3>Anker MagGo Magnetic Wireless Charger (Pad), Qi2 15W</h3>
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/41SzMQTEnfL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/41SzMQTEnfL._AC_SL500_.jpg" alt="Anker MagGo Magnetic Wireless Charger (Pad), Qi2 15W" loading="lazy"><span>Click to zoom</span></div>
+<h3>Anker MagGo Magnetic Wireless Charger (Pad), Qi2 15W</h3>
   <div class="price">About $26 list <span>(UK RRP £30 per Digital Camera World) · frequently discounted — check the listing</span></div>
   <p>If you want the single best-value entry into proper magnetic wireless charging, this is it. It's a pad, not a stand, so it lies flat on a nightstand or desk — and it hits the full MagSafe-approved 15W on compatible iPhones rather than the 7.5W old flat Qi pads are stuck at. Digital Camera World's review praised the unobtrusive design, the long cable, and the price versus Apple's own MagSafe puck.</p>
   <table class="specs">
@@ -148,7 +161,8 @@
 <!-- PICK 2 -->
 <div class="card" id="pick2">
   <span class="rank">#2 · Best 25W multi-device dock</span>
-  <h3>Belkin UltraCharge Pro 3-in-1 Magnetic Charging Dock, Qi2 25W (WIZ040)</h3>
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61HYLqCnpGL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61HYLqCnpGL._AC_SL500_.jpg" alt="Belkin UltraCharge Pro 3-in-1 Magnetic Charging Dock, Qi2 25W (WIZ040)" loading="lazy"><span>Click to zoom</span></div>
+<h3>Belkin UltraCharge Pro 3-in-1 Magnetic Charging Dock, Qi2 25W (WIZ040)</h3>
   <div class="price">$129.99 list <span>· recently seen at $110.99 at Best Buy</span></div>
   <p>This is the one to buy if you want the fastest wireless speeds and you charge a phone, watch and earbuds every night. It's certified for Qi2.2 at 25W, and — crucially — Belkin includes the 45W adapter and a 60W 5-ft USB-C cable in the box, so you're not hunting for a brick to unlock full speed. Belkin claims an iPhone 16 goes 0–50% in 25 minutes (on iOS 26+) and an Apple Watch Series 10 hits 0–80% in 30 minutes; there's a separate 5W pad for AirPods. Reviews from AppleInsider, bttr.reviews and Digital Reviews Network praise the build quality and the real-world speed jump from 25W. The consistent knock: the fast watch puck is Apple-only, so this leans Apple-ecosystem even though the main pad works with Qi2 Androids like the Pixel 10.</p>
   <table class="specs">
@@ -178,7 +192,8 @@
 <!-- PICK 3 -->
 <div class="card" id="pick3">
   <span class="rank">#3 · Best travel</span>
-  <h3>Anker MagGo 3-in-1 Foldable Charging Station, Qi2 15W</h3>
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/61Y8TJAnHfL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/61Y8TJAnHfL._AC_SL500_.jpg" alt="Anker MagGo 3-in-1 Foldable Charging Station, Qi2 15W" loading="lazy"><span>Click to zoom</span></div>
+<h3>Anker MagGo 3-in-1 Foldable Charging Station, Qi2 15W</h3>
   <div class="price">Regularly ~$110 <span>· 9to5toys deal coverage has tracked it around $100 and lower in 2026 — frequently discounted</span></div>
   <p>For a trip, you want one small thing that charges everything and folds flat in a bag. Macworld's review calls this a travel-friendly Qi2 fast Apple charger that folds flat and tops up an iPhone, AirPods and Apple Watch at once. It's Qi2 15W rather than 25W, so it's about convenience and portability over peak speed — but unlike several 25W docks, the adapter is included, so it's ready to go out of the box.</p>
   <table class="specs">
@@ -206,7 +221,8 @@
 <!-- PICK 4 -->
 <div class="card" id="pick4">
   <span class="rank">#4 · Best 2-in-1 stand</span>
-  <h3>UGREEN MagFlow Qi2 25W 2-in-1 Charging Station</h3>
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/4121uHWrC-L._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/4121uHWrC-L._AC_SL500_.jpg" alt="UGREEN MagFlow Qi2 25W 2-in-1 Charging Station" loading="lazy"><span>Click to zoom</span></div>
+<h3>UGREEN MagFlow Qi2 25W 2-in-1 Charging Station</h3>
   <div class="price">Typically undercuts the Belkin <span>· price not firmly verified — check the current listing</span></div>
   <p>Want 25W speeds and a phone-plus-earbuds setup without the 3-in-1 premium? The UGREEN MagFlow is a foldable stand with a spot for AirPods and a USB-C port. AbsoluteGeeks' review reports an iPhone 16 Pro Max hitting roughly 50% in 30 minutes on it — about on par with mid-tier wired speeds — and How-To Geek's review calls the MagFlow line affordable, compact and effective. One catch to plan for: the power adapter usually isn't included, and you need a 45W brick to reach full speed.</p>
   <table class="specs">
@@ -234,7 +250,8 @@
 <!-- PICK 5 -->
 <div class="card" id="pick5">
   <span class="rank">#5 · Best budget stand</span>
-  <h3>Anker MagGo 2-in-1 Wireless Charging Stand, Qi2 15W</h3>
+  <div class="pick-media" data-full="https://m.media-amazon.com/images/I/6195kHD0SRL._AC_SL1500_.jpg"><img src="https://m.media-amazon.com/images/I/6195kHD0SRL._AC_SL500_.jpg" alt="Anker MagGo 2-in-1 Wireless Charging Stand, Qi2 15W" loading="lazy"><span>Click to zoom</span></div>
+<h3>Anker MagGo 2-in-1 Wireless Charging Stand, Qi2 15W</h3>
   <div class="price">Cheapest way into a Qi2 stand + AirPods spot <span>· price not firmly verified — check the current listing</span></div>
   <p>This is the entry ticket: a Qi2-certified 15W stand with a spot for AirPods, for people who want their phone propped upright for FaceID and notifications while it charges, plus somewhere to drop the earbuds — without paying for the 25W tier or a watch puck. It's part of Anker's Qi2-certified MagGo line, and while we're keeping the claims modest here, that line's track record — and the strong independent review record of the MagGo pad at #1 — is why it earns a spot. The adapter isn't included.</p>
   <table class="specs">
@@ -293,6 +310,28 @@
 <style>.lp-ffb{all:unset;display:block;box-sizing:border-box;border-top:1px solid var(--border,#26262e);background:var(--bg,#0c0c0e);color:var(--text,#e2e2e8);padding:2.5rem 2rem 2rem;margin:2rem 0 0;font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;text-align:left;}.lp-ffb *{box-sizing:border-box;margin:0;padding:0;}.lp-ffb a{text-decoration:none;color:inherit;}.lp-ffb .lp-ffb-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:auto auto auto;justify-content:space-between;column-gap:3rem;row-gap:2rem;align-items:start;}.lp-ffb .lp-ffb-brand{max-width:360px;}.lp-ffb .lp-ffb-mark{display:flex;align-items:center;gap:0.6rem;font-size:1rem;font-weight:800;color:var(--text,#e2e2e8);letter-spacing:-0.02em;}.lp-ffb .lp-ffb-mark i{width:28px;height:28px;background:var(--accent,#e8ff47);color:#000;border-radius:6px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:0.9rem;}.lp-ffb .lp-ffb-mark b{color:var(--accent,#e8ff47);font-weight:800;}.lp-ffb .lp-ffb-brand p{font-size:0.8rem;color:var(--muted,#7a7a8a);margin-top:0.6rem;line-height:1.6;}.lp-ffb .lp-ffb-col h4{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted,#7a7a8a);margin-bottom:0.75rem;}.lp-ffb .lp-ffb-col a{display:block;font-size:0.85rem;color:var(--muted,#7a7a8a);margin-bottom:0.45rem;}.lp-ffb .lp-ffb-col a:hover{color:var(--text,#e2e2e8);}.lp-ffb .lp-ffb-bottom{max-width:1040px;margin:1.75rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border,#26262e);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;}.lp-ffb .lp-ffb-bottom p{font-size:0.75rem;color:var(--muted,#7a7a8a);}.lp-ffb .lp-ffb-copy{display:flex;flex-direction:column;gap:0.45rem;}.lp-ffb .lp-ffb-copy a{font-size:0.75rem;color:var(--accent,#e8ff47);width:fit-content;}.lp-ffb .lp-ffb-copy a:hover{text-decoration:underline;}.lp-ffb .lp-ffb-disc{opacity:0.7;max-width:520px;line-height:1.5;font-size:0.72rem;}@media(max-width:760px){.lp-ffb .lp-ffb-inner{grid-template-columns:1fr 1fr;justify-content:normal;column-gap:2rem;row-gap:1.75rem;}.lp-ffb .lp-ffb-brand{grid-column:1 / -1;max-width:none;}}@media(max-width:460px){.lp-ffb .lp-ffb-inner{grid-template-columns:1fr;}}</style>
 <footer class="lp-ffb"><div class="lp-ffb-inner"><div class="lp-ffb-brand"><a class="lp-ffb-mark" href="/"><i>&#8853;</i>Loiter<b>Point</b></a><p>Independent tech coverage based on published testing and owner reports. No sponsored reviews, no brand deals on our scores.</p></div><div class="lp-ffb-col"><h4>Popular Guides</h4><a href="/articles/best-drones-for-beginners.html">Best Drones for Beginners</a><a href="/articles/best-wireless-earbuds-under-100.html">Best Wireless Earbuds Under $100</a><a href="/articles/best-robot-vacuums-2024.html">Best Robot Vacuums</a><a href="/articles/best-smart-bulbs.html">Best Smart Bulbs</a><a href="/articles/best-portable-power-stations.html">Best Portable Power Stations</a></div><div class="lp-ffb-col"><h4>Site</h4><a href="/about.html">About</a><a href="/methodology.html">How We Score</a><a href="/affiliate-disclosure.html">Affiliate Disclosure</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a></div></div><div class="lp-ffb-bottom"><div class="lp-ffb-copy"><p>© 2026 Loiter Point. All rights reserved.</p><a href="/sitemap.xml">Sitemap (XML)</a></div><p class="lp-ffb-disc">Loiter Point participates in the Amazon Associates program and other affiliate programs. We may earn a commission when you click through and purchase — at no extra cost to you. Affiliate relationships never influence our review scores or editorial decisions.</p></div></footer>
 <!-- /LP:FOOTER-FALLBACK -->
+<div id="lb" aria-hidden="true"><img id="lbimg" src="" alt=""><div class="lb-ui"><button id="lbminus" aria-label="Zoom out">−</button><button id="lbplus" aria-label="Zoom in">+</button><button id="lbclose" aria-label="Close">✕</button></div><div class="lb-hint">SCROLL TO ZOOM · DRAG TO PAN · DOUBLE-CLICK 2.5× · ESC TO CLOSE</div></div>
+<script>
+(function(){
+var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),sc=1,tx=0,ty=0,drag=null;
+function apply(){im.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';}
+function openLb(src,alt){im.src=src;im.alt=alt||'';lb.classList.add('open');document.body.style.overflow='hidden';
+im.onload=function(){var w=im.naturalWidth,h=im.naturalHeight,f=Math.min(innerWidth*0.85/w,innerHeight*0.85/h,1);sc=f;tx=(innerWidth-w*f)/2;ty=(innerHeight-h*f)/2;apply();};}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.pick-media').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-full'),el.querySelector('img').alt);});});
+function zoomAt(x,y,k){var ns=Math.min(Math.max(sc*k,0.2),8);tx=x-(x-tx)*(ns/sc);ty=y-(y-ty)*(ns/sc);sc=ns;apply();}
+lb.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1.15:0.87);},{passive:false});
+im.addEventListener('pointerdown',function(e){e.preventDefault();drag={x:e.clientX-tx,y:e.clientY-ty};im.setPointerCapture(e.pointerId);im.style.cursor='grabbing';});
+im.addEventListener('pointermove',function(e){if(drag){tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();}});
+im.addEventListener('pointerup',function(){drag=null;im.style.cursor='grab';});
+im.addEventListener('dblclick',function(e){zoomAt(e.clientX,e.clientY,sc<1.5?2.5/sc:0.4);});
+lb.addEventListener('click',function(e){if(e.target===lb)close();});
+document.getElementById('lbclose').onclick=close;
+document.getElementById('lbplus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,1.3);};
+document.getElementById('lbminus').onclick=function(){zoomAt(innerWidth/2,innerHeight/2,0.77);};
+addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 <script src="/nav.js" defer></script>
 </body>
 </html>
